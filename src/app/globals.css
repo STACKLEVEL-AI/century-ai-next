@@ -20,7 +20,7 @@
   --color-focus: #210dff;
 
   /* Typography */
-  --font-heading: var(--font-sora);
+  --font-heading: var(--font-manrope);
   --font-body: var(--font-manrope);
   --type-label: 0.875rem;
   --type-body-sm: 0.9375rem;
