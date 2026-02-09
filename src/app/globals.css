@@ -98,6 +98,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
 }
 
 .sr-only {
@@ -208,7 +209,7 @@ a {
 .logo-group,
 .footer-group {
   line-height: 1;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.055em;
 }
@@ -277,6 +278,7 @@ a {
   justify-content: center;
   gap: 6px;
   flex-wrap: wrap;
+  
 }
 
 .main-nav a {
@@ -285,7 +287,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: var(--md-label);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.2;
   min-height: var(--md-touch);
   padding: 10px 12px;
@@ -322,7 +324,7 @@ a {
   letter-spacing: 0.06em;
   font-size: var(--md-label);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 900;
   white-space: nowrap;
   transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
 }
@@ -371,6 +373,7 @@ a {
   text-wrap: balance;
   overflow-wrap: normal;
   word-break: normal;
+  font-weight: 900 !important;
 }
 
 .hero-copy h1 span {
@@ -525,7 +528,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.11em;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 900;
   opacity: 0.92;
 }
 
