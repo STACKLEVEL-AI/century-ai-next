@@ -344,7 +344,7 @@ a {
 }
 
 .hero {
-  padding: clamp(34px, 5vw, 68px) 0 18px;
+  padding: clamp(34px, 5vw, 10px) 0 18px;
 }
 
 /* =========================================================
@@ -463,11 +463,14 @@ a {
 }
 
 .hero-showcase {
+  padding: 14px 0 14px 14px;
   display: grid;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   max-width: 470px;
   justify-self: end;
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .show-card {
@@ -556,7 +559,8 @@ a {
 .stakeholders-inner {
   border: 1px solid var(--gray);
   background: var(--white);
-  display: grid;
+  display: flex;
+  align-items: center;
   grid-template-columns: 230px minmax(0, 1fr);
   overflow: hidden;
 }
@@ -571,6 +575,8 @@ a {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--blue);
+  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .stakeholders-marquee {
