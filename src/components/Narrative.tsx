@@ -98,8 +98,8 @@ export default function Narrative() {
       <div className="shell section-head">
         <h2>Контур CDTO: экономика, риск, масштаб</h2>
         <p>
-          Ниже — последовательность, которая превращает ИИ-инициативу из
-          технологического эксперимента в защищаемое управленческое решение.
+          От идеи до промышленной эксплуатации — три обязательных этапа,
+          которые гарантируют результат и безопасность.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ export default function Narrative() {
               key={s.id}
               className={`contour-screen contour-screen-${s.id}`}
             >
-              <p>{s.label}</p>
+              <div className="contour-step-index">{s.label}</div>
               <h3>{s.screenTitle}</h3>
               <span>{s.screenText}</span>
             </div>
@@ -142,8 +142,9 @@ export default function Narrative() {
                 setActive(i)
               }}
             >
-              <p className="contour-step-index">{s.index}</p>
-              <h3>{s.title}</h3>
+              <h3>
+                <span className="contour-step-index">{s.index}</span> {s.title}
+              </h3>
               <p>{s.text}</p>
               <span>{s.result}</span>
             </button>
@@ -153,4 +154,3 @@ export default function Narrative() {
     </section>
   )
 }
-

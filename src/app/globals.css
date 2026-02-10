@@ -703,6 +703,7 @@ a {
 .contour-board {
   margin-top: 24px;
   display: grid;
+  
   grid-template-columns: minmax(340px, 0.94fr) minmax(0, 1.06fr);
   gap: 12px;
 }
@@ -843,9 +844,21 @@ a {
   margin: 0;
   color: var(--blue);
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   line-height: 0.9;
   letter-spacing: -0.03em;
+}
+
+h3 .contour-step-index {
+  font-size: 1.8rem !important;
+  color: var(--blue);
+  font-family: var(--font-heading);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 8px;
 }
 
 .contour-step h3 {
