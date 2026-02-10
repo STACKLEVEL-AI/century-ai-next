@@ -639,6 +639,10 @@ a {
 /* =========================================================
    Hooks
    ========================================================= */
+.hooks {
+  padding-bottom: 0;
+}
+
 .hook-grid {
   margin-top: 24px;
   display: grid;
@@ -647,26 +651,18 @@ a {
 }
 
 .hook-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
   border: 1px solid var(--black);
   background: var(--white);
   padding: 18px;
-  display: grid;
-  gap: 10px;
+  gap: 18px;
   transition: border-color 150ms ease, transform 150ms ease;
 }
 
 .hook-card:hover {
   border-color: var(--blue);
   transform: translateY(-2px);
-}
-
-.hook-num {
-  margin: 0;
-  color: var(--blue);
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 2vw, 2.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
 }
 
 .hook-card h3 {
@@ -692,6 +688,21 @@ a {
   letter-spacing: 0.07em;
   font-size: 0.82rem;
   font-weight: 700;
+}
+
+.hook-num {
+  margin: 0;
+  color: var(--blue);
+  font-family: var(--font-heading);
+  font-size: 2.0rem !important;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.hook-content {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
 }
 
 /* =========================================================
