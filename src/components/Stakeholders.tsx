@@ -19,7 +19,6 @@ export default function Stakeholders() {
         <p>Ключевые участники</p>
         <div className="stakeholders-marquee">
           <div className="stakeholders-track">
-            {/* Duplicated for seamless loop */}
             {[...items, ...items].map((label, i) => (
               <span key={i}>{label}</span>
             ))}
@@ -29,4 +28,3 @@ export default function Stakeholders() {
     </section>
   )
 }
-
