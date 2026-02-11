@@ -1,7 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { Mail, Phone, Globe, Send, ArrowUp, MessageCircle } from 'lucide-react'
+import { Mail, Phone, Globe, Send } from 'lucide-react'
+import qrCode from '../../public/assets/qr-code.png'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -49,6 +50,16 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="contact-link"
               >
+                <Send size={16} />
+                <span>Telegram</span>
+              </a>
+
+              <a
+                  href="https://stacklevel.group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-link"
+              >
                 <Globe size={16} />
                 <span>stacklevel.group</span>
               </a>
@@ -56,35 +67,15 @@ export default function Footer() {
           </section>
 
           <section className="footer-col">
-            <p className="footer-title">Социальные сети</p>
-            <div className="footer-socials">
-              <a
-                  href="https://t.me/vitalibakhmat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social"
-              >
-                <span>Telegram</span>
-                <MessageCircle size={16} />
-              </a>
-
-              <a
-                  href="mailto:v.bakhmat@stacklevel.group"
-                  className="social"
-              >
-                <span>Написать email</span>
-                <Send size={16} />
-              </a>
-
-              <a
-                  href="https://stacklevel.group"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social"
-              >
-                <span>Посетить сайт</span>
-                <Globe size={16} />
-              </a>
+            <p className="footer-title">QR-код</p>
+            <div className="footer-qr">
+              <Image
+                  src={qrCode}
+                  alt="QR-код для связи"
+                  width={120}
+                  height={120}
+                  className="qr-image"
+              />
             </div>
           </section>
         </div>

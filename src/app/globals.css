@@ -2189,9 +2189,13 @@ h3 .contour-step-index {
   color: var(--white);
 }
 
+.footer-col:last-child {
+  justify-self: end; /* Выравнивает всю колонку по правому краю */
+}
+
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 1.15fr) minmax(240px, 0.9fr) minmax(240px, 0.9fr);
+  grid-template-columns: 2fr 1fr auto;
   gap: 28px;
   padding: clamp(32px, 3.4vw, 48px) 0 24px;
 }
