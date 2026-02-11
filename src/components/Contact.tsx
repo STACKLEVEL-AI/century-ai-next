@@ -59,12 +59,6 @@ export default function Contact() {
           <button className="btn btn-blue full" type="submit">
             Отправить сообщение
           </button>
-          <p className="contact-note full">
-            Email:{' '}
-            <a href="mailto:v.bakhmat@stacklevel.group">
-              v.bakhmat@stacklevel.group
-            </a>
-          </p>
         </form>
       </div>
     </section>
