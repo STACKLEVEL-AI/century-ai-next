@@ -2222,15 +2222,19 @@ h3 .contour-step-index {
    Footer
    ========================================================= */
 .site-footer {
-  margin-top: 24px;
+  margin-top: 0;
   border-top: 1px solid #1608cf;
   background: var(--blue);
   color: var(--white);
 }
 
+.footer-col:last-child {
+  justify-self: end; /* Выравнивает всю колонку по правому краю */
+}
+
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 1.15fr) minmax(240px, 0.9fr) minmax(240px, 0.9fr);
+  grid-template-columns: 2fr 1fr auto;
   gap: 28px;
   padding: clamp(32px, 3.4vw, 48px) 0 24px;
 }
@@ -2266,7 +2270,7 @@ h3 .contour-step-index {
   letter-spacing: 0.08em;
   font-size: var(--md-label);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .footer-col a {
@@ -2341,6 +2345,23 @@ h3 .contour-step-index {
 
 .footer-bottom a:hover {
   border-color: rgba(255, 255, 255, 0.82);
+}
+
+.social{
+  gap: 2px;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-bottom: 1px solid transparent;
+  transition: border-color 130ms ease;
+  padding: 4px 0;
+  width: fit-content;
 }
 
 /* =========================================================
