@@ -902,17 +902,26 @@ h3 .contour-step-index {
 }
 
 .platform-panel {
+  display: grid;
+  grid-template-areas:
+    "connectors-head connectors-head"
+    "architecture-grid connector-grid"
+    "architecture-grid connector-principles";
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: repeat(3, auto);
   margin-top: 24px;
   border: 1px solid var(--black);
-  background: var(--white);
+  background: var(--gray);
   overflow: hidden;
+  gap: 1px;
 }
 
 .connectors-head {
+  grid-area: connectors-head;
   padding: 18px;
   display: grid;
   gap: 8px;
-  border-bottom: 1px solid var(--gray);
+  background: var(--white);
 }
 
 .connectors-head h3 {
@@ -934,11 +943,12 @@ h3 .contour-step-index {
 }
 
 .connector-grid {
+  grid-area: connector-grid;
   padding: 18px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  border-bottom: 1px solid var(--gray);
+  background: var(--white);
 }
 
 .connector-card {
@@ -948,12 +958,16 @@ h3 .contour-step-index {
   padding: 14px;
   display: grid;
   gap: 7px;
-  transition: border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard);
 }
 
 .connector-card:hover {
   border-color: var(--blue);
   transform: translateY(-2px);
+  background: var(--color-bg-subtle);
 }
 
 .connector-card p {
@@ -972,11 +986,11 @@ h3 .contour-step-index {
 }
 
 .connector-principles {
+  grid-area: connector-principles;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  border-bottom: 1px solid var(--gray);
   background: var(--gray);
 }
 
@@ -985,6 +999,12 @@ h3 .contour-step-index {
   padding: 14px;
   display: grid;
   gap: 8px;
+  border-left: 0 solid var(--blue);
+  transition: border-left var(--duration-base) var(--ease-standard);
+}
+
+.connector-principles article:hover {
+  border-left: 8px solid var(--blue);
 }
 
 .connector-principles h4 {
@@ -1004,8 +1024,9 @@ h3 .contour-step-index {
 }
 
 .architecture-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-area: architecture-grid;
+  display: flex;
+  flex-direction: column;
   gap: 1px;
   background: var(--gray);
 }
@@ -1013,6 +1034,24 @@ h3 .contour-step-index {
 .architecture-grid article {
   padding: 14px;
   background: var(--white);
+  flex: 1;
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.architecture-grid article:hover {
+  padding: 14px;
+  background: var(--blue);
+  flex: 1;
+
+  & p {
+    color: var(--color-bg-subtle);
+  }
+  
+  & h4, span {
+    color: var(--white);
+  }
 }
 
 .architecture-grid p {
@@ -2495,6 +2534,15 @@ h3 .contour-step-index {
   .black-accent-grid article {
     min-height: 278px;
   }
+
+  .connector-principles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .connector-principles article {
+    flex: 1;
+  }
 }
 
 /* =========================================================
@@ -2688,6 +2736,14 @@ h3 .contour-step-index {
 
   .contour-step {
     padding: 14px;
+  }
+
+  .platform-panel {
+    display: block;
+  }
+
+  .platform-panel > div:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
   }
 
   .connector-grid {
