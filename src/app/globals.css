@@ -2382,6 +2382,53 @@ h3 .contour-step-index {
 }
 
 /* =========================================================
+   ScrollButton
+   ========================================================= */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1.7rem;
+  right: 1.7rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0px rgb(0 0 0 / 0.25);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-standard);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--black);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid rgb(59 130 246);
+  outline-offset: 2px;
+}
+
+.scroll-to-top.invisible {
+  opacity: 0;
+  transform: translateY(5rem);
+  pointer-events: none;
+}
+
+.scroll-to-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-0.15rem);
+}
+
+/* =========================================================
    Reveal & Animations
    ========================================================= */
 .reveal {
