@@ -12,6 +12,7 @@ import Proof from '@/components/Proof'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Drawers from '@/components/Drawers'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <Drawers />
+      <ScrollToTop />
     </>
   )
 }
