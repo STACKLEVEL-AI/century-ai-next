@@ -33,38 +33,29 @@ export default function Contact() {
           method="post"
           encType="text/plain"
         >
-          <label>
-            Имя
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Компания
-            <input type="text" name="company" />
-          </label>
-          <label>
-            Роль
-            <input type="text" name="role" placeholder="CDTO / CIO / CDO" />
-          </label>
-          <label className="full">
-            Контур и KPI
-            <textarea
-              name="task"
-              placeholder="Что приоритетно (база знаний/документы/риски/операции) и по какой метрике оценивать эффект"
-            />
-          </label>
+          <div className="field">
+            <input type="text" name="name" id="name" required placeholder="" />
+            <label htmlFor="name">Имя</label>
+          </div>
+          <div className="field">
+            <input type="email" name="email" id="email" required placeholder="" />
+            <label htmlFor="email">Email</label>
+          </div>
+          <div className="field">
+            <input type="text" name="company" id="company" placeholder="" />
+            <label htmlFor="company">Компания</label>
+          </div>
+          <div className="field">
+            <input type="text" name="role" id="role" placeholder="" />
+            <label htmlFor="role">Роль</label>
+          </div>
+          <div className="field full">
+            <textarea name="task" id="task" placeholder="" />
+            <label htmlFor="task">Контур и KPI</label>
+          </div>
           <button className="btn btn-blue full" type="submit">
             Отправить сообщение
           </button>
-          <p className="contact-note full">
-            Email:{' '}
-            <a href="mailto:v.bakhmat@stacklevel.group">
-              v.bakhmat@stacklevel.group
-            </a>
-          </p>
         </form>
       </div>
     </section>
