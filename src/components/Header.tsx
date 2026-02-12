@@ -93,7 +93,7 @@ export default function Header() {
           <span className="logo-line-two">
             <Image
               className="logo-stacklevel"
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/assets/sl.svg`}
+              src="assets/sl.svg"
               alt="Stacklevel"
               width={277}
               height={23}

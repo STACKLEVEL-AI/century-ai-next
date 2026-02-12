@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="footer-line">
               <Image
                   className="footer-stacklevel"
-                  src="/assets/sl.svg"
+                  src="assets/sl.svg"
                   alt="Stacklevel"
                   width={277}
                   height={23}
@@ -68,7 +68,7 @@ export default function Footer() {
             <p className="footer-title">QR-код</p>
             <div className="footer-qr">
               <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/assets/qr-code.png`}
+                  src="assets/qr-code.png"
                   alt="QR-код для связи"
                   width={120}
                   height={120}
