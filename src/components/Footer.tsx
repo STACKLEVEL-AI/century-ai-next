@@ -78,6 +78,10 @@ export default function Footer() {
           </section>
         </div>
 
+        <div className="footer-big-century">
+          <p>CENTURY</p>
+        </div>
+
         <div className="shell footer-bottom">
           <p>&copy; {year} Century by Stacklevel Group.</p>
         </div>
