@@ -2170,14 +2170,46 @@ h3 .contour-step-index {
   gap: 10px;
 }
 
+.lead-form .field {
+  position: relative;
+  display: block;
+}
+
 .lead-form label {
-  display: grid;
-  gap: 6px;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 700;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+  transition: 
+    top var(--duration-base) var(--ease-standard),
+    font-size var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+.field:focus-within label {
+  top: 12px;
+  font-size: 0.7rem;
+  color: var(--blue);
+}
+
+.field input:not(:placeholder-shown) ~ label,
+.field textarea:not(:placeholder-shown) ~ label {
+  top: 12px;
+  font-size: 0.7rem;
+  color: #777;
 }
 
 .lead-form label.full,
@@ -2192,38 +2224,15 @@ h3 .contour-step-index {
   background: var(--white);
   color: var(--black);
   border-radius: var(--radius-sm);
-  padding: 12px;
+  padding: 22px 16px 10px 16px;
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.34;
 }
 
-.lead-form input:focus-visible,
-.lead-form textarea:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 1px;
-}
-
 .lead-form textarea {
   min-height: 108px;
   resize: vertical;
-}
-
-.contact-note {
-  margin: 2px 0 0;
-  color: #2f2f2f;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.contact-note a {
-  color: var(--blue);
-  text-decoration: none;
-}
-
-.contact-note a:hover {
-  text-decoration: underline;
 }
 
 /* =========================================================
