@@ -1,10 +1,12 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: 'export', 
   images: {
-    unoptimized: true,
+    unoptimized: true, 
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/century-ai-next' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/century-ai-next/' : '',
 }
 
 export default nextConfig
