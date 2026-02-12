@@ -5,9 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, 
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/century-ai-next' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/century-ai-next/' : '',
+  basePath: '/century-ai-next',
+  assetPrefix: '/century-ai-next/',
 }
 
 export default nextConfig
-

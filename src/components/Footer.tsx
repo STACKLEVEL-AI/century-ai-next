@@ -2,8 +2,6 @@
 
 import Image from 'next/image'
 import { Mail, Phone, Globe, Send } from 'lucide-react'
-import qrCode from '../../public/assets/qr-code.png'
-
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -70,7 +68,7 @@ export default function Footer() {
             <p className="footer-title">QR-код</p>
             <div className="footer-qr">
               <Image
-                  src={qrCode}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/assets/qr-code.png`}
                   alt="QR-код для связи"
                   width={120}
                   height={120}
