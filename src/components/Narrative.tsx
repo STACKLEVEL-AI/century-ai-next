@@ -132,10 +132,11 @@ export default function Narrative() {
           {steps.map((s, i) => (
             <button
               key={s.id}
+              role="tab"
               className={`contour-step${i === active ? ' is-active' : ''}`}
               type="button"
               data-step={s.id}
-              aria-selected={i === active}
+              aria-pressed={i === active}
               onClick={() => setActive(i)}
               onMouseEnter={() => {
                 stopRotation()
