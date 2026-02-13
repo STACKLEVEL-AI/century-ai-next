@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Mail, Phone, Globe, Send } from 'lucide-react'
+import { Mail, Phone, Globe, Send, Youtube } from 'lucide-react'
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -14,16 +14,14 @@ export default function Footer() {
                 className="footer-logo"
                 aria-label="Century by Stacklevel Group"
             >
-              <span className="footer-century">CENTURY</span>
               <span className="footer-line">
               <Image
                   className="footer-stacklevel"
-                  src="assets/sl.svg"
+                  src="assets/sl.png"
                   alt="Stacklevel"
                   width={277}
                   height={23}
               />
-              <span className="footer-group">GROUP</span>
             </span>
             </a>
               Контуры внедрения ИИ для промышленной эксплуатации в корпорациях.
@@ -61,6 +59,15 @@ export default function Footer() {
                 <Globe size={16} />
                 <span>stacklevel.group</span>
               </a>
+              <a
+                  href="https://www.youtube.com/@STACKLEVELGROUP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-link"
+              >
+                <Youtube size={16} />
+                <span>stacklevel youtube</span>
+              </a>
             </div>
           </section>
 
@@ -79,7 +86,13 @@ export default function Footer() {
         </div>
 
         <div className="footer-big-century">
-          <p>CENTURY</p>
+          <Image
+              src="assets/CENTURY_White_H.png"
+              alt="CENTURY_White_H"
+              width={0}
+              height={0}
+              className="century-image"
+          />
         </div>
 
         <div className="shell footer-bottom">

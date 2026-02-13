@@ -60,7 +60,7 @@
 
   /* Brand sizing */
   --brand-century-size: clamp(1.2rem, 0.78vw + 0.98rem, 1.68rem);
-  --brand-stacklevel-width: min(194px, 17.2vw);
+  --brand-stacklevel-width: min(150px, 17.2vw);
   --brand-group-size: clamp(1.23rem, 0.32vw + 1.05rem, 1.41rem);
   --brand-line-gap: 10px;
 
@@ -85,6 +85,19 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.qr-image{
+  width: 160px;
+  height: 160px;
+}
+
+.century-image {
+  width: clamp(300px, 80vw, 1250px);
+  height: auto;
+  object-fit: contain;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 body {
@@ -179,13 +192,13 @@ a {
   text-transform: uppercase;
   line-height: 0.92;
   font-size: var(--brand-century-size);
-  font-weight: 900;
   letter-spacing: -0.03em;
 }
 
 .logo-century {
   color: #070f1f;
   letter-spacing: -0.035em;
+  width: 1000;
 }
 
 .logo-line-two,
@@ -2246,20 +2259,22 @@ h3 .contour-step-index {
 }
 
 .footer-col:last-child {
-  justify-self: end; /* Выравнивает всю колонку по правому краю */
+  justify-self: end; 
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr auto;
+  align-content: start;
   gap: 28px;
-  padding: clamp(32px, 3.4vw, 48px) 0 0 24px;
+  padding: clamp(32px, 3.4vw, 48px) 0 0 0;
 }
 
 .footer-brand {
   display: grid;
   align-content: start;
   gap: 16px;
+  justify-self: start;
 }
 
 .footer-logo {
@@ -2367,20 +2382,6 @@ h3 .contour-step-index {
 .footer-big-century {
   display: flex;
   justify-content: center;
-  font-size: 10rem;
-  width: 100%;
-}
-
-.footer-big-century p {
-  font-size: 20vw !important;
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  line-height: 1.4;
-  font-size: var(--brand-century-size);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  margin: 0;
-  padding: 0;
 }
 
 .social{
@@ -2655,7 +2656,7 @@ h3 .contour-step-index {
 @media (max-width: 1040px) {
   :root {
     --brand-century-size: 1.16rem;
-    --brand-stacklevel-width: 168px;
+    --brand-stacklevel-width: 150px;
     --brand-group-size: 1rem;
   }
 
@@ -2706,6 +2707,7 @@ h3 .contour-step-index {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr auto;
+    justify-self: start;
     gap: 20px;
   }
 
@@ -2732,7 +2734,7 @@ h3 .contour-step-index {
 @media (max-width: 768px) {
   :root {
     --brand-century-size: 1rem;
-    --brand-stacklevel-width: 142px;
+    --brand-stacklevel-width: 150px;
     --brand-group-size: 1rem;
     --brand-line-gap: 7px;
   }
@@ -2890,7 +2892,7 @@ h3 .contour-step-index {
   :root {
     --shell-width: min(1280px, 94vw);
     --brand-century-size: 0.92rem;
-    --brand-stacklevel-width: 120px;
+    --brand-stacklevel-width: 150px;
     --brand-group-size: 0.88rem;
   }
 
