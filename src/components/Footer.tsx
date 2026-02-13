@@ -30,7 +30,11 @@ export default function Footer() {
           <section className="footer-col">
             <p className="footer-title">Контакты</p>
             <div className="footer-contacts">
-              <a href="mailto:v.bakhmat@stacklevel.group" className="contact-link">
+              <a
+                  href="mailto:v.bakhmat@stacklevel.group"
+                  className="contact-link"
+                  rel="noopener noreferrer"  // Добавить для безопасности
+              >
                 <Mail size={16} />
                 <span>v.bakhmat@stacklevel.group</span>
               </a>
