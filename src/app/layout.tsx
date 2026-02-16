@@ -132,8 +132,8 @@ const jsonLd = {
         "https://www.linkedin.com/in/vbakhmat/"
       ],
       "description": "Partner at StackLevel Group, Account Manager at LSEG (London Stock Exchange Group), Business Development Manager at JungleJobs"
-    }
-  ]
+      }
+    ]
 }
 
 export default function RootLayout({
@@ -148,6 +148,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta name="google-site-verification" content="G-9lIFOuqI7bxNAuFqZww-U_npp1rvShARY-mU1dBVs" />
       </head>
       <body>
         <div className="grid-overlay" aria-hidden="true" />
