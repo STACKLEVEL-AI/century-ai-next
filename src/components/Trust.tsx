@@ -2,63 +2,69 @@
 
 import { useReveal } from '@/hooks/useReveal'
 
-const cards = [
-  { title: 'Развёртывание', text: 'Локальное или изолированное развёртывание в пределах корпоративного периметра.', href: '#trust-deployment' },
-  { title: 'Контроль доступа', text: 'IAM, роли и уровневые ограничения доступа для каждого ответа агента.', href: '#trust-access' },
-  { title: 'Аудит', text: 'Неизменяемые логи запросов, цитат, решений и действий в едином журнале.', href: '#trust-audit' },
-  { title: 'Качество', text: 'Контур оценки и мониторинга: метрики качества, рисков и стабильности в эксплуатации.', href: '#trust-quality' },
-]
-
-const details = [
-  { id: 'trust-deployment', label: 'Размещение', title: 'Локальный / изолированный контур', text: 'Размещение внутри инфраструктуры компании с контролем сетевого и юридического периметра.' },
-  { id: 'trust-access', label: 'Доступ', title: 'Ролевая модель доступа', text: 'Ответ строится только по источникам, на которые у пользователя есть разрешение.' },
-  { id: 'trust-audit', label: 'Аудит', title: 'Сквозная трассируемость решений', text: 'Фиксируются запрос, источники, версия политики, результат и исполнитель.' },
-  { id: 'trust-quality', label: 'Качество', title: 'Оценка и наблюдаемость', text: 'Пороговые значения качества и рисков помогают управлять портфелем кейсов на уровне CDTO.' },
+const trustFeatures = [
+  {
+    id: 1,
+    title: 'Развёртывание',
+    description: 'Локально или в изолированном контуре. Данные под вашим полным контролем.',
+    details: 'Размещение внутри инфраструктуры компании с соблюдением юридических требований.'
+  },
+  {
+    id: 2,
+    title: 'Контроль доступа',
+    description: 'Ролевая модель IAM: ответы только из разрешённых источников.',
+    details: 'Интеграция с корпоративной системой управления доступом.'
+  },
+  {
+    id: 3,
+    title: 'Аудит',
+    description: 'Неизменяемый журнал всех действий и решений.',
+    details: 'Фиксируются запрос, источники, версия политики и результат.'
+  },
+  {
+    id: 4,
+    title: 'Качество',
+    description: 'Мониторинг метрик и рисков в реальном времени.',
+    details: 'Пороговые значения качества для управления портфелем кейсов.'
+  }
 ]
 
 export default function Trust() {
   const { ref, className, style } = useReveal()
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`section trust-section trust-section-stacklevel ${className}`}
-      id="trust"
-      style={style}
-    >
-      <div className="shell trust-block">
-        <div className="trust-head">
-          <h3>
-            <span className="trust-title-main">Доверие</span> и{' '}
-            <span className="trust-title-accent">управление</span>
-          </h3>
-          <p>
-            Доказательная рамка для корпоративного внедрения: владение данными,
-            контроль доступа, аудит и качество.
-          </p>
-        </div>
+      <section
+          ref={ref as React.RefObject<HTMLElement>}
+          className={`section trust ${className}`}
+          id="trust"
+          style={style}
+      >
+        <div className="shell">
+          {/* Заголовок секции */}
+          <div className="section-head">
+            <h2>Доверие и управление</h2>
+            <p>
+              Доказательная рамка для корпоративного внедрения ИИ:
+              безопасность, прозрачность и контроль на каждом уровне.
+            </p>
+          </div>
 
-        <div className="proofpoint-grid">
-          {cards.map((c) => (
-            <article className="proofpoint-card" key={c.title}>
-              <h4>{c.title}</h4>
-              <p>{c.text}</p>
-              <a href={c.href}>Подробнее</a>
-            </article>
-          ))}
+          {/* Сетка с карточками */}
+          <div className="trust-grid">
+            {trustFeatures.map((feature) => (
+                <article key={feature.id} className="trust-card">
+                  <div className="trust-card-content">
+                    <div className="trust-card-header">
+                      <span className="trust-number">{feature.id.toString().padStart(2, '0')}</span>
+                      <h3>{feature.title}</h3>
+                    </div>
+                    <p className="trust-description">{feature.description}</p>
+                    <p className="trust-detail">{feature.details}</p>
+                  </div>
+                </article>
+            ))}
+          </div>
         </div>
-
-        <div className="trust-details">
-          {details.map((d) => (
-            <article key={d.id} id={d.id}>
-              <p>{d.label}</p>
-              <h4>{d.title}</h4>
-              <span>{d.text}</span>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
   )
 }
-
