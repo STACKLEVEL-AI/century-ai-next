@@ -2,6 +2,17 @@
 
 import { useReveal } from '@/hooks/useReveal'
 
+const items = [
+  'CDTO (цифровая трансформация)',
+  'CIO (архитектура и ИТ)',
+  'CDO (данные и ИИ)',
+  'Информационная безопасность',
+  'Риск-офис',
+  'Комплаенс',
+  'Внутренний аудит',
+  'Бизнес-владельцы',
+]
+
 export default function Hero() {
   const { ref, className, style } = useReveal()
 
@@ -61,6 +72,21 @@ export default function Hero() {
             <h3>Портфель ИИ-сценариев вместо витрины пилотов</h3>
             <span>Модель управления, ритм тиражирования, SLA</span>
           </article>
+        </div>
+      </div>
+      <div
+        className="stakeholders"
+        aria-label="Ключевые участники программы"
+      >
+        <div className="shell stakeholders-inner">
+          <p>Ключевые участники</p>
+          <div className="stakeholders-marquee">
+            <div className="stakeholders-track">
+              {[...items, ...items].map((label, i) => (
+              <span key={i}>{label}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
