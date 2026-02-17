@@ -7,101 +7,103 @@ export default function Footer() {
 
   return (
       <footer className="site-footer">
-        <div className="shell footer-grid">
-          <section className="footer-brand">
-            <a
+        <section>
+          <div className="shell footer-grid">
+            <article className="footer-brand">
+              <a
                 href="#home"
                 className="footer-logo"
                 aria-label="Century by Stacklevel Group"
-            >
-              <span className="footer-line">
-              <Image
-                  className="footer-stacklevel"
-                  src="assets/sl.png"
-                  alt="Stacklevel"
-                  width={277}
-                  height={23}
-              />
-            </span>
-            </a>
-              Контуры внедрения ИИ для промышленной эксплуатации в корпорациях.
-          </section>
+              >
+                <span className="footer-line">
+                  <Image
+                    className="footer-stacklevel"
+                    src="assets/sl.png"
+                    alt="Stacklevel"
+                    width={277}
+                    height={23}
+                  />
+                </span>
+              </a>
+                Контуры внедрения ИИ для промышленной эксплуатации в корпорациях.
+            </article>
 
-          <section className="footer-col">
-            <p className="footer-title">Контакты</p>
-            <div className="footer-contacts">
-              <a
+            <article className="footer-col">
+              <p className="footer-title">Контакты</p>
+              <div className="footer-contacts">
+                <a
                   href="mailto:v.bakhmat@stacklevel.group"
                   className="contact-link"
                   rel="noopener noreferrer"  // Добавить для безопасности
-              >
-                <Mail size={16} />
-                <span>v.bakhmat@stacklevel.group</span>
-              </a>
+                >
+                  <Mail size={16} />
+                  <span>v.bakhmat@stacklevel.group</span>
+                </a>
 
-              <a href="tel:+375296682127" className="contact-link">
-                <Phone size={16} />
-                <span>+375 (29) 668-21-27</span>
-              </a>
+                <a href="tel:+375296682127" className="contact-link">
+                  <Phone size={16} />
+                  <span>+375 (29) 668-21-27</span>
+                </a>
 
               <a
                   href="tg://resolve?domain=vitalibakhmat"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
-              >
-                <Send size={16} />
-                <span>Telegram</span>
-              </a>
+                >
+                  <Send size={16} />
+                  <span>Telegram</span>
+                </a>
 
-              <a
+                <a
                   href="https://stacklevel.group"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
-              >
-                <Globe size={16} />
-                <span>stacklevel.group</span>
-              </a>
-              <a
+                >
+                  <Globe size={16} />
+                  <span>stacklevel.group</span>
+                </a>
+                <a
                   href="https://www.youtube.com/@STACKLEVELGROUP"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
-              >
-                <Youtube size={16} />
-                <span>stacklevel youtube</span>
-              </a>
-            </div>
-          </section>
+                >
+                  <Youtube size={16} />
+                  <span>stacklevel youtube</span>
+                </a>
+              </div>
+            </article>
 
-          <section className="footer-col">
-            <p className="footer-title">QR-код</p>
-            <div className="footer-qr">
-              <Image
+            <article className="footer-col">
+              <p className="footer-title">QR-код</p>
+              <div className="footer-qr">
+                <Image
                   src="assets/qr-code.png"
                   alt="QR-код для связи"
                   width={120}
                   height={120}
                   className="qr-image"
-              />
-            </div>
-          </section>
-        </div>
+                />
+              </div>
+            </article>
+          </div>
 
-        <div className="footer-big-century">
-          <Image
+          <div className="footer-big-century">
+            <Image
               src="assets/CENTURY_White_H.png"
               alt="CENTURY_White_H"
               width={0}
               height={0}
               className="century-image"
-          />
-        </div>
+            />
+          </div>
 
-        <div className="shell footer-bottom">
-          <p>&copy; {year} Century by Stacklevel Group.</p>
-        </div>
+          <div className="shell footer-bottom">
+            <p>&copy; {year} Century by Stacklevel Group.</p>
+          </div>
+        </section>
       </footer>
   )
 }
