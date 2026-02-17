@@ -45,7 +45,7 @@ export default function Footer() {
               </a>
 
               <a
-                  href="https://stacklevel.group"
+                  href="tg://resolve?domain=vitalibakhmat"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
