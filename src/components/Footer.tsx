@@ -45,8 +45,8 @@ export default function Footer() {
                   <span>+375 (29) 668-21-27</span>
                 </a>
 
-                <a
-                  href="https://stacklevel.group"
+              <a
+                  href="tg://resolve?domain=vitalibakhmat"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
