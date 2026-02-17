@@ -1,6 +1,5 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Stakeholders from '@/components/Stakeholders'
 import HooksSection from '@/components/HooksSection'
 import Narrative from '@/components/Narrative'
 import Platform from '@/components/Platform'
@@ -20,7 +19,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Stakeholders />
         <HooksSection />
         <Narrative />
         <Platform />
