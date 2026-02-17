@@ -1378,7 +1378,7 @@ h3 .contour-step-index {
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
   gap: clamp(18px, 2.8vw, 44px);
-  align-items: start;
+  align-items: end;
   border-bottom: 1px solid #2a2a2a;
 }
 
@@ -1390,16 +1390,21 @@ h3 .contour-step-index {
   letter-spacing: -0.035em;
   line-height: 0.88;
   font-size: clamp(2.2rem, 5.1vw, 6.1rem);
-  max-width: 11ch;
+  max-width: 13ch;
+  font-weight: 600;
   text-wrap: balance;
 }
 
 .black-accent-top p {
-  margin: 0;
+  margin-bottom: 0;
   color: #d6d6d6;
   font-size: clamp(1rem, 0.28vw + 0.93rem, 1.2rem);
   line-height: 1.44;
-  max-width: 36ch;
+  max-width: 40ch;
+}
+
+.black-accent-top strong {
+  color: #95a0ff;
 }
 
 .black-accent-grid {
@@ -1407,6 +1412,7 @@ h3 .contour-step-index {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   background: #2a2a2a;
+  font-weight: 500;
 }
 
 .black-accent-grid article {
@@ -1422,8 +1428,9 @@ h3 .contour-step-index {
 }
 
 .black-accent-grid article:hover {
-  background: rgb(from var(--black) calc(r + 20) calc(g + 20) calc(b + 20));
-  box-shadow: inset 0 0 0 2px var(--blue);
+  background: rgba(252, 252, 252, 0.0002);
+  box-shadow: inset 0 0 0 1px #95a0ff;
+  transition: all 0.2s ease;
 }
 
 .black-accent-grid p {

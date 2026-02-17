@@ -43,9 +43,9 @@ export default function BlackPlatform() {
         <div className="black-accent-top">
           <h2>
             Century —<br />
-            платформа<br />
-            безопасного<br />
-            внедрения LLM
+            платформа
+            безопасного
+            внедрения <strong>LLM</strong>
           </h2>
           <p>
             Единый конвейер для создания и запуска LLM&#8209;сервисов в корпорации:
