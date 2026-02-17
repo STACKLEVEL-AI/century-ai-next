@@ -84,7 +84,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 92px;
+}
+
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
 }
 
 .qr-image{
@@ -2640,6 +2646,15 @@ h3 .contour-step-index {
     --brand-stacklevel-width: 150px;
     --brand-group-size: 1rem;
     --brand-line-gap: 7px;
+  }
+
+  html {
+    scroll-snap-type: none;
+  }
+
+  section {
+    scroll-snap-align: none;
+    height: auto;
   }
 
   .hero {
