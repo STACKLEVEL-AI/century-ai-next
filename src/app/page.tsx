@@ -12,24 +12,26 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Drawers from '@/components/Drawers'
 import ScrollToTop from '@/components/ScrollToTop'
+import SectionNavigator from '@/components/SectionNavigator'
 
 export default function Home() {
   return (
     <>
       <Header />
+      <SectionNavigator />
       <main>
-        <Hero />
-        <HooksSection />
-        <Narrative />
-        <Platform />
-        <Scenarios />
-        <BlackPlatform />
-        <Brain />
-        <Trust />
-        <Proof />
-        <Contact />
+        <Hero data-section="0"/>
+        <HooksSection data-section="1"/>
+        <Narrative data-section="2"/>
+        <Platform data-section="3"/>
+        <Scenarios data-section="4"/>
+        <BlackPlatform data-section="5"/>
+        <Brain data-section="6"/>
+        <Trust data-section="7"/>
+        <Proof data-section="8"/>
+        <Contact data-section="9"/>
       </main>
-      <Footer />
+      <Footer data-section="10"/>
       <Drawers />
       <ScrollToTop />
     </>

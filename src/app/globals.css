@@ -164,6 +164,36 @@ a {
 }
 
 /* =========================================================
+   Section Navigator
+   ========================================================= */
+.section-dots-container {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.section-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--gray);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 3px rgba(from var(--gray) r g b / 0.2);
+  transition: all var(--duration-base) var(--ease-standard);
+}
+
+.section-dot.active {
+  background: var(--blue);
+  transform: scale(1.3);
+  box-shadow: 0 0 3px 3px rgba(from var(--blue) r g b / 0.2);
+}
+
+/* =========================================================
    Header
    ========================================================= */
 .site-header {
@@ -2595,6 +2625,10 @@ footer section {
   .scenario-aside {
     border-left: 0;
     border-top: 1px solid var(--gray);
+  }
+
+  .section-dots-container {
+    display: none;
   }
 
   .stakeholders-inner {
