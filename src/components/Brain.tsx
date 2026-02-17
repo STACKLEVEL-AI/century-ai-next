@@ -26,12 +26,12 @@ export default function Brain() {
       id="brain"
       style={style}
     >
-      <div className="shell section-head">
+      <div className=" shell brain section-head">
         <h2>Ядро платформы: проверяемые ответы</h2>
         <p>
           Демонстрация продуктового режима: слева источники и статусы доступа,
           справа ответ агента с проверяемыми ссылками. Результаты учитывают
-          права доступа и готовы для аудита.
+          праваx доступа и готовы для аудита.
         </p>
       </div>
 
@@ -97,4 +97,3 @@ export default function Brain() {
     </section>
   )
 }
-
