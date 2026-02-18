@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 320);
+
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 600;
+      setIsAtBottom(scrolledToBottom);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -22,10 +27,9 @@ export default function ScrollToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Вернуться в начало страницы"
-      className={`scroll-to-top ${isVisible ? "" : "invisible"}`}
+      className={`scroll-to-top ${isVisible ? "" : "invisible"} ${isAtBottom ? "at-bottom" : ""}`}
     >
       <svg
-        className="h-7 w-7 transition-transform duration-200 hover:-translate-y-0.5"
         width="24"
         height="24"
         viewBox="0 0 24 24"
