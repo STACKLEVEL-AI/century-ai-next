@@ -124,7 +124,7 @@ section {
 }
 
 .century-image {
-  width: clamp(300px, 80vw, 1250px);
+  width: clamp(300px, 95vw, 1250px);
   height: auto;
   object-fit: contain;
   padding-top: 10px;
@@ -2302,6 +2302,7 @@ a {
 footer section {
   min-height: calc(100vh - 92px);
   scroll-snap-align: end;
+  background: linear-gradient(to bottom, var(--blue), rgb(from var(--blue) calc(r - 50) calc(g - 50) calc(b - 50)));
 }
 
 .site-footer {
@@ -2500,6 +2501,11 @@ footer section {
 
 .scroll-to-top:hover svg {
   transform: translateY(-0.15rem);
+}
+
+.scroll-to-top.at-bottom {
+  background-color: white;
+  color: var(--blue);
 }
 
 /* =========================================================
@@ -2949,6 +2955,18 @@ footer section {
 
   .agent-card {
     padding: 12px;
+  }
+
+  footer section {
+    min-height: unset;
+  }
+
+  .footer-grid {
+    padding-bottom: 20px;
+  }
+
+  .footer-big-century {
+    display: none;
   }
 }
 
