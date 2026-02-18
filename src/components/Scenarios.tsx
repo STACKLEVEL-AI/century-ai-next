@@ -132,8 +132,7 @@ export default function Scenarios() {
               <div className="agent-grid">
                 {t.agents.map((a) => (
                   <article className="agent-card" key={a.id}>
-                    <p className="agent-kicker">Агент</p>
-                    <h4>{a.title}</h4>
+                    <p className="agent-kicker">{a.title}</p>
                     <p>{a.text}</p>
                     <ul
                       className="agent-badges"
@@ -184,4 +183,3 @@ export default function Scenarios() {
     </section>
   )
 }
-

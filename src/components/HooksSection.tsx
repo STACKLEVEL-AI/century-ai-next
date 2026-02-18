@@ -46,9 +46,11 @@ export default function HooksSection() {
         {hooks.map((h) => (
           <article className="hook-card" key={h.num}>
             <p className="hook-num">{h.num}</p>
-            <h3>{h.title}</h3>
-            <p>{h.text}</p>
-            <span>{h.result}</span>
+            <div className='hook-content'>
+              <h3>{h.title}</h3>
+              <p>{h.text}</p>
+              <span>{h.result}</span>
+            </div>
           </article>
         ))}
       </div>

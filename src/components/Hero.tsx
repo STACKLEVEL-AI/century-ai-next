@@ -2,6 +2,17 @@
 
 import { useReveal } from '@/hooks/useReveal'
 
+const items = [
+  'CDTO (цифровая трансформация)',
+  'CIO (архитектура и ИТ)',
+  'CDO (данные и ИИ)',
+  'Информационная безопасность',
+  'Риск-офис',
+  'Комплаенс',
+  'Внутренний аудит',
+  'Бизнес-владельцы',
+]
+
 export default function Hero() {
   const { ref, className, style } = useReveal()
 
@@ -30,7 +41,7 @@ export default function Hero() {
             <a href="#contact" className="btn btn-blue">
               Обсудить кейс и KPI
             </a>
-            <a href="#proof" className="btn btn-ghost">
+            <a href="#narrative" className="btn btn-ghost">
               Посмотреть дорожную карту
             </a>
           </div>
@@ -63,7 +74,21 @@ export default function Hero() {
           </article>
         </div>
       </div>
+      <div
+        className="stakeholders"
+        aria-label="Ключевые участники программы"
+      >
+        <div className="shell stakeholders-inner">
+          <p>Ключевые участники</p>
+          <div className="stakeholders-marquee">
+            <div className="stakeholders-track">
+              {[...items, ...items].map((label, i) => (
+              <span key={i}>{label}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
-

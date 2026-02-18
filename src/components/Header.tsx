@@ -89,17 +89,15 @@ export default function Header() {
     <header className="site-header">
       <div className="shell header-main">
         <a href="#home" className="logo" aria-label="Century by Stacklevel Group">
-          <span className="logo-century">CENTURY</span>
           <span className="logo-line-two">
             <Image
               className="logo-stacklevel"
-              src="/assets/sl.svg"
+              src="assets/sl.png"
               alt="Stacklevel"
-              width={277}
+              width={300}
               height={23}
               priority
             />
-            <span className="logo-group">GROUP</span>
           </span>
         </a>
 
@@ -120,10 +118,10 @@ export default function Header() {
           aria-label="Основная навигация"
         >
           <a href="#why-now" onClick={closeMenu}>Задачи&nbsp;CDTO</a>
+          <a href="#narrative" onClick={closeMenu}>Дорожная&nbsp;карта</a>
           <a href="#platform" onClick={closeMenu}>Контур</a>
           <a href="#scenarios" onClick={closeMenu}>Кейсы</a>
           <a href="#motion" onClick={closeMenu}>Преимущества</a>
-          <a href="#proof" onClick={closeMenu}>Дорожная&nbsp;карта</a>
         </nav>
 
         <div className="header-tools">
@@ -135,4 +133,3 @@ export default function Header() {
     </header>
   )
 }
-
