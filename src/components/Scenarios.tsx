@@ -160,26 +160,6 @@ export default function Scenarios() {
           </article>
         ))}
       </div>
-
-      <div
-        className="shell build-share-run"
-        aria-label="Цикл работы с агентами"
-      >
-        <article>
-          <p>Создать</p>
-          <span>Собираем агента из кейса, данных, ролей и KPI.</span>
-        </article>
-        <article>
-          <p>Поделиться</p>
-          <span>Публикуем шаблон для бизнеса, ИТ, ИБ и риск-офиса.</span>
-        </article>
-        <article>
-          <p>Запустить</p>
-          <span>
-            Запускаем в рабочем контуре с аудитом и метриками эффекта.
-          </span>
-        </article>
-      </div>
     </section>
   )
 }
