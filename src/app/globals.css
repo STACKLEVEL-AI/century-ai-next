@@ -810,7 +810,6 @@ a {
   opacity: 0.55;
 }
 
-/* ===== ГОРИЗОНТАЛЬНЫЙ ТАЙМЛАЙН (ТОЛЬКО ДЛЯ МОБИЛОК) ===== */
 .mobile-only {
   display: none;
   width: 100%;
@@ -868,6 +867,7 @@ a {
     border: 2px solid var(--gray);
     transition: all 0.3s ease;
     margin-bottom: 4px;
+    
   }
 
   .timeline-dot.active .dot-number {
@@ -875,20 +875,8 @@ a {
     color: var(--white);
     border-color: var(--blue);
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(33, 13, 255, 0.4);
   }
-
-  .dot-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    text-align: center;
-    white-space: normal;
-    line-height: 1.2;
-    max-width: 80px;
-  }
+  
 
   .timeline-vertical {
     display: none !important;
@@ -930,11 +918,6 @@ a {
       font-size: 1rem;
     }
 
-    .dot-label {
-      font-size: 0.6rem;
-      max-width: 60px;
-    }
-
     .timeline-line {
       top: 20px;
       left: 35px;
@@ -943,9 +926,6 @@ a {
   }
 
   @media (max-width: 360px) {
-    .dot-label {
-      display: none; /* На совсем маленьких экранах скрываем подписи */
-    }
 
     .timeline-dot {
       max-width: 45px;
@@ -959,14 +939,12 @@ a {
   }
 }
 
-/* ===== ДЕСКТОПНЫЙ МАКЕТ С ВЕРТИКАЛЬНЫМ ТАЙМЛАЙНОМ ===== */
 .desktop-layout {
   display: flex;
   gap: 48px;
   min-height: 450px;
 }
 
-/* Вертикальный таймлайн */
 .timeline-vertical {
   position: relative;
   width: 100px;
@@ -1024,7 +1002,6 @@ a {
   color: var(--white);
   border-color: var(--blue);
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(33, 13, 255, 0.4);
 }
 
 .timeline-vertical-dot.completed .vertical-dot-number {
@@ -1064,7 +1041,6 @@ a {
   border-radius: 2px;
 }
 
-/* ===== КОНТЕНТ СПРАВА ===== */
 .stage-content {
   flex: 1;
   z-index: 2;
@@ -1175,14 +1151,12 @@ a {
   color: var(--black);
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (min-width: 769px) {
   .mobile-only {
     display: none !important;
   }
 }
 
-/* АНИМАЦИИ */
 .timeline-vertical-dot:hover .vertical-dot-number {
   transform: scale(1.1);
   border-color: var(--blue);

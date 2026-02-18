@@ -41,7 +41,7 @@ export default function Hero() {
             <a href="#contact" className="btn btn-blue">
               Обсудить кейс и KPI
             </a>
-            <a href="#proof" className="btn btn-ghost">
+            <a href="#narrative" className="btn btn-ghost">
               Посмотреть дорожную карту
             </a>
           </div>

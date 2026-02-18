@@ -7,7 +7,6 @@ import Scenarios from "@/components/Scenarios";
 import BlackPlatform from "@/components/BlackPlatform";
 import Brain from "@/components/Brain";
 import Trust from "@/components/Trust";
-import Proof from "@/components/Proof";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Drawers from "@/components/Drawers";
@@ -30,10 +29,9 @@ export default function Home() {
         <BlackPlatform data-section="5" />
         <Brain data-section="6" />
         <Trust data-section="7" />
-        <Proof data-section="8" />
-        <Contact data-section="9" />
+        <Contact data-section="8" />
       </main>
-      <Footer data-section="10" />
+      <Footer data-section="9" />
       <Drawers />
       <ScrollToTop />
     </>
