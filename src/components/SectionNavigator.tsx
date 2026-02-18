@@ -1,13 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function SectionNavigator() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const SECTION_COUNT = 11;
+  const sectionsRef = useRef<HTMLElement[]>([]);
+
+  const sectionsCount = 11;
+  const contrastSectionIndices = [5, 10];
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll('section'));
+    const sections = Array.from(document.querySelectorAll('section')) as HTMLElement[];
+    sectionsRef.current = sections;
 
     if (sections.length === 0) return;
 
@@ -45,12 +49,20 @@ export default function SectionNavigator() {
     };
   }, []);
 
+  const handleDotClick = (index: number) => {
+    const section = sectionsRef.current[index];
+    if (!section) return;
+
+    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   return (
     <div className="section-dots-container">
-      {Array.from({ length: SECTION_COUNT }).map((_, i) => (
+      {Array.from({ length: sectionsCount }).map((_, i) => (
         <div
           key={i}
-          className={`section-dot ${i === activeIndex ? 'active' : ''}`}
+          className={`section-dot ${i === activeIndex ? 'active' : ''} ${contrastSectionIndices.includes(activeIndex) ? 'contrast' : ''}`}
+          onClick={() => handleDotClick(i)}
         />
       ))}
     </div>
