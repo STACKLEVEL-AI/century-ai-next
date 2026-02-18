@@ -6,7 +6,8 @@ export default function SectionNavigator() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionsRef = useRef<HTMLElement[]>([]);
 
-  const SECTION_COUNT = 11;
+  const sectionsCount = 11;
+  const contrastSectionIndices = [5, 10];
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll('section')) as HTMLElement[];
@@ -57,10 +58,10 @@ export default function SectionNavigator() {
 
   return (
     <div className="section-dots-container">
-      {Array.from({ length: SECTION_COUNT }).map((_, i) => (
+      {Array.from({ length: sectionsCount }).map((_, i) => (
         <div
           key={i}
-          className={`section-dot ${i === activeIndex ? 'active' : ''}`}
+          className={`section-dot ${i === activeIndex ? 'active' : ''} ${contrastSectionIndices.includes(activeIndex) ? 'contrast' : ''}`}
           onClick={() => handleDotClick(i)}
         />
       ))}

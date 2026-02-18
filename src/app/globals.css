@@ -195,6 +195,11 @@ a {
   box-shadow: 0 0 3px 3px rgba(from var(--blue) r g b / 0.2);
 }
 
+.section-dot.active.contrast {
+  background-color: var(--white);
+  box-shadow: 0 0 3px 3px rgba(from var(--white) r g b / 0.2);
+}
+
 /* =========================================================
    Header
    ========================================================= */
