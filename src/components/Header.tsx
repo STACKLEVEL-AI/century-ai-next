@@ -118,10 +118,10 @@ export default function Header() {
           aria-label="Основная навигация"
         >
           <a href="#why-now" onClick={closeMenu}>Задачи&nbsp;CDTO</a>
+          <a href="#narrative" onClick={closeMenu}>Дорожная&nbsp;карта</a>
           <a href="#platform" onClick={closeMenu}>Контур</a>
           <a href="#scenarios" onClick={closeMenu}>Кейсы</a>
           <a href="#motion" onClick={closeMenu}>Преимущества</a>
-          <a href="#proof" onClick={closeMenu}>Дорожная&nbsp;карта</a>
         </nav>
 
         <div className="header-tools">
@@ -133,4 +133,3 @@ export default function Header() {
     </header>
   )
 }
-

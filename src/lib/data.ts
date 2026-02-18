@@ -150,4 +150,3 @@ export const WORKFLOW_DATA: Record<
     ],
   },
 }
-

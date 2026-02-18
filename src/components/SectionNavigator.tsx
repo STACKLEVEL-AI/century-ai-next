@@ -6,8 +6,8 @@ export default function SectionNavigator() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionsRef = useRef<HTMLElement[]>([]);
 
-  const sectionsCount = 11;
-  const contrastSectionIndices = [5, 10];
+  const sectionsCount = 10;
+  const contrastSectionIndices = [5, 9];
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll('section')) as HTMLElement[];

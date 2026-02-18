@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
-// Объединенный контент из Narrative и Proof
 const steps = [
     {
         id: '1',
@@ -61,7 +60,7 @@ const steps = [
     },
 ]
 
-export default function Narrative() {
+export default function Narrative({ ...props }: any) {
     const { ref, className, style } = useReveal(140)
     const [active, setActive] = useState(0)
     const autoRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -115,6 +114,8 @@ export default function Narrative() {
             ref={ref as React.RefObject<HTMLElement>}
             className={`section narrative ${className}`}
             aria-label="Логика программы внедрения"
+            id="narrative"
+            {...props}
             style={style}
         >
             <div className="shell section-head">
@@ -132,8 +133,6 @@ export default function Narrative() {
                 onMouseLeave={startRotation}
             >
                 <aside className="contour-visual">
-                    {/* Горизонтальный таймлайн для мобильных (будет скрыт на десктопе) */}
-                    {/* Горизонтальный таймлайн для мобильных */}
                     <div className="timeline-mini mobile-only">
                         {steps.map((s, i) => (
                             <button
@@ -159,9 +158,7 @@ export default function Narrative() {
                         </div>
                     </div>
 
-                    {/* Основной контент с вертикальным таймлайном для десктопа */}
                     <div className="desktop-layout">
-                        {/* Вертикальный таймлайн слева */}
                         <div className="timeline-vertical">
                             {steps.map((s, i) => (
                                 <button
@@ -187,22 +184,16 @@ export default function Narrative() {
                             </div>
                         </div>
 
-                        {/* Контент справа */}
                         <div className="stage-content">
-                            {/* Заголовок с номером и основным тайтлом */}
                             <h3 className="stage-title">
                                 <span className="stage-index">{steps[active].index}</span>
                                 {steps[active].title}
                             </h3>
 
-                            {/* Подзаголовок из оригинального Narrative */}
                             <div className="stage-subtitle">
                                 <span className="subtitle-badge">{steps[active].subtitle}</span>
                             </div>
                             
-                            
-
-                            {/* Список результатов */}
                             <div className="stage-results-list">
                                 <h4 className="results-heading">Ключевые шаги:</h4>
                                 {steps[active].results.map((item, idx) => (
@@ -212,13 +203,11 @@ export default function Narrative() {
                                     </div>
                                 ))}
                             </div>
-
-                            {/* Основное описание */}
+                            
                             <div className="stage-details">
                                 {steps[active].text}
                             </div>
 
-                            {/* Финальный результат */}
                             <div className="stage-result">
                                 <span className="result-badge">РЕЗУЛЬТАТ ЭТАПА</span>
                                 <p>{steps[active].result} {steps[active].keyOutcome}</p>
