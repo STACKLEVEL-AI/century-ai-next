@@ -185,6 +185,8 @@ a {
   border-radius: 50%;
   box-shadow: 0 0 3px 3px rgba(from var(--gray) r g b / 0.2);
   transition: all var(--duration-base) var(--ease-standard);
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .section-dot.active {
