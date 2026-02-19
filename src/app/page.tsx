@@ -12,14 +12,12 @@ import Footer from "@/components/Footer";
 import Drawers from "@/components/Drawers";
 import ScrollToTop from "@/components/ScrollToTop";
 import SectionNavigator from "@/components/SectionNavigator";
-import ScrollSnapType from "@/components/ScrollSnapType";
 
 export default function Home() {
   return (
     <>
       <Header />
       <SectionNavigator />
-      <ScrollSnapType />
       <main>
         <Hero data-section="0" />
         <HooksSection data-section="1" />
