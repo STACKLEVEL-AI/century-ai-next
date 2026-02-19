@@ -840,7 +840,7 @@ a {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     opacity: 0.5;
     transition: opacity 0.3s ease;
     padding: 0;
@@ -867,7 +867,7 @@ a {
     border: 2px solid var(--gray);
     transition: all 0.3s ease;
     margin-bottom: 4px;
-    
+    box-shadow: 0 0 0 4px #f4f4f6;
   }
 
   .timeline-dot.active .dot-number {
@@ -885,23 +885,37 @@ a {
   .timeline-line {
     position: absolute;
     top: 22px;
-    left: 50px;
-    right: 50px;
+    left: 0;
+    right: 0;
     height: 3px;
     background: var(--gray);
     z-index: 1;
     overflow: hidden;
     border-radius: 2px;
+    -webkit-mask-image: linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 20px,
+            black 40px,
+            black calc(50% - 25px),
+            transparent calc(50% - 25px),
+            transparent calc(50% + 25px),
+            black calc(50% + 25px),
+            black calc(100% - 40px),
+            transparent calc(100% - 20px),
+            transparent 100%
+    );
   }
-
+  
   .timeline-line .line-fill {
     display: block;
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, var(--blue), #6c5ce7);
+    background: var(--blue);
     transition: width 0.3s ease;
     border-radius: 2px;
   }
+
 
   @media (max-width: 480px) {
     .timeline-mini {
@@ -913,9 +927,10 @@ a {
     }
 
     .dot-number {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       font-size: 1rem;
+      box-shadow: 0 0 0 4px #f4f4f6;
     }
 
     .timeline-line {
@@ -995,6 +1010,7 @@ a {
   border-radius: 50%;
   border: 2px solid var(--gray);
   transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px #f4f4f6;
 }
 
 .timeline-vertical-dot.active .vertical-dot-number {
@@ -1014,7 +1030,6 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   white-space: nowrap;
@@ -1022,8 +1037,8 @@ a {
 
 .timeline-vertical-line {
   position: absolute;
-  top: 40px;
-  bottom: 40px;
+  top: 0;
+  bottom: 0;
   left: 50%;
   width: 3px;
   background: var(--gray);
@@ -1031,12 +1046,25 @@ a {
   transform: translateX(-50%);
   overflow: hidden;
   border-radius: 2px;
+  -webkit-mask-image: linear-gradient(
+          180deg,
+          transparent 0px,
+          transparent 90px,
+          black 70px,
+          black calc(50% - 35px),
+          transparent calc(50% - 35px),
+          transparent calc(50% + 35px),
+          black calc(50% + 35px),
+          black calc(100% - 80px),
+          transparent calc(100% - 90px),
+          transparent 100%
+  );
 }
 
 .vertical-line-fill {
   width: 100%;
   height: 0%;
-  background: linear-gradient(180deg, var(--blue), #6c5ce7);
+  background: var(--blue);
   transition: height 0.3s ease;
   border-radius: 2px;
 }
@@ -1054,11 +1082,12 @@ a {
   gap: 16px;
   margin: 0 0 16px 0;
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: var(--black);
+  font-weight: 900;
 }
 
 .stage-index {
@@ -1160,13 +1189,11 @@ a {
 .timeline-vertical-dot:hover .vertical-dot-number {
   transform: scale(1.1);
   border-color: var(--blue);
-  box-shadow: 0 4px 12px rgba(33, 13, 255, 0.2);
 }
 
 .timeline-dot:hover .dot-number {
   transform: scale(1.1);
   border-color: var(--blue);
-  box-shadow: 0 4px 12px rgba(33, 13, 255, 0.2);
 }
 
 /* =========================================================
