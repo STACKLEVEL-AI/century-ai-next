@@ -172,6 +172,9 @@ export default function Header() {
           <a href="#motion" onClick={closeMenu}>
             Преимущества
           </a>
+          <a href="#contact" className="nav-cta" onClick={closeMenu}>
+            Рабочая сессия
+          </a>
         </nav>
 
         <div className="header-tools">
