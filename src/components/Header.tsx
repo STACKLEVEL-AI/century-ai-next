@@ -6,8 +6,14 @@ import Image from "next/image";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
   const headerRef = useRef<HTMLElement>(null);
+  const lastScrollY = useRef(0);
+  const upScrollAccum = useRef(0);
+  const downScrollAccum = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+  }, []);
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
@@ -21,7 +27,22 @@ export default function Header() {
     const onScroll = () => {
       if (menuOpen) return;
       const current = window.scrollY;
-      setHidden(current > lastScrollY.current && current > 80);
+      const delta = current - lastScrollY.current;
+
+      if (delta > 0) {
+        upScrollAccum.current = 0;
+        downScrollAccum.current += delta;
+        if (downScrollAccum.current >= 40 && current > 80) {
+          setHidden(true);
+        }
+      } else {
+        downScrollAccum.current = 0;
+        upScrollAccum.current += Math.abs(delta);
+        if (upScrollAccum.current >= 40) {
+          setHidden(false);
+        }
+      }
+
       lastScrollY.current = current;
     };
 
@@ -31,6 +52,7 @@ export default function Header() {
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
+      if (Math.abs(e.movementY) < 3 && Math.abs(e.movementX) < 3) return;
       if (e.clientY < 80) setHidden(false);
     };
     window.addEventListener("mousemove", onMouseMove);
