@@ -1621,9 +1621,9 @@ section {
 }
 
 .agent-grid {
-  margin-top: 14px;
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -1631,15 +1631,11 @@ section {
   border: var(--border-subtle);
   border-radius: var(--radius-md);
   background: var(--white);
-  padding: 14px;
+  padding: 20px;
   display: grid;
   align-content: start;
   gap: 9px;
   transition: border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
-}
-
-.agent-grid .agent-card:last-child {
-  grid-column: 1 / -1;
 }
 
 .agent-card:hover {
@@ -1728,6 +1724,8 @@ section {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 12px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .scenario-aside p {
@@ -1740,12 +1738,12 @@ section {
   font-weight: 700;
   border: 1px solid var(--color-primary-200);
   border-radius: var(--radius-pill);
-  padding: 5px 10px;
+  padding: 7px 13px;
   background: var(--white);
 }
 
 .scenario-aside span {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.46;
   color: var(--color-text-secondary);
 }
