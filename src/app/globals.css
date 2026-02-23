@@ -1842,9 +1842,9 @@ section {
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: -0.035em;
-  line-height: 0.88;
-  font-size: clamp(2.2rem, 5.1vw, 6.1rem);
-  max-width: 13ch;
+  line-height: 0.95;
+  font-size: clamp(2rem, 4.4vw, 3.95rem);
+  max-width: 16ch;
   font-weight: 600;
   text-wrap: balance;
 }
