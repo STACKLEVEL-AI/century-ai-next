@@ -225,6 +225,22 @@ a {
   transform: translateY(-120%);
 }
 
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Учитываем высоту хедера */
+  padding-top: 130px; /* Высота хедера */
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .header-main {
   min-height: 84px;
   display: grid;
@@ -2050,6 +2066,7 @@ a {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.2, 0.72, 0.14, 1);
   position: relative;
+  height: 230px;
 }
 
 .trust-card:hover {
