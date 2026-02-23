@@ -225,6 +225,22 @@ a {
   transform: translateY(-120%);
 }
 
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Учитываем высоту хедера */
+  padding-top: 130px; /* Высота хедера */
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .header-main {
   min-height: 84px;
   display: grid;
@@ -1605,9 +1621,9 @@ a {
 }
 
 .agent-grid {
-  margin-top: 14px;
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -1615,15 +1631,11 @@ a {
   border: var(--border-subtle);
   border-radius: var(--radius-md);
   background: var(--white);
-  padding: 14px;
+  padding: 20px;
   display: grid;
   align-content: start;
   gap: 9px;
   transition: border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
-}
-
-.agent-grid .agent-card:last-child {
-  grid-column: 1 / -1;
 }
 
 .agent-card:hover {
@@ -1712,6 +1724,8 @@ a {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 12px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .scenario-aside p {
@@ -1724,12 +1738,12 @@ a {
   font-weight: 700;
   border: 1px solid var(--color-primary-200);
   border-radius: var(--radius-pill);
-  padding: 5px 10px;
+  padding: 7px 13px;
   background: var(--white);
 }
 
 .scenario-aside span {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.46;
   color: var(--color-text-secondary);
 }
@@ -1826,9 +1840,9 @@ a {
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: -0.035em;
-  line-height: 0.88;
-  font-size: clamp(2.2rem, 5.1vw, 6.1rem);
-  max-width: 13ch;
+  line-height: 0.95;
+  font-size: clamp(2rem, 4.4vw, 3.95rem);
+  max-width: 16ch;
   font-weight: 600;
   text-wrap: balance;
 }
@@ -2050,6 +2064,7 @@ a {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.2, 0.72, 0.14, 1);
   position: relative;
+  height: 230px;
 }
 
 .trust-card:hover {

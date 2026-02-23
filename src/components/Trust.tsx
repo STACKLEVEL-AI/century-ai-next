@@ -6,7 +6,7 @@ const trustFeatures = [
   {
     id: 1,
     title: 'Развёртывание',
-    description: 'Локально или в изолированном контуре. Данные под вашим полным контролем.',
+    description: 'Локально или в изолированном контуре. Данные под вашим контролем.',
     details: 'Размещение внутри инфраструктуры компании с соблюдением юридических требований.'
   },
   {
@@ -40,7 +40,6 @@ export default function Trust() {
           style={style}
       >
         <div className="shell">
-          {/* Заголовок секции */}
           <div className="section-head">
             <h2>Доверие и управление</h2>
             <p>
@@ -49,7 +48,6 @@ export default function Trust() {
             </p>
           </div>
 
-          {/* Сетка с карточками */}
           <div className="trust-grid">
             {trustFeatures.map((feature) => (
                 <article key={feature.id} className="trust-card">
