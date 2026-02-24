@@ -941,6 +941,50 @@ section {
   gap: 10px;
 }
 
+.hook-advantages {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--gray);
+}
+
+.advantages-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--blue);
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.advantage-text {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 6px !important;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding-left: 12px;
+}
+
+.advantage-text::before {
+  content: "•";
+  color: var(--blue);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .hook-advantages {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .advantage-text {
+    font-size: 0.85rem !important;
+  }
+}
+
 /* =========================================================
    Narrative
    ========================================================= */
@@ -2028,6 +2072,94 @@ section {
   letter-spacing: 0.02em;
   font-size: 0.82rem;
   font-weight: 700;
+}
+
+/* =========================================================
+   Audience блок (как в Contact)
+   ========================================================= */
+.brain-audience {
+  margin-top: 30px;
+}
+
+.audience-strip {
+  border: 1px solid var(--gray);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  min-height: 60px;
+}
+
+.audience-strip p {
+  margin: 0;
+  padding: 0 20px 0 0;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-right: 1px solid var(--gray);
+  flex-shrink: 0;
+}
+
+.audience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.audience-tags span {
+  border: 1px solid var(--gray);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--white);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .audience-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+
+  .audience-strip p {
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0 0 8px 0;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .audience-tags {
+    padding: 0;
+    width: 100%;
+  }
+
+  .audience-tags span {
+    white-space: normal;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .audience-tags {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .audience-tags span {
+    width: 100%;
+  }
 }
 
 /* =========================================================

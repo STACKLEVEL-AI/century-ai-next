@@ -15,85 +15,97 @@ export default function Brain() {
 
   const openSource = useCallback((sourceId: string) => {
     window.dispatchEvent(
-      new CustomEvent('openSourceDrawer', { detail: sourceId })
+        new CustomEvent('openSourceDrawer', { detail: sourceId })
     )
   }, [])
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`section motion ${className}`}
-      id="brain"
-      style={style}
-    >
-      <div className=" shell brain section-head">
-        <h2>Ядро платформы: проверяемые ответы</h2>
-        <p>
-          Демонстрация продуктового режима: слева источники и статусы доступа,
-          справа ответ агента с проверяемыми ссылками. Результаты учитывают
-          праваx доступа и готовы для аудита.
-        </p>
-      </div>
+      <section
+          ref={ref as React.RefObject<HTMLElement>}
+          className={`section motion ${className}`}
+          id="brain"
+          style={style}
+      >
+        <div className="shell brain section-head">
+          <h2>Ядро платформы: проверяемые ответы</h2>
+          <p>
+            Демонстрация продуктового режима: слева источники и статусы доступа,
+            справа ответ агента с проверяемыми ссылками. Результаты учитывают
+            права доступа и готовы для аудита.
+          </p>
+        </div>
 
-      <div className="shell brain-board">
-        <article className="brain-sources">
-          <p className="brain-label">Источники</p>
-          <ul className="brain-source-list">
-            {sources.map((s) => (
-              <li key={s.id}>
-                <button
-                  className="source-item"
+        <div className="shell brain-board">
+          <article className="brain-sources">
+            <p className="brain-label">Источники</p>
+            <ul className="brain-source-list">
+              {sources.map((s) => (
+                  <li key={s.id}>
+                    <button
+                        className="source-item"
+                        type="button"
+                        onClick={() => openSource(s.id)}
+                    >
+                      {s.name}
+                      <span>{s.status}</span>
+                    </button>
+                  </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="brain-answer">
+            <p className="brain-label">Ответ агента</p>
+            <p>
+              По итогам Q3 наибольшее отклонение маржи связано с ростом затрат на
+              логистику и штрафами по SLA{' '}
+              <button
+                  className="citation-badge"
                   type="button"
-                  onClick={() => openSource(s.id)}
-                >
-                  {s.name}
-                  <span>{s.status}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </article>
+                  onClick={() => openSource('source-q3')}
+              >
+                [1]
+              </button>
+              . В договоре с поставщиком есть риск по одностороннему изменению
+              сроков без SLA-компенсации{' '}
+              <button
+                  className="citation-badge"
+                  type="button"
+                  onClick={() => openSource('source-contract')}
+              >
+                [2]
+              </button>
+              .
+            </p>
+            <p>
+              Для ответа на вопрос о ПДн агент использует только разрешённые
+              разделы политики и не показывает закрытые документы{' '}
+              <button
+                  className="citation-badge"
+                  type="button"
+                  onClick={() => openSource('source-policy')}
+              >
+                [3]
+              </button>
+              .
+            </p>
+            <p className="permission-indicator">
+              Ответы учитывают права доступа
+            </p>
+          </article>
+        </div>
 
-        <article className="brain-answer">
-          <p className="brain-label">Ответ агента</p>
-          <p>
-            По итогам Q3 наибольшее отклонение маржи связано с ростом затрат на
-            логистику и штрафами по SLA{' '}
-            <button
-              className="citation-badge"
-              type="button"
-              onClick={() => openSource('source-q3')}
-            >
-              [1]
-            </button>
-            . В договоре с поставщиком есть риск по одностороннему изменению
-            сроков без SLA-компенсации{' '}
-            <button
-              className="citation-badge"
-              type="button"
-              onClick={() => openSource('source-contract')}
-            >
-              [2]
-            </button>
-            .
-          </p>
-          <p>
-            Для ответа на вопрос о ПДн агент использует только разрешённые
-            разделы политики и не показывает закрытые документы{' '}
-            <button
-              className="citation-badge"
-              type="button"
-              onClick={() => openSource('source-policy')}
-            >
-              [3]
-            </button>
-            .
-          </p>
-          <p className="permission-indicator">
-            Ответы учитывают права доступа
-          </p>
-        </article>
-      </div>
-    </section>
+        {/* Нижний блок как в примере Contact */}
+        <div className="shell brain-audience">
+          <div className="audience-strip">
+            <p>для кого?</p>
+            <div className="audience-tags">
+              <span>#Государственный сектор</span>
+              <span>#Крупный бизнес</span>
+              <span>#Корпорации в РБ</span>
+            </div>
+          </div>
+        </div>
+      </section>
   )
 }
