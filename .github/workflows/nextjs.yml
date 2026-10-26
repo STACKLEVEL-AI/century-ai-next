@@ -1,4 +1,4 @@
-name: Validate EU landing
+name: Build and deploy EU landing
 
 on:
   push:
@@ -8,6 +8,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   validate:
@@ -24,14 +28,27 @@ jobs:
       - run: npm run typecheck
       - run: npm run check:export
       - run: npm run test:e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: century-ai-eu-static
           path: out/
-          include-hidden-files: true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: landing-test-results
           path: test-results/
           if-no-files-found: ignore
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

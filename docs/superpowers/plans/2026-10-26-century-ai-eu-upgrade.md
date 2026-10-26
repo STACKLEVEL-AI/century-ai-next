@@ -536,3 +536,13 @@ The user requested restoring job descriptions and explicitly identifying Egor as
 - Vadim Vladymtsev: `Co-founder · CTO`; `Enterprise AI architecture and engineering.`
 - Egor Krychev: `Co-founder · CAIO`; `AI automation, agents and business processes.`
 - Descriptions use a short secondary text style; the product sections retain visual priority.
+
+## N. User revision — publish entirely from main, 2026-10-26
+
+The user requested publication from main and changed Pages Source to GitHub Actions. This request supersedes earlier constraints that disabled automatic deployment and retained gh-pages for hosting.
+
+- Source code, build configuration, tests and workflow live in main. Generated output remains ignored and is uploaded as a Pages artifact from out/.
+- `.github/workflows/nextjs.yml` runs the existing build, typecheck, export isolation check and browser tests, then uses `actions/upload-pages-artifact@v3` and `actions/deploy-pages@v4`.
+- Deployment requires successful validation and is allowed only for refs/heads/main outside pull_request events. It targets the github-pages environment with pages:write and id-token:write scoped to the deploy job.
+- The custom domain remains century-ai.eu. The Pages source must be GitHub Actions, not main/root branch publication.
+- After the replacement deploy succeeds, the obsolete gh-pages branch can be removed. Future deployments use main only.
