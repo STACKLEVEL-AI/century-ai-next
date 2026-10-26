@@ -15,6 +15,7 @@ export default function Footer() {
           <nav className="footer-nav" aria-label="Footer navigation">
             <a href="/#use-cases">Use cases</a>
             <a href="/#security">Security</a>
+            <a href="/#founders">Founders</a>
             <a href="/#privacy">Privacy</a>
             <a href="/#home">Back to top</a>
           </nav>

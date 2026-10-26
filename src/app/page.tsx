@@ -6,6 +6,7 @@ import Brain from "@/components/Brain";
 import Platform from "@/components/Platform";
 import Trust from "@/components/Trust";
 import Narrative from "@/components/Narrative";
+import Founders from "@/components/Founders";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -75,6 +76,7 @@ export default function Home() {
         <Platform />
         <Trust />
         <Narrative />
+        <Founders />
         <Contact />
       </main>
       <Footer />
