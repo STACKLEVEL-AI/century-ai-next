@@ -546,3 +546,5 @@ The user requested publication from main and changed Pages Source to GitHub Acti
 - Deployment requires successful validation and is allowed only for refs/heads/main outside pull_request events. It targets the github-pages environment with pages:write and id-token:write scoped to the deploy job.
 - The custom domain remains century-ai.eu. The Pages source must be GitHub Actions, not main/root branch publication.
 - After the replacement deploy succeeds, the obsolete gh-pages branch can be removed. Future deployments use main only.
+
+CI runtime note: use the official hosted ubuntu-24.04 image and `npx playwright install chromium`. Its Chromium system libraries are preinstalled. The first deployment's redundant `--with-deps` OS upgrade spent over 7 minutes downloading optional font packages from a slow Ubuntu mirror. Browser checks remain mandatory; only the redundant OS package installation is removed.
