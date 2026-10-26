@@ -1,92 +1,93 @@
-'use client'
+import { ArrowDown, Check, Search, Waypoints } from "lucide-react";
+import TelegramLink from "./TelegramLink";
 
-import { useReveal } from '@/hooks/useReveal'
-
-const items = [
-  'CDTO (цифровая трансформация)',
-  'CIO (архитектура и ИТ)',
-  'CDO (данные и ИИ)',
-  'Информационная безопасность',
-  'Риск-офис',
-  'Комплаенс',
-  'Внутренний аудит',
-  'Бизнес-владельцы',
-]
+const exampleSteps = [
+  { title: "Ask", text: "Find answers in approved knowledge", icon: Search },
+  { title: "Review", text: "Check sources and proposed actions", icon: Check },
+  {
+    title: "Act",
+    text: "Move work forward with human oversight",
+    icon: Waypoints,
+  },
+];
 
 export default function Hero() {
-  const { ref, className, style } = useReveal()
-
   return (
-      <section
-          ref={ref as React.RefObject<HTMLElement>}
-          className={`hero ${className}`}
-          id="home"
-          style={style}
-      >
-        <div className="shell hero-layout">
-          <div className="hero-copy">
-            <h1>
-              LLM в&nbsp;корпорации —<br />
-              из пилота<br />
-              в&nbsp;<span>управленческое решение</span>
-            </h1>
-            <p className="hero-lead">
-              Century — корпоративная платформа и конвейер внедрения LLM&#8209;сервисов
-              для крупных организаций РФ и Беларуси. От выбора первого кейса с KPI до
-              промышленного запуска: контур внутри периметра (on&#8209;prem/air&#8209;gapped),
-              верификация ответов (RAG&nbsp;+ цитаты), логирование и аудит.
-            </p>
-
-            <div className="hero-actions">
-              <a href="#contact" className="btn btn-blue">
-                Обсудить кейс и KPI
-              </a>
-              <a href="#narrative" className="btn btn-ghost">
-                Посмотреть дорожную карту
-              </a>
-            </div>
-
-            <ul className="hero-signals" aria-label="Ключевые сигналы">
-              <li>Локально (on&#8209;prem) / изолированный контур (air&#8209;gapped)</li>
-              <li>Гибридный RAG + цитирование источников</li>
-              <li>Наблюдаемость + журнал аудита</li>
-              <li>OpenAI&#8209;совместимый API + сменяемые компоненты</li>
-            </ul>
+    <section className="hero" id="home" aria-labelledby="hero-title">
+      <div className="shell hero-layout">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span className="status-dot" aria-hidden="true" />
+            Enterprise AI for European businesses
+          </p>
+          <h1 id="hero-title">
+            Enterprise AI.
+            <br />
+            <span>
+              Under your
+              <br className="desktop-break" /> control.
+            </span>
+          </h1>
+          <p className="hero-lead">
+            Help your teams find answers, process documents and resolve routine
+            requests — with source references, access controls and human review.
+          </p>
+          <p className="hero-support">
+            Start with one workflow. Measure the outcome. Expand from there.
+          </p>
+          <div className="hero-actions">
+            <TelegramLink />
+            <a className="btn btn-text" href="/#use-cases">
+              Explore use cases <ArrowDown size={17} aria-hidden="true" />
+            </a>
           </div>
-
-          <div className="hero-showcase" aria-label="Проектные акценты">
-            <article className="show-card show-card-blue">
-              <p className="show-type">Диагностика и стратегия</p>
-              <h3>Бизнес-кейс с управляемой экономикой</h3>
-              <span>Владелец, KPI, базовый уровень, целевой эффект</span>
-            </article>
-
-            <article className="show-card show-card-black">
-              <p className="show-type">Безопасный запуск</p>
-              <h3>Контур ИБ/комплаенса — часть продукта</h3>
-              <span>Проверки политик, трассируемость, контрольные точки</span>
-            </article>
-
-            <article className="show-card show-card-light">
-              <p className="show-type">Масштабирование</p>
-              <h3>Портфель ИИ-сценариев вместо витрины пилотов</h3>
-              <span>Модель управления, ритм тиражирования, SLA</span>
-            </article>
-          </div>
+          <ul className="hero-signals" aria-label="Key capabilities">
+            {[
+              "Source-linked answers",
+              "Human review",
+              "Deployment options",
+            ].map((signal) => (
+              <li key={signal}>
+                <Check size={14} aria-hidden="true" />
+                {signal}
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <div className="shell">
-          <div className="stakeholders-inner" aria-label="Ключевые участники программы">
-            <p>Ключевые участники</p>
-            <div className="stakeholders-marquee">
-              <div className="stakeholders-track">
-                {[...items, ...items].map((label, i) => (
-                    <span key={i}>{label}</span>
-                ))}
+        <div
+          className="workflow-visual"
+          aria-label="Illustrative workflow: ask, review and act"
+        >
+          <div className="visual-heading">
+            <span>Example workflow</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+          <div className="workflow-steps">
+            {exampleSteps.map(({ title, text, icon: Icon }, index) => (
+              <div
+                className={`workflow-card workflow-card-${index + 1}`}
+                key={title}
+              >
+                <div className="workflow-icon">
+                  <Icon size={23} strokeWidth={1.6} aria-hidden="true" />
+                </div>
+                <div>
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                </div>
+                <span className="workflow-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
               </div>
-            </div>
+            ))}
+          </div>
+          <div className="visual-baseline" aria-hidden="true">
+            {Array.from({ length: 12 }, (_, i) => (
+              <span key={i} />
+            ))}
           </div>
         </div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }

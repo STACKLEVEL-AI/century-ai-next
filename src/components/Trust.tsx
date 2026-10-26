@@ -1,68 +1,96 @@
-'use client'
+import { Check, Eye, LockKeyhole, Server, UserRoundCheck } from "lucide-react";
 
-import { useReveal } from '@/hooks/useReveal'
-
-const trustFeatures = [
+const controls = [
   {
-    id: 1,
-    title: 'Развёртывание',
-    description: 'Локально или в изолированном контуре. Данные под вашим контролем.',
-    details: 'Размещение внутри инфраструктуры компании с соблюдением юридических требований.'
+    title: "Deployment choices",
+    text: "Discuss on-premises or private infrastructure to match the requirements of your environment.",
+    icon: Server,
   },
   {
-    id: 2,
-    title: 'Контроль доступа',
-    description: 'Ролевая модель IAM: ответы только из разрешённых источников.',
-    details: 'Интеграция с корпоративной системой управления доступом.'
+    title: "Access boundaries",
+    text: "Define which sources a user or workflow is allowed to use.",
+    icon: LockKeyhole,
   },
   {
-    id: 3,
-    title: 'Аудит',
-    description: 'Неизменяемый журнал всех действий и решений.',
-    details: 'Фиксируются запрос, источники, версия политики и результат.'
+    title: "Human oversight",
+    text: "Set review points for exceptions and actions that require approval.",
+    icon: UserRoundCheck,
   },
   {
-    id: 4,
-    title: 'Качество',
-    description: 'Мониторинг метрик и рисков в реальном времени.',
-    details: 'Пороговые значения качества для управления портфелем кейсов.'
-  }
-]
+    title: "Operational visibility",
+    text: "Review activity, outputs and usage to support ongoing evaluation.",
+    icon: Eye,
+  },
+];
+const faqs = [
+  {
+    question: "Can Century work with our existing systems?",
+    answer:
+      "We scope the required sources and integrations around the first workflow. Available interfaces, access rules and implementation effort are reviewed before the project starts.",
+  },
+  {
+    question: "Where will our data be processed?",
+    answer:
+      "The processing location and external dependencies depend on the agreed deployment. These are defined before implementation rather than assumed from the website's domain.",
+  },
+  {
+    question: "Does the platform automatically make us compliant?",
+    answer:
+      "No. Compliance depends on your use case, configuration, contracts and operating processes. Technical controls support that work but do not replace it.",
+  },
+];
 
 export default function Trust() {
-  const { ref, className, style } = useReveal()
-
   return (
-      <section
-          ref={ref as React.RefObject<HTMLElement>}
-          className={`section trust ${className}`}
-          id="trust"
-          style={style}
-      >
-        <div className="shell">
-          <div className="section-head">
-            <h2>Доверие и управление</h2>
-            <p>
-              Доказательная рамка для корпоративного внедрения ИИ:
-              безопасность, прозрачность и контроль на каждом уровне.
-            </p>
-          </div>
-
-          <div className="trust-grid">
-            {trustFeatures.map((feature) => (
-                <article key={feature.id} className="trust-card">
-                  <div className="trust-card-content">
-                    <div className="trust-card-header">
-                      <span className="trust-number">{feature.id.toString().padStart(2, '0')}</span>
-                      <h3>{feature.title}</h3>
-                    </div>
-                    <p className="trust-description">{feature.description}</p>
-                    <p className="trust-detail">{feature.details}</p>
-                  </div>
-                </article>
-            ))}
-          </div>
+    <section
+      className="section security-section"
+      id="security"
+      aria-labelledby="security-title"
+    >
+      <div className="shell">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <span className="section-number" aria-hidden="true">
+              04
+            </span>
+            Security
+          </p>
+          <h2 id="security-title">
+            Decide where AI runs
+            <br /> and how it is controlled.
+          </h2>
+          <p>
+            Agree the deployment model, permitted sources and review
+            responsibilities before introducing AI into a business process.
+          </p>
         </div>
-      </section>
-  )
+        <div className="security-grid">
+          {controls.map(({ title, text, icon: Icon }) => (
+            <article className="security-card" key={title}>
+              <div className="control-icon">
+                <Icon size={24} strokeWidth={1.5} aria-hidden="true" />
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <p className="security-note">
+          <Check size={17} aria-hidden="true" />
+          <span>
+            Data location, retention, support access and external services are
+            agreed for each deployment.
+          </span>
+        </p>
+        <div className="faq-list">
+          {faqs.map(({ question, answer }) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

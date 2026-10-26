@@ -1,110 +1,43 @@
-"use client";
+import TelegramLink from "./TelegramLink";
 
-import Image from "next/image";
-import { Mail, Phone, Globe, Send, Youtube } from "lucide-react";
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="site-footer">
-      <section>
-        <div className="shell footer-grid">
-          <article className="footer-brand">
-            <a
-              href="#home"
-              className="footer-logo"
-              aria-label="Century by Stacklevel Group"
-            >
-              <span className="footer-line">
-                <Image
-                  className="footer-stacklevel"
-                  src="assets/sl.png"
-                  alt="Stacklevel"
-                  width={277}
-                  height={23}
-                />
-              </span>
+      <div className="shell">
+        <div className="footer-main">
+          <div>
+            <a href="/" className="brand">
+              <span className="brand-mark" aria-hidden="true" />
+              Century
             </a>
-            Контуры внедрения ИИ для промышленной эксплуатации в корпорациях.
-          </article>
-
-          <article className="footer-col">
-            <p className="footer-title">Контакты</p>
-            <div className="footer-contacts">
-              <a
-                href="mailto:v.bakhmat@stacklevel.group"
-                className="contact-link"
-                rel="noopener noreferrer"
-              >
-                <Mail size={16} />
-                <span>v.bakhmat@stacklevel.group</span>
-              </a>
-
-              <a href="tel:+375296682127" className="contact-link">
-                <Phone size={16} />
-                <span>+375 (29) 668-21-27</span>
-              </a>
-
-              <a
-                href="https://stacklevel.group"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                <Globe size={16} />
-                <span>stacklevel.group</span>
-              </a>
-
-              <a
-                href="tg://resolve?domain=vitalibakhmat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                <Send size={16} />
-                <span>Telegram</span>
-              </a>
-
-              <a
-                href="https://www.youtube.com/@STACKLEVELGROUP"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                <Youtube size={16} />
-                <span>Youtube</span>
-              </a>
-            </div>
-          </article>
-
-          <article className="footer-col">
-            <p className="footer-title">QR-код</p>
-            <div className="footer-qr">
-              <Image
-                src="assets/qr-code.png"
-                alt="QR-код для связи"
-                width={120}
-                height={120}
-                className="qr-image"
-              />
-            </div>
-          </article>
+            <p>Enterprise AI for knowledge, workflows and support.</p>
+          </div>
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <a href="/#use-cases">Use cases</a>
+            <a href="/#security">Security</a>
+            <a href="/#privacy">Privacy</a>
+            <a href="/#home">Back to top</a>
+          </nav>
         </div>
-
-        <div className="footer-big-century">
-          <Image
-            src="assets/CENTURY_White_H.png"
-            alt="CENTURY_White_H"
-            width={0}
-            height={0}
-            className="century-image"
-          />
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Century.</p>
+          <TelegramLink className="footer-contact">
+            Vitali Bakhmat on Telegram
+          </TelegramLink>
         </div>
-
-        <div className="shell footer-bottom">
-          <p>&copy; {year} Century by Stacklevel Group.</p>
-        </div>
-      </section>
+        <details className="privacy-detail" id="privacy">
+          <summary>Website privacy information</summary>
+          <p>
+            This landing page has no contact forms, embedded chat or analytics
+            added by Century. We do not use cookies or local storage in the
+            application code. The hosting provider may process technical request
+            data to deliver and protect the website. If you choose to contact
+            Vitali, you leave this website and use Telegram, where its own terms
+            and privacy practices apply. Please avoid sending confidential
+            business information in an initial message.
+          </p>
+        </details>
+      </div>
     </footer>
   );
 }

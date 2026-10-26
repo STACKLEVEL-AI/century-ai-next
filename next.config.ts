@@ -1,20 +1,9 @@
-import type { NextConfig } from 'next'
-
-const isProd = process.env.NODE_ENV === 'production'
-const repoName = 'century-ai-next'
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  ...(isProd
-    ? {
-        basePath: `/${repoName}`,
-        assetPrefix: `/${repoName}`,
-      }
-    : {}),
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+};
 
-}
-
-export default nextConfig
+export default nextConfig;
