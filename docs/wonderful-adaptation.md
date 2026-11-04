@@ -138,6 +138,10 @@ The workspace lacks `/proc` RSS metrics, which causes Next.js 15.5.28's optional
 
 This confirms the preview export and its static inspection. At that checkpoint, the unmodified production build was still awaiting GitHub Actions. Browser behaviour and publication need their own evidence; consult the [migration log](design-migration-2026-11-04.md#validation-record) for subsequent browser and deployment results. A live release is established by a successful Actions deployment and the live Pages site.
 
+### Production release checkpoint — 4 November 2026
+
+[PR #47](https://github.com/STACKLEVEL-AI/century-ai-next/pull/47) was merged into `main` as `1163e7c32c64efe17043ec8e85a60a6c60adf502`. The unmodified production build and Pages deployment succeeded in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065). The published design was then inspected at [century-ai.eu](https://century-ai.eu/): homepage film and navigation, AI OS mouse/keyboard tabs, Gateway period/view changes, industry selection, founder portraits and the Contact destination were verified. The migration log contains the exact checks, limitations and live screenshots. Mobile rendering and automated Playwright assertions are not claimed by this manual desktop review.
+
 ## Deployment-only GitHub workflow
 
 The workflow `.github/workflows/nextjs.yml` is named **Deploy Century to GitHub Pages**. It runs on pushes to `main` and manual dispatch with `main` selected. One deployment job performs checkout, Node setup, `npm ci`, `npm run build`, artifact upload from `out/` and GitHub Pages deployment.

@@ -22,15 +22,38 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 - [x] Recompose the homepage: cinematic hero, use cases, platform, deployment, strategy, industries and founders.
 - [x] Carry the design through product, industry and company pages.
 - [x] Refresh metadata, social preview, press resources and project documentation.
-- [ ] Build and inspect the static export; check desktop/mobile and key interactions.
-- [ ] Review the diff, publish the branch, merge to `main`, verify deployment and present the result.
+- [x] Build and inspect the static export; review responsive source and check key interactions in the live desktop browser.
+- [x] Review the diff, publish the branch, merge to `main`, verify deployment and capture the result.
 
 ## Validation record
 
 - `npm run typecheck`: passed.
-- Local preview build: all routes generated. The workspace lacks `/proc` RSS metrics, so Next 15.5.28's optional `traceMemoryUsage` diagnostic throws before compilation. Only the ignored local dependency tracer was temporarily changed to skip that exact `ENOENT` diagnostic. No global process API, application source, package lock or deployment workflow is patched. This is a preview-only build; the unmodified production build must still pass on GitHub Actions.
+- Local preview build: all routes generated. The workspace lacks `/proc` RSS metrics, so Next 15.5.28's optional `traceMemoryUsage` diagnostic throws before compilation. Only the ignored local dependency tracer was temporarily changed to skip that exact `ENOENT` diagnostic. No global process API, application source, package lock or deployment workflow is patched. The unmodified production build subsequently passed in GitHub Actions, as recorded below.
 - `npm run check:export`: passed for all 26 content routes, unique metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels.
-- Local Playwright suite could not reach assertions because Chromium is absent. Its standard browser download returned a truncated archive. The Cloud Browser is separate from the localhost preview server. Live-browser validation follows the authorised production deployment; no browser test success is claimed at this checkpoint.
+- Local Playwright suite could not reach assertions because Chromium is absent. Its standard browser download returned a truncated archive. The Cloud Browser is separate from the localhost preview server. No automated browser test success is claimed; the separate live-browser checks are recorded below.
+- `git diff --check`: passed. The two supplied logo SVGs were verified byte-for-byte unchanged.
+
+## Released and checked — 4 November 2026
+
+- [PR #47](https://github.com/STACKLEVEL-AI/century-ai-next/pull/47) merged into `main` as [`1163e7c32c64efe17043ec8e85a60a6c60adf502`](https://github.com/STACKLEVEL-AI/century-ai-next/commit/1163e7c32c64efe17043ec8e85a60a6c60adf502).
+- The standard, unmodified production build and GitHub Pages deployment both completed successfully in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065), for that exact merge commit.
+- The new release was verified at [https://century-ai.eu/](https://century-ai.eu/) after deployment. The following checks used the live site in a desktop browser, not the local preview.
+
+| Live check | Observed result |
+| --- | --- |
+| Homepage visuals and film | Supplied white wordmark, Inter typography, new photographic design and local film rendered. Video reached ready state 4 without a media error; playback and pause worked. |
+| Shared header | Platform menu expanded and its AI OS link navigated successfully. Scrolled header changed to the light surface and black wordmark. |
+| AI OS | Dark photographic hero rendered. Clicking Observability changed the panel; ArrowRight selected Workflows and displayed the matching content. |
+| Gateway | Selecting 7d changed the example values and period label. Control examples displayed its matching panel. CSV link declared `century-sample-usage-7d.csv`; a file download was not executed in this manual check. |
+| Industry selector | Selecting Retail changed the selected state, heading, description and destination link. |
+| Founders and contact | Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retained their names, roles and loaded portraits. The Contact page rendered and its main action retained `https://t.me/vitalibakhmat`. |
+| Desktop layout and errors | At a 1363 px browser width, the homepage document width was 1348 px, with no horizontal overflow. No site errors were present in the captured browser error log; extension-only messages were excluded. |
+
+Responsive breakpoints were reviewed in source, including the repaired 760–900 px navigation range. A rendered mobile-viewport check, automated Playwright assertions, reduced-motion emulation and a manual visit to every route were not completed in this environment. Static export inspection covered all 26 content routes.
+
+Release screenshots: [homepage](previews/century-home-live-2026-11-04.jpg) and [AI OS](previews/century-ai-os-live-2026-11-04.jpg).
+
+![Published Century homepage](previews/century-home-live-2026-11-04.jpg)
 
 ## Asset provenance
 
@@ -54,3 +77,5 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 3. Internal page families, neutral illustrations, About/Contact media, both brand downloads, favicon and social metadata updated. Supplied SVG files verified byte-for-byte identical. CSS compatibility warnings corrected; final preview export rerun before publication.
 
 4. Independent source review found and fixed the 760–900 px mobile menu breakpoint. The full mobile panel structure now applies at 900 px. The header is absolute before JavaScript upgrades it to fixed on scroll, preserving readable top navigation without JavaScript. No further material source-review blockers found.
+
+5. Five staged implementation commits were published through the GitHub connector. PR #47 was merged, the standard Pages workflow succeeded, and the live release was inspected. This final documentation checkpoint records the actual browser checks and preserves screenshots of the published result.
