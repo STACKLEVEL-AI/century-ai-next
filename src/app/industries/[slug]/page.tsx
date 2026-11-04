@@ -1,6 +1,6 @@
 import { ArrowRight, BookOpen, FileCheck2, ShieldCheck, UserRoundCheck } from "lucide-react";
 import { notFound } from "next/navigation";
-import IndustryArtwork from "@/components/industries/IndustryArtwork";
+import AppScreenshot from "@/components/AppScreenshot";
 import PageFrame from "@/components/site/PageFrame";
 import PageHero from "@/components/site/PageHero";
 import { FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
@@ -40,7 +40,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         title={<>{industry.headline[0]}<br /><span>{industry.headline[1]}</span></>}
         description={industry.intro}
         secondary={{ href: "#workflows", label: "Explore workflows" }}
-      ><IndustryArtwork industry={industry} /></PageHero>
+      ><AppScreenshot capture="files" priority /></PageHero>
 
       <div className="shell industry-breadcrumbs">
         <nav aria-label="Breadcrumb"><a href="/industries/">Industries</a><span aria-hidden="true">/</span><span aria-current="page">{industry.title}</span></nav>

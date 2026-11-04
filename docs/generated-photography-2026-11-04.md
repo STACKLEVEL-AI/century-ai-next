@@ -37,7 +37,9 @@ The film's first scene uses the generated hero, so playback continues the new im
 
 ## Provenance retained
 
-The [earlier migration log](design-migration-2026-11-04.md#asset-provenance) preserves original reference URLs and the former film selection. That log and `docs/previews/century-home-live-2026-11-04.jpg` / `century-ai-os-live-2026-11-04.jpg` remain historical records; the screenshots are not website photo assets. Supplied wordmarks, the derived symbol, favicon and native CSS/SVG product, industry and article illustrations remain unchanged.
+The [earlier migration log](design-migration-2026-11-04.md#asset-provenance) preserves original reference URLs and the former film selection. That log and `docs/previews/century-home-live-2026-11-04.jpg` / `century-ai-os-live-2026-11-04.jpg` remain historical records; the screenshots are not website photo assets. This photography refresh retains the supplied wordmarks, compact symbol, favicon, editorial article artwork and feature icons.
+
+The branch also incorporates the concurrent [application-capture update, PR #48](https://github.com/STACKLEVEL-AI/century-ai-next/pull/48), merged into `main` as `2663feebe46495f632145464b6074f3b037e832b`. Its six real application screenshots in `public/media/app/`, provenance records, components and updated export checks are preserved. These interface captures are not photographs and are not regenerated. The photographic references remain pinned to `9662939`, since the capture update did not change them.
 
 ## Verification
 
@@ -59,7 +61,7 @@ Check the homepage at desktop and mobile widths, including the hero poster-to-fi
 - All 13 generated masters were visually compared with their references for composition, palette, photographic texture and subject continuity. Founder portraits were reviewed for resemblance; the expected cover crops were assessed against the existing CSS.
 - All 17 WebP outputs decode successfully, match the inventory dimensions and have different SHA-256 hashes from the source assets. WebP quality is 86 for scene/background assets and 90 for portraits. The portraits have three times the original pixel width, retaining the original aspect ratios.
 - The regenerated social image is 1200 × 630. FFprobe confirmed the background film is H.264, 1280 × 720, 24 fps, 312 frames and exactly 13 seconds, without audio. Sampled frames were visually inspected.
-- `npm run typecheck`, `npm run build` and `npm run check:export` passed after the final assets were installed. The export inspector checked all 26 content routes and 2,302 local links/assets, alongside metadata, sitemap and existing content checks.
+- `npm run typecheck`, `npm run build` and `npm run check:export` passed after the final assets were installed and the concurrent application-capture update was incorporated. The export inspector checked all 26 content routes and 2,364 local links/assets, alongside metadata, sitemap, contact destinations and application screenshots. The six application-capture files were compared byte-for-byte with the updated `main`.
 - This workspace cannot read the operating-system RSS counter. Next.js's optional memory tracer raised `ENOENT` / `uv_resident_set_memory`; an ignored local dependency change skips only that exact diagnostic failure. Compilation, type checks, application source, dependency lock and deployment workflow were not weakened or changed for this workaround. A clean production build remains a separate GitHub Actions check after merge.
 - Playwright's Chromium installation returned a truncated archive, so no browser automation assertions or new live-site review are claimed. The gallery and crop review are image/CSS inspections, not browser screenshots.
 

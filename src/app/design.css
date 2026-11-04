@@ -276,3 +276,49 @@ h3 { font-weight: 400; }
   .prod-os-wordmark { font-size: 17px; }.prod-os-wordmark img { width: 125px; }
   .prod-os-hero h1 { font-size: clamp(36px, 8.7vw, 50px); }
 }
+
+/* Real application captures. The published files already contain the selected
+   crop; every pixel remains visible, including in the full-size image link. */
+.app-capture-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.app-capture { margin: 0; min-width: 0; overflow: hidden; display: flex; flex-direction: column; background: #fff; color: #171719; border: 1px solid #deded9; border-radius: 9px; }
+.app-capture-stage { display: flex; align-items: center; justify-content: center; flex: 1; min-height: 240px; padding: 36px 28px; background: #f1f2f7; }
+.app-capture-dark .app-capture-stage { background: #0a0c14; }
+.app-capture-open { display: block; position: relative; width: 100%; min-width: 0; text-decoration: none; }
+.app-capture-open img { display: block; width: 100%; height: auto; border-radius: 3px; }
+.app-capture-expand { position: absolute; right: -12px; top: -17px; display: grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; color: #171719; background: #fff; border: 1px solid #d6d6d1; box-shadow: 0 3px 10px #0000000c; transition: transform 150ms; }
+.app-capture-open:hover .app-capture-expand { transform: translate(2px, -2px); }
+.app-capture-open:focus-visible { outline: 2px solid #b4441a; outline-offset: 8px; }
+.app-capture figcaption { padding: 24px 26px 26px; border-top: 1px solid #deded9; }
+.app-capture figcaption > span { display: block; font-size: 21px; line-height: 1.2; font-weight: 400; letter-spacing: -.035em; }
+.app-capture figcaption > p { color: #646461; font-size: 13px; line-height: 1.65; margin: 10px 0 0; max-width: 440px; }
+.app-platform-captures { max-width: 1100px; margin: 56px auto 0; padding-bottom: 76px; }
+.app-platform-captures .app-capture, .app-os-captures .app-capture { border-color: #ffffff24; }
+.app-os-captures { max-width: 1100px; margin: 54px auto 0; padding-bottom: 76px; text-align: left; }
+.app-hero-stack { display: grid; gap: 22px; }
+.app-hero-stack .app-capture-stage { min-height: 148px; padding: 27px 22px; }
+.app-hero-stack .app-capture figcaption { padding: 20px 22px; }
+.app-hero-stack .app-capture figcaption > span { font-size: 18px; }
+.app-hero-stack .app-capture figcaption > p { font-size: 12px; }
+.app-details-section { background: #f3f3ef; }
+.app-details-section .example-heading-row > p { max-width: 400px; }
+.app-detail-grid .app-capture-stage { min-height: 210px; }
+.app-gateway-section { padding-top: 75px; }
+.infra-panel { min-height: 330px; }
+.infra-panel-copy { padding: 46px 40px; }
+
+@media (max-width: 760px) {
+  .app-capture-grid { grid-template-columns: 1fr; gap: 24px; }
+  .app-capture-stage { min-height: 190px; padding: 28px 22px; }
+  .app-capture figcaption { padding: 23px; }
+  .app-platform-captures, .app-os-captures { margin-top: 38px; padding-bottom: 56px; }
+  .app-hero-stack { gap: 20px; }
+  .app-gateway-section { padding-top: 55px; }
+  .infra-panel { min-height: 0; }
+  .infra-panel-copy { padding: 28px; }
+}
+@media (max-width: 400px) {
+  .app-capture-stage { padding: 25px 17px; min-height: 160px; }
+  .app-capture figcaption { padding: 20px; }
+  .app-capture figcaption > span { font-size: 19px; }
+  .app-capture figcaption > p { font-size: 12px; }
+}
