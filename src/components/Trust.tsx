@@ -48,47 +48,58 @@ export default function Trust() {
       aria-labelledby="security-title"
     >
       <div className="shell">
-        <div className="section-heading">
-          <p className="eyebrow">
-            <span className="section-number" aria-hidden="true">
-              04
-            </span>
-            Security
-          </p>
-          <h2 id="security-title">
-            Decide where AI runs
-            <br /> and how it is controlled.
-          </h2>
-          <p>
-            Agree the deployment model, permitted sources and review
-            responsibilities before introducing AI into a business process.
-          </p>
+        <div className="security-layout">
+          <div className="section-heading security-intro">
+            <p className="eyebrow">
+              <span className="section-number" aria-hidden="true">
+                04 /
+              </span>
+              Security &amp; control
+            </p>
+            <h2 id="security-title">
+              Your environment.
+              <br /> Your boundaries.
+            </h2>
+            <p>
+              Decide where AI runs and how it is controlled. Agree the deployment
+              model, permitted sources and review responsibilities before
+              introducing AI into a business process.
+            </p>
+          </div>
+          <div className="security-content">
+            <div className="security-grid">
+              {controls.map(({ title, text, icon: Icon }) => (
+                <article className="security-card" key={title}>
+                  <div className="control-icon">
+                    <Icon size={24} strokeWidth={1.5} aria-hidden="true" />
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+            <p className="security-note">
+              <Check size={17} aria-hidden="true" />
+              <span>
+                Data location, retention, support access and external services are
+                agreed for each deployment.
+              </span>
+            </p>
+          </div>
         </div>
-        <div className="security-grid">
-          {controls.map(({ title, text, icon: Icon }) => (
-            <article className="security-card" key={title}>
-              <div className="control-icon">
-                <Icon size={24} strokeWidth={1.5} aria-hidden="true" />
-              </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-        <p className="security-note">
-          <Check size={17} aria-hidden="true" />
-          <span>
-            Data location, retention, support access and external services are
-            agreed for each deployment.
-          </span>
-        </p>
-        <div className="faq-list">
-          {faqs.map(({ question, answer }) => (
-            <details key={question}>
-              <summary>{question}</summary>
-              <p>{answer}</p>
-            </details>
-          ))}
+        <div className="security-faq">
+          <div className="faq-heading">
+            <p className="eyebrow">A few practical questions</p>
+            <h3>Before we start.</h3>
+          </div>
+          <div className="faq-list">
+            {faqs.map(({ question, answer }) => (
+              <details key={question}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </div>
     </section>

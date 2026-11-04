@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 const steps = [
   {
     title: "Choose one workflow",
@@ -21,10 +23,10 @@ export default function Narrative() {
       aria-labelledby="process-title"
     >
       <div className="shell">
-        <div className="section-heading">
+        <div className="section-heading process-heading">
           <p className="eyebrow">
             <span className="section-number" aria-hidden="true">
-              05
+              05 /
             </span>
             How we start
           </p>
@@ -36,6 +38,34 @@ export default function Narrative() {
             Build the first workflow around a real business need and agreed
             evaluation criteria.
           </p>
+        </div>
+        <div className="process-intro-grid">
+          <article className="process-intro-card process-intro-deployment">
+            <p className="panel-label">Deployment</p>
+            <h3>AI that fits your environment.</h3>
+            <p>
+              Discuss on-premises or private infrastructure, permitted sources
+              and review responsibilities before introducing AI into a business
+              process.
+            </p>
+            <a className="text-link" href="/security/">
+              Explore deployment choices
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </article>
+          <article className="process-intro-card process-intro-strategy">
+            <p className="panel-label">Strategy</p>
+            <h3>A business need. A measurable next step.</h3>
+            <p>
+              Choose a focused workflow with a clear owner. Agree what a useful
+              outcome looks like, then evaluate the results before a wider
+              rollout.
+            </p>
+            <a className="text-link" href="/#use-cases">
+              Find your starting point
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </article>
         </div>
         <ol className="process-grid">
           {steps.map(({ title, text }, index) => (

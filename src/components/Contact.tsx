@@ -8,14 +8,14 @@ export default function Contact() {
       aria-labelledby="contact-title"
     >
       <div className="shell contact-panel">
-        <div>
+        <div className="contact-copy">
           <p className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
-            Talk to Vitali
+            Start a conversation
           </p>
           <h2 id="contact-title">
-            Let&apos;s find your
-            <br /> first AI workflow.
+            Your next chapter
+            <br /> starts with one workflow.
           </h2>
           <p>
             Tell Vitali which process you want to improve, where the relevant
