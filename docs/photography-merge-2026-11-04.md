@@ -32,9 +32,10 @@ Current main was merged into the candidate before publication so that the previo
 - [x] Preserve the previous application-capture release documentation.
 - [x] TypeScript check passes.
 - [x] Build and static export inspection pass for the combined result: 26 content routes and 2,364 local links/assets.
-- [ ] Merge PR #49 and confirm the production build/deployment.
-- [ ] Verify the published media and inspect the live page.
-- [ ] Remove redundant remote and local branches after confirming their contents are saved.
+- [x] Merge PR #49 and confirm the production build/deployment.
+- [x] Verify the published media and inspect the live page.
+- [x] Remove six redundant local branches after confirming their contents are saved.
+- [ ] Remove the four merged branches on GitHub; the connector has no branch-deletion operation and the browser requires sign-in.
 
 The preview build used the existing ignored local dependency workaround for unavailable RSS diagnostics, already documented in the earlier release logs. The production workflow is unchanged. No Playwright run or mobile-browser result is claimed for this merge.
 
@@ -44,4 +45,16 @@ The remote branches `design/real-century-screenshots-2026-11-04`, `design/wonder
 
 Five older local branches can be removed: `design/real-century-screenshots-2026-11-04`, `design/wonderful-century-2026-11-04`, `docs/live-verification-2026-11-04`, `docs/verify-app-captures-2026-11-04` and `release/verified-century-2026-11-04`. Their commits are either ancestors of main or have exact tree equivalents already in main's history. The differing local SHAs were produced when the same changes were transferred through the GitHub API. All eight local-only intermediate trees were checked, not just their branch tips.
 
-Keep `main` and the remote default-branch reference. Record completed deletion and deployment evidence below.
+The five older local branches above and the completed local photography branch were deleted after the merge. The sole local branch is `main`. The four remote branches were verified as merged, but their deletion still requires GitHub browser access; no remote deletion is claimed at this checkpoint.
+
+## Published result
+
+- [PR #49](https://github.com/STACKLEVEL-AI/century-ai-next/pull/49) merged as `981bc840007c05c404e0daa2a5ea8e4487f0c4c6`; corrected source tip: `e78f6db31045a6d03965bd70c8c6507554ed6aa7`.
+- The unmodified production build and deployment [completed successfully in run 41853684192](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41853684192).
+- All 25 canonical public asset URLs returned HTTP 200. Each downloaded response matched the expected repository SHA-256: 16 updated assets, three original founder photographs and six original application captures. The manifest contains the per-file URLs, hashes, sizes and response metadata.
+- Live desktop review confirmed the new homepage imagery, the 13-second 1280 × 720 background film and its pause control. The founder section displayed the original 320 px-wide files at their expected aspect ratios. No horizontal overflow was observed on the reviewed homepage view.
+- Verified public pages: [updated homepage](https://century-ai.eu/#home) and [preserved founders](https://century-ai.eu/#founders).
+
+![Updated photography on the published homepage](previews/century-photography-live-2026-11-04.jpg)
+
+![Original founder photographs preserved on the published website](previews/century-founders-preserved-2026-11-04.jpg)
