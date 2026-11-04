@@ -4,10 +4,12 @@ import Hero from "@/components/Hero";
 import Scenarios from "@/components/Scenarios";
 import Brain from "@/components/Brain";
 import Platform from "@/components/Platform";
-import Trust from "@/components/Trust";
-import Narrative from "@/components/Narrative";
 import Founders from "@/components/Founders";
 import Contact from "@/components/Contact";
+import HomeApproach from "@/components/HomeApproach";
+import HomeIndustries from "@/components/HomeIndustries";
+import HomeProductFamily from "@/components/HomeProductFamily";
+import HomeInsights from "@/components/HomeInsights";
 import Footer from "@/components/Footer";
 import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -72,11 +74,13 @@ export default function Home() {
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <Scenarios />
-        <Brain />
         <Platform />
-        <Trust />
-        <Narrative />
+        <HomeProductFamily />
+        <HomeApproach />
+        <HomeIndustries />
+        <Brain />
         <Founders />
+        <HomeInsights />
         <Contact />
       </main>
       <Footer />

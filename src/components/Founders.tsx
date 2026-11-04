@@ -50,7 +50,8 @@ export default function Founders() {
     >
       <div className="shell">
         <div className="founders-heading">
-          <h2 id="founders-title">Founders</h2>
+          <h2 id="founders-title">The people behind Century.</h2>
+          <a className="home-section-link" href="/about-us/">Get to know the team <ArrowUpRight size={17} aria-hidden="true" /></a>
         </div>
         <div className="founders-grid">
           {team.map(

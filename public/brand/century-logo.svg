@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140" role="img" aria-labelledby="title desc">
+  <title id="title">Century</title>
+  <desc id="desc">Century open C mark and wordmark in Century purple, hex 210DFF.</desc>
+  <g fill="none" stroke="#210dff" stroke-width="14" transform="rotate(-28 65 70)">
+    <path d="M 90.46 44.54 A 36 36 0 1 0 90.46 95.46"/>
+  </g>
+  <text x="121" y="96" fill="#210dff" font-family="Manrope, Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="-4">Century</text>
+</svg>
