@@ -1,7 +1,7 @@
 /* Company and editorial pages: light typography, quiet neutrals, and crisp geometric artwork. */
 .company-text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--color-primary-600); font-size: 14px; font-weight: 650; text-decoration: none; }
 .company-text-link:hover { text-decoration: underline; }
-.company-two-column { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 7vw, 110px); align-items: start; }
+.company-two-column { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 7vw, 110px); align-items: flex-start; }
 .company-prose { display: grid; gap: 24px; color: var(--color-text-secondary); font-size: 17px; }
 .company-prose > .btn, .company-prose > .company-text-link { justify-self: start; }
 .company-mission-section { padding-bottom: 104px; }
@@ -106,7 +106,7 @@
 .contact-page-privacy { font-size: 12px; color: var(--color-text-muted); margin-top: 28px; max-width: 440px; }
 .contact-page-privacy a { display: inline-flex; gap: 5px; align-items: center; margin-top: 6px; color: var(--color-primary-600); }
 .contact-page-before { padding: 52px 0 60px; background: var(--color-bg-subtle); }
-.contact-page-before a { display: flex; align-items: end; justify-content: space-between; gap: 30px; text-decoration: none; margin-top: 20px; }
+.contact-page-before a { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; text-decoration: none; margin-top: 20px; }
 .contact-page-before h2 { font-size: clamp(28px, 3vw, 43px); font-weight: 300; letter-spacing: -1.5px; }
 .contact-page-before a > span { display: inline-flex; align-items: center; gap: 13px; color: var(--color-primary-600); font-size: 14px; }
 .contact-page-before a:hover > span { text-decoration: underline; }
@@ -182,7 +182,7 @@
 .blog-featured-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 34px; font-size: 12px; color: var(--color-text-muted); }
 .blog-featured-footer > span:last-child { display: flex; align-items: center; gap: 12px; color: var(--color-primary-600); font-size: 13px; }
 .blog-featured:hover h2 { color: var(--color-primary-600); }
-.blog-library-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 40px; }
+.blog-library-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; }
 .blog-library-heading h2 { font-size: clamp(30px, 3.4vw, 47px); font-weight: 300; line-height: 1.16; letter-spacing: -2px; margin-top: 18px; }
 .blog-library-heading > p { color: var(--color-text-secondary); font-size: 14px; padding-bottom: 4px; }
 .blog-filters { display: flex; flex-wrap: wrap; gap: 10px; padding-block: 28px; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); }
@@ -216,7 +216,7 @@
 .article-cover .article-art-flow { gap: 28px; }
 .article-cover .article-art-flow > div { width: 145px; height: 158px; gap: 20px; }
 .article-layout { display: grid; grid-template-columns: 250px minmax(0,750px); justify-content: space-between; gap: 65px; margin-top: 75px; padding-bottom: 85px; }
-.article-toc { position: sticky; top: 35px; align-self: start; }
+.article-toc { position: sticky; top: 35px; align-self: flex-start; }
 .article-toc > .eyebrow { margin-bottom: 20px; }
 .article-toc a { display: flex; gap: 12px; font-size: 12px; line-height: 1.55; text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); }
 .article-toc a > span { font-size: 10px; padding-top: 2px; color: var(--color-text-muted); }
@@ -230,7 +230,7 @@
 .article-checklist > .eyebrow { font-size: 10px; color: var(--color-primary-600); }
 .article-checklist ul { padding-left: 18px; margin: 20px 0 0; display: grid; gap: 12px; color: #303031; font-size: 15px; }
 .article-checklist li { padding-left: 5px; }
-.article-endnote { display: flex; align-items: start; gap: 20px; padding-top: 32px; border-top: 1px solid var(--color-border-subtle); margin-top: 42px; }
+.article-endnote { display: flex; align-items: flex-start; gap: 20px; padding-top: 32px; border-top: 1px solid var(--color-border-subtle); margin-top: 42px; }
 .article-endnote .brand-mark { color: var(--color-primary-600); margin-top: 4px; }
 .article-endnote > p { color: var(--color-text-muted); font-size: 12px; max-width: 540px; }
 .article-related { background: var(--color-bg-subtle); }
@@ -245,7 +245,7 @@
 
 /* Website privacy is readable without any interactive features. */
 .privacy-layout { display: grid; grid-template-columns: 250px minmax(0,740px); gap: 70px; justify-content: space-between; padding-bottom: 100px; }
-.privacy-nav { position: sticky; top: 35px; align-self: start; display: flex; flex-direction: column; }
+.privacy-nav { position: sticky; top: 35px; align-self: flex-start; display: flex; flex-direction: column; }
 .privacy-nav .eyebrow { margin-bottom: 18px; }
 .privacy-nav a { padding: 13px 0; font-size: 12px; line-height: 1.5; color: var(--color-text-secondary); text-decoration: none; border-bottom: 1px solid var(--color-border-subtle); }
 .privacy-nav a:hover { color: var(--color-primary-600); }
@@ -286,19 +286,19 @@
   .contact-page-photo p { font-size: 38px; }
   .contact-page-copy { max-width: 650px; padding: 10px 0; }
   .contact-page-copy h1 { font-size: 48px; }
-  .contact-page-before a { flex-direction: column; align-items: start; gap: 18px; }
+  .contact-page-before a { flex-direction: column; align-items: flex-start; gap: 18px; }
   .blog-featured-copy { padding: 30px; }
   .blog-featured > .article-art { min-height: 350px; padding: 40px 15px; }
   .blog-featured .article-art-flow { gap: 5px; }
   .blog-featured .article-art-flow > div { width: 80px; height: 110px; padding: 10px; }
   .blog-featured .article-art-flow > svg { width: 17px; }
   .blog-featured .article-art-flow span { font-size: 10px; }
-  .blog-library-heading { align-items: start; }
+  .blog-library-heading { align-items: flex-start; }
   .blog-library-heading > p { max-width: 250px; padding-top: 23px; }
   .article-layout { grid-template-columns: 1fr; max-width: 750px; gap: 45px; }
   .article-toc { position: static; }
   .article-toc a { padding-block: 12px; }
-  .article-toc .article-toc-contact { justify-content: start; }
+  .article-toc .article-toc-contact { justify-content: flex-start; }
   .article-related-grid { gap: 15px; }
   .article-related-grid > a { padding: 20px; }
   .privacy-layout { grid-template-columns: 1fr; max-width: 750px; gap: 42px; }

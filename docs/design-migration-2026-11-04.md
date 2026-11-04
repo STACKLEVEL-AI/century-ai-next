@@ -21,7 +21,7 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 - [x] Apply supplied wordmarks and shared typography, colours, navigation and footer.
 - [x] Recompose the homepage: cinematic hero, use cases, platform, deployment, strategy, industries and founders.
 - [x] Carry the design through product, industry and company pages.
-- [ ] Refresh metadata, social preview, press resources and project documentation.
+- [x] Refresh metadata, social preview, press resources and project documentation.
 - [ ] Build and inspect the static export; check desktop/mobile and key interactions.
 - [ ] Review the diff, publish the branch, merge to `main`, verify deployment and present the result.
 
@@ -30,7 +30,7 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 - `npm run typecheck`: passed.
 - Local preview build: all routes generated. The workspace lacks `/proc` RSS metrics, so Next 15.5.28's optional `traceMemoryUsage` diagnostic throws before compilation. Only the ignored local dependency tracer was temporarily changed to skip that exact `ENOENT` diagnostic. No global process API, application source, package lock or deployment workflow is patched. This is a preview-only build; the unmodified production build must still pass on GitHub Actions.
 - `npm run check:export`: passed for all 26 content routes, unique metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels.
-- Browser and live-deployment checks: pending.
+- Local Playwright suite could not reach assertions because Chromium is absent. Its standard browser download returned a truncated archive. The Cloud Browser is separate from the localhost preview server. Live-browser validation follows the authorised production deployment; no browser test success is claimed at this checkpoint.
 
 ## Asset provenance
 
@@ -50,3 +50,5 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 1. Source and reference audited; dependencies installed; existing 26 routes and their interactions retained as the baseline.
 
 2. Shared design and homepage implemented; internal product, industry and company styles neutralised. User-provided SVGs are used in the header, footer, press downloads and social preview. The brand monogram is derived from the supplied first glyph.
+
+3. Internal page families, neutral illustrations, About/Contact media, both brand downloads, favicon and social metadata updated. Supplied SVG files verified byte-for-byte identical. CSS compatibility warnings corrected; final preview export rerun before publication.

@@ -25,7 +25,7 @@
 .industry-artwork-workflow li:last-child .industry-artwork-step-number { color: #fff; background: #171719; border-color: #171719; }
 .industry-artwork-step-arrow { flex-shrink: 0; color: #b0b0aa; margin-left: auto; }
 .industry-workflows { background: #f5f5f2; border-block: 1px solid #e3e3de; scroll-margin-top: 100px; }
-.industry-workflow-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 85px; align-items: start; }
+.industry-workflow-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 85px; align-items: flex-start; }
 .industry-workflow-intro { position: sticky; top: 120px; }
 .industry-workflow-intro .section-heading { margin-bottom: 30px; }
 .industry-workflow-intro .section-heading h2 { font-size: clamp(36px, 3.5vw, 51px); font-weight: 300; }
@@ -52,7 +52,7 @@
 .industry-workflow-body dt svg { color: #62625e; }
 .industry-workflow-body dd { margin: 0; color: #62625e; font-size: 12px; line-height: 1.8; }
 .industry-process { background: #171719; color: #fff; }
-.industry-process-heading { display: grid; grid-template-columns: 1.3fr .7fr; gap: 90px; align-items: end; margin-bottom: 58px; }
+.industry-process-heading { display: grid; grid-template-columns: 1.3fr .7fr; gap: 90px; align-items: flex-end; margin-bottom: 58px; }
 .industry-process-heading .section-heading { margin-bottom: 0; }
 .industry-process-heading .section-heading .eyebrow { color: #b0b0aa; }
 .industry-process-heading .section-heading h2 { margin-bottom: 0; font-size: clamp(35px, 3.8vw, 55px); font-weight: 300; }
@@ -67,7 +67,7 @@
 .industry-process-steps p { font-size: 12px; line-height: 1.9; color: #c9c9c3; }
 .industry-process-footer { display: flex; align-items: center; gap: 10px; padding-top: 24px; border-top: 1px solid #303031; color: #c9c9c3; font-size: 10px; line-height: 1.7; }
 .industry-process-dot { width: 5px; height: 5px; border-radius: 1px; flex-shrink: 0; background: #ff6b35; }
-.industry-controls-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 48px; }
+.industry-controls-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 48px; }
 .industry-controls-heading .section-heading { max-width: 760px; margin-bottom: 0; }
 .industry-controls-heading .industry-text-link { flex-shrink: 0; margin-bottom: 4px; }
 .industry-controls .feature-card-icon { color: #171719; }
@@ -88,7 +88,7 @@
 .industry-directory-card > p { color: #62625e; font-size: 12px; line-height: 1.9; margin-top: 15px; margin-bottom: 27px; }
 .industry-directory-card-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #171719; font-size: 11px; font-weight: 600; margin-top: auto; }
 .industry-directory-card-link > span { font-size: 17px; font-weight: 400; }
-.industry-directory-note { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: start; padding: 45px 55px; color: #fff; background: #171719; }
+.industry-directory-note { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 45px 55px; color: #fff; background: #171719; }
 .industry-directory-note .eyebrow { color: #b0b0aa; font-size: 9px; }
 .industry-directory-note h3 { max-width: 450px; font-size: clamp(29px, 3.1vw, 43px); font-weight: 300; letter-spacing: -.05em; line-height: 1.22; margin-top: 22px; }
 .industry-directory-note > p { max-width: 400px; color: #c9c9c3; font-size: 13px; line-height: 1.9; margin-top: 17px; }

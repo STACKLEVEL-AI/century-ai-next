@@ -2,7 +2,9 @@
 
 The English Century website for [century-ai.eu](https://century-ai.eu/), built with Next.js App Router and exported as static files for GitHub Pages.
 
-The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. Century retains its own identity: **purple `#210DFF`, the open C mark, Manrope typography, founders and contact destinations**. Page structure and editorial composition follow the reference; the writing, illustrations and examples are adapted for Century.
+The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. The current design uses **the supplied black and white Century wordmarks, Inter typography, white and near-black sections, and local photographic media**. Century's name, founders and contact destinations are preserved. Page structure and visual composition follow the reference; the writing and product examples are adapted for Century.
+
+The [4 November 2026 migration log](docs/design-migration-2026-11-04.md) records the staged work, reference-media provenance and validation checkpoints.
 
 ## Pages
 
@@ -26,7 +28,7 @@ The Gateway numbers, review queues, source excerpts and workflow visuals are **l
 
 All contact actions lead to [Vitali Bakhmat on Telegram](https://t.me/vitalibakhmat). The other external profile destinations are [Vadim Vladymtsev’s website](https://vadimohka.com/) and [Egor Krychev’s LinkedIn](https://www.linkedin.com/in/ekrychev/). The site has no contact form or embedded chat. The application adds no analytics, cookies or persistent browser storage.
 
-Images, the wordmark and interface illustrations are local. Manrope is bundled by `next/font` during the build and served with the site. The architectural image is a generated fictional scene. It does not represent Century’s premises. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive examples provide static fallback content.
+Images, the background film, both wordmarks and interface illustrations are served locally. Inter is bundled by `next/font` during the build and served with the site. The homepage uses a short, silent film selection from the reference with a pause/play control. A responsive poster remains visible without JavaScript; the film is not mounted when reduced motion or the browser's save-data preference is enabled. Reference media is illustrative and does not depict Century's premises or establish customer relationships. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive examples provide static fallback content.
 
 ## Local development
 
@@ -66,9 +68,9 @@ npm run check:export
 
 `check:export` requires a completed `out/` build. It checks all 26 content pages, unique titles and descriptions, canonicals and Open Graph URLs, sitemap coverage, local links and anchors, referenced assets, contact destinations, sample labelling and the social-image dimensions. It accepts an alternative export directory with `npm run check:export -- /absolute/path/to/export`.
 
-The optional `test:e2e` command and `tests/landing.spec.ts` contain eight focused cases for the current multipage site: route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, Gateway CSV export and responsive layouts. The suite was updated and passed TypeScript checking, but was not executed in the implementation workspace. It is not called by deployment; running it locally requires a completed export, Python 3 and Playwright’s Chromium browser.
+The optional `test:e2e` command and `tests/landing.spec.ts` cover route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, Gateway CSV export and responsive layouts. The suite is not called by deployment; running it locally requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt stopped before assertions because Chromium was missing and its download was truncated. This is a browser-installation blocker, not a result for the application's test assertions. Further browser-review results are recorded in the [migration log](docs/design-migration-2026-11-04.md).
 
-The initial implementation environment could not complete a production build because of a host RSS-reporting error (`uv_resident_set_memory`), and its hosted preview daemon was unavailable. This is recorded as an environment limitation, not as a successful export or browser review. See [adaptation notes](docs/wonderful-adaptation.md) for scope and provenance.
+At the current migration's preview checkpoint, `npm run typecheck` passed, the local preview build generated all 26 content routes, and `npm run check:export` passed. This workspace lacks `/proc` RSS metrics: Next.js's optional `traceMemoryUsage` diagnostic throws an `ENOENT` error before compilation. For the preview only, the ignored local dependency tracer skipped that specific diagnostic. The workaround changes no application source, package lock or deployment workflow. The unmodified production build still needs confirmation from GitHub Actions; a local preview export does not establish publication. See the migration log for the build context and subsequent deployment evidence.
 
 ## Useful source files
 
@@ -82,8 +84,10 @@ The initial implementation environment could not complete a production build bec
 | `src/components/site/` | Shared inner-page shell, heroes, sections and related links. |
 | `src/components/products/` | Product illustrations and interactive examples. |
 | `src/components/industries/` | Native SVG industry illustrations. |
-| `src/app/globals.css`, `site.css`, `products.css`, `industries.css`, `company.css` | Century styling and responsive layouts. |
+| `src/components/HeroFilm.tsx` | Local background film, playback control and reduced-motion/save-data handling. |
+| `src/app/globals.css`, `site.css`, `products.css`, `industries.css`, `company.css`, `design.css` | Shared styles, page-family layouts and the current neutral design system. |
+| `public/brand/`, `public/media/` | Supplied Century wordmarks and local reference-media derivatives. |
 
 Regenerate the committed 1200 × 630 social preview image with `npm run assets:og`, then rebuild the export. The generator uses Sharp and local assets; it does not require a browser.
 
-The [adaptation notes](docs/wonderful-adaptation.md) describe the implemented scope. The [original single-page plan](docs/superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remains unchanged as historical context.
+The [adaptation notes](docs/wonderful-adaptation.md) describe the implemented scope and behaviour. The [migration log](docs/design-migration-2026-11-04.md) tracks the current design work. The [original single-page plan](docs/superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remains unchanged as historical context.

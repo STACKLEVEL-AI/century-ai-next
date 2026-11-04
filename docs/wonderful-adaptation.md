@@ -1,14 +1,14 @@
 # Wonderful-inspired Century website adaptation
 
-This implementation expands the original Century landing into a **26-route website**. It adapts the main page families and editorial composition of [Wonderful](https://www.wonderful.ai/) while preserving the Century identity and existing business contacts. The earlier single-page implementation is historical context; the current scope includes product, industry, company and guide pages.
+This **26-route website** adapts the main page families and visual composition of [Wonderful](https://www.wonderful.ai/) while preserving Century's name, founders and existing business contacts. The current design migration covers the homepage and the shared product, industry, company and guide layouts. The [4 November 2026 migration log](design-migration-2026-11-04.md) records the small implementation stages, media sources and validation evidence; the earlier single-page plan is historical context.
 
 ## Century identity
 
-The primary brand colour is the original Century purple, **`#210DFF`**. The open C mark, Century wordmark, Manrope typography, white and lavender surfaces, and dark charcoal sections form the common design system. Every route shares the same navigation and footer.
+The current design uses the **black and white Century SVG wordmarks supplied for this task**, Inter typography, white and near-black sections, large light-weight headings, restrained borders and rounded buttons. Photographic cards and a short background film carry the homepage imagery. A symbol derived from the supplied wordmark's first glyph is used where a compact mark is needed. Every route shares the same navigation and footer; `src/app/design.css` applies the current visual system across the existing page families.
 
 Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retain their existing names, roles, local portraits and profile destinations. Contact links lead to `https://t.me/vitalibakhmat`; the other external profile links are `https://vadimohka.com/` and `https://www.linkedin.com/in/ekrychev/`.
 
-The reference informs page structure, hierarchy and visual rhythm. Century’s pages use original adapted copy, native CSS/SVG illustrations and the repository’s local assets. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century.
+The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, native CSS/SVG interface illustrations and locally served reference-media derivatives. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Detailed media provenance is recorded in the migration log.
 
 ## Complete route inventory
 
@@ -16,7 +16,7 @@ All 26 content routes use trailing slashes in the static export. The source regi
 
 | Route | Implemented content |
 | --- | --- |
-| `/` | Architectural hero; use cases; platform and product family; deployment and strategy; industry selector; sample answer; founders; guides; contact. |
+| `/` | Film hero with poster fallback; photographic use cases; platform and product family; deployment and strategy; industry selector; sample answer; founders; guides; contact. |
 | `/ai-os/` | Platform foundation, infrastructure layer explorer, reusable knowledge and workflow concepts, deployment boundaries and product links. |
 | `/agents/` | Knowledge, document and support workflows; agent scope; native capability disclosures; source-linked supplier example; operating ownership. |
 | `/systems/` | Requirements-led application design, illustrative review workspace, business functions, implementation and ownership. |
@@ -34,7 +34,7 @@ All 26 content routes use trailing slashes in the static export. The source regi
 | `/industries/airlines/` | Passenger service knowledge, disruption handovers, claims documents and internal operational knowledge. |
 | `/about-us/` | Century’s approach, principles, founders and related company information. |
 | `/careers/` | Working principles, disciplines and a direct introduction route; no invented advertised vacancies. |
-| `/press/` | Company introduction, founder profiles, local SVG wordmark download and media contact. |
+| `/press/` | Company introduction, founder profiles, black and white SVG wordmark downloads and media contact. |
 | `/contact/` | Vitali’s existing Telegram destination, portrait and prompts for a useful first conversation. |
 | `/blog/` | Featured guide, category filtering and four original Century articles. |
 | `/blog/choose-first-ai-workflow/` | Choosing a recurring task, defining its scope, naming an owner and setting evaluation criteria. |
@@ -49,7 +49,8 @@ The custom 404 page, `robots.txt`, `sitemap.xml`, `CNAME`, `.nojekyll`, icon and
 
 | Reference pattern | Century implementation |
 | --- | --- |
-| Large editorial heroes and alternating section treatments | Shared PageHero and section components, Century purple and typography, local architectural image and original illustrations. |
+| Large editorial heroes and alternating section treatments | Full-width film opening, photographic cards, white and near-black sections, Inter typography and shared inner-page components. |
+| Brand treatments on light and dark backgrounds | Supplied black and white Century wordmarks in the header, footer, press downloads and social preview. |
 | Product family with deep supporting pages | AI OS, Agents, Systems and AI Gateway, plus deployment, transformation and security content. |
 | Industry pages with outcomes and workflow groups | Seven distinct guides; each has three goals, four detailed workflows, a four-step example, three controls and two related sectors. |
 | Company story, careers and media pages | Existing founder information, practical principles, an invitation to introduce yourself and a local brand resource. |
@@ -66,31 +67,34 @@ The infrastructure explorer, deployment phase selector, homepage industry select
 
 Workflow details, source excerpts, capability disclosures and mobile navigation use native `details` and `summary` where appropriate. The primary page content is server rendered. Skip links, visible focus styles, semantic headings, responsive layouts and reduced-motion styles are included. Browser-level validation of these behaviours is separate from inspecting the source or a static export.
 
+The decorative homepage film is muted, loops inline and has a labelled pause/play button. `HeroFilm` checks the visitor's reduced-motion and save-data preferences before mounting the video. When either preference is enabled, or JavaScript is unavailable, the responsive local poster remains the hero background. The film is decorative and hidden from assistive technology; all hero text and actions remain regular page content.
+
 The supplier-onboarding answer is labelled as sample data and includes inspectable source excerpts. The Systems workspace and industry diagrams are illustrations. Careers does not claim open roles, and Press does not invent media coverage or funding. Security content identifies decisions to agree for an implementation; it does not claim certifications or unconditional compliance.
 
 ## Contact, privacy and resources
 
 External contact and founder links open separately with `noopener noreferrer`. The application has no contact form, file upload, embedded chat, analytics tags, advertising pixels, application cookies, local storage or session storage. Ordinary hosting requests and any provider logging are described separately on the privacy page.
 
-Images, interface illustrations, styles, scripts and the brand download are served from the static site. `next/font` bundles Manrope during the build, so the visitor does not fetch the font from Google Fonts. The application does not need a runtime API or server to render the content pages. A user who follows a Telegram, LinkedIn or personal-site link leaves the website and uses that external service.
+Images, the film, interface illustrations, styles, scripts and brand downloads are served from the static site. `next/font` bundles Inter during the build, so the visitor does not fetch the font from Google Fonts. The reference's commercial ABC Favorit font is not included. The application does not need a runtime API or server to render the content pages. A user who follows a Telegram, LinkedIn or personal-site link leaves the website and uses that external service.
 
 Each page has a unique title, description, canonical and Open Graph URL under `https://century-ai.eu/`. The shared 1200 × 630 social image is local. The homepage retains its website and webpage structured data; article metadata identifies the individual guide pages.
 
 ## Asset provenance
 
-The architectural scene was generated for the earlier homepage adaptation without a reference photograph. It is fictional and does not portray Century’s premises. The original scene and responsive WebP variants remain local in `public/images/`:
+The [migration log's asset-provenance section](design-migration-2026-11-04.md#asset-provenance) contains the original reference URLs and the film edit details. The current assets are:
 
-| File | Dimensions |
+| Asset | Local location and source |
 | --- | --- |
-| `enterprise-atrium.webp` | 1672 × 941 |
-| `enterprise-atrium-960.webp` | 960 × 540 |
-| `enterprise-atrium-640.webp` | 640 × 360 |
+| Black and white Century wordmarks | `public/brand/century-logo.svg` and `public/brand/century-logo-white.svg`; supplied by the user. |
+| Compact Century symbol | `public/brand/century-symbol.svg`; derived from the supplied wordmark's first glyph. |
+| Homepage film | `public/media/enterprise-film.mp4`; a 13-second, silent, locally re-encoded selection from the reference film. |
+| Hero posters and use-case stills | `public/media/hero-poster*.webp`, `knowledge.webp`, `workflows.webp` and `support.webp`; extracted from that film. |
+| Platform, deployment, strategy, industry and closing imagery | WebP files in `public/media/`; locally served derivatives of the reference images listed in the migration log. |
+| Founder portraits | Existing photographs preserved in `public/founders/`. |
 
-The scene uses warm architectural lighting. Century purple remains the interface and brand accent. The homepage selects an appropriate image through `picture`, `srcSet` and `sizes`; the contact page reuses the local scene. The three founder photographs remain in `public/founders/`.
+The reference film selection avoids visible customer-bank signage. These media files illustrate the site's themes; they do not depict Century's premises or demonstrate Century customer relationships. Visitors load them from Century's static export, not from Wonderful. The about and contact pages use local deployment and industry images from the same reference-media set. The earlier generated atrium files remain in `public/images/` as unused historical assets. Product compositions, industry-detail diagrams and article artwork remain native code-based illustrations.
 
-Industry scenes, product compositions and article artwork are native code-based illustrations. They use no external photograph or remote image embed. The downloadable wordmark is `public/brand/century-logo.svg`.
-
-The social image at `public/og/century-ai-eu.png` is composed from local assets with Sharp. Regenerate it with `npm run assets:og`, then rebuild to refresh `out/`. This command does not require Chromium or a running web server.
+The social image at `public/og/century-ai-eu.png` combines the local hero poster and supplied white wordmark with Sharp. Regenerate it with `npm run assets:og`, then rebuild to refresh `out/`. This command does not require Chromium or a running web server.
 
 ## Build and optional inspection
 
@@ -124,11 +128,15 @@ The inspector can read an alternative export directory:
 npm run check:export -- /absolute/path/to/export
 ```
 
-The optional Playwright suite in `tests/landing.spec.ts` has been updated to eight focused cases for the current website: routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, source disclosures and FAQs; product tabs; Gateway period selection and CSV export; and responsive layouts. The updated source passed TypeScript checking, but the browser suite was not executed in the implementation workspace. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright’s Chromium browser.
+The optional Playwright suite in `tests/landing.spec.ts` covers routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, source disclosures and FAQs; product tabs; Gateway period selection and CSV export; and responsive layouts. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt could not launch Chromium; the browser was missing and its attempted download was truncated. It stopped before test assertions, so it provides no passing or failing application-assertion result. Further browser-review results are recorded separately in the migration log rather than inferred from a successful typecheck or export inspection.
 
-### Implementation environment note — 4 November 2026
+### Preview validation checkpoint — 4 November 2026
 
-The initial production build in the implementation workspace was blocked by a host RSS-reporting error involving `uv_resident_set_memory`. The hosted preview daemon was also unavailable. These observations limit what could be confirmed in that environment; they do not constitute a successful static export, browser review or production publication. Deployment status must be established from an actual GitHub Actions run and the live Pages site.
+The current migration has a successful local preview export: all 26 content routes were generated, `npm run typecheck` passed, and `npm run check:export` passed for the route inventory, metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels. Earlier blocked build attempts are historical context, not the current preview result.
+
+The workspace lacks `/proc` RSS metrics, which causes Next.js 15.5.28's optional `traceMemoryUsage` diagnostic to throw an `ENOENT` error before compilation. For this preview only, the ignored local dependency tracer was temporarily changed to skip that exact diagnostic. No global process API, application source, package lock or deployment workflow was patched for this workaround.
+
+This confirms the preview export and its static inspection. At that checkpoint, the unmodified production build was still awaiting GitHub Actions. Browser behaviour and publication need their own evidence; consult the [migration log](design-migration-2026-11-04.md#validation-record) for subsequent browser and deployment results. A live release is established by a successful Actions deployment and the live Pages site.
 
 ## Deployment-only GitHub workflow
 
@@ -138,4 +146,4 @@ There are **no CI test jobs or test steps**, no browser installation or Playwrig
 
 Pages settings must use **GitHub Actions** as the source and retain the `century-ai.eu` custom domain. Generated output is not committed to `main` or published through a separate `gh-pages` branch. Source changes become a confirmed publication only after the deployment succeeds.
 
-The [original implementation plan](superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remains unchanged as historical project context.
+The [migration log](design-migration-2026-11-04.md) tracks the current design work and release checks. The [original implementation plan](superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remains unchanged as historical project context.
