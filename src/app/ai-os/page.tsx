@@ -9,11 +9,11 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata("Century AI OS", "A common foundation for company knowledge, AI workflows and human oversight. Explore Century's approach to enterprise AI.", "/ai-os");
 
 export default function AiOsPage() {
-  return <PageFrame>
+  return <PageFrame headerVariant="overlay">
     <section className="prod-os-hero">
       <div className="shell">
-        <p className="prod-os-wordmark"><span className="brand-mark" aria-hidden="true" />Century AI OS</p>
-        <h1>A common foundation.<br />For your next AI workflow.</h1>
+        <p className="prod-os-wordmark"><img src="/brand/century-logo-white.svg" alt="Century" width={221} height={58} /> AI OS</p>
+        <h1>One connected layer.<br />For your people, agents and apps.</h1>
         <p className="prod-os-description">Bring company knowledge, business processes and human oversight into a connected way of working.</p>
         <div className="prod-hero-actions"><TelegramLink className="btn btn-light">Get in touch</TelegramLink><a className="btn btn-outline-light" href="#infrastructure">Explore the foundation<ArrowUpRight size={17} aria-hidden="true" /></a></div>
         <PlatformConstellation />
