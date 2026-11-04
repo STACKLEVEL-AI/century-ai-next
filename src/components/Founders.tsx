@@ -50,7 +50,7 @@ export default function Founders() {
     >
       <div className="shell">
         <div className="founders-heading">
-          <h2 id="founders-title">The people behind Century.</h2>
+          <div><p className="eyebrow">The people behind the work</p><h2 id="founders-title">Building the next<br />chapter of Century.</h2></div>
           <a className="home-section-link" href="/about-us/">Get to know the team <ArrowUpRight size={17} aria-hidden="true" /></a>
         </div>
         <div className="founders-grid">
@@ -71,7 +71,7 @@ export default function Founders() {
                     alt={name}
                     width={320}
                     height={height}
-                    sizes="64px"
+                    sizes="(max-width: 640px) 90vw, (max-width: 1000px) 30vw, 400px"
                   />
                 </div>
                 <div className="founder-copy">

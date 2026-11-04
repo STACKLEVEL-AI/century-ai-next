@@ -1,10 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
+
 export default function HomeApproach() {
-  return <section className="section process-section" id="how-we-start"><div className="shell">
-    <div className="section-heading process-heading"><p className="eyebrow">Deployment & strategy</p><h2>From the first workflow<br />to everyday use.</h2><p>Bring the technical decisions and the business decisions together, with a clear owner at every step.</p></div>
-    <div className="process-intro-grid">
-      <article className="process-intro-card process-intro-deployment"><p className="panel-label">Deployment</p><h3>Built around your environment.</h3><p>Connect the sources you need. Agree where information is processed, who reviews exceptions and how the team takes ownership.</p><a className="text-link" href="/deployment/">Explore deployment<ArrowUpRight size={18} aria-hidden="true" /></a></article>
-      <article className="process-intro-card process-intro-strategy"><p className="panel-label">AI strategy</p><h3>The right problem comes first.</h3><p>Choose a workflow worth improving. Set a baseline, define a useful outcome and use the evidence to decide what follows.</p><a className="text-link" href="/ai-transformation/">Explore the approach<ArrowUpRight size={18} aria-hidden="true" /></a></article>
-    </div>
+  return <section className="section process-section" id="how-we-start" aria-label="Deployment and strategy"><div className="shell process-intro-grid">
+    <article className="process-intro-card process-intro-deployment"><img src="/media/deployment.webp" alt="" width={1200} height={670} loading="lazy" /><div><p className="panel-label">Deployment</p><h3>Built with you.<br />Ready for everyday work.</h3><p>Connect the right systems, shape the workflow and give your team the knowledge to take it forward.</p><a className="btn btn-light" href="/deployment/">Explore deployment<ArrowUpRight size={17} aria-hidden="true" /></a></div></article>
+    <article className="process-intro-card process-intro-strategy"><img src="/media/strategy.webp" alt="" width={1054} height={1451} loading="lazy" /><div><p className="panel-label">AI strategy</p><h3>A clear direction.<br />For what comes next.</h3><p>Find the work worth changing. Set a useful baseline, build a roadmap and let the evidence guide each next step.</p><a className="btn btn-light" href="/ai-transformation/">Explore the approach<ArrowUpRight size={17} aria-hidden="true" /></a></div></article>
   </div></section>;
 }

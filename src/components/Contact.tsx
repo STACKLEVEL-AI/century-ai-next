@@ -14,8 +14,8 @@ export default function Contact() {
             Start a conversation
           </p>
           <h2 id="contact-title">
-            Your next chapter
-            <br /> starts with one workflow.
+            Your business.
+            <br /> A new possibility.
           </h2>
           <p>
             Tell Vitali which process you want to improve, where the relevant

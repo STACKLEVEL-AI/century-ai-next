@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import { companyLinks, industryLinks, platformLinks, type NavigationLink } from "@/lib/navigation";
 import TelegramLink from "./TelegramLink";
@@ -17,7 +17,11 @@ function MenuLinks({ links }: { links: NavigationLink[] }) {
 
 export default function Header({ variant = "overlay" }: { variant?: "overlay" | "light" }) {
   const header = useRef<HTMLElement>(null);
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 46);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     const closeMenus = (event: MouseEvent | KeyboardEvent) => {
       const root = header.current;
       if (!root) return;
@@ -32,14 +36,14 @@ export default function Header({ variant = "overlay" }: { variant?: "overlay" | 
     };
     document.addEventListener("click", closeMenus);
     document.addEventListener("keydown", closeMenus);
-    return () => { document.removeEventListener("click", closeMenus); document.removeEventListener("keydown", closeMenus); };
+    return () => { window.removeEventListener("scroll", onScroll); document.removeEventListener("click", closeMenus); document.removeEventListener("keydown", closeMenus); };
   }, []);
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <div className="announcement"><span className="status-dot" aria-hidden="true" />Enterprise AI. Under your control.<a href="/deployment/">See how we start<ArrowRight size={14} aria-hidden="true" /></a></div>
-    <header ref={header} className={`site-header${variant === "light" ? " site-header-light" : ""}`}>
+    <div className="announcement"><span>From AI ambition to everyday impact.</span><a href="/deployment/">Discover our approach<ArrowRight size={14} aria-hidden="true" /></a></div>
+    <header ref={header} className={`site-header${variant === "light" ? " site-header-light" : ""}${scrolled ? " is-scrolled" : ""}`}>
       <div className="shell header-inner">
-        <a className="brand" href="/" aria-label="Century home"><span className="brand-mark" aria-hidden="true" />Century</a>
+        <a className="brand" href="/" aria-label="Century home"><img className="brand-image" src={variant === "light" || scrolled ? "/brand/century-logo.svg" : "/brand/century-logo-white.svg"} alt="Century" width={221} height={58} /></a>
         <nav className="main-nav desktop-navigation" aria-label="Main navigation">
           {groups.map(group => <details className="nav-dropdown" name="desktop-navigation" key={group.label}><summary>{group.label}<ChevronDown size={13} aria-hidden="true" /></summary><div className="nav-menu"><div className="nav-menu-heading"><p>{group.label}</p><span>Explore Century</span></div><div className="nav-menu-grid"><MenuLinks links={group.links} /></div></div></details>)}
           <a href="/blog/">Blog</a>
@@ -49,5 +53,6 @@ export default function Header({ variant = "overlay" }: { variant?: "overlay" | 
         </div>
       </div>
     </header>
+    {variant === "light" && <div className="header-spacer" aria-hidden="true" />}
   </>;
 }
