@@ -75,11 +75,12 @@ export default function InfrastructureExplorer() {
         ))}
       </div>
       <div className="infra-panels">
-        {layers.map(({ title, short, description, points }, index) => (
+        {layers.map(({ title, short, description, points, icon: Icon }, index) => (
           <section
             className="infra-panel" role="tabpanel" key={title} id={`${id}-panel-${index}`}
             aria-labelledby={`${id}-tab-${index}`} hidden={active !== index} tabIndex={0}
           >
+            <div className="infra-panel-heading"><span aria-hidden="true">{String(index + 1).padStart(2, "0")} / 07</span><Icon size={26} strokeWidth={1.3} aria-hidden="true" /></div>
             <div className="infra-panel-copy"><p className="prod-kicker">{title}</p><h3>{short}</h3><p>{description}</p>
               <ul>{points.map(point => <li key={point}>{point}</li>)}</ul>
             </div>

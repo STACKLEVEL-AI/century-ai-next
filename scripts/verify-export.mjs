@@ -177,6 +177,9 @@ try {
     const openGraphUrl = tags.find(({ name, attrs }) => name === "meta" && attrs.property === "og:url")?.attrs.content;
     assert.equal(html?.attrs.lang, "en", `Wrong document language: ${route}`);
     assert.equal(tags.filter(({ name }) => name === "h1").length, 1, `Expected one H1: ${route}`);
+    assert(!tags.some(({ attrs }) => hasClass(attrs, "footer-wordmark")), `Oversized footer wordmark remains: ${route}`);
+    const main = tags.find(({ name }) => name === "main");
+    assert.equal(hasClass(main?.attrs || {}, "inner-page"), route !== "/", `Internal design scope must exclude the homepage: ${route}`);
     assert(title.includes("Century"), `Missing Century page title: ${route}`);
     assert(description?.trim(), `Missing description: ${route}`);
     assert(!titles.has(title), `Duplicate title on ${route} and ${titles.get(title)}`);

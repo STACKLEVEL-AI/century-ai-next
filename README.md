@@ -6,6 +6,8 @@ The repository contains a **26-route adaptation of the main [Wonderful](https://
 
 The [design migration log](docs/design-migration-2026-11-04.md) records the earlier staged work, original reference-media provenance and validation checkpoints. The [application screenshot log](docs/application-screenshots-2026-11-04.md) documents the replacement of invented product visuals with six English-only details captured from the supplied Century recordings. The [generated photography notes](docs/generated-photography-2026-11-04.md) document **10 generated photographic masters delivered as 14 WebP files**, their derived media and the three original founder portraits preserved byte-for-byte from `main` at `cad5ff160878585c75ce78a075f06d7b14087a6a`.
 
+The [internal-page refinement notes](docs/internal-pages-2026-11-05.md) describe the redesign of all 25 internal routes, the removal of the oversized footer wordmark, the preserved homepage and media, and the exact scope of local verification.
+
 ## Pages
 
 | Area | Routes |
@@ -66,7 +68,7 @@ npm run typecheck
 npm run check:export
 ```
 
-`check:export` requires a completed `out/` build. It checks all 26 content pages, unique titles and descriptions, canonicals and Open Graph URLs, sitemap coverage, local links and anchors, referenced assets, contact destinations, real application captures and the social-image dimensions. It accepts an alternative export directory with `npm run check:export -- /absolute/path/to/export`.
+`check:export` requires a completed `out/` build. It checks all 26 content pages, unique titles and descriptions, canonicals and Open Graph URLs, sitemap coverage, local links and anchors, referenced assets, contact destinations, real application captures and the social-image dimensions. It also checks that the oversized footer wordmark is absent and the new internal-page scope excludes the homepage. It accepts an alternative export directory with `npm run check:export -- /absolute/path/to/export`.
 
 The optional `test:e2e` command and `tests/landing.spec.ts` cover route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, real capture loading/full-size links and responsive layouts. The suite is not called by deployment; running it locally requires a completed export, Python 3 and Playwright's Chromium browser.
 
@@ -89,6 +91,7 @@ The [historical migration log](docs/design-migration-2026-11-04.md) records the 
 | `src/components/industries/` | Industry icons and retained historical artwork code. |
 | `src/components/HeroFilm.tsx` | Local background film, playback control and reduced-motion/save-data handling. |
 | `src/app/globals.css`, `site.css`, `products.css`, `industries.css`, `company.css`, `design.css` | Shared styles, page-family layouts and the current neutral design system. |
+| `src/app/inner.css`, `products-refined.css`, `industries-refined.css`, `company-refined.css` | Refined internal-page compositions, all scoped to `.inner-page`. |
 | `public/brand/` | Supplied Century wordmarks and derived compact symbol. |
 | `public/media/`, `public/images/` | Ten generated photographic masters, four responsive derivatives and the animated background film. |
 | `public/founders/` | Three original founder photographs, preserved byte-for-byte from `main` at `cad5ff1`. |

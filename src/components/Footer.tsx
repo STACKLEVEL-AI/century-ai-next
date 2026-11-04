@@ -12,6 +12,5 @@ export default function Footer() {
       </nav>
     </div>
     <div className="footer-bottom"><p>© {new Date().getFullYear()} Century.</p><a className="footer-contact" href="/privacy/">Privacy information</a><p>Intelligence. Put to work.</p></div>
-    <img className="footer-wordmark" src="/brand/century-logo-white.svg" alt="" width={221} height={58} loading="lazy" />
   </div></footer>;
 }

@@ -1,8 +1,8 @@
-import { ArrowUpRight, BookOpen, Focus, UserRoundCheck } from "lucide-react";
+import { ArrowDown, ArrowUpRight, BookOpen, Focus, UserRoundCheck } from "lucide-react";
 import { IndustryIcon } from "@/components/industries/IndustryArtwork";
+import IndustryPhoto, { industryVisuals } from "@/components/industries/IndustryVisual";
 import PageFrame from "@/components/site/PageFrame";
-import PageHero from "@/components/site/PageHero";
-import { FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
+import { RelatedPages } from "@/components/site/Sections";
 import { industries } from "@/lib/industries";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -13,45 +13,70 @@ export const metadata = pageMetadata(
 );
 
 const principles = [
-  { title: "Start with a real workflow", description: "Choose a recurring task, the people who own it and the outcome that would make their work easier.", icon: <Focus size={25} /> },
-  { title: "Work from approved knowledge", description: "Identify the sources, versions and access permissions that a useful answer depends on.", icon: <BookOpen size={25} /> },
-  { title: "Design the review step", description: "Agree what the system prepares, what an employee checks and who remains responsible for the next action.", icon: <UserRoundCheck size={25} /> },
+  { title: "Start with a real workflow", description: "Choose a recurring task, the people who own it and the outcome that would make their work easier.", icon: Focus },
+  { title: "Work from approved knowledge", description: "Identify the sources, versions and access permissions that a useful answer depends on.", icon: BookOpen },
+  { title: "Design the review step", description: "Agree what the system prepares, what an employee checks and who remains responsible for the next action.", icon: UserRoundCheck },
 ];
 
 export default function IndustriesPage() {
   return <PageFrame>
-    <div className="industry-index">
-      <PageHero
-        eyebrow="Century across industries"
-        title={<>Different industries.<br /><span>Your context comes first.</span></>}
-        description="The best starting point is a specific problem your team understands. Explore how knowledge, document preparation and workflow support can fit the way your industry operates."
-        secondary={{ href: "#sectors", label: "Find your industry" }}
-      />
-
-      <section className="section industry-directory" id="sectors">
+    <div className="sector-hub">
+      <section className="sector-hub-hero">
         <div className="shell">
-          <SectionHeading eyebrow="Explore the possibilities" title="Seven industries. Practical places to begin." description="Each industry guide outlines concrete workflows, information requirements and review points to discuss with your team." />
-          <div className="industry-directory-grid">
-            {industries.map((industry, index) => <a className="industry-directory-card" href={`/industries/${industry.slug}/`} key={industry.slug}>
-              <div className="industry-directory-card-top"><span className="industry-directory-icon"><IndustryIcon slug={industry.slug} size={30} /></span><span className="industry-directory-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span></div>
-              <div className="industry-directory-card-title"><h3>{industry.title}</h3><ArrowUpRight size={23} aria-hidden="true" /></div>
-              <p>{industry.description.replace(/^Explore Century (?:workflows )?for /, "Workflows for ").replace(/^Explore Century for /, "Workflows for ")}</p>
-              <span className="industry-directory-card-link">Explore workflows <span aria-hidden="true">→</span></span>
+          <p className="sector-eyebrow"><span aria-hidden="true" />Century across industries</p>
+          <h1>Different industries.<br /><span>Your context comes first.</span></h1>
+          <div className="sector-hub-intro">
+            <p>The best starting point is a specific problem your team understands. Explore how knowledge, document preparation and workflow support can fit the way your industry operates.</p>
+            <a className="sector-text-link" href="#sectors">Find your industry<ArrowDown size={18} aria-hidden="true" /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="sector-directory" id="sectors" aria-labelledby="sector-directory-title">
+        <div className="shell">
+          <div className="sector-directory-heading">
+            <h2 id="sector-directory-title">Find your world.</h2>
+            <p>Seven industries. A practical place to begin.</p>
+          </div>
+          <nav className="sector-index" aria-label="Find an industry">
+            {industries.map(industry => <a href={`#sector-${industry.slug}`} key={industry.slug}>{industry.title}<ArrowDown size={13} aria-hidden="true" /></a>)}
+          </nav>
+          <div className="sector-directory-grid">
+            {industries.map((industry, index) => <a className={`sector-card${industry.title.length > 14 ? " sector-card-long" : ""}`} href={`/industries/${industry.slug}/`} id={`sector-${industry.slug}`} key={industry.slug}>
+              <div className="sector-card-media">
+                <IndustryPhoto slug={industry.slug} />
+                <div className="sector-card-top"><IndustryIcon slug={industry.slug} size={25} /><span>{String(index + 1).padStart(2, "0")}</span></div>
+                <div className="sector-card-title"><h3>{industry.title}</h3><span className="sector-card-arrow" aria-hidden="true"><ArrowUpRight size={23} /></span></div>
+              </div>
+              <div className="sector-card-copy">
+                <p className="sector-card-focus">{industryVisuals[industry.slug].focus}</p>
+                <p>{industry.intro}</p>
+                <span className="sector-card-cta">Explore the possibilities<ArrowUpRight size={16} aria-hidden="true" /></span>
+              </div>
             </a>)}
-            <div className="industry-directory-note">
-              <span className="eyebrow">Your starting point</span>
-              <h3>Have a different workflow in mind?</h3>
+            <div className="sector-invitation">
+              <p className="sector-eyebrow"><span aria-hidden="true" />Your next chapter</p>
+              <h3>A different industry.<br />A familiar challenge?</h3>
               <p>Start with the task, the sources and the people involved. We can explore the scope together.</p>
-              <a href="/contact/">Talk to Century <ArrowUpRight size={18} aria-hidden="true" /></a>
+              <a className="btn btn-primary" href="/contact/">Talk to Century<ArrowUpRight size={17} aria-hidden="true" /></a>
+              <span className="sector-invitation-rule" aria-hidden="true" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section industry-principles">
+      <section className="sector-section sector-principles" aria-labelledby="sector-principles-title">
         <div className="shell">
-          <SectionHeading eyebrow="A common foundation" title="Your industry shapes the implementation." description="The details change from team to team. The starting questions stay practical." />
-          <FeatureGrid items={principles} columns={3} />
+          <div className="sector-section-heading">
+            <div><p className="sector-eyebrow"><span aria-hidden="true" />A common foundation</p><h2 id="sector-principles-title">Your industry shapes<br />the implementation.</h2></div>
+            <p>The details change from team to team. The starting questions stay practical.</p>
+          </div>
+          <div className="sector-principle-grid">
+            {principles.map(({ title, description, icon: Icon }, index) => <article className="sector-principle" key={title}>
+              <div className="sector-principle-top"><Icon size={26} strokeWidth={1.4} aria-hidden="true" /><span>{String(index + 1).padStart(2, "0")}</span></div>
+              <h3>{title}</h3><p>{description}</p>
+            </article>)}
+          </div>
         </div>
       </section>
 
