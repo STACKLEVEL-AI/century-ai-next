@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "generation_date": "2026-11-04",
+  "generator": "built-in image_gen.imagegen",
+  "source_repository": "STACKLEVEL-AI/century-ai-next",
+  "source_ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+  "description": "Exact prompts used for 13 newly generated photographic counterparts. References are pinned original repository assets; output dimensions describe the 17 delivered WebP files. The three named founder portraits preserve the source identities. Enterprise scenes depict fictional locations and participants.",
+  "assets": [
+    {
+      "id": "hero",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/hero-poster.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/hero-poster.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/hero-poster.webp",
+          "width": 1800,
+          "height": 1013,
+          "format": "webp",
+          "responsive_derivative": false
+        },
+        {
+          "repository_path": "public/media/hero-poster-960.webp",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "responsive_derivative": true
+        },
+        {
+          "repository_path": "public/media/hero-poster-640.webp",
+          "width": 640,
+          "height": 360,
+          "format": "webp",
+          "responsive_derivative": true
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: cinematic full-bleed homepage hero photograph for a premium enterprise AI website. Input image 1 is a reference for style, camera angle, subject idea, palette and composition, NOT a scene to copy exactly. Generate a completely new, analogous high-resolution editorial aerial photograph of a broad leafy business and technology campus on the edge of a low-rise city. Oblique drone viewpoint, several realistic modest-height modern rectangular office buildings in white concrete and dark blue-green glass in the lower two thirds, extensive mature green trees, curving roads and tiny unbranded cars, a few slender infrastructure masts in the middle distance, city and forest reaching a distant flat hazy horizon. The sky occupies the upper quarter, pale cyan-blue with small warm white cumulus clouds. Preserve the reference's restrained sunlit early-afternoon cinematic grade: warm ivory buildings, deep natural green foliage, muted teal shadows, fine organic film grain, photographic atmospheric depth, realistic geometry and construction. Frame very wide 16:9, intended output about 2560x1440 or higher, with distributed visual interest across the whole frame and an uncluttered center for white headline overlay. New buildings/location, no identifiable company premises, no brand marks, no visible text, no watermark, no UI, no typography, no fantastical skyscrapers, no oversaturated HDR or plastic CGI. Preserve photographic quality and the idea of real-world enterprise infrastructure at scale."
+    },
+    {
+      "id": "knowledge",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/knowledge.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/knowledge.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/knowledge.webp",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium website photographic background, landscape 16:9, 2048×1152. Input image 1 is the reference for visual style, framing, lighting and idea. Create an ORIGINAL analogous editorial photograph of a technical operations office with different people and a different office layout. Camera looks through interior glass into a busy warm control-room / trading-floor workspace. In the left foreground a man wearing an off-white shirt and simple dark lanyard stands looking down at a glowing tablet, heavily defocused and partly cropped. At center and center-right, several seated operators with natural unobtrusive headsets concentrate on multiple large computer monitors. Their desks and screens provide the primary story and must remain meaningful in a center portrait crop. Perspective leads into a deep room with an exposed ceiling and parallel warm fluorescent light strips; cool pale-blue daylight windows along the far right. Include subtle believable glass reflections overlaying the scene. Photographic style: cinematic analog 35mm, documentary realism, warm cream and amber highlights, muted tobacco brown and olive shadows, restrained cyan screen light, fine film grain, soft optical depth of field, realistic equipment and clothing. Calm focused human activity, rich but subdued color and low-key warm exposure matching the reference. Screens show indistinct abstract softly glowing interface blocks with no readable characters. Avoid readable text, logos, watermarks, borders, sci-fi hardware, duplicated people, posed stock-photo smiles, painting, over-sharpening or plastic CGI surfaces."
+    },
+    {
+      "id": "workflows",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/workflows.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/workflows.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/workflows.webp",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium website photographic background, landscape 16:9, 2048×1152. Input image 1 is a style and composition reference. Create an ORIGINAL analogous high-quality aerial photograph of a large logistics distribution center, with a different credible warehouse and vehicle arrangement, preserving the reference's industrial idea and quiet cinematic mood. Scene: huge low rectangular warehouse running diagonally through the upper half and right of frame, weathered pale gray-tan flat roof with a few discreet realistic roof structures. On its deep teal-gray shaded near wall, a long orderly row of loading docks has white semi-trailers backed into them. A broad asphalt loading yard fills the lower half. Several parked white trailers and a few muted blue/teal containers create rhythm; one small ochre-orange trailer provides a restrained accent. Green trees partly frame the lower edge, distant road and sparse industrial surroundings beyond. Composition: oblique high drone / helicopter viewpoint, strong diagonal architecture and long shadows, loading docks and trucks visible near the central band so a center portrait crop still communicates logistics. Style: authentic cinematic aerial photography with natural geometry, detailed believable trucks, fine analog grain and atmospheric softness. Late-afternoon warm sunlight on the tan roofs and pavement, cool muted teal shadows, desaturated greens, slightly hazy distance, restrained highlight rolloff and realistic contrast matching the reference. Avoid logos, readable text, watermarks, borders, decorative graphics, overly crisp HDR, toy-like miniatures, impossible trucks, invented building distortions, illustration or render."
+    },
+    {
+      "id": "support",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/support.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/support.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/support.webp",
+          "width": 1200,
+          "height": 675,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium website photographic background, landscape 16:9, 2048×1152. Input image 1 is a reference for visual style, scene, framing and atmosphere. Create an ORIGINAL analogous cinematic documentary photograph of a crowded international airport terminal with different travelers and architecture. Eye-level view from inside a queue, many travelers mostly seen from behind, waiting or walking toward check-in and gates. Soft out-of-focus near foreground figures frame the image: dark navy jacket on the left, charcoal shirt left-center, a ponytailed woman in a simple cream top right-center, a pale shirt and tan shoulder bag at far right. Middle distance centered in the frame is a traveler in navy walking toward the busy concourse, the main readable subject in a center portrait crop. Across the upper third stretches a large dark departure display with softly glowing amber rows, deliberately optically out of focus and illegible, yellow gate signage bands below. Tall pale structural columns, dark ceiling beams and cool blue daylight windows on the right. Style: excellent cinematic analog 35mm photography, authentic candid crowd spacing, natural anatomy and clothing, fine organic film grain, shallow depth of field, soft motion and depth, no artificial CGI finish. Match the reference's warm subdued amber light, muted black/brown/navy shadows, creamy skin and clothing highlights, cool window accent, deep atmosphere and restrained saturation. Keep every display or sign blurred into abstract light bands with absolutely no readable or faux textual characters. Avoid logos, watermarks, borders, illustration, staged posing, identical faces and excessive sharpness."
+    },
+    {
+      "id": "deployment",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/deployment.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/deployment.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/deployment.webp",
+          "width": 1200,
+          "height": 670,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium website photographic background, landscape 16:9, 2048×1152. Input image 1 is a reference for visual style, composition, atmosphere and subject idea. Create an ORIGINAL analogous photograph with different people and a different office workshop, maintaining the reference's exceptionally photographic character. Scene: a lively team workshop in a spacious ordinary contemporary office. A dark-haired woman wearing a pale blue button-down shirt stands near the exact center, sharp and stationary, in profile facing right with one arm reaching toward a distant whiteboard. People hurry across the near foreground, their bodies stretched into authentic directional long-exposure motion blur. An off-white moving shirt frames the left, a dark blurred figure passes on the right, and a seated laptop user is softly blurred below center. The whiteboard is a backdrop with faint abstract marker strokes, no readable writing. Composition: eye-level candid medium-wide frame, layered people, central blue-shirt subject clearly readable in a narrow center portrait crop. Style: cinematic editorial 35mm photography, realistic skin and fabric, organic fine film grain, slightly imperfect candid timing, optical motion blur and shallow depth of field, not a painting or render. Lighting: warm low afternoon window light, subdued amber and olive-brown surroundings, soft cream whites, deep gentle shadows, restrained contrast and muted saturation, blue shirt as the cool focal accent. Preserve the reference's atmosphere of movement around a focused person; keep one central subject sharp rather than blurring everything. Avoid logos, watermarks, borders, illustration, plastic skin, HDR gloss, readable text or artificial gibberish."
+    },
+    {
+      "id": "industry",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/industry.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/industry.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/industry.webp",
+          "width": 1200,
+          "height": 670,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: premium enterprise website editorial photograph, landscape image with approximately 1.791:1 aspect ratio, intended web size 1200 x 670. High detail, natural photographic texture.\nInput image 1 is a STYLE AND COMPOSITION REFERENCE only. Generate a new analogous original photograph, not a copy of the reference, preserving its visual idea, camera angle, color grading, quality, motion and placement.\nScene: polished dark teal-grey veined stone floor in a modern public business concourse, seen from a steep elevated overhead viewpoint. No visible horizon or walls.\nSubject: one fictional adult male business professional in a muted blue-grey suit and light blue open-collar shirt, carrying a black leather briefcase in his right hand. A different person from the reference. He is clearly in focus, walking naturally, calmly purposeful. Keep him near the central 44-48% horizontal position, with his head near the upper middle and torso in the central image, so a portrait cover crop centered at 44% retains him. Surrounding passing people are only partially visible near the frame edges, rendered with convincing long-exposure directional motion blur; one restrained warm orange accent, neutral cream and blue clothing.\nStyle and mood: cinematic editorial business photography, understated, cool green-teal and blue palette, soft diffuse daylight, analog fine grain, realistic suit fabric and stone veins, a still sharp focal person amidst movement. Match the reference's restrained contrast and exposure.\nComposition constraints: wide landscape composition, main figure central and distinct, broad stone floor negative space especially right side, no extra prominent sharp people. Preserve natural anatomy and plausible briefcase grip. The scene must remain strong in a narrow central portrait crop.\nAvoid: text, typography, logos, brands, watermarks, signs, graphic overlays, interface, synthetic 3D render appearance, exaggerated HDR, oversaturated colors."
+    },
+    {
+      "id": "platform",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/platform.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/platform.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/platform.webp",
+          "width": 1800,
+          "height": 1009,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium dark full-width photographic texture for white enterprise platform text and interface overlays. Input image 1 is the reference for idea, composition, palette, grain and photographic method only. Generate a completely new analogous abstract long-exposure photograph of dark water / landscape sweeping past the camera, strongly defocused lateral-diagonal motion streaks. Wide landscape about 16:9, high resolution about 2560x1440. Strict restrained almost-monochrome palette: near black, charcoal, dark blue-gray slate, soft cool silver-gray highlights across upper quarter, deep near-black central and lower-right region, a few diffused gray diagonal streaks along lower left. All bands sweep gently downward left-to-right. Fine realistic film grain everywhere, smooth organic blur with subtle natural tonal variation, photographed not rendered. Preserve original's subdued dark cinematic mood, quiet sense of motion, layered soft bands, ample unobtrusive negative space for white headings and product diagrams. Keep most of bottom half very dark and top lighter but not white. No hard detail, no recognizable objects, no people, no symbols, no lettering, no watermark, no logos, no glowing futuristic lines, no artificial colorful gradient, no oily metallic CGI."
+    },
+    {
+      "id": "strategy",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/strategy.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/strategy.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/strategy.webp",
+          "width": 1054,
+          "height": 1451,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: vertical atmospheric photographic background for an enterprise AI strategy card, final aspect ratio 1054:1451 (roughly 3:4 portrait). Input image 1 is a style/composition/color reference only. Create a new analogous abstract long-exposure photographic image, not a digital gradient or painting. The suggestion is a calm blue body of water and shore seen through strong horizontal camera movement and soft focus. Preserve the reference's very fine dense organic film grain, muted sky blue and steel blue covering the upper two thirds, a soft icy pale light patch at upper left, a small blurred amber-orange horizontal streak toward the upper right edged with muted olive green, and deep almost-black brown/olive land or shadow filling most of the bottom third with an uneven soft diagonal shoreline. Layers of blurred blue and dark horizontal motion in the lower middle. Dreamy, tactile, restrained, cinematic, intentionally out of focus, quiet forward motion and reflection. Frame portrait, high quality, at least 1200px high. Leave the lower half low-detail and dark enough for white text overlay. Generate original spatial variations while keeping the distribution of blue, black and small amber/green notes strongly close to the reference. No distinct buildings, people or objects, no typography, text, watermark or logos, no cosmic nebula, no vector art, no clean synthetic gradients, no sharpened edges."
+    },
+    {
+      "id": "closing",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/media/closing.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/media/closing.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/media/closing.webp",
+          "width": 1200,
+          "height": 495,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: very wide photographic website closing-section background, approximately 2.424:1 aspect ratio, intended web size 1200 x 495.\nInput image 1 is a STYLE, PALETTE AND COMPOSITION REFERENCE only. Generate a new original abstract photographic frame with the same intentional defocus, sweeping long-exposure motion blur, fine analog grain, moody atmosphere and dark tonal distribution.\nScene and medium: an atmospheric real-camera impression of passing greenery and warm architectural light, deliberately so out of focus and motion smeared that no specific person, building, object or place is identifiable. Soft diagonal/horizontal streaks across the upper half, primarily deep forest and olive green, muted amber, subdued terracotta or brick red, a little soft creamy reflected light. Rich photographic texture rather than digital vector gradients.\nComposition: the upper 40-45% contains the soft moving color and dim diffuse highlights. The entire bottom half falls naturally into deep near-black with only the faintest grain and extremely low contrast; this dark region is needed for a website's overlaid white call-to-action. Preserve dark margins and quiet central/lower negative space. Match the reference's cinematic muted exposure and very soft edges.\nConstraints: pure background photograph, no sharp focal subject, no decipherable scene, no crisp geometry, no text or graphical elements. Keep brightest diffuse spots confined to upper band and avoid blown highlights.\nAvoid: text, logos, watermark, signs, interface, literal objects, recognizable people, neon, saturated red, bokeh circles, galaxy or space imagery, illustration, flat synthetic gradients."
+    },
+    {
+      "id": "enterprise-atrium",
+      "generation_mode": "reference-guided-original",
+      "reference": {
+        "repository_path": "public/images/enterprise-atrium.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/images/enterprise-atrium.webp",
+        "role": "subject idea, composition, lighting, palette and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/images/enterprise-atrium.webp",
+          "width": 1672,
+          "height": 941,
+          "format": "webp",
+          "responsive_derivative": false
+        },
+        {
+          "repository_path": "public/images/enterprise-atrium-960.webp",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "responsive_derivative": true
+        },
+        {
+          "repository_path": "public/images/enterprise-atrium-640.webp",
+          "width": 640,
+          "height": 360,
+          "format": "webp",
+          "responsive_derivative": true
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural.\nAsset type: high-end enterprise website architectural photograph, wide landscape approximately 16:9, intended web size 1672 x 941. Produce a clean high-resolution master.\nInput image 1 is a STYLE AND COMPOSITION REFERENCE only. Generate a new analogous original architectural photograph of a different, fictional contemporary office courtyard. Preserve the same idea, warm light, material character, level of realism and spatial composition; do not copy the precise building.\nScene/backdrop: a quiet spacious curved courtyard embraced by a 4-5 storey modern office building. Pale beige limestone facade, disciplined tall recessed rectangular windows, large black-framed ground-floor glazing and a recessed lobby entrance. The elegant facade curves across the top and right of the frame, with a sweeping light stone overhang at upper left. Deep but natural glass reflections.\nForeground: broad finely jointed pale stone plaza, realistic warm angled shadows across the paving. A planted raised bed and leafy small tree on the left, restrained planting toward the lower right. Exactly two small distant motion-blurred human figures walking at opposite sides near the ground-floor building; architecture remains dominant and quiet.\nLighting/mood: late golden-hour sunlight entering from the left, warm honey highlights on pale stone and glass, soft olive greenery, deep grey window recesses, calm premium architectural editorial photograph. Fine natural detail, true-to-life texture, subtle grain, believable straight verticals and professional tilt-shift architectural lens clarity.\nComposition/framing: wide eye-level view across the courtyard, main curved facade filling upper two thirds, generous plaza in bottom third, plants frame the scene, warm light and shadow rhythm consistent with reference. New building proportions and window arrangement, not an exact recreation.\nAvoid: text, logos, brands, watermarks, signage, sculptures, extra people, cars, fantasy architecture, impossible geometry, CGI sheen, overprocessed HDR, oversaturation.",
+      "currently_used_by_site": false
+    },
+    {
+      "id": "vitali-bakhmat",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/vitali-bakhmat.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vitali-bakhmat.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/vitali-bakhmat.webp",
+          "width": 960,
+          "height": 1200,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME person, retaining his recognizable identity, expression, clothing, pose and black-and-white editorial style. This is a faithful fresh portrait, not a different model and not a stylization.\nInput images: Image 1 is the identity, clothing, pose, crop and lighting reference; preserve the man's face structure, eyes, nose, mouth, distinctive smile, teeth, glasses, medium-length light side-parted hair, age and physique.\nScene/backdrop: simple very light gray studio wall with a subtle natural shadow, no objects.\nComposition/framing: vertical 4:5 portrait, subject centered, framed from a little above his head down to his upper hips; arms held casually behind his back; plain dark crewneck long-sleeve top. Keep ample headroom, shoulders and torso exactly as in the reference.\nLighting/mood: soft natural side lighting, friendly open toothy smile, relaxed posture, understated professional photography.\nColor palette: strictly neutral black and white, gentle gray gradation, deep black clothing, luminous gray background.\nMaterials/textures: natural skin texture, individual hair strands, subtle fabric folds, clean believable optics; photograph quality at least as high as source, ideally output 1280 by 1600 or larger in the same ratio.\nConstraints: preserve identity extremely closely; do not beautify, reshape, change ethnicity, age, hairstyle, glasses, clothing, expression or body proportions. Regenerate the photographic rendering and fine detail. No text, no logo, no watermark, no frame, no added accessories."
+    },
+    {
+      "id": "vadim-vladymtsev",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/vadim-vladymtsev.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vadim-vladymtsev.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/vadim-vladymtsev.webp",
+          "width": 960,
+          "height": 639,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME man, preserving his recognizable facial identity and existing black-and-white portrait style.\nInput images: Image 1 is the exact identity, clothing, framing and expression reference; preserve the man's face shape, wide smile and teeth, eye shape, nose, hairstyle, age, physique and all distinctive features. Do not substitute a different model.\nScene/backdrop: simple uniform mid-light gray studio background, no objects.\nComposition/framing: horizontal 3:2 image, centered head-and-upper-chest portrait; short dark hair swept to the side, dark casual pullover hoodie with its hood lying around his neck, shoulders slightly turned, face to camera. Preserve the crop, amount of headroom, shoulder width, neckline and cheerful expression from the reference.\nLighting/mood: soft even portrait lighting, authentic warm friendly broad smile, relaxed professional founder photo.\nColor palette: neutral black and white only, gray backdrop, dark gray hoodie.\nMaterials/textures: photographic skin texture and natural subtle facial detail; realistic hair and fabric, no beauty retouching or airbrushing. At least 1536 by 1024 output with faithful 3:2 framing.\nConstraints: keep the same real identity extremely closely; retain age, facial proportions, smile, hair, eyes, body, hoodie and pose. Only regenerate the photographic rendering and fine detail. No text, no brand, no watermark, no added props or accessories."
+    },
+    {
+      "id": "egor-krychev",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/egor-krychev.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/egor-krychev.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/egor-krychev.webp",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a fresh high-quality photographic image of exactly the SAME person, retaining recognizable identity, subtle expression, formal clothing, pose, square framing and black-and-white style.\nInput images: Image 1 is the identity and photographic reference. Preserve face shape, eyes, nose, mouth, thin moustache, slim rectangular glasses, short dark fringe hairstyle, age and physique. This must remain the same man, not a different model.\nScene/backdrop: softly out-of-focus modern office with glass partitions, natural window light and faint plant silhouettes, matching the simple depth and tones of the source.\nComposition/framing: square portrait from upper chest upward, body at a slight angle with face towards camera and a subtle natural head tilt; dark suit jacket over a white open-collar shirt, thin rectangular glasses, faint closed-mouth smile; same headroom and head placement as reference.\nLighting/mood: soft window light, restrained professional editorial portrait, calm approachable mood.\nColor palette: strictly neutral black and white with rich dark jacket, light shirt and softly blurred gray office background.\nMaterials/textures: authentic skin, crisp individual hairs and eyeglass edges, realistic cloth, no waxy skin or cosmetic smoothing. Output at least 1536 by 1536 pixels.\nConstraints: preserve the man's identity and distinctive face extremely closely; preserve age, hair, glasses, slight moustache, expression, pose and clothing. Regenerate photographic fine detail without reshaping or beautifying. No text, no logo, no watermark, no frame, no additional accessories."
+    }
+  ],
+  "derived_media": [
+    {
+      "repository_path": "public/og/century-ai-eu.png",
+      "width": 1200,
+      "height": 630,
+      "source_paths": [
+        "public/media/hero-poster.webp",
+        "public/brand/century-logo-white.svg"
+      ],
+      "script": "scripts/create-og.mjs",
+      "command": "npm run assets:og",
+      "method": "Sharp composites the generated hero, supplied white wordmark and existing text."
+    },
+    {
+      "repository_path": "public/media/enterprise-film.mp4",
+      "width": 1280,
+      "height": 720,
+      "frames_per_second": 24,
+      "duration_seconds": 13,
+      "audio": false,
+      "source_paths": [
+        "public/media/hero-poster.webp",
+        "public/media/workflows.webp",
+        "public/media/knowledge.webp",
+        "public/media/support.webp"
+      ],
+      "script": "scripts/create-enterprise-film.mjs",
+      "command": "npm run assets:film",
+      "method": "Slow pan/zoom animation and crossfades of generated still photographs; no full-motion video generation."
+    }
+  ]
+}

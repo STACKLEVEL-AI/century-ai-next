@@ -1,14 +1,14 @@
 # Wonderful-inspired Century website adaptation
 
-This **26-route website** adapts the main page families and visual composition of [Wonderful](https://www.wonderful.ai/) while preserving Century's name, founders and existing business contacts. The current design migration covers the homepage and the shared product, industry, company and guide layouts. The [4 November 2026 migration log](design-migration-2026-11-04.md) records the small implementation stages, media sources and validation evidence; the earlier single-page plan is historical context.
+This **26-route website** adapts the main page families and visual composition of [Wonderful](https://www.wonderful.ai/) while preserving Century's name, founders and existing business contacts. The design covers the homepage and the shared product, industry, company and guide layouts. The [design migration log](design-migration-2026-11-04.md) records the earlier implementation, original media sources and validation evidence. The subsequent [generated photography refresh](generated-photography-2026-11-04.md) replaces every distinct photographic asset while preserving its visual purpose.
 
 ## Century identity
 
 The current design uses the **black and white Century SVG wordmarks supplied for this task**, Inter typography, white and near-black sections, large light-weight headings, restrained borders and rounded buttons. Photographic cards and a short background film carry the homepage imagery. A symbol derived from the supplied wordmark's first glyph is used where a compact mark is needed. Every route shares the same navigation and footer; `src/app/design.css` applies the current visual system across the existing page families.
 
-Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retain their existing names, roles, local portraits and profile destinations. Contact links lead to `https://t.me/vitalibakhmat`; the other external profile links are `https://vadimohka.com/` and `https://www.linkedin.com/in/ekrychev/`.
+Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retain their existing names, roles and profile destinations. Their portraits are regenerated photographs using the existing portraits as identity, expression, clothing and pose references. Contact links lead to `https://t.me/vitalibakhmat`; the other external profile links are `https://vadimohka.com/` and `https://www.linkedin.com/in/ekrychev/`.
 
-The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, native CSS/SVG interface illustrations and locally served reference-media derivatives. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Detailed media provenance is recorded in the migration log.
+The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, native CSS/SVG interface illustrations and locally served generated photographs. The enterprise scenes depict fictional locations and people; the named founders retain their identities. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. The original media provenance remains in the migration log; the current generation prompts and source references are in the photography notes.
 
 ## Complete route inventory
 
@@ -67,7 +67,7 @@ The infrastructure explorer, deployment phase selector, homepage industry select
 
 Workflow details, source excerpts, capability disclosures and mobile navigation use native `details` and `summary` where appropriate. The primary page content is server rendered. Skip links, visible focus styles, semantic headings, responsive layouts and reduced-motion styles are included. Browser-level validation of these behaviours is separate from inspecting the source or a static export.
 
-The decorative homepage film is muted, loops inline and has a labelled pause/play button. `HeroFilm` checks the visitor's reduced-motion and save-data preferences before mounting the video. When either preference is enabled, or JavaScript is unavailable, the responsive local poster remains the hero background. The film is decorative and hidden from assistive technology; all hero text and actions remain regular page content.
+The decorative homepage film is a silent 13-second montage of generated still photographs, animated with slow zooms and crossfades. It loops inline and has a labelled pause/play button. `HeroFilm` checks the visitor's reduced-motion and save-data preferences before mounting the video. When either preference is enabled, or JavaScript is unavailable, the responsive local poster remains the hero background. The film is decorative and hidden from assistive technology; all hero text and actions remain regular page content.
 
 The supplier-onboarding answer is labelled as sample data and includes inspectable source excerpts. The Systems workspace and industry diagrams are illustrations. Careers does not claim open roles, and Press does not invent media coverage or funding. Security content identifies decisions to agree for an implementation; it does not claim certifications or unconditional compliance.
 
@@ -81,20 +81,21 @@ Each page has a unique title, description, canonical and Open Graph URL under `h
 
 ## Asset provenance
 
-The [migration log's asset-provenance section](design-migration-2026-11-04.md#asset-provenance) contains the original reference URLs and the film edit details. The current assets are:
+The [migration log's asset-provenance section](design-migration-2026-11-04.md#asset-provenance) preserves the historical reference URLs and original film edit details. The [photography notes](generated-photography-2026-11-04.md) and [exact prompt manifest](generated-photography-prompts.json) document the current set: **13 distinct generated photographs delivered as 17 WebP files**, including four responsive derivatives, plus a derived social image and background animation.
 
 | Asset | Local location and source |
 | --- | --- |
 | Black and white Century wordmarks | `public/brand/century-logo.svg` and `public/brand/century-logo-white.svg`; supplied by the user. |
 | Compact Century symbol | `public/brand/century-symbol.svg`; derived from the supplied wordmark's first glyph. |
-| Homepage film | `public/media/enterprise-film.mp4`; a 13-second, silent, locally re-encoded selection from the reference film. |
-| Hero posters and use-case stills | `public/media/hero-poster*.webp`, `knowledge.webp`, `workflows.webp` and `support.webp`; extracted from that film. |
-| Platform, deployment, strategy, industry and closing imagery | WebP files in `public/media/`; locally served derivatives of the reference images listed in the migration log. |
-| Founder portraits | Existing photographs preserved in `public/founders/`. |
+| Homepage film | `public/media/enterprise-film.mp4`; a 13-second, silent 1280 × 720 / 24 fps animation of the generated hero, workflows, knowledge and support photographs. |
+| Hero posters and use-case photographs | `public/media/hero-poster*.webp`, `knowledge.webp`, `workflows.webp` and `support.webp`; generated analogues preserving the source scenes' ideas, framing, light and colour treatment. |
+| Platform, deployment, strategy, industry and closing imagery | WebP files in `public/media/`; new reference-guided generated photographs retaining the existing visual purpose and palette. |
+| Founder portraits | `public/founders/`; identity-preserving generated portraits of the same three founders, with higher output resolution. |
+| Atrium and responsive variants | `public/images/enterprise-atrium*.webp`; newly generated architecture, retained as unused assets. |
 
-The reference film selection avoids visible customer-bank signage. These media files illustrate the site's themes; they do not depict Century's premises or demonstrate Century customer relationships. Visitors load them from Century's static export, not from Wonderful. The about and contact pages use local deployment and industry images from the same reference-media set. The earlier generated atrium files remain in `public/images/` as unused historical assets. Product compositions, industry-detail diagrams and article artwork remain native code-based illustrations.
+The enterprise photographs illustrate the site's themes; they do not document Century's premises or customer relationships. The About and Contact pages reuse the generated deployment and industry images. All assets are loaded from Century's static export. Product compositions, industry-detail diagrams and article artwork remain native code-based illustrations. The earlier migration log and its two live-site screenshots remain unchanged as historical evidence; those screenshots are not photo assets used by the site.
 
-The social image at `public/og/century-ai-eu.png` combines the local hero poster and supplied white wordmark with Sharp. Regenerate it with `npm run assets:og`, then rebuild to refresh `out/`. This command does not require Chromium or a running web server.
+The social image at `public/og/century-ai-eu.png` combines the generated hero poster, supplied white wordmark and existing text with Sharp. Regenerate it with `npm run assets:og`. The `npm run assets:film` command runs `scripts/create-enterprise-film.mjs` to animate four generated stills; the result is a montage, with no full-motion video generation. Rebuild to refresh `out/` after changing either derived asset.
 
 ## Build and optional inspection
 
@@ -128,19 +129,11 @@ The inspector can read an alternative export directory:
 npm run check:export -- /absolute/path/to/export
 ```
 
-The optional Playwright suite in `tests/landing.spec.ts` covers routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, source disclosures and FAQs; product tabs; Gateway period selection and CSV export; and responsive layouts. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt could not launch Chromium; the browser was missing and its attempted download was truncated. It stopped before test assertions, so it provides no passing or failing application-assertion result. Further browser-review results are recorded separately in the migration log rather than inferred from a successful typecheck or export inspection.
+The optional Playwright suite in `tests/landing.spec.ts` covers routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, source disclosures and FAQs; product tabs; Gateway period selection and CSV export; and responsive layouts. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright's Chromium browser. See the [photography verification instructions](generated-photography-2026-11-04.md#verification) for checking the new imagery and its crops.
 
-### Preview validation checkpoint — 4 November 2026
+### Historical design validation — 4 November 2026
 
-The current migration has a successful local preview export: all 26 content routes were generated, `npm run typecheck` passed, and `npm run check:export` passed for the route inventory, metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels. Earlier blocked build attempts are historical context, not the current preview result.
-
-The workspace lacks `/proc` RSS metrics, which causes Next.js 15.5.28's optional `traceMemoryUsage` diagnostic to throw an `ENOENT` error before compilation. For this preview only, the ignored local dependency tracer was temporarily changed to skip that exact diagnostic. No global process API, application source, package lock or deployment workflow was patched for this workaround.
-
-This confirms the preview export and its static inspection. At that checkpoint, the unmodified production build was still awaiting GitHub Actions. Browser behaviour and publication need their own evidence; consult the [migration log](design-migration-2026-11-04.md#validation-record) for subsequent browser and deployment results. A live release is established by a successful Actions deployment and the live Pages site.
-
-### Production release checkpoint — 4 November 2026
-
-[PR #47](https://github.com/STACKLEVEL-AI/century-ai-next/pull/47) was merged into `main` as `1163e7c32c64efe17043ec8e85a60a6c60adf502`. The unmodified production build and Pages deployment succeeded in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065). The published design was then inspected at [century-ai.eu](https://century-ai.eu/): homepage film and navigation, AI OS mouse/keyboard tabs, Gateway period/view changes, industry selection, founder portraits and the Contact destination were verified. The migration log contains the exact checks, limitations and live screenshots. Mobile rendering and automated Playwright assertions are not claimed by this manual desktop review.
+The earlier design migration passed its local typecheck, static export and export inspection. Its preview used a local-only workaround for unavailable `/proc` RSS diagnostics; an attempted Playwright run stopped before assertions because Chromium could not be installed. The unmodified production build and Pages deployment subsequently succeeded in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065) for [PR #47](https://github.com/STACKLEVEL-AI/century-ai-next/pull/47), merge commit `1163e7c32c64efe17043ec8e85a60a6c60adf502`. The [migration log](design-migration-2026-11-04.md#validation-record) records the subsequent manual desktop review and screenshots. These checkpoints predate the generated photography refresh and do not establish its validation or deployment status.
 
 ## Deployment-only GitHub workflow
 
@@ -150,4 +143,4 @@ There are **no CI test jobs or test steps**, no browser installation or Playwrig
 
 Pages settings must use **GitHub Actions** as the source and retain the `century-ai.eu` custom domain. Generated output is not committed to `main` or published through a separate `gh-pages` branch. Source changes become a confirmed publication only after the deployment succeeds.
 
-The [migration log](design-migration-2026-11-04.md) tracks the current design work and release checks. The [original implementation plan](superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remains unchanged as historical project context.
+The [photography notes](generated-photography-2026-11-04.md) describe the current media and verification steps. The [design migration log](design-migration-2026-11-04.md) and [original implementation plan](superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remain unchanged as historical project context.

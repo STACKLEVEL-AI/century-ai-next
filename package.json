@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "check:export": "node scripts/verify-export.mjs",
     "test:e2e": "playwright test",
-    "assets:og": "node scripts/create-og.mjs"
+    "assets:og": "node scripts/create-og.mjs",
+    "assets:film": "node scripts/create-enterprise-film.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",

@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="hero" id="home" aria-labelledby="hero-title">
       <picture className="hero-image">
         <source media="(max-width: 640px)" srcSet="/media/hero-poster-640.webp 640w, /media/hero-poster-960.webp 960w" sizes="100vw" />
-        <img src="/media/hero-poster.webp" srcSet="/media/hero-poster-960.webp 960w, /media/hero-poster.webp 1800w" sizes="100vw" width={1800} height={1012} alt="" fetchPriority="high" />
+        <img src="/media/hero-poster.webp" srcSet="/media/hero-poster-960.webp 960w, /media/hero-poster.webp 1800w" sizes="100vw" width={1800} height={1013} alt="" fetchPriority="high" />
       </picture>
       <HeroFilm />
       <div className="hero-shade" aria-hidden="true" />
