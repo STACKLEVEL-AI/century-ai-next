@@ -33,9 +33,9 @@ h3 { font-weight: 400; }
 /* Navigation uses the supplied, unchanged SVG wordmarks. */
 .announcement { height: 46px; gap: 16px; background: #fafaf8; color: #393939; font-size: 12px; }
 .announcement a { gap: 7px; }
-.site-header, .site-header-light { position: fixed; top: 46px; z-index: 40; transition: background 180ms, color 180ms; }
+.site-header, .site-header-light { position: absolute; top: 46px; z-index: 40; transition: background 180ms, color 180ms; }
 .site-header-light { background: #fff; color: #171719; }
-.site-header.is-scrolled { top: 0; color: #171719; background: #fffffff5; border-bottom: 1px solid #17171910; backdrop-filter: blur(16px); }
+.site-header.is-scrolled { position: fixed; top: 0; color: #171719; background: #fffffff5; border-bottom: 1px solid #17171910; backdrop-filter: blur(16px); }
 .site-header.is-scrolled .btn-header { background: #171719; color: #fff; }
 .header-inner { min-height: 80px; border: 0; gap: 56px; }
 .header-spacer { height: 80px; }
@@ -201,9 +201,15 @@ h3 { font-weight: 400; }
 @media (max-width: 900px) {
   .desktop-navigation { display: none; }.mobile-navigation { display: block; }
   .header-inner { justify-content: space-between; }
-  .mobile-navigation-panel { color: #171719; background: #fff; border-color: #e3e3dd; max-height: calc(100svh - 142px); overflow-y: auto; }
-  .mobile-navigation-panel > details > summary { color: #171719; }
-  .mobile-navigation-panel .nav-menu-link { color: #171719; }
+  .mobile-navigation > summary { display: flex; align-items: center; gap: 7px; min-width: 44px; min-height: 44px; justify-content: center; list-style: none; cursor: pointer; }
+  .mobile-navigation > summary > span { font-size: 10px; }
+  .mobile-navigation-panel { position: absolute; left: 0; right: 0; top: 100%; padding: 14px 22px 20px; color: #171719; background: #fff; border: 1px solid #e3e3dd; border-radius: 0 0 8px 8px; box-shadow: 0 20px 50px #13131333; max-height: calc(100svh - 142px); overflow-y: auto; }
+  .mobile-navigation-panel > details { border-bottom: 1px solid #e5e5e5; }
+  .mobile-navigation-panel > details > summary { display: flex; align-items: center; justify-content: space-between; min-height: 53px; color: #171719; font-size: 15px; list-style: none; }
+  .mobile-navigation-panel .nav-menu-link { padding: 12px 9px; color: #171719; }
+  .mobile-navigation-panel .nav-menu-link > span { font-size: 13px; }
+  .mobile-navigation-panel .nav-menu-link > small { font-size: 11px; }
+  .mobile-blog-link { display: flex; align-items: center; justify-content: space-between; min-height: 52px; font-size: 15px; text-decoration: none; }
   .hero h1 { font-size: clamp(50px, 7.8vw, 70px); }
   .section-heading-row { gap: 40px; }
   .scenario-grid { gap: 16px; }.scenario-cover h3 { font-size: 23px; padding: 23px 38px 20px 20px; }.scenario-arrow { right: 17px; top: 23px; width: 18px; }

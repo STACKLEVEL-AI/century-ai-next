@@ -52,3 +52,5 @@ Preserve the existing 26-route structure and functioning product examples. Adapt
 2. Shared design and homepage implemented; internal product, industry and company styles neutralised. User-provided SVGs are used in the header, footer, press downloads and social preview. The brand monogram is derived from the supplied first glyph.
 
 3. Internal page families, neutral illustrations, About/Contact media, both brand downloads, favicon and social metadata updated. Supplied SVG files verified byte-for-byte identical. CSS compatibility warnings corrected; final preview export rerun before publication.
+
+4. Independent source review found and fixed the 760–900 px mobile menu breakpoint. The full mobile panel structure now applies at 900 px. The header is absolute before JavaScript upgrades it to fixed on scroll, preserving readable top navigation without JavaScript. No further material source-review blockers found.
