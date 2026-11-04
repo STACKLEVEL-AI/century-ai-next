@@ -1,0 +1,140 @@
+[
+  {
+    "asset": "public/media/app/models.webp",
+    "source": "century-agent-search(1).mp4",
+    "source_sha256": "aef2cf3803094da67146651768cde3c3c7f1cb9dd3b5f8a60c266cd01b2daaf0",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 0,
+    "time_seconds": 0.0,
+    "crop_xywh": [
+      984,
+      542,
+      910,
+      342
+    ],
+    "asset_sha256": "7d74e10aa34c501dfca24af3fad118bc77037ede45c0cc2e2a497d62db645f3b",
+    "bytes": 36006,
+    "description": "Four complete model assignments and agent action rows.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  },
+  {
+    "asset": "public/media/app/files.webp",
+    "source": "century-ocr-pdf(1).mp4",
+    "source_sha256": "f0b1b4402a133d6e4c6f33493b42c6a80c809dd32b257b810ecc36549fd3d1df",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 114,
+    "time_seconds": 3.8,
+    "crop_xywh": [
+      636,
+      108,
+      962,
+      304
+    ],
+    "asset_sha256": "1cb52a52d00f3caba19bdabb7bc7d45b000106b8f4c2217e57fd8639f2e64694",
+    "bytes": 49238,
+    "description": "Four complete JSON/TXT library rows and file sizes.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  },
+  {
+    "asset": "public/media/app/response.webp",
+    "source": "century-chat-document(1).mp4",
+    "source_sha256": "205470e4a0f0f5d652dd20a256751f884faac70dc2f09e1c30058664fdd0acd6",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 520,
+    "time_seconds": 17.333333333333332,
+    "crop_xywh": [
+      181,
+      690,
+      650,
+      98
+    ],
+    "asset_sha256": "0f340cf4b9be01526542009c7a466a306b91bb7cc81e93de91cfcd895eb83930",
+    "bytes": 4070,
+    "description": "Copy/feedback actions, input/output token counts and timing; blank right side trimmed.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  },
+  {
+    "asset": "public/media/app/document.webp",
+    "source": "century-ocr-pdf(1).mp4",
+    "source_sha256": "f0b1b4402a133d6e4c6f33493b42c6a80c809dd32b257b810ecc36549fd3d1df",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 6,
+    "time_seconds": 0.2,
+    "crop_xywh": [
+      636,
+      360,
+      962,
+      54
+    ],
+    "asset_sha256": "0da60779b6e276babf758cbb26ed9ecd3c17ac15edf21113048b1a282ff59038",
+    "bytes": 4850,
+    "description": "Complete native Choose File control.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  },
+  {
+    "asset": "public/media/app/audio.webp",
+    "source": "century-transcription(1).mp4",
+    "source_sha256": "8da8b630385f2088f6109d4a02cb847076771272b9ebea786c6e554db611f8a8",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 204,
+    "time_seconds": 6.8,
+    "crop_xywh": [
+      360,
+      380,
+      1514,
+      78
+    ],
+    "asset_sha256": "6557e86a005728c5cdfa6deef5860698646b1741534de5e0518a6425d4be29e7",
+    "bytes": 6830,
+    "description": "Complete native playback, seek and volume controls.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  },
+  {
+    "asset": "public/media/app/model-choice.webp",
+    "source": "century-chat-reasoning(1).mp4",
+    "source_sha256": "456aa27bee2edf169bb964d9fe781eb852dd1d0c49a4f215a8e410d95dfd3edf",
+    "source_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frame": 255,
+    "time_seconds": 8.5,
+    "crop_xywh": [
+      176,
+      18,
+      296,
+      60
+    ],
+    "asset_sha256": "f3397487596988a567fa44cd124541c6fdc8e6021f091d813135b16db88f9be5",
+    "bytes": 7402,
+    "description": "Complete model selector with dropdown control.",
+    "visible_language": "English / technical identifiers / numerals; no Cyrillic or Russian transliteration",
+    "transformation": "Frame extraction, crop and WebP encoding only; no redraw or translation"
+  }
+]

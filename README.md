@@ -4,7 +4,7 @@ The English Century website for [century-ai.eu](https://century-ai.eu/), built w
 
 The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. The current design uses **the supplied black and white Century wordmarks, Inter typography, white and near-black sections, and local photographic media**. Century's name, founders and contact destinations are preserved. Page structure and visual composition follow the reference; the writing and product examples are adapted for Century.
 
-The [4 November 2026 migration log](docs/design-migration-2026-11-04.md) records the staged work, reference-media provenance and validation checkpoints.
+The [design migration log](docs/design-migration-2026-11-04.md) records the initial redesign. The [application screenshot log](docs/application-screenshots-2026-11-04.md) tracks the follow-up replacement of invented product visuals with English-only details captured from the supplied Century recordings.
 
 ## Pages
 
@@ -22,13 +22,13 @@ The industry URL is deliberately singular: `/industries/telecommunication/`. The
 
 ## Content and interaction
 
-Each industry page includes concrete workflow examples, the information they use, the person who reviews the result, an illustrative four-step process and implementation controls. Product pages include a layered infrastructure explorer, native disclosures, a deployment phase selector and a local AI Gateway demonstration with period selection, usage views and CSV export.
+Each industry page includes concrete workflow examples, the information they use, the person who reviews the result, an illustrative four-step process and implementation controls. Product pages include an infrastructure explorer, native disclosures, a deployment phase selector and real application captures. Each capture links to its full-size local image and remains available without JavaScript.
 
-The Gateway numbers, review queues, source excerpts and workflow visuals are **labelled examples**. They are not live accounts, prices, customer results or claims about a completed deployment. Careers presents areas for a conversation without inventing open vacancies. Press provides company information and a local brand download without inventing coverage, investors or awards. The blog contains original practical Century guides.
+The invented supplier answer, review queue, product diagrams and Gateway sample analytics have been removed. Product visuals now use **real, pre-cropped application frames**. The selected visible fragments contain English interface text, technical identifiers or numbers; Russian messages and document contents are excluded. These are static screenshots, not a live account connection. Careers presents areas for a conversation without inventing open vacancies. Press provides company information and a local brand download without inventing coverage, investors or awards. The blog contains original practical Century guides.
 
 All contact actions lead to [Vitali Bakhmat on Telegram](https://t.me/vitalibakhmat). The other external profile destinations are [Vadim Vladymtsev’s website](https://vadimohka.com/) and [Egor Krychev’s LinkedIn](https://www.linkedin.com/in/ekrychev/). The site has no contact form or embedded chat. The application adds no analytics, cookies or persistent browser storage.
 
-Images, the background film, both wordmarks and interface illustrations are served locally. Inter is bundled by `next/font` during the build and served with the site. The homepage uses a short, silent film selection from the reference with a pause/play control. A responsive poster remains visible without JavaScript; the film is not mounted when reduced motion or the browser's save-data preference is enabled. Reference media is illustrative and does not depict Century's premises or establish customer relationships. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive examples provide static fallback content.
+Images, the background film, both wordmarks and application captures are served locally. Inter is bundled by `next/font` during the build and served with the site. The homepage uses a short, silent film selection from the reference with a pause/play control. A responsive poster remains visible without JavaScript; the film is not mounted when reduced motion or the browser's save-data preference is enabled. Reference media is illustrative and does not depict Century's premises or establish customer relationships. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive selectors provide static fallback content.
 
 ## Local development
 
@@ -66,11 +66,11 @@ npm run typecheck
 npm run check:export
 ```
 
-`check:export` requires a completed `out/` build. It checks all 26 content pages, unique titles and descriptions, canonicals and Open Graph URLs, sitemap coverage, local links and anchors, referenced assets, contact destinations, sample labelling and the social-image dimensions. It accepts an alternative export directory with `npm run check:export -- /absolute/path/to/export`.
+`check:export` requires a completed `out/` build. It checks all 26 content pages, unique titles and descriptions, canonicals and Open Graph URLs, sitemap coverage, local links and anchors, referenced assets, contact destinations, real application captures and the social-image dimensions. It accepts an alternative export directory with `npm run check:export -- /absolute/path/to/export`.
 
-The optional `test:e2e` command and `tests/landing.spec.ts` cover route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, Gateway CSV export and responsive layouts. The suite is not called by deployment; running it locally requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt stopped before assertions because Chromium was missing and its download was truncated. This is a browser-installation blocker, not a result for the application's test assertions. Further browser-review results are recorded in the [migration log](docs/design-migration-2026-11-04.md).
+The optional `test:e2e` command and `tests/landing.spec.ts` cover route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, real capture loading/full-size links and responsive layouts. The suite is not called by deployment; running it locally requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt stopped before assertions because Chromium was missing and its download was truncated. This is a browser-installation blocker, not a result for the application's test assertions. Further browser-review results are recorded in the [migration log](docs/design-migration-2026-11-04.md).
 
-At the current migration's preview checkpoint, `npm run typecheck` passed, the local preview build generated all 26 content routes, and `npm run check:export` passed. This workspace lacks `/proc` RSS metrics: Next.js's optional `traceMemoryUsage` diagnostic throws an `ENOENT` error before compilation. For the preview only, the ignored local dependency tracer skipped that specific diagnostic. The workaround changes no application source, package lock or deployment workflow. The unmodified production build and GitHub Pages deployment subsequently passed in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065) for merge commit `1163e7c`. The updated site was verified at [century-ai.eu](https://century-ai.eu/). See the migration log for release evidence, screenshots and the exact scope of live-browser checks.
+At the initial design migration's preview checkpoint, `npm run typecheck` passed, the local preview build generated all 26 content routes, and `npm run check:export` passed. This workspace lacks `/proc` RSS metrics: Next.js's optional `traceMemoryUsage` diagnostic throws an `ENOENT` error before compilation. For the preview only, the ignored local dependency tracer skipped that specific diagnostic. The workaround changes no application source, package lock or deployment workflow. The unmodified production build and GitHub Pages deployment subsequently passed in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065) for merge commit `1163e7c`. The updated site was verified at [century-ai.eu](https://century-ai.eu/). See the migration log for release evidence, screenshots and the exact scope of live-browser checks.
 
 ## Useful source files
 
@@ -82,11 +82,12 @@ At the current migration's preview checkpoint, `npm run typecheck` passed, the l
 | `src/lib/industries.ts` | Seven industry pages and related-sector links. |
 | `src/lib/articles.ts` | Four original guides and article metadata. |
 | `src/components/site/` | Shared inner-page shell, heroes, sections and related links. |
-| `src/components/products/` | Product illustrations and interactive examples. |
-| `src/components/industries/` | Native SVG industry illustrations. |
+| `src/components/products/` | Infrastructure and deployment selectors. |
+| `src/components/AppScreenshot.tsx`, `src/lib/app-captures.ts` | Accessible real-image figures and their English metadata. |
+| `src/components/industries/` | Industry icons and retained historical artwork code. |
 | `src/components/HeroFilm.tsx` | Local background film, playback control and reduced-motion/save-data handling. |
 | `src/app/globals.css`, `site.css`, `products.css`, `industries.css`, `company.css`, `design.css` | Shared styles, page-family layouts and the current neutral design system. |
-| `public/brand/`, `public/media/` | Supplied Century wordmarks and local reference-media derivatives. |
+| `public/brand/`, `public/media/` | Supplied Century wordmarks, local reference media and application captures in `media/app/`. |
 
 Regenerate the committed 1200 × 630 social preview image with `npm run assets:og`, then rebuild the export. The generator uses Sharp and local assets; it does not require a browser.
 

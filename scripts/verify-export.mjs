@@ -38,6 +38,11 @@ const publicRoutes = [
   "/blog/plan-ai-deployment/",
   "/privacy/",
 ];
+const screenshotRoutes = new Set(["/", "/ai-os/", "/agents/", "/systems/", "/ai-gateway/"]);
+const retiredMockClasses = new Set([
+  "prod-constellation", "prod-agent-visual", "prod-systems-visual",
+  "prod-workspace", "gateway-demo", "example-board",
+]);
 const requiredAssets = [
   "404.html",
   "robots.txt",
@@ -78,6 +83,10 @@ function decodeEntities(value) {
 function attributes(tag) {
   return Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g)]
     .map((match) => [match[1].toLowerCase(), decodeEntities(match[2] ?? match[3])]));
+}
+
+function hasClass(attrs, name) {
+  return (attrs.class || "").split(/\s+/).includes(name);
 }
 
 function markupOnly(source) {
@@ -180,19 +189,39 @@ try {
     assert(!tags.some(({ name }) => ["form", "input", "textarea", "select"].includes(name)), `Unexpected contact or input field: ${route}`);
     assert(tags.some(({ name, attrs }) => name === "a" && attrs.href === telegram), `Missing Century contact link: ${route}`);
 
+    const captures = [...markup.matchAll(/<figure\b([^>]*)>([^]*?)<\/figure\s*>/gi)]
+      .filter((match) => hasClass(attributes(match[1]), "app-capture"));
+    if (screenshotRoutes.has(route)) {
+      assert(captures.length > 0, `Missing application screenshot figure: ${route}`);
+    }
+    for (const [, , contents] of captures) {
+      const images = [...contents.matchAll(/<img\b[^>]*>/gi)].map((match) => attributes(match[0]));
+      assert.equal(images.length, 1, `Expected one image per screenshot figure: ${route}`);
+      const image = images[0];
+      assert(/^\/media\/app\/.+\.webp$/.test(image.src || ""), `Screenshot must use a local /media/app/ WebP: ${route}`);
+      assert(Number(image.width) > 0 && Number(image.height) > 0, `Screenshot needs intrinsic dimensions: ${route}`);
+      // Metadata is checked here; screenshot pixels require separate visual review.
+      assert(image.alt?.trim() && !/[\u0400-\u04ff]/.test(image.alt), `Screenshot needs English alternative text: ${route}`);
+      const openLinks = [...contents.matchAll(/<a\b[^>]*>/gi)].map((match) => attributes(match[0]))
+        .filter((attrs) => hasClass(attrs, "app-capture-open"));
+      assert.equal(openLinks.length, 1, `Screenshot needs one full-size image link: ${route}`);
+      assert.equal(openLinks[0].href, image.src, `Screenshot link must open the displayed image: ${route}`);
+      assert(/^Open .+ screenshot$/.test(openLinks[0]["aria-label"] || ""), `Screenshot link needs an accessible label: ${route}`);
+      assert.equal(openLinks[0].target, "_blank", `Screenshot link should open separately: ${route}`);
+      assert(/\bnoopener\b/.test(openLinks[0].rel || ""), `Screenshot link needs noopener: ${route}`);
+    }
+
     for (const { name, attrs } of tags) {
+      const retiredClass = (attrs.class || "").split(/\s+/).find((name) => retiredMockClasses.has(name));
+      assert(!retiredClass, `Retired interface mock ${retiredClass} remains on ${route}`);
       if (name === "a" && attrs.href) {
-        if (attrs.href.startsWith("data:text/csv")) {
-          assert("download" in attrs, `CSV data link needs a download filename: ${route}`);
+        const destination = new URL(attrs.href, `${site}${route}`);
+        if (destination.origin === site) {
+          await verifyLocalReference(attrs.href, route, { fragment: true });
         } else {
-          const destination = new URL(attrs.href, `${site}${route}`);
-          if (destination.origin === site) {
-            await verifyLocalReference(attrs.href, route, { fragment: true });
-          } else {
-            assert(externalDestinations.has(destination.href), `Unexpected external link on ${route}: ${destination.href}`);
-            assert.equal(attrs.target, "_blank", `External link should open separately: ${route}`);
-            assert(/\bnoopener\b/.test(attrs.rel || "") && /\bnoreferrer\b/.test(attrs.rel || ""), `Missing external-link protection: ${route}`);
-          }
+          assert(externalDestinations.has(destination.href), `Unexpected external link on ${route}: ${destination.href}`);
+          assert.equal(attrs.target, "_blank", `External link should open separately: ${route}`);
+          assert(/\bnoopener\b/.test(attrs.rel || "") && /\bnoreferrer\b/.test(attrs.rel || ""), `Missing external-link protection: ${route}`);
         }
       }
       for (const attribute of ["src", "poster"]) {
@@ -211,14 +240,12 @@ try {
     }
   }
 
-  const gateway = await readPage(localFile(new URL(`${site}/ai-gateway/`)));
-  assert(/sample data/i.test(gateway.markup), "Gateway example needs a visible sample-data label");
   const image = await readFile(path.join(root, "og/century-ai-eu.png"));
   assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "OG asset is not a PNG");
   assert.equal(image.readUInt32BE(16), 1200, "OG width must be 1200");
   assert.equal(image.readUInt32BE(20), 630, "OG height must be 630");
   await inspectConnections(root);
-  console.log(`Optional export inspection passed: ${publicRoutes.length} routes, unique metadata, ${checkedReferences} local links/assets, sitemap, contact destinations and sample labelling.`);
+  console.log(`Optional export inspection passed: ${publicRoutes.length} routes, unique metadata, ${checkedReferences} local links/assets, sitemap, contact destinations and application screenshots.`);
 } catch (error) {
   console.error(`Export inspection failed: ${error.message}`);
   if (error.code === "ENOENT" || /Missing export file|Missing page/.test(error.message)) {

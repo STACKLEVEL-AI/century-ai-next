@@ -1,4 +1,3 @@
-import { readFile } from "node:fs/promises";
 import { expect, test, type Locator, type Page } from "@playwright/test";
 
 const ORIGIN = "http://127.0.0.1:4173";
@@ -26,6 +25,51 @@ async function expectLocalHeroImage(page: Page) {
     2,
   );
   expect(new URL(heroImage.source).origin).toBe(ORIGIN);
+}
+
+// Text checks cover labels and captions only. Screenshot pixels need a separate
+// visual review; absence of Cyrillic in the DOM is not an image-language audit.
+async function expectLocalAppScreenshots(page: Page) {
+  const captures = page.locator("figure.app-capture");
+  expect(await captures.count()).toBeGreaterThan(0);
+  for (const capture of await captures.all()) {
+    const image = capture.locator("img");
+    await expect(image).toHaveCount(1);
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toBeVisible();
+    await expect(image).toHaveJSProperty("complete", true);
+    await expect.poll(() => image.evaluate((node) => (node as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    const details = await image.evaluate((node) => {
+      const img = node as HTMLImageElement;
+      return {
+        complete: img.complete,
+        width: img.naturalWidth,
+        height: img.naturalHeight,
+        declaredWidth: Number(img.getAttribute("width")),
+        declaredHeight: Number(img.getAttribute("height")),
+        src: img.getAttribute("src"),
+        currentSrc: img.currentSrc,
+        alt: img.alt,
+      };
+    });
+    expect(details.complete).toBe(true);
+    expect(details.height).toBeGreaterThan(0);
+    expect(details.declaredWidth).toBeGreaterThan(0);
+    expect(details.declaredHeight).toBeGreaterThan(0);
+    expect(details.declaredWidth / details.declaredHeight).toBeCloseTo(details.width / details.height, 2);
+    expect(details.src).toMatch(/^\/media\/app\/.+\.webp$/);
+    expect(new URL(details.currentSrc).origin).toBe(ORIGIN);
+    expect(new URL(details.currentSrc).pathname).toBe(details.src);
+    expect(details.alt.trim()).not.toBe("");
+    expect(details.alt).not.toMatch(/[\u0400-\u04ff]/);
+    expect(await capture.innerText()).not.toMatch(/[\u0400-\u04ff]/);
+    const openImage = capture.locator(".app-capture-open");
+    await expect(openImage).toHaveCount(1);
+    await expect(openImage).toHaveAttribute("href", details.src!);
+    await expect(openImage).toHaveAttribute("aria-label", /^Open .+ screenshot$/);
+    await expect(openImage).toHaveAttribute("target", "_blank");
+    await expect(openImage).toHaveAttribute("rel", /\bnoopener\b/);
+  }
 }
 
 async function tabTo(page: Page, locator: Locator) {
@@ -60,6 +104,7 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
     expect(node["@id"]).toMatch(/^https:\/\/century-ai\.eu\/#/);
     expect(node.inLanguage).toBe("en");
   }
+  // This checks rendered text, not text embedded in screenshot pixels.
   expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
 
   await page.goto("/ai-os/");
@@ -157,6 +202,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
       await expect(page.locator(`#${id}`)).toBeVisible();
     }
     await expect(page.locator(".home-industry-fallback a")).toHaveCount(7);
+    await expectLocalAppScreenshots(page);
     const workflow = page.locator("#use-cases details").first();
     await workflow.locator("summary").click();
     await expect(workflow.locator(".card-measure")).toBeVisible();
@@ -168,9 +214,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await navigation.getByText("Platform", { exact: true }).click();
     await navigation.getByRole("link", { name: /^Century Agents/ }).click();
     await expect(page).toHaveURL(`${ORIGIN}/agents/`);
-    const source = page.locator("#source-supplier-checklist");
-    await source.locator("summary").click();
-    await expect(source.getByText("Section 2 — Required documents")).toBeVisible();
+    await expectLocalAppScreenshots(page);
     await expect(page.locator("#contact").getByRole("link", { name: "Message Vitali on Telegram", exact: true })).toBeVisible();
 
     await page.goto("/ai-os/");
@@ -178,14 +222,13 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/deployment/");
     await expect(page.locator(".phase-fallback").getByRole("heading", { name: "Build with your team", exact: true })).toBeVisible();
     await page.goto("/ai-gateway/");
-    await expect(page.locator(".gateway-fallback table")).toBeVisible();
-    await expect(page.getByRole("link", { name: "Export CSV", exact: true })).toHaveAttribute("download", "century-sample-usage-30d.csv");
+    await expectLocalAppScreenshots(page);
   } finally {
     await context.close();
   }
 });
 
-test("Menus, source details and security FAQs support keyboard navigation", async ({ page }) => {
+test("Menus, screenshot links and security FAQs support keyboard navigation", async ({ page }) => {
   await page.goto("/");
   await page.keyboard.press("Tab");
   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
@@ -208,12 +251,19 @@ test("Menus, source details and security FAQs support keyboard navigation", asyn
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(`${ORIGIN}/agents/`);
 
-  for (const id of ["source-supplier-checklist", "source-approval-policy"]) {
-    const source = page.locator(`#${id}`);
-    await tabTo(page, source.locator("summary"));
-    await page.keyboard.press("Enter");
-    await expect(source.locator(".source-excerpt")).toBeVisible();
-    await expect(page.locator(`#example a[href="#${id}"]`)).toHaveCount(1);
+  const screenshotLink = page.locator(".app-capture-open").first();
+  await tabTo(page, screenshotLink);
+  await expect(screenshotLink).toBeFocused();
+  const screenshotUrl = new URL((await screenshotLink.getAttribute("href"))!, ORIGIN).href;
+  const [openedImage] = await Promise.all([
+    page.waitForEvent("popup"),
+    page.keyboard.press("Enter"),
+  ]);
+  try {
+    await expect(openedImage).toHaveURL(screenshotUrl);
+    await expect(openedImage.locator("img")).toBeVisible();
+  } finally {
+    await openedImage.close();
   }
   await page.goto("/security/");
   const faq = page.locator("#security details").first();
@@ -246,40 +296,14 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
   await expect(phases.getByRole("tab", { name: /Discover/ })).toBeFocused();
 });
 
-test("Gateway controls update sample data and export the selected period", async ({ page }) => {
-  await page.goto("/ai-gateway/");
-  const demo = page.locator(".gateway-demo");
-  await expect(demo.locator(".gateway-live-status")).toContainText("30 days");
-  await demo.getByRole("button", { name: "7d", exact: true }).click();
-  await expect(demo.locator(".gateway-metrics strong").nth(0)).toHaveText("€326.40");
-  await expect(demo.locator(".gateway-metrics strong").nth(1)).toHaveText("18,420");
-  await expect(demo.getByRole("img")).toHaveAttribute("aria-label", /€326\.40 over 7 days/);
-  await demo.getByRole("button", { name: "90d", exact: true }).click();
-  await expect(demo.locator(".gateway-metrics strong").nth(0)).toHaveText("€4,250.80");
-  await expect(demo.locator(".gateway-metrics strong").nth(1)).toHaveText("246,380");
-
-  const csvLink = demo.getByRole("link", { name: "Export CSV", exact: true });
-  const href = await csvLink.getAttribute("href");
-  expect(href).toMatch(/^data:text\/csv;charset=utf-8,/);
-  const csv = decodeURIComponent(href!.slice(href!.indexOf(",") + 1));
-  const [header, ...rows] = csv.split("\r\n");
-  expect(header).toBe("sample_data,period,team,requests,estimated_cost_eur");
-  expect(rows).toHaveLength(3);
-  const values = rows.map(row => row.split(","));
-  expect(values.every(row => row[0] === "true" && row[1] === "90d")).toBe(true);
-  expect(values.reduce((total, row) => total + Number(row[3]), 0)).toBe(246380);
-  expect(values.reduce((total, row) => total + Number(row[4]), 0)).toBeCloseTo(4250.8, 2);
-  const [download] = await Promise.all([page.waitForEvent("download"), csvLink.click()]);
-  expect(download.suggestedFilename()).toBe("century-sample-usage-90d.csv");
-  const file = await download.path();
-  expect(file).not.toBeNull();
-  expect(await readFile(file!, "utf8")).toBe(csv);
-
-  await demo.getByRole("button", { name: "Team usage", exact: true }).click();
-  await expect(demo.locator(".gateway-table tfoot")).toContainText("246,380");
-  await expect(demo.locator(".gateway-table tfoot")).toContainText("€4,250.80");
-  await demo.getByRole("button", { name: "Control examples", exact: true }).click();
-  await expect(demo.getByRole("heading", { name: "Questions to resolve before rollout" })).toBeVisible();
+test("Product pages show real local screenshots instead of retired interface mocks", async ({ page }) => {
+  for (const route of ["/", "/ai-os/", "/agents/", "/systems/", "/ai-gateway/"]) {
+    await page.goto(route);
+    await expectLocalAppScreenshots(page);
+    await expect(page.locator(
+      ".prod-constellation, .prod-agent-visual, .prod-systems-visual, .prod-workspace, .gateway-demo, .example-board",
+    )).toHaveCount(0);
+  }
 });
 
 test("Mobile layouts and reduced motion remain usable", async ({ page }, testInfo) => {
@@ -295,7 +319,7 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await expectLocalHeroImage(page);
     await expectNoHorizontalOverflow(page);
     expect(await page.locator("html").evaluate((node) => getComputedStyle(node).scrollSnapType)).toBe("none");
-    for (const selector of ["header .brand", "header .btn-header", "#home a", "#contact a"]) {
+    for (const selector of ["header .brand", "header .btn-header", "#home a", "#contact a", ".app-capture-open"]) {
       for (const link of await page.locator(selector).all()) {
         await expect(link).toBeVisible();
         const box = await link.boundingBox();

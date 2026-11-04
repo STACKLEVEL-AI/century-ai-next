@@ -2,15 +2,15 @@ import { Activity, ArrowUpRight, GitBranch, Network, ShieldCheck, SlidersHorizon
 import PageFrame from "@/components/site/PageFrame";
 import PageHero from "@/components/site/PageHero";
 import { FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
-import GatewayDemo from "@/components/products/GatewayDemo";
+import AppScreenshot from "@/components/AppScreenshot";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = pageMetadata("Century AI Gateway", "Explore AI usage, model access and governance through a local interactive demonstration with clearly labelled sample data.", "/ai-gateway");
+export const metadata = pageMetadata("Century AI Gateway", "Explore model choices, response details and AI operating responsibilities through real views from the Century application.", "/ai-gateway");
 
 export default function GatewayPage() {
   return <PageFrame>
-    <PageHero eyebrow="Century AI Gateway" title={<>A clearer view.<br />A more deliberate use of AI.</>} description="As AI use grows, bring usage, access and operating responsibilities into the same conversation. Explore the controls that matter for your business." secondary={{ href: "#gateway-example", label: "Explore the example" }} />
-    <section className="prod-demo-section" id="gateway-example"><div className="shell"><GatewayDemo /></div></section>
+    <PageHero eyebrow="Century AI Gateway" title={<>A clearer view.<br />A more deliberate use of AI.</>} description="As AI use grows, bring model choices, access and operating responsibilities into the same conversation. Start with the details your team can inspect." secondary={{ href: "#gateway-example", label: "See inside Century" }} />
+    <section className="section prod-section app-gateway-section" id="gateway-example"><div className="shell"><SectionHeading eyebrow="Inside the application" title="Models and response details, in view." description="Real interface details from Century: the models associated with agents, and the technical information attached to an answer." /><div className="app-capture-grid"><AppScreenshot capture="models" /><AppScreenshot capture="response" /></div></div></section>
     <section className="section prod-section"><div className="shell"><SectionHeading eyebrow="A common control point" title="Turn scattered usage into an operating picture." description="A gateway implementation starts with the providers, interfaces and policies your environment needs. These are the questions to resolve together." /><FeatureGrid columns={3} items={[
       { title: "Connectivity", description: "Identify which applications and model interfaces belong in scope. Review how each connects and what data it exchanges.", icon: <Network size={24} /> },
       { title: "Usage and budgets", description: "Decide how usage should be attributed and reviewed. Give teams a shared basis for discussing cost and useful outcomes.", icon: <Wallet size={24} /> },
@@ -24,7 +24,7 @@ export default function GatewayPage() {
       { title: "Review the trade-offs", text: "Discuss model suitability, quality and cost using the same definitions." },
       { title: "Keep the rules clear", text: "Make access, data handling and escalation responsibilities explicit." },
     ].map(item => <article key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>
-    <section className="prod-scope-note"><div className="shell"><p>The dashboard is an interactive illustration. Supported integrations, controls and reporting are defined during implementation scoping.</p><a className="text-link" href="/deployment/">Plan the implementation<ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
+    <section className="prod-scope-note"><div className="shell"><p>Integrations, access policies and reporting requirements are defined around your environment during implementation scoping.</p><a className="text-link" href="/deployment/">Plan the implementation<ArrowUpRight size={18} aria-hidden="true" /></a></div></section>
     <RelatedPages links={[{ href: "/ai-os/", title: "The shared foundation", description: "Connect knowledge, workflows and oversight." }, { href: "/agents/", title: "Assistance with context", description: "Put approved knowledge to work for your team." }, { href: "/systems/", title: "A workspace that fits", description: "Design around a focused business process." }]} />
   </PageFrame>;
 }
