@@ -1,19 +1,37 @@
-import { ArrowUpRight, Download } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import PageFrame from "@/components/site/PageFrame";
-import PageHero from "@/components/site/PageHero";
-import { SectionHeading } from "@/components/site/Sections";
-import TelegramLink from "@/components/TelegramLink";
-import { EGOR_PROFILE_URL, VADIM_PROFILE_URL } from "@/lib/site";
+import { CompanyCTA, CompanyHeading, CompanyMasthead, CompanyTeam } from "@/components/company/CompanyElements";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("Press & brand", "Century company information, founder profiles and a downloadable brand wordmark. Contact Vitali for press and company enquiries.", "/press");
 
 export default function PressPage() {
-  return <PageFrame showContact={false}>
-    <PageHero eyebrow="Press & brand" title={<>A clear introduction<br />to Century.</>} description="Company information, people and brand materials in one place. For an interview or additional context, speak directly with Vitali." hideActions />
-    <section className="section company-press-intro"><div className="shell company-two-column"><SectionHeading eyebrow="About the company" title="Century, in a few words." /><div className="company-prose"><p className="company-press-boilerplate">Century works with businesses to make AI useful in their everyday operations. Its focus is on connecting approved knowledge, supporting document workflows and giving teams practical control over how AI is used.</p><p>Projects begin with a specific process and an agreed outcome. Data sources, integrations, deployment requirements and review responsibilities are considered together.</p><a href="/about-us/" className="company-text-link">Read our company story<ArrowUpRight size={18} aria-hidden="true" /></a></div></div></section>
-    <section className="section company-press-assets"><div className="shell"><SectionHeading eyebrow="Brand material" title="The Century wordmark." description="Our original Century wordmark, in black and white. Download the supplied vector artwork for a clear introduction to the company." /><div className="company-brand-kit"><div className="company-logo-display"><span className="brand"><img src="/brand/century-logo.svg" alt="Century" width={221} height={58} /></span><span>Century · Black & white</span></div><div className="company-brand-details"><p className="eyebrow">Primary wordmark</p><h3>Made to stay clear.</h3><p>Keep the original proportions, colour and spelling. Allow clear space around the mark and use a simple background with enough contrast.</p><div className="company-brand-downloads"><a href="/brand/century-logo.svg" download="century-logo.svg" className="btn btn-primary">Black SVG<Download size={18} aria-hidden="true" /></a><a href="/brand/century-logo-white.svg" download="century-logo-white.svg" className="btn btn-outline">White SVG<Download size={18} aria-hidden="true" /></a></div><p className="company-brand-file">SVG · transparent background · vector format</p></div></div></div></section>
-    <section className="section"><div className="shell"><SectionHeading eyebrow="People" title="Meet the founders." /><div className="company-press-people"><article><span className="company-note-number">01</span><h3>Vitali Bakhmat</h3><p>Co-founder · CEO</p><p>Business development and customer partnerships.</p><TelegramLink className="company-text-link">Contact Vitali</TelegramLink></article><article><span className="company-note-number">02</span><h3>Vadim Vladymtsev</h3><p>Co-founder · CTO</p><p>Enterprise AI architecture and engineering.</p><a className="company-text-link" href={VADIM_PROFILE_URL} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">Personal website<ArrowUpRight size={17} aria-hidden="true" /></a></article><article><span className="company-note-number">03</span><h3>Egor Krychev</h3><p>Co-founder · CAIO</p><p>AI automation, agents and business processes.</p><a className="company-text-link" href={EGOR_PROFILE_URL} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer">LinkedIn profile<ArrowUpRight size={17} aria-hidden="true" /></a></article></div></div></section>
-    <section className="section company-press-contact"><div className="shell company-two-column"><div><p className="eyebrow">Company & media enquiries</p><h2>Need a little<br />more context?</h2></div><div className="company-prose"><p>For questions about Century, interview requests or brand materials, message Vitali. Include the topic, publication or organisation, and any deadline so the conversation has a useful starting point.</p><TelegramLink>Message Vitali on Telegram</TelegramLink></div></div></section>
-  </PageFrame>;
+  return (
+    <PageFrame showContact={false}>
+      <div className="co-page co-press">
+        <CompanyMasthead eyebrow="Press & brand" title={<>A clear introduction<br />to Century.</>} description="Company information, people and brand materials in one place. For an interview or additional context, speak directly with Vitali." link={{ href: "#brand-materials", label: "Explore brand materials" }} />
+        <section className="co-section co-press-overview">
+          <div className="shell co-editorial-split">
+            <CompanyHeading eyebrow="About the company" title={<>Century,<br />in a few words.</>} />
+            <div className="co-prose"><p className="co-lead">Century works with businesses to make AI useful in their everyday operations.</p><p>Its focus is on connecting approved knowledge, supporting document workflows and giving teams practical control over how AI is used.</p><p>Projects begin with a specific process and an agreed outcome. Data sources, integrations, deployment requirements and review responsibilities are considered together.</p><a className="co-text-link" href="/about-us/">More about Century<ArrowUpRight size={18} aria-hidden="true" /></a></div>
+          </div>
+        </section>
+        <section className="co-section co-warm" id="brand-materials">
+          <div className="shell">
+            <div className="co-section-top"><CompanyHeading eyebrow="Brand materials" title={<>The Century<br />wordmark.</>} /><p>Our original Century wordmark, in black and white. Download the supplied vector artwork for a clear introduction to the company.</p></div>
+            <div className="co-brand-grid">
+              <a className="co-brand-asset" href="/brand/century-logo.svg" download="century-logo.svg"><div className="co-brand-specimen"><Image src="/brand/century-logo.svg" alt="Century black wordmark" width={442} height={116} /></div><div className="co-brand-download"><span>Black SVG<small>For light backgrounds</small></span><ArrowDown size={20} aria-hidden="true" /></div></a>
+              <a className="co-brand-asset" href="/brand/century-logo-white.svg" download="century-logo-white.svg"><div className="co-brand-specimen co-brand-specimen-dark"><Image src="/brand/century-logo-white.svg" alt="Century white wordmark" width={442} height={116} /></div><div className="co-brand-download"><span>White SVG<small>For dark backgrounds</small></span><ArrowDown size={20} aria-hidden="true" /></div></a>
+            </div>
+            <div className="co-brand-guidance"><p>Keep the original proportions, colour and spelling. Allow clear space around the mark and use a simple background with enough contrast.</p><span>SVG · transparent background · vector format</span></div>
+          </div>
+        </section>
+        <section className="co-section" id="founders">
+          <div className="shell"><div className="co-section-top"><CompanyHeading eyebrow="Founder profiles" title={<>The people<br />behind Century.</>} /><p>Meet the founders and find their public profiles. For interviews and company enquiries, contact Vitali.</p></div><CompanyTeam compact /></div>
+        </section>
+        <CompanyCTA eyebrow="Press enquiries" title={<>Need a little<br />more context?</>} description="For questions about Century, interview requests or brand materials, message Vitali. Include the topic, publication or organisation, and any deadline so the conversation has a useful starting point." />
+      </div>
+    </PageFrame>
+  );
 }

@@ -1,4 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
+import { SITE_ROUTES } from "../src/lib/routes";
 
 const ORIGIN = "http://127.0.0.1:4173";
 const TELEGRAM = "https://t.me/vitalibakhmat";
@@ -338,4 +339,47 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await expectNoHorizontalOverflow(page);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   }
+});
+
+for (const width of [360, 768, 1440]) {
+  test(`All internal routes remain readable at ${width}px`, async ({ page }) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height: 900 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    const errors: string[] = [];
+    page.on("pageerror", error => errors.push(error.message));
+    for (const route of SITE_ROUTES.filter(route => route !== "/")) {
+      const response = await page.goto(route);
+      expect(response?.status(), route).toBe(200);
+      const heading = page.getByRole("heading", { level: 1 });
+      await expect(heading).toHaveCount(1);
+      await expect(heading).toBeVisible();
+      const box = await heading.boundingBox();
+      expect(box?.x, route).toBeGreaterThanOrEqual(0);
+      expect((box?.x ?? 0) + (box?.width ?? 0), route).toBeLessThanOrEqual(width + 1);
+      await expectNoHorizontalOverflow(page);
+      await expect(page.locator(".footer-wordmark")).toHaveCount(0);
+      await expect(page.getByRole("navigation", { name: "Footer navigation" })).toBeVisible();
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test("Guide categories filter the library and keep articles reachable", async ({ page }) => {
+  await page.goto("/blog/");
+  const library = page.locator(".co-library");
+  const filters = library.getByRole("group", { name: "Filter guides by category" });
+  await expect(library.getByRole("article")).toHaveCount(4);
+  await filters.getByRole("button", { name: "Knowledge", exact: true }).click();
+  await expect(filters.getByRole("button", { name: "Knowledge", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await expect(library.getByRole("article")).toHaveCount(1);
+  await expect(library.getByRole("status")).toHaveText("1 guide in knowledge");
+  await library.getByRole("article").getByRole("link").click();
+  await expect(page).toHaveURL(`${ORIGIN}/blog/answers-need-sources/`);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await page.goto("/blog/");
+  await filters.getByRole("button", { name: "Deployment", exact: true }).click();
+  await expect(library.getByRole("article")).toHaveCount(1);
+  await filters.getByRole("button", { name: "All guides", exact: true }).click();
+  await expect(library.getByRole("article")).toHaveCount(4);
 });

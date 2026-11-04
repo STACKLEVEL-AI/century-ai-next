@@ -1,0 +1,90 @@
+/* Internal pages only. The homepage retains its existing visual system. */
+.inner-page {
+  --inner-ink: #171719;
+  --inner-muted: #62625f;
+  --inner-surface: #f5f5f2;
+  --inner-line: #ddddD7;
+  --inner-accent: #bc4a24;
+  color: var(--inner-ink);
+  background: #fafafa;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.inner-page :is(h1, h2, h3) { text-wrap: balance; }
+.inner-page h1 { font-weight: 300; line-height: 1.06; letter-spacing: -.055em; }
+.inner-page h2 { font-weight: 300; line-height: 1.12; letter-spacing: -.045em; }
+.inner-page h3 { font-weight: 400; line-height: 1.25; letter-spacing: -.035em; }
+.inner-page .section { padding-block: clamp(76px, 8vw, 112px); }
+.inner-page .eyebrow { font-size: 11px; font-weight: 450; letter-spacing: .1em; line-height: 1.5; }
+.inner-page .section-heading { margin-bottom: 48px; max-width: 880px; }
+.inner-page .section-heading > .eyebrow { margin-bottom: 22px; }
+.inner-page .section-heading h2 { font-size: clamp(34px, 4vw, 54px); font-weight: 300; line-height: 1.12; }
+.inner-page .section-heading > p:not(.eyebrow) { max-width: 620px; font-size: 17px; line-height: 1.65; margin-top: 22px; }
+.inner-page .section-heading-center { margin-inline: auto; }
+.inner-page .section-heading-center > p { margin-inline: auto; }
+.inner-page .btn { min-height: 50px; border-radius: 5px; font-size: 14px; }
+.inner-page .btn:focus-visible, .inner-page a:focus-visible, .inner-page summary:focus-visible, .inner-page button:focus-visible { outline: 3px solid #ce673e; outline-offset: 5px; }
+.inner-page .feature-grid { gap: 32px; }
+.inner-page .feature-card { padding: 28px 0 0; border: 0; border-top: 1px solid var(--inner-line); border-radius: 0; background: transparent; box-shadow: none; }
+.inner-page .feature-card-icon { color: #9a4c30; height: 30px; margin-bottom: 24px; }
+.inner-page .feature-card h3 { font-size: 25px; font-weight: 400; margin-bottom: 16px; }
+.inner-page .feature-card > p:not(.eyebrow) { font-size: 16px; line-height: 1.65; }
+.inner-page .related-section { background: #f2f2ee; border-top: 1px solid #e1e1db; }
+.inner-page .related-grid { gap: 24px; }
+.inner-page .related-card { border: 0; border-top: 1px solid #cdcdc5; border-radius: 0; padding: 28px 0 14px; background: transparent; }
+.inner-page .related-card h3 { font-size: 28px; line-height: 1.15; font-weight: 300; }
+.inner-page .related-card > p:not(.eyebrow) { font-size: 16px; line-height: 1.6; max-width: 350px; }
+.inner-page .related-card:hover { border-color: #9b4d2f; background: transparent; }
+.inner-page .related-card:hover h3 { color: #9b4d2f; }
+.inner-page .related-card svg { transition: transform 180ms ease; }
+.inner-page .related-card:hover svg { transform: translate(3px, -3px); }
+.inner-page .capability-accordion summary { font-size: 25px; font-weight: 300; line-height: 1.3; }
+.inner-page .capability-accordion details > p { font-size: 16px; line-height: 1.75; }
+.inner-page .app-capture { border-radius: 8px; }
+.inner-page .app-capture figcaption { padding: 25px 28px; }
+.inner-page .app-capture figcaption > span { font-size: 22px; font-weight: 300; }
+.inner-page .app-capture figcaption > p { font-size: 14px; line-height: 1.65; }
+.inner-page .app-capture-open { min-height: 44px; display: grid; align-items: center; }
+.inner-page .app-capture-open img { object-fit: contain; }
+.inner-page .inner-contact { background: #fafafa; padding-block: 110px; border-top: 1px solid #e2e2db; }
+.inner-page .inner-contact-layout { display: grid; grid-template-columns: 1.35fr .65fr; gap: 80px; align-items: end; }
+.inner-page .inner-contact .eyebrow { margin-bottom: 28px; color: #686862; }
+.inner-page .inner-contact .eyebrow > span { width: 5px; height: 5px; background: #bb522e; border-radius: 50%; }
+.inner-page .inner-contact h2 { font-size: clamp(38px, 4.3vw, 62px); line-height: 1.08; letter-spacing: -.055em; }
+.inner-page .inner-contact h2 span { color: #77776f; }
+.inner-page .inner-contact-action > p { max-width: 380px; font-size: 16px; color: #64645e; line-height: 1.65; margin-bottom: 26px; }
+.inner-page .inner-contact-action .btn { display: inline-flex; }
+.inner-page .inner-contact-action small { display: block; margin-top: 16px; color: #73736c; font-size: 12px; }
+.inner-page .error-hero { min-height: 60vh; padding: 110px 0; }
+.inner-page .error-hero h1 { font-size: clamp(42px, 6vw, 80px); }
+.inner-page .error-hero .inner-hero-description { max-width: 520px; }
+@media (max-width: 1000px) {
+  .inner-page .inner-contact-layout { grid-template-columns: 1.15fr .85fr; gap: 40px; }
+  .inner-page .feature-grid { gap: 24px; }
+  .inner-page .feature-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .inner-page .section { padding-block: 70px; }
+  .inner-page .section-heading { margin-bottom: 36px; }
+  .inner-page .section-heading h2 { font-size: clamp(33px, 6.5vw, 46px); }
+  .inner-page .section-heading > p:not(.eyebrow) { font-size: 16px; margin-top: 20px; }
+  .inner-page .inner-contact { padding-block: 74px; }
+  .inner-page .inner-contact-layout { grid-template-columns: 1fr; gap: 32px; }
+  .inner-page .inner-contact h2 { font-size: clamp(37px, 7.8vw, 54px); }
+  .inner-page .inner-contact-action > p { max-width: 480px; }
+  .inner-page .feature-grid-3, .inner-page .related-grid { grid-template-columns: 1fr; }
+  .inner-page .related-card { padding-top: 24px; }
+  .inner-page .related-card h3 { font-size: 27px; }
+  .inner-page .related-card > p:not(.eyebrow) { max-width: 540px; }
+}
+@media (max-width: 480px) {
+  .inner-page { font-size: 16px; }
+  .inner-page .feature-grid-4, .inner-page .feature-grid-2 { grid-template-columns: 1fr; }
+  .inner-page .feature-card h3 { font-size: 24px; }
+  .inner-page .app-capture figcaption { padding: 22px; }
+  .inner-page .app-capture-stage { padding-inline: 20px; }
+  .inner-page .capability-accordion summary { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inner-page *, .inner-page *::before, .inner-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

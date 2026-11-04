@@ -7,6 +7,10 @@ import "./products.css";
 import "./industries.css";
 import "./company.css";
 import "./design.css";
+import "./inner.css";
+import "./products-refined.css";
+import "./industries-refined.css";
+import "./company-refined.css";
 
 const inter = Inter({
   subsets: ["latin"],
