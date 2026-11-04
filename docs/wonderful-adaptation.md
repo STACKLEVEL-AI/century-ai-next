@@ -8,7 +8,7 @@ The current design uses the **black and white Century SVG wordmarks supplied for
 
 Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retain their existing names, roles, local portraits and profile destinations. Contact links lead to `https://t.me/vitalibakhmat`; the other external profile links are `https://vadimohka.com/` and `https://www.linkedin.com/in/ekrychev/`.
 
-The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, native CSS/SVG interface illustrations and locally served reference-media derivatives. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Detailed media provenance is recorded in the migration log.
+The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, real application captures and locally served reference-media derivatives. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Detailed media provenance is recorded in the migration log.
 
 ## Complete route inventory
 
@@ -16,11 +16,11 @@ All 26 content routes use trailing slashes in the static export. The source regi
 
 | Route | Implemented content |
 | --- | --- |
-| `/` | Film hero with poster fallback; photographic use cases; platform and product family; deployment and strategy; industry selector; sample answer; founders; guides; contact. |
+| `/` | Film hero with poster fallback; photographic use cases; platform and product family; deployment and strategy; industry selector; application capture gallery; founders; guides; contact. |
 | `/ai-os/` | Platform foundation, infrastructure layer explorer, reusable knowledge and workflow concepts, deployment boundaries and product links. |
-| `/agents/` | Knowledge, document and support workflows; agent scope; native capability disclosures; source-linked supplier example; operating ownership. |
-| `/systems/` | Requirements-led application design, illustrative review workspace, business functions, implementation and ownership. |
-| `/ai-gateway/` | Interactive sample dashboard, reporting periods, team usage, CSV download, model-access and operational-control considerations. |
+| `/agents/` | Knowledge, document and support workflows; agent scope; native capability disclosures; real model and response-detail captures; operating ownership. |
+| `/systems/` | Requirements-led application design, real file-library and document-input views, business functions, implementation and ownership. |
+| `/ai-gateway/` | Real model-assignment and response-detail captures, model-access and operational-control considerations. |
 | `/deployment/` | Technical and business responsibilities, delivery phase selector, deployment options and implementation scope. |
 | `/ai-transformation/` | Business-led strategy, five working principles, an evidence-based roadmap and related delivery pages. |
 | `/security/` | Data and access boundaries, six deployment decisions, review responsibilities and clear separation of website privacy from project arrangements. |
@@ -59,23 +59,23 @@ The custom 404 page, `robots.txt`, `sitemap.xml`, `CNAME`, `.nojekyll`, icon and
 
 Each industry workflow explains its inputs, human review and prepared outcome. The examples support scoping discussions. They do not assert a completed integration, customer deployment or measured result. Clinical, credit, coverage, entitlement, payment and operational decisions stay with the appropriately authorised people in the described processes.
 
-## Real interface behaviour and sample content
+## Real application captures and interface behaviour
 
-The AI Gateway demonstration has working local controls for overview, team usage and control examples, plus 7-, 30- and 90-day reporting periods. The chart, totals, usage rows and downloadable CSV change with the selected period. The data is fixed illustrative data, labelled on the page and in the CSV; there is no live model provider or customer account connection, and the amounts are not a pricing offer.
+The product views use frames extracted directly from the Century recordings supplied for the follow-up request. Their crops are prepared before publication, so the full-size image contains the same selected content. English-only details of models, files, response telemetry, document import and audio playback replace the invented diagrams and mock interfaces. Captions describe the feature visible in each fragment. Source files, frame times and crop coordinates are recorded in the [application screenshot log](application-screenshots-2026-11-04.md). The screenshots are static images with full-size links; there is no live application or account connection.
 
 The infrastructure explorer, deployment phase selector, homepage industry selector and blog category filter change the displayed view locally. They do not send a request to an AI service. Their current selection is held in page memory and is not stored as a browser profile. Static fallback content remains available when JavaScript is disabled.
 
-Workflow details, source excerpts, capability disclosures and mobile navigation use native `details` and `summary` where appropriate. The primary page content is server rendered. Skip links, visible focus styles, semantic headings, responsive layouts and reduced-motion styles are included. Browser-level validation of these behaviours is separate from inspecting the source or a static export.
+Workflow details, capability disclosures and mobile navigation use native `details` and `summary` where appropriate. The primary page content is server rendered. Skip links, visible focus styles, semantic headings, responsive layouts and reduced-motion styles are included. Browser-level validation of these behaviours is separate from inspecting the source or a static export.
 
 The decorative homepage film is muted, loops inline and has a labelled pause/play button. `HeroFilm` checks the visitor's reduced-motion and save-data preferences before mounting the video. When either preference is enabled, or JavaScript is unavailable, the responsive local poster remains the hero background. The film is decorative and hidden from assistive technology; all hero text and actions remain regular page content.
 
-The supplier-onboarding answer is labelled as sample data and includes inspectable source excerpts. The Systems workspace and industry diagrams are illustrations. Careers does not claim open roles, and Press does not invent media coverage or funding. Security content identifies decisions to agree for an implementation; it does not claim certifications or unconditional compliance.
+The earlier supplier-onboarding answer, review queue, Gateway sample analytics and decorative product diagrams have been removed. Industry hero artwork has also been replaced with real Century file-library captures; those captures do not claim an industry-specific customer deployment. Careers does not claim open roles, and Press does not invent media coverage or funding. Security content identifies decisions to agree for an implementation; it does not claim certifications or unconditional compliance.
 
 ## Contact, privacy and resources
 
 External contact and founder links open separately with `noopener noreferrer`. The application has no contact form, file upload, embedded chat, analytics tags, advertising pixels, application cookies, local storage or session storage. Ordinary hosting requests and any provider logging are described separately on the privacy page.
 
-Images, the film, interface illustrations, styles, scripts and brand downloads are served from the static site. `next/font` bundles Inter during the build, so the visitor does not fetch the font from Google Fonts. The reference's commercial ABC Favorit font is not included. The application does not need a runtime API or server to render the content pages. A user who follows a Telegram, LinkedIn or personal-site link leaves the website and uses that external service.
+Images, the film, application captures, styles, scripts and brand downloads are served from the static site. `next/font` bundles Inter during the build, so the visitor does not fetch the font from Google Fonts. The reference's commercial ABC Favorit font is not included. The application does not need a runtime API or server to render the content pages. A user who follows a Telegram, LinkedIn or personal-site link leaves the website and uses that external service.
 
 Each page has a unique title, description, canonical and Open Graph URL under `https://century-ai.eu/`. The shared 1200 × 630 social image is local. The homepage retains its website and webpage structured data; article metadata identifies the individual guide pages.
 
@@ -91,8 +91,9 @@ The [migration log's asset-provenance section](design-migration-2026-11-04.md#as
 | Hero posters and use-case stills | `public/media/hero-poster*.webp`, `knowledge.webp`, `workflows.webp` and `support.webp`; extracted from that film. |
 | Platform, deployment, strategy, industry and closing imagery | WebP files in `public/media/`; locally served derivatives of the reference images listed in the migration log. |
 | Founder portraits | Existing photographs preserved in `public/founders/`. |
+| Application captures | `public/media/app/`; direct crops of the supplied Century application recordings, with provenance in the screenshot log. |
 
-The reference film selection avoids visible customer-bank signage. These media files illustrate the site's themes; they do not depict Century's premises or demonstrate Century customer relationships. Visitors load them from Century's static export, not from Wonderful. The about and contact pages use local deployment and industry images from the same reference-media set. The earlier generated atrium files remain in `public/images/` as unused historical assets. Product compositions, industry-detail diagrams and article artwork remain native code-based illustrations.
+The reference film selection avoids visible customer-bank signage. These media files illustrate the site's themes; they do not depict Century's premises or demonstrate Century customer relationships. Visitors load them from Century's static export, not from Wonderful. The about and contact pages use local deployment and industry images from the same reference-media set. The earlier generated atrium files remain in `public/images/` as unused historical assets. The product mockups and industry hero diagrams are no longer rendered. Editorial article artwork and small navigation/feature icons remain native code-based visuals.
 
 The social image at `public/og/century-ai-eu.png` combines the local hero poster and supplied white wordmark with Sharp. Regenerate it with `npm run assets:og`, then rebuild to refresh `out/`. This command does not require Chromium or a running web server.
 
@@ -120,7 +121,7 @@ npm run typecheck
 npm run check:export
 ```
 
-The export inspector requires a completed build. It verifies the 26 expected content routes; sitemap coverage; one H1 and English document language per page; unique titles and descriptions; canonical and Open Graph URLs; local links, fragments and asset references; approved external contact/profile destinations; no contact fields; the Gateway sample-data label; the brand-download file; and PNG social-image dimensions. It also scans text outputs for the legacy domain, tracking and bot-connection markers retained from the original site’s boundary checks. It does not claim to validate visual layout, interactive state changes or a live deployment.
+The export inspector requires a completed build. It verifies the 26 expected content routes; sitemap coverage; one H1 and English document language per page; unique titles and descriptions; canonical and Open Graph URLs; local links, fragments and asset references; approved external contact/profile destinations; no contact fields; real application captures and their local full-size links; the brand-download file; and PNG social-image dimensions. It also scans text outputs for the legacy domain, tracking and bot-connection markers retained from the original site’s boundary checks. It does not claim to validate visual layout, interactive state changes or a live deployment.
 
 The inspector can read an alternative export directory:
 
@@ -128,11 +129,11 @@ The inspector can read an alternative export directory:
 npm run check:export -- /absolute/path/to/export
 ```
 
-The optional Playwright suite in `tests/landing.spec.ts` covers routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, source disclosures and FAQs; product tabs; Gateway period selection and CSV export; and responsive layouts. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt could not launch Chromium; the browser was missing and its attempted download was truncated. It stopped before test assertions, so it provides no passing or failing application-assertion result. Further browser-review results are recorded separately in the migration log rather than inferred from a successful typecheck or export inspection.
+The optional Playwright suite in `tests/landing.spec.ts` covers routes and metadata; approved contact destinations and local resources; navigation without JavaScript; keyboard menus, full-size capture links and FAQs; product tabs; real capture loading; and responsive layouts. It remains outside CI. Local execution requires a completed export, Python 3 and Playwright's Chromium browser. The current workspace attempt could not launch Chromium; the browser was missing and its attempted download was truncated. It stopped before test assertions, so it provides no passing or failing application-assertion result. Further browser-review results are recorded separately in the migration log rather than inferred from a successful typecheck or export inspection.
 
 ### Preview validation checkpoint — 4 November 2026
 
-The current migration has a successful local preview export: all 26 content routes were generated, `npm run typecheck` passed, and `npm run check:export` passed for the route inventory, metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels. Earlier blocked build attempts are historical context, not the current preview result.
+The initial design migration had a successful local preview export: all 26 content routes were generated, `npm run typecheck` passed, and `npm run check:export` passed for the route inventory, metadata, 2,302 local links/assets, sitemap, contact destinations and sample labels. Earlier blocked build attempts are historical context, not the current preview result.
 
 The workspace lacks `/proc` RSS metrics, which causes Next.js 15.5.28's optional `traceMemoryUsage` diagnostic to throw an `ENOENT` error before compilation. For this preview only, the ignored local dependency tracer was temporarily changed to skip that exact diagnostic. No global process API, application source, package lock or deployment workflow was patched for this workaround.
 

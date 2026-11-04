@@ -75,16 +75,11 @@ export default function InfrastructureExplorer() {
         ))}
       </div>
       <div className="infra-panels">
-        {layers.map(({ title, icon: Icon, short, description, points }, index) => (
+        {layers.map(({ title, short, description, points }, index) => (
           <section
             className="infra-panel" role="tabpanel" key={title} id={`${id}-panel-${index}`}
             aria-labelledby={`${id}-tab-${index}`} hidden={active !== index} tabIndex={0}
           >
-            <div className="infra-layer-visual" aria-hidden="true">
-              <div className="infra-layer-back" /><div className="infra-layer-middle" />
-              <div className="infra-layer-front"><Icon size={46} strokeWidth={1.1} /></div>
-              <span className="infra-layer-caption">CENTURY / {String(index + 1).padStart(2, "0")}</span>
-            </div>
             <div className="infra-panel-copy"><p className="prod-kicker">{title}</p><h3>{short}</h3><p>{description}</p>
               <ul>{points.map(point => <li key={point}>{point}</li>)}</ul>
             </div>

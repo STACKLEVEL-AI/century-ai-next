@@ -2,7 +2,7 @@ import { BookOpen, GitBranch, Headphones, Layers3, ListChecks, UserRoundCheck } 
 import PageFrame from "@/components/site/PageFrame";
 import PageHero from "@/components/site/PageHero";
 import { CapabilityAccordion, FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
-import { AgentFlowVisual } from "@/components/products/ProductVisuals";
+import AppScreenshot from "@/components/AppScreenshot";
 import Brain from "@/components/Brain";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -10,7 +10,7 @@ export const metadata = pageMetadata("Century Agents", "AI assistance for compan
 
 export default function AgentsPage() {
   return <PageFrame>
-    <PageHero eyebrow="Century Agents" title={<>Give your teams<br />a capable next step.</>} description="Help people find answers, prepare decisions and move routine work forward. Start with approved knowledge and keep a clear path to human review." secondary={{ href: "#agent-work", label: "Explore use cases" }}><AgentFlowVisual /></PageHero>
+    <PageHero eyebrow="Century Agents" title={<>Give your teams<br />a capable next step.</>} description="Help people find answers, prepare decisions and move routine work forward. Start with approved knowledge and keep a clear path to human review." secondary={{ href: "#agent-work", label: "Explore use cases" }}><div className="app-hero-stack"><AppScreenshot capture="model-choice" priority /><AppScreenshot capture="response" priority /></div></PageHero>
     <section className="section prod-section" id="agent-work"><div className="shell"><SectionHeading eyebrow="Where assistance becomes useful" title="Three ways to move work forward." /><FeatureGrid columns={3} items={[
       { title: "Find company knowledge", description: "Help employees navigate policies, procedures and internal documents. Include references they can inspect before relying on an answer.", icon: <BookOpen size={25} /> },
       { title: "Prepare document workflows", description: "Extract information, compare it with defined rules and prepare a next step for the person responsible for the decision.", icon: <GitBranch size={25} /> },

@@ -3,7 +3,7 @@ import PageFrame from "@/components/site/PageFrame";
 import { FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
 import TelegramLink from "@/components/TelegramLink";
 import InfrastructureExplorer from "@/components/products/InfrastructureExplorer";
-import { PlatformConstellation } from "@/components/products/ProductVisuals";
+import AppScreenshot from "@/components/AppScreenshot";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("Century AI OS", "A common foundation for company knowledge, AI workflows and human oversight. Explore Century's approach to enterprise AI.", "/ai-os");
@@ -16,7 +16,7 @@ export default function AiOsPage() {
         <h1>One connected layer.<br />For your people, agents and apps.</h1>
         <p className="prod-os-description">Bring company knowledge, business processes and human oversight into a connected way of working.</p>
         <div className="prod-hero-actions"><TelegramLink className="btn btn-light">Get in touch</TelegramLink><a className="btn btn-outline-light" href="#infrastructure">Explore the foundation<ArrowUpRight size={17} aria-hidden="true" /></a></div>
-        <PlatformConstellation />
+        <div className="app-capture-grid app-os-captures"><AppScreenshot capture="models" priority /><AppScreenshot capture="files" priority /></div>
       </div>
     </section>
     <section className="section prod-section" id="infrastructure"><div className="shell">

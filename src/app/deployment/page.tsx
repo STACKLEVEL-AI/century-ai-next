@@ -2,7 +2,7 @@ import { Cloud, Code2, Database, Server, UsersRound } from "lucide-react";
 import PageFrame from "@/components/site/PageFrame";
 import PageHero from "@/components/site/PageHero";
 import { FeatureGrid, RelatedPages, SectionHeading } from "@/components/site/Sections";
-import { DeliveryVisual } from "@/components/products/ProductVisuals";
+import AppScreenshot from "@/components/AppScreenshot";
 import DeploymentPhases from "@/components/products/DeploymentPhases";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -10,7 +10,7 @@ export const metadata = pageMetadata("Deployment", "Plan a Century AI workflow f
 
 export default function DeploymentPage() {
   return <PageFrame>
-    <PageHero eyebrow="Deployment" title={<>Bring AI into the work.<br />With your team.</>} description="Start with a real business need. Build a focused workflow, evaluate it with the people who use it and agree how it will be operated." secondary={{ href: "#delivery-path", label: "See the delivery path" }}><DeliveryVisual /></PageHero>
+    <PageHero eyebrow="Deployment" title={<>Bring AI into the work.<br />With your team.</>} description="Start with a real business need. Build a focused workflow, evaluate it with the people who use it and agree how it will be operated." secondary={{ href: "#delivery-path", label: "See the delivery path" }}><AppScreenshot capture="files" priority /></PageHero>
     <section className="section prod-section"><div className="shell"><SectionHeading eyebrow="Two perspectives, one use case" title="Make it work. Make it useful." description="Technical implementation and business ownership belong in the same process from the beginning." /><FeatureGrid columns={2} items={[
       { title: "The technical foundation", description: "Review sources, interfaces, access and infrastructure. Build the agreed workflow with the checks and review points it needs to operate in your environment.", icon: <Code2 size={27} /> },
       { title: "The business outcome", description: "Identify the process owner, current effort and evaluation criteria. Involve the people doing the work so the result can be assessed against a meaningful baseline.", icon: <UsersRound size={27} /> },
