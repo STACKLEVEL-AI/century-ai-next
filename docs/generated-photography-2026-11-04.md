@@ -1,12 +1,12 @@
 # Generated photography — 4 November 2026
 
-All **13 distinct photographic assets** from source commit [`9662939475ec9579841816ee8afd937bc5062b3c`](https://github.com/STACKLEVEL-AI/century-ai-next/commit/9662939475ec9579841816ee8afd937bc5062b3c) have newly generated counterparts. Delivery comprises **17 WebP files**: 13 primary photographs and four smaller responsive derivatives. The social preview and background film are rebuilt from the new photographs. Existing asset paths are retained.
+The selected refresh contains **10 generated photographic masters delivered as 14 WebP files**: ten scene/background photographs and four smaller responsive derivatives. Their references are pinned to source commit [`9662939475ec9579841816ee8afd937bc5062b3c`](https://github.com/STACKLEVEL-AI/century-ai-next/commit/9662939475ec9579841816ee8afd937bc5062b3c). The social preview and background film are rebuilt from the new photographs. The **three original founder portraits are preserved byte-for-byte** from `main` at [`cad5ff160878585c75ce78a075f06d7b14087a6a`](https://github.com/STACKLEVEL-AI/century-ai-next/commit/cad5ff160878585c75ce78a075f06d7b14087a6a). Existing asset paths are retained.
 
-The built-in `image_gen` tool used each original as a reference for its subject idea, composition, light, palette, texture and photographic style. Enterprise locations and scene participants are fictional. The three named founder portraits use their original photographs as identity references, retaining their expressions, clothing, poses and monochrome treatment; names, roles and contact destinations remain the same. The imagery does not document actual Century premises or customer relationships.
+The built-in `image_gen` tool used each scene/background original as a reference for its subject idea, composition, light, palette, texture and photographic style. Enterprise locations and scene participants are fictional. Generated alternatives for the three named founders were considered during branch review, then excluded from the release; the website retains their original photographs, names, roles and contact destinations. The generated enterprise imagery does not document actual Century premises or customer relationships.
 
-See the [before-and-after gallery](previews/generated-photography-2026-11-04.jpg) and [exact prompt manifest](generated-photography-prompts.json). The manifest pins every reference to the source commit and records the repository output paths and dimensions. Its prompt strings are the full requests used for generation; a new generation run can produce different images.
+The [before-and-after gallery](previews/generated-photography-2026-11-04.jpg) is a **historical branch-review comparison**, not a picture of the final deployed asset selection. Its generated founder alternatives were excluded and are not deployed as website portraits. The [exact prompt manifest](generated-photography-prompts.json) retains the full generation requests and pinned references: `assets` lists only the ten selected generated masters, `excluded_historical_generations` records the three rejected founder alternatives with explicit not-shipped flags, and `preserved_founder_portraits` identifies the original files retained by the site. A new generation run can produce different images.
 
-## Image inventory
+## Generated image inventory
 
 Dimensions below describe the committed web assets. The 640- and 960-pixel variants are resized derivatives of their corresponding generated master.
 
@@ -22,11 +22,20 @@ Dimensions below describe the committed web assets. The 640- and 960-pixel varia
 | `public/media/strategy.webp` | 1054 × 1451 | Vertical blue motion-blurred photographic texture, amber accent and dark lower area. |
 | `public/media/closing.webp` | 1200 × 495 | Wide defocused green, amber and muted red texture with a near-black lower half. |
 | `public/images/enterprise-atrium.webp` | 1672 × 941; `-960`: 960 × 540; `-640`: 640 × 360 | Curved pale-stone office courtyard, glass, planting and golden-hour light. |
-| `public/founders/vitali-bakhmat.webp` | 960 × 1200 | Same founder, smile, glasses, dark crewneck and light studio background. |
-| `public/founders/vadim-vladymtsev.webp` | 960 × 639 | Same founder, broad smile, hoodie and neutral studio background. |
-| `public/founders/egor-krychev.webp` | 960 × 960 | Same founder, glasses, suit and softly blurred office background. |
 
-The atrium remains unused by current pages, but all three atrium files are refreshed to cover the entire photographic inventory. Layout crops and overlays remain in the existing components and CSS. The central subjects in deployment and industry, and the central activity in the use-case images, are composed for the site's narrower cover crops.
+The atrium remains unused by current pages, but all three atrium files are included in the scene/background refresh. Layout crops and overlays remain in the existing components and CSS. The central subjects in deployment and industry, and the central activity in the use-case images, are composed for the site's narrower cover crops.
+
+## Preserved founder portraits
+
+These files retain the exact bytes, dimensions and paths from `main` at `cad5ff160878585c75ce78a075f06d7b14087a6a`. They are not generated or re-encoded as part of this refresh. The identifiers below are Git blob SHA-1 values, not raw-file SHA-256 checksums.
+
+| Original asset | Dimensions | Preserved Git blob SHA |
+| --- | --- | --- |
+| `public/founders/vitali-bakhmat.webp` | 320 × 400 | `9c959204a4765f4c3f1097db54f6b40901614372` |
+| `public/founders/vadim-vladymtsev.webp` | 320 × 213 | `82f83026c5935f134e3ccc748246e65d341c6b6d` |
+| `public/founders/egor-krychev.webp` | 320 × 320 | `33a891712d166322b05b0798600ee8fb5ef21966` |
+
+The historical founder generation prompts and gallery are retained only as review provenance. Their generated outputs are excluded from the release and do not replace these files.
 
 ## Derived media
 
@@ -56,13 +65,13 @@ npm run check:export
 Check the homepage at desktop and mobile widths, including the hero poster-to-film transition, all three use-case cards, industry selections and founder portraits. Check About and Contact for their reused images and cover crops. Verify that reduced-motion/save-data visitors and visitors without JavaScript retain the generated poster, and that pause/play still works. Browser interaction and deployment checks are separate from static-export inspection.
 
 
-### Completed local checks for this refresh
+### Historical local checks before the founder exclusion
 
-- All 13 generated masters were visually compared with their references for composition, palette, photographic texture and subject continuity. Founder portraits were reviewed for resemblance; the expected cover crops were assessed against the existing CSS.
-- All 17 WebP outputs decode successfully, match the inventory dimensions and have different SHA-256 hashes from the source assets. WebP quality is 86 for scene/background assets and 90 for portraits. The portraits have three times the original pixel width, retaining the original aspect ratios.
+- The ten selected generated masters were included in the branch's visual comparison for composition, palette, photographic texture and subject continuity. The expected cover crops were assessed against the existing CSS. Founder alternatives were also reviewed at that checkpoint, but were subsequently excluded in favour of the original files listed above.
+- The 14 selected generated WebP files were included in the branch's successful decode, dimension and source-hash checks. These scene/background assets use WebP quality 86. The retained original founder photographs are outside that generated-output check and keep their original dimensions and bytes.
 - The regenerated social image is 1200 × 630. FFprobe confirmed the background film is H.264, 1280 × 720, 24 fps, 312 frames and exactly 13 seconds, without audio. Sampled frames were visually inspected.
-- `npm run typecheck`, `npm run build` and `npm run check:export` passed after the final assets were installed and the concurrent application-capture update was incorporated. The export inspector checked all 26 content routes and 2,364 local links/assets, alongside metadata, sitemap, contact destinations and application screenshots. The six application-capture files were compared byte-for-byte with the updated `main`.
+- `npm run typecheck`, `npm run build` and `npm run check:export` passed after the branch's generated assets were installed and the concurrent application-capture update was incorporated, before the generated founder alternatives were excluded. The export inspector checked all 26 content routes and 2,364 local links/assets, alongside metadata, sitemap, contact destinations and application screenshots. The six application-capture files were compared byte-for-byte with the updated `main`. This checkpoint does not claim validation of the final merged revision.
 - This workspace cannot read the operating-system RSS counter. Next.js's optional memory tracer raised `ENOENT` / `uv_resident_set_memory`; an ignored local dependency change skips only that exact diagnostic failure. Compilation, type checks, application source, dependency lock and deployment workflow were not weakened or changed for this workaround. A clean production build remains a separate GitHub Actions check after merge.
 - Playwright's Chromium installation returned a truncated archive, so no browser automation assertions or new live-site review are claimed. The gallery and crop review are image/CSS inspections, not browser screenshots.
 
-The refresh is prepared on a separate branch. This record does not claim a production deployment; the existing workflow publishes only after a change reaches `main` and deployment succeeds.
+This document records the asset selection and historical branch-local checks. Publication evidence belongs in the release record: the merged commit, successful GitHub Actions deployment and live review establish which revision is published.

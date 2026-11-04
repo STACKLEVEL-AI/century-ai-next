@@ -4,7 +4,7 @@
   "generator": "built-in image_gen.imagegen",
   "source_repository": "STACKLEVEL-AI/century-ai-next",
   "source_ref": "9662939475ec9579841816ee8afd937bc5062b3c",
-  "description": "Exact prompts used for 13 newly generated photographic counterparts. References are pinned original repository assets; output dimensions describe the 17 delivered WebP files. The three named founder portraits preserve the source identities. Enterprise scenes depict fictional locations and participants.",
+  "description": "Exact prompts for 10 selected generated photographic masters delivered as 14 WebP files, with pinned original references and output dimensions. Three original founder portraits are preserved byte-for-byte from main at cad5ff160878585c75ce78a075f06d7b14087a6a. Their excluded historical generation alternatives retain full provenance in a separate list and are not shipped or deployed. Enterprise scenes depict fictional locations and participants.",
   "assets": [
     {
       "id": "hero",
@@ -234,66 +234,6 @@
       ],
       "prompt": "Use case: photorealistic-natural.\nAsset type: high-end enterprise website architectural photograph, wide landscape approximately 16:9, intended web size 1672 x 941. Produce a clean high-resolution master.\nInput image 1 is a STYLE AND COMPOSITION REFERENCE only. Generate a new analogous original architectural photograph of a different, fictional contemporary office courtyard. Preserve the same idea, warm light, material character, level of realism and spatial composition; do not copy the precise building.\nScene/backdrop: a quiet spacious curved courtyard embraced by a 4-5 storey modern office building. Pale beige limestone facade, disciplined tall recessed rectangular windows, large black-framed ground-floor glazing and a recessed lobby entrance. The elegant facade curves across the top and right of the frame, with a sweeping light stone overhang at upper left. Deep but natural glass reflections.\nForeground: broad finely jointed pale stone plaza, realistic warm angled shadows across the paving. A planted raised bed and leafy small tree on the left, restrained planting toward the lower right. Exactly two small distant motion-blurred human figures walking at opposite sides near the ground-floor building; architecture remains dominant and quiet.\nLighting/mood: late golden-hour sunlight entering from the left, warm honey highlights on pale stone and glass, soft olive greenery, deep grey window recesses, calm premium architectural editorial photograph. Fine natural detail, true-to-life texture, subtle grain, believable straight verticals and professional tilt-shift architectural lens clarity.\nComposition/framing: wide eye-level view across the courtyard, main curved facade filling upper two thirds, generous plaza in bottom third, plants frame the scene, warm light and shadow rhythm consistent with reference. New building proportions and window arrangement, not an exact recreation.\nAvoid: text, logos, brands, watermarks, signage, sculptures, extra people, cars, fantasy architecture, impossible geometry, CGI sheen, overprocessed HDR, oversaturation.",
       "currently_used_by_site": false
-    },
-    {
-      "id": "vitali-bakhmat",
-      "generation_mode": "identity-preserve",
-      "reference": {
-        "repository_path": "public/founders/vitali-bakhmat.webp",
-        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
-        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vitali-bakhmat.webp",
-        "role": "identity, expression, clothing, pose and photographic style"
-      },
-      "outputs": [
-        {
-          "repository_path": "public/founders/vitali-bakhmat.webp",
-          "width": 960,
-          "height": 1200,
-          "format": "webp",
-          "responsive_derivative": false
-        }
-      ],
-      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME person, retaining his recognizable identity, expression, clothing, pose and black-and-white editorial style. This is a faithful fresh portrait, not a different model and not a stylization.\nInput images: Image 1 is the identity, clothing, pose, crop and lighting reference; preserve the man's face structure, eyes, nose, mouth, distinctive smile, teeth, glasses, medium-length light side-parted hair, age and physique.\nScene/backdrop: simple very light gray studio wall with a subtle natural shadow, no objects.\nComposition/framing: vertical 4:5 portrait, subject centered, framed from a little above his head down to his upper hips; arms held casually behind his back; plain dark crewneck long-sleeve top. Keep ample headroom, shoulders and torso exactly as in the reference.\nLighting/mood: soft natural side lighting, friendly open toothy smile, relaxed posture, understated professional photography.\nColor palette: strictly neutral black and white, gentle gray gradation, deep black clothing, luminous gray background.\nMaterials/textures: natural skin texture, individual hair strands, subtle fabric folds, clean believable optics; photograph quality at least as high as source, ideally output 1280 by 1600 or larger in the same ratio.\nConstraints: preserve identity extremely closely; do not beautify, reshape, change ethnicity, age, hairstyle, glasses, clothing, expression or body proportions. Regenerate the photographic rendering and fine detail. No text, no logo, no watermark, no frame, no added accessories."
-    },
-    {
-      "id": "vadim-vladymtsev",
-      "generation_mode": "identity-preserve",
-      "reference": {
-        "repository_path": "public/founders/vadim-vladymtsev.webp",
-        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
-        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vadim-vladymtsev.webp",
-        "role": "identity, expression, clothing, pose and photographic style"
-      },
-      "outputs": [
-        {
-          "repository_path": "public/founders/vadim-vladymtsev.webp",
-          "width": 960,
-          "height": 639,
-          "format": "webp",
-          "responsive_derivative": false
-        }
-      ],
-      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME man, preserving his recognizable facial identity and existing black-and-white portrait style.\nInput images: Image 1 is the exact identity, clothing, framing and expression reference; preserve the man's face shape, wide smile and teeth, eye shape, nose, hairstyle, age, physique and all distinctive features. Do not substitute a different model.\nScene/backdrop: simple uniform mid-light gray studio background, no objects.\nComposition/framing: horizontal 3:2 image, centered head-and-upper-chest portrait; short dark hair swept to the side, dark casual pullover hoodie with its hood lying around his neck, shoulders slightly turned, face to camera. Preserve the crop, amount of headroom, shoulder width, neckline and cheerful expression from the reference.\nLighting/mood: soft even portrait lighting, authentic warm friendly broad smile, relaxed professional founder photo.\nColor palette: neutral black and white only, gray backdrop, dark gray hoodie.\nMaterials/textures: photographic skin texture and natural subtle facial detail; realistic hair and fabric, no beauty retouching or airbrushing. At least 1536 by 1024 output with faithful 3:2 framing.\nConstraints: keep the same real identity extremely closely; retain age, facial proportions, smile, hair, eyes, body, hoodie and pose. Only regenerate the photographic rendering and fine detail. No text, no brand, no watermark, no added props or accessories."
-    },
-    {
-      "id": "egor-krychev",
-      "generation_mode": "identity-preserve",
-      "reference": {
-        "repository_path": "public/founders/egor-krychev.webp",
-        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
-        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/egor-krychev.webp",
-        "role": "identity, expression, clothing, pose and photographic style"
-      },
-      "outputs": [
-        {
-          "repository_path": "public/founders/egor-krychev.webp",
-          "width": 960,
-          "height": 960,
-          "format": "webp",
-          "responsive_derivative": false
-        }
-      ],
-      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a fresh high-quality photographic image of exactly the SAME person, retaining recognizable identity, subtle expression, formal clothing, pose, square framing and black-and-white style.\nInput images: Image 1 is the identity and photographic reference. Preserve face shape, eyes, nose, mouth, thin moustache, slim rectangular glasses, short dark fringe hairstyle, age and physique. This must remain the same man, not a different model.\nScene/backdrop: softly out-of-focus modern office with glass partitions, natural window light and faint plant silhouettes, matching the simple depth and tones of the source.\nComposition/framing: square portrait from upper chest upward, body at a slight angle with face towards camera and a subtle natural head tilt; dark suit jacket over a white open-collar shirt, thin rectangular glasses, faint closed-mouth smile; same headroom and head placement as reference.\nLighting/mood: soft window light, restrained professional editorial portrait, calm approachable mood.\nColor palette: strictly neutral black and white with rich dark jacket, light shirt and softly blurred gray office background.\nMaterials/textures: authentic skin, crisp individual hairs and eyeglass edges, realistic cloth, no waxy skin or cosmetic smoothing. Output at least 1536 by 1536 pixels.\nConstraints: preserve the man's identity and distinctive face extremely closely; preserve age, hair, glasses, slight moustache, expression, pose and clothing. Regenerate photographic fine detail without reshaping or beautifying. No text, no logo, no watermark, no frame, no additional accessories."
     }
   ],
   "derived_media": [
@@ -326,5 +266,136 @@
       "command": "npm run assets:film",
       "method": "Slow pan/zoom animation and crossfades of generated still photographs; no full-motion video generation."
     }
-  ]
+  ],
+  "excluded_historical_generations": [
+    {
+      "id": "vitali-bakhmat",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/vitali-bakhmat.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vitali-bakhmat.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/vitali-bakhmat.webp",
+          "width": 960,
+          "height": 1200,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME person, retaining his recognizable identity, expression, clothing, pose and black-and-white editorial style. This is a faithful fresh portrait, not a different model and not a stylization.\nInput images: Image 1 is the identity, clothing, pose, crop and lighting reference; preserve the man's face structure, eyes, nose, mouth, distinctive smile, teeth, glasses, medium-length light side-parted hair, age and physique.\nScene/backdrop: simple very light gray studio wall with a subtle natural shadow, no objects.\nComposition/framing: vertical 4:5 portrait, subject centered, framed from a little above his head down to his upper hips; arms held casually behind his back; plain dark crewneck long-sleeve top. Keep ample headroom, shoulders and torso exactly as in the reference.\nLighting/mood: soft natural side lighting, friendly open toothy smile, relaxed posture, understated professional photography.\nColor palette: strictly neutral black and white, gentle gray gradation, deep black clothing, luminous gray background.\nMaterials/textures: natural skin texture, individual hair strands, subtle fabric folds, clean believable optics; photograph quality at least as high as source, ideally output 1280 by 1600 or larger in the same ratio.\nConstraints: preserve identity extremely closely; do not beautify, reshape, change ethnicity, age, hairstyle, glasses, clothing, expression or body proportions. Regenerate the photographic rendering and fine detail. No text, no logo, no watermark, no frame, no added accessories.",
+      "status": "excluded-historical-generation",
+      "included_in_release": false,
+      "shipped": false,
+      "deployed": false,
+      "historical_output_ref": "756d428b9b645b53ff22e9f61f35f33b602d438e",
+      "exclusion_reason": "The original founder photograph is preserved byte-for-byte from main at cad5ff160878585c75ce78a075f06d7b14087a6a. These output paths and dimensions describe an excluded branch-review alternative, not the current website asset."
+    },
+    {
+      "id": "vadim-vladymtsev",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/vadim-vladymtsev.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/vadim-vladymtsev.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/vadim-vladymtsev.webp",
+          "width": 960,
+          "height": 639,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a new high-quality photographic image of exactly the SAME man, preserving his recognizable facial identity and existing black-and-white portrait style.\nInput images: Image 1 is the exact identity, clothing, framing and expression reference; preserve the man's face shape, wide smile and teeth, eye shape, nose, hairstyle, age, physique and all distinctive features. Do not substitute a different model.\nScene/backdrop: simple uniform mid-light gray studio background, no objects.\nComposition/framing: horizontal 3:2 image, centered head-and-upper-chest portrait; short dark hair swept to the side, dark casual pullover hoodie with its hood lying around his neck, shoulders slightly turned, face to camera. Preserve the crop, amount of headroom, shoulder width, neckline and cheerful expression from the reference.\nLighting/mood: soft even portrait lighting, authentic warm friendly broad smile, relaxed professional founder photo.\nColor palette: neutral black and white only, gray backdrop, dark gray hoodie.\nMaterials/textures: photographic skin texture and natural subtle facial detail; realistic hair and fabric, no beauty retouching or airbrushing. At least 1536 by 1024 output with faithful 3:2 framing.\nConstraints: keep the same real identity extremely closely; retain age, facial proportions, smile, hair, eyes, body, hoodie and pose. Only regenerate the photographic rendering and fine detail. No text, no brand, no watermark, no added props or accessories.",
+      "status": "excluded-historical-generation",
+      "included_in_release": false,
+      "shipped": false,
+      "deployed": false,
+      "historical_output_ref": "756d428b9b645b53ff22e9f61f35f33b602d438e",
+      "exclusion_reason": "The original founder photograph is preserved byte-for-byte from main at cad5ff160878585c75ce78a075f06d7b14087a6a. These output paths and dimensions describe an excluded branch-review alternative, not the current website asset."
+    },
+    {
+      "id": "egor-krychev",
+      "generation_mode": "identity-preserve",
+      "reference": {
+        "repository_path": "public/founders/egor-krychev.webp",
+        "ref": "9662939475ec9579841816ee8afd937bc5062b3c",
+        "url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/9662939475ec9579841816ee8afd937bc5062b3c/public/founders/egor-krychev.webp",
+        "role": "identity, expression, clothing, pose and photographic style"
+      },
+      "outputs": [
+        {
+          "repository_path": "public/founders/egor-krychev.webp",
+          "width": 960,
+          "height": 960,
+          "format": "webp",
+          "responsive_derivative": false
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: founder portrait for an existing professional company website.\nPrimary request: regenerate the supplied portrait as a fresh high-quality photographic image of exactly the SAME person, retaining recognizable identity, subtle expression, formal clothing, pose, square framing and black-and-white style.\nInput images: Image 1 is the identity and photographic reference. Preserve face shape, eyes, nose, mouth, thin moustache, slim rectangular glasses, short dark fringe hairstyle, age and physique. This must remain the same man, not a different model.\nScene/backdrop: softly out-of-focus modern office with glass partitions, natural window light and faint plant silhouettes, matching the simple depth and tones of the source.\nComposition/framing: square portrait from upper chest upward, body at a slight angle with face towards camera and a subtle natural head tilt; dark suit jacket over a white open-collar shirt, thin rectangular glasses, faint closed-mouth smile; same headroom and head placement as reference.\nLighting/mood: soft window light, restrained professional editorial portrait, calm approachable mood.\nColor palette: strictly neutral black and white with rich dark jacket, light shirt and softly blurred gray office background.\nMaterials/textures: authentic skin, crisp individual hairs and eyeglass edges, realistic cloth, no waxy skin or cosmetic smoothing. Output at least 1536 by 1536 pixels.\nConstraints: preserve the man's identity and distinctive face extremely closely; preserve age, hair, glasses, slight moustache, expression, pose and clothing. Regenerate photographic fine detail without reshaping or beautifying. No text, no logo, no watermark, no frame, no additional accessories.",
+      "status": "excluded-historical-generation",
+      "included_in_release": false,
+      "shipped": false,
+      "deployed": false,
+      "historical_output_ref": "756d428b9b645b53ff22e9f61f35f33b602d438e",
+      "exclusion_reason": "The original founder photograph is preserved byte-for-byte from main at cad5ff160878585c75ce78a075f06d7b14087a6a. These output paths and dimensions describe an excluded branch-review alternative, not the current website asset."
+    }
+  ],
+  "preserved_founder_portraits": [
+    {
+      "id": "vitali-bakhmat",
+      "repository_path": "public/founders/vitali-bakhmat.webp",
+      "source_ref": "cad5ff160878585c75ce78a075f06d7b14087a6a",
+      "source_url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/cad5ff160878585c75ce78a075f06d7b14087a6a/public/founders/vitali-bakhmat.webp",
+      "git_blob_sha": "9c959204a4765f4c3f1097db54f6b40901614372",
+      "git_blob_hash_algorithm": "SHA-1",
+      "width": 320,
+      "height": 400,
+      "format": "webp",
+      "generated": false,
+      "preserved_byte_for_byte": true,
+      "included_in_release": true
+    },
+    {
+      "id": "vadim-vladymtsev",
+      "repository_path": "public/founders/vadim-vladymtsev.webp",
+      "source_ref": "cad5ff160878585c75ce78a075f06d7b14087a6a",
+      "source_url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/cad5ff160878585c75ce78a075f06d7b14087a6a/public/founders/vadim-vladymtsev.webp",
+      "git_blob_sha": "82f83026c5935f134e3ccc748246e65d341c6b6d",
+      "git_blob_hash_algorithm": "SHA-1",
+      "width": 320,
+      "height": 213,
+      "format": "webp",
+      "generated": false,
+      "preserved_byte_for_byte": true,
+      "included_in_release": true
+    },
+    {
+      "id": "egor-krychev",
+      "repository_path": "public/founders/egor-krychev.webp",
+      "source_ref": "cad5ff160878585c75ce78a075f06d7b14087a6a",
+      "source_url": "https://github.com/STACKLEVEL-AI/century-ai-next/blob/cad5ff160878585c75ce78a075f06d7b14087a6a/public/founders/egor-krychev.webp",
+      "git_blob_sha": "33a891712d166322b05b0798600ee8fb5ef21966",
+      "git_blob_hash_algorithm": "SHA-1",
+      "width": 320,
+      "height": 320,
+      "format": "webp",
+      "generated": false,
+      "preserved_byte_for_byte": true,
+      "included_in_release": true
+    }
+  ],
+  "historical_review_gallery": {
+    "repository_path": "docs/previews/generated-photography-2026-11-04.jpg",
+    "source_ref": "756d428b9b645b53ff22e9f61f35f33b602d438e",
+    "purpose": "Historical branch-review comparison, including excluded generated founder alternatives; not a preview or proof of the final deployed asset selection.",
+    "includes_excluded_founder_alternatives": true,
+    "deployment_evidence": false
+  }
 }

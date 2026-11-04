@@ -11,8 +11,8 @@ Baseline: `9662939475ec9579841816ee8afd937bc5062b3c`. Working branch: `design/re
 - [x] Inventory the supplied recordings and identify the current invented product visuals.
 - [x] Review candidate frames, choose crops, and document their provenance and visible language.
 - [x] Replace the product illustrations with real captures and accurate English captions.
-- [ ] Verify the static export, image loading, responsive presentation and surviving interactions.
-- [ ] Publish the branch, merge into `main`, verify the deployment and record the result.
+- [x] Verify the static export, live image loading and surviving interactions; review responsive styles (browser scope recorded below).
+- [x] Publish the branch, merge into `main`, verify the deployment and record the result.
 
 ## Selection rules
 
@@ -28,7 +28,7 @@ Primary replacements: the homepage platform field; the invented supplier questio
 
 The old Gateway dashboard contains invented sample metrics and CSV export. Its presentation must be reconsidered with the available recordings rather than relabelling an unrelated capture as that dashboard.
 
-All 15 supplied files are available locally. The similarly named versions are not assumed to be identical. The recordings examined so far mostly use Russian interface labels, so language selection requires visual inspection of the actual pixels.
+All 15 supplied files were reviewed. The similarly named versions were not assumed to be identical. The recordings mostly use Russian interface labels, so selection included visual inspection of the actual pixels.
 
 ## Capture provenance
 
@@ -59,9 +59,21 @@ All sources are 1920 × 1080. The six local WebP assets total 108396 bytes. Exac
 ## Validation and release
 
 - `npm run typecheck`: passed after the component, page and test updates.
-- Preview `npm run build`: completed; all 26 content routes generated. This workspace still uses the narrowly scoped, ignored local memory-diagnostic workaround documented in the original migration log. The production workflow has no such modification and will be checked separately.
+- Preview `npm run build`: completed; all 26 content routes generated. This workspace still uses the narrowly scoped, ignored local memory-diagnostic workaround documented in the original migration log. The normal production build and deployment also passed without that local modification (run linked below).
 - `npm run check:export`: passed for 26 routes, unique metadata, 2,364 local links/assets, sitemap, contact destinations and the new screenshot contract. The old mock interface classes are absent from the rendered pages.
 - `git diff --check`: passed.
 - Each of the six published images was visually reviewed for language and unwanted content. Their intrinsic sizes are recorded in the shared metadata and provenance manifest.
 - The existing eight Playwright tests were updated to match real captures and full-size links. They were not executed in this phase; the earlier Chromium installation blocker in this workspace remains the known limit. Source checks and static inspection are not claimed as browser test results.
-- Live image loading, full-size links, layout and retained controls will be checked after the authorised deployment.
+- Live desktop browser checks passed after deployment: all six distinct images loaded at their recorded natural dimensions across the homepage and Agents page; the platform and gallery layouts showed no horizontal overflow at a 1,363 px viewport.
+- The Models & controls image opened at its full-size local URL using the Enter key; the resulting image loaded at 910 × 342.
+- On AI OS, clicking Observability selected the correct panel; ArrowRight moved selection and focus to Workflows and displayed its corresponding content.
+- Responsive CSS was reviewed, including the single-column layout below 760 px and aspect-ratio-preserving image sizing. A separate mobile browser viewport was not exercised in this phase.
+
+## Published result
+
+- Implementation: [PR #48](https://github.com/STACKLEVEL-AI/century-ai-next/pull/48), merged into `main` as `2663feebe46495f632145464b6074f3b037e832b`.
+- Production: [Build and deploy run 41850134807](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41850134807), completed successfully for that exact merge commit.
+- Verified live result: [Century application captures](https://century-ai.eu/#platform-title).
+- Proof below was captured from the published website after deployment. The documentation checkpoint that adds this proof does not change application source.
+
+![Real Century application captures on the published website](previews/century-real-app-captures-2026-11-04.jpg)

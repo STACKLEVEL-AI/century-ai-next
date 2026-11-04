@@ -4,7 +4,7 @@ The English Century website for [century-ai.eu](https://century-ai.eu/), built w
 
 The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. The current design uses **the supplied black and white Century wordmarks, Inter typography, white and near-black sections, and local generated photography**. Century's name, founders and contact destinations are preserved. Page structure and visual composition follow the reference; the writing and product examples are adapted for Century.
 
-The [design migration log](docs/design-migration-2026-11-04.md) records the earlier staged work, original reference-media provenance and validation checkpoints. The [application screenshot log](docs/application-screenshots-2026-11-04.md) documents the replacement of invented product visuals with six English-only details captured from the supplied Century recordings. The [generated photography notes](docs/generated-photography-2026-11-04.md) document the replacement of all 13 distinct photographic assets, their responsive derivatives and the background animation.
+The [design migration log](docs/design-migration-2026-11-04.md) records the earlier staged work, original reference-media provenance and validation checkpoints. The [application screenshot log](docs/application-screenshots-2026-11-04.md) documents the replacement of invented product visuals with six English-only details captured from the supplied Century recordings. The [generated photography notes](docs/generated-photography-2026-11-04.md) document **10 generated photographic masters delivered as 14 WebP files**, their derived media and the three original founder portraits preserved byte-for-byte from `main` at `cad5ff160878585c75ce78a075f06d7b14087a6a`.
 
 ## Pages
 
@@ -28,7 +28,7 @@ The invented supplier answer, review queue, product diagrams and Gateway sample 
 
 All contact actions lead to [Vitali Bakhmat on Telegram](https://t.me/vitalibakhmat). The other external profile destinations are [Vadim Vladymtsev’s website](https://vadimohka.com/) and [Egor Krychev’s LinkedIn](https://www.linkedin.com/in/ekrychev/). The site has no contact form or embedded chat. The application adds no analytics, cookies or persistent browser storage.
 
-Images, the background film, both wordmarks and real application captures are served locally. Inter is bundled by `next/font` during the build and served with the site. The homepage uses a 13-second silent animation of four generated stills, with slow camera motion, crossfades and a pause/play control. A responsive poster remains visible without JavaScript; the film is not mounted when reduced motion or the browser's save-data preference is enabled. The enterprise scenes and their people are fictional illustrations; the three founder portraits were regenerated using the existing photographs as identity references. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive selectors provide static fallback content.
+Images, the background film, both wordmarks and real application captures are served locally. Inter is bundled by `next/font` during the build and served with the site. The homepage uses a 13-second silent animation of four generated stills, with slow camera motion, crossfades and a pause/play control. A responsive poster remains visible without JavaScript; the film is not mounted when reduced motion or the browser's save-data preference is enabled. The enterprise scenes and their people are fictional illustrations. The three founder photographs retain their original files, dimensions and paths; generated founder alternatives are excluded from the release. Main content is server rendered; native navigation and disclosures work without JavaScript, and interactive selectors provide static fallback content.
 
 ## Local development
 
@@ -70,7 +70,7 @@ npm run check:export
 
 The optional `test:e2e` command and `tests/landing.spec.ts` cover route metadata, contacts and local resources, navigation without JavaScript, keyboard interactions, product tabs, real capture loading/full-size links and responsive layouts. The suite is not called by deployment; running it locally requires a completed export, Python 3 and Playwright's Chromium browser.
 
-The combined revision with generated photography and real application captures passed `npm run typecheck`, `npm run build` and `npm run check:export`: 26 content routes and 2,364 local links/assets, including the application screenshot checks. The [photography verification notes](docs/generated-photography-2026-11-04.md#verification) record the scope and limitations; a successful static check does not establish live deployment or browser-test results.
+The photography branch passed `npm run typecheck`, `npm run build` and `npm run check:export` before the founder alternatives were excluded: 26 content routes and 2,364 local links/assets, including the application screenshot checks. The [photography verification notes](docs/generated-photography-2026-11-04.md#verification) distinguish that historical checkpoint from the release selection that preserves the original portraits. A successful static check does not establish live deployment or browser-test results.
 
 The [historical migration log](docs/design-migration-2026-11-04.md) records the initial design's local checks, browser-installation limitation and successful production deployment in [Actions run 41842820065](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41842820065) for commit `1163e7c`. The [application screenshot log](docs/application-screenshots-2026-11-04.md) preserves the capture update's provenance and validation record. Those checkpoints describe their respective earlier revisions.
 
@@ -90,11 +90,14 @@ The [historical migration log](docs/design-migration-2026-11-04.md) records the 
 | `src/components/HeroFilm.tsx` | Local background film, playback control and reduced-motion/save-data handling. |
 | `src/app/globals.css`, `site.css`, `products.css`, `industries.css`, `company.css`, `design.css` | Shared styles, page-family layouts and the current neutral design system. |
 | `public/brand/` | Supplied Century wordmarks and derived compact symbol. |
-| `public/media/`, `public/founders/`, `public/images/` | Generated photographs, responsive variants, founder portraits and the animated background film. |
+| `public/media/`, `public/images/` | Ten generated photographic masters, four responsive derivatives and the animated background film. |
+| `public/founders/` | Three original founder photographs, preserved byte-for-byte from `main` at `cad5ff1`. |
 | `public/media/app/` | Six real English application captures, preserved unchanged by the photography refresh. |
-| `docs/generated-photography-prompts.json` | Exact generation prompts, pinned source references and output paths/dimensions. |
+| `docs/generated-photography-prompts.json` | Exact prompts for the ten selected generated assets, original portrait hashes, and separately recorded excluded founder generations. |
 | `docs/application-screenshots-2026-11-04.md`, `docs/app-capture-provenance.json` | Source recordings, frame times, crops and hashes for the real application captures. |
 
 Regenerate the committed 1200 × 630 social preview image with `npm run assets:og`; it combines the generated hero with the supplied wordmark and existing text using Sharp. Regenerate the silent 1280 × 720 background animation with `npm run assets:film`. Both commands consume local assets; rebuild the export after changing them. The film is an animation of generated photographs, with no full-motion video generation.
+
+The [photography gallery](docs/previews/generated-photography-2026-11-04.jpg) is a historical branch-review comparison. Its generated founder alternatives were excluded and are not deployed as website portraits; the [preserved portrait inventory](docs/generated-photography-2026-11-04.md#preserved-founder-portraits) records the original files and Git blob hashes.
 
 The [adaptation notes](docs/wonderful-adaptation.md) describe the implemented scope and behaviour. The [photography notes](docs/generated-photography-2026-11-04.md) describe the generated media, and the [application screenshot log](docs/application-screenshots-2026-11-04.md) describes the real captures. The [design migration log](docs/design-migration-2026-11-04.md) and [original single-page plan](docs/superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remain unchanged as historical context.
