@@ -193,6 +193,7 @@
 .inner-page .product-page .phase-selector { border: 0; border-radius: 8px; background: #fafbf7; }
 .inner-page .product-page .phase-tabs { background: transparent; border-bottom: 1px solid #d5dacd; }
 .inner-page .product-page .phase-tabs button { padding: 28px 32px; gap: 13px 18px; }
+.inner-page .product-page .phase-tabs button:focus-visible { outline-offset: -5px; }
 .inner-page .product-page .phase-tabs button > span { font-size: 11px; color: #777f6d; }
 .inner-page .product-page .phase-tabs button strong { font-size: 28px; font-weight: 300; letter-spacing: -.04em; }
 .inner-page .product-page .phase-tabs button[aria-selected="true"] { background: #fafbf7; border-bottom-color: #ba5d34; }

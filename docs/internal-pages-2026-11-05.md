@@ -30,13 +30,21 @@ All 28 files under `public/` were compared with their original Git blob hashes a
 - TypeScript checking completed successfully.
 - Production compilation and static export completed for the whole site.
 - `npm run check:export` passed for **26 content routes and 2,498 local links/assets**. It verifies unique metadata, canonical and Open Graph URLs, sitemap coverage, local anchors, approved contact destinations and real application captures. The check also now requires the oversized footer wordmark to be absent and the homepage to remain outside the internal-page scope.
-- PostCSS parsed all four new stylesheets; all 1,184 selectors are scoped to `.inner-page`.
+- PostCSS parsed all four new stylesheets; all 1,185 selectors are scoped to `.inner-page`, including the live-review focus correction below.
 - Baseline comparison confirmed the homepage source and its components, content libraries, dependencies and deployment workflow are unchanged.
 - The optional Playwright suite is discoverable: 12 tests, including new checks across all internal routes at 360px, 768px and 1440px and category-filter interactions. **It was not executed locally:** the Chromium download was truncated and the installer could not extract it.
 
 The local sandbox does not implement Node's `uv_resident_set_memory` syscall. The first build stopped in Next's optional memory diagnostic; the successful local build used a guard for that specific error in the ignored `node_modules` copy of Next. No dependency, lockfile, workflow or repository source was changed for that workaround. The GitHub Actions build must run with its normal dependencies.
 
 These checks establish source and export integrity. They do not establish publication or successful browser testing. The associated pull request records the subsequent GitHub Actions result and observations from the deployed site.
+
+## Publication and live review
+
+[PR #50](https://github.com/STACKLEVEL-AI/century-ai-next/pull/50) was merged as `f8c3422d859945d862d970087435daae3d6af7ac`. [GitHub Actions run 41917942391](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/41917942391) completed successfully with the normal dependency installation, static build and Pages deployment.
+
+Desktop browser review confirmed the new layouts at 1363 × 936, with a 1348px document area. The homepage remains outside the new design scope; the oversized footer logo is absent; the 404 displays correctly, retains `noindex` and links back to the homepage. The six product routes have no horizontal page overflow or failed image loads after viewing lazy-loaded sections. AI OS and Deployment tabs respond to arrow and End keys with matching focus, selection and visible panels.
+
+The review found a small keyboard-focus issue: the outer outline of the last Deployment tab was clipped by the selector's rounded container. A follow-up sets the outline inside the focused tab. The associated pull request records the follow-up deployment and final browser review. Mobile viewport browser testing remains unverified in this environment.
 
 ## Optional inspection
 
