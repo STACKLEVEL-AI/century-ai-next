@@ -6,4 +6,4 @@ export const EGOR_PROFILE_URL = "https://www.linkedin.com/in/ekrychev/";
 export const VADIM_PROFILE_URL = "https://vadimohka.com/";
 export const PAGE_TITLE = "Century | Enterprise AI for European Businesses";
 export const PAGE_DESCRIPTION =
-  "Find answers, automate document workflows and support your teams with enterprise AI. Explore Century and talk to Vitali on Telegram.";
+  "Accelerate AI transformation with Century. Connect your knowledge, systems and people through enterprise AI, hands-on deployment and a clear strategy.";
