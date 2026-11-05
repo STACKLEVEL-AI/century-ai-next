@@ -15,7 +15,7 @@ function MenuLinks({ links }: { links: NavigationLink[] }) {
   return <>{links.map(link => <a href={link.href} className="nav-menu-link" key={link.href}><span>{link.title}<ArrowUpRight size={15} aria-hidden="true" /></span>{link.description && <small>{link.description}</small>}</a>)}</>;
 }
 
-export default function Header({ variant = "overlay" }: { variant?: "overlay" | "light" }) {
+export default function Header({ variant = "overlay", showAnnouncement = true }: { variant?: "overlay" | "light"; showAnnouncement?: boolean }) {
   const header = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Header({ variant = "overlay" }: { variant?: "overlay" | 
   }, []);
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <div className="announcement"><span>From AI ambition to everyday impact.</span><a href="/deployment/">Discover our approach<ArrowRight size={14} aria-hidden="true" /></a></div>
+    {showAnnouncement && <div className="announcement"><span>From AI ambition to everyday impact.</span><a href="/deployment/">Discover our approach<ArrowRight size={14} aria-hidden="true" /></a></div>}
     <header ref={header} className={`site-header${variant === "light" ? " site-header-light" : ""}${scrolled ? " is-scrolled" : ""}`}>
       <div className="shell header-inner">
         <a className="brand" href="/" aria-label="Century home"><img className="brand-image" src={variant === "light" || scrolled ? "/brand/century-logo.svg" : "/brand/century-logo-white.svg"} alt="Century" width={221} height={58} /></a>
