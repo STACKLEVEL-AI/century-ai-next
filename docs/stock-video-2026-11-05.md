@@ -61,7 +61,7 @@ The homepage now uses 18 distinct photographs across its logical image slots, in
 
 Existing editorial photographs supply the replacement images. Employee assistance adds one generated environmental workplace scene guided by the user's appearance references and the site's existing photographic style: a close lookalike with small facial differences, candid activity, motion blur and muted warm/teal tones. The generated scene is illustrative; it does not identify a Century employee or customer. The source reference attachments and the two discarded portrait-style candidates are not included in the repository.
 
-The selected new WebP is 1600 × 900 and 64,132 bytes. The complete slot mapping, dimensions, SHA-256 hashes, generation method and final prompt are recorded in [the photography manifest](homepage-photography-2026-11-06.json). The current hero films, founder photographs, application captures, page layout and deploy-only workflow are preserved.
+The selected WebP is 1600 × 900 and 135,924 bytes. The current revision uses the third appearance reference for the face, with the earlier references informing the curls. A targeted edit repairs eye/hair boundaries and restores the site's subdued cinematic grading; the URL carries a content-hash version for returning browsers. The complete slot mapping, dimensions, SHA-256 hashes, generation method and final prompt are recorded in [the photography manifest](homepage-photography-2026-11-06.json). The current hero films, founder photographs, application captures, page layout and deploy-only workflow are preserved.
 
 ## Maintenance
 
