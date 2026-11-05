@@ -208,7 +208,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await workflow.locator("summary").click();
     await expect(workflow.locator(".card-measure")).toBeVisible();
 
-    const menu = page.locator(".mobile-navigation");
+    const menu = page.locator("[data-mobile-navigation]");
     await menu.locator(":scope > summary").click();
     const navigation = page.getByRole("navigation", { name: "Mobile navigation" });
     await expect(navigation).toBeVisible();
@@ -320,8 +320,14 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await expectLocalHeroImage(page);
     await expectNoHorizontalOverflow(page);
     expect(await page.locator("html").evaluate((node) => getComputedStyle(node).scrollSnapType)).toBe("none");
-    for (const selector of ["header .brand", "header .btn-header", "#home a", "#contact a", ".app-capture-open"]) {
-      for (const link of await page.locator(selector).all()) {
+    for (const links of [
+      page.locator("[data-site-header]").getByRole("link", { name: "Century home", exact: true }),
+      page.locator("[data-site-header]").getByRole("link", { name: "Get in touch", exact: true }),
+      page.locator("#home a"),
+      page.locator("#contact a"),
+      page.locator(".app-capture-open"),
+    ]) {
+      for (const link of await links.all()) {
         await expect(link).toBeVisible();
         const box = await link.boundingBox();
         expect(box).not.toBeNull();
@@ -383,3 +389,4 @@ test("Guide categories filter the library and keep articles reachable", async ({
   await filters.getByRole("button", { name: "All guides", exact: true }).click();
   await expect(library.getByRole("article")).toHaveCount(4);
 });
+
