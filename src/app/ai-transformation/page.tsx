@@ -1,33 +1,131 @@
 import { ArrowUpRight } from "lucide-react";
-import PageFrame from "@/components/site/PageFrame";
-import { CapabilityAccordion, RelatedPages, SectionHeading } from "@/components/site/Sections";
-import ProductIntro from "@/components/products/ProductIntro";
+import PlatformFrame from "@/components/platform/PlatformFrame";
+import styles from "@/components/platform/TransformationPage.module.css";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = pageMetadata("AI Transformation", "Choose an AI starting point, evaluate the workflow and plan the next step with clear ownership and measurable outcomes.", "/ai-transformation");
+export const metadata = pageMetadata(
+  "AI Transformation",
+  "Make AI part of how your organization works. Connect the business need, your people and the technology through a practical path to lasting change.",
+  "/ai-transformation",
+);
+
+const principles = [
+  {
+    title: "Choose the problem and the sequence",
+    description: "Begin with a business process you can describe, an owner who can make decisions and an outcome you can evaluate. Give the first workflow a clear boundary. Use what it teaches you to decide which capability to build next.",
+  },
+  {
+    title: "Work across the whole process",
+    description: "Follow the work between people, documents and systems. Consider how an answer becomes an action, where review is needed and what happens when something falls outside the expected path. A useful result needs a useful place to go.",
+  },
+  {
+    title: "Build capability within your team",
+    description: "Bring process owners, users and technical teams into the implementation. Share the reasoning behind the choices and document the knowledge needed to operate the workflow. The organization should understand what it is adopting.",
+  },
+  {
+    title: "Keep your options and your control",
+    description: "Make access, data boundaries and external dependencies explicit. Choose models and deployment arrangements around the work they need to support. Keep the design understandable so that the team can revisit those choices as its requirements change.",
+  },
+  {
+    title: "Measure the work that gets done",
+    description: "Compare the workflow with a practical baseline: the time it takes, the usefulness of its results, the corrections it needs and the effort of review. Let that evidence guide the decision to improve, expand or stop.",
+  },
+];
 
 export default function TransformationPage() {
-  return <PageFrame><div className="product-page product-page-strategy">
-    <ProductIntro eyebrow="Strategy & transformation" title={<>Make AI part of<br />how work gets done.</>}
-      description="Choose a business process worth improving. Build the evidence, the understanding and the ownership to make the next step a deliberate one."
-      image={{ src: "/media/strategy.webp", alt: "Abstract blue photographic motion with a warm amber accent", width: 1054, height: 1451 }}
-      secondary={{ href: "#transformation-principles", label: "Explore the principles" }} />
+  return (
+    <PlatformFrame
+      headerVariant="overlay"
+      contactTitle={<>Build the next chapter<br />of your organization.</>}
+      contactImage={{
+        src: "/media/platform/ai-transformation/contact.webp",
+        width: 1920,
+        height: 1076,
+        position: "center",
+      }}
+    >
+      <div className={styles.page}>
+        <section className={styles.hero} aria-labelledby="transformation-title">
+          <picture className={styles.heroImage}>
+            <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/hero-mobile.webp" />
+            <img
+              src="/media/platform/ai-transformation/hero.webp"
+              srcSet="/media/platform/ai-transformation/hero-1280.webp 1280w, /media/platform/ai-transformation/hero.webp 2000w"
+              sizes="100vw"
+              alt=""
+              width={2000}
+              height={1121}
+              fetchPriority="high"
+            />
+          </picture>
+          <div className={styles.heroShade} aria-hidden="true" />
+          <div className={styles.heroContent}>
+            <h1 id="transformation-title">AI changes your technology.<br /> And the way your organization works.</h1>
+          </div>
+        </section>
 
-    <section className="product-section"><div className="shell product-editorial-pair product-strategy-statement"><div><p className="product-kicker">Begin with the work</p><h2>A useful tool is a start.<br /><span>A useful workflow<br />is the goal.</span></h2></div><div className="product-editorial-copy"><p>Work moves between people, documents, systems and decisions. Introducing AI means considering those connections together.</p><p>Understand where the process slows down, who owns the next step and which information the team relies on. Then decide where assistance could make a meaningful difference.</p><p>Let the first use case teach you something practical. Use that evidence to shape the next investment and the pace of change.</p></div></div></section>
+        <section className={styles.editorialSection} aria-labelledby="transformation-approach-title">
+          <div className={`${styles.shell} ${styles.editorialGrid}`}>
+            <h2 id="transformation-approach-title">An organization ready<br />for what comes next.</h2>
+            <div className={styles.editorialCopy}>
+              <p>AI can help people find knowledge, prepare decisions and move work between systems. Making that assistance useful means understanding the organization around it.</p>
+              <p>Start with the work itself. Look at the information people need, the steps they repeat and the handovers that slow a process down. Decide where assistance belongs and where a person needs to remain responsible.</p>
+              <p>The first workflow is an opportunity to build shared understanding. It reveals what the data can support, which integrations matter and what the team needs to operate with confidence.</p>
+              <p>Century connects those practical decisions to a wider direction: a sequence of useful changes, with clear ownership and evidence for the next investment.</p>
+            </div>
+          </div>
+        </section>
 
-    <section className="product-section product-dark" id="transformation-principles"><div className="shell product-accordion-layout"><SectionHeading eyebrow="Five working principles" title={<>A deliberate path<br />to useful AI.</>} description="Keep the business need, operating model and evaluation criteria connected as the scope develops." /><CapabilityAccordion label="AI transformation principles" items={[
-      { title: "Choose the problem before the tool", description: "Identify a focused workflow with a clear owner and a worthwhile outcome. Prioritize work you can define and evaluate before choosing the technology." },
-      { title: "Follow the whole workflow", description: "Map the handovers between people and systems. The surrounding process needs to use the result and handle its exceptions." },
-      { title: "Build understanding inside the team", description: "Involve process owners and reviewers throughout implementation. Document the sources, decisions and responsibilities needed to operate the workflow." },
-      { title: "Keep control and choices explicit", description: "Agree data boundaries, access and external dependencies. Assess model and deployment choices against the requirements of the use case." },
-      { title: "Measure what changes in the work", description: "Compare time, usefulness, corrections and review effort against a baseline. Use the results to refine the workflow, expand it or stop." },
-    ]} /></div></section>
+        <section className={styles.principlesSection} id="transformation-principles" aria-labelledby="transformation-principles-title">
+          <div className={`${styles.shell} ${styles.principlesGrid}`}>
+            <h2 id="transformation-principles-title">Five principles for<br />lasting change.</h2>
+            <div className={styles.principles}>
+              {principles.map((principle, index) => (
+                <details key={principle.title} name="century-transformation-principles" open={index === 0} className={styles.principle}>
+                  <summary>
+                    <span className={styles.principleNumber} aria-hidden="true">0{index + 1}</span>
+                    <span className={styles.principleTitle}>{principle.title}</span>
+                    <span className={styles.principleToggle} aria-hidden="true" />
+                  </summary>
+                  <p>{principle.description}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
 
-    <section className="product-section"><div className="shell"><div className="product-heading-row"><SectionHeading eyebrow="From intent to a starting brief" title={<>Three questions.<br />A clearer place to begin.</>} /><a className="product-text-link" href="/deployment/">See how we build<ArrowUpRight size={18} aria-hidden="true" /></a></div><ol className="product-brief">{[
-      { title: "What needs to improve?", text: "Describe the recurring work, the process owner and the effort or friction you see today.", label: "The opportunity" },
-      { title: "What does the workflow need?", text: "Identify the documents, systems, access rules and decisions that require a person.", label: "The requirements" },
-      { title: "What would useful look like?", text: "Agree the evidence you need to make a confident decision about the next step.", label: "The outcome" },
-    ].map((item, index) => <li key={item.title}><div className="product-brief-top"><span>0{index + 1}</span><p>{item.label}</p></div><h3>{item.title}</h3><p>{item.text}</p></li>)}</ol></div></section>
-    <RelatedPages title="Connect the approach to the work." links={[{ href: "/ai-os/", title: "The platform foundation", description: "Explore how knowledge, workflows and oversight fit together." }, { href: "/deployment/", title: "The delivery path", description: "Move from a bounded use case to evidence and operating ownership." }]} />
-  </div></PageFrame>;
+        <section className={styles.relatedSection} aria-labelledby="transformation-related-title">
+          <div className={styles.shell}>
+            <h2 id="transformation-related-title">Connect the strategy<br />to the work.</h2>
+            <div className={styles.relatedCards}>
+              <a className={styles.relatedCard} href="/ai-os/">
+                <picture className={styles.cardImage}>
+                  <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/ai-os-mobile.webp" />
+                  <img src="/media/platform/ai-transformation/ai-os.webp" alt="" width={1400} height={785} loading="lazy" />
+                </picture>
+                <div className={styles.cardShade} aria-hidden="true" />
+                <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
+                <div className={styles.cardContent}>
+                  <h3>AI OS</h3>
+                  <p>Bring knowledge, workflows and oversight together in the foundation for everyday AI.</p>
+                </div>
+              </a>
+              <a className={styles.relatedCard} href="/deployment/">
+                <picture className={styles.cardImage}>
+                  <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/deployment-mobile.webp" />
+                  <img src="/media/platform/ai-transformation/deployment.webp" alt="" width={1400} height={781} loading="lazy" />
+                </picture>
+                <div className={styles.cardShade} aria-hidden="true" />
+                <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
+                <div className={styles.cardContent}>
+                  <h3>Deployment</h3>
+                  <p>Move from a focused use case to a working implementation and ownership within your team.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </PlatformFrame>
+  );
 }

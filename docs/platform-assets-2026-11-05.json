@@ -1,0 +1,602 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "ba158e3df7b942c91310c3f2c3a27dbd44c07554",
+  "notes": "Reference photography and backgrounds for the six Platform pages. Native Century diagrams and existing real application captures are separate from this inventory. Original downloads are not published.",
+  "count": 37,
+  "total_bytes": 4701080,
+  "assets": [
+    {
+      "file": "public/media/platform/agents/customer-support-720.webp",
+      "reference": "https://www.wonderful.ai/agents",
+      "source_url": "https://framerusercontent.com/images/zmHgufjgUxRTipAfDErDclnRFU.png",
+      "source_sha256": "3eb5ffb3a583186691dae09ae2b18ebeb44f5df91ce55d59ac109bd1c3a62a2a",
+      "source_dimensions": [
+        1098,
+        1300
+      ],
+      "dimensions": [
+        720,
+        852
+      ],
+      "sha256": "102747368a45257e56a7b251224ac1e789bc294e83ba9263e206a3f7aba4adf5",
+      "use": "Illustrative workplace photography; not a Century product screenshot",
+      "bytes": 55250,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/agents/customer-support.webp",
+      "reference": "https://www.wonderful.ai/agents",
+      "source_url": "https://framerusercontent.com/images/zmHgufjgUxRTipAfDErDclnRFU.png",
+      "source_sha256": "3eb5ffb3a583186691dae09ae2b18ebeb44f5df91ce55d59ac109bd1c3a62a2a",
+      "source_dimensions": [
+        1098,
+        1300
+      ],
+      "dimensions": [
+        1098,
+        1300
+      ],
+      "sha256": "892a829e78d507266feef07880417690172ae8d3048418eaa8f08c8cc1454e3d",
+      "use": "Illustrative workplace photography; not a Century product screenshot",
+      "bytes": 152068,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/agents/sky-1280.webp",
+      "reference": "https://www.wonderful.ai/agents",
+      "source_url": "https://framerusercontent.com/images/lOzB6A2mLfsIG1Nzz1sMZpI9jCw.jpg",
+      "source_sha256": "d3fa9037d19acc2ce4342409a183284c2402287cd4b596c9830015f9fb8e6834",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ff765591fedc741b6e4ff43a2e1c3fb3a07637adcd5a144379aa43e54d24fd07",
+      "use": "Abstract background",
+      "bytes": 66654,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/agents/sky-720.webp",
+      "reference": "https://www.wonderful.ai/agents",
+      "source_url": "https://framerusercontent.com/images/lOzB6A2mLfsIG1Nzz1sMZpI9jCw.jpg",
+      "source_sha256": "d3fa9037d19acc2ce4342409a183284c2402287cd4b596c9830015f9fb8e6834",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        720,
+        405
+      ],
+      "sha256": "8914e7d9d8d9e49fed718dd07318e182a4040cadc10965a8bc8d93918779643f",
+      "use": "Abstract background",
+      "bytes": 8972,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/agents/sky.webp",
+      "reference": "https://www.wonderful.ai/agents",
+      "source_url": "https://framerusercontent.com/images/lOzB6A2mLfsIG1Nzz1sMZpI9jCw.jpg",
+      "source_sha256": "d3fa9037d19acc2ce4342409a183284c2402287cd4b596c9830015f9fb8e6834",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        1800,
+        1013
+      ],
+      "sha256": "6efb9729cabf8b520bef528b1a25a63e3bd2581b9f5c7ddccdff479ee03bcf89",
+      "use": "Abstract background",
+      "bytes": 223108,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-gateway/hero-mobile.webp",
+      "reference": "https://www.wonderful.ai/ai-gateway",
+      "source_url": "https://framerusercontent.com/images/SuEMXvP1lfaDApSyVoFOlU8utoE.jpg?width=1920&height=1444",
+      "source_sha256": "72e7e6125f3a5412f6ec2498cbb161f93263190006add9dedef6d1dc935c48f3",
+      "dimensions": [
+        840,
+        632
+      ],
+      "sha256": "63b74f92ee7c9e3bdcc5ab951079cf25a35fbe4d0d924af290d2194605246ef2",
+      "transformation": "WebP encoding, width capped to 840px; composition preserved",
+      "bytes": 26060
+    },
+    {
+      "file": "public/media/platform/ai-gateway/hero.webp",
+      "reference": "https://www.wonderful.ai/ai-gateway",
+      "source_url": "https://framerusercontent.com/images/SuEMXvP1lfaDApSyVoFOlU8utoE.jpg?width=1920&height=1444",
+      "source_sha256": "72e7e6125f3a5412f6ec2498cbb161f93263190006add9dedef6d1dc935c48f3",
+      "dimensions": [
+        1800,
+        1354
+      ],
+      "sha256": "20f1ed16a91c58c4c05189ca13384fbe71c420be8cd205b96d02e80d64092ee7",
+      "transformation": "WebP encoding, width capped to 1800px; composition preserved",
+      "bytes": 260118
+    },
+    {
+      "file": "public/media/platform/ai-os/agents-card.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/hjpNFIV0jqgolK5AlfsawzB3y7w.png?width=816&height=1000",
+      "source_sha256": "8af95f7762daef958be5c05d6d599578079083ee97156f264db538aa6170af95",
+      "dimensions": [
+        816,
+        1000
+      ],
+      "sha256": "363e110d14d1e6713dec54d1baf5e1649feb7db650412381f894a4102f9d6339",
+      "transformation": "WebP encoding, width capped to 816px; composition preserved",
+      "bytes": 105474
+    },
+    {
+      "file": "public/media/platform/ai-os/data.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/WDmw2AX4aCWFLvPmdvcuQxCMZ0k.png?width=640&height=404",
+      "source_sha256": "4ae24f75b0f66870877eeeccab424a797c27452531465601159329e96783a4db",
+      "dimensions": [
+        640,
+        404
+      ],
+      "sha256": "f9fa65874493a8e7dcc0088d25e8e3b856faa4acd558f306f13bdb84b2a77892",
+      "transformation": "WebP encoding, width capped to 640px; composition preserved",
+      "bytes": 23190
+    },
+    {
+      "file": "public/media/platform/ai-os/enterprise.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/93SjXd7ceCNvJA26xK3NXv1Nw2I.jpg?width=2912&height=1632",
+      "source_sha256": "d786d615e811e314ee840ca600b2cfe778d50fa9c5761ae83ab31af3f08ff491",
+      "dimensions": [
+        1800,
+        1009
+      ],
+      "sha256": "1ab9e71905dc4de92bc528b5038213932ec7daf57c646e66bedfa66283c69c8e",
+      "transformation": "WebP encoding, width capped to 1800px; composition preserved",
+      "bytes": 424810
+    },
+    {
+      "file": "public/media/platform/ai-os/gateway-card.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/NblmY11u9f54gCzRL1iDMiYA6o.png?width=816&height=1000",
+      "source_sha256": "ba3218b31dedbb7b84c172ab2571e4c78b0f5460882aa3d0f873fd335d8bb021",
+      "dimensions": [
+        816,
+        1000
+      ],
+      "sha256": "bdb886207a25b62f0c010f9ffa2c8763fd64c21978111e4c800293df631875af",
+      "transformation": "WebP encoding, width capped to 816px; composition preserved",
+      "bytes": 201544
+    },
+    {
+      "file": "public/media/platform/ai-os/hero-mobile.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/pSVbsZmruo4dUyaEMkXlB0yjq8.png?width=2912&height=1632",
+      "source_sha256": "5d837f46dcb8fe8ce28d9744a508ba3550aa7e5e3bffc83b4ae5514e38c69010",
+      "dimensions": [
+        840,
+        471
+      ],
+      "sha256": "2ed16df84c54217d0f7fa116323640da0aa756cb8dfebbb8e0c670a15ddffb9e",
+      "transformation": "WebP encoding, width capped to 840px; composition preserved",
+      "bytes": 35168
+    },
+    {
+      "file": "public/media/platform/ai-os/hero.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/pSVbsZmruo4dUyaEMkXlB0yjq8.png?width=2912&height=1632",
+      "source_sha256": "5d837f46dcb8fe8ce28d9744a508ba3550aa7e5e3bffc83b4ae5514e38c69010",
+      "dimensions": [
+        1800,
+        1009
+      ],
+      "sha256": "1022d9c0c6a61a181af932140315127d9c2fba8e7b98cfd66bb7af06bda50d8d",
+      "transformation": "WebP encoding, width capped to 1800px; composition preserved",
+      "bytes": 352334
+    },
+    {
+      "file": "public/media/platform/ai-os/infrastructure.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/KQ4FP56yPBz9IgOdHETuu5TKbvw.jpg?width=2400&height=1345",
+      "source_sha256": "c11b7362f306eae396fe6368cee45afc7a7421021ad621d53de4cb1a160fea2d",
+      "dimensions": [
+        1800,
+        1009
+      ],
+      "sha256": "570e6591683cb73ce2198df112d6fcabd2a27324eea32a2cf9d5982e429ac73b",
+      "transformation": "WebP encoding, width capped to 1800px; composition preserved",
+      "bytes": 368704
+    },
+    {
+      "file": "public/media/platform/ai-os/os-card.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/PbxeRt98ocw3ESBEOGvSkFl16OM.jpg?width=2912&height=1632",
+      "source_sha256": "16c14459544ad06bcac9535916c0f042c9fa587ab50964d8047bf624fc8912e6",
+      "dimensions": [
+        1000,
+        560
+      ],
+      "sha256": "04c495c07815ef74f02a52eb1b92d8e5d8f9f2ae047d44a354aa5b83d86d369e",
+      "transformation": "WebP encoding, width capped to 1000px; composition preserved",
+      "bytes": 68072
+    },
+    {
+      "file": "public/media/platform/ai-os/security.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/bHBi0ZlxL7qSzMWXzhCFhhLbVQ.png?width=640&height=404",
+      "source_sha256": "8a74c08bd9d0c00d243e5a6e3abd1142a30cfc77b7af940c964c1069eb5ebf7c",
+      "dimensions": [
+        640,
+        404
+      ],
+      "sha256": "522b7151d1171e16d55a2938b6bd874e4bf345da459f1725dd4d18b19df3d2cd",
+      "transformation": "WebP encoding, width capped to 640px; composition preserved",
+      "bytes": 19158
+    },
+    {
+      "file": "public/media/platform/ai-os/systems-card.webp",
+      "reference": "https://www.wonderful.ai/ai-os",
+      "source_url": "https://framerusercontent.com/images/VNq3SEFbm1DGqP9OAywNQSYA.png?width=816&height=1000",
+      "source_sha256": "42dd5c95b22a10da95dbf47149e353de19237586639c3d1d152ba9a899b96a8d",
+      "dimensions": [
+        816,
+        1000
+      ],
+      "sha256": "23cc63ffdb9f75bfb734e6d52a2311435a1554ebf7c5f252f268af15f054f47f",
+      "transformation": "WebP encoding, width capped to 816px; composition preserved",
+      "bytes": 93558
+    },
+    {
+      "file": "public/media/platform/ai-transformation/ai-os-mobile.webp",
+      "source_url": "https://framerusercontent.com/images/wmeFBLFUCYVow7a5wWGbAoUuMeI.png?width=1920&height=1236",
+      "source_dimensions": [
+        1920,
+        1236
+      ],
+      "dimensions": [
+        900,
+        579
+      ],
+      "bytes": 79332,
+      "sha256": "b9593004b1040f4ac65febc9fde3cf796095ee6c6c9f3f7f46c0e4f43af93a1f",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "5d8dbae790a2a6c3fba3da141976fcd304d709d07387caa263caf35cd37abdda",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/ai-os.webp",
+      "source_url": "https://framerusercontent.com/images/PbxeRt98ocw3ESBEOGvSkFl16OM.jpg?width=2912&height=1632",
+      "source_dimensions": [
+        2912,
+        1632
+      ],
+      "dimensions": [
+        1400,
+        785
+      ],
+      "bytes": 142060,
+      "sha256": "d3e2de08eab218e87f1ddc6469a90b92c75ed20e72adc157a8a309ee0f2e33c2",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "16c14459544ad06bcac9535916c0f042c9fa587ab50964d8047bf624fc8912e6",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/contact.webp",
+      "source_url": "https://framerusercontent.com/images/93SjXd7ceCNvJA26xK3NXv1Nw2I.jpg?width=2912&height=1632",
+      "source_dimensions": [
+        2912,
+        1632
+      ],
+      "dimensions": [
+        1920,
+        1076
+      ],
+      "bytes": 199200,
+      "sha256": "952c2c4553472c2ed909aa825a3ed3f1815e9c4b7a5a61b437b0dace1a912f5b",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "d786d615e811e314ee840ca600b2cfe778d50fa9c5761ae83ab31af3f08ff491",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/deployment-mobile.webp",
+      "source_url": "https://framerusercontent.com/images/bz6BytQbubpmLiLZqfSlYDbaPI.jpg?width=2202&height=1229",
+      "source_dimensions": [
+        2202,
+        1229
+      ],
+      "dimensions": [
+        900,
+        502
+      ],
+      "bytes": 23562,
+      "sha256": "1cbf98e77085deae0dfe4010162beeeda25489f6397574da80ce952942b1cbca",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "f55b1c71834b123218e39b0ad6b8ba682cb2edfefffcd398a70525b8ff33d64b",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/deployment.webp",
+      "source_url": "https://framerusercontent.com/images/SOzfY9h8TwBWWchCRTSsrXuhJLw.jpg?width=1758&height=981",
+      "source_dimensions": [
+        1758,
+        981
+      ],
+      "dimensions": [
+        1400,
+        781
+      ],
+      "bytes": 68328,
+      "sha256": "a2d220726899d965291d7fca97fffe5b763ec7171e246d90a1dd7349f081287a",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "1c982ae42bd2a011c28d2146589816a0bc40b70e87541df82a1dafa9d618ebe8",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/hero-1280.webp",
+      "source_url": "https://framerusercontent.com/images/7sauqX3tqZfJt3jtEuhYVLmPQvY.jpg?width=2588&height=1451",
+      "source_dimensions": [
+        2588,
+        1451
+      ],
+      "dimensions": [
+        1280,
+        718
+      ],
+      "bytes": 40086,
+      "sha256": "45d9d74783595c74c1ca4448c8bfa0f6af53107fd4c373c7294c49405ce1e4ee",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "709d55569eed495178f116efbda82e0f1487d3ef1b3f6a95e3f627d0fe596d07",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/hero-mobile.webp",
+      "source_url": "https://framerusercontent.com/images/65w2jyk7QPANeGgS4laK4t3SiA.png?width=3840&height=2106",
+      "source_dimensions": [
+        3840,
+        2106
+      ],
+      "dimensions": [
+        900,
+        494
+      ],
+      "bytes": 17078,
+      "sha256": "0c431edc7940bf4b33820e9402703dd69f55dd62120941c39d4316c215ad5f98",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "535a4b3a73bfda03aa4730a1574b29f50c1ea5c652ce5f0c3671732d7e930dbe",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/ai-transformation/hero.webp",
+      "source_url": "https://framerusercontent.com/images/7sauqX3tqZfJt3jtEuhYVLmPQvY.jpg?width=2588&height=1451",
+      "source_dimensions": [
+        2588,
+        1451
+      ],
+      "dimensions": [
+        2000,
+        1121
+      ],
+      "bytes": 213032,
+      "sha256": "0f0497ede44b82585ee56b7ee537c86ded184e21454b13bb2042355905003792",
+      "reference": "https://www.wonderful.ai/ai-transformation",
+      "source_sha256": "709d55569eed495178f116efbda82e0f1487d3ef1b3f6a95e3f627d0fe596d07",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/contact.webp",
+      "source_url": "https://framerusercontent.com/images/4ZA5mL5EVVXzpKojiSLE8M02o.jpg?width=3840&height=1400",
+      "source_dimensions": [
+        3840,
+        1400
+      ],
+      "dimensions": [
+        1920,
+        700
+      ],
+      "bytes": 97864,
+      "sha256": "30eb8c04e76828837c2054149fc674d4261dcaafcb8509411e1f7b22fde488f5",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "7a9cff9c01d4590dba86f6e232a78602b9c437b189956e1b5836c6531e43ecf4",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/engineering.webp",
+      "source_url": "https://framerusercontent.com/images/vVKXkk2ypeDiIuOY2R7fWqH8U.jpg?width=1456&height=816",
+      "source_dimensions": [
+        1456,
+        816
+      ],
+      "dimensions": [
+        1456,
+        816
+      ],
+      "bytes": 249220,
+      "sha256": "cb6d032605b6665b12f0e1e8a3e66a13c55a376dc4cab4cc756aebacfb520528",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "345bc001b3304054768e24b748beab397dea4ef57c5d6bbca2fd6193fe3601be",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/hero-1280.webp",
+      "source_url": "https://framerusercontent.com/images/GE2ff9hpxjunCs3VZvJODYW4IoQ.jpg?width=2202&height=1229",
+      "source_dimensions": [
+        2202,
+        1229
+      ],
+      "dimensions": [
+        1280,
+        714
+      ],
+      "bytes": 38486,
+      "sha256": "18b26ec4c74a1f70e0f46f807deb6ffed8c7266c994d1ab38393a533e73c7f9e",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "85ce4fc303b719c757bdf104ecaf12bf0fed389e64e9719d4c7cc8deab787f83",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/hero-mobile.webp",
+      "source_url": "https://framerusercontent.com/images/OUaQj58Pzu6qHzTmcPtPerUlsQ.png?width=3840&height=2160",
+      "source_dimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        900,
+        506
+      ],
+      "bytes": 24022,
+      "sha256": "5eaa368dc2b01715889b640c7dd070adc0ba54ab1801dccc2e87cdaff9948645",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "07d054f6da1fd1f0950901f2206a958900a34ddd292515b00066be9e138e1da6",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/hero.webp",
+      "source_url": "https://framerusercontent.com/images/GE2ff9hpxjunCs3VZvJODYW4IoQ.jpg?width=2202&height=1229",
+      "source_dimensions": [
+        2202,
+        1229
+      ],
+      "dimensions": [
+        2000,
+        1116
+      ],
+      "bytes": 161590,
+      "sha256": "e206d52486d42d330a58726bc4a02369c56b808251c0ebfbeaa9f5013cb752a7",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "85ce4fc303b719c757bdf104ecaf12bf0fed389e64e9719d4c7cc8deab787f83",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/deployment/strategy.webp",
+      "source_url": "https://framerusercontent.com/images/cXLe4OBiqrbKuj4qEda2nakG4ME.png?width=765&height=542",
+      "source_dimensions": [
+        765,
+        542
+      ],
+      "dimensions": [
+        765,
+        542
+      ],
+      "bytes": 33718,
+      "sha256": "6c8f73b71f78344d6eab4912f9a62b5e9936954481a44feb1f1ce56a9f49cf31",
+      "reference": "https://www.wonderful.ai/deployment",
+      "source_sha256": "082997e6cf7d62ecaaa96677aa61acdebc21d24933436cf725dd9bb100a982a4",
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/motion-1280.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/WIqIBOiTiPsV4nkZyfqf1D6tCkc.jpg",
+      "source_sha256": "4e4fd177df57e02239ebb5b64c1ed97d1f6327b30b133e248614ec708a796e8b",
+      "source_dimensions": [
+        2022,
+        1094
+      ],
+      "dimensions": [
+        1280,
+        693
+      ],
+      "sha256": "26d0628b6d8cb4ed7946954967bba9c3eb836d35012bfea89b33842b3bcd3b68",
+      "use": "Abstract background",
+      "bytes": 205626,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/motion-720.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/WIqIBOiTiPsV4nkZyfqf1D6tCkc.jpg",
+      "source_sha256": "4e4fd177df57e02239ebb5b64c1ed97d1f6327b30b133e248614ec708a796e8b",
+      "source_dimensions": [
+        2022,
+        1094
+      ],
+      "dimensions": [
+        720,
+        390
+      ],
+      "sha256": "7f5ef2c847f4d392c0671a1584e3fdaaafc2605c507cac8634b541bcd122b1d5",
+      "use": "Abstract background",
+      "bytes": 67626,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/motion.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/WIqIBOiTiPsV4nkZyfqf1D6tCkc.jpg",
+      "source_sha256": "4e4fd177df57e02239ebb5b64c1ed97d1f6327b30b133e248614ec708a796e8b",
+      "source_dimensions": [
+        2022,
+        1094
+      ],
+      "dimensions": [
+        1800,
+        974
+      ],
+      "sha256": "8d0c96854e8d61b9a2ea288f7bfcc7a7bad0e48a0903f604e1161b1820b66171",
+      "use": "Abstract background",
+      "bytes": 459512,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/working-team-1280.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/0mdyl04dtY9LVOwd1CjHfzZC3c.jpg",
+      "source_sha256": "6d7bc1de2171ae415d054dcd54a1214c3e358f7b39257a000ce14519f768ad19",
+      "source_dimensions": [
+        4096,
+        2286
+      ],
+      "dimensions": [
+        1280,
+        714
+      ],
+      "sha256": "e8e24b6c992b8cc1cc98dcb4aab03ebb2ee47d5087937563fb9a58a81458b428",
+      "use": "Illustrative workplace photography; not a Century product screenshot",
+      "bytes": 27602,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/working-team-720.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/0mdyl04dtY9LVOwd1CjHfzZC3c.jpg",
+      "source_sha256": "6d7bc1de2171ae415d054dcd54a1214c3e358f7b39257a000ce14519f768ad19",
+      "source_dimensions": [
+        4096,
+        2286
+      ],
+      "dimensions": [
+        720,
+        402
+      ],
+      "sha256": "a6b9c0313ff18d68177cc3fa0dcb1b1647b28e17af40e7be0f91796830c00a1a",
+      "use": "Illustrative workplace photography; not a Century product screenshot",
+      "bytes": 13944,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    },
+    {
+      "file": "public/media/platform/systems/working-team.webp",
+      "reference": "https://www.wonderful.ai/systems",
+      "source_url": "https://framerusercontent.com/images/0mdyl04dtY9LVOwd1CjHfzZC3c.jpg",
+      "source_sha256": "6d7bc1de2171ae415d054dcd54a1214c3e358f7b39257a000ce14519f768ad19",
+      "source_dimensions": [
+        4096,
+        2286
+      ],
+      "dimensions": [
+        1800,
+        1005
+      ],
+      "sha256": "48420fabb03c833c1d1915b694fd3a7073cfdf76d68e12c884806bf9baf4da1b",
+      "use": "Illustrative workplace photography; not a Century product screenshot",
+      "bytes": 54950,
+      "transformation": "Local WebP encoding and responsive resizing; composition preserved"
+    }
+  ],
+  "integration_base_commit": "db042bc8310745ca1a3e021595736e3c0d51a56f"
+}

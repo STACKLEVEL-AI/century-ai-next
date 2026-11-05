@@ -1,40 +1,75 @@
-import { Activity, ArrowUpRight, GitBranch, Network, ShieldCheck, SlidersHorizontal, Wallet } from "lucide-react";
-import PageFrame from "@/components/site/PageFrame";
-import { RelatedPages, SectionHeading } from "@/components/site/Sections";
-import ProductIntro from "@/components/products/ProductIntro";
-import AppScreenshot from "@/components/AppScreenshot";
+import { ArrowUpRight, Eye, ListChecks, Network, Scale } from "lucide-react";
+import PlatformFrame from "@/components/platform/PlatformFrame";
+import GatewayWorkspace from "@/components/platform/GatewayWorkspace";
+import GatewayIllustration, { GatewayMap, type GatewayIllustrationKind } from "@/components/platform/GatewayIllustrations";
+import OperatingLayerRelated from "@/components/platform/OperatingLayerRelated";
 import { pageMetadata } from "@/lib/metadata";
+import styles from "@/components/platform/Gateway.module.css";
 
 export const metadata = pageMetadata("Century AI Gateway", "Explore model choices, response details and AI operating responsibilities through real views from the Century application.", "/ai-gateway");
 
-const controls = [
-  { title: "Connectivity", description: "Identify the applications and model interfaces in scope. Review how they connect and the information they exchange.", icon: Network },
-  { title: "Usage & budgets", description: "Agree how usage is attributed and reviewed, so teams can discuss cost alongside useful outcomes.", icon: Wallet },
-  { title: "Model access", description: "Match access to the person, the task and the information involved in each workflow.", icon: SlidersHorizontal },
-  { title: "Routing decisions", description: "Consider quality, response time, cost and what happens when a provider is unavailable.", icon: GitBranch },
-  { title: "Data boundaries", description: "Agree what may leave your environment. Review external processing and retention before rollout.", icon: ShieldCheck },
-  { title: "Operating visibility", description: "Define the records, review process and owners needed to investigate exceptions and changes in usage.", icon: Activity },
+const capabilities: { title: string; description: string; illustration: GatewayIllustrationKind }[] = [
+  { title: "Connect your AI landscape", description: "Start with the applications, agents and providers involved in your workflow. Bring their interfaces, information flows and operating owners into one implementation plan.", illustration: "connect" },
+  { title: "Put usage in context", description: "Inspect the signals behind an answer and the work it supports. Agree how usage and cost should be reviewed alongside quality and useful outcomes.", illustration: "usage" },
+  { title: "Make model access deliberate", description: "Match access to a person's role, the task and the information involved. Define permissions and responsibilities before extending a workflow to another team.", illustration: "access" },
+  { title: "Choose the right path", description: "Compare model suitability, response time and cost. Decide what the workflow should do when the preferred model or an external provider is unavailable.", illustration: "routing" },
+  { title: "Define data boundaries", description: "Establish which information a process may use and where it may go. Review external processing, retention and the requirements of your organization.", illustration: "privacy" },
+  { title: "Inspect the detail", description: "Keep response details and human feedback close to the work. Define the records and review process your team needs to understand exceptions and improve decisions.", illustration: "observe" },
+];
+
+const outcomes = [
+  { title: "A shared operating picture", text: "Connect the discussion across teams, tools and workflows. Give the people responsible a common starting point.", icon: Network },
+  { title: "Evidence behind decisions", text: "Use inspectable application details and workflow feedback when reviewing what is working and what needs attention.", icon: Eye },
+  { title: "Deliberate model choices", text: "Discuss quality, cost and response time together. Match the model decision to the work it needs to support.", icon: Scale },
+  { title: "Clear ownership", text: "Make access, data handling and escalation responsibilities explicit as the implementation grows.", icon: ListChecks },
 ];
 
 export default function GatewayPage() {
-  return <PageFrame headerVariant="overlay"><div className="product-page product-page-gateway">
-    <ProductIntro eyebrow="Century AI Gateway" dark className="product-gateway-intro"
-      title={<>Model choices.<br />A clearer view.</>}
-      description="Bring model access, response details and operating responsibilities into the same conversation. Start with the information your team can inspect."
-      secondary={{ href: "#gateway-example", label: "See inside Century" }}
-      visual={<div className="product-gateway-visual"><AppScreenshot capture="models" priority /><p className="product-visual-note"><span aria-hidden="true" />An actual view from the Century workspace</p></div>} />
+  return <PlatformFrame headerVariant="overlay" showContact={false}>
+    <div className={styles.page}>
+      <section className={styles.hero} aria-labelledby="gateway-title">
+        <picture className={styles.heroBackdrop}>
+          <source media="(max-width: 700px)" srcSet="/media/platform/ai-gateway/hero-mobile.webp" />
+          <img src="/media/platform/ai-gateway/hero.webp" alt="" width={1800} height={1354} fetchPriority="high" />
+        </picture>
+        <div className={styles.heroShade} />
+        <div className={styles.heroTitle}>
+          <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI Gateway</span></p>
+          <h1 id="gateway-title">A common control point<br />for enterprise AI.</h1>
+          <p>Bring model choices, usage and operating responsibilities into a clearer picture.</p>
+        </div>
+        <div className={styles.heroWorkspace}><GatewayWorkspace /></div>
+      </section>
 
-    <section className="product-section product-gateway-response" id="gateway-example"><div className="shell product-response-layout"><div><SectionHeading eyebrow="Beyond the answer" title={<>The response.<br />And the detail behind it.</>} description="Inspect the token counts and timing information attached to an answer. Keep the context for evaluating model choices close to the work." /></div><AppScreenshot capture="response" /></div></section>
+      <section className={styles.connections} aria-labelledby="gateway-connections">
+        <div className={styles.container}>
+          <div className={styles.sectionHeading}><h2 id="gateway-connections">Connect the tools.<br />Keep the context.</h2><p>Start with the people, applications and providers in scope. Define how each connection should work and who owns it.</p></div>
+          <GatewayMap />
+        </div>
+      </section>
 
-    <section className="product-section product-muted"><div className="shell"><div className="product-heading-row"><SectionHeading eyebrow="A common control point" title={<>Turn scattered usage<br />into an operating picture.</>} /><p>Build the gateway around your environment. Start with the providers, interfaces and policies your team needs.</p></div><div className="product-capabilities product-capabilities-three">{controls.map(({ title, description, icon: Icon }, index) => <article key={title}><div className="product-capability-top"><Icon size={24} strokeWidth={1.4} aria-hidden="true" /><span>0{index + 1}</span></div><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+      <section className={styles.features} aria-label="AI gateway capabilities">
+        <div className={styles.container}>
+          <div className={styles.featureGrid}>{capabilities.map(capability => <article key={capability.title} className={styles.featureCard}>
+            <GatewayIllustration kind={capability.illustration} />
+            <div className={styles.featureCopy}><h3>{capability.title}</h3><p>{capability.description}</p></div>
+          </article>)}</div>
+        </div>
+      </section>
 
-    <section className="product-section"><div className="shell product-accordion-layout"><SectionHeading eyebrow="From visibility to decisions" title={<>Know what is used.<br />Decide what comes next.</>} description="A clear owner, an agreed scope and reviewable evidence make AI use easier to understand and improve." /><ol className="product-principles">{[
-      { title: "Understand the pattern.", text: "Review usage in the context of the teams and workflows it supports, rather than as isolated accounts." },
-      { title: "Compare the trade-offs.", text: "Discuss model suitability, response quality and cost using a shared set of definitions." },
-      { title: "Keep the rules clear.", text: "Make access, data handling and escalation responsibilities explicit as the implementation grows." },
-    ].map((item, index) => <li key={item.title}><span>0{index + 1}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></li>)}</ol></div></section>
-
-    <div className="product-scope-band"><div className="shell"><p>Integrations, access policies and reporting are scoped around your environment.</p><a className="product-text-link" href="/deployment/">Plan the implementation<ArrowUpRight size={18} aria-hidden="true" /></a></div></div>
-    <RelatedPages links={[{ href: "/ai-os/", title: "The shared foundation", description: "Connect knowledge, workflows and oversight." }, { href: "/agents/", title: "Assistance with context", description: "Put approved knowledge to work for your team." }, { href: "/systems/", title: "A workspace that fits", description: "Design around a focused business process." }]} />
-  </div></PageFrame>;
+      <section className={styles.decisions} aria-labelledby="gateway-decisions">
+        <div className={styles.container}>
+          <div className={styles.sectionHeading + " " + styles.decisionIntro}>
+            <h2 id="gateway-decisions">As AI grows,<br />keep the whole picture.</h2>
+            <p>Different teams bring different tools and requirements. A shared view makes it easier to agree the boundaries, examine trade-offs and decide what to build next.</p>
+          </div>
+          <div className={styles.outcomeGrid}>{outcomes.map(({ title, text, icon: Icon }) => <article key={title}>
+            <Icon size={28} strokeWidth={1.1} aria-hidden="true" /><h3>{title}</h3><p>{text}</p>
+          </article>)}</div>
+          <a className={styles.planningLink} href="/deployment/">Plan the implementation<ArrowUpRight size={18} aria-hidden="true" /></a>
+        </div>
+      </section>
+      <OperatingLayerRelated current="ai-gateway" />
+    </div>
+  </PlatformFrame>;
 }

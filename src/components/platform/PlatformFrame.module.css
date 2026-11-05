@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "Century Platform";
+  src: url("/fonts/insurance-favorit-light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+.page {
+  --font-heading: "Century Platform", Arial, sans-serif;
+  --platform-heading: "Century Platform", Arial, sans-serif;
+  --platform-ink: #171719;
+  --platform-muted: #66686a;
+  --platform-gutter: 60px;
+  font-family: var(--font-inter), Arial, sans-serif;
+  background: #fff;
+  color: var(--platform-ink);
+}
+
+.page .main {
+  background: #fff;
+  color: var(--platform-ink);
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+
+.page .main :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--platform-heading);
+  font-weight: 300;
+  font-feature-settings: "ss04" on, "ss05" on;
+}
+
+.page .main :where(h5, h6) { margin: 0; }
+.page .main :where(img) { display: block; }
+.page .main :where(section[id], [role="tabpanel"]) { scroll-margin-top: 84px; }
+.page .main :where(a, button, summary):focus-visible {
+  outline: 3px solid #bf6032;
+  outline-offset: 5px;
+}
+
+/* The shared Header supplies the current reference masthead and menus. */
+
+.contact {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 640px;
+  padding: 120px var(--platform-gutter);
+  overflow: hidden;
+  background: #080909;
+  color: #fafafa;
+}
+.contactGlow {
+  position: absolute;
+  inset: 0;
+  background: url("/media/insurance/dark-gradient.webp") center / cover;
+  mask-image: radial-gradient(ellipse at 50% 110%, transparent 15%, #000 76%);
+}
+.contactPhoto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.contactShade { position: absolute; inset: 0; background: linear-gradient(180deg, #0003, #0006); }
+.contactContent { position: relative; display: grid; justify-items: center; gap: 32px; text-align: center; }
+.page .contact h2 { max-width: 880px; margin: 0; font-size: clamp(42px, 5vw, 68px); line-height: 1.05; letter-spacing: -.05em; }
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  color: #171719;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.contactButton > svg { display: none; }
+.contactButton:hover { background: #e6e6e1; }
+.page :global(.site-footer) { background: #080909; }
+.page :global(.footer-brand img) { width: 154px; }
+.page :global(.footer-brand-block > p) { font-family: var(--platform-heading); font-size: 30px; font-weight: 300; }
+.page :global(.footer-main-multipage) { padding-top: 64px; padding-bottom: 52px; }
+
+@media (max-width: 900px) {
+  .page { --platform-gutter: 32px; }
+  .contact { min-height: 540px; padding-block: 100px; }
+}
+
+@media (max-width: 640px) {
+  .page { --platform-gutter: 20px; }
+  .page .main { font-size: 16px; }
+  .contact { min-height: 440px; padding: 90px 20px; }
+  .page .contact h2 { font-size: 42px; }
+  .page :global(.footer-main-multipage) { padding-top: 48px; padding-bottom: 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *, .page *::before, .page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media (forced-colors: active) {
+  .contact { background: Canvas; color: CanvasText; }
+  .contactGlow, .contactPhoto, .contactShade { display: none; }
+  .contactButton { border: 1px solid ButtonText; }
+}

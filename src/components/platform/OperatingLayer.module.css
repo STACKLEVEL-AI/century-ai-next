@@ -1,0 +1,191 @@
+.page { background: #080808; color: #fafafa; }
+.container { width: min(100% - 120px, 1280px); margin-inline: auto; }
+.page h1, .page h2, .page h3, .related h2 { font-family: var(--font-heading, "Century Platform", sans-serif); font-weight: 300; }
+.page p, .related p { font-family: var(--font-inter, Arial, sans-serif); }
+.page h2 { font-size: clamp(34px, 3.15vw, 48px); line-height: 1.12; letter-spacing: -.045em; }
+.page h3 { font-size: 23px; line-height: 1.18; letter-spacing: -.035em; }
+.page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .related a:focus-visible { outline: 3px solid #a7e1d0; outline-offset: 5px; }
+.hero { position: relative; isolation: isolate; height: 95svh; min-height: 650px; max-height: 1080px; display: flex; justify-content: center; align-items: center; overflow: hidden; padding: 110px 32px 170px; }
+.heroBackdrop, .heroBackdrop img, .heroShade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.heroBackdrop { z-index: -3; }
+.heroBackdrop img { object-fit: cover; object-position: center; }
+.heroShade { z-index: -2; background: linear-gradient(180deg, rgb(3 7 11 / 20%), rgb(3 7 11 / 4%) 50%, #080808); }
+.heroTitle { width: min(100%, 820px); text-align: center; position: relative; z-index: 2; }
+.heroLockup { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 0 0 28px; }
+.heroLockup img { display: block; width: 155px; height: auto; }
+.heroLockup span { border-left: 1px solid rgb(255 255 255 / 40%); padding-left: 18px; font-size: 24px; font-weight: 300; letter-spacing: -.045em; }
+.page .hero h1 { font-size: clamp(42px, 4.45vw, 70px); line-height: 1.05; letter-spacing: -.06em; margin: 0; color: #fafafa; text-wrap: balance; }
+.heroExplore { position: absolute; z-index: 3; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; padding: 10px 4px; font: 12px/1.3 var(--font-inter, Arial, sans-serif); color: #e7e9e9; text-decoration: none; white-space: nowrap; }
+.heroExplore svg { border: 1px solid rgb(255 255 255 / 35%); box-sizing: content-box; border-radius: 50%; padding: 8px; }
+.lattice { position: absolute; pointer-events: none; inset: 37% -4% -6%; z-index: -1; mask-image: linear-gradient(transparent, #000 18%, #000 88%, transparent); }
+.lattice svg { width: 100%; height: 100%; }
+.latticeLabel { position: absolute; left: var(--chip-x); top: var(--chip-y); transform: translate(-50%, -50%); padding: 9px 13px; border: 1px solid rgb(220 244 246 / 30%); color: #e0eeee; border-radius: 4px; background: rgb(26 35 41 / 68%); backdrop-filter: blur(9px); font: 11px/1.1 ui-monospace, monospace; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 32px rgb(0 0 0 / 15%); }
+.latticeLabel i { width: 3px; height: 3px; background: #abded0; box-shadow: 0 0 6px #c8f4e8; }
+.latticeBeam { stroke-dasharray: 80 1600; animation: layer-beam 12s linear infinite; }
+@keyframes layer-beam { to { stroke-dashoffset: -1680; } }
+.infrastructure { padding: 140px 0; scroll-margin-top: 85px; }
+.explorer { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); grid-template-areas: "copy architecture"; gap: 60px; align-items: start; }
+.explorerCopy { grid-area: copy; min-width: 0; }
+.explorerCopy > h2 { margin: 0 0 60px; color: #f5f5f5; }
+.layerDescriptions { min-height: 230px; }
+.layerDescription[hidden] { display: none; }
+.layerDescription:focus-visible { outline: 3px solid #a7e1d0; outline-offset: 5px; }
+.layerDescription h3 { margin: 0 0 16px; color: #f5f5f5; }
+.layerDescription p { margin: 0; color: #aaaeb3; font-size: 16px; line-height: 1.5; max-width: 465px; }
+.page .layerCapture { margin: 22px 0 0; border-color: #ffffff20; background: #15191b; }
+.page .layerCapture :global(.app-capture-stage) { min-height: 0; padding: 12px; }
+.page .layerCapture :global(figcaption) { padding: 12px; border-color: #ffffff20; }
+.page .layerCapture :global(figcaption p) { font-size: 11px; line-height: 1.4; color: #a0aaa7; }
+.page .layerCapture :global(figcaption span) { font-size: 12px; color: #d7e1de; }
+.layerFallback { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 40px; margin-top: 50px; }
+.layerFallback h3 { margin: 0 0 16px; }
+.layerFallback p { color: #aaaeb3; font-size: 15px; line-height: 1.5; margin: 0; }
+.architecture { grid-area: architecture; position: relative; isolation: isolate; min-width: 0; min-height: 460px; aspect-ratio: 1.34; border-radius: 8px; overflow: hidden; display: grid; place-items: center; }
+.architectureBackdrop { position: absolute; z-index: -1; inset: 0; object-fit: cover; width: 100%; height: 100%; }
+.architecturePanel { width: 82%; padding: 34px 24px 22px; background: rgb(9 12 19 / 82%); border: 1px solid rgb(255 255 255 / 15%); border-radius: 12px; box-shadow: 0 28px 70px rgb(0 0 0 / 20%); backdrop-filter: blur(8px); }
+.architectureCaption { display: block; text-align: center; font: 9px/1.5 ui-monospace, monospace; letter-spacing: .14em; color: #adb4bf; margin: 0 0 24px; }
+.layerTabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.layerTab { position: relative; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 9px; min-width: 0; min-height: 70px; padding: 12px 6px; border: 1px solid rgb(255 255 255 / 13%); border-radius: 6px; background: rgb(0 0 0 / 22%); color: #b6bcc8; cursor: pointer; font: 11px/1.3 var(--font-inter, Arial, sans-serif); transition: border-color .2s, color .2s, background .2s; }
+.layerWide { grid-column: 1 / -1; min-height: 47px; flex-direction: row; }
+.layerTab:hover { color: #fff; background: rgb(255 255 255 / 7%); }
+.layerTab[aria-selected="true"] { color: #effffb; border-color: #98c9bf; background: rgb(82 145 131 / 18%); box-shadow: 0 0 18px rgb(180 235 224 / 10%), inset 0 0 16px rgb(173 233 219 / 4%); }
+.layerTab i { position: absolute; width: 3px; height: 3px; top: 7px; right: 7px; background: #c5f8eb; opacity: 0; }
+.layerTab[aria-selected="true"] i { opacity: 1; }
+.architectureHint { font: 10px/1.4 var(--font-inter, Arial, sans-serif); text-align: center; color: #99a7b8; margin: 19px 0 0; }
+.related { background: #080808; color: #fafafa; padding: 120px 0; border-block: 1px solid #242424; }
+.related h2.relatedHeading { font-size: clamp(33px, 3vw, 46px); line-height: 1.12; letter-spacing: -.045em; margin: 0 0 48px; color: #fafafa; }
+.relatedGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.productCard { position: relative; isolation: isolate; overflow: hidden; min-height: 440px; aspect-ratio: .82; border-radius: 8px; color: #fff; text-decoration: none; }
+.productImage { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.productCard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 2%) 40%, rgb(0 0 0 / 72%)); }
+.productCard:hover .productImage, .productCard:focus-visible .productImage { transform: scale(1.035); }
+.productCardContent { display: flex; height: 100%; min-height: inherit; padding: 32px; justify-content: space-between; flex-direction: column; gap: 50px; }
+.productLockup { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-heading, "Century Platform", sans-serif); font-size: 24px; letter-spacing: -.04em; }
+.productLockup img { width: 118px; height: auto; }
+.productLockup > span { border-left: 1px solid #ffffff70; padding-left: 10px; }
+.productCard .productCardContent p { color: #fff; font-size: 17px; line-height: 1.42; max-width: 340px; margin: 0 0 28px; }
+.productExplore { display: flex; width: fit-content; align-items: center; gap: 30px; font: 13px/1.3 var(--font-inter, Arial, sans-serif); border-bottom: 1px solid #ffffff65; padding-bottom: 7px; }
+.advantages { padding: 120px 0; }
+.sectionIntro { margin: 0 0 60px; max-width: 900px; }
+.sectionIntro h2 { margin: 0 0 24px; color: #fafafa; }
+.sectionIntro p { color: #b0b0b0; max-width: 690px; font-size: 17px; line-height: 1.5; margin: 0; }
+.advantageGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 34px; }
+.advantageGrid article { border-top: 1px solid #393939; padding-top: 26px; }
+.advantageGrid svg { color: #c6d8d2; margin-bottom: 28px; }
+.advantageGrid h3 { color: #f5f5f5; margin: 0 0 17px; font-size: 22px; }
+.advantageGrid p { color: #a7a7a7; font-size: 14px; line-height: 1.55; margin: 0; }
+.enterprise { background: #fafafa; color: #171719; padding: 120px 0 80px; }
+.page .enterprise h2 { max-width: 930px; margin: 0 auto 80px; text-align: center; color: #8a8b8c; font-size: clamp(32px, 3.15vw, 46px); line-height: 1.18; }
+.enterprise h2 span { color: #171719; }
+.enterpriseRow { border-top: 1px solid #c7c9c9; }
+.enterpriseRow:last-child { border-bottom: 1px solid #c7c9c9; }
+.enterpriseRow > summary { list-style: none; display: grid; grid-template-columns: 1fr 1fr 26px; align-items: start; gap: 48px; cursor: pointer; padding: 38px 0; }
+.enterpriseRow > summary::-webkit-details-marker { display: none; }
+.enterpriseRow > summary h3 { margin: 0; color: #171719; font-size: 25px; }
+.enterpriseRow > summary p { margin: 0; color: #575a5d; font-size: 15px; line-height: 1.5; max-width: 560px; }
+.disclosureIcon { position: relative; display: block; width: 24px; height: 24px; color: #171719; }
+.disclosureIcon::before, .disclosureIcon::after { content: ""; position: absolute; background: currentColor; top: 11px; left: 4px; height: 1px; width: 15px; }
+.disclosureIcon::after { transform: rotate(90deg); transition: transform .2s; }
+.enterpriseRow[open] .disclosureIcon::after { transform: rotate(0); }
+.enterpriseDetail { display: grid; grid-template-columns: 1fr 1fr 26px; gap: 48px; align-items: end; padding: 0 0 38px; }
+.enterpriseArt { background: #07090a; border-radius: 4px; overflow: hidden; max-width: 480px; aspect-ratio: 640 / 404; }
+.enterpriseArt > img { width: 100%; height: 100%; object-fit: contain; }
+.enterpriseDetail > a { display: flex; width: fit-content; align-items: center; gap: 26px; border-bottom: 1px solid #767a79; padding-bottom: 7px; color: #171719; text-decoration: none; font: 13px/1.5 var(--font-inter, Arial, sans-serif); }
+.deploymentDiagram, .requirementsDiagram { color: #e0e7e5; height: 100%; padding: 35px 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 10px/1.3 ui-monospace, monospace; background-image: radial-gradient(#c7d5d21c .7px, transparent .7px); background-size: 8px 8px; }
+.deploymentDiagram > div:first-child { display: flex; width: 100%; justify-content: space-between; gap: 10px; }
+.deploymentDiagram > div:first-child span { flex: 1; padding: 12px 5px; border: 1px solid #6b8580; text-align: center; background: #08110f; }
+.deploymentStem { width: 64%; height: 50px; border: 1px solid #6b8580; border-top: 0; position: relative; }
+.deploymentStem::after { content: ""; height: 20px; width: 1px; background: #6b8580; position: absolute; top: 100%; left: 50%; }
+.deploymentDiagram strong { border: 1px solid #9cc9bc; padding: 15px 22px; margin-top: 20px; background: #0b1512; }
+.deploymentDiagram strong img { display: block; width: 110px; height: auto; }
+.requirementsDiagram { gap: 24px; }
+.requirementsDiagram > div { display: flex; gap: 12px; }
+.requirementsDiagram > div span { padding: 9px 10px; border: 1px solid #62756f; }
+.requirementsDiagram > svg { color: #a6c7bb; }
+@media (min-width: 1800px) { .page .hero h1 { font-size: 76px; } }
+@media (max-width: 1180px) {
+  .container { width: calc(100% - 80px); }
+  .explorer { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 35px; }
+  .architecture { min-height: 420px; }
+  .architecturePanel { width: 87%; padding: 24px 16px 20px; }
+  .advantageGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 42px; }
+  .productCard { min-height: 370px; }
+  .productCardContent { padding: 24px; }
+  .productLockup { font-size: 21px; }
+  .productLockup img { width: 100px; }
+  .enterpriseRow > summary, .enterpriseDetail { gap: 28px; }
+}
+@media (max-width: 850px) {
+  .hero { min-height: 640px; height: 90svh; padding-bottom: 155px; }
+  .infrastructure, .advantages, .related { padding: 80px 0; }
+  .explorer { grid-template-columns: 1fr; grid-template-areas: "copy" "architecture"; gap: 36px; }
+  .explorerCopy > h2 { margin-bottom: 30px; max-width: 500px; }
+  .layerDescriptions { min-height: 165px; }
+  .layerDescription p { max-width: 580px; }
+  .layerCapture { max-width: 550px; }
+  .architecture { aspect-ratio: 1.5; min-height: 460px; }
+  .architecturePanel { width: 75%; }
+  .relatedGrid { gap: 15px; }
+  .productCard { min-height: 370px; aspect-ratio: auto; }
+  .productCardContent { padding: 22px 18px; }
+  .productLockup { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .productLockup > span { border: 0; padding: 0; }
+  .productCard .productCardContent p { font-size: 15px; }
+  .enterprise { padding: 80px 0 60px; }
+  .page .enterprise h2 { margin-bottom: 50px; }
+  .enterpriseRow > summary { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) 20px; gap: 25px; }
+  .enterpriseRow > summary h3 { font-size: 23px; }
+  .enterpriseDetail { grid-template-columns: 1fr 1fr; gap: 25px; }
+}
+@media (max-width: 620px) {
+  .container { width: calc(100% - 40px); }
+  .hero { height: 90svh; min-height: 650px; max-height: 850px; padding: 100px 22px 150px; }
+  .page .hero h1 { font-size: clamp(38px, 8.4vw, 50px); letter-spacing: -.05em; line-height: 1.06; }
+  .heroLockup { margin-bottom: 26px; gap: 13px; }
+  .heroLockup img { width: 128px; }
+  .heroLockup span { font-size: 22px; padding-left: 13px; }
+  .heroExplore { bottom: 20px; font-size: 11px; }
+  .lattice { inset: 43% -30% -3%; }
+  .latticeLabel { font-size: 9px; padding: 7px 9px; }
+  .latticeLabel:nth-of-type(1), .latticeLabel:nth-of-type(5), .latticeLabel:nth-of-type(8) { display: none; }
+  .infrastructure, .advantages, .related { padding: 64px 0; }
+  .page h2, .related h2.relatedHeading { font-size: 34px; }
+  .explorerCopy > h2 { margin-bottom: 32px; }
+  .layerDescription h3 { font-size: 22px; }
+  .layerDescription p { font-size: 15px; }
+  .layerDescriptions { min-height: 200px; }
+  .architecture { min-height: 395px; aspect-ratio: auto; }
+  .architecturePanel { width: 89%; padding: 24px 12px 18px; }
+  .architectureCaption { font-size: 8px; margin-bottom: 18px; }
+  .layerTab { min-height: 69px; font-size: 10px; }
+  .layerWide { min-height: 44px; }
+  .related h2.relatedHeading { margin-bottom: 32px; }
+  .relatedGrid { grid-template-columns: 1fr; gap: 18px; }
+  .productCard { min-height: 370px; aspect-ratio: 1.12; }
+  .productCardContent { padding: 28px; }
+  .productLockup { flex-direction: row; gap: 10px; font-size: 24px; }
+  .productLockup img { width: 123px; }
+  .productLockup > span { border-left: 1px solid #ffffff70; padding-left: 10px; }
+  .productCard .productCardContent p { max-width: 300px; font-size: 17px; margin-bottom: 22px; }
+  .sectionIntro { margin-bottom: 40px; }
+  .sectionIntro p { font-size: 15px; }
+  .advantageGrid { grid-template-columns: 1fr; gap: 30px; }
+  .advantageGrid article { display: grid; grid-template-columns: 35px 1fr; column-gap: 20px; padding-top: 26px; }
+  .advantageGrid svg { grid-row: 1 / 3; margin-top: 3px; }
+  .advantageGrid h3 { margin-bottom: 12px; font-size: 24px; }
+  .advantageGrid p { font-size: 15px; }
+  .enterprise { padding: 64px 0 45px; }
+  .page .enterprise h2 { text-align: left; font-size: 32px; margin-bottom: 45px; }
+  .enterpriseRow > summary { grid-template-columns: 1fr 20px; gap: 17px; padding: 27px 0; }
+  .enterpriseRow > summary h3 { font-size: 25px; }
+  .enterpriseRow > summary p { grid-row: 2; font-size: 14px; }
+  .disclosureIcon { grid-column: 2; grid-row: 1; }
+  .enterpriseDetail { grid-template-columns: 1fr; gap: 23px; padding-bottom: 28px; }
+  .enterpriseArt { width: 100%; }
+  .deploymentDiagram, .requirementsDiagram { padding: 20px; }
+  .deploymentDiagram > div:first-child span { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .latticeBeam { animation: none; }
+  .productImage, .layerTab, .disclosureIcon::after { transition: none; }
+}

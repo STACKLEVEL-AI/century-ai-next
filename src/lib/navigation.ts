@@ -5,7 +5,7 @@ export const platformLinks: NavigationLink[] = [
   { href: "/systems/", title: "Century Systems", description: "Shape business tools around real workflows." },
   { href: "/ai-gateway/", title: "AI Gateway", description: "Plan model access, usage and controls." },
   { href: "/deployment/", title: "Deployment", description: "Start with a clear scope and ownership." },
-  { href: "/ai-transformation/", title: "AI strategy", description: "Choose the work worth improving." },
+  { href: "/ai-transformation/", title: "AI transformation", description: "Build the operating model around the work." },
 ];
 export const industryLinks: NavigationLink[] = [
   { href: "/industries/banking/", title: "Banking", description: "Documents, policies and service operations." },

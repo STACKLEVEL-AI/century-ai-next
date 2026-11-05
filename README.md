@@ -2,13 +2,15 @@
 
 The English Century website for [century-ai.eu](https://century-ai.eu/), built with Next.js App Router and exported as static files for GitHub Pages.
 
-The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. The current design uses **the supplied black and white Century wordmarks, Inter typography, white and near-black sections, licensed stock video and local photography**. Century's name, founders and contact destinations are preserved. Page structure and visual composition follow the reference; the writing and product examples are adapted for Century.
+The repository contains a **26-route adaptation of the main [Wonderful](https://www.wonderful.ai/) site**, covering the homepage, platform and delivery pages, seven industries, company pages and an original four-article blog. The design uses **the supplied black and white Century wordmarks, local typography, white and near-black sections, licensed stock video, generated photography and reference media recorded in the page-family inventories**. Century's name, founders and contact destinations are preserved. Page structure and visual composition follow the reference; the writing and product examples are adapted for Century.
 
 The [design migration log](docs/design-migration-2026-11-04.md) records the earlier staged work, original reference-media provenance and validation checkpoints. The [application screenshot log](docs/application-screenshots-2026-11-04.md) documents the replacement of invented product visuals with six English-only details captured from the supplied Century recordings. The [generated photography notes](docs/generated-photography-2026-11-04.md) document **10 generated photographic masters delivered as 14 WebP files**, their derived media and the three original founder portraits preserved byte-for-byte from `main` at `cad5ff160878585c75ce78a075f06d7b14087a6a`.
 
 The [stock-video implementation notes](docs/stock-video-2026-11-05.md) document the current homepage structure, eight licensed source clips, responsive media and playback behaviour. The [source manifest](docs/stock-video-manifest.json) records source URLs, edit points, licences and hashes.
 
 The [internal-page refinement notes](docs/internal-pages-2026-11-05.md) describe the redesign of all 25 internal routes, the removal of the oversized footer wordmark, the preserved homepage and media, and the exact scope of local verification.
+
+The [Platform migration notes](docs/platform-reference-2026-11-05.md) record the subsequent transfer of the six Wonderful Platform compositions to the corresponding Century routes: AI OS, Agents, Systems, AI Gateway, Deployment and AI transformation. Their local backgrounds and photography are tracked in the [Platform media inventory](docs/platform-assets-2026-11-05.json). These routes use a compact masthead and the existing local Favorit heading font alongside Inter.
 
 ## Pages
 
@@ -28,7 +30,7 @@ The industry URL is deliberately singular: `/industries/telecommunication/`. The
 
 Each industry page includes concrete workflow examples, the information they use, the person who reviews the result, an illustrative four-step process and implementation controls. Product pages include an infrastructure explorer, native disclosures, a deployment phase selector and real application captures. Each capture links to its full-size local image and remains available without JavaScript.
 
-The invented supplier answer, review queue, product diagrams and Gateway sample analytics have been removed. Product visuals now use **real, pre-cropped application frames**. The selected visible fragments contain English interface text, technical identifiers or numbers; Russian messages and document contents are excluded. These six static interface screenshots are preserved unchanged in `public/media/app/` and are outside the generated-photo inventory; they do not connect to a live account. Careers presents areas for a conversation without inventing open vacancies. Press provides company information and a local brand download without inventing coverage, investors or awards. The blog contains original practical Century guides.
+The invented supplier answer, review queue and Gateway sample analytics have been removed. Application previews use **real, pre-cropped Century frames**; simple conceptual illustrations explain workflow and infrastructure relationships without presenting a fabricated product interface or usage figures. The selected visible fragments contain English interface text, technical identifiers or numbers; Russian messages and document contents are excluded. These six static interface screenshots are preserved unchanged in `public/media/app/` and are outside the photography inventories; they do not connect to a live account. Careers presents areas for a conversation without inventing open vacancies. Press provides company information and a local brand download without inventing coverage, investors or awards. The blog contains original practical Century guides.
 
 All contact actions lead to [Vitali Bakhmat on Telegram](https://t.me/vitalibakhmat). The other external profile destinations are [Vadim Vladymtsev’s website](https://vadimohka.com/) and [Egor Krychev’s LinkedIn](https://www.linkedin.com/in/ekrychev/). The site has no contact form or embedded chat. The application adds no analytics, cookies or persistent browser storage.
 
@@ -90,6 +92,7 @@ The [historical migration log](docs/design-migration-2026-11-04.md) records the 
 | `src/lib/industries.ts` | Seven industry pages and related-sector links. |
 | `src/lib/articles.ts` | Four original guides and article metadata. |
 | `src/components/site/` | Shared inner-page shell, heroes, sections and related links. |
+| `src/components/platform/` | Six reference-based Platform compositions, their scoped styles and accessible interactive sections. |
 | `src/components/products/` | Infrastructure and deployment selectors. |
 | `src/components/AppScreenshot.tsx`, `src/lib/app-captures.ts` | Accessible real-image figures and their English metadata. |
 | `src/components/industries/` | Industry icons and retained historical artwork code. |
@@ -103,6 +106,7 @@ The [historical migration log](docs/design-migration-2026-11-04.md) records the 
 | `docs/stock-video-manifest.json`, `docs/stock-video-2026-11-05.md` | Stock licences, source provenance, edit recipe, hashes and verification. |
 | `public/founders/` | Three original founder photographs, preserved byte-for-byte from `main` at `cad5ff1`. |
 | `public/media/app/` | Six real English application captures, preserved unchanged by the photography refresh. |
+| `public/media/platform/`, `docs/platform-assets-2026-11-05.json` | Locally optimized reference photography/backgrounds for the six Platform pages, with provenance and hashes. |
 | `docs/generated-photography-prompts.json` | Exact prompts for the ten selected generated assets, original portrait hashes, and separately recorded excluded founder generations. |
 | `docs/application-screenshots-2026-11-04.md`, `docs/app-capture-provenance.json` | Source recordings, frame times, crops and hashes for the real application captures. |
 

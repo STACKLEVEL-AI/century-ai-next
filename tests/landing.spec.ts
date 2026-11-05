@@ -40,7 +40,7 @@ async function expectLocalHeroImage(page: Page) {
 // Text checks cover labels and captions only. Screenshot pixels need a separate
 // visual review; absence of Cyrillic in the DOM is not an image-language audit.
 async function expectLocalAppScreenshots(page: Page) {
-  const captures = page.locator("figure.app-capture");
+  const captures = page.locator("figure.app-capture:visible");
   expect(await captures.count()).toBeGreaterThan(0);
   for (const capture of await captures.all()) {
     const image = capture.locator("img");
@@ -242,12 +242,12 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await navigation.getByRole("link", { name: /^Century Agents/ }).click();
     await expect(page).toHaveURL(`${ORIGIN}/agents/`);
     await expectLocalAppScreenshots(page);
-    await expect(page.locator("#contact").getByRole("link", { name: "Message Vitali on Telegram", exact: true })).toBeVisible();
+    await expect(page.locator("footer").getByRole("link", { name: "Get in touch", exact: true })).toBeVisible();
 
     await page.goto("/ai-os/");
-    await expect(page.locator(".infra-fallback").getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
-    await expect(page.locator(".phase-fallback").getByRole("heading", { name: "Build with your team", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Build capability alongside the workflow.", exact: true })).toBeVisible();
     await page.goto("/ai-gateway/");
     await expectLocalAppScreenshots(page);
   } finally {
@@ -301,26 +301,26 @@ test("Menus, screenshot links and security FAQs support keyboard navigation", as
 
 test("Product explorers keep keyboard focus and displayed panels in sync", async ({ page }) => {
   await page.goto("/ai-os/");
-  const layers = page.getByRole("tablist", { name: "Infrastructure layers" });
+  const layers = page.getByRole("tablist", { name: "Explore AI OS infrastructure" });
   await layers.getByRole("tab", { name: "Security & governance", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
   await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
   await expect(page.getByRole("tabpanel", { name: "Observability", exact: true })).toBeVisible();
   await page.keyboard.press("End");
-  await expect(layers.getByRole("tab", { name: "Integrations", exact: true })).toHaveAttribute("aria-selected", "true");
+  await expect(layers.getByRole("tab", { name: "Security & governance", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
-  await expect(layers.getByRole("tab", { name: "Security & governance", exact: true })).toBeFocused();
+  await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
 
   await page.goto("/deployment/");
-  const phases = page.getByRole("tablist", { name: "Deployment phases" });
-  await phases.getByRole("tab", { name: /Discover/ }).focus();
+  const phases = page.getByRole("tablist", { name: "Delivery ownership phases" });
+  await phases.getByRole("tab", { name: "Phase 01", exact: true }).focus();
   await page.keyboard.press("ArrowRight");
-  await expect(phases.getByRole("tab", { name: /Implement/ })).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: /Implement/ }).getByRole("heading", { name: "Build with your team" })).toBeVisible();
+  await expect(phases.getByRole("tab", { name: "Phase 02", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "Phase 02", exact: true }).getByRole("heading", { name: "Build capability alongside the workflow." })).toBeVisible();
   await page.keyboard.press("End");
-  await expect(phases.getByRole("tab", { name: /Operate/ })).toHaveAttribute("aria-selected", "true");
+  await expect(phases.getByRole("tab", { name: "Phase 03", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
-  await expect(phases.getByRole("tab", { name: /Discover/ })).toBeFocused();
+  await expect(phases.getByRole("tab", { name: "Phase 01", exact: true })).toBeFocused();
 });
 
 test("Product pages show real local screenshots instead of retired interface mocks", async ({ page }) => {
