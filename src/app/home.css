@@ -2,8 +2,6 @@
 .century-home .hero { min-height: 660px; height: min(790px, calc(100svh - 142px)); max-height: none; }
 .century-home .hero-layout { padding-block: 110px 70px; }
 .century-home .hero-shade { background: linear-gradient(180deg, #07141759, #07141785 50%, #07141770); }
-.century-home .film-control { width: 44px; height: 44px; }
-.century-home .film-control:focus-visible { outline-color: #fff; }
 .century-home .principles-strip { padding-block: 58px 48px; }
 .century-home .principles-inner { gap: 32px; }
 .century-home .principles-inner > p { font-size: 19px; }
@@ -43,5 +41,4 @@
 @media (forced-colors: active) {
   .century-home .hero-film { display: none; }
   .century-home .hero-shade { background: Canvas; }
-  .century-home .film-control { display: none; }
 }
