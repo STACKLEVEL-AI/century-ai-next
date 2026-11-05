@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { homeMetadata } from "@/lib/metadata";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Scenarios from "@/components/Scenarios";
@@ -7,36 +8,10 @@ import HomeApproach from "@/components/HomeApproach";
 import HomeIndustries from "@/components/HomeIndustries";
 import HomeTeam from "@/components/HomeTeam";
 import Footer from "@/components/Footer";
-import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
-import "./home.css";
+import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL, SITE_LANGUAGE } from "@/lib/site";
+import "@/app/home.css";
 
-const ogImage = {
-  url: `${SITE_URL}/og/century-ai-eu.png`,
-  width: 1200,
-  height: 630,
-  alt: "Century — Accelerate AI transformation across your business",
-};
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/" },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    type: "website",
-    siteName: SITE_NAME,
-    url: `${SITE_URL}/`,
-    images: [ogImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    images: [ogImage],
-  },
-};
+export const metadata: Metadata = homeMetadata(PAGE_TITLE, PAGE_DESCRIPTION);
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -46,7 +21,7 @@ const structuredData = {
       "@id": `${SITE_URL}/#website`,
       url: `${SITE_URL}/`,
       name: SITE_NAME,
-      inLanguage: "en",
+      inLanguage: SITE_LANGUAGE,
     },
     {
       "@type": "WebPage",
@@ -54,7 +29,7 @@ const structuredData = {
       url: `${SITE_URL}/`,
       name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
-      inLanguage: "en",
+      inLanguage: SITE_LANGUAGE,
       isPartOf: { "@id": `${SITE_URL}/#website` },
     },
   ],

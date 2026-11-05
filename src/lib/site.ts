@@ -7,3 +7,5 @@ export const VADIM_PROFILE_URL = "https://vadimohka.com/";
 export const PAGE_TITLE = "Century | Innovation Management for Enterprise AI";
 export const PAGE_DESCRIPTION =
   "From business requests to governed automation. Century brings knowledge, agents, workflows and human oversight into your own enterprise environment.";
+
+export const SITE_LANGUAGE = "en";

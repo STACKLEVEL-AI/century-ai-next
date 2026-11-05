@@ -11,7 +11,7 @@ const telegram = "https://t.me/vitalibakhmat";
 
 // The public route contract for the site. Keep this list and
 // src/lib/routes.ts aligned when deliberately adding or removing a page.
-const publicRoutes = [
+const englishRoutes = [
   "/",
   "/platform/",
   "/agents/",
@@ -39,6 +39,7 @@ const publicRoutes = [
   "/blog/plan-ai-deployment/",
   "/privacy/",
 ];
+const publicRoutes = [...englishRoutes, ...englishRoutes.map(route => `/pl${route}`)];
 const screenshotRoutes = new Set(["/", "/platform/", "/agents/", "/systems/", "/ai-gateway/"]);
 const retiredMockClasses = new Set([
   "prod-constellation", "prod-agent-visual", "prod-systems-visual",
@@ -51,8 +52,10 @@ const requiredAssets = [
   "CNAME",
   ".nojekyll",
   "og/century-ai-eu.png",
+  "og/century-ai-pl.png",
   "brand/century-logo.svg",
   "ai-os/index.html",
+  "pl/ai-os/index.html",
 ];
 const externalDestinations = new Set([
   telegram,
@@ -132,7 +135,7 @@ let checkedReferences = 0;
 async function verifyLocalReference(value, fromRoute, { fragment = false } = {}) {
   const url = new URL(value, `${site}${fromRoute}`);
   assert.equal(url.origin, site, `Remote resource on ${fromRoute}: ${value}`);
-  assert(url.pathname !== "/ai-os" && !url.pathname.startsWith("/ai-os/"), `Retired platform URL linked from ${fromRoute}: ${value}`);
+  assert(!/^\/(?:pl\/)?ai-os(?:\/|$)/.test(url.pathname), `Retired platform URL linked from ${fromRoute}: ${value}`);
   const filename = localFile(url);
   await requireFile(filename, `Broken reference from ${fromRoute}`);
   if (fragment && url.hash && filename.endsWith(".html")) {
@@ -144,23 +147,26 @@ async function verifyLocalReference(value, fromRoute, { fragment = false } = {})
 }
 
 async function verifyPlatformRedirect() {
-  const { source, tags } = await readPage(path.join(root, "ai-os/index.html"));
-  const canonicals = tags.filter(({ name, attrs }) => name === "link" && attrs.rel === "canonical");
-  assert.deepEqual(canonicals.map(({ attrs }) => attrs.href), [`${site}/platform/`], "Legacy platform canonical must point to /platform/");
-  const robots = tags.find(({ name, attrs }) => name === "meta" && attrs.name === "robots")?.attrs.content || "";
-  assert.match(robots, /\bnoindex\b/i, "Legacy platform page must not be indexed");
-  const refresh = tags.find(({ name, attrs }) => name === "meta" && attrs["http-equiv"]?.toLowerCase() === "refresh")?.attrs.content || "";
-  assert.match(refresh, /^0;\s*url=\/platform\/$/i, "Legacy platform page needs a no-JavaScript refresh");
-  assert(tags.some(({ name, attrs }) => name === "a" && attrs.href === "/platform/"), "Legacy platform page needs a working fallback link");
-
-  const script = source.match(/<script\b[^>]*>([^]*?)<\/script\s*>/i)?.[1];
-  assert(script, "Legacy platform page needs its browser redirect");
-  for (const [search, hash] of [["", ""], ["?utm_source=legacy&topic=knowledge%20base", "#operating-layer"]]) {
-    const destinations = [];
-    runInNewContext(script, {
-      window: { location: { search, hash, replace: (url) => destinations.push(url) } },
-    }, { timeout: 1000 });
-    assert.deepEqual(destinations, [`/platform/${search}${hash}`], "Legacy platform redirect must preserve query parameters and anchors");
+  for (const locale of ["en", "pl"]) {
+    const polish = locale === "pl";
+    const target = polish ? "/pl/platform/" : "/platform/";
+    const filename = polish ? "pl/ai-os/index.html" : "ai-os/index.html";
+    const { source, tags } = await readPage(path.join(root, filename));
+    assert.equal(tags.find(({ name }) => name === "html")?.attrs.lang, locale, "Wrong redirect document language");
+    const canonicals = tags.filter(({ name, attrs }) => name === "link" && attrs.rel === "canonical");
+    assert.deepEqual(canonicals.map(({ attrs }) => attrs.href), [`${site}${target}`], "Legacy platform canonical must point to its current localized route");
+    const robots = tags.find(({ name, attrs }) => name === "meta" && attrs.name === "robots")?.attrs.content || "";
+    assert.match(robots, /\bnoindex\b/i, "Legacy platform page must not be indexed");
+    const refresh = tags.find(({ name, attrs }) => name === "meta" && attrs["http-equiv"]?.toLowerCase() === "refresh")?.attrs.content || "";
+    assert.equal(refresh, `0; url=${target}`, "Legacy platform page needs a no-JavaScript refresh");
+    assert(tags.some(({ name, attrs }) => name === "a" && attrs.href === target), "Legacy platform page needs a working fallback link");
+    const script = source.match(/<script\b[^>]*>([^]*?)<\/script\s*>/i)?.[1];
+    assert(script, "Legacy platform page needs its browser redirect");
+    for (const [search, hash] of [["", ""], ["?utm_source=legacy&topic=knowledge%20base", "#operating-layer"]]) {
+      const destinations = [];
+      runInNewContext(script, { window: { location: { search, hash, replace: (url) => destinations.push(url) } } }, { timeout: 1000 });
+      assert.deepEqual(destinations, [`${target}${search}${hash}`], "Legacy platform redirect must preserve query parameters and anchors");
+    }
   }
 }
 
@@ -185,7 +191,7 @@ try {
   const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
   const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => decodeEntities(match[1]));
   assert.equal(new Set(locations).size, locations.length, "Sitemap contains duplicate URLs");
-  assert.deepEqual(locations.sort(), publicRoutes.map((route) => `${site}${route}`).sort(), "Sitemap must contain all 26 public Century routes");
+  assert.deepEqual(locations.sort(), publicRoutes.map((route) => `${site}${route}`).sort(), "Sitemap must contain all 52 English and Polish Century routes");
   const robots = await readFile(path.join(root, "robots.txt"), "utf8");
   assert(robots.includes(`Sitemap: ${site}/sitemap.xml`), "Wrong sitemap in robots.txt");
   await verifyPlatformRedirect();
@@ -193,6 +199,8 @@ try {
   const titles = new Map();
   const descriptions = new Map();
   for (const route of publicRoutes) {
+    const polish = route.startsWith("/pl/");
+    const englishRoute = polish ? route.slice(3) : route;
     const page = await readPage(localFile(new URL(`${site}${route}`)));
     const { markup, tags } = page;
     const title = decodeEntities(markup.match(/<title>([^]*?)<\/title>/i)?.[1] || "").trim();
@@ -200,11 +208,11 @@ try {
     const description = tags.find(({ name, attrs }) => name === "meta" && attrs.name === "description")?.attrs.content;
     const canonicals = tags.filter(({ name, attrs }) => name === "link" && attrs.rel === "canonical");
     const openGraphUrl = tags.find(({ name, attrs }) => name === "meta" && attrs.property === "og:url")?.attrs.content;
-    assert.equal(html?.attrs.lang, "en", `Wrong document language: ${route}`);
+    assert.equal(html?.attrs.lang, polish ? "pl" : "en", `Wrong document language: ${route}`);
     assert.equal(tags.filter(({ name }) => name === "h1").length, 1, `Expected one H1: ${route}`);
     assert(!tags.some(({ attrs }) => hasClass(attrs, "footer-wordmark")), `Oversized footer wordmark remains: ${route}`);
     const main = tags.find(({ name }) => name === "main");
-    assert.equal(hasClass(main?.attrs || {}, "inner-page"), route !== "/", `Internal design scope must exclude the homepage: ${route}`);
+    assert.equal(hasClass(main?.attrs || {}, "inner-page"), englishRoute !== "/", `Internal design scope must exclude the homepage: ${route}`);
     assert(title.includes("Century"), `Missing Century page title: ${route}`);
     assert(description?.trim(), `Missing description: ${route}`);
     assert(!titles.has(title), `Duplicate title on ${route} and ${titles.get(title)}`);
@@ -214,12 +222,21 @@ try {
     assert.equal(canonicals.length, 1, `Expected one canonical URL: ${route}`);
     assert.equal(canonicals[0].attrs.href, `${site}${route}`, `Wrong canonical URL: ${route}`);
     assert.equal(openGraphUrl, `${site}${route}`, `Wrong Open Graph URL: ${route}`);
+    const locale = tags.find(({ name, attrs }) => name === "meta" && attrs.property === "og:locale")?.attrs.content;
+    assert.equal(locale, polish ? "pl_PL" : "en_GB", `Wrong Open Graph locale: ${route}`);
+    const alternates = Object.fromEntries(tags.filter(({ name, attrs }) => name === "link" && attrs.rel === "alternate" && attrs.hreflang).map(({ attrs }) => [attrs.hreflang, attrs.href]));
+    assert.deepEqual(alternates, { en: `${site}${englishRoute}`, pl: `${site}/pl${englishRoute}`, "x-default": `${site}${englishRoute}` }, `Wrong language alternates: ${route}`);
+    for (const language of ["en", "pl"]) {
+      const languageLink = tags.find(({ name, attrs }) => name === "a" && attrs["data-language-switch"] === language)?.attrs;
+      assert.equal(languageLink?.href, language === "pl" ? `/pl${englishRoute}` : englishRoute, `Language switch must preserve the page: ${route}`);
+      assert.equal(languageLink?.hreflang, language, `Missing language link annotation: ${route}`);
+    }
     assert(!tags.some(({ name }) => ["form", "input", "textarea", "select"].includes(name)), `Unexpected contact or input field: ${route}`);
     assert(tags.some(({ name, attrs }) => name === "a" && attrs.href === telegram), `Missing Century contact link: ${route}`);
 
     const captures = [...markup.matchAll(/<figure\b([^>]*)>([^]*?)<\/figure\s*>/gi)]
       .filter((match) => hasClass(attributes(match[1]), "app-capture"));
-    if (screenshotRoutes.has(route)) {
+    if (screenshotRoutes.has(englishRoute)) {
       assert(captures.length > 0, `Missing application screenshot figure: ${route}`);
     }
     for (const [, , contents] of captures) {
@@ -229,12 +246,12 @@ try {
       assert(/^\/media\/app\/.+\.webp$/.test(image.src || ""), `Screenshot must use a local /media/app/ WebP: ${route}`);
       assert(Number(image.width) > 0 && Number(image.height) > 0, `Screenshot needs intrinsic dimensions: ${route}`);
       // Metadata is checked here; screenshot pixels require separate visual review.
-      assert(image.alt?.trim() && !/[\u0400-\u04ff]/.test(image.alt), `Screenshot needs English alternative text: ${route}`);
+      assert(image.alt?.trim() && !/[\u0400-\u04ff]/.test(image.alt), `Screenshot needs localized alternative text: ${route}`);
       const openLinks = [...contents.matchAll(/<a\b[^>]*>/gi)].map((match) => attributes(match[0]))
         .filter((attrs) => hasClass(attrs, "app-capture-open"));
       assert.equal(openLinks.length, 1, `Screenshot needs one full-size image link: ${route}`);
       assert.equal(openLinks[0].href, image.src, `Screenshot link must open the displayed image: ${route}`);
-      assert(/^Open .+ screenshot$/.test(openLinks[0]["aria-label"] || ""), `Screenshot link needs an accessible label: ${route}`);
+      assert((polish ? /^Otwórz zrzut ekranu „.+”$/ : /^Open .+ screenshot$/).test(openLinks[0]["aria-label"] || ""), `Screenshot link needs an accessible label: ${route}`);
       assert.equal(openLinks[0].target, "_blank", `Screenshot link should open separately: ${route}`);
       assert(/\bnoopener\b/.test(openLinks[0].rel || ""), `Screenshot link needs noopener: ${route}`);
     }
@@ -246,6 +263,9 @@ try {
         const destination = new URL(attrs.href, `${site}${route}`);
         if (destination.origin === site) {
           await verifyLocalReference(attrs.href, route, { fragment: true });
+          if (polish && publicRoutes.includes(destination.pathname) && !attrs["data-language-switch"]) {
+            assert(destination.pathname.startsWith("/pl/"), `Polish navigation leaves its language on ${route}: ${attrs.href}`);
+          }
         } else {
           assert(externalDestinations.has(destination.href), `Unexpected external link on ${route}: ${destination.href}`);
           assert.equal(attrs.target, "_blank", `External link should open separately: ${route}`);
@@ -268,10 +288,15 @@ try {
     }
   }
 
-  const image = await readFile(path.join(root, "og/century-ai-eu.png"));
-  assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "OG asset is not a PNG");
-  assert.equal(image.readUInt32BE(16), 1200, "OG width must be 1200");
-  assert.equal(image.readUInt32BE(20), 630, "OG height must be 630");
+  for (const filename of ["og/century-ai-eu.png", "og/century-ai-pl.png"]) {
+    const image = await readFile(path.join(root, filename));
+    assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "OG asset is not a PNG");
+    assert.equal(image.readUInt32BE(16), 1200, "OG width must be 1200");
+    assert.equal(image.readUInt32BE(20), 630, "OG height must be 630");
+  }
+  const notFound = await readFile(path.join(root, "404.html"), "utf8");
+  assert(notFound.includes('lang="pl"') && notFound.includes('lang="en"'), "Global 404 must support both languages");
+  assert(notFound.includes("Nie znaleziono strony") && notFound.includes("Page not found"), "Global 404 needs both messages");
   await inspectConnections(root);
   console.log(`Optional export inspection passed: ${publicRoutes.length} routes, unique metadata, ${checkedReferences} local links/assets, sitemap, contact destinations, application screenshots and the legacy platform redirect.`);
 } catch (error) {

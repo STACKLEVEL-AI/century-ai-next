@@ -1,0 +1,109 @@
+{
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "AI with a review path": "AI ze ścieżką weryfikacji",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "Określone zadanie prowadzi przez odpowiedź AI do weryfikacji przez człowieka. Trzy punkty kontroli obejmują jakość źródeł, dokładność i zakres.",
+    "EVALUATE BEFORE EXPANDING": "OCEŃ PRZED ROZSZERZENIEM",
+    "Defined task": "Jasne zadanie",
+    "AI response": "Odpowiedź AI",
+    "Human review": "Ocena przez ludzi",
+    "Approved knowledge": "Zatwierdzona wiedza",
+    "A clear scope": "Jasny zakres",
+    "Check the result": "Sprawdź wynik",
+    "Decide the next step": "Wybierz kolejny krok",
+    "Evidence included": "Dowody w odpowiedzi",
+    "Limitations visible": "Widoczne ograniczenia",
+    "Source quality": "Jakość źródeł",
+    "Accuracy": "Dokładność",
+    "Scope": "Zakres"
+  },
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "Delivery with ownership": "Wdrożenie z odpowiedzialnością",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Cztery połączone etapy prowadzą od określenia zakresu przydatnego przepływu pracy przez tworzenie i weryfikację do przekazania go zespołowi.",
+    "DELIVERY WITH OWNERSHIP": "WDROŻENIE Z ODPOWIEDZIALNOŚCIĄ",
+    "A useful workflow, built together": "Przydatny przepływ pracy, stworzony wspólnie",
+    "Scope": "Zakres",
+    "Build": "Tworzenie",
+    "Validate": "Weryfikacja",
+    "Handover": "Przekazanie",
+    "Define the work": "Określ zadanie",
+    "Agree the boundaries": "Ustal granice",
+    "Connect the pieces": "Połącz elementy",
+    "Build the workflow": "Zbuduj przepływ",
+    "Review the result": "Sprawdź wynik",
+    "Refine with the team": "Dopracuj z zespołem",
+    "Make ownership clear": "Wskaż odpowiedzialnych",
+    "Support daily use": "Wspieraj na co dzień",
+    "Learn from each step, improve the next": "Wyciągaj wnioski z każdego etapu i doskonal następny"
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Granice dostępu i weryfikacja",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Ludzie i systemy uzyskują dostęp do wyznaczonego obszaru przez zweryfikowane punkty dostępu. Centralna tarcza i ślad audytowy przedstawiają ochronę oraz możliwość prześledzenia działań."
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "One connected workspace": "Jedno zintegrowane środowisko pracy",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century łączy zatwierdzone źródła, przepływy pracy i istniejące systemy z ludźmi, kontrolowanymi działaniami i przydatnymi wynikami.",
+    "CONNECTED WORK": "ZINTEGROWANA PRACA",
+    "One place to bring work together": "Jedno miejsce, które łączy pracę",
+    "Approved sources": "Zatwierdzone źródła",
+    "Your workflows": "Twoje przepływy",
+    "Existing systems": "Obecne systemy",
+    "People & review": "Ludzie i ocena",
+    "Controlled actions": "Kontrola działań",
+    "Useful outcomes": "Przydatne wyniki",
+    "Knowledge · Workflows · People": "Wiedza · Przepływy pracy · Ludzie"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Control by design": "Kontrola od etapu projektu",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Uprawnienia dostępu, zatwierdzone źródła i zatwierdzanie przez człowieka łączą się w kontrolowany przepływ pracy z wyznaczoną osobą odpowiedzialną.",
+    "CONTROL BY DESIGN": "KONTROLA OD ETAPU PROJEKTU",
+    "Clear boundaries, accountable decisions": "Jasne granice, odpowiedzialne decyzje",
+    "Access permissions": "Uprawnienia dostępu",
+    "Approved sources": "Zatwierdzone źródła",
+    "Human approval": "Zatwierdza człowiek",
+    "Controlled workflow": "Przepływ pod kontrolą",
+    "Traceable work, with a named owner": "Rejestr działań, wskazana osoba"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Określone ścieżki danych",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Dane z trzech źródeł informacji przechodzą przez warstwę przetwarzania o określonych granicach, zanim trafią do zatwierdzonych miejsc docelowych."
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Platforma Century dla ubezpieczeń",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Przepływy pracy w ubezpieczeniach majątkowych, na życie i zdrowotnych połączone z Century, systemami polis, CRM i systemami głównymi.",
+    "P&C": "Majątkowe i OC",
+    "Life": "Na życie",
+    "Health": "Zdrowotne",
+    "Policy systems": "Systemy polis",
+    "Core systems": "Systemy główne"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Century Healthcare platform": "Platforma Century dla ochrony zdrowia",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century łączy zespoły medyczne, administrację i usługi wewnętrzne z dokumentacją medyczną, harmonogramami i finansami.",
+    "Care teams": "Zespoły medyczne",
+    "Administration": "Administracja",
+    "Internal services": "Usługi wewnętrzne",
+    "Clinical records": "Dokumentacja medyczna",
+    "Scheduling": "Harmonogramy",
+    "Finance": "Finanse"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Century Utilities platform": "Platforma Century dla usług użyteczności publicznej",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century łączy obsługę, zespoły terenowe i rozliczenia z obsługą spraw, bazą wiedzy i danymi rozliczeniowymi.",
+    "Service": "Obsługa",
+    "Field teams": "Zespoły terenowe",
+    "Billing": "Rozliczenia",
+    "Case management": "Obsługa spraw",
+    "Knowledge base": "Baza wiedzy",
+    "Billing records": "Dane rozliczeniowe"
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Century Airlines platform": "Platforma Century dla linii lotniczych",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century łączy pasażerów, zespoły obsługi i reklamacje z danymi podróży, zasadami obsługi i obsługą spraw.",
+    "Passengers": "Pasażerowie",
+    "Service teams": "Zespoły obsługi",
+    "Claims": "Reklamacje",
+    "Journey records": "Dane podróży",
+    "Service policies": "Zasady obsługi",
+    "Case management": "Obsługa spraw"
+  }
+}

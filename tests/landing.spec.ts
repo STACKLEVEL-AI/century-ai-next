@@ -98,15 +98,18 @@ async function expectNoHorizontalOverflow(page: Page) {
 
 // Optional local regression checks after a production export. Deployment CI does
 // not invoke Playwright. Keep these focused on navigation and public behavior.
-test("English pages have independent SEO and a non-indexable 404", async ({ page }) => {
+test("English pages have reciprocal SEO and a non-indexable bilingual 404", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-  await expect(page).toHaveTitle("Century | Enterprise AI for European Businesses");
+  await expect(page).toHaveTitle("Century | Innovation Management for Enterprise AI");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/");
-  await expect(page.locator("link[hreflang]")).toHaveCount(0);
+  await expect(page.locator("link[hreflang]")).toHaveCount(3);
+  await expect(page.locator('link[hreflang="en"]')).toHaveAttribute("href", "https://century-ai.eu/");
+  await expect(page.locator('link[hreflang="pl"]')).toHaveAttribute("href", "https://century-ai.eu/pl/");
+  await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute("href", "https://century-ai.eu/");
   const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())["@graph"];
   expect(graph.map((node: { "@type": string }) => node["@type"])).toEqual(["WebSite", "WebPage"]);
   for (const node of graph) {
@@ -124,7 +127,9 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/platform/");
 
   await page.goto("/404.html");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page not found");
+  await expect(page.locator("html")).toHaveAttribute("lang", "pl");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Nie znaleziono strony");
+  await expect(page.locator('section[lang="en"]').getByRole("heading", { level: 2 })).toHaveText("Page not found");
   const robots = await page.locator('meta[name="robots"]').evaluateAll((nodes) =>
     nodes.map((node) => node.getAttribute("content")).join(","),
   );

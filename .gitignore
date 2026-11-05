@@ -32,3 +32,10 @@ next-env.d.ts
 .superpowers/
 playwright-report/
 test-results/
+
+# Static Polish output is generated from source + translations before dev/build.
+src/localized/
+src/app/(pl)/pl/
+public/media/pl/
+public/og/century-ai-pl.png
+.localizations/

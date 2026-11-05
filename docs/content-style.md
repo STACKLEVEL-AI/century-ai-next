@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English throughout the website. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface.
+Use clear English on English routes and natural Polish on `/pl/` routes. Preserve the official Century product names in both languages. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface.
 
 ## Display copy
 

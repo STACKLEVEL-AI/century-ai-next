@@ -1,0 +1,7 @@
+/* Polish copy shares the design; allow natural wrapping on narrow screens. */
+html[lang="pl"] :is(h1, h2, h3) { overflow-wrap: break-word; }
+html[lang="pl"] .co-filters { flex-wrap: wrap; }
+.bilingual-error { padding: 70px 0; min-height: 100svh; }
+.bilingual-error section { max-width: 760px; margin-top: 48px; }
+.bilingual-error section + section { padding-top: 32px; border-top: 1px solid #d8ddd5; }
+.bilingual-error section p { margin: 20px 0; }
