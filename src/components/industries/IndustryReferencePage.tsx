@@ -40,7 +40,6 @@ export function IndustryPageFrame({ children }: { children: ReactNode }) {
 
 export function IndustryContact({ id, children }: { id: string; children: ReactNode }) {
   return <section className={styles.cta} aria-labelledby={id}>
-    <div className={styles.ctaBackground} aria-hidden="true" />
     <div className={styles.ctaContent}><h2 id={id}>{children}</h2><TelegramLink className={styles.lightButton}>Get in touch</TelegramLink></div>
   </section>;
 }

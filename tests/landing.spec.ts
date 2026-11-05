@@ -311,16 +311,21 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
   await page.keyboard.press("Home");
   await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
 
+});
+
+test("Deployment keeps the delivery path visible and installation details keyboard accessible", async ({ page }) => {
   await page.goto("/deployment/");
-  const phases = page.getByRole("tablist", { name: "Delivery ownership phases" });
-  await phases.getByRole("tab", { name: "Phase 01", exact: true }).focus();
-  await page.keyboard.press("ArrowRight");
-  await expect(phases.getByRole("tab", { name: "Phase 02", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: "Phase 02", exact: true }).getByRole("heading", { name: "Build capability alongside the workflow." })).toBeVisible();
-  await page.keyboard.press("End");
-  await expect(phases.getByRole("tab", { name: "Phase 03", exact: true })).toHaveAttribute("aria-selected", "true");
-  await page.keyboard.press("Home");
-  await expect(phases.getByRole("tab", { name: "Phase 01", exact: true })).toBeFocused();
+  const journey = page.getByRole("list", { name: "Deployment work and outcomes" });
+  for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
+    await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
+  }
+  const installation = page.locator("#deployment-options details");
+  await installation.locator("summary").focus();
+  await page.keyboard.press("Enter");
+  await expect(installation).toHaveAttribute("open", "");
+  await expect(installation.getByText("Identity & data", { exact: true })).toBeVisible();
+  await page.keyboard.press("Enter");
+  await expect(installation).not.toHaveAttribute("open");
 });
 
 test("Product pages show real local screenshots instead of retired interface mocks", async ({ page }) => {

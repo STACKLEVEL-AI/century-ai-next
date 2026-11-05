@@ -19,7 +19,7 @@ export default function PageHero({ eyebrow, title, description, children, dark =
         <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
         <p className="inner-hero-description">{description}</p>
-        {!hideActions && <div className="inner-hero-actions"><TelegramLink className="btn btn-brand">Get in touch</TelegramLink>{secondary && <a className={`btn ${dark ? "btn-outline-light" : "btn-outline"}`} href={secondary.href}>{secondary.label}<ArrowUpRight size={17} aria-hidden="true" /></a>}</div>}
+        {!hideActions && <div className="inner-hero-actions"><TelegramLink className={`btn ${dark ? "btn-light" : "btn-primary"}`}>Get in touch</TelegramLink>{secondary && <a className={`btn ${dark ? "btn-outline-light" : "btn-outline"}`} href={secondary.href}>{secondary.label}<ArrowUpRight size={17} aria-hidden="true" /></a>}</div>}
       </div>
       {children && <div className="inner-hero-visual">{children}</div>}
     </div>

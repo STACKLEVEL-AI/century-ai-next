@@ -20,6 +20,10 @@ Navigation labels should identify their destinations. Alternative text should de
 
 ## Brand accents
 
-Use the brand blue `#240CFF` for primary contact actions and selected interface states. Keep the existing neutral page surfaces, photography and typography. Use white text on blue fills; on dark surfaces, pair blue controls with a light boundary and a visible focus state.
+Keep contact actions neutral: dark text on a white button over dark surfaces or photography, and white text on a dark button over light surfaces. Use outline or text links for secondary actions. Preserve the existing page surfaces, photography and typography.
+
+Use the brand blue `#240CFF` sparingly for focus rings and small functional indicators. A selected state must also be identifiable through a visible border, text or shape; avoid large blue fills.
+
+Closing contact sections are compact rows, with a concise heading and useful context beside a single action. Stack the content naturally on small screens. Do not use a full-height promotional banner, a decorative photograph or a gradient before the footer.
 
 The shared footer slogan is `WE LEAVE IN THE AI CENTURY`, with a line break before `AI CENTURY`. Preserve this supplied wording exactly.
