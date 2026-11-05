@@ -67,3 +67,15 @@ The use-case rail supports touch scrolling, keyboard-accessible links and previo
 - The latest upstream navigation changes were integrated before the final local build. Deployment workflow, dependency versions, route registry and contact destinations are unchanged.
 
 The local container uses Node 24 and does not expose `/proc` RSS statistics. The local build used a temporary, uncommitted compatibility preload solely for Next.js memory diagnostics; compilation and type validation remained enabled. The published GitHub Pages build uses the repository's existing Node 20 workflow. Browser publication checks and the Actions run establish the live result separately from these local checks. The optional Playwright suite was updated for the new intentional homepage structure but was not run in this environment.
+
+## Publication and browser verification
+
+Published through GitHub MCP in [implementation commit d831f0a](https://github.com/STACKLEVEL-AI/century-ai-next/commit/d831f0a5685bd53bfc301a6fc352dab2892a636d), followed by [media-cache fix d7d0a67](https://github.com/STACKLEVEL-AI/century-ai-next/commit/d7d0a67ac0f3a3746cd639b7bcb24852c8ae253a). The final [GitHub Pages deployment, run 42107979429](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42107979429), completed successfully.
+
+The live homepage was checked in the browser after deployment. The hero loaded the versioned desktop MP4 with duration 24 seconds, 1280 × 720 dimensions and no media error. Pause worked and remained set after scrolling away. The use-case rail advanced 444 px with the Next control; the industry panel changed to Telecommunications with its correct photograph, and End selected Airlines. The About card opened the existing About page with all three founder profiles. At the inspected desktop viewport, document and viewport widths both measured 1,348 px, with no page-level horizontal overflow.
+
+Both live MP4 responses returned HTTP 200 and matched the committed SHA-256 hashes, including the 1,231,864-byte mobile file. Desktop browser interaction and mobile asset integrity were checked; device-emulated mobile UI testing and the complete optional Playwright suite were not run. Browser-extension log entries were separate from the website.
+
+The first live check revealed a returning browser could reuse the former 13-second film at an unchanged URL. The shared versioned URLs in `hero-media.ts` corrected this; the final browser read confirmed `/media/enterprise-film.mp4?v=7be70f19` and its matching poster.
+
+![Published Century homepage with the licensed campus footage](previews/stock-video-home-2026-11-05.jpg)
