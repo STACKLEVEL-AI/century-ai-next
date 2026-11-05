@@ -3,8 +3,8 @@
   --header-height: 60px;
   --panel-space: calc(100dvh - var(--header-height) - var(--visible-announcement-height, var(--announcement-height)));
   --header-ink: #fafafa;
-  --button-ink: #111;
-  --button-fill: #fafafa;
+  --button-ink: #fff;
+  --button-fill: var(--color-brand-blue);
   position: absolute;
   inset: var(--announcement-height) 0 auto;
   z-index: 60;
@@ -21,8 +21,6 @@
 .withAnnouncement { --announcement-height: 48px; }
 .light, .scrolled, .header:has([data-header-disclosure][open]) {
   --header-ink: #1f1f1f;
-  --button-ink: #fafafa;
-  --button-fill: #080808;
   color: var(--header-ink);
   background: #fff;
 }
@@ -43,8 +41,8 @@
 .dropdown > summary:hover, .blog:hover { opacity: .7; }
 .dropdown[open] > summary { opacity: 1; }
 .actions { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
-.contact { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 9px 14px; border: 1px solid transparent; border-radius: 100px; background: var(--button-fill); color: var(--button-ink); font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: -.25px; text-decoration: none; white-space: nowrap; transition: opacity 160ms ease; }
-.contact:hover { opacity: .8; }
+.contact { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 9px 14px; border: 1px solid #ffffffb3; border-radius: 100px; background: var(--button-fill); color: var(--button-ink); font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: -.25px; text-decoration: none; white-space: nowrap; transition: background-color 160ms ease; }
+.contact:hover { background: var(--color-brand-blue-hover); }
 .header .contact:focus-visible { outline-color: var(--header-ink); }
 .contact > svg { display: none; }
 .language { position: relative; }

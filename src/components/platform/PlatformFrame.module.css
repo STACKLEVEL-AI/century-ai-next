@@ -36,8 +36,9 @@
 .page .main :where(img) { display: block; }
 .page .main :where(section[id], [role="tabpanel"]) { scroll-margin-top: 84px; }
 .page .main :where(a, button, summary):focus-visible {
-  outline: 3px solid #bf6032;
-  outline-offset: 5px;
+  outline: 3px solid var(--color-brand-blue);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px #fff;
 }
 
 /* The shared Header supplies the masthead and menus. */
@@ -49,7 +50,7 @@
   min-height: 640px;
   padding: 120px var(--platform-gutter);
   overflow: hidden;
-  background: #080909;
+  background: #080808;
   color: #fafafa;
 }
 .contactGlow {
@@ -70,8 +71,9 @@
   min-height: 48px;
   padding: 12px 24px;
   border-radius: 100px;
-  color: #171719;
-  background: #fff;
+  border: 1px solid #ffffffb3;
+  color: #fff;
+  background: var(--color-brand-blue);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
@@ -80,8 +82,8 @@
   transition: background .2s ease;
 }
 .contactButton > svg { display: none; }
-.contactButton:hover { background: #e6e6e1; }
-.page :global(.site-footer) { background: #080909; }
+.contactButton:hover { background: var(--color-brand-blue-hover); }
+.page :global(.site-footer) { background: #080808; }
 .page :global(.footer-brand img) { width: 154px; }
 .page :global(.footer-brand-block > p) { font-family: var(--platform-heading); font-size: 30px; font-weight: 300; }
 .page :global(.footer-main-multipage) { padding-top: 64px; padding-bottom: 52px; }

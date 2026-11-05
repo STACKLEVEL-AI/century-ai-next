@@ -117,11 +117,11 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
   // This checks rendered text, not text embedded in screenshot pixels.
   expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
 
-  await page.goto("/ai-os/");
+  await page.goto("/platform/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
   await expect(page).toHaveTitle("Century AI Platform | Century");
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/ai-os/");
-  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/ai-os/");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/platform/");
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/platform/");
 
   await page.goto("/404.html");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page not found");
@@ -227,7 +227,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await expect(page.locator(".home-industry-fallback a")).toHaveCount(7);
     await expectLocalAppScreenshots(page);
     const useCases = page.locator("#use-cases").getByRole("list", { name: "AI use cases" }).getByRole("link");
-    const useCaseRoutes = ["/agents/", "/agents/", "/systems/", "/ai-os/", "/deployment/"];
+    const useCaseRoutes = ["/agents/", "/agents/", "/systems/", "/platform/", "/deployment/"];
     await expect(useCases).toHaveCount(5);
     for (const [index, route] of useCaseRoutes.entries()) {
       await expect(useCases.nth(index)).toBeVisible();
@@ -244,7 +244,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await expectLocalAppScreenshots(page);
     await expect(page.locator("footer").getByRole("link", { name: "Get in touch", exact: true })).toBeVisible();
 
-    await page.goto("/ai-os/");
+    await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
     await expect(page.getByRole("heading", { name: "Build capability alongside the workflow.", exact: true })).toBeVisible();
@@ -300,7 +300,7 @@ test("Menus, screenshot links and security FAQs support keyboard navigation", as
 });
 
 test("Product explorers keep keyboard focus and displayed panels in sync", async ({ page }) => {
-  await page.goto("/ai-os/");
+  await page.goto("/platform/");
   const layers = page.getByRole("tablist", { name: "Explore AI Platform infrastructure" });
   await layers.getByRole("tab", { name: "Security & governance", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
@@ -324,7 +324,7 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
 });
 
 test("Product pages show real local screenshots instead of retired interface mocks", async ({ page }) => {
-  for (const route of ["/", "/ai-os/", "/agents/", "/systems/", "/ai-gateway/"]) {
+  for (const route of ["/", "/platform/", "/agents/", "/systems/", "/ai-gateway/"]) {
     await page.goto(route);
     await expectLocalAppScreenshots(page);
     await expect(page.locator(
@@ -367,7 +367,7 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await page.screenshot({ path: testInfo.outputPath(`landing-${viewport.width}.png`), fullPage: true });
   }
   await page.setViewportSize({ width: 320, height: 740 });
-  for (const route of ["/ai-os/", "/ai-gateway/"]) {
+  for (const route of ["/platform/", "/ai-gateway/"]) {
     await page.goto(route);
     await expectNoHorizontalOverflow(page);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();

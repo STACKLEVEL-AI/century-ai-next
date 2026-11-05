@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { runInNewContext } from "node:vm";
 
 const root = path.resolve(process.argv[2] || "out");
 const site = "https://century-ai.eu";
@@ -12,7 +13,7 @@ const telegram = "https://t.me/vitalibakhmat";
 // src/lib/routes.ts aligned when deliberately adding or removing a page.
 const publicRoutes = [
   "/",
-  "/ai-os/",
+  "/platform/",
   "/agents/",
   "/systems/",
   "/ai-gateway/",
@@ -38,7 +39,7 @@ const publicRoutes = [
   "/blog/plan-ai-deployment/",
   "/privacy/",
 ];
-const screenshotRoutes = new Set(["/", "/ai-os/", "/agents/", "/systems/", "/ai-gateway/"]);
+const screenshotRoutes = new Set(["/", "/platform/", "/agents/", "/systems/", "/ai-gateway/"]);
 const retiredMockClasses = new Set([
   "prod-constellation", "prod-agent-visual", "prod-systems-visual",
   "prod-workspace", "gateway-demo", "example-board",
@@ -51,6 +52,7 @@ const requiredAssets = [
   ".nojekyll",
   "og/century-ai-eu.png",
   "brand/century-logo.svg",
+  "ai-os/index.html",
 ];
 const externalDestinations = new Set([
   telegram,
@@ -130,6 +132,7 @@ let checkedReferences = 0;
 async function verifyLocalReference(value, fromRoute, { fragment = false } = {}) {
   const url = new URL(value, `${site}${fromRoute}`);
   assert.equal(url.origin, site, `Remote resource on ${fromRoute}: ${value}`);
+  assert(url.pathname !== "/ai-os" && !url.pathname.startsWith("/ai-os/"), `Retired platform URL linked from ${fromRoute}: ${value}`);
   const filename = localFile(url);
   await requireFile(filename, `Broken reference from ${fromRoute}`);
   if (fragment && url.hash && filename.endsWith(".html")) {
@@ -138,6 +141,27 @@ async function verifyLocalReference(value, fromRoute, { fragment = false } = {})
     assert(target.ids.has(id), `Missing anchor ${url.hash} linked from ${fromRoute} to ${url.pathname}`);
   }
   checkedReferences++;
+}
+
+async function verifyPlatformRedirect() {
+  const { source, tags } = await readPage(path.join(root, "ai-os/index.html"));
+  const canonicals = tags.filter(({ name, attrs }) => name === "link" && attrs.rel === "canonical");
+  assert.deepEqual(canonicals.map(({ attrs }) => attrs.href), [`${site}/platform/`], "Legacy platform canonical must point to /platform/");
+  const robots = tags.find(({ name, attrs }) => name === "meta" && attrs.name === "robots")?.attrs.content || "";
+  assert.match(robots, /\bnoindex\b/i, "Legacy platform page must not be indexed");
+  const refresh = tags.find(({ name, attrs }) => name === "meta" && attrs["http-equiv"]?.toLowerCase() === "refresh")?.attrs.content || "";
+  assert.match(refresh, /^0;\s*url=\/platform\/$/i, "Legacy platform page needs a no-JavaScript refresh");
+  assert(tags.some(({ name, attrs }) => name === "a" && attrs.href === "/platform/"), "Legacy platform page needs a working fallback link");
+
+  const script = source.match(/<script\b[^>]*>([^]*?)<\/script\s*>/i)?.[1];
+  assert(script, "Legacy platform page needs its browser redirect");
+  for (const [search, hash] of [["", ""], ["?utm_source=legacy&topic=knowledge%20base", "#operating-layer"]]) {
+    const destinations = [];
+    runInNewContext(script, {
+      window: { location: { search, hash, replace: (url) => destinations.push(url) } },
+    }, { timeout: 1000 });
+    assert.deepEqual(destinations, [`/platform/${search}${hash}`], "Legacy platform redirect must preserve query parameters and anchors");
+  }
 }
 
 async function inspectConnections(directory) {
@@ -164,6 +188,7 @@ try {
   assert.deepEqual(locations.sort(), publicRoutes.map((route) => `${site}${route}`).sort(), "Sitemap must contain all 26 public Century routes");
   const robots = await readFile(path.join(root, "robots.txt"), "utf8");
   assert(robots.includes(`Sitemap: ${site}/sitemap.xml`), "Wrong sitemap in robots.txt");
+  await verifyPlatformRedirect();
 
   const titles = new Map();
   const descriptions = new Map();
@@ -248,7 +273,7 @@ try {
   assert.equal(image.readUInt32BE(16), 1200, "OG width must be 1200");
   assert.equal(image.readUInt32BE(20), 630, "OG height must be 630");
   await inspectConnections(root);
-  console.log(`Optional export inspection passed: ${publicRoutes.length} routes, unique metadata, ${checkedReferences} local links/assets, sitemap, contact destinations and application screenshots.`);
+  console.log(`Optional export inspection passed: ${publicRoutes.length} routes, unique metadata, ${checkedReferences} local links/assets, sitemap, contact destinations, application screenshots and the legacy platform redirect.`);
 } catch (error) {
   console.error(`Export inspection failed: ${error.message}`);
   if (error.code === "ENOENT" || /Missing export file|Missing page/.test(error.message)) {

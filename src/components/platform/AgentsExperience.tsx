@@ -33,7 +33,7 @@ const operatingPrinciples = [
 const scenarios = [
   { name: "Customer support", title: "Prepare service answers with approved context", image: "/media/support.webp", width: 1200, height: 675, href: "/industries/telecommunication/", label: "Service conversations" },
   { name: "Document operations", title: "Recognise scans and extract document fields", image: "/media/workflows.webp", width: 1200, height: 675, href: "/systems/", label: "Documents & workflows" },
-  { name: "Company knowledge", title: "Find policies with source and version links", image: "/media/employee-assistance-woman.webp?v=51966346", width: 1600, height: 900, href: "/ai-os/", label: "Employee assistance" },
+  { name: "Company knowledge", title: "Find policies with source and version links", image: "/media/employee-assistance-woman.webp?v=51966346", width: 1600, height: 900, href: "/platform/", label: "Employee assistance" },
   { name: "Business processes", title: "Move from a scoped task to a tested workflow", image: "/media/deployment.webp", width: 1200, height: 670, href: "/deployment/", label: "Specification to operation" },
 ];
 
@@ -144,7 +144,7 @@ export default function AgentsExperience() {
     <section className={`${styles.section} ${styles.connected}`} aria-labelledby="agents-connected-title"><div className={styles.shell}>
       <div className={styles.headingRow}><h2 id="agents-connected-title">Part of a connected platform</h2><a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className={styles.textLink}>Talk through your use case <ArrowUpRight size={18} /></a></div>
       <div className={styles.relatedGrid}>
-        <a href="/ai-os/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI Platform</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
+        <a href="/platform/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI Platform</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/systems/"><Workflow size={28} strokeWidth={1.2} /><h3>Century Systems</h3><p>Connect knowledge and agents to business processes</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/ai-gateway/"><Network size={28} strokeWidth={1.2} /><h3>Century AI Gateway</h3><p>Choose models and control which data they can use</p><span>Explore<ArrowRight size={18} /></span></a>
       </div>

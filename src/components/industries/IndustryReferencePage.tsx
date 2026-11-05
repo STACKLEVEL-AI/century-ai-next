@@ -10,12 +10,12 @@ import styles from "./IndustryReferencePage.module.css";
 const benefitIcons = { CalendarCheck, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, Clock, Coins, Expand, Gauge, Headset, HeartPulse, Network, Settings2, ShieldHalf, Timer, UsersRound, Workflow };
 const defaultBenefitIcons = [ChartNoAxesColumnIncreasing, Expand, Settings2];
 
-function IndustryFooter({ operationLabel }: { operationLabel: string }) {
+function IndustryFooter() {
   return <footer className={styles.footer}>
     <div className={styles.footerInner}>
       <div className={styles.footerLead}>
         <a href="/" aria-label="Century home"><img src="/brand/century-logo-white.svg" alt="Century" width={221} height={58} /></a>
-        <p>A new chapter for your {operationLabel} operations</p>
+        <p>WE LEAVE IN THE<br />AI CENTURY</p>
         <TelegramLink className={styles.lightButton}>Get in touch</TelegramLink>
         <small>© {new Date().getFullYear()} Century</small>
       </div>
@@ -30,11 +30,11 @@ function IndustryFooter({ operationLabel }: { operationLabel: string }) {
   </footer>;
 }
 
-export function IndustryPageFrame({ children, operationLabel = "business" }: { children: ReactNode; operationLabel?: string }) {
+export function IndustryPageFrame({ children }: { children: ReactNode }) {
   return <div className={styles.page}>
     <Header variant="overlay" showAnnouncement={false} />
     <main className={`inner-page ${styles.main}`} id="main-content" tabIndex={-1}>{children}</main>
-    <IndustryFooter operationLabel={operationLabel} />
+    <IndustryFooter />
   </div>;
 }
 
@@ -51,7 +51,7 @@ export default function IndustryReferencePage({ slug, data }: { slug: IndustrySl
   const heroSourceSet = images.heroSmall === images.hero
     ? undefined
     : `${images.heroSmall} ${images.heroSmallWidth}w, ${images.hero} ${images.heroWidth}w`;
-  return <IndustryPageFrame operationLabel={data.operationLabel}>
+  return <IndustryPageFrame>
     <section className={styles.hero} aria-labelledby={`${slug}-title`} data-industry={slug}>
       <picture className={styles.heroPicture} style={{ "--hero-position": images.heroPosition, "--hero-mobile-position": images.heroMobilePosition } as CSSProperties}>
         <source media="(max-width: 879px)" srcSet={images.heroMobile} />

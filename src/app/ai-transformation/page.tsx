@@ -95,7 +95,7 @@ export default function TransformationPage() {
           <div className={styles.shell}>
             <h2 id="transformation-related-title">Connect the strategy<br />to the work</h2>
             <div className={styles.relatedCards}>
-              <a className={styles.relatedCard} href="/ai-os/">
+              <a className={styles.relatedCard} href="/platform/">
                 <picture className={styles.cardImage}>
                   <source media="(max-width: 700px)" srcSet="/images/enterprise-atrium-640.webp 640w, /images/enterprise-atrium-960.webp 960w" sizes="100vw" />
                   <img src="/images/enterprise-atrium.webp" srcSet="/images/enterprise-atrium-640.webp 640w, /images/enterprise-atrium-960.webp 960w, /images/enterprise-atrium.webp 1672w" sizes="(max-width: 700px) 100vw, 60vw" alt="" width={1672} height={941} loading="lazy" />

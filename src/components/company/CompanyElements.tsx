@@ -37,7 +37,7 @@ export function CompanyCTA({ eyebrow = "A useful next step", title = <>Good work
   description?: string;
   label?: string;
 }) {
-  return <section className="co-cta"><div className="shell co-cta-grid"><div><p className="co-eyebrow">{eyebrow}</p><h2>{title}</h2></div><div className="co-cta-copy"><p>{description}</p><TelegramLink className="btn btn-light">{label}</TelegramLink></div></div></section>;
+  return <section className="co-cta"><div className="shell co-cta-grid"><div><p className="co-eyebrow">{eyebrow}</p><h2>{title}</h2></div><div className="co-cta-copy"><p>{description}</p><TelegramLink className="btn btn-brand">{label}</TelegramLink></div></div></section>;
 }
 
 const founders = [

@@ -83,9 +83,10 @@
 
 .tab > span { min-width: 0; }
 .tab > svg { flex: 0 0 auto; transition: transform 160ms ease, color 160ms ease; }
-.tab:hover, .tab[aria-selected="true"] { color: #171719; }
-.tab[aria-selected="true"] svg { color: #b4441a; transform: translate(3px, -3px); }
-.tab:focus-visible, .panel:focus-visible, .fallback a:focus-visible { outline: 2px solid #171719; outline-offset: 4px; }
+.tab:hover { color: #171719; }
+.tab[aria-selected="true"] { color: var(--color-brand-blue); }
+.tab[aria-selected="true"] svg { color: var(--color-brand-blue); transform: translate(3px, -3px); }
+.tab:focus-visible, .panel:focus-visible, .fallback a:focus-visible { outline: 2px solid var(--color-brand-blue); outline-offset: 4px; }
 
 .panel {
   position: relative;
@@ -99,7 +100,7 @@
   overflow: hidden;
   border-radius: 8px;
   color: #fff;
-  background: #202828;
+  background: #202020;
 }
 
 .photo {

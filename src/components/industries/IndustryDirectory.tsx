@@ -7,7 +7,7 @@ import styles from "./IndustryReferencePage.module.css";
 
 const principles = [
   { title: "Specify the opportunity", description: "Collect requests from business teams, identify owners and assess process, data and access readiness", icon: Focus, href: "/ai-transformation/", link: "Find your starting point" },
-  { title: "Build around approved sources", description: "Connect the knowledge and systems a task needs, then test representative documents and questions", icon: BookOpen, href: "/ai-os/", link: "Explore the platform" },
+  { title: "Build around approved sources", description: "Connect the knowledge and systems a task needs, then test representative documents and questions", icon: BookOpen, href: "/platform/", link: "Explore the platform" },
   { title: "Govern and improve", description: "Agree review responsibilities, track quality and impact, and use operational findings to shape the next task", icon: UserRoundCheck, href: "/deployment/", link: "Plan your implementation" },
 ];
 

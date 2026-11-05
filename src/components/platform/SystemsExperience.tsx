@@ -84,7 +84,7 @@ export default function SystemsExperience() {
     <section className={`${styles.section} ${styles.connected}`} aria-labelledby="systems-connected-title"><div className={styles.shell}>
       <h2 id="systems-connected-title">Built on a connected platform</h2>
       <div className={styles.relatedGrid}>
-        <a href="/ai-os/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI Platform</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
+        <a href="/platform/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI Platform</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/agents/"><Workflow size={28} strokeWidth={1.2} /><h3>Century Agents</h3><p>Build assistants grounded in permitted knowledge</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/ai-gateway/"><Network size={28} strokeWidth={1.2} /><h3>Century AI Gateway</h3><p>Choose models and control which data they can use</p><span>Explore<ArrowRight size={18} /></span></a>
       </div>

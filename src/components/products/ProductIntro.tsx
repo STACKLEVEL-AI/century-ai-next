@@ -27,7 +27,7 @@ export default function ProductIntro({ eyebrow, title, description, variant = "s
         <div className="product-intro-summary">
           <p>{description}</p>
           <div className="product-actions">
-            <TelegramLink className={"btn " + (dark ? "btn-light" : "btn-primary")}>Get in touch</TelegramLink>
+            <TelegramLink className="btn btn-brand">Get in touch</TelegramLink>
             <a className="product-quiet-link" href={secondary.href}>{secondary.label}<ArrowDownRight size={18} aria-hidden="true" /></a>
           </div>
         </div>

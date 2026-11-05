@@ -53,7 +53,7 @@ test("Desktop dropdowns stay reachable on hover and only one group is open", asy
 
 test("Keyboard focus keeps a dropdown open and Escape restores its trigger", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto("/ai-os/");
+  await page.goto("/platform/");
   const navigation = page.getByRole("navigation", { name: "Main navigation", exact: true });
   const platform = group(page, navigation, "Platform");
   const trigger = platform.locator(":scope > summary");
@@ -125,7 +125,7 @@ test("Navigation remains usable without JavaScript", async ({ browser }) => {
 test("Shared header fits each page variant and menu links resolve locally", async ({ page }) => {
   for (const width of [390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const route of ["/", "/ai-os/", "/industries/insurance/"]) {
+    for (const route of ["/", "/platform/", "/industries/insurance/"]) {
       await page.goto(route);
       const header = page.locator("[data-site-header]");
       await expectWithinViewport(page, header.getByRole("link", { name: "Century home", exact: true }));

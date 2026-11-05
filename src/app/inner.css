@@ -23,7 +23,7 @@
 .inner-page .section-heading-center { margin-inline: auto; }
 .inner-page .section-heading-center > p { margin-inline: auto; }
 .inner-page .btn { min-height: 50px; border-radius: 5px; font-size: 14px; }
-.inner-page .btn:focus-visible, .inner-page a:focus-visible, .inner-page summary:focus-visible, .inner-page button:focus-visible { outline: 3px solid #ce673e; outline-offset: 5px; }
+.inner-page .btn:focus-visible, .inner-page a:focus-visible, .inner-page summary:focus-visible, .inner-page button:focus-visible { outline: 3px solid var(--color-brand-blue); outline-offset: 3px; box-shadow: 0 0 0 3px #fff; }
 .inner-page .feature-grid { gap: 32px; }
 .inner-page .feature-card { padding: 28px 0 0; border: 0; border-top: 1px solid var(--inner-line); border-radius: 0; background: transparent; box-shadow: none; }
 .inner-page .feature-card-icon { color: #9a4c30; height: 30px; margin-bottom: 24px; }

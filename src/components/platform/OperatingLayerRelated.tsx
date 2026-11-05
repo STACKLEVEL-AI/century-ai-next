@@ -2,16 +2,18 @@ import { ArrowUpRight } from "lucide-react";
 import styles from "./OperatingLayer.module.css";
 
 const products = [
-  { slug: "ai-os", label: "AI Platform", image: "/media/platform.webp", width: 1800, height: 1009, position: "center", description: "Specification, development and governance in one environment" },
+  { slug: "platform", label: "AI Platform", image: "/media/platform.webp", width: 1800, height: 1009, position: "center", description: "Specification, development and governance in one environment" },
   { slug: "agents", label: "Agents", image: "/media/employee-assistance-woman.webp?v=51966346", width: 1600, height: 900, position: "60% center", description: "Build agents grounded in permitted knowledge and connected tools" },
   { slug: "systems", label: "Systems", image: "/media/century/photos/team-collaboration.webp", width: 1600, height: 900, position: "40% center", description: "Turn business requests into connected, tested workflows" },
   { slug: "ai-gateway", label: "AI Gateway", image: "/media/stock/scene-keyboard.webp", width: 960, height: 540, position: "center", description: "Choose models, control data use and inspect the evidence" },
 ];
 
-export default function OperatingLayerRelated({ current }: { current: "ai-os" | "ai-gateway" }) {
-  return <section className={styles.related} aria-labelledby={"related-" + current}>
+export default function OperatingLayerRelated({ current }: { current: "platform" | "ai-gateway" }) {
+  // Preserve existing section anchors for links arriving through the legacy route.
+  const headingId = "related-" + (current === "platform" ? "ai-os" : current);
+  return <section className={styles.related} aria-labelledby={headingId}>
     <div className={styles.container}>
-      <h2 className={styles.relatedHeading} id={"related-" + current}>One platform<br />Connected capabilities</h2>
+      <h2 className={styles.relatedHeading} id={headingId}>One platform<br />Connected capabilities</h2>
       <div className={styles.relatedGrid}>
         {products.filter(product => product.slug !== current).map(product => <a className={styles.productCard}
           href={"/" + product.slug + "/"} key={product.slug}>

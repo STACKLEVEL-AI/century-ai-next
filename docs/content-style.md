@@ -17,3 +17,9 @@ Update display text at its source, including labels inside SVG diagrams.
 Use the product names Century AI Platform, Century Agents, Century Systems and Century AI Gateway consistently. Keep contact and profile links aligned with [src/lib/site.ts](../src/lib/site.ts).
 
 Navigation labels should identify their destinations. Alternative text should describe useful visual content without repeating the surrounding caption; decorative images use empty alternative text.
+
+## Brand accents
+
+Use the brand blue `#240CFF` for primary contact actions and selected interface states. Keep the existing neutral page surfaces, photography and typography. Use white text on blue fills; on dark surfaces, pair blue controls with a light boundary and a visible focus state.
+
+The shared footer slogan is `WE LEAVE IN THE AI CENTURY`, with a line break before `AI CENTURY`. Preserve this supplied wording exactly.

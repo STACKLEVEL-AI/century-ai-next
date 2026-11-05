@@ -8,7 +8,7 @@ const scenarios = [
   { name: "Customer experience", src: "/media/century/photos/banking-advice.webp", width: 1600, height: 900, position: "84% center", title: "Service knowledge\nWith sources in view", href: "/agents/" },
   { name: "Employee assistance", src: "/media/century/photos/employee-workspace.webp", width: 1600, height: 900, position: "50% center", portrait: true, title: "Company knowledge\nWith the right access", href: "/agents/" },
   { name: "Business operations", src: "/media/workflows.webp", width: 1200, height: 675, position: "55% center", title: "Repeatable work\nWith people in control", href: "/systems/" },
-  { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "Requests to results\nOne connected cycle", href: "/ai-os/" },
+  { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "Requests to results\nOne connected cycle", href: "/platform/" },
   { name: "Hands-on deployment", src: "/media/century/photos/team-workshop.webp", width: 1600, height: 900, position: "50% center", title: "A tested workflow\nA team ready to own it", href: "/deployment/" },
 ];
 

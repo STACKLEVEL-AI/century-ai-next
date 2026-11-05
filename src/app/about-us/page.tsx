@@ -25,7 +25,7 @@ export default function AboutPage() {
               <p className="co-lead">Useful AI starts with a business process and a team that can own it.</p>
               <p>Century connects specification, development and governance in a shared environment. Business teams submit requests; the automation team designs, builds and tests; security, compliance and management review each release.</p>
               <p>Knowledge, models, agents and operating records stay connected throughout that cycle. We help establish the first workflows and transfer requirements, testing and maintenance practices so your team can continue the work.</p>
-              <a className="co-text-link" href="/ai-os/">Explore the platform<ArrowUpRight size={18} aria-hidden="true" /></a>
+              <a className="co-text-link" href="/platform/">Explore the platform<ArrowUpRight size={18} aria-hidden="true" /></a>
             </div>
           </div>
         </section>

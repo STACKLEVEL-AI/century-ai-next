@@ -6,7 +6,7 @@ import OperatingLayerRelated from "@/components/platform/OperatingLayerRelated";
 import { pageMetadata } from "@/lib/metadata";
 import styles from "@/components/platform/OperatingLayer.module.css";
 
-export const metadata = pageMetadata("Century AI Platform", "Bring specification, development and governance into one operating environment for enterprise AI, with company knowledge, agents, access rules and quality controls", "/ai-os");
+export const metadata = pageMetadata("Century AI Platform", "Bring specification, development and governance into one operating environment for enterprise AI, with company knowledge, agents, access rules and quality controls", "/platform");
 
 const advantages = [
   { title: "Model independence", text: "Choose models for each task and data policy, then compare quality on your own documents and questions", icon: Boxes },
@@ -63,7 +63,7 @@ function EnterpriseVisual({ kind }: { kind: string }) {
   </div>;
 }
 
-export default function AiOsPage() {
+export default function PlatformPage() {
   return <PlatformFrame headerVariant="overlay"
     contactImage={{ src: "/media/closing.webp", width: 1200, height: 495 }}
     contactTitle={<>Build a connected<br />way of working</>}>
@@ -81,7 +81,7 @@ export default function AiOsPage() {
         <a className={styles.heroExplore} href="#operating-layer"><span>Explore the operating layer</span><ArrowDown size={17} aria-hidden="true" /></a>
       </section>
       <section className={styles.infrastructure} id="operating-layer" aria-label="AI operating infrastructure"><div className={styles.container}><OperatingLayerExplorer /></div></section>
-      <OperatingLayerRelated current="ai-os" />
+      <OperatingLayerRelated current="platform" />
       <section className={styles.advantages} aria-labelledby="os-advantages">
         <div className={styles.container}>
           <div className={styles.sectionIntro}><h2 id="os-advantages">Three stages<br />One continuous cycle</h2><p>Specification → Development → Governance connects business requests, working automations and evidence from daily use, with findings feeding into the next specification</p></div>

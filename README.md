@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-The publishable website is written to `out/`. The postbuild script adds `CNAME` and `.nojekyll`. Serve this directory with a static web server.
+The publishable website is written to `out/`. The postbuild script adds `CNAME`, `.nojekyll` and a compatibility redirect from `/ai-os/` to `/platform/`. Serve this directory with a static web server.
 
 ## Deployment
 
@@ -29,7 +29,7 @@ In the repository's Pages settings, select **GitHub Actions** and keep the custo
 
 | Area | Routes |
 | --- | --- |
-| Platform | `/ai-os/`, `/agents/`, `/systems/`, `/ai-gateway/` |
+| Platform | `/platform/`, `/agents/`, `/systems/`, `/ai-gateway/` |
 | Delivery | `/deployment/`, `/ai-transformation/`, `/security/` |
 | Industries | `/industries/` and seven sector pages |
 | Company | `/about-us/`, `/careers/`, `/press/`, `/contact/` |
