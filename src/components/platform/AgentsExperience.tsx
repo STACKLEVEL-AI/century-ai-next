@@ -63,7 +63,7 @@ function KnowledgeIllustration() {
 function CapabilityIllustration({ active }: { active: number }) {
   const icons = [MessageSquare, FileText, AudioLines, BookOpen];
   return <div className={styles.capabilityArt}>
-    <img className={styles.capabilitySky} src="/media/strategy.webp" alt="" width="1054" height="1451" loading="lazy" />
+    <img className={styles.capabilitySky} src="/media/platform.webp" alt="" width="1800" height="1009" loading="lazy" />
     <svg className={styles.orbitLines} viewBox="0 0 600 520" fill="none" aria-hidden="true"><ellipse cx="300" cy="260" rx="225" ry="138" transform="rotate(-28 300 260)" /><ellipse cx="300" cy="260" rx="225" ry="138" transform="rotate(33 300 260)" /><circle cx="300" cy="260" r="178" /></svg>
     <div className={styles.orb}><AgentSymbol /></div>
     {capabilities[active].labels.map((label, index) => { const Icon = icons[index]; return <span key={label} className={`${styles.orbitLabel} ${styles[`orbitLabel${index}`]}`}><Icon size={17} strokeWidth={1.4} />{label}</span>; })}

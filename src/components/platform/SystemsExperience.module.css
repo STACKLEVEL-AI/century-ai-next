@@ -132,10 +132,10 @@
 .accordionMinus { display:none; }
 .systemItem[open] .accordionPlus { display:none; }
 .systemItem[open] .accordionMinus { display:block; }
-.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/strategy.webp') center/cover; }
+.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/platform.webp') center/cover; }
 .page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#091218e0,#10263180); z-index:-1; }
-.page .relatedGrid > a:nth-child(2) { background-position:25% center; }
-.page .relatedGrid > a:nth-child(3) { background-image:url('/media/closing.webp'); }
+.page .relatedGrid > a:nth-child(2) { background-image:url('/media/employee-assistance-woman.webp'); background-position:60% center; }
+.page .relatedGrid > a:nth-child(3) { background-image:url('/media/stock/scene-keyboard.webp'); }
 .page .relatedGrid > a:nth-child(3)::before { background:linear-gradient(0deg,#292636e6,#3e39594f); }
 .page .relatedGrid p { color:#f4f8f0cf; }
 @media(max-width:560px) { .systemItem summary { padding:26px 0; } }

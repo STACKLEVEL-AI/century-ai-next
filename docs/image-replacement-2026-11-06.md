@@ -51,3 +51,7 @@ Validation results are recorded in the JSON manifest. A clean production build p
 Actual responsive crops and the six rendered SVG diagrams were reviewed. The latest homepage layout/CSS, video component, navigation styling and deployment-only workflow were preserved. The local Chromium runtime is unavailable, so this update does not claim a local Playwright run. Live browser checks are performed after deployment and reported with the publication result.
 
 The GitHub Pages workflow remains deployment-only. Image generation, visual review and validation run outside CI. No browser installation, tests, audit job or asset-generation step is added to the workflow. The published result is confirmed separately by the successful Pages run and a live browser review.
+
+## Per-page photography follow-up
+
+The initial replacement was published in commit `3fe9d877fc581e4d585c54c908a1dce110f22a97`. The subsequent [per-page photography inventory](photo-uniqueness-2026-11-06.json) records the user's additional requirement that a photograph appear in only one logical slot on each page. It covers shared navigation, photographic backgrounds, related cards, guide filters and industry selectors. Later slot assignments in that inventory supersede the initial replacement mapping above. This follow-up uses existing original assets and native CSS gradients; no new generated photograph is needed.

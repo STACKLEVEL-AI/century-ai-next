@@ -2710,5 +2710,11 @@
     "playwright": "Not run; local Chromium runtime is unavailable. No new tests, browser installation or CI checks were added.",
     "publication": "The successful Pages run and live browser review are reported after this commit is published; this pre-publication manifest does not claim a live result."
   },
-  "preserved_homepage_photography_commit": "96a8b44733d527e74822531b5eacd963ff874ac0"
+  "preserved_homepage_photography_commit": "96a8b44733d527e74822531b5eacd963ff874ac0",
+  "initial_replacement_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97",
+  "per_page_photo_uniqueness_followup": {
+    "report": "photo-uniqueness-2026-11-06.json",
+    "scope": "Each photographic family appears in at most one logical slot per page, including shared menu, photographic backgrounds and interactive alternatives.",
+    "mapping_note": "The retired-asset mappings describe the initial replacement publication. The follow-up inventory records later slot assignments."
+  }
 }

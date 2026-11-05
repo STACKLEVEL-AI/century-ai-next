@@ -144,11 +144,11 @@
     },
     {
       "slot": "Company menu press card",
-      "src": "/images/enterprise-atrium-960.webp",
+      "src": "/media/stock/scene-control.webp",
       "width": 960,
       "height": 540,
-      "bytes": 137536,
-      "sha256": "8d7cb121129902611c2bb637eaa8e2da7bb8a524bfbc17d0d885d1c38e3a509c"
+      "bytes": 54904,
+      "sha256": "a11179040367bdbe6e9022fad72d9a63578fe933f0859f532fc91a6481e52ffa"
     }
   ],
   "generated_asset": {
@@ -196,7 +196,7 @@
     "logical_photo_slots": 18,
     "unique_paths": 18,
     "unique_sha256": 18,
-    "static_video_extracts": 0
+    "static_video_extracts": 1
   },
   "image_replacement_update": {
     "integrated_commit": "96a8b44733d527e74822531b5eacd963ff874ac0",
@@ -227,5 +227,11 @@
     "duplicates": "18 logical slots retain 18 unique paths and hashes; the other 17 photographs match the previous manifest byte-for-byte.",
     "publication": "Pending publication of the selected revision."
   },
-  "revision_base_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97"
+  "revision_base_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97",
+  "per_page_photo_uniqueness_followup": {
+    "base_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97",
+    "report": "photo-uniqueness-2026-11-06.json",
+    "header_card": "A dedicated existing licensed control-room still avoids reusing the atrium photograph on Company, Platform and Blog pages. The five use-case cards remain independent photographs.",
+    "preserved_upstream_commit": "a00bbe7578a1b6a6540ae0b89bd691bbbdb966b8"
+  }
 }

@@ -17,7 +17,7 @@ export default function BlogPage() {
         <header className="co-journal-header"><div className="shell"><p className="co-eyebrow">Century guides</p><div><h1>Useful ideas.<br />Better starting points.</h1><p>Practical reading for the people making AI part of everyday work.</p></div></div></header>
         <section className="shell co-featured-section" aria-labelledby="co-featured-title">
           <a className="co-featured" href={`/blog/${featured.slug}/`}>
-            <ArticleArtwork slug={featured.slug} priority />
+            <ArticleArtwork slug={featured.slug} imageSrc="/media/century/photos/team-workshop.webp" priority />
             <div className="co-featured-copy"><p className="co-eyebrow">Featured guide</p><div className="co-guide-meta"><span>{featured.category}</span><span>{featured.readingTime}</span></div><h2 id="co-featured-title">{featured.title}</h2><p>{featured.description}</p><span className="co-featured-link">Read the guide<ArrowUpRight size={22} aria-hidden="true" /></span></div>
           </a>
           <a className="co-journal-explore co-text-link" href="#guides">Explore all guides<ArrowDown size={17} aria-hidden="true" /></a>

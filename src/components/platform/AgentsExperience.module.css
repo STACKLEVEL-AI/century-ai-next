@@ -161,9 +161,9 @@
 .accordionMinus { display:none; }
 .accordionItem[open] .accordionPlus { display:none; }
 .accordionItem[open] .accordionMinus { display:block; }
-.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/strategy.webp') center/cover; }
+.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/images/enterprise-atrium-960.webp') center/cover; }
 .page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#091218e0,#10263180); z-index:-1; }
 .page .relatedGrid > a:nth-child(2) { background-image:url('/media/closing.webp'); }
-.page .relatedGrid > a:nth-child(3) { background-position:80% center; }
+.page .relatedGrid > a:nth-child(3) { background-image:url('/media/stock/scene-keyboard.webp'); background-position:center; }
 .page .relatedGrid > a:nth-child(3)::before { background:linear-gradient(0deg,#292636e6,#3e39594f); }
 .page .relatedGrid p { color:#f4f8f0cf; }

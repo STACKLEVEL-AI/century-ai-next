@@ -1,0 +1,2453 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "repository": "STACKLEVEL-AI/century-ai-next",
+  "audit_baseline_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97",
+  "preserved_upstream_commit": "a00bbe7578a1b6a6540ae0b89bd691bbbdb966b8",
+  "requirement": "A photograph must not appear in two different logical slots on the same page.",
+  "counting_rules": [
+    "Count photographs, founder portraits, video poster fallbacks and photographic raster backgrounds, including shared navigation and off-screen blocks.",
+    "A source image and its responsive renditions are one photographic family; a srcSet or mobile/desktop rendering of the same component is one logical slot.",
+    "The desktop and mobile Company menu implementations are one shared navigation slot.",
+    "Cover all seven homepage industry selections, all five blog-filter states and Platform tab/accordion alternatives.",
+    "Exclude logos, native SVG diagrams, application-interface captures and CSS-only gradients from photography.",
+    "Inspect rendered HTML independently; CSS backgrounds and client-side alternatives are additionally covered by the source inventory."
+  ],
+  "summary": {
+    "content_pages": 26,
+    "pages_with_repeated_photos_before": 19,
+    "repeated_families_before": 24,
+    "extra_repeated_placements_before": 27,
+    "repeated_families_after": 0,
+    "logical_raster_slots_after": 143,
+    "new_generated_photographs_in_followup": 0,
+    "existing_public_photo_files_modified_by_followup": 0
+  },
+  "changes": [
+    "Reserve an existing licensed control-room still for the Company menu card, removing collisions with atrium imagery elsewhere.",
+    "Give the featured blog guide its own existing workshop photograph while retaining the full four-guide catalogue and its filters.",
+    "Assign distinct existing images to Platform hero, explorer, capability and related-product slots.",
+    "Use the existing team-collaboration photograph for the Healthcare workflow block, separate from its healthcare hero.",
+    "Replace repeated industry CTA and directory-invitation photographic textures with native CSS gradients."
+  ],
+  "preserved": [
+    "Latest upstream Employee assistance photograph, content-hash URL and portrait framing from a00bbe7.",
+    "Page structure, text, destinations, menu behaviour, industry tabs and guide filters.",
+    "Original founder portraits, application captures, autoplay video behaviour and deployment-only workflow."
+  ],
+  "pages": [
+    {
+      "route": "/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Hero: poster / video fallback",
+          "asset": "/media/hero-poster.webp",
+          "family": "/media/hero-poster.webp",
+          "kind": "photo-video-poster"
+        },
+        {
+          "slot": "Use case: Customer experience",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Employee assistance",
+          "asset": "/media/employee-assistance-woman.webp",
+          "family": "/media/employee-assistance-woman.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Business operations",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: A connected platform",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Hands-on deployment",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "AI OS: CSS texture backdrop",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "abstract-raster-background"
+        },
+        {
+          "slot": "Approach: Deployment",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Approach: AI strategy",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "abstract-raster-illustration"
+        },
+        {
+          "slot": "Industry tab: Banking",
+          "asset": "/media/industry.webp",
+          "family": "/media/industry.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Telecommunications",
+          "asset": "/media/century/photos/telecom-operations.webp",
+          "family": "/media/century/photos/telecom-operations.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Healthcare",
+          "asset": "/media/century/photos/healthcare-team.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Utilities",
+          "asset": "/media/century/photos/energy-engineers.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Insurance",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Retail",
+          "asset": "/media/century/photos/retail-team.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Airlines",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Team: section backdrop",
+          "asset": "/media/century/photos/team-collaboration.webp",
+          "family": "/media/century/photos/team-collaboration.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Hero: poster / video fallback",
+          "asset": "/media/hero-poster.webp",
+          "family": "/media/hero-poster.webp",
+          "kind": "photo-video-poster"
+        },
+        {
+          "slot": "Use case: Customer experience",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Employee assistance",
+          "asset": "/media/employee-assistance-woman.webp?v=51966346",
+          "family": "/media/employee-assistance-woman.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Business operations",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: A connected platform",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Use case: Hands-on deployment",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "AI OS: CSS texture backdrop",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "abstract-raster-background"
+        },
+        {
+          "slot": "Approach: Deployment",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Approach: AI strategy",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "abstract-raster-illustration"
+        },
+        {
+          "slot": "Industry tab: Banking",
+          "asset": "/media/industry.webp",
+          "family": "/media/industry.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Telecommunications",
+          "asset": "/media/century/photos/telecom-operations.webp",
+          "family": "/media/century/photos/telecom-operations.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Healthcare",
+          "asset": "/media/century/photos/healthcare-team.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Utilities",
+          "asset": "/media/century/photos/energy-engineers.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Insurance",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Retail",
+          "asset": "/media/century/photos/retail-team.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Industry tab: Airlines",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Team: section backdrop",
+          "asset": "/media/century/photos/team-collaboration.webp",
+          "family": "/media/century/photos/team-collaboration.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/about-us/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "About: courtyard hero",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "About: Building together workshop",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "About: courtyard hero"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "About: courtyard hero",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "About: Building together workshop",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/agents/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "customer-support-card",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "capability-illustration-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "scenario-customer-support",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-document-operations",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-company-knowledge",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-business-processes",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/strategy.webp",
+          "slots": [
+            "hero-background",
+            "capability-illustration-background",
+            "related-ai-os",
+            "related-ai-gateway"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "customer-support-card",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "capability-illustration-background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "scenario-customer-support",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-document-operations",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-company-knowledge",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "scenario-business-processes",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/stock/scene-keyboard.webp",
+          "family": "/media/stock/scene-keyboard.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/ai-gateway/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/strategy.webp",
+          "slots": [
+            "hero-background",
+            "related-agents"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/employee-assistance-woman.webp?v=51966346",
+          "family": "/media/employee-assistance-woman.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/century/photos/team-collaboration.webp",
+          "family": "/media/century/photos/team-collaboration.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/ai-os/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "infrastructure-explorer-background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "hero-background",
+            "infrastructure-explorer-background"
+          ]
+        },
+        {
+          "family": "/media/strategy.webp",
+          "slots": [
+            "related-agents",
+            "related-ai-gateway"
+          ]
+        },
+        {
+          "family": "/media/closing.webp",
+          "slots": [
+            "related-systems",
+            "closing-contact-background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "infrastructure-explorer-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/employee-assistance-woman.webp?v=51966346",
+          "family": "/media/employee-assistance-woman.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-systems",
+          "asset": "/media/century/photos/team-collaboration.webp",
+          "family": "/media/century/photos/team-collaboration.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/stock/scene-keyboard.webp",
+          "family": "/media/stock/scene-keyboard.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/ai-transformation/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-deployment",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "shared-header-company-press-card",
+            "related-ai-os"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-deployment",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/blog/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog: featured choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "Blog library: plan-ai-deployment"
+          ]
+        },
+        {
+          "family": "/media/workflows.webp",
+          "slots": [
+            "Blog: featured choose-first-ai-workflow",
+            "Blog library: choose-first-ai-workflow"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog: featured choose-first-ai-workflow",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Blog library: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/blog/answers-need-sources/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "Related guide: plan-ai-deployment"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/blog/choose-first-ai-workflow/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "Related guide: plan-ai-deployment"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/blog/human-review/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "Related guide: plan-ai-deployment"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: plan-ai-deployment",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/blog/plan-ai-deployment/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/images/enterprise-atrium.webp",
+          "slots": [
+            "Header: Company press card",
+            "Article: main cover"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Article: main cover",
+          "asset": "/images/enterprise-atrium.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: choose-first-ai-workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: answers-need-sources",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Related guide: human-review",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/careers/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Careers: immersive hero",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo-background"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Careers: immersive hero",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo-background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/contact/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Contact: immersive hero",
+          "asset": "/media/industry.webp",
+          "family": "/media/industry.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Contact: founder portrait",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Contact: first-workflow guide card",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Contact: immersive hero",
+          "asset": "/media/industry.webp",
+          "family": "/media/industry.webp",
+          "kind": "photo-background"
+        },
+        {
+          "slot": "Contact: founder portrait",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Contact: first-workflow guide card",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/deployment/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "engineering-role-card",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "strategy-role-card",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "engineering-role-card",
+          "asset": "/media/deployment.webp",
+          "family": "/media/deployment.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "strategy-role-card",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "closing-contact-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "directory_intro.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "industry_card.banking",
+          "asset": "/media/century/photos/banking-advice-768.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.telecommunication",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.healthcare",
+          "asset": "/media/century/photos/healthcare-team-768.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.utilities",
+          "asset": "/media/century/photos/energy-engineers-768.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.insurance",
+          "asset": "/media/century/photos/support-team-768.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.retail",
+          "asset": "/media/century/photos/retail-team-768.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.airlines",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "directory_invitation.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "directory_intro.background",
+            "directory_invitation.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "directory_intro.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "industry_card.banking",
+          "asset": "/media/century/photos/banking-advice-768.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.telecommunication",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.healthcare",
+          "asset": "/media/century/photos/healthcare-team-768.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.utilities",
+          "asset": "/media/century/photos/energy-engineers-768.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.insurance",
+          "asset": "/media/century/photos/support-team-768.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.retail",
+          "asset": "/media/century/photos/retail-team-768.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "industry_card.airlines",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/airlines/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/stock/scene-airport-woman.webp",
+          "family": "/media/stock/scene-airport-woman.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/support.webp",
+          "family": "/media/support.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/stock/scene-airport-woman.webp",
+          "family": "/media/stock/scene-airport-woman.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/banking/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/healthcare/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/healthcare-team.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/healthcare-team.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/century/photos/healthcare-team.webp",
+          "slots": [
+            "hero",
+            "workflow"
+          ]
+        },
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/healthcare-team.webp",
+          "family": "/media/century/photos/healthcare-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/team-collaboration.webp",
+          "family": "/media/century/photos/team-collaboration.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/insurance/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/banking-advice.webp",
+          "family": "/media/century/photos/banking-advice.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/retail/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/retail-team.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/retail-team.webp",
+          "family": "/media/century/photos/retail-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/telecommunication/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/knowledge.webp",
+          "family": "/media/knowledge.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/industries/utilities/",
+      "before_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/energy-engineers.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "contact_cta.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/platform.webp",
+          "slots": [
+            "benefits.background",
+            "contact_cta.background"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "header.company_press_card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "hero",
+          "asset": "/media/century/photos/energy-engineers.webp",
+          "family": "/media/century/photos/energy-engineers.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "benefits.background",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "photo_background"
+        },
+        {
+          "slot": "workflow",
+          "asset": "/media/century/photos/team-workshop.webp",
+          "family": "/media/century/photos/team-workshop.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/press/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Founder: Vitali Bakhmat",
+          "asset": "/founders/vitali-bakhmat.webp",
+          "family": "/founders/vitali-bakhmat.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Vadim Vladymtsev",
+          "asset": "/founders/vadim-vladymtsev.webp",
+          "family": "/founders/vadim-vladymtsev.webp",
+          "kind": "photo-portrait"
+        },
+        {
+          "slot": "Founder: Egor Krychev",
+          "asset": "/founders/egor-krychev.webp",
+          "family": "/founders/egor-krychev.webp",
+          "kind": "photo-portrait"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/privacy/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/security/",
+      "before_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Security: immersive abstract backdrop",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "abstract-raster-background"
+        }
+      ],
+      "duplicates_before": [],
+      "after_slots": [
+        {
+          "slot": "Header: Company press card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "Security: immersive abstract backdrop",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "abstract-raster-background"
+        }
+      ],
+      "duplicates_after": []
+    },
+    {
+      "route": "/systems/",
+      "before_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/images/enterprise-atrium-960.webp",
+          "family": "/images/enterprise-atrium.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "people-process-panel",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "delivery-story-card",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/strategy.webp",
+          "family": "/media/strategy.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_before": [
+        {
+          "family": "/media/closing.webp",
+          "slots": [
+            "hero-background",
+            "related-ai-gateway"
+          ]
+        },
+        {
+          "family": "/media/strategy.webp",
+          "slots": [
+            "related-ai-os",
+            "related-agents"
+          ]
+        }
+      ],
+      "after_slots": [
+        {
+          "slot": "shared-header-company-press-card",
+          "asset": "/media/stock/scene-control.webp",
+          "family": "/media/stock/scene-control.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "hero-background",
+          "asset": "/media/closing.webp",
+          "family": "/media/closing.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "people-process-panel",
+          "asset": "/media/century/photos/support-team.webp",
+          "family": "/media/century/photos/support-team.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "delivery-story-card",
+          "asset": "/media/workflows.webp",
+          "family": "/media/workflows.webp",
+          "kind": "photo"
+        },
+        {
+          "slot": "related-ai-os",
+          "asset": "/media/platform.webp",
+          "family": "/media/platform.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-agents",
+          "asset": "/media/employee-assistance-woman.webp?v=51966346",
+          "family": "/media/employee-assistance-woman.webp",
+          "kind": "background"
+        },
+        {
+          "slot": "related-ai-gateway",
+          "asset": "/media/stock/scene-keyboard.webp",
+          "family": "/media/stock/scene-keyboard.webp",
+          "kind": "background"
+        }
+      ],
+      "duplicates_after": []
+    }
+  ],
+  "current_assets": [
+    {
+      "path": "public/founders/egor-krychev.webp",
+      "family": "/founders/egor-krychev.webp",
+      "bytes": 6474,
+      "sha256": "c3ed1f53ce8141268c9c1f870e3251b4929da929a6ea52a9212cc9bb2b39dff9"
+    },
+    {
+      "path": "public/founders/vadim-vladymtsev.webp",
+      "family": "/founders/vadim-vladymtsev.webp",
+      "bytes": 2958,
+      "sha256": "0016d88c7807693c75efe02468afc1acea3242c4acbd7fcb4576cc1949c53c09"
+    },
+    {
+      "path": "public/founders/vitali-bakhmat.webp",
+      "family": "/founders/vitali-bakhmat.webp",
+      "bytes": 4748,
+      "sha256": "af8855144e2995b6d0785c0125d54acc4662cd2c00226946ac666884f9ff0933"
+    },
+    {
+      "path": "public/images/enterprise-atrium-960.webp",
+      "family": "/images/enterprise-atrium.webp",
+      "bytes": 137536,
+      "sha256": "8d7cb121129902611c2bb637eaa8e2da7bb8a524bfbc17d0d885d1c38e3a509c"
+    },
+    {
+      "path": "public/images/enterprise-atrium.webp",
+      "family": "/images/enterprise-atrium.webp",
+      "bytes": 324174,
+      "sha256": "56599032d9be2a0abb160c2809f69e9931d5ab5d238ee8b9189df7509bc55faf"
+    },
+    {
+      "path": "public/media/century/photos/banking-advice-768.webp",
+      "family": "/media/century/photos/banking-advice.webp",
+      "bytes": 41964,
+      "sha256": "cc7f9160a55f4d034af3be685e4447543e16f9a2389accee3cb095bd433a1f90"
+    },
+    {
+      "path": "public/media/century/photos/banking-advice.webp",
+      "family": "/media/century/photos/banking-advice.webp",
+      "bytes": 124176,
+      "sha256": "5b56be660df87e16e201f1d186f3a82ff036a30ef467d431fb3a39c3cf1a69cb"
+    },
+    {
+      "path": "public/media/century/photos/energy-engineers-768.webp",
+      "family": "/media/century/photos/energy-engineers.webp",
+      "bytes": 44164,
+      "sha256": "c22eec5b8fb809bad2847805cb7f8e49db327686aa439824790460e526cf1a72"
+    },
+    {
+      "path": "public/media/century/photos/energy-engineers.webp",
+      "family": "/media/century/photos/energy-engineers.webp",
+      "bytes": 113164,
+      "sha256": "c06c07d1172649d570d6624ebbd148b7dcb156baa6d1954fa21445c067f59833"
+    },
+    {
+      "path": "public/media/century/photos/healthcare-team-768.webp",
+      "family": "/media/century/photos/healthcare-team.webp",
+      "bytes": 28720,
+      "sha256": "033e42e973d493a0fc628d415e72954db3647823929918a76b8243af60bbb51c"
+    },
+    {
+      "path": "public/media/century/photos/healthcare-team.webp",
+      "family": "/media/century/photos/healthcare-team.webp",
+      "bytes": 96342,
+      "sha256": "adfa983ad4066010923f03fc519b8ec4ec88c69e2aed9151406b53626d8e0c48"
+    },
+    {
+      "path": "public/media/century/photos/retail-team-768.webp",
+      "family": "/media/century/photos/retail-team.webp",
+      "bytes": 66330,
+      "sha256": "2c443f10bc1144f32c87bdcfaefa074ccc01b6e83736edf2f508245dd7f4ef01"
+    },
+    {
+      "path": "public/media/century/photos/retail-team.webp",
+      "family": "/media/century/photos/retail-team.webp",
+      "bytes": 188288,
+      "sha256": "56a12df5cc4da62969c348b81165e236f268f52e4f348aae06e111b90bf8aac6"
+    },
+    {
+      "path": "public/media/century/photos/support-team-768.webp",
+      "family": "/media/century/photos/support-team.webp",
+      "bytes": 32528,
+      "sha256": "cfbb7cb6b647eff0819a681947a318a84de37e8eda61b7d9da776add0219bf7e"
+    },
+    {
+      "path": "public/media/century/photos/support-team.webp",
+      "family": "/media/century/photos/support-team.webp",
+      "bytes": 108150,
+      "sha256": "8fcec4cfc6d2e163660511146dea4e334359a376ea55d25ff4be22820886dd55"
+    },
+    {
+      "path": "public/media/century/photos/team-collaboration.webp",
+      "family": "/media/century/photos/team-collaboration.webp",
+      "bytes": 209634,
+      "sha256": "c7494c14cc6d4611c50b868420ba27aa3bc91504dbb741ba382c303f328a6237"
+    },
+    {
+      "path": "public/media/century/photos/team-workshop.webp",
+      "family": "/media/century/photos/team-workshop.webp",
+      "bytes": 155954,
+      "sha256": "42ae2c4a6b534a92648b68b9e8cd9b54c979700ebd7dee4688ba7e109e53f66f"
+    },
+    {
+      "path": "public/media/century/photos/telecom-operations.webp",
+      "family": "/media/century/photos/telecom-operations.webp",
+      "bytes": 144010,
+      "sha256": "4abaddf015281c0ed4543d56ea57e222d309a5ebef784738661c749f32ab075b"
+    },
+    {
+      "path": "public/media/closing.webp",
+      "family": "/media/closing.webp",
+      "bytes": 12454,
+      "sha256": "8a4f0bd9dda4988b39036bb9f1a324b99581ce8846c8ffd44748806b4766ae08"
+    },
+    {
+      "path": "public/media/deployment.webp",
+      "family": "/media/deployment.webp",
+      "bytes": 41880,
+      "sha256": "784a60e46f122a583dd33987ab687bb417fd0d45355f6b29310f34d20527d66d"
+    },
+    {
+      "path": "public/media/employee-assistance-woman.webp",
+      "family": "/media/employee-assistance-woman.webp",
+      "bytes": 135924,
+      "sha256": "51966346c5af3c6290dd61e2691f2d5770f5bd142759aae6d31d2c88b4724125"
+    },
+    {
+      "path": "public/media/hero-poster.webp",
+      "family": "/media/hero-poster.webp",
+      "bytes": 166158,
+      "sha256": "1dd547d4065d2cffe6e0166d058a5f9d5181d6246d181e7f766033342004b14d"
+    },
+    {
+      "path": "public/media/industry.webp",
+      "family": "/media/industry.webp",
+      "bytes": 96690,
+      "sha256": "136183b1a779cef9f88d205fa13c24952180777a3800a7a7a28bc0fdf83830b8"
+    },
+    {
+      "path": "public/media/knowledge.webp",
+      "family": "/media/knowledge.webp",
+      "bytes": 97092,
+      "sha256": "70ec55de684d6fccf354b526401649dab5b675c892317593fd839af7cb29500b"
+    },
+    {
+      "path": "public/media/platform.webp",
+      "family": "/media/platform.webp",
+      "bytes": 58070,
+      "sha256": "cff8390edc1c4b1093fd37685b4dc6b985cc9615f7e3595671da3fc4dda1e6d2"
+    },
+    {
+      "path": "public/media/stock/scene-airport-woman.webp",
+      "family": "/media/stock/scene-airport-woman.webp",
+      "bytes": 24738,
+      "sha256": "30a23bb6cdc2529873d92da8fa3bcc3fd0a5618be3456e58f94fa51bdc34b978"
+    },
+    {
+      "path": "public/media/stock/scene-control.webp",
+      "family": "/media/stock/scene-control.webp",
+      "bytes": 54904,
+      "sha256": "a11179040367bdbe6e9022fad72d9a63578fe933f0859f532fc91a6481e52ffa"
+    },
+    {
+      "path": "public/media/stock/scene-keyboard.webp",
+      "family": "/media/stock/scene-keyboard.webp",
+      "bytes": 20338,
+      "sha256": "5b369921bca1ecc0fd0954e6fb0fece617ebb2fe472958b4df78b1a5dc587337"
+    },
+    {
+      "path": "public/media/strategy.webp",
+      "family": "/media/strategy.webp",
+      "bytes": 99836,
+      "sha256": "10fc9d9fac2b52717728914179cd26a7762d22a1240782c4eed3bab33b108f0a"
+    },
+    {
+      "path": "public/media/support.webp",
+      "family": "/media/support.webp",
+      "bytes": 60472,
+      "sha256": "92e3f1ce8aef0994a9125e139ed8ac879471f6218c31c8f2651eb4c8444ec214"
+    },
+    {
+      "path": "public/media/workflows.webp",
+      "family": "/media/workflows.webp",
+      "bytes": 161016,
+      "sha256": "722d47109dd2fe5a7abcb4554d47368db034ee2aa59332108ced8f3e25122595"
+    }
+  ],
+  "changed_source_files": [
+    "src/app/blog/page.tsx",
+    "src/components/Header.tsx",
+    "src/components/company/ArticleArtwork.tsx",
+    "src/components/industries/IndustryReferencePage.module.css",
+    "src/components/platform/AgentsExperience.module.css",
+    "src/components/platform/AgentsExperience.tsx",
+    "src/components/platform/OperatingLayerExplorer.tsx",
+    "src/components/platform/OperatingLayerRelated.tsx",
+    "src/components/platform/SystemsExperience.module.css",
+    "src/lib/industry-reference-pages.ts"
+  ],
+  "validation": {
+    "production_build": "Passed; type validation and static export included.",
+    "export_inspection": {
+      "result": "passed",
+      "content_routes": 26,
+      "local_links_and_assets": 2592
+    },
+    "rendered_html_photo_scan": {
+      "pages_including_404": 27,
+      "duplicate_routes": 0,
+      "method": "Actual rendered img elements; responsive families normalized; one shared header card; excludes application screenshots, logos, SVG diagrams and noscript alternates. Background photos and client-side alternatives are covered in the independent source inventory."
+    },
+    "source_inventory": "All 26 content routes have zero repeated photographic families, including CSS backgrounds and interactive alternatives.",
+    "same_encoded_photo_bytes_under_different_families": 0,
+    "retired_wonderful_source_or_export_references": 0,
+    "new_photo_file_hashes_preserved": 16,
+    "existing_protected_asset_hashes_preserved_including_latest_upstream": 44,
+    "local_browser": "No local Playwright run; the unavailable local Chromium installation was not changed. Live browser checks follow publication."
+  }
+}
