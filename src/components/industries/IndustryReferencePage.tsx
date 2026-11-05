@@ -48,11 +48,14 @@ export function IndustryContact({ id, children }: { id: string; children: ReactN
 /** Shared reference layout with photography, content and crop settings for each industry. */
 export default function IndustryReferencePage({ slug, data }: { slug: IndustrySlug; data: IndustryReference }) {
   const { images } = data;
+  const heroSourceSet = images.heroSmall === images.hero
+    ? undefined
+    : `${images.heroSmall} ${images.heroSmallWidth}w, ${images.hero} ${images.heroWidth}w`;
   return <IndustryPageFrame operationLabel={data.operationLabel}>
     <section className={styles.hero} aria-labelledby={`${slug}-title`} data-industry={slug}>
-      <picture className={styles.heroPicture}>
+      <picture className={styles.heroPicture} style={{ "--hero-position": images.heroPosition, "--hero-mobile-position": images.heroMobilePosition } as CSSProperties}>
         <source media="(max-width: 879px)" srcSet={images.heroMobile} />
-        <img src={images.hero} srcSet={`${images.heroSmall} ${images.heroSmallWidth}w, ${images.hero} ${images.heroWidth}w`} sizes="100vw" alt="" width={images.heroWidth} height={images.heroHeight} fetchPriority="high" />
+        <img src={images.hero} srcSet={heroSourceSet} sizes="100vw" alt="" width={images.heroWidth} height={images.heroHeight} fetchPriority="high" />
       </picture>
       <div className={styles.heroShade} />
       <div className={styles.heroContent}>

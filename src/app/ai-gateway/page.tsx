@@ -29,8 +29,7 @@ export default function GatewayPage() {
     <div className={styles.page}>
       <section className={styles.hero} aria-labelledby="gateway-title">
         <picture className={styles.heroBackdrop}>
-          <source media="(max-width: 700px)" srcSet="/media/platform/ai-gateway/hero-mobile.webp" />
-          <img src="/media/platform/ai-gateway/hero.webp" alt="" width={1800} height={1354} fetchPriority="high" />
+          <img src="/media/strategy.webp" alt="" width={1054} height={1451} fetchPriority="high" />
         </picture>
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="404" viewBox="0 0 640 404" fill="none">
+  <title>Defined data paths</title>
+  <desc>Three information sources pass through a bounded processing layer before reaching approved destinations.</desc>
+  <g stroke="#ABB7BC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M174 106H212V202H264M174 202H264M174 298H212V202" opacity=".65"/>
+    <path d="M376 202H428V106H466M376 202H466M428 202V298H466" opacity=".65"/>
+    <rect x="228" y="72" width="184" height="260" rx="28" stroke-dasharray="4 9" opacity=".5"/>
+    <rect x="54" y="70" width="120" height="72" rx="12"/>
+    <path d="M76 88H96V122H76V88ZM82 96H90M82 103H90M82 110H88M110 96H152M110 104H144M110 112H149" opacity=".85"/>
+    <rect x="54" y="166" width="120" height="72" rx="12"/>
+    <path d="M74 184H98V220H74V184ZM74 193H98M74 202H98M74 211H98M82 184V220M110 192H152M110 201H142M110 210H149" opacity=".85"/>
+    <rect x="54" y="262" width="120" height="72" rx="12"/>
+    <path d="M75 282H87L92 288H99V315H75V282ZM110 289H152M110 298H144M110 307H149" opacity=".85"/>
+  </g>
+  <g stroke="#F0F3F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="264" y="132" width="112" height="140" rx="18" fill="#C7D0D1" fill-opacity=".035"/>
+    <path d="M286 161H354M286 172H340M286 194H354M286 205H333M286 227H354M286 238H344" opacity=".85"/>
+    <circle cx="500" cy="106" r="34"/>
+    <circle cx="500" cy="202" r="34"/>
+    <circle cx="500" cy="298" r="34"/>
+    <path d="M486 106L496 116L515 96M486 202L496 212L515 192M486 298L496 308L515 288"/>
+  </g>
+  <g fill="#DDE5E6">
+    <circle cx="212" cy="202" r="3.5"/>
+    <circle cx="428" cy="202" r="3.5"/>
+    <circle cx="264" cy="202" r="3"/>
+    <circle cx="376" cy="202" r="3"/>
+  </g>
+</svg>

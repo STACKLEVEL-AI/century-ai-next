@@ -5,11 +5,11 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import styles from "./Scenarios.module.css";
 
 const scenarios = [
-  { name: "Customer experience", src: "/media/industries/banking/workflows.webp", width: 1440, height: 804, position: "50% center", title: "Every conversation.\nA useful next step.", href: "/agents/" },
+  { name: "Customer experience", src: "/media/century/photos/banking-advice.webp", width: 1600, height: 900, position: "84% center", title: "Every conversation.\nA useful next step.", href: "/agents/" },
   { name: "Employee assistance", src: "/media/employee-assistance-woman.webp", width: 1600, height: 900, position: "50% center", title: "Company knowledge.\nReady when you need it.", href: "/agents/" },
   { name: "Business operations", src: "/media/workflows.webp", width: 1200, height: 675, position: "55% center", title: "Keep your work\nmoving forward.", href: "/systems/" },
   { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "One foundation.\nMore possibilities.", href: "/ai-os/" },
-  { name: "Hands-on deployment", src: "/media/platform/deployment/engineering.webp", width: 1456, height: 816, position: "20% center", title: "From AI ambition\nto everyday progress.", href: "/deployment/" },
+  { name: "Hands-on deployment", src: "/media/century/photos/team-workshop.webp", width: 1600, height: 900, position: "50% center", title: "From AI ambition\nto everyday progress.", href: "/deployment/" },
 ];
 
 export default function Scenarios() {

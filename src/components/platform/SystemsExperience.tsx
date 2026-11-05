@@ -35,7 +35,7 @@ function SystemWorkflow({ index }: { index: number }) {
 export default function SystemsExperience() {
   return <div className={styles.page}>
     <section className={styles.hero} aria-labelledby="systems-title">
-      <img className={styles.heroImage} src="/media/platform/systems/motion.webp" srcSet="/media/platform/systems/motion-720.webp 720w, /media/platform/systems/motion-1280.webp 1280w, /media/platform/systems/motion.webp 1800w" sizes="100vw" alt="" width="1800" height="974" fetchPriority="high" decoding="async" />
+      <img className={styles.heroImage} src="/media/closing.webp" alt="" width="1200" height="495" fetchPriority="high" decoding="async" />
       <div className={styles.heroShade} />
       <div className={styles.heroContent}><p className={styles.productName}><SystemsSymbol />Century Systems</p><h1 id="systems-title">Business software shaped around the way you work.</h1><p className={styles.heroDescription}>AI-assisted systems designed around your people, processes and existing tools.</p></div>
       <a className={styles.scrollLink} href="#systems-design"><span>Explore Systems</span><ArrowDown size={17} /></a>
@@ -49,7 +49,7 @@ export default function SystemsExperience() {
           <article><span>03</span><div><h3>Consider every role.</h3><p>Requesters, operators and reviewers need different context. Give each a clear responsibility and the right view of the work.</p></div></article>
         </div>
       </div>
-      <div className={styles.adaptVisual}><div className={styles.workPhoto}><img src="/media/platform/systems/working-team.webp" srcSet="/media/platform/systems/working-team-720.webp 720w, /media/platform/systems/working-team-1280.webp 1280w, /media/platform/systems/working-team.webp 1800w" sizes="(max-width: 820px) 100vw, 55vw" width="1800" height="1005" alt="A colleague working at a monitor in an office" loading="lazy" /><div className={styles.photoNote}><span>Designed around your team</span><p>People. Process. Context.</p></div></div><div className={styles.roleLine}><span><Users size={16} />Requester</span><span><Settings2 size={16} />Operator</span><span><ShieldCheck size={16} />Reviewer</span></div></div>
+      <div className={styles.adaptVisual}><div className={styles.workPhoto}><img src="/media/century/photos/support-team.webp" srcSet="/media/century/photos/support-team-768.webp 768w, /media/century/photos/support-team.webp 1600w" sizes="(max-width: 820px) 100vw, 55vw" width="1600" height="900" alt="Support colleagues reviewing information at a computer" loading="lazy" /><div className={styles.photoNote}><span>Designed around your team</span><p>People. Process. Context.</p></div></div><div className={styles.roleLine}><span><Users size={16} />Requester</span><span><Settings2 size={16} />Operator</span><span><ShieldCheck size={16} />Reviewer</span></div></div>
     </div></section>
 
     <section className={`${styles.section} ${styles.darkSection} ${styles.benefitsSection}`} aria-labelledby="systems-benefits-title"><div className={styles.shell}>
@@ -76,7 +76,7 @@ export default function SystemsExperience() {
     <section className={styles.section} aria-labelledby="systems-delivery-title"><div className={styles.shell}>
       <h2 id="systems-delivery-title">Built with your team.<br />Deployed around your needs.</h2>
       <div className={styles.deliveryCards}>
-        <a className={styles.deliveryPhoto} href="/deployment/"><img src="/media/workflows.webp" width="1200" height="675" alt="People collaborating in a working environment" loading="lazy" /><div><span>From discovery to daily use</span><h3>A practical path<br />to rollout.</h3><p>Map the process, agree a useful first scope and involve the people who will operate and review the result.</p><ArrowUpRight size={23} aria-hidden="true" /></div></a>
+        <a className={styles.deliveryPhoto} href="/deployment/"><img src="/media/workflows.webp" width="1200" height="675" alt="An aerial view of a logistics centre and loading docks" loading="lazy" /><div><span>From discovery to daily use</span><h3>A practical path<br />to rollout.</h3><p>Map the process, agree a useful first scope and involve the people who will operate and review the result.</p><ArrowUpRight size={23} aria-hidden="true" /></div></a>
         <a className={styles.deliveryArchitecture} href="/deployment/"><div className={styles.architectureGraphic} aria-hidden="true"><div className={styles.architectureTop}><Network size={29} strokeWidth={1} /><span>Your environment</span></div><div className={styles.architectureConnector} /><div className={styles.architectureNodes}><span><BookOpen size={21} strokeWidth={1.2} />Knowledge</span><span><SystemsSymbol />Century</span><span><ShieldCheck size={21} strokeWidth={1.2} />Access</span></div></div><div className={styles.architectureCopy}><span>Environment & ownership</span><h3>Keep your requirements<br />at the centre.</h3><p>Agree hosting, data access, integration ownership and operational responsibilities as part of the deployment.</p><ArrowUpRight size={23} aria-hidden="true" /></div></a>
       </div>
     </div></section>

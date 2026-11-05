@@ -35,6 +35,8 @@ export type IndustryReference = {
     heroWidth: number;
     heroHeight: number;
     heroSmallWidth: number;
+    heroPosition: string;
+    heroMobilePosition: string;
     workflow: string;
     workflowAlt: string;
     workflowWidth: number;

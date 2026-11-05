@@ -17,11 +17,11 @@ const sectors = [
 
 const photos = [
   { src: "/media/industry.webp", width: 1200, height: 670 },
-  { src: "/media/industries/telecommunication/hero-1280.webp", width: 1280, height: 714 },
-  { src: "/media/industries/healthcare/hero-1280.webp", width: 1280, height: 714 },
-  { src: "/media/industries/utilities/hero-1280.webp", width: 1280, height: 714 },
-  { src: "/media/insurance/hero-1600.webp", width: 1600, height: 893 },
-  { src: "/media/industries/retail/hero-1280.webp", width: 1280, height: 714 },
+  { src: "/media/century/photos/telecom-operations.webp", srcSet: "/media/century/photos/telecom-operations-768.webp 768w, /media/century/photos/telecom-operations.webp 1600w", width: 1600, height: 900 },
+  { src: "/media/century/photos/healthcare-team.webp", srcSet: "/media/century/photos/healthcare-team-768.webp 768w, /media/century/photos/healthcare-team.webp 1600w", width: 1600, height: 900 },
+  { src: "/media/century/photos/energy-engineers.webp", srcSet: "/media/century/photos/energy-engineers-768.webp 768w, /media/century/photos/energy-engineers.webp 1600w", width: 1600, height: 900 },
+  { src: "/media/century/photos/support-team.webp", srcSet: "/media/century/photos/support-team-768.webp 768w, /media/century/photos/support-team.webp 1600w", width: 1600, height: 900 },
+  { src: "/media/century/photos/retail-team.webp", srcSet: "/media/century/photos/retail-team-768.webp 768w, /media/century/photos/retail-team.webp 1600w", width: 1600, height: 900 },
   { src: "/media/support.webp", width: 1200, height: 675 },
 ];
 
@@ -91,6 +91,8 @@ export default function HomeIndustries() {
             <img
               className={styles.photo}
               src={photo.src}
+              srcSet={photo.srcSet}
+              sizes={photo.srcSet ? "(max-width: 899px) 100vw, 55vw" : undefined}
               alt=""
               width={photo.width}
               height={photo.height}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="404" viewBox="0 0 640 404" fill="none">
+  <title>Access boundaries and review</title>
+  <desc>People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.</desc>
+  <g stroke="#ABB7BC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="188" y="64" width="264" height="276" rx="32" stroke-dasharray="4 9" opacity=".5"/>
+    <path d="M122 140H160V202H251M122 264H160V202M389 202H492" opacity=".7"/>
+    <circle cx="88" cy="126" r="12"/>
+    <path d="M65 159V154C65 143 75 138 88 138C101 138 111 143 111 154V159"/>
+    <rect x="62" y="244" width="52" height="40" rx="6"/>
+    <path d="M62 257H114M72 250H79M72 269H104M72 277H94"/>
+    <path d="M510 134V270" opacity=".55"/>
+    <path d="M522 134H570M522 202H582M522 270H562" opacity=".8"/>
+    <path d="M522 145H558M522 213H564M522 281H549" opacity=".35"/>
+  </g>
+  <g stroke="#EEF2F2" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 108C343 127 365 134 389 137V205C389 248 360 279 320 298C280 279 251 248 251 205V137C275 134 297 127 320 108Z" fill="#C7D0D1" fill-opacity=".035"/>
+    <path d="M320 130C337 142 352 148 368 151V204C368 235 349 258 320 275C291 258 272 235 272 204V151C288 148 303 142 320 130Z" opacity=".4"/>
+    <path d="M293 201L313 221L348 184" stroke-width="2.3"/>
+    <circle cx="510" cy="134" r="7" fill="#0B1012"/>
+    <circle cx="510" cy="202" r="7" fill="#0B1012"/>
+    <circle cx="510" cy="270" r="7" fill="#0B1012"/>
+  </g>
+  <g fill="#DDE5E6">
+    <circle cx="160" cy="202" r="3.5"/>
+    <circle cx="251" cy="202" r="3"/>
+    <circle cx="389" cy="202" r="3"/>
+  </g>
+</svg>

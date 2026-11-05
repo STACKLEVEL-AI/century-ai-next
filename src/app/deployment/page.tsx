@@ -22,13 +22,13 @@ export default function DeploymentPage() {
     <PlatformFrame
       headerVariant="overlay"
       contactTitle={<>Bring the next AI workflow<br />into everyday work.</>}
-      contactImage={{ src: "/media/platform/deployment/contact.webp", width: 1920, height: 700, position: "center bottom" }}
+      contactImage={{ src: "/media/closing.webp", width: 1200, height: 495, position: "center bottom" }}
     >
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="deployment-title">
           <picture className={styles.heroImage}>
-            <source media="(max-width: 700px)" srcSet="/media/platform/deployment/hero-mobile.webp" />
-            <img src="/media/platform/deployment/hero.webp" srcSet="/media/platform/deployment/hero-1280.webp 1280w, /media/platform/deployment/hero.webp 2000w" sizes="100vw" alt="" width={2000} height={1116} fetchPriority="high" />
+            <source media="(max-width: 700px)" srcSet="/media/century/photos/team-workshop-768.webp" />
+            <img src="/media/century/photos/team-workshop.webp" srcSet="/media/century/photos/team-workshop-768.webp 768w, /media/century/photos/team-workshop.webp 1600w" sizes="100vw" alt="" width={1600} height={900} fetchPriority="high" />
           </picture>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={styles.heroContent}>
@@ -48,7 +48,7 @@ export default function DeploymentPage() {
             </div>
             <div className={styles.roleCards}>
               <article className={styles.roleCard}>
-                <img src="/media/platform/deployment/engineering.webp" alt="People discussing an implementation during a workshop" width={1456} height={816} loading="lazy" />
+                <img src="/media/deployment.webp" alt="A workshop participant explaining a process to colleagues" width={1200} height={670} loading="lazy" />
                 <div className={styles.cardShade} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <span className={styles.cardLabel}>Engineering</span>
@@ -57,7 +57,7 @@ export default function DeploymentPage() {
                 </div>
               </article>
               <article className={styles.roleCard}>
-                <img src="/media/platform/deployment/strategy.webp" alt="A person moving through a collaborative workspace" width={765} height={542} loading="lazy" />
+                <img src="/media/century/photos/banking-advice.webp" srcSet="/media/century/photos/banking-advice-768.webp 768w, /media/century/photos/banking-advice.webp 1600w" sizes="(max-width: 700px) 100vw, 40vw" alt="People reviewing information during an advisory conversation" width={1600} height={900} loading="lazy" />
                 <div className={styles.cardShade} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <span className={styles.cardLabel}>Delivery strategy</span>

@@ -7,7 +7,7 @@
 .page .section h2 { margin:0; font-size:clamp(35px,3.2vw,46px); font-weight:300; line-height:1.13; letter-spacing:-.045em; }
 .page .hero { position:relative; min-height:650px; height:95svh; max-height:1080px; padding:110px 30px 90px; display:flex; justify-content:center; align-items:center; color:#fff; text-align:center; overflow:hidden; isolation:isolate; }
 .heroImage { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-3; }
-.heroShade { position:absolute; inset:0; background:linear-gradient(120deg,#391c1142,#4a150c19 55%,#340f1f1c); z-index:-2; }
+.heroShade { position:absolute; inset:0; background:linear-gradient(120deg,#07171380,#0b20136b 55%,#0d191780); z-index:-2; }
 .heroContent { width:min(100%,950px); }
 .page .productName { display:flex; justify-content:center; align-items:center; gap:12px; font-size:26px; font-weight:300; letter-spacing:-1px; line-height:1; margin:0 0 29px; }
 .symbol { width:28px; height:28px; display:grid; grid-template-columns:1fr 1fr; gap:3px; transform:rotate(-10deg); flex:none; }
@@ -132,10 +132,10 @@
 .accordionMinus { display:none; }
 .systemItem[open] .accordionPlus { display:none; }
 .systemItem[open] .accordionMinus { display:block; }
-.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/platform/agents/sky-720.webp') center/cover; }
-.page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#14272acf,#24475e40); z-index:-1; }
+.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/strategy.webp') center/cover; }
+.page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#091218e0,#10263180); z-index:-1; }
 .page .relatedGrid > a:nth-child(2) { background-position:25% center; }
-.page .relatedGrid > a:nth-child(3) { background-image:url('/media/platform/systems/motion-720.webp'); }
+.page .relatedGrid > a:nth-child(3) { background-image:url('/media/closing.webp'); }
 .page .relatedGrid > a:nth-child(3)::before { background:linear-gradient(0deg,#292636e6,#3e39594f); }
 .page .relatedGrid p { color:#f4f8f0cf; }
 @media(max-width:560px) { .systemItem summary { padding:26px 0; } }

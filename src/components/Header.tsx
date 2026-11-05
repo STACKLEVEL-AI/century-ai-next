@@ -12,7 +12,7 @@ function PressCard() {
       <p className={styles.pressLabel}>Company &amp; press</p>
       <a className={styles.pressCard} href="/press/">
         <div className={styles.pressImage}>
-          <img src="/media/platform/deployment/strategy.webp" alt="" width={765} height={542} loading="lazy" />
+          <img src="/images/enterprise-atrium-960.webp" alt="" width={960} height={540} loading="lazy" />
           <img className={styles.pressWordmark} src="/brand/century-logo-white.svg" alt="" width={221} height={58} />
         </div>
         <span className={styles.pressTitle}>A clear introduction to Century.</span>

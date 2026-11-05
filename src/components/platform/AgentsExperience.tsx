@@ -63,7 +63,7 @@ function KnowledgeIllustration() {
 function CapabilityIllustration({ active }: { active: number }) {
   const icons = [MessageSquare, FileText, AudioLines, BookOpen];
   return <div className={styles.capabilityArt}>
-    <img className={styles.capabilitySky} src="/media/platform/agents/sky.webp" srcSet="/media/platform/agents/sky-720.webp 720w, /media/platform/agents/sky-1280.webp 1280w, /media/platform/agents/sky.webp 1800w" sizes="(max-width: 820px) 100vw, 55vw" alt="" width="1800" height="1013" loading="lazy" />
+    <img className={styles.capabilitySky} src="/media/strategy.webp" alt="" width="1054" height="1451" loading="lazy" />
     <svg className={styles.orbitLines} viewBox="0 0 600 520" fill="none" aria-hidden="true"><ellipse cx="300" cy="260" rx="225" ry="138" transform="rotate(-28 300 260)" /><ellipse cx="300" cy="260" rx="225" ry="138" transform="rotate(33 300 260)" /><circle cx="300" cy="260" r="178" /></svg>
     <div className={styles.orb}><AgentSymbol /></div>
     {capabilities[active].labels.map((label, index) => { const Icon = icons[index]; return <span key={label} className={`${styles.orbitLabel} ${styles[`orbitLabel${index}`]}`}><Icon size={17} strokeWidth={1.4} />{label}</span>; })}
@@ -76,7 +76,7 @@ export default function AgentsExperience() {
 
   return <div className={styles.page}>
     <section className={styles.hero} aria-labelledby="agents-title">
-      <img className={styles.heroImage} src="/media/platform/agents/sky.webp" srcSet="/media/platform/agents/sky-720.webp 720w, /media/platform/agents/sky-1280.webp 1280w, /media/platform/agents/sky.webp 1800w" sizes="100vw" width="1800" height="1013" alt="" fetchPriority="high" decoding="async" />
+      <img className={styles.heroImage} src="/media/strategy.webp" width="1054" height="1451" alt="" fetchPriority="high" decoding="async" />
       <div className={styles.heroShade} />
       <div className={styles.heroContent}>
         <p className={styles.productName}><AgentSymbol />Century Agents</p>
@@ -95,7 +95,7 @@ export default function AgentsExperience() {
             <div className={styles.useCopy}><h3>Make everyday work flow.</h3><p>Bring information, decisions and next steps into a focused process, with people involved where their judgement matters.</p><ArrowUpRight size={21} aria-hidden="true" /></div>
           </a>
           <a className={`${styles.useCard} ${styles.customerCard}`} href="#agent-scenarios">
-            <img src="/media/platform/agents/customer-support.webp" srcSet="/media/platform/agents/customer-support-720.webp 720w, /media/platform/agents/customer-support.webp 1098w" sizes="(max-width: 820px) 100vw, 33vw" alt="A customer service colleague working at her laptop" width="1098" height="1300" loading="lazy" />
+            <img src="/media/century/photos/support-team.webp" srcSet="/media/century/photos/support-team-768.webp 768w, /media/century/photos/support-team.webp 1600w" sizes="(max-width: 820px) 100vw, 33vw" alt="A support specialist wearing a headset and reviewing information at a computer" width="1600" height="900" loading="lazy" />
             <div className={styles.useCopy}><h3>Help the people you serve.</h3><p>Give service teams useful context, prepare relevant answers and keep a clear path from assistance to a human handover.</p><ArrowUpRight size={21} aria-hidden="true" /></div>
           </a>
           <a className={`${styles.useCard} ${styles.peopleCard}`} href="#agent-capabilities">

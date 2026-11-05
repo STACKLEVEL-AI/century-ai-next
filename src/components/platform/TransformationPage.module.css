@@ -19,7 +19,7 @@
 }
 .heroImage, .heroImage img, .heroShade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .heroImage img { object-fit: cover; object-position: center; }
-.heroShade { background: linear-gradient(180deg, rgba(5, 10, 18, .1), rgba(5, 10, 18, .24) 60%, rgba(5, 10, 18, .1)); }
+.heroShade { background: linear-gradient(180deg, rgba(5, 10, 18, .38), rgba(5, 10, 18, .48) 60%, rgba(5, 10, 18, .36)); }
 .heroContent { position: relative; z-index: 1; width: min(100%, 1200px); text-align: center; }
 .page .hero h1 {
   margin: 0;
@@ -69,7 +69,7 @@
 .cardImage, .cardImage img, .cardShade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cardImage img { object-fit: cover; object-position: center; transition: transform 600ms ease; }
 .relatedCard:hover .cardImage img { transform: scale(1.025); }
-.cardShade { background: linear-gradient(180deg, rgba(0, 6, 4, .04), rgba(0, 6, 4, .06) 30%, rgba(0, 6, 4, .84) 100%); }
+.cardShade { background: linear-gradient(180deg, rgba(0, 6, 4, .4), rgba(0, 6, 4, .1) 30%, rgba(0, 6, 4, .84) 100%); }
 .cardArrow { position: absolute; z-index: 1; top: 30px; right: 30px; color: #fff; transition: transform 250ms ease; }
 .relatedCard:hover .cardArrow { transform: translate(3px, -3px); }
 .cardContent { position: relative; z-index: 1; max-width: 490px; }

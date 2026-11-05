@@ -47,7 +47,7 @@
 
 .hero { position: relative; display: flex; align-items: flex-end; height: 100vh; min-height: 500px; overflow: hidden; }
 .heroPicture, .heroPicture img, .heroShade { position: absolute; inset: 0; width: 100%; height: 100%; }
-.heroPicture img { display: block; object-fit: cover; object-position: center; }
+.heroPicture img { display: block; object-fit: cover; object-position: var(--hero-position, center); }
 .heroShade { background: linear-gradient(180deg, rgba(84, 84, 84, .29), transparent 74px), linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, .7) 100%); }
 .heroContent { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; width: calc(100% - var(--industry-gutter) * 2); max-width: 1680px; margin: 0 auto 80px; }
 .page .hero h1 { margin: 0; font-size: 200px; line-height: 1.05; letter-spacing: -.06em; color: #fafafa; }
@@ -55,7 +55,7 @@
 .heroDescription p { width: 400px; max-width: 100%; border-left: 2px solid rgba(255, 255, 255, .65); padding-left: 40px; font-family: var(--industry-heading); font-size: 26px; font-weight: 300; line-height: 1.25; letter-spacing: -.05em; text-wrap: balance; }
 
 .benefits { position: relative; padding: 120px var(--industry-gutter); background: #000; overflow: hidden; }
-.benefitBackground { position: absolute; inset: 0; background: url("/media/insurance/dark-gradient.webp") center / cover; mask-image: linear-gradient(338deg, transparent 48%, #000 100%); }
+.benefitBackground { position: absolute; inset: 0; background: linear-gradient(180deg, #0005, #0008), url("/media/platform.webp") center / cover; mask-image: linear-gradient(338deg, transparent 48%, #000 100%); }
 .benefits .container { position: relative; }
 .page .benefits h2 { max-width: 862px; line-height: 1.25; }
 .benefitGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 42px; margin-top: 92px; min-height: 300px; }
@@ -87,7 +87,7 @@
 .reason:focus-visible { outline: 2px solid #171719; outline-offset: -4px; }
 
 .cta { position: relative; display: flex; align-items: center; justify-content: center; height: 700px; padding: 160px var(--industry-gutter); background: #000; overflow: hidden; }
-.ctaBackground { position: absolute; inset: 0; background: url("/media/insurance/dark-gradient.webp") center / cover; mask-image: radial-gradient(141% 80% at 50.5% 100%, transparent 35.4088%, #000 100%); }
+.ctaBackground { position: absolute; inset: 0; background: linear-gradient(180deg, #0005, #0008), url("/media/platform.webp") center / cover; mask-image: radial-gradient(141% 80% at 50.5% 100%, transparent 35.4088%, #000 100%); }
 .ctaContent { position: relative; display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%; max-width: 1680px; text-align: center; }
 .page .cta h2 { width: 660px; max-width: 50%; }
 .lightButton { display: inline-flex; justify-content: center; align-items: center; min-width: 140px; min-height: 50px; padding: 6px 18px; border-radius: 100px; font-size: 14px; line-height: 20px; letter-spacing: -.02em; text-decoration: none; font-weight: 400; transition: background .2s ease; }
@@ -132,7 +132,7 @@ a.directoryTextLink:hover { text-decoration: underline; text-underline-offset: 4
 .page .directoryPhoto h3 { min-width: 0; font-size: clamp(36px, 4.2vw, 64px); line-height: 1.05; letter-spacing: -.05em; }
 .directoryPhoto > div > svg { flex-shrink: 0; margin-bottom: 5px; }
 .directoryCard > p { max-width: 490px; margin: 24px 0 20px; color: #767676; font-size: 17px; line-height: 1.4; }
-.directoryInvitation { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 440px; padding: 40px; border-radius: 4px; color: #fafafa; background: #080808 url("/media/insurance/dark-gradient.webp") center / cover; }
+.directoryInvitation { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 440px; padding: 40px; border-radius: 4px; color: #fafafa; background: linear-gradient(180deg, #08080888, #080808dd), #080808 url("/media/platform.webp") center / cover; }
 .page .directoryInvitation h3 { margin: 36px 0 24px; font-size: 44px; line-height: 1.05; letter-spacing: -.04em; }
 .directoryInvitation > p:not(.eyebrow) { max-width: 360px; color: #ababab; font-size: 17px; line-height: 1.4; }
 .directoryInvitation .lightButton { margin-top: 32px; }
@@ -179,6 +179,7 @@ a.directoryTextLink:hover { text-decoration: underline; text-underline-offset: 4
 }
 
 @media (max-width: 879.98px) {
+  .heroPicture img { object-position: var(--hero-mobile-position, var(--hero-position, center)); }
   .page { --industry-gutter: 24px; }
   .hero { height: 80vh; height: 80svh; min-height: 480px; }
   .heroContent { gap: 24px; margin-bottom: 60px; }

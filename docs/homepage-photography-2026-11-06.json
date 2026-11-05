@@ -14,11 +14,11 @@
     },
     {
       "slot": "Customer experience",
-      "src": "/media/industries/banking/workflows.webp",
-      "width": 1440,
-      "height": 804,
-      "bytes": 96896,
-      "sha256": "0f162cae1af945ad52be4f74232d99f51c84010fcc7492c9ad5756b54e37c42d"
+      "src": "/media/century/photos/banking-advice.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 124176,
+      "sha256": "5b56be660df87e16e201f1d186f3a82ff036a30ef467d431fb3a39c3cf1a69cb"
     },
     {
       "slot": "Employee assistance",
@@ -46,11 +46,11 @@
     },
     {
       "slot": "Hands-on deployment",
-      "src": "/media/platform/deployment/engineering.webp",
-      "width": 1456,
-      "height": 816,
-      "bytes": 249220,
-      "sha256": "cb6d032605b6665b12f0e1e8a3e66a13c55a376dc4cab4cc756aebacfb520528"
+      "src": "/media/century/photos/team-workshop.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 155954,
+      "sha256": "42ae2c4a6b534a92648b68b9e8cd9b54c979700ebd7dee4688ba7e109e53f66f"
     },
     {
       "slot": "AI OS backdrop",
@@ -86,43 +86,43 @@
     },
     {
       "slot": "Telecommunications",
-      "src": "/media/industries/telecommunication/hero-1280.webp",
-      "width": 1280,
-      "height": 714,
-      "bytes": 83364,
-      "sha256": "e5ec67c7489f9c76d401cb34874544033cb1930b9f1096aee7841af9f414d756"
+      "src": "/media/century/photos/telecom-operations.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 144010,
+      "sha256": "4abaddf015281c0ed4543d56ea57e222d309a5ebef784738661c749f32ab075b"
     },
     {
       "slot": "Healthcare",
-      "src": "/media/industries/healthcare/hero-1280.webp",
-      "width": 1280,
-      "height": 714,
-      "bytes": 61464,
-      "sha256": "2d923d31597393b19c9940e0a9f45ea089ab5d3ca1e937698607c26b888f91e0"
+      "src": "/media/century/photos/healthcare-team.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 96342,
+      "sha256": "adfa983ad4066010923f03fc519b8ec4ec88c69e2aed9151406b53626d8e0c48"
     },
     {
       "slot": "Utilities",
-      "src": "/media/industries/utilities/hero-1280.webp",
-      "width": 1280,
-      "height": 714,
-      "bytes": 289902,
-      "sha256": "9bd1608df848fbb7be8ceae9e47036a510d5c322b48e6a877a150964dd060177"
+      "src": "/media/century/photos/energy-engineers.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 113164,
+      "sha256": "c06c07d1172649d570d6624ebbd148b7dcb156baa6d1954fa21445c067f59833"
     },
     {
       "slot": "Insurance",
-      "src": "/media/insurance/hero-1600.webp",
+      "src": "/media/century/photos/support-team.webp",
       "width": 1600,
-      "height": 893,
-      "bytes": 134488,
-      "sha256": "5927acb061431696b1fc9d96b170d33da788b947cd257a6c7256ccba850c5585"
+      "height": 900,
+      "bytes": 108150,
+      "sha256": "8fcec4cfc6d2e163660511146dea4e334359a376ea55d25ff4be22820886dd55"
     },
     {
       "slot": "Retail",
-      "src": "/media/industries/retail/hero-1280.webp",
-      "width": 1280,
-      "height": 714,
-      "bytes": 105200,
-      "sha256": "a1cf56efa97a9106c0c193472045a95dc9fdaf36aff76a3292586fb8eca6a8f7"
+      "src": "/media/century/photos/retail-team.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 188288,
+      "sha256": "56a12df5cc4da62969c348b81165e236f268f52e4f348aae06e111b90bf8aac6"
     },
     {
       "slot": "Airlines",
@@ -134,19 +134,19 @@
     },
     {
       "slot": "Team backdrop",
-      "src": "/media/platform/systems/working-team-1280.webp",
-      "width": 1280,
-      "height": 714,
-      "bytes": 27602,
-      "sha256": "e8e24b6c992b8cc1cc98dcb4aab03ebb2ee47d5087937563fb9a58a81458b428"
+      "src": "/media/century/photos/team-collaboration.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 209634,
+      "sha256": "c7494c14cc6d4611c50b868420ba27aa3bc91504dbb741ba382c303f328a6237"
     },
     {
       "slot": "Company menu press card",
-      "src": "/media/platform/deployment/strategy.webp",
-      "width": 765,
-      "height": 542,
-      "bytes": 33718,
-      "sha256": "6c8f73b71f78344d6eab4912f9a62b5e9936954481a44feb1f1ce56a9f49cf31"
+      "src": "/images/enterprise-atrium-960.webp",
+      "width": 960,
+      "height": 540,
+      "bytes": 137536,
+      "sha256": "8d7cb121129902611c2bb637eaa8e2da7bb8a524bfbc17d0d885d1c38e3a509c"
     }
   ],
   "generated_asset": {
@@ -176,7 +176,12 @@
     "unique_sha256": 18,
     "static_video_extracts": 0
   },
-  "verification": {
+  "image_replacement_update": {
+    "integrated_commit": "96a8b44733d527e74822531b5eacd963ff874ac0",
+    "manifest": "image-replacement-2026-11-06.json",
+    "change": "Nine borrowed-image uses replaced with original project/generated imagery; preserves the 18 distinct logical homepage slots, Employee assistance image, layout and interactions."
+  },
+  "previous_publication_verification": {
     "implementation_commit": "96a8b44733d527e74822531b5eacd963ff874ac0",
     "deployment_url": "https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42115401520",
     "deployment_result": "success",

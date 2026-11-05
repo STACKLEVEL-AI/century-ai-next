@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="808" viewBox="0 0 1280 808" role="img" aria-labelledby="title desc">
+  <title id="title">AI with a review path</title>
+  <desc id="desc">A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="m1 1 6 3.5L1 8" fill="none" stroke="#d49c79" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1280" height="808" fill="#111515"/>
+  <g fill="none" stroke="#27312e" stroke-width="1"><path d="M88 208h1104M88 736h1104"/></g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="88" y="92" fill="#d49c79" font-size="19" letter-spacing="3">EVALUATE BEFORE EXPANDING</text>
+    <text x="88" y="151" fill="#f2f1e9" font-size="38">AI with a review path.</text>
+    <g fill="none" stroke="#d49c79" stroke-width="2" marker-end="url(#arrow)"><path d="M388 390h95"/><path d="M790 390h95"/></g>
+    <rect x="88" y="280" width="300" height="220" rx="24" fill="#1b2421" stroke="#43514b"/>
+    <rect x="490" y="280" width="300" height="220" rx="24" fill="#eeeee6"/>
+    <rect x="892" y="280" width="300" height="220" rx="24" fill="#1b2421" stroke="#43514b"/>
+    <g fill="none" stroke="#d49c79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="128" y="317" width="30" height="34" rx="5"/><path d="M136 328h14m-14 9h10"/>
+      <circle cx="944" cy="326" r="9"/><path d="M930 351v-5a14 14 0 0 1 28 0v5m4-19 5 5 9-10"/>
+    </g>
+    <text x="528" y="346" fill="#657267" font-size="25">AI</text>
+    <text x="126" y="397" fill="#f2f1e9" font-size="29">Defined task</text>
+    <text x="528" y="397" fill="#18231d" font-size="29">AI response</text>
+    <text x="930" y="397" fill="#f2f1e9" font-size="29">Human review</text>
+    <g fill="#b1bbb5" font-size="20"><text x="126" y="436">Approved knowledge</text><text x="126" y="465">A clear scope</text><text x="930" y="436">Check the result</text><text x="930" y="465">Decide the next step</text></g>
+    <g fill="#58665b" font-size="20"><text x="528" y="436">Evidence included</text><text x="528" y="465">Limitations visible</text></g>
+    <g fill="none" stroke="#43514b" stroke-width="2"><path d="M640 500v58H310v52m330-52v52m0-52h330v52"/></g>
+    <g fill="#1b2421" stroke="#43514b"><rect x="172" y="610" width="276" height="76" rx="38"/><rect x="502" y="610" width="276" height="76" rx="38"/><rect x="832" y="610" width="276" height="76" rx="38"/></g>
+    <g fill="none" stroke="#d49c79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m201 648 6 6 12-13m312 7 6 6 12-13m312 7 6 6 12-13"/></g>
+    <g fill="#e3e7df" font-size="21"><text x="236" y="656">Source quality</text><text x="566" y="656">Accuracy</text><text x="896" y="656">Scope</text></g>
+  </g>
+</svg>

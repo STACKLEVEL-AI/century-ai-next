@@ -29,7 +29,7 @@ export default function OperatingLayerExplorer() {
   }
   return <><div className={styles.explorer}>
     <div className={styles.architecture}>
-      <img className={styles.architectureBackdrop} src="/media/platform/ai-os/infrastructure.webp" alt="" width={1800} height={1009} loading="lazy" />
+      <img className={styles.architectureBackdrop} src="/media/platform.webp" alt="" width={1800} height={1009} loading="lazy" />
       <div className={styles.architecturePanel}>
         <span className={styles.architectureCaption}>CENTURY / OPERATING LAYER</span>
         <div className={styles.layerTabs} role="tablist" aria-label="Explore AI OS infrastructure">

@@ -7,7 +7,7 @@
 .page .section h2 { margin:0; font-size:clamp(35px,3.2vw,46px); font-weight:300; line-height:1.13; letter-spacing:-.045em; }
 .page .hero { position:relative; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:650px; height:95svh; max-height:1080px; padding:105px 30px 75px; overflow:hidden; color:#fff; text-align:center; isolation:isolate; }
 .heroImage { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-3; }
-.heroShade { position:absolute; inset:0; background:linear-gradient(180deg,#123a662b,#143c5012 48%,#11394433); z-index:-2; }
+.heroShade { position:absolute; inset:0; background:linear-gradient(180deg,#07172470,#061b247a 48%,#04151c91); z-index:-2; }
 .heroContent { width:min(100%,880px); }
 .page .productName { display:flex; gap:12px; justify-content:center; align-items:center; margin:0 0 29px; font-size:26px; line-height:1; letter-spacing:-1px; font-weight:300; }
 .symbol { width:28px; height:28px; display:grid; grid-template-columns:1fr 1fr; gap:3px; transform:rotate(-10deg); }
@@ -24,7 +24,7 @@
 .workCard { background:radial-gradient(ellipse at 33% 7%,#fffce6,transparent 60%),linear-gradient(150deg,#c8d7de,#bdcbd1 51%,#718d9d); }
 .workCard::after,.peopleCard::after { content:""; position:absolute; inset:45% 0 0; background:linear-gradient(0deg,#0f252dd4,#344f6900); z-index:-1; }
 .customerCard { background:#151a18; }
-.customerCard > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+.customerCard > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:25% center; z-index:-2; }
 .customerCard::after { content:""; position:absolute; inset:35% 0 0; background:linear-gradient(0deg,#080c0ffa,transparent); z-index:-1; }
 .peopleCard { background:linear-gradient(160deg,#9fc5e3,#4f85b0 58%,#32495b); }
 .page .useCopy { position:relative; width:100%; color:#fff; }
@@ -131,7 +131,7 @@
   .page .hero { height:82svh; min-height:620px; }.page .hero h1 { font-size:56px; }.page .heroDescription { max-width:540px; font-size:18px; }
   .useCases { grid-template-columns:1fr; gap:22px; margin-top:42px; }.useCard { min-height:440px; aspect-ratio:auto; padding:30px; }
   .useCopy { max-width:440px; }.page .useCopy h3 { font-size:29px; }.page .useCopy p { font-size:15px; }
-  .customerCard > img { object-position:center 30%; }.customerCard::after { inset:0; background:linear-gradient(0deg,#091013fa,transparent 90%); }
+  .customerCard > img { object-position:25% center; }.customerCard::after { inset:0; background:linear-gradient(0deg,#091013fa,transparent 90%); }
   .flowIllustration { max-width:285px; width:43%; left:auto; right:7%; top:32px; }.knowledgeIllustration { max-width:275px; width:42%; left:auto; right:7%; top:35px; }
   .workCard .useCopy,.peopleCard .useCopy { max-width:380px; }.flowLabel { text-align:right; }.knowledgeAnswer { padding:20px; }
   .capabilityLayout { grid-template-columns:1fr; gap:42px; }.capabilityArt { margin:0; aspect-ratio:1.3; }.sectionIntro { max-width:540px!important; }
@@ -161,9 +161,9 @@
 .accordionMinus { display:none; }
 .accordionItem[open] .accordionPlus { display:none; }
 .accordionItem[open] .accordionMinus { display:block; }
-.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/platform/agents/sky-720.webp') center/cover; }
-.page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#14272acf,#24475e40); z-index:-1; }
-.page .relatedGrid > a:nth-child(2) { background-image:url('/media/platform/systems/motion-720.webp'); }
+.page .relatedGrid > a { position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#577d8b url('/media/strategy.webp') center/cover; }
+.page .relatedGrid > a::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#091218e0,#10263180); z-index:-1; }
+.page .relatedGrid > a:nth-child(2) { background-image:url('/media/closing.webp'); }
 .page .relatedGrid > a:nth-child(3) { background-position:80% center; }
 .page .relatedGrid > a:nth-child(3)::before { background:linear-gradient(0deg,#292636e6,#3e39594f); }
 .page .relatedGrid p { color:#f4f8f0cf; }

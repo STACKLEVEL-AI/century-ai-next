@@ -51,7 +51,7 @@ function Lattice() {
 }
 
 function EnterpriseVisual({ kind }: { kind: string }) {
-  if (kind === "security" || kind === "data") return <img src={"/media/platform/ai-os/" + kind + ".webp"} alt="" width={640} height={404} loading="lazy" />;
+  if (kind === "security" || kind === "data") return <img src={"/media/century/diagrams/platform-" + kind + ".svg"} alt="" width={640} height={404} loading="lazy" />;
   if (kind === "deployment") return <div className={styles.deploymentDiagram} aria-hidden="true">
     <div><span>Shared environment</span><span>Dedicated environment</span><span>Your infrastructure</span></div>
     <div className={styles.deploymentStem} />
@@ -65,13 +65,12 @@ function EnterpriseVisual({ kind }: { kind: string }) {
 
 export default function AiOsPage() {
   return <PlatformFrame headerVariant="overlay"
-    contactImage={{ src: "/media/platform/ai-os/enterprise.webp", width: 1800, height: 1009 }}
+    contactImage={{ src: "/media/closing.webp", width: 1200, height: 495 }}
     contactTitle={<>Build a connected<br />way of working.</>}>
     <div className={styles.page}>
       <section className={styles.hero} aria-labelledby="os-title">
         <picture className={styles.heroBackdrop}>
-          <source media="(max-width: 700px)" srcSet="/media/platform/ai-os/hero-mobile.webp" />
-          <img src="/media/platform/ai-os/hero.webp" alt="" width={1800} height={1009} fetchPriority="high" />
+          <img src="/media/platform.webp" alt="" width={1800} height={1009} fetchPriority="high" />
         </picture>
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>

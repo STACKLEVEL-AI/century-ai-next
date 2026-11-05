@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="808" viewBox="0 0 1280 808" role="img" aria-labelledby="title desc">
+  <title id="title">One connected workspace</title>
+  <desc id="desc">Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.</desc>
+  <rect width="1280" height="808" fill="#111515"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="88" y="92" fill="#d49c79" font-size="19" letter-spacing="3">CONNECTED WORK</text>
+    <text x="88" y="151" fill="#f2f1e9" font-size="38">One place to bring work together.</text>
+    <g fill="none" stroke="#53655a" stroke-width="2" stroke-linejoin="round"><path d="M356 285h54v136h60m-114 40h114m-114 176h54V501h60M810 421h60V285h54m-114 176h114m-114 40h60v136h54"/></g>
+    <g fill="#1b2421" stroke="#43514b"><rect x="88" y="234" width="268" height="102" rx="18"/><rect x="88" y="410" width="268" height="102" rx="18"/><rect x="88" y="586" width="268" height="102" rx="18"/><rect x="924" y="234" width="268" height="102" rx="18"/><rect x="924" y="410" width="268" height="102" rx="18"/><rect x="924" y="586" width="268" height="102" rx="18"/></g>
+    <g fill="#d49c79"><circle cx="117" cy="285" r="4"/><circle cx="117" cy="461" r="4"/><circle cx="117" cy="637" r="4"/><circle cx="953" cy="285" r="4"/><circle cx="953" cy="461" r="4"/><circle cx="953" cy="637" r="4"/></g>
+    <g fill="#e3e7df" font-size="23"><text x="138" y="293">Approved sources</text><text x="138" y="469">Your workflows</text><text x="138" y="645">Existing systems</text><text x="974" y="293">People &amp; review</text><text x="974" y="469">Controlled actions</text><text x="974" y="645">Useful outcomes</text></g>
+    <rect x="470" y="370" width="340" height="180" rx="24" fill="#eeeee6"/>
+    <text x="640" y="444" fill="#18231d" font-size="46" text-anchor="middle">Century</text>
+    <text x="640" y="486" fill="#58665b" font-size="20" text-anchor="middle">Knowledge · Workflows · People</text>
+    <g fill="#d49c79"><circle cx="470" cy="421" r="4"/><circle cx="470" cy="461" r="4"/><circle cx="470" cy="501" r="4"/><circle cx="810" cy="421" r="4"/><circle cx="810" cy="461" r="4"/><circle cx="810" cy="501" r="4"/></g>
+    <path d="M88 736h1104" fill="none" stroke="#27312e"/>
+  </g>
+</svg>

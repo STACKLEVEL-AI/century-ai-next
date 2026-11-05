@@ -38,23 +38,20 @@ export default function TransformationPage() {
       headerVariant="overlay"
       contactTitle={<>Build the next chapter<br />of your organization.</>}
       contactImage={{
-        src: "/media/platform/ai-transformation/contact.webp",
-        width: 1920,
-        height: 1076,
+        src: "/media/closing.webp",
+        width: 1200,
+        height: 495,
         position: "center",
       }}
     >
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="transformation-title">
           <picture className={styles.heroImage}>
-            <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/hero-mobile.webp" />
             <img
-              src="/media/platform/ai-transformation/hero.webp"
-              srcSet="/media/platform/ai-transformation/hero-1280.webp 1280w, /media/platform/ai-transformation/hero.webp 2000w"
-              sizes="100vw"
+              src="/media/strategy.webp"
               alt=""
-              width={2000}
-              height={1121}
+              width={1054}
+              height={1451}
               fetchPriority="high"
             />
           </picture>
@@ -100,8 +97,8 @@ export default function TransformationPage() {
             <div className={styles.relatedCards}>
               <a className={styles.relatedCard} href="/ai-os/">
                 <picture className={styles.cardImage}>
-                  <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/ai-os-mobile.webp" />
-                  <img src="/media/platform/ai-transformation/ai-os.webp" alt="" width={1400} height={785} loading="lazy" />
+                  <source media="(max-width: 700px)" srcSet="/images/enterprise-atrium-640.webp 640w, /images/enterprise-atrium-960.webp 960w" sizes="100vw" />
+                  <img src="/images/enterprise-atrium.webp" srcSet="/images/enterprise-atrium-640.webp 640w, /images/enterprise-atrium-960.webp 960w, /images/enterprise-atrium.webp 1672w" sizes="(max-width: 700px) 100vw, 60vw" alt="" width={1672} height={941} loading="lazy" />
                 </picture>
                 <div className={styles.cardShade} aria-hidden="true" />
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
@@ -112,8 +109,8 @@ export default function TransformationPage() {
               </a>
               <a className={styles.relatedCard} href="/deployment/">
                 <picture className={styles.cardImage}>
-                  <source media="(max-width: 700px)" srcSet="/media/platform/ai-transformation/deployment-mobile.webp" />
-                  <img src="/media/platform/ai-transformation/deployment.webp" alt="" width={1400} height={781} loading="lazy" />
+                  <source media="(max-width: 700px)" srcSet="/media/century/photos/team-workshop-768.webp" />
+                  <img src="/media/century/photos/team-workshop.webp" srcSet="/media/century/photos/team-workshop-768.webp 768w, /media/century/photos/team-workshop.webp 1600w" sizes="(max-width: 700px) 100vw, 60vw" alt="" width={1600} height={900} loading="lazy" />
                 </picture>
                 <div className={styles.cardShade} aria-hidden="true" />
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
