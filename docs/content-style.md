@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English throughout the website. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface.
+Use clear English on the original routes and fluent formal German on `/de/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
 
 ## Display copy
 
@@ -11,6 +11,8 @@ Use a comma or a line break between paired short phrases when a separator helps 
 Article prose, editorial paragraphs, legal explanations and FAQ answers retain ordinary sentence punctuation. Preserve sentence boundaries inside descriptions with more than one sentence. Do not change punctuation in URLs, email addresses, numbers or technical identifiers.
 
 Update display text at its source, including labels inside SVG diagrams.
+
+English copy and structure are maintained in the source components; German copy is maintained in `src/locales/de/`. The build generates the German modules, diagrams and social image. Keep German nouns capitalized in dynamic labels and use complete messages when sentence fragments would require different grammar. Run `npm run locales:check` after a content edit; do not add untranslated fallback text to pass the check.
 
 ## Names and links
 

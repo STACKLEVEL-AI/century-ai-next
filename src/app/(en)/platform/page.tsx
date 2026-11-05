@@ -51,7 +51,7 @@ function Lattice() {
 }
 
 function EnterpriseVisual({ kind }: { kind: string }) {
-  if (kind === "security" || kind === "data") return <img src={"/media/century/diagrams/platform-" + kind + ".svg"} alt="" width={640} height={404} loading="lazy" />;
+  if (kind === "security" || kind === "data") return <img src={kind === "security" ? "/media/century/diagrams/platform-security.svg" : "/media/century/diagrams/platform-data.svg"} alt="" width={640} height={404} loading="lazy" />;
   if (kind === "deployment") return <div className={styles.deploymentDiagram} aria-hidden="true">
     <div><span>Own server</span><span>Rented infrastructure</span><span>Local or cloud models</span></div>
     <div className={styles.deploymentStem} />

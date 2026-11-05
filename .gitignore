@@ -32,3 +32,9 @@ next-env.d.ts
 .superpowers/
 playwright-report/
 test-results/
+
+# German pages are generated from English sources and the reviewed catalog
+src/generated/
+src/app/(de)/
+public/media/de/
+public/og/century-ai-eu-de.png

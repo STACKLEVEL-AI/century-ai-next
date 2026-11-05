@@ -103,16 +103,16 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
   expect(response?.status()).toBe(200);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-  await expect(page).toHaveTitle("Century | Enterprise AI for European Businesses");
+  await expect(page).toHaveTitle("Century | Innovation Management for Enterprise AI");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/");
-  await expect(page.locator("link[hreflang]")).toHaveCount(0);
+  await expect(page.locator("link[hreflang]")).toHaveCount(3);
   const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())["@graph"];
   expect(graph.map((node: { "@type": string }) => node["@type"])).toEqual(["WebSite", "WebPage"]);
   for (const node of graph) {
     expect(node.url).toBe("https://century-ai.eu/");
     expect(node["@id"]).toMatch(/^https:\/\/century-ai\.eu\/#/);
-    expect(node.inLanguage).toBe("en");
+    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? ["en", "de"] : "en");
   }
   // This checks rendered text, not text embedded in screenshot pixels.
   expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
@@ -124,7 +124,8 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/platform/");
 
   await page.goto("/404.html");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page not found");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Seite nicht gefunden");
+  await expect(page.getByRole("heading", { name: "Page not found" })).toBeVisible();
   const robots = await page.locator('meta[name="robots"]').evaluateAll((nodes) =>
     nodes.map((node) => node.getAttribute("content")).join(","),
   );

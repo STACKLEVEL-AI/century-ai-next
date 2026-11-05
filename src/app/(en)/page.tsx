@@ -8,10 +8,12 @@ import HomeIndustries from "@/components/HomeIndustries";
 import HomeTeam from "@/components/HomeTeam";
 import Footer from "@/components/Footer";
 import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
-import "./home.css";
+import { LOCALE } from "@/lib/locale";
+import { languageAlternates, localizedPath } from "@/lib/i18n";
+import "@/app/home.css";
 
 const ogImage = {
-  url: `${SITE_URL}/og/century-ai-eu.png`,
+  url: `${SITE_URL}/og/century-ai-eu${LOCALE === "de" ? "-de" : ""}.png`,
   width: 1200,
   height: 630,
   alt: "Century — Accelerate AI transformation across your business",
@@ -20,14 +22,16 @@ const ogImage = {
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: { canonical: localizedPath("/", LOCALE), languages: languageAlternates("/", SITE_URL) },
   robots: { index: true, follow: true },
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     type: "website",
     siteName: SITE_NAME,
-    url: `${SITE_URL}/`,
+    url: `${SITE_URL}${localizedPath("/", LOCALE)}`,
+    locale: LOCALE === "de" ? "de_DE" : "en_GB",
+    alternateLocale: LOCALE === "de" ? "en_GB" : "de_DE",
     images: [ogImage],
   },
   twitter: {
@@ -46,15 +50,15 @@ const structuredData = {
       "@id": `${SITE_URL}/#website`,
       url: `${SITE_URL}/`,
       name: SITE_NAME,
-      inLanguage: "en",
+      inLanguage: ["en", "de"],
     },
     {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/#webpage`,
-      url: `${SITE_URL}/`,
+      "@id": `${SITE_URL}${localizedPath("/", LOCALE)}#webpage`,
+      url: `${SITE_URL}${localizedPath("/", LOCALE)}`,
       name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
-      inLanguage: "en",
+      inLanguage: LOCALE,
       isPartOf: { "@id": `${SITE_URL}/#website` },
     },
   ],

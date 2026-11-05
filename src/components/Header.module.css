@@ -48,7 +48,7 @@
 .language { position: relative; }
 .language > summary { display: grid; place-items: center; width: 66px; min-height: 36px; border: 1px solid currentColor; border-radius: 100px; font-size: 12px; line-height: 16px; letter-spacing: 0; }
 .languagePanel { position: absolute; top: calc(100% + 12px); right: 0; min-width: 138px; padding: 8px; color: #1f1f1f; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; box-shadow: 0 8px 24px #0000000d; }
-.languagePanel > span { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 8px; font-size: 14px; }
+.languagePanel > :is(span, a) { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 8px; font-size: 14px; }
 
 .panel { position: absolute; top: 100%; left: 0; right: 0; min-height: min(350px, var(--panel-space)); max-height: var(--panel-space); overflow-y: auto; overscroll-behavior: contain; background: #fff; color: #1f1f1f; padding: 48px 24px 24px; }
 .panelInner { max-width: 1680px; margin-inline: auto; }
@@ -133,3 +133,7 @@
 @media (prefers-reduced-motion: reduce) {
   .header, .contact, .menuLink, .pressImage > img, .mobileGroup > summary > svg { transition: none; }
 }
+
+.languagePanel > a { text-decoration: none; border-radius: 4px; }
+.languagePanel > a:hover { background: #f1f3ee; }
+.languagePanel > a:focus-visible { outline: 2px solid #426b3f; outline-offset: -2px; }

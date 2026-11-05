@@ -75,7 +75,7 @@ export default function TransformationPage() {
 
         <section className={styles.principlesSection} id="transformation-principles" aria-labelledby="transformation-principles-title">
           <div className={`${styles.shell} ${styles.principlesGrid}`}>
-            <h2 id="transformation-principles-title">Five approaches<br />to the work</h2>
+            <h2 id="transformation-principles-title">Five approaches<br />for your work</h2>
             <div className={styles.principles}>
               {principles.map((principle, index) => (
                 <details key={principle.title} name="century-transformation-principles" open={index === 0} className={styles.principle}>

@@ -20,6 +20,7 @@ export type IndustryWorkflow = {
 export type Industry = {
   slug: IndustrySlug;
   title: string;
+  seoTitle: string;
   description: string;
   eyebrow: string;
   headline: string[];
@@ -41,6 +42,7 @@ export const industries: Industry[] = [
   {
     slug: "banking",
     title: "Banking",
+    seoTitle: "AI for Banking",
     description: "Explore banking AI workflows with a shared task register, controlled pilots, source references and accountable human review",
     eyebrow: "Century for banking",
     headline: ["Clarity for your", "most complex workflows."],
@@ -101,6 +103,7 @@ export const industries: Industry[] = [
   {
     slug: "telecommunication",
     title: "Telecommunications",
+    seoTitle: "AI for Telecommunications",
     description: "Explore Century for telecom service knowledge, fault triage, billing questions and clearer handovers between support teams.",
     eyebrow: "Century for telecommunications",
     headline: ["Keep the context.", "Move the request forward."],
@@ -161,6 +164,7 @@ export const industries: Industry[] = [
   {
     slug: "healthcare",
     title: "Healthcare",
+    seoTitle: "AI for Healthcare",
     description: "Explore Century for equipment documentation, quality procedures and operational knowledge, with role-based access, source versions and expert review",
     eyebrow: "Century for healthcare",
     headline: ["Less administrative friction.", "More time for people."],
@@ -221,6 +225,7 @@ export const industries: Industry[] = [
   {
     slug: "utilities",
     title: "Utilities",
+    seoTitle: "AI for Utilities",
     description: "Explore Century workflows for utility service requests, connections, operational knowledge and billing support with accountable review.",
     eyebrow: "Century for utilities",
     headline: ["Connect the information.", "Support the operation."],
@@ -281,6 +286,7 @@ export const industries: Industry[] = [
   {
     slug: "insurance",
     title: "Insurance",
+    seoTitle: "AI for Insurance",
     description: "Explore Century for policy knowledge, submission preparation and claims documentation, with evidence and human review at each decision point.",
     eyebrow: "Century for insurance",
     headline: ["Move the paperwork.", "Keep the judgment."],
@@ -341,6 +347,7 @@ export const industries: Industry[] = [
   {
     slug: "retail",
     title: "Retail",
+    seoTitle: "AI for Retail",
     description: "Explore Century for retail service knowledge, supplier documents, store procedures and reviewed customer-support workflows.",
     eyebrow: "Century for retail",
     headline: ["Everyday operations.", "Working together."],
@@ -401,6 +408,7 @@ export const industries: Industry[] = [
   {
     slug: "airlines",
     title: "Airlines",
+    seoTitle: "AI for Airlines",
     description: "Explore Century for airline service knowledge, disruption communication and claims-document preparation with source references and staff review.",
     eyebrow: "Century for airlines",
     headline: ["When plans change,", "keep the context clear."],

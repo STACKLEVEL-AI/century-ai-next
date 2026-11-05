@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type PointerEvent } from "react";
-import { ArrowRight, Check, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { headerNavigation, type HeaderNavigationGroup } from "@/lib/header-navigation";
 import TelegramLink from "./TelegramLink";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { LOCALE } from "@/lib/locale";
 import styles from "./Header.module.css";
 
 function PressCard() {
@@ -190,12 +192,7 @@ export default function Header({ variant = "overlay", showAnnouncement = true }:
           }}>Blog</a>
         </nav>
         <div className={styles.actions}>
-          <details className={styles.language} name="desktop-navigation" data-header-disclosure>
-            <summary aria-label="Language: English">EN</summary>
-            <div className={styles.languagePanel}>
-              <span lang="en" aria-current="true">English<Check size={14} aria-hidden="true" /></span>
-            </div>
-          </details>
+          <LanguageSwitcher locale={LOCALE} />
           <TelegramLink className={styles.contact}>Get in touch</TelegramLink>
           <details className={styles.mobile} name="desktop-navigation" data-header-disclosure data-mobile-navigation>
             <summary aria-label="Navigation menu">

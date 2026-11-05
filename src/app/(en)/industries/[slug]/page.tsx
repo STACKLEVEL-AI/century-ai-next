@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: IndustryPageProps) {
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) notFound();
-  return pageMetadata(`AI for ${industry.title}`, industry.description, `/industries/${industry.slug}`);
+  return pageMetadata(industry.seoTitle, industry.description, `/industries/${industry.slug}`);
 }
 
 export default async function IndustryPage({ params }: IndustryPageProps) {

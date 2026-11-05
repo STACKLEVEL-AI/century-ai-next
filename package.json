@@ -10,7 +10,12 @@
     "check:export": "node scripts/verify-export.mjs",
     "test:e2e": "playwright test",
     "assets:og": "node scripts/create-og.mjs",
-    "assets:film": "node scripts/create-enterprise-film.mjs"
+    "assets:film": "node scripts/create-enterprise-film.mjs",
+    "locales:generate": "node scripts/generate-locales.mjs",
+    "locales:check": "node scripts/generate-locales.mjs --check",
+    "predev": "npm run locales:generate",
+    "prebuild": "npm run locales:generate",
+    "pretypecheck": "npm run locales:generate"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",

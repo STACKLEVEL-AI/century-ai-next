@@ -15,7 +15,7 @@ function IndustryFooter() {
     <div className={styles.footerInner}>
       <div className={styles.footerLead}>
         <a href="/" aria-label="Century home"><img src="/brand/century-logo-white.svg" alt="Century" width={221} height={58} /></a>
-        <p>WE LEAVE IN THE<br />AI CENTURY</p>
+        <p lang="en">WE LEAVE IN THE<br />AI CENTURY</p>
         <TelegramLink className={styles.lightButton}>Get in touch</TelegramLink>
         <small>© {new Date().getFullYear()} Century</small>
       </div>
