@@ -6,21 +6,21 @@ import OperatingLayerRelated from "@/components/platform/OperatingLayerRelated";
 import { pageMetadata } from "@/lib/metadata";
 import styles from "@/components/platform/OperatingLayer.module.css";
 
-export const metadata = pageMetadata("Century AI OS", "One connected foundation for company knowledge, AI agents, business applications and human oversight.", "/ai-os");
+export const metadata = pageMetadata("Century AI OS", "Bring specification, development and governance into one operating environment for enterprise AI, with company knowledge, agents, access rules and quality controls", "/ai-os");
 
 const advantages = [
-  { title: "Freedom to choose models", text: "Make model decisions around the task, the information involved and the outcomes your team needs", icon: Boxes },
-  { title: "A foundation to build on", text: "Reuse useful integrations, instructions and review patterns as the next business workflow takes shape", icon: Layers3 },
-  { title: "Knowledge in context", text: "Connect work to approved information, with clear sources and a deliberate approach to access", icon: Database },
-  { title: "Shared operating rules", text: "Bring ownership, data boundaries and human review into the same design as the application", icon: ShieldCheck },
-  { title: "Learning across workflows", text: "Use the feedback from everyday work to refine the next implementation and decide where to expand", icon: Network },
+  { title: "Model independence", text: "Choose models for each task and data policy, then compare quality on your own documents and questions", icon: Boxes },
+  { title: "A shared automation backlog", text: "Collect requests through guided AI interviews and assess readiness across 27 blocks in seven categories before development", icon: Layers3 },
+  { title: "Knowledge with evidence", text: "Recognise scanned documents and retrieve relevant passages with permissions, source links and document versions", icon: Database },
+  { title: "Governance in daily work", text: "Review quality, versions and activity logs, with clear roles and rules for the data each model can use", icon: ShieldCheck },
+  { title: "A cycle of improvement", text: "Feed findings from live workflows back into specifications, then let your team build and evaluate the next iteration", icon: Network },
 ];
 
 const enterprise = [
-  { title: "Deployment that fits", description: "Choose the environment with your infrastructure team. Agree where the application runs, who operates it and how it connects to existing systems", href: "/deployment/", link: "Explore deployment", visual: "deployment" },
-  { title: "Security by design", description: "Define access, operating responsibilities and escalation paths before extending a workflow into a new part of the business", href: "/security/", link: "Our approach to security", visual: "security" },
-  { title: "Clear data boundaries", description: "Review the information each process uses, its permitted destinations and the retention requirements that apply to your organization", href: "/privacy/", link: "Privacy and data handling", visual: "data" },
-  { title: "Requirements made explicit", description: "Document the controls and evidence your organization needs. Review the scope with the people responsible for compliance and procurement", href: "/security/", link: "Discuss your requirements", visual: "requirements" },
+  { title: "Deployment on your terms", description: "Run Century on your own or rented infrastructure, with models and capacity selected around the workload and your data requirements", href: "/deployment/", link: "Explore deployment", visual: "deployment" },
+  { title: "Access that follows the role", description: "Set permissions for departments, knowledge sources and tools so assistants work with the information each user is allowed to access", href: "/security/", link: "Our approach to security", visual: "security" },
+  { title: "Rules for model data", description: "Define which data may reach each model and record those decisions in logs, with cloud processing governed by your organisation's policies", href: "/privacy/", link: "Privacy and data handling", visual: "data" },
+  { title: "Acceptance before expansion", description: "Agree success criteria and control questions with process owners, evaluate the first workflow and use the findings to decide what comes next", href: "/security/", link: "Discuss your requirements", visual: "requirements" },
 ];
 
 function Lattice() {
@@ -53,13 +53,13 @@ function Lattice() {
 function EnterpriseVisual({ kind }: { kind: string }) {
   if (kind === "security" || kind === "data") return <img src={"/media/century/diagrams/platform-" + kind + ".svg"} alt="" width={640} height={404} loading="lazy" />;
   if (kind === "deployment") return <div className={styles.deploymentDiagram} aria-hidden="true">
-    <div><span>Shared environment</span><span>Dedicated environment</span><span>Your infrastructure</span></div>
+    <div><span>Own server</span><span>Rented infrastructure</span><span>Local or cloud models</span></div>
     <div className={styles.deploymentStem} />
     <strong><img src="/brand/century-logo-white.svg" alt="" width={142} height={37} /></strong>
   </div>;
   return <div className={styles.requirementsDiagram} aria-hidden="true">
-    <div><span>Requirements</span><span>Controls</span><span>Evidence</span></div>
-    <CircleCheck size={64} strokeWidth={.7} /><span>Document, review, agree</span>
+    <div><span>Requirements</span><span>Test questions</span><span>Evidence</span></div>
+    <CircleCheck size={64} strokeWidth={.7} /><span>Specify, test, review</span>
   </div>;
 }
 
@@ -75,7 +75,7 @@ export default function AiOsPage() {
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>
           <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI OS</span></p>
-          <h1 id="os-title">One connected operating layer for people, agents and applications</h1>
+          <h1 id="os-title">One operating environment from specification to governed AI</h1>
         </div>
         <Lattice />
         <a className={styles.heroExplore} href="#operating-layer"><span>Explore the operating layer</span><ArrowDown size={17} aria-hidden="true" /></a>
@@ -84,7 +84,7 @@ export default function AiOsPage() {
       <OperatingLayerRelated current="ai-os" />
       <section className={styles.advantages} aria-labelledby="os-advantages">
         <div className={styles.container}>
-          <div className={styles.sectionIntro}><h2 id="os-advantages">More connected work<br />Less starting over</h2><p>Consider knowledge, models, integrations and oversight together. Give the next workflow a useful foundation instead of another isolated tool</p></div>
+          <div className={styles.sectionIntro}><h2 id="os-advantages">Three stages<br />One continuous cycle</h2><p>Specification → Development → Governance connects business requests, working automations and evidence from daily use, with findings feeding into the next specification</p></div>
           <div className={styles.advantageGrid}>{advantages.map(({ title, text, icon: Icon }) => <article key={title}>
             <Icon size={29} strokeWidth={1.1} aria-hidden="true" /><h3>{title}</h3><p>{text}</p>
           </article>)}</div>
@@ -92,7 +92,7 @@ export default function AiOsPage() {
       </section>
       <section className={styles.enterprise} aria-labelledby="os-enterprise">
         <div className={styles.container}>
-          <h2 id="os-enterprise"><span>Built around enterprise requirements</span><br />Your environment, your data and your responsibilities shape the implementation</h2>
+          <h2 id="os-enterprise"><span>Built around enterprise requirements</span><br />Your infrastructure, access rules and acceptance criteria shape each deployment</h2>
           <div className={styles.enterpriseRows}>{enterprise.map(item => <details key={item.title} className={styles.enterpriseRow} name="century-enterprise-requirements">
             <summary><h3>{item.title}</h3><p>{item.description}</p><span className={styles.disclosureIcon} aria-hidden="true" /></summary>
             <div className={styles.enterpriseDetail}><div className={styles.enterpriseArt}><EnterpriseVisual kind={item.visual} /></div><a href={item.href}>{item.link}<ArrowUpRight size={18} aria-hidden="true" /></a></div>

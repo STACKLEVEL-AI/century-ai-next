@@ -13,15 +13,15 @@ export default function Hero() {
       <div className="hero-shade" aria-hidden="true" />
       <div className="shell hero-layout">
         <div className="hero-copy">
-          <h1 id="hero-title">Accelerate<br />AI transformation<br /><span>across your business</span></h1>
-          <p className="hero-lead">Century connects your knowledge, systems and people to turn AI ambition into everyday progress</p>
+          <h1 id="hero-title">Enterprise AI<br />From idea<br /><span>to everyday work</span></h1>
+          <p className="hero-lead">An innovation management system for regulated enterprises, connecting specification, development and governance in your own environment</p>
           <div className="hero-actions"><TelegramLink className="btn btn-light">Get in touch</TelegramLink><a className="btn btn-outline-light" href="/ai-os/">Explore the platform</a></div>
         </div>
       </div>
     </section>
     <div className="principles-strip"><div className="shell principles-inner">
-      <p>One connected approach to enterprise AI</p>
-      <ul aria-label="Key capabilities"><li>Knowledge</li><li>Agents</li><li>Workflows</li><li>Systems</li><li>Governance</li></ul>
+      <p>Three stages, one connected platform</p>
+      <ul aria-label="The Century operating cycle"><li>Specification</li><li>Development</li><li>Governance</li></ul>
     </div></div>
   </>;
 }

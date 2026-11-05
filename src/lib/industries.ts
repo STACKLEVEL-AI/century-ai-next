@@ -41,7 +41,7 @@ export const industries: Industry[] = [
   {
     slug: "banking",
     title: "Banking",
-    description: "Explore Century workflows for banking knowledge, document preparation and service support, with source references and accountable human review.",
+    description: "Explore banking AI workflows with a shared task register, controlled pilots, source references and accountable human review",
     eyebrow: "Century for banking",
     headline: ["Clarity for your", "most complex workflows."],
     intro: "Give banking teams a clearer path from information to a reviewed next step. Start with approved knowledge, complete document packs and the decisions your people own.",
@@ -161,7 +161,7 @@ export const industries: Industry[] = [
   {
     slug: "healthcare",
     title: "Healthcare",
-    description: "Explore Century for healthcare administration, approved knowledge and document preparation, with access boundaries and professional review.",
+    description: "Explore Century for equipment documentation, quality procedures and operational knowledge, with role-based access, source versions and expert review",
     eyebrow: "Century for healthcare",
     headline: ["Less administrative friction.", "More time for people."],
     intro: "Support the work around care with accessible procedures, organized documents and clearer handovers. Begin with a defined administrative process and the professionals responsible for it.",

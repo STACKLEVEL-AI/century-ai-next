@@ -6,15 +6,15 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Deployment",
-  "Bring enterprise AI into everyday work with Century. Connect the technical implementation, the business outcome and the people who will operate it.",
+  "Deploy Century around your workflows and infrastructure, with agreed success criteria, model evaluation and a practical handover to your team",
   "/deployment",
 );
 
 const environments = [
-  { title: "Shared cloud", description: "A shared environment with data separation, access boundaries and service responsibilities defined for your workflow", icon: Cloud },
-  { title: "Dedicated environment", description: "A separate environment for organization-specific configuration, access requirements and operating arrangements", icon: Database },
-  { title: "Your own cloud", description: "Build around the cloud infrastructure your organization manages, with your team involved in security and operations", icon: Network },
-  { title: "On-premises", description: "Plan around local infrastructure, including the models, integrations and support needed to operate the agreed workflow", icon: Server },
+  { title: "Rented infrastructure", description: "Start on rented infrastructure, with a deployment you can move to your own servers as your requirements change", icon: Cloud },
+  { title: "On-premises", description: "Keep knowledge, agents, access rules and logs together on infrastructure your organization manages", icon: Database },
+  { title: "Kubernetes", description: "Run platform services in your cluster and connect existing identity, storage and monitoring", icon: Network },
+  { title: "Closed environment", description: "Use local models and internal delivery of images and updates when external API and cloud calls are not permitted", icon: Server },
 ];
 
 export default function DeploymentPage() {
@@ -32,8 +32,8 @@ export default function DeploymentPage() {
           </picture>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={styles.heroContent}>
-            <h1 id="deployment-title">Enterprise AI succeeds<br /> when it becomes everyday work</h1>
-            <p>Century works with your people to connect the data, build a useful first workflow and establish the ownership to run it</p>
+            <h1 id="deployment-title">From a scoped pilot<br /> to AI your team can run</h1>
+            <p>Agree the outcome, test the workflow and choose the infrastructure, then build the skills to operate and extend it with your own team</p>
           </div>
         </section>
 
@@ -41,8 +41,8 @@ export default function DeploymentPage() {
           <div className={styles.shell}>
             <div className={styles.teamIntro}>
               <div>
-                <h2 id="delivery-team-title">A delivery team<br />close to the work</h2>
-                <p>Technical implementation and business ownership belong together. We work through the sources, systems and decisions with the people who know the process</p>
+                <h2 id="delivery-team-title">A delivery team<br />built around the process</h2>
+                <p>Century pairs business analysis with engineering. Together we turn process requirements into tested workflows and train your developers to maintain them</p>
               </div>
               <div className={styles.teamStatement}><span>Business + technology</span><p>Built<br />together</p></div>
             </div>
@@ -52,17 +52,17 @@ export default function DeploymentPage() {
                 <div className={styles.cardShade} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <span className={styles.cardLabel}>Engineering</span>
-                  <h3>Make the pieces work together</h3>
-                  <p>Connect approved data, tools and workflows. Resolve the access, integration and review requirements that turn a concept into something people can use</p>
+                  <h3>Build, test and integrate</h3>
+                  <p>Connect approved sources and business systems, assemble agents and workflows, and test them against agreed questions and control datasets</p>
                 </div>
               </article>
               <article className={styles.roleCard}>
                 <img src="/media/century/photos/banking-advice.webp" srcSet="/media/century/photos/banking-advice-768.webp 768w, /media/century/photos/banking-advice.webp 1600w" sizes="(max-width: 700px) 100vw, 40vw" alt="People reviewing information during an advisory conversation" width={1600} height={900} loading="lazy" />
                 <div className={styles.cardShade} aria-hidden="true" />
                 <div className={styles.cardContent}>
-                  <span className={styles.cardLabel}>Delivery strategy</span>
-                  <h3>Make the outcome useful</h3>
-                  <p>Agree the use case, the owner and the evidence that matters. Bring the people doing the work into the decisions about adoption and what comes next</p>
+                  <span className={styles.cardLabel}>Business analysis</span>
+                  <h3>Define value and acceptance</h3>
+                  <p>Record owners, workload and current effort, assess data readiness and risks, then agree the expected effect and success criteria with the process owner</p>
                 </div>
               </article>
             </div>
@@ -80,7 +80,7 @@ export default function DeploymentPage() {
           <div className={styles.narrowShell}>
             <div className={styles.environmentHeading}>
               <h2 id="environments-title">The right place to run</h2>
-              <p>Choose the deployment model around your infrastructure,<br className={styles.desktopBreak} /> data requirements and operating responsibilities</p>
+              <p>Use owned or rented infrastructure, with models and compute<br className={styles.desktopBreak} /> chosen for your data and workloads</p>
             </div>
             <div className={styles.environmentGrid}>
               {environments.map(({ title, description, icon: Icon }) => (
@@ -88,7 +88,7 @@ export default function DeploymentPage() {
               ))}
             </div>
             <div className={styles.environmentNote}>
-              <p>Processing location, retention, external services and support access are agreed for each deployment</p>
+              <p>Size compute, storage and any GPU around the selected models, document volumes and concurrency; agree data flows and support access before rollout</p>
               <a href="/security/">Security considerations<ArrowUpRight size={18} aria-hidden="true" /></a>
             </div>
           </div>

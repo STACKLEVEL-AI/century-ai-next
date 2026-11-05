@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Century Systems",
-  "Build AI-assisted business systems around your workflows, people and existing tools. Explore focused workspaces for customer, knowledge and internal operations.",
+  "Turn business requests into tested workflows through specification, development and governance, connecting company knowledge, agents and existing systems",
   "/systems",
 );
 

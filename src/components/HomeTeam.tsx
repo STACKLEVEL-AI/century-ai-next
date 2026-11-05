@@ -13,7 +13,7 @@ export default function HomeTeam() {
     <div className="shell">
       <div className={styles.intro}>
         <div><p className="eyebrow">The people behind Century</p><h2 id="home-team-title">A shared ambition<br />A human approach</h2></div>
-        <p>Technology works best when people build it together. Our founders bring business, engineering and AI expertise to the work—staying close from the first conversation to everyday use</p>
+        <p>Century combines a platform with a practical method. Our team helps you define requirements, build the first workflows and develop the skills to run them</p>
       </div>
       <div className={styles.cards}>
         <a className={`${styles.card} ${styles.about}`} href="/about-us/">

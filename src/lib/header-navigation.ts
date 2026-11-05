@@ -12,12 +12,12 @@ export const headerNavigation: HeaderNavigationGroup[] = [
     id: "platform",
     label: "Platform",
     links: [
-      { href: "/ai-os/", title: "AI OS Overview", description: "One operating layer for knowledge, workflows and oversight" },
-      { href: "/agents/", title: "Century Agents", description: "Bring useful AI into everyday work" },
-      { href: "/systems/", title: "Century Systems", description: "Business tools shaped around your workflows" },
-      { href: "/ai-gateway/", title: "Century AI Gateway", description: "Model access, usage and controls in one place" },
-      { href: "/deployment/", title: "Deployment", description: "Start with a clear scope and ownership" },
-      { href: "/ai-transformation/", title: "Strategy", description: "Turn AI ambition into a practical plan" },
+      { href: "/ai-os/", title: "AI OS Overview", description: "Specification, development and governance in one platform" },
+      { href: "/agents/", title: "Century Agents", description: "Answers grounded in approved knowledge" },
+      { href: "/systems/", title: "Century Systems", description: "Agents, integrations and workflow orchestration" },
+      { href: "/ai-gateway/", title: "Century AI Gateway", description: "Model choice, data rules and usage visibility" },
+      { href: "/deployment/", title: "Deployment", description: "Process audit, pilot and team handover" },
+      { href: "/ai-transformation/", title: "Strategy", description: "Choose the right approach for each task" },
     ],
   },
   {

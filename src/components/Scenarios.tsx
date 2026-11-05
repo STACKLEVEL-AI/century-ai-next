@@ -5,11 +5,11 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import styles from "./Scenarios.module.css";
 
 const scenarios = [
-  { name: "Customer experience", src: "/media/century/photos/banking-advice.webp", width: 1600, height: 900, position: "84% center", title: "Every conversation\nA useful next step", href: "/agents/" },
-  { name: "Employee assistance", src: "/media/century/photos/employee-workspace.webp", width: 1600, height: 900, position: "50% center", portrait: true, title: "Company knowledge\nReady when you need it", href: "/agents/" },
-  { name: "Business operations", src: "/media/workflows.webp", width: 1200, height: 675, position: "55% center", title: "Keep your work\nmoving forward", href: "/systems/" },
-  { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "One foundation\nMore possibilities", href: "/ai-os/" },
-  { name: "Hands-on deployment", src: "/media/century/photos/team-workshop.webp", width: 1600, height: 900, position: "50% center", title: "From AI ambition\nto everyday progress", href: "/deployment/" },
+  { name: "Customer experience", src: "/media/century/photos/banking-advice.webp", width: 1600, height: 900, position: "84% center", title: "Service knowledge\nWith sources in view", href: "/agents/" },
+  { name: "Employee assistance", src: "/media/century/photos/employee-workspace.webp", width: 1600, height: 900, position: "50% center", portrait: true, title: "Company knowledge\nWith the right access", href: "/agents/" },
+  { name: "Business operations", src: "/media/workflows.webp", width: 1200, height: 675, position: "55% center", title: "Repeatable work\nWith people in control", href: "/systems/" },
+  { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "Requests to results\nOne connected cycle", href: "/ai-os/" },
+  { name: "Hands-on deployment", src: "/media/century/photos/team-workshop.webp", width: 1600, height: 900, position: "50% center", title: "A tested workflow\nA team ready to own it", href: "/deployment/" },
 ];
 
 export default function Scenarios() {
@@ -49,9 +49,9 @@ export default function Scenarios() {
 
   return <section className={styles.section} id="use-cases" aria-labelledby="use-cases-title">
     <div className={`shell ${styles.heading}`}>
-      <div><p className="eyebrow">Where AI becomes useful</p><h2 id="use-cases-title">Real work<br />Meaningful progress</h2></div>
+      <div><p className="eyebrow">Where AI becomes useful</p><h2 id="use-cases-title">Real work<br />A clear path forward</h2></div>
       <div className={styles.introduction}>
-        <p>Start with the problems that matter to your business. Connect the people, knowledge and systems that can solve them</p>
+        <p>Capture requests from your teams, assess readiness and expected value, then choose the right approach for each task and define where people stay in control</p>
         <div className={styles.controls} aria-label="Browse use cases">
           <button type="button" aria-label="Previous use case" aria-controls="scenario-track" disabled={!canPrevious} onClick={() => scroll(-1)}><ArrowLeft size={20} aria-hidden="true" /></button>
           <button type="button" aria-label="Next use case" aria-controls="scenario-track" disabled={!canNext} onClick={() => scroll(1)}><ArrowRight size={20} aria-hidden="true" /></button>

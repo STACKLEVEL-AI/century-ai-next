@@ -5,30 +5,30 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "AI Transformation",
-  "Make AI part of how your organization works. Connect the business need, your people and the technology through a practical path to lasting change.",
+  "Build AI capability with Century through a shared task register, the right automation approach, measurable acceptance and skills transferred to your team",
   "/ai-transformation",
 );
 
 const principles = [
   {
-    title: "Choose the problem and the sequence",
-    description: "Begin with a business process you can describe, an owner who can make decisions and an outcome you can evaluate. Give the first workflow a clear boundary. Use what it teaches you to decide which capability to build next",
+    title: "Agentic: repeatable workflows",
+    description: "Use agents and multistep workflows when the input, steps and expected result are clear. Add employee confirmation at decisions and actions that need review",
   },
   {
-    title: "Work across the whole process",
-    description: "Follow the work between people, documents and systems. Consider how an answer becomes an action, where review is needed and what happens when something falls outside the expected path. A useful result needs a useful place to go",
+    title: "RPA: predictable operations",
+    description: "Use reliable integrations and scripts to transfer or reconcile data between systems. Deterministic tasks can follow defined rules without a language model",
   },
   {
-    title: "Build capability within your team",
-    description: "Bring process owners, users and technical teams into the implementation. Share the reasoning behind the choices and document the knowledge needed to operate the workflow. The organization should understand what it is adopting",
+    title: "Chat: expert assistance",
+    description: "Support varied expert work with corporate chat and an approved knowledge base. AI helps prepare the answer while the employee remains responsible for the decision",
   },
   {
-    title: "Keep your options and your control",
-    description: "Make access, data boundaries and external dependencies explicit. Choose models and deployment arrangements around the work they need to support. Keep the design understandable so that the team can revisit those choices as its requirements change",
+    title: "Redesign: prepare the process",
+    description: "Improve the process, rules or data before automating. Resolve unclear ownership and missing inputs so the next implementation has a usable foundation",
   },
   {
-    title: "Measure the work that gets done",
-    description: "Compare the workflow with a practical baseline: the time it takes, the usefulness of its results, the corrections it needs and the effort of review. Let that evidence guide the decision to improve, expand or stop",
+    title: "Human-only: accountable decisions",
+    description: "Keep decisions that depend on personal responsibility, judgment or negotiation with people. Define the human role explicitly when assessing each automation opportunity",
   },
 ];
 
@@ -57,25 +57,25 @@ export default function TransformationPage() {
           </picture>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={styles.heroContent}>
-            <h1 id="transformation-title">AI changes your technology<br /> and the way your organization works</h1>
+            <h1 id="transformation-title">Build AI capability<br /> inside your organization</h1>
           </div>
         </section>
 
         <section className={styles.editorialSection} aria-labelledby="transformation-approach-title">
           <div className={`${styles.shell} ${styles.editorialGrid}`}>
-            <h2 id="transformation-approach-title">An organization ready<br />for what comes next</h2>
+            <h2 id="transformation-approach-title">A platform and a process<br />for lasting change</h2>
             <div className={styles.editorialCopy}>
-              <p>AI can help people find knowledge, prepare decisions and move work between systems. Making that assistance useful means understanding the organization around it.</p>
-              <p>Start with the work itself. Look at the information people need, the steps they repeat and the handovers that slow a process down. Decide where assistance belongs and where a person needs to remain responsible.</p>
-              <p>The first workflow is an opportunity to build shared understanding. It reveals what the data can support, which integrations matter and what the team needs to operate with confidence.</p>
-              <p>Century connects those practical decisions to a wider direction: a sequence of useful changes, with clear ownership and evidence for the next investment.</p>
+              <p>Century brings models, knowledge, agents and policies into one operating environment. Our implementation method takes a workflow from discovery through requirements, testing and production.</p>
+              <p>Build a shared automation register through AI interviews or questionnaires. Capture the process owner, volume and time spent, inputs, data readiness, risks and expected effect, then prioritize the work.</p>
+              <p>Agree success criteria with process and knowledge owners. Use control questions and approved data to compare quality, review effort and processing time with the current baseline.</p>
+              <p>Co-build with Century or involve your developers from the start. Training and documented practices for building, evaluating and operating workflows help your team take responsibility for what comes next.</p>
             </div>
           </div>
         </section>
 
         <section className={styles.principlesSection} id="transformation-principles" aria-labelledby="transformation-principles-title">
           <div className={`${styles.shell} ${styles.principlesGrid}`}>
-            <h2 id="transformation-principles-title">Five principles for<br />lasting change</h2>
+            <h2 id="transformation-principles-title">Five approaches<br />to the work</h2>
             <div className={styles.principles}>
               {principles.map((principle, index) => (
                 <details key={principle.title} name="century-transformation-principles" open={index === 0} className={styles.principle}>
@@ -104,7 +104,7 @@ export default function TransformationPage() {
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <h3>AI OS</h3>
-                  <p>Bring knowledge, workflows and oversight together in the foundation for everyday AI</p>
+                  <p>Models, knowledge, agents and controls in one environment for building and running AI workflows</p>
                 </div>
               </a>
               <a className={styles.relatedCard} href="/deployment/">
@@ -116,7 +116,7 @@ export default function TransformationPage() {
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <h3>Deployment</h3>
-                  <p>Move from a focused use case to a working implementation and ownership within your team</p>
+                  <p>Test the first workflow, select infrastructure and transfer the operating knowledge to your team</p>
                 </div>
               </a>
             </div>

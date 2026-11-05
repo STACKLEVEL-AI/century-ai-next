@@ -5,24 +5,24 @@ import styles from "./DeploymentPage.module.css";
 
 const phases = [
   {
-    title: "Find the first workflow worth building",
+    title: "Define the scope and test the approach",
     owner: "Century-led",
-    description: "Start with a focused business need. Understand the current process, connect the necessary sources and put a first workflow in front of the people who will use it",
-    tags: ["Discovery", "Working sessions", "First deployment"],
+    description: "Choose a bounded workflow and agree success criteria. Test synthetic or approved data against a control set, compare suitable models and use the results to plan infrastructure",
+    tags: ["Process audit", "Success criteria", "Model comparison"],
     fill: "75%",
   },
   {
-    title: "Build capability alongside the workflow",
+    title: "Build and evaluate with your developers",
     owner: "Shared delivery",
-    description: "Work through real examples together. Refine the integrations and human handovers, document the decisions and help your team understand how the workflow operates",
-    tags: ["Team enablement", "Reusable foundations", "Process rollout"],
+    description: "Work through requirements, integrations and acceptance together. Measure extraction accuracy, draft quality or processing time, and prepare the operating practices your team will use",
+    tags: ["Co-development", "Control datasets", "Acceptance testing"],
     fill: "50%",
   },
   {
-    title: "Put the operating knowledge in your hands",
+    title: "Hand over the skills to run and improve",
     owner: "Team-led",
-    description: "Agree who owns the process, how exceptions are handled and where support fits. Use the evidence from everyday work to decide what to improve and which workflow to take on next",
-    tags: ["Operating playbooks", "Clear ownership", "Ongoing improvement"],
+    description: "Your team maintains knowledge, access and workflows, supported by training and documented testing and operating practices. Check results on approved real data and use them to plan the next automation",
+    tags: ["Training", "Operating practices", "Measured improvement"],
     fill: "20%",
   },
 ];
@@ -70,7 +70,7 @@ export default function DeploymentJourney() {
       <p className={styles.phaseDescription}>{phase.description}</p>
       <ul className={styles.phaseTags}>{phase.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     </div>)}
-    <p className={styles.journeyNote}>The delivery path and operating responsibilities are agreed around your team and use case</p>
+    <p className={styles.journeyNote}>Start with your developers or co-build the first workflows with Century; agree the handover and responsibilities around the readiness of your team</p>
     <noscript><div className={styles.phaseFallback}>
       {phases.slice(1).map((phase, index) => <section key={phase.owner}><p>Phase 0{index + 2} · {phase.owner}</p><h3>{phase.title}</h3><p>{phase.description}</p><ul className={styles.phaseTags}>{phase.tags.map(tag => <li key={tag}>{tag}</li>)}</ul></section>)}
     </div></noscript>

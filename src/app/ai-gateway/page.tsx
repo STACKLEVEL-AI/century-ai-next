@@ -6,22 +6,22 @@ import OperatingLayerRelated from "@/components/platform/OperatingLayerRelated";
 import { pageMetadata } from "@/lib/metadata";
 import styles from "@/components/platform/Gateway.module.css";
 
-export const metadata = pageMetadata("Century AI Gateway", "Explore model choices, response details and AI operating responsibilities through real views from the Century application.", "/ai-gateway");
+export const metadata = pageMetadata("Century AI Gateway", "Connect models through one gateway, control which data they can use and evaluate quality on your own documents and questions", "/ai-gateway");
 
 const capabilities: { title: string; description: string; illustration: GatewayIllustrationKind }[] = [
-  { title: "Connect your AI landscape", description: "Start with the applications, agents and providers involved in your workflow. Bring their interfaces, information flows and operating owners into one implementation plan", illustration: "connect" },
-  { title: "Put usage in context", description: "Inspect the signals behind an answer and the work it supports. Agree how usage and cost should be reviewed alongside quality and useful outcomes", illustration: "usage" },
-  { title: "Make model access deliberate", description: "Match access to a person's role, the task and the information involved. Define permissions and responsibilities before extending a workflow to another team", illustration: "access" },
-  { title: "Choose the right path", description: "Compare model suitability, response time and cost. Decide what the workflow should do when the preferred model or an external provider is unavailable", illustration: "routing" },
-  { title: "Define data boundaries", description: "Establish which information a process may use and where it may go. Review external processing, retention and the requirements of your organization", illustration: "privacy" },
-  { title: "Inspect the detail", description: "Keep response details and human feedback close to the work. Define the records and review process your team needs to understand exceptions and improve decisions", illustration: "observe" },
+  { title: "One gateway for connected models", description: "Connect language, transcription, OCR and embedding models through a shared gateway, with APIs for your applications and agents", illustration: "connect" },
+  { title: "See usage beside quality", description: "Review response timing, token use and request cost alongside answer quality to understand what each workflow needs to operate", illustration: "usage" },
+  { title: "Apply your access rules", description: "Set roles for the people and agents using company knowledge and tools, with permissions defined for the sources each workflow needs", illustration: "access" },
+  { title: "Choose models for each step", description: "Select a model for each workflow step and compare cloud and self-hostable options on the same tasks before making a production decision", illustration: "routing" },
+  { title: "Control where data goes", description: "Define which data may be sent to each model and record those decisions in logs, with cloud processing governed by your organisation's policies", illustration: "privacy" },
+  { title: "Evaluate on your own work", description: "Test answers against agreed control questions, check retrieved sources and citations, and review feedback before expanding a workflow", illustration: "observe" },
 ];
 
 const outcomes = [
-  { title: "A shared operating picture", text: "Connect the discussion across teams, tools and workflows. Give the people responsible a common starting point", icon: Network },
-  { title: "Evidence behind decisions", text: "Use inspectable application details and workflow feedback when reviewing what is working and what needs attention", icon: Eye },
-  { title: "Deliberate model choices", text: "Discuss quality, cost and response time together. Match the model decision to the work it needs to support", icon: Scale },
-  { title: "Clear ownership", text: "Make access, data handling and escalation responsibilities explicit as the implementation grows", icon: ListChecks },
+  { title: "A separate model layer", text: "Keep applications and workflows connected to the platform while choosing models for their specific tasks", icon: Network },
+  { title: "Evidence for model choices", text: "Compare answers on the same documents and questions, then use measured quality to guide the choice", icon: Eye },
+  { title: "Visible operating costs", text: "Review request cost, resource use and response time alongside the value the workflow is meant to deliver", icon: Scale },
+  { title: "Rules that stay inspectable", text: "Keep data permissions and activity logs available to the people responsible for reviewing the workflow", icon: ListChecks },
 ];
 
 export default function GatewayPage() {
@@ -34,15 +34,15 @@ export default function GatewayPage() {
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>
           <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI Gateway</span></p>
-          <h1 id="gateway-title">A common control point<br />for enterprise AI</h1>
-          <p>Bring model choices, usage and operating responsibilities into a clearer picture</p>
+          <h1 id="gateway-title">Choose models<br />Keep data use under control</h1>
+          <p>Connect models, set data rules and evaluate quality on your own work</p>
         </div>
         <div className={styles.heroWorkspace}><GatewayWorkspace /></div>
       </section>
 
       <section className={styles.connections} aria-labelledby="gateway-connections">
         <div className={styles.container}>
-          <div className={styles.sectionHeading}><h2 id="gateway-connections">Connect the tools<br />Keep the context</h2><p>Start with the people, applications and providers in scope. Define how each connection should work and who owns it</p></div>
+          <div className={styles.sectionHeading}><h2 id="gateway-connections">Connect your applications<br />to the model layer</h2><p>Give people, applications and agents a common gateway to models and tools, with the permissions and data policies each workflow needs</p></div>
           <GatewayMap />
         </div>
       </section>
@@ -59,8 +59,8 @@ export default function GatewayPage() {
       <section className={styles.decisions} aria-labelledby="gateway-decisions">
         <div className={styles.container}>
           <div className={styles.sectionHeading + " " + styles.decisionIntro}>
-            <h2 id="gateway-decisions">As AI grows,<br />keep the whole picture</h2>
-            <p>Different teams bring different tools and requirements. A shared view makes it easier to agree the boundaries, examine trade-offs and decide what to build next</p>
+            <h2 id="gateway-decisions">Test the fit<br />Keep the evidence</h2>
+            <p>Model quality depends on the task, the documents and the questions, so compare options on representative work before committing to a production setup</p>
           </div>
           <div className={styles.outcomeGrid}>{outcomes.map(({ title, text, icon: Icon }) => <article key={title}>
             <Icon size={28} strokeWidth={1.1} aria-hidden="true" /><h3>{title}</h3><p>{text}</p>

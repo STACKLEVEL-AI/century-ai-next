@@ -14,7 +14,7 @@ export default function PressPage() {
         <section className="co-section co-press-overview">
           <div className="shell co-editorial-split">
             <CompanyHeading eyebrow="About the company" title={<>Century,<br />in a few words</>} />
-            <div className="co-prose"><p className="co-lead">Century works with businesses to make AI useful in their everyday operations.</p><p>Its focus is on connecting approved knowledge, supporting document workflows and giving teams practical control over how AI is used.</p><p>Projects begin with a specific process and an agreed outcome. Data sources, integrations, deployment requirements and review responsibilities are considered together.</p><a className="co-text-link" href="/about-us/">More about Century<ArrowUpRight size={18} aria-hidden="true" /></a></div>
+            <div className="co-prose"><p className="co-lead">Century develops an innovation management system for regulated enterprises.</p><p>The platform connects three stages: specification of business requests, development of agents and workflows, and governance through quality metrics, versions, access control and audit records.</p><p>Century combines this platform with process discovery, focused pilots and training. The approach helps organizations build their own capacity to create, evaluate and maintain automations in their chosen infrastructure.</p><a className="co-text-link" href="/about-us/">More about Century<ArrowUpRight size={18} aria-hidden="true" /></a></div>
           </div>
         </section>
         <section className="co-section co-warm" id="brand-materials">

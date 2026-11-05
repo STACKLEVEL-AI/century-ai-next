@@ -6,9 +6,9 @@ import { IndustryContact, IndustryPageFrame } from "./IndustryReferencePage";
 import styles from "./IndustryReferencePage.module.css";
 
 const principles = [
-  { title: "Start with a real workflow", description: "Choose a recurring task, the people who own it and the outcome that would make their work easier", icon: Focus, href: "/ai-transformation/", link: "Find your starting point" },
-  { title: "Connect the right knowledge", description: "Identify the sources, versions and access permissions that a useful answer depends on", icon: BookOpen, href: "/ai-os/", link: "Explore the platform" },
-  { title: "Keep people in the loop", description: "Agree what the system prepares, what an employee checks and who owns the next action", icon: UserRoundCheck, href: "/deployment/", link: "Plan your implementation" },
+  { title: "Specify the opportunity", description: "Collect requests from business teams, identify owners and assess process, data and access readiness", icon: Focus, href: "/ai-transformation/", link: "Find your starting point" },
+  { title: "Build around approved sources", description: "Connect the knowledge and systems a task needs, then test representative documents and questions", icon: BookOpen, href: "/ai-os/", link: "Explore the platform" },
+  { title: "Govern and improve", description: "Agree review responsibilities, track quality and impact, and use operational findings to shape the next task", icon: UserRoundCheck, href: "/deployment/", link: "Plan your implementation" },
 ];
 
 export default function IndustryDirectory() {
@@ -19,7 +19,7 @@ export default function IndustryDirectory() {
         <p className={styles.eyebrow}>Century across industries</p>
         <h1 id="industries-title">Your industry<br />A new chapter</h1>
         <div className={styles.directoryIntro}>
-          <p>Connect the knowledge, people and systems behind your most important work. Explore where AI can fit into the way your industry operates</p>
+          <p>Bring specification, development and governance into one platform. Explore practical use cases for your sector, then shape the pilot around your data, systems and review responsibilities</p>
           <a className={styles.directoryTextLink} href="#sectors">Find your industry<ArrowDown size={18} aria-hidden="true" /></a>
         </div>
       </div>

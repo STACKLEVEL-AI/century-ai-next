@@ -1,11 +1,11 @@
 export type NavigationLink = { href: string; title: string; description?: string };
 export const platformLinks: NavigationLink[] = [
-  { href: "/ai-os/", title: "AI OS overview", description: "Knowledge, workflows and oversight" },
-  { href: "/agents/", title: "Century Agents", description: "Help people find answers and move work forward" },
-  { href: "/systems/", title: "Century Systems", description: "Shape business tools around real workflows" },
-  { href: "/ai-gateway/", title: "AI Gateway", description: "Plan model access, usage and controls" },
-  { href: "/deployment/", title: "Deployment", description: "Start with a clear scope and ownership" },
-  { href: "/ai-transformation/", title: "AI transformation", description: "Build the operating model around the work" },
+  { href: "/ai-os/", title: "AI OS overview", description: "Specification, development and governance" },
+  { href: "/agents/", title: "Century Agents", description: "Answers grounded in approved knowledge" },
+  { href: "/systems/", title: "Century Systems", description: "Agents, integrations and workflow orchestration" },
+  { href: "/ai-gateway/", title: "AI Gateway", description: "Model choice, data rules and usage visibility" },
+  { href: "/deployment/", title: "Deployment", description: "Process audit, pilot and team handover" },
+  { href: "/ai-transformation/", title: "AI transformation", description: "Choose the right approach for each task" },
 ];
 export const industryLinks: NavigationLink[] = [
   { href: "/industries/banking/", title: "Banking", description: "Documents, policies and service operations" },

@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Century Agents",
-  "Put company knowledge to work with AI agents for customer support, document workflows and employee assistance, with clear responsibilities and human review.",
+  "Build no-code and multi-agent workflows grounded in company knowledge, with document permissions, source references, APIs and MCP integrations",
   "/agents",
 );
 

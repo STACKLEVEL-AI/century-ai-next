@@ -41,9 +41,9 @@ export function CompanyCTA({ eyebrow = "A useful next step", title = <>Good work
 }
 
 const founders = [
-  { name: "Vitali Bakhmat", role: "Co-founder · CEO", description: "Business development and customer partnerships", image: "/founders/vitali-bakhmat.webp", width: 320, height: 400, href: TELEGRAM_URL, link: "Message Vitali on Telegram" },
-  { name: "Vadim Vladymtsev", role: "Co-founder · CTO", description: "Enterprise AI architecture and engineering", image: "/founders/vadim-vladymtsev.webp", width: 320, height: 213, href: VADIM_PROFILE_URL, link: "vadimohka.com" },
-  { name: "Egor Krychev", role: "Co-founder · CAIO", description: "AI automation, agents and business processes", image: "/founders/egor-krychev.webp", width: 320, height: 320, href: EGOR_PROFILE_URL, link: "LinkedIn" },
+  { name: "Vitali Bakhmat", role: "Co-founder · CEO", description: "Sales, market development and customer partnerships", image: "/founders/vitali-bakhmat.webp", width: 320, height: 400, href: TELEGRAM_URL, link: "Message Vitali on Telegram" },
+  { name: "Vadim Vladymtsev", role: "Co-founder · CTO", description: "Platform architecture and process automation", image: "/founders/vadim-vladymtsev.webp", width: 320, height: 213, href: VADIM_PROFILE_URL, link: "vadimohka.com" },
+  { name: "Egor Krychev", role: "Co-founder · CAIO", description: "Platform interface and AI agent logic", image: "/founders/egor-krychev.webp", width: 320, height: 320, href: EGOR_PROFILE_URL, link: "LinkedIn" },
 ];
 
 export function CompanyTeam({ compact = false }: { compact?: boolean }) {

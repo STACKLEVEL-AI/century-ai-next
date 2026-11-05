@@ -115,65 +115,65 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "title": "Banking",
     "operationLabel": "banking",
     "audience": "banks",
-    "heroDescription": "Bring banking knowledge, documents and service workflows together, with review at every step",
-    "whyIntro": "Connect approved knowledge, case information and the people responsible for each banking decision. Start with a defined workflow, make the evidence visible and keep review in your team's hands",
+    "heroDescription": "Explore banking knowledge and document workflows, from a shared task register to pilots with human review",
+    "whyIntro": "Collect requests from banking teams, assess data readiness and agree success criteria before building. Use a controlled pilot to select the next workflow, then track quality and impact in operation",
     "benefits": [
       {
-        "title": "Complete cases",
-        "description": "Organise documents and identify missing information before a case reaches the person responsible for review",
+        "title": "Prioritised requests",
+        "description": "Give each automation idea a process owner, a readiness assessment and a clear reason to move into a pilot",
         "icon": "Workflow"
       },
       {
-        "title": "Clearer guidance",
-        "description": "Help teams find the right policy or procedure, with source references they can inspect before taking action",
+        "title": "Traceable documents",
+        "description": "Bring document fields, policy sources and versions together so staff can inspect the evidence behind a draft",
         "icon": "ChartNoAxesCombined"
       },
       {
-        "title": "Better handovers",
-        "description": "Keep the request, supporting context and open questions together as work moves between banking teams",
+        "title": "Reviewable results",
+        "description": "Agree what the workflow prepares, what an employee checks and who owns the final banking decision",
         "icon": "Timer"
       }
     ],
     "workflows": [
       {
-        "title": "Application preparation",
-        "description": "Bring application materials into a structured case, flag missing documents and prepare a checklist for the reviewer"
+        "title": "Financial document preparation",
+        "description": "For example, extract financial-statement fields, calculate indicators with agreed rules and prepare a draft for a credit analyst to review"
       },
       {
         "title": "Policy and procedure knowledge",
-        "description": "Find guidance in approved policy versions and show the source behind each answer to an operational question"
+        "description": "Explore answers from approved policy versions, showing sources and preserving the access rules of each banking team"
       },
       {
-        "title": "Service response preparation",
-        "description": "Assemble the context for routine product and process queries, with a draft response ready for staff to approve"
+        "title": "Official-request drafts",
+        "description": "Test request intake and field extraction against an account-data sample, then prepare a template-based draft for employee review"
       },
       {
         "title": "Operations and reconciliation",
-        "description": "Organise records and supporting documents into a review queue, keeping discrepancies and required decisions visible"
+        "description": "Explore reconciliation between agreed system extracts, with discrepancies and supporting evidence prepared for the operations reviewer"
       }
     ],
     "reasons": [
       {
         "title": "AI shaped around banking work",
-        "description": "Evaluate models against a defined banking task. Keep answers linked to approved information and make limitations visible to the people assessing each case",
+        "description": "Compare models on the same controlled task and agree how extraction quality, draft acceptance and processing time will be assessed before expanding the workflow",
         "image": "/media/century/diagrams/industry-frontier.svg",
         "alt": "A defined task flows through an AI response to human review, with checks for source quality, accuracy and scope"
       },
       {
         "title": "One platform across the bank",
-        "description": "Bring knowledge and case preparation together across banking teams. Scope connections to existing systems around the information and actions each workflow needs",
+        "description": "Connect the task register, development work and operational oversight in one platform, with approved knowledge and system access scoped to each banking workflow",
         "image": "/media/century/diagrams/industry-platform.svg",
         "alt": "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes"
       },
       {
         "title": "Clear access and accountable decisions",
-        "description": "Set source permissions, review ownership and retention requirements before rollout. Keep lending decisions and system changes with authorised employees",
+        "description": "Scope records and policy sources by role, keep an audit trail and define employee confirmation points. Lending decisions and system changes remain with authorised people",
         "image": "/media/century/diagrams/industry-governance.svg",
         "alt": "Access permissions, approved sources and human approval connect to a controlled workflow"
       },
       {
         "title": "Implementation alongside your team",
-        "description": "Begin with a practical banking workflow, agree its review steps and work with Century through implementation, handover and the next phase of improvement",
+        "description": "Start with agreed success criteria and a pilot on representative synthetic data. Use the findings to plan deployment, train your team and validate the workflow in its operating environment",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -190,7 +190,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "operationLabel": "telecom",
     "audience": "telecom providers",
     "heroDescription": "Connect service knowledge, fault triage and customer requests, with clear handovers and human review",
-    "whyIntro": "Bring service information, troubleshooting history and customer requests into a clearer workflow. Begin with a focused use case, agree the review steps and give each handover a named owner",
+    "whyIntro": "Explore service and support use cases around approved knowledge and a named process owner. Capture requests, assess readiness and test a focused pilot before extending the workflow across teams",
     "benefits": [
       {
         "title": "Useful context",
@@ -247,7 +247,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
       },
       {
         "title": "A delivery team working with yours",
-        "description": "Scope an initial service workflow with Century, agree practical review points and support your operators through implementation and handover",
+        "description": "Audit the service process, test representative questions and agree success criteria with your operators. Build together, then use quality metrics and feedback to guide the next phase",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -263,65 +263,65 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "title": "Healthcare",
     "operationLabel": "healthcare",
     "audience": "healthcare organisations",
-    "heroDescription": "Support the work around care with organised information, approved knowledge and professional review",
-    "whyIntro": "Connect approved procedures, administrative information and the professionals responsible for each step. Start with a defined workflow, limit access to what is needed and keep review visible",
+    "heroDescription": "Explore assistants for equipment documentation, quality procedures and internal service knowledge, with sources and human review",
+    "whyIntro": "Start with the operational and service questions your teams need to answer. Test representative documents, agree access by role and equipment, and keep the source and version visible to each reviewer",
     "benefits": [
       {
         "title": "Accessible knowledge",
-        "description": "Help staff locate the approved procedure and inspect its source before responding to an administrative question",
+        "description": "Find relevant manuals and quality procedures with the source and document version visible to authorised staff",
         "icon": "HeartPulse"
       },
       {
         "title": "Prepared information",
-        "description": "Organise the documents and details needed for a request, with missing information made clear to the reviewer",
+        "description": "Organise a service question around the equipment model, configuration and available documentation",
         "icon": "Gauge"
       },
       {
         "title": "Professional oversight",
-        "description": "Make responsibilities and access boundaries explicit, with qualified people reviewing work before decisions are made",
+        "description": "Scope knowledge by role and department, with service and quality teams reviewing the proposed next step",
         "icon": "CalendarCheck"
       }
     ],
     "workflows": [
       {
-        "title": "Administrative guidance",
-        "description": "Find answers in approved procedures, show the relevant source and route uncertain questions to the responsible team"
+        "title": "Equipment service knowledge",
+        "description": "For example, help an engineer find the procedure for a specific equipment model, with the source and version available for review"
       },
       {
-        "title": "Scheduling and referrals",
-        "description": "Prepare appointment and referral information for authorised staff to verify and route through existing systems"
+        "title": "Internal policies and quality",
+        "description": "Explore assistants for internal rules and quality-management documents, using the versions each employee is permitted to access"
       },
       {
-        "title": "Document preparation",
-        "description": "Bring permitted records into a source-linked draft, keeping clinical interpretation and decisions with qualified staff"
+        "title": "Technical document preparation",
+        "description": "A possible workflow prepares a technical-document translation or summary for a qualified reviewer to check against the original"
       },
       {
-        "title": "Internal service requests",
-        "description": "Organise procurement, supplier and support requests with the information, ownership and review steps each team needs"
+        "title": "Knowledge maintenance",
+        "description": "Let authorised teams update manuals, manage access and improve prompts as equipment and procedures change"
       }
     ],
     "reasons": [
       {
-        "title": "AI for the work around care",
-        "description": "Evaluate models against a defined administrative task. Keep approved sources visible and prepare information that authorised professionals can review",
+        "title": "AI grounded in service documents",
+        "description": "Test answers against representative manuals and real service questions during the audit, then choose a focused workflow and the quality checks it needs",
         "image": "/media/century/diagrams/industry-frontier.svg",
         "alt": "A defined task flows through an AI response to human review, with checks for source quality, accuracy and scope"
       },
       {
         "title": "One platform across healthcare teams",
-        "description": "Bring approved knowledge and administrative workflows together. Scope connections to existing records and operational systems around each team's responsibilities",
+        "description": "Bring scanned documents, knowledge, agents and corporate chat into one deployment, with shared access rules and activity logs for operational teams",
         "alt": "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes",
         "image": "/media/century/diagrams/industry-platform.svg"
       },
       {
-        "title": "Access boundaries and professional review",
-        "description": "Define the information each role needs and who reviews the result. Agree processing, retention and deployment requirements for the healthcare environment",
+        "title": "Access boundaries and expert review",
+        "description": "Set document access by role, department or equipment configuration. Include source versions in answers and identify the employee responsible for checking the next step",
         "image": "/media/century/diagrams/industry-governance.svg",
         "alt": "Access permissions, approved sources and human approval connect to a controlled workflow"
       },
       {
         "title": "Practical support through implementation",
-        "description": "Choose a focused administrative workflow with Century and work through its access rules, review steps and handover with the people who will use it",
+        "description": "Co-build an initial service or documentation workflow with Century, train your developers and hand over clear practices for testing, maintaining and improving agents",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -338,7 +338,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "operationLabel": "utility",
     "audience": "utilities",
     "heroDescription": "Connect utility requests, approved guidance and operational context with accountable review",
-    "whyIntro": "Century helps utility teams turn a defined service process into a connected workflow, with approved sources, explicit review points and clear ownership of every operational decision",
+    "whyIntro": "Explore utility service and knowledge workflows through a shared cycle of specification, development and governance, with approved sources and clear ownership of each operational decision",
     "benefits": [
       {
         "title": "Clearer customer service",
@@ -395,7 +395,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
       },
       {
         "title": "Support from scoping to rollout",
-        "description": "Define one useful process with Century, validate it with the people who own it and plan the next stage from observed results",
+        "description": "Record the process, data and access requirements, validate a focused pilot with its owners and use operational findings to shape the next specification",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -413,7 +413,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "operationLabel": "insurance",
     "audience": "insurers",
     "heroDescription": "Bring complex insurance workflows into everyday operation, with clear oversight from start to finish",
-    "whyIntro": "Connect the knowledge, people and systems behind each insurance workflow. Begin with a clear scope, keep review visible, and give your teams a practical foundation they can build on across the operation",
+    "whyIntro": "Explore insurance use cases from a shared register of business requests. Assess readiness, build around approved knowledge and carry access, quality and review controls into operation",
     "benefits": [
       {
         "title": "Flexible capacity",
@@ -470,7 +470,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
       },
       {
         "title": "A team that delivers alongside yours",
-        "description": "Work with Century from the first scoped workflow through implementation and handover, with clear ownership and practical support for your team",
+        "description": "Move from process assessment to a scoped pilot, then build and validate with your team. Transfer the practices for creating, testing and maintaining the next workflows",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -487,7 +487,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "operationLabel": "retail",
     "audience": "retailers",
     "heroDescription": "Connect store, service and supplier workflows around approved information and reviewed actions",
-    "whyIntro": "Century helps retail teams connect a focused service or back-office process to the people and information it needs, with current product facts, clear review steps and named process owners",
+    "whyIntro": "Explore service and back-office use cases from the requests your retail teams bring forward. Agree the data, process owner and acceptance criteria, then test a focused workflow before rollout",
     "benefits": [
       {
         "title": "Consistent customer answers",
@@ -544,7 +544,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
       },
       {
         "title": "Support from scoping to rollout",
-        "description": "Work with Century to select a useful starting process, validate it with store and operations teams, and plan improvements from feedback",
+        "description": "Test representative documents and store questions during the audit, build with your team and use quality measures and operational feedback to improve the next workflow",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
@@ -561,7 +561,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
     "operationLabel": "airline",
     "audience": "airlines",
     "heroDescription": "Prepare passenger answers, disruption handovers and service cases with verified context",
-    "whyIntro": "Century helps airline service teams prepare a clear next step from approved journey information and policy sources, with staff review before communications, booking changes or claim decisions",
+    "whyIntro": "Explore airline service workflows around approved knowledge, a clear specification and accountable review. Use a focused pilot to test the quality of drafts and handovers before operational rollout",
     "benefits": [
       {
         "title": "Clearer passenger support",
@@ -618,7 +618,7 @@ export const industryReferencePages: Record<IndustrySlug, IndustryReference> = {
       },
       {
         "title": "Support from scoping to rollout",
-        "description": "Work with Century and your service owners to validate a practical first workflow, gather feedback and agree the next stage",
+        "description": "Agree the sources, access and acceptance criteria with your service owners, validate a focused pilot and transfer the practices for maintaining and improving the workflow",
         "image": "/media/century/diagrams/industry-deployment.svg",
         "alt": "Four connected delivery stages: scope, build, validate and handover"
       }
