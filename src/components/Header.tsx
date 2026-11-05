@@ -79,8 +79,14 @@ export default function Header({ variant = "overlay", showAnnouncement = true }:
       active.querySelector<HTMLElement>(":scope > summary")?.focus();
       event.preventDefault();
     };
-    const onFocusOut = () => {
-      queueMicrotask(() => {
+    const onFocusOut = (event: FocusEvent) => {
+      // During a native Tab transition activeElement can briefly be BODY.
+      // relatedTarget identifies the next control without closing its panel.
+      if (event.relatedTarget instanceof Node) {
+        if (!root.contains(event.relatedTarget)) closeMenus();
+        return;
+      }
+      window.requestAnimationFrame(() => {
         if (!root.contains(document.activeElement)) closeMenus();
       });
     };
