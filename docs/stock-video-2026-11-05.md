@@ -96,3 +96,13 @@ The first live check revealed a returning browser could reuse the former 13-seco
 Published in [commit 96a8b44](https://github.com/STACKLEVEL-AI/century-ai-next/commit/96a8b44733d527e74822531b5eacd963ff874ac0); [deployment 42115401520](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42115401520) succeeded. Local type validation, the production build and the optional export inspection passed (26 routes, 2,605 local links/assets). The browser loaded all five use-case photographs and all seven distinct industry-tab photographs at the expected dimensions. The new scene was inspected inside the real card, with the face clear of the headline. No page-level horizontal overflow was present at the inspected desktop viewport.
 
 ![Published homepage use-case cards with distinct photography](previews/homepage-photography-1793915201473.jpg)
+
+## Final portrait and display copy verification — 6 November
+
+The final portrait revision was published in [commit a00bbe7](https://github.com/STACKLEVEL-AI/century-ai-next/commit/a00bbe7578a1b6a6540ae0b89bd691bbbdb966b8). Its selected 1600 × 900 WebP has SHA-256 `51966346c5af3c6290dd61e2691f2d5770f5bd142759aae6d31d2c88b4724125`; the homepage URL includes `?v=51966346`. The image was inspected in the live Employee assistance card, with the caption below the face and a lower gradient supporting the text.
+
+The subsequent [display copy update](display-copy-2026-11-06.md) removed terminal full stops from headings, slogans and captions throughout the site. [Deployment 42122185093](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42122185093) succeeded for commit `5dc3b3c31c0b0f765362c33eec4077b34752496f`. It includes the intervening per-page photo assignments from `53813c3`.
+
+The current homepage manifest contains 18 distinct non-founder photo slots with 18 unique paths and hashes. All files match the recorded dimensions, byte lengths and SHA-256 values. The five live use-case images loaded at their expected dimensions. The inspected desktop document width matches its 1,348 px viewport content width.
+
+![Final portrait with the revised display copy on the published homepage](previews/homepage-display-copy-1793918004347.jpg)

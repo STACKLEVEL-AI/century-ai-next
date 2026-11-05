@@ -223,9 +223,30 @@
     "mobile_ui": "Not device-emulated in this browser session; existing responsive layout was unchanged"
   },
   "verification": {
-    "asset": "Decoded as 1600 × 900 WebP",
-    "duplicates": "18 logical slots retain 18 unique paths and hashes; the other 17 photographs match the previous manifest byte-for-byte.",
-    "publication": "Pending publication of the selected revision."
+    "implementation_commit": "a00bbe7578a1b6a6540ae0b89bd691bbbdb966b8",
+    "integrated_photo_uniqueness_commit": "53813c33ff3c9f9470d8f9f1a35a569b924945e5",
+    "display_copy_commit": "5dc3b3c31c0b0f765362c33eec4077b34752496f",
+    "deployment_url": "https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42122185093",
+    "deployment_result": "success",
+    "asset": "The final WebP decoded in the live browser as 1600 × 900 with cache version 51966346.",
+    "duplicates": "18 non-founder homepage photo slots have 18 unique paths and SHA-256 hashes. Every current file matches the manifest.",
+    "local_checks": [
+      "TypeScript passed",
+      "Production build and static export passed",
+      "Export inspection passed: 26 routes, 2592 local links/assets",
+      "Display copy inspection: 424 headings, 17 figure captions and 51 native diagram labels have no terminal full stops"
+    ],
+    "live_url": "https://century-ai.eu/#use-cases",
+    "browser_checks": [
+      "All five use-case photographs loaded at their expected dimensions",
+      "The selected final portrait was visually inspected in the Employee assistance card",
+      "The portrait heading is below the face, ending 64 px above the card bottom",
+      "Homepage, Agents, Banking and About Century display the revised headings and captions",
+      "Desktop document width equals viewport content width: 1348 px"
+    ],
+    "screenshot": "docs/previews/homepage-display-copy-1793918004347.jpg",
+    "mobile_ui": "Not device-emulated in this browser session; this punctuation update did not change responsive CSS.",
+    "publication": "Published and confirmed in the live browser after the successful Pages deployment."
   },
   "revision_base_commit": "3fe9d877fc581e4d585c54c908a1dce110f22a97",
   "per_page_photo_uniqueness_followup": {
