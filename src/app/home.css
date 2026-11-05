@@ -10,13 +10,9 @@
 .century-home .platform-heading > .eyebrow { justify-content: center; }
 .century-home .platform-heading > p:not(.eyebrow) { margin-inline: auto; }
 .century-home .app-platform-captures { padding-bottom: 80px; }
-.century-home .process-intro-card { min-height: 580px; }
 
 @media (min-width: 1600px) {
   .century-home .hero h1 { font-size: 90px; }
-}
-@media (max-width: 900px) {
-  .century-home .process-intro-card { min-height: 530px; }
 }
 @media (max-width: 879px) {
   .century-home .hero { --home-header-height: 68px; }
@@ -30,7 +26,6 @@
   .century-home .platform-section { padding-top: 72px; }
   .century-home .platform-heading h2 { font-size: 39px; }
   .century-home .app-platform-captures { padding-bottom: 54px; }
-  .century-home .process-intro-card { min-height: 520px; }
 }
 @media (forced-colors: active) {
   .century-home .hero-film { display: none; }
