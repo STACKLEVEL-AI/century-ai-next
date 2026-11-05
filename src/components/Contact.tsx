@@ -9,22 +9,14 @@ export default function Contact() {
     >
       <div className="shell contact-panel">
         <div className="contact-copy">
-          <p className="eyebrow">
-            <span className="status-dot" aria-hidden="true" />
-            Start a conversation
-          </p>
-          <h2 id="contact-title">
-            Your business
-            <br /> A new possibility
-          </h2>
+          <h2 id="contact-title">Start with one process</h2>
           <p>
             Tell Vitali which process you want to improve, where the relevant
             information lives and what a useful outcome would look like
           </p>
         </div>
         <div className="contact-action">
-          <TelegramLink />
-          <p>You will open a conversation with Vitali Bakhmat on Telegram</p>
+          <TelegramLink className="btn btn-light" />
         </div>
       </div>
     </section>

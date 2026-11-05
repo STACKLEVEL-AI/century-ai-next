@@ -84,7 +84,7 @@ function lookup(value, file, required = false) {
 const contentFields = new Set([
   "title", "seoTitle", "description", "label", "labels", "caption", "alt", "role", "profileLabel", "link",
   "text", "question", "answer", "headline", "eyebrow", "focus", "owner", "tags", "intro", "stages",
-  "detail", "steps", "outcome", "short", "points", "category", "categories", "readingTime", "paragraphs",
+  "detail", "steps", "outcome", "work", "output", "decision", "short", "points", "category", "categories", "readingTime", "paragraphs",
   "location", "snippet", "goalsTitle", "summary", "inputs", "review", "processTitle", "processContext",
   "controlIntro", "reference", "workflowAlt", "operationLabel", "audience", "heroDescription", "whyIntro",
   "ctaLabel", "contactTitle", "PAGE_TITLE", "PAGE_DESCRIPTION",

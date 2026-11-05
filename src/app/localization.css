@@ -1,5 +1,5 @@
 /* German compounds and longer labels must fit the shared responsive layouts. */
-html[lang="de"] :is(h1, h2, h3, h4, p, figcaption, button, summary) {
+html[lang="de"] :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
   overflow-wrap: break-word;
   hyphens: auto;
 }

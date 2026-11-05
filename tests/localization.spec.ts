@@ -187,7 +187,7 @@ for (const width of [320, 390]) {
     const errors = collectRuntimeErrors(page);
     await page.setViewportSize({ width, height: 844 });
     await page.emulateMedia({ reducedMotion: "reduce" });
-    const previews = ["/de/", "/de/platform/", "/de/industries/healthcare/", "/de/blog/choose-first-ai-workflow/", "/de/privacy/"];
+    const previews = ["/de/", "/de/platform/", "/de/deployment/", "/de/industries/healthcare/", "/de/blog/choose-first-ai-workflow/", "/de/privacy/"];
     for (const route of SITE_ROUTES.map(route => `/de${route}`)) {
       await page.goto(route);
       await page.evaluate(async () => { await document.fonts.ready; });
@@ -198,6 +198,7 @@ for (const width of [320, 390]) {
       }));
       if (dimensions.content > dimensions.viewport + 1) {
         const overflow = await page.evaluate(() => Array.from(document.querySelectorAll("body *"))
+          .filter(element => element.checkVisibility())
           .map(element => ({ element: element.tagName + "." + element.className, box: element.getBoundingClientRect().toJSON() }))
           .filter(item => item.box.width > 0 && item.box.right > document.documentElement.clientWidth + 1)
           .slice(0, 25));
