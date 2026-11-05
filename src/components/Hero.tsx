@@ -5,8 +5,8 @@ export default function Hero() {
   return <>
     <section className="hero" id="home" aria-labelledby="hero-title">
       <picture className="hero-image">
-        <source media="(max-width: 640px)" srcSet="/media/hero-poster-640.webp 640w, /media/hero-poster-960.webp 960w" sizes="100vw" />
-        <img src="/media/hero-poster.webp" srcSet="/media/hero-poster-960.webp 960w, /media/hero-poster.webp 1800w" sizes="100vw" width={1800} height={1013} alt="" fetchPriority="high" />
+        <source media="(max-width: 640px)" srcSet="/media/hero-poster-mobile.webp" width={540} height={960} />
+        <img src="/media/hero-poster.webp" srcSet="/media/hero-poster-640.webp 640w, /media/hero-poster-960.webp 960w, /media/hero-poster.webp 1280w" sizes="100vw" width={1280} height={720} alt="" fetchPriority="high" />
       </picture>
       <HeroFilm />
       <div className="hero-shade" aria-hidden="true" />
@@ -24,3 +24,4 @@ export default function Hero() {
     </div></div>
   </>;
 }
+

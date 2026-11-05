@@ -2,16 +2,13 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Scenarios from "@/components/Scenarios";
-import Brain from "@/components/Brain";
 import Platform from "@/components/Platform";
-import Founders from "@/components/Founders";
-import Contact from "@/components/Contact";
 import HomeApproach from "@/components/HomeApproach";
 import HomeIndustries from "@/components/HomeIndustries";
-import HomeProductFamily from "@/components/HomeProductFamily";
-import HomeInsights from "@/components/HomeInsights";
+import HomeTeam from "@/components/HomeTeam";
 import Footer from "@/components/Footer";
 import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
+import "./home.css";
 
 const ogImage = {
   url: `${SITE_URL}/og/century-ai-eu.png`,
@@ -65,7 +62,7 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <>
+    <div className="century-home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -76,14 +73,11 @@ export default function Home() {
         <Scenarios />
         <Platform />
         <HomeApproach />
-        <HomeProductFamily />
         <HomeIndustries />
-        <Brain />
-        <Founders />
-        <HomeInsights />
-        <Contact />
+        <HomeTeam />
       </main>
-      <Footer />
-    </>
+      <div id="contact"><Footer /></div>
+    </div>
   );
 }
+

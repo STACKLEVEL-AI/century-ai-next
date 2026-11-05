@@ -3,7 +3,7 @@ import AppScreenshot from "@/components/AppScreenshot";
 
 export default function Platform() {
   return <>
-    <section className="home-manifesto"><div className="shell"><p>AI technology.<br />Hands-on deployment.<br /><span>A shared direction.</span></p><div>We bring the platform, engineering and business perspective together to help your organisation move forward.</div></div></section>
+    <section className="home-manifesto" aria-label="Our approach"><div className="shell"><p>We bring together the AI platform, hands-on deployment and a shared direction <span>to transform how your business works.</span></p></div></section>
     <section className="section platform-section" id="platform" aria-labelledby="platform-title">
       <div className="platform-grain" aria-hidden="true" />
       <div className="shell platform-layout">
@@ -13,3 +13,4 @@ export default function Platform() {
     </section>
   </>;
 }
+

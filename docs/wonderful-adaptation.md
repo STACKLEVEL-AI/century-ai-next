@@ -2,13 +2,15 @@
 
 This **26-route website** adapts the main page families and visual composition of [Wonderful](https://www.wonderful.ai/) while preserving Century's name, founders and existing business contacts. The design covers the homepage and the shared product, industry, company and guide layouts. The [design migration log](design-migration-2026-11-04.md) records the earlier implementation, original media sources and validation evidence. The [application screenshot log](application-screenshots-2026-11-04.md) documents the real English interface captures. The [generated photography refresh](generated-photography-2026-11-04.md) replaces ten scene and background photographs while preserving their visual purpose; the three original founder portraits and six application captures remain unchanged.
 
+The [stock-video update](stock-video-2026-11-05.md) brings the homepage section order into line with the current reference and replaces the previous still-photo animation with licensed real footage. It preserves the 26-route inventory and the original Century portraits and application captures.
+
 ## Century identity
 
 The current design uses the **black and white Century SVG wordmarks supplied for this task**, Inter typography, white and near-black sections, large light-weight headings, restrained borders and rounded buttons. Photographic cards and a short background film carry the homepage imagery. A symbol derived from the supplied wordmark's first glyph is used where a compact mark is needed. Every route shares the same navigation and footer; `src/app/design.css` applies the current visual system across the existing page families.
 
 Vitali Bakhmat, Vadim Vladymtsev and Egor Krychev retain their existing names, roles and profile destinations. Their original photographs are preserved byte-for-byte from `main` at `cad5ff160878585c75ce78a075f06d7b14087a6a`, with the same asset paths and dimensions. The generated founder alternatives were excluded from the release. Contact links lead to `https://t.me/vitalibakhmat`; the other external profile links are `https://vadimohka.com/` and `https://www.linkedin.com/in/ekrychev/`.
 
-The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, real application captures and locally served generated photographs. The enterprise scenes depict fictional locations and people; the named founders retain their identities. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Original media provenance remains in the design migration log, current generation prompts and source references are in the photography notes, and the [application screenshot log](application-screenshots-2026-11-04.md) documents the real interface captures.
+The reference informs page structure, hierarchy and visual rhythm. Century's pages use adapted copy, real application captures, licensed stock footage and locally served photography. The illustrative scenes do not establish customer relationships or identify Century premises; the named founders retain their identities. Wonderful customer logos, testimonials, investors, statistics, certifications, press coverage and job vacancies are not attributed to Century. Original media provenance remains in the design migration log, current generation prompts and source references are in the photography notes, and the [application screenshot log](application-screenshots-2026-11-04.md) documents the real interface captures.
 
 ## Complete route inventory
 
@@ -16,7 +18,7 @@ All 26 content routes use trailing slashes in the static export. The source regi
 
 | Route | Implemented content |
 | --- | --- |
-| `/` | Film hero with poster fallback; photographic use cases; platform and product family; deployment and strategy; industry selector; application capture gallery; founders; guides; contact. |
+| `/` | Responsive stock-film hero; capabilities strip; horizontal use-case cards; manifesto; one AI OS section with real captures; deployment and strategy; horizontal industry tabs with one wide image; About/Careers closer; footer contact. |
 | `/ai-os/` | Platform foundation, infrastructure layer explorer, reusable knowledge and workflow concepts, deployment boundaries and product links. |
 | `/agents/` | Knowledge, document and support workflows; agent scope; native capability disclosures; real model and response-detail captures; operating ownership. |
 | `/systems/` | Requirements-led application design, real file-library and document-input views, business functions, implementation and ownership. |
@@ -67,7 +69,7 @@ The infrastructure explorer, deployment phase selector, homepage industry select
 
 Workflow details, capability disclosures and mobile navigation use native `details` and `summary` where appropriate. The primary page content is server rendered. Skip links, visible focus styles, semantic headings, responsive layouts and reduced-motion styles are included. Browser-level validation of these behaviours is separate from inspecting the source or a static export.
 
-The decorative homepage film is a silent 13-second montage of generated still photographs, animated with slow zooms and crossfades. It loops inline and has a labelled pause/play button. `HeroFilm` checks the visitor's reduced-motion and save-data preferences before mounting the video. When either preference is enabled, or JavaScript is unavailable, the responsive local poster remains the hero background. The film is decorative and hidden from assistive technology; all hero text and actions remain regular page content.
+The decorative homepage film is a silent 24-second montage of eight licensed stock clips, edited with straight cuts. Desktop and mobile files use separate framing; only one is mounted per page load. It loops inline, pauses outside the viewport or in a hidden tab, and has a labelled pause/play button that preserves a manual pause. `HeroFilm` checks reduced-motion and save-data preferences before mounting the video. When either preference is enabled, JavaScript is unavailable or the media fails, a responsive local poster remains visible. The film is decorative and hidden from assistive technology; all text and actions remain regular page content.
 
 The earlier supplier-onboarding answer, review queue, Gateway sample analytics and decorative product diagrams have been removed. Industry hero artwork has also been replaced with real Century file-library captures; those captures do not claim an industry-specific customer deployment. Careers does not claim open roles, and Press does not invent media coverage or funding. Security content identifies decisions to agree for an implementation; it does not claim certifications or unconditional compliance.
 
@@ -87,8 +89,8 @@ The [migration log's asset-provenance section](design-migration-2026-11-04.md#as
 | --- | --- |
 | Black and white Century wordmarks | `public/brand/century-logo.svg` and `public/brand/century-logo-white.svg`; supplied by the user. |
 | Compact Century symbol | `public/brand/century-symbol.svg`; derived from the supplied wordmark's first glyph. |
-| Homepage film | `public/media/enterprise-film.mp4`; a 13-second, silent 1280 × 720 / 24 fps animation of the generated hero, workflows, knowledge and support photographs. |
-| Hero posters and use-case photographs | `public/media/hero-poster*.webp`, `knowledge.webp`, `workflows.webp` and `support.webp`; generated analogues preserving the source scenes' ideas, framing, light and colour treatment. |
+| Homepage film | `public/media/enterprise-film.mp4` and `enterprise-film-mobile.mp4`; a 24-second silent stock montage in 1280 × 720 and 540 × 960, H.264 / 24 fps. |
+| Hero posters and use-case photographs | `public/media/hero-poster*.webp` and `public/media/stock/scene-*.webp`; real frames extracted from the licensed sources in the stock-video manifest. |
 | Platform, deployment, strategy, industry and closing imagery | WebP files in `public/media/`; new reference-guided generated photographs retaining the existing visual purpose and palette. |
 | Founder portraits | `public/founders/`; three original photographs preserved byte-for-byte from `main` at `cad5ff1`, with their original dimensions. |
 | Atrium and responsive variants | `public/images/enterprise-atrium*.webp`; newly generated architecture, retained as unused assets. |
@@ -98,7 +100,7 @@ The enterprise photographs illustrate the site's themes; they do not document Ce
 
 The [photography comparison gallery](previews/generated-photography-2026-11-04.jpg) records the earlier branch review, including generated founder alternatives that were excluded and are not deployed as website portraits. The manifest separates those historical generation records from its ten selected assets. The [preserved founder inventory](generated-photography-2026-11-04.md#preserved-founder-portraits) identifies the exact original files used by the site.
 
-The social image at `public/og/century-ai-eu.png` combines the generated hero poster, supplied white wordmark and existing text with Sharp. Regenerate it with `npm run assets:og`. The `npm run assets:film` command runs `scripts/create-enterprise-film.mjs` to animate four generated stills; the result is a montage, with no full-motion video generation. Rebuild to refresh `out/` after changing either derived asset.
+The social image at `public/og/century-ai-eu.png` combines the current hero poster, supplied white wordmark and existing text with Sharp. Regenerate it with `npm run assets:og`. The optional `npm run assets:film` command runs `scripts/create-enterprise-film.mjs` to fetch hash-verified stock sources and reproduce the responsive films and posters from the committed manifest using FFmpeg/ffprobe. It is not run during builds or deployment. Rebuild to refresh `out/` after changing either derived asset.
 
 ## Build and optional inspection
 
@@ -151,3 +153,4 @@ There are **no CI test jobs or test steps**, no browser installation or Playwrig
 Pages settings must use **GitHub Actions** as the source and retain the `century-ai.eu` custom domain. Generated output is not committed to `main` or published through a separate `gh-pages` branch. Source changes become a confirmed publication only after the deployment succeeds.
 
 The [photography notes](generated-photography-2026-11-04.md) and [application screenshot log](application-screenshots-2026-11-04.md) describe the generated imagery, real captures and verification records. The [design migration log](design-migration-2026-11-04.md) and [original implementation plan](superpowers/plans/2026-10-26-century-ai-eu-upgrade.md) remain unchanged as historical project context.
+

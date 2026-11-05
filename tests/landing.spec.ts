@@ -7,12 +7,21 @@ const TELEGRAM = "https://t.me/vitalibakhmat";
 async function expectLocalHeroImage(page: Page) {
   const heroImage = await page.locator("#home img").evaluate((node) => {
     const image = node as HTMLImageElement;
+    const activeSource = Array.from(image.closest("picture")?.querySelectorAll("source") ?? [])
+      .find((source) => (!source.media || window.matchMedia(source.media).matches)
+        && source.srcset.split(",").some((candidate) =>
+          new URL(candidate.trim().split(/\s+/)[0], document.baseURI).href === image.currentSrc,
+        ));
+    // A selected portrait source can override the landscape fallback's ratio.
+    const dimensions = activeSource?.hasAttribute("width") && activeSource.hasAttribute("height")
+      ? activeSource
+      : image;
     return {
       complete: image.complete,
       width: image.naturalWidth,
       height: image.naturalHeight,
-      declaredWidth: Number(image.getAttribute("width")),
-      declaredHeight: Number(image.getAttribute("height")),
+      declaredWidth: Number(dimensions.getAttribute("width")),
+      declaredHeight: Number(dimensions.getAttribute("height")),
       source: image.currentSrc,
     };
   });
@@ -141,13 +150,26 @@ test("Contact, privacy and founder links use the approved destinations", async (
     expect(link.rel).toContain("noopener");
     expect(link.rel).toContain("noreferrer");
   }
+  const founderNames = ["Vitali Bakhmat", "Vadim Vladymtsev", "Egor Krychev"];
+  const teamPreview = page.locator("#team").getByRole("list", { name: "Century founders" });
+  await expect(teamPreview.locator("img")).toHaveCount(3);
+  for (const name of founderNames) {
+    await expect(teamPreview.getByText(name, { exact: false })).toBeVisible();
+  }
+  await page.locator("#team").getByRole("link", { name: /About Century/ }).click();
+  await expect(page).toHaveURL(`${ORIGIN}/about-us/`);
   const founders = page.locator("#founders");
-  for (const name of ["Vitali Bakhmat", "Vadim Vladymtsev", "Egor Krychev"]) {
+  for (const name of founderNames) {
     await expect(founders.getByRole("heading", { name, exact: true })).toBeVisible();
   }
   await expect(founders.getByRole("link", { name: "vadimohka.com", exact: true })).toHaveAttribute("href", "https://vadimohka.com/");
   await expect(founders.getByRole("link", { name: "LinkedIn", exact: true })).toHaveAttribute("href", "https://www.linkedin.com/in/ekrychev/");
   await expect(founders.locator("img")).toHaveCount(3);
+  for (const link of await founders.getByRole("link").all()) {
+    await expect(link).toHaveAttribute("target", "_blank");
+    await expect(link).toHaveAttribute("rel", /\bnoopener\b/);
+    await expect(link).toHaveAttribute("rel", /\bnoreferrer\b/);
+  }
 
   await page.getByRole("navigation", { name: "Footer navigation" }).getByRole("link", { name: "Contact", exact: true }).click();
   await expect(page).toHaveURL(`${ORIGIN}/contact/`);
@@ -199,14 +221,18 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     const page = await context.newPage();
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    for (const id of ["use-cases", "example", "how-we-start", "founders", "contact"]) {
+    for (const id of ["use-cases", "platform", "how-we-start", "industries", "team", "contact"]) {
       await expect(page.locator(`#${id}`)).toBeVisible();
     }
     await expect(page.locator(".home-industry-fallback a")).toHaveCount(7);
     await expectLocalAppScreenshots(page);
-    const workflow = page.locator("#use-cases details").first();
-    await workflow.locator("summary").click();
-    await expect(workflow.locator(".card-measure")).toBeVisible();
+    const useCases = page.locator("#use-cases").getByRole("list", { name: "AI use cases" }).getByRole("link");
+    const useCaseRoutes = ["/agents/", "/agents/", "/systems/", "/ai-os/", "/deployment/"];
+    await expect(useCases).toHaveCount(5);
+    for (const [index, route] of useCaseRoutes.entries()) {
+      await expect(useCases.nth(index)).toBeVisible();
+      await expect(useCases.nth(index)).toHaveAttribute("href", route);
+    }
 
     const menu = page.locator("[data-mobile-navigation]");
     await menu.locator(":scope > summary").click();
@@ -320,11 +346,12 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await expectLocalHeroImage(page);
     await expectNoHorizontalOverflow(page);
     expect(await page.locator("html").evaluate((node) => getComputedStyle(node).scrollSnapType)).toBe("none");
+    const contactCta = page.locator(`#contact a[href="${TELEGRAM}"]`);
     for (const links of [
       page.locator("[data-site-header]").getByRole("link", { name: "Century home", exact: true }),
       page.locator("[data-site-header]").getByRole("link", { name: "Get in touch", exact: true }),
       page.locator("#home a"),
-      page.locator("#contact a"),
+      contactCta,
       page.locator(".app-capture-open"),
     ]) {
       for (const link of await links.all()) {
@@ -335,8 +362,8 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
         expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width + 1);
       }
     }
-    await page.locator("#contact").scrollIntoViewIfNeeded();
-    await expect(page.locator("#contact a")).toBeInViewport();
+    await contactCta.scrollIntoViewIfNeeded();
+    await expect(contactCta).toBeInViewport();
     await page.screenshot({ path: testInfo.outputPath(`landing-${viewport.width}.png`), fullPage: true });
   }
   await page.setViewportSize({ width: 320, height: 740 });
