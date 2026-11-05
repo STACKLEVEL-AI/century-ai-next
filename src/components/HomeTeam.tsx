@@ -9,7 +9,7 @@ const founders = [
 
 export default function HomeTeam() {
   return <section className={styles.section} id="team" aria-labelledby="home-team-title">
-    <img className={styles.backdrop} src="/media/stock/scene-office.webp" width={960} height={540} alt="" loading="lazy" decoding="async" />
+    <img className={styles.backdrop} src="/media/platform/systems/working-team-1280.webp" width={1280} height={714} alt="" loading="lazy" decoding="async" />
     <div className="shell">
       <div className={styles.intro}>
         <div><p className="eyebrow">The people behind Century</p><h2 id="home-team-title">A shared ambition.<br />A human approach.</h2></div>

@@ -15,7 +15,15 @@ const sectors = [
   { slug: "airlines", title: "Airlines", headline: "Keep teams informed when plans change.", description: "Prepare consistent service responses and complete handovers from verified travel information.", icon: Plane },
 ];
 
-const photos = ["industry", "workflows", "deployment", "workflows", "industry", "knowledge", "support"];
+const photos = [
+  { src: "/media/industry.webp", width: 1200, height: 670 },
+  { src: "/media/industries/telecommunication/hero-1280.webp", width: 1280, height: 714 },
+  { src: "/media/industries/healthcare/hero-1280.webp", width: 1280, height: 714 },
+  { src: "/media/industries/utilities/hero-1280.webp", width: 1280, height: 714 },
+  { src: "/media/insurance/hero-1600.webp", width: 1600, height: 893 },
+  { src: "/media/industries/retail/hero-1280.webp", width: 1280, height: 714 },
+  { src: "/media/support.webp", width: 1200, height: 675 },
+];
 
 export default function HomeIndustries() {
   const [selected, setSelected] = useState(0);
@@ -47,7 +55,6 @@ export default function HomeIndustries() {
   const active = sectors[selected];
   const Icon = active.icon;
   const photo = photos[selected];
-  const photoHeight = photo === "industry" || photo === "deployment" ? 670 : 675;
 
   return (
     <section id="industries" className={styles.industries} aria-labelledby="industries-title">
@@ -83,10 +90,10 @@ export default function HomeIndustries() {
           <div id="sector-panel" className={styles.panel} role="tabpanel" aria-labelledby={`sector-tab-${selected}`} tabIndex={0}>
             <img
               className={styles.photo}
-              src={`/media/${photo}.webp`}
+              src={photo.src}
               alt=""
-              width={1200}
-              height={photoHeight}
+              width={photo.width}
+              height={photo.height}
               loading="lazy"
               decoding="async"
             />

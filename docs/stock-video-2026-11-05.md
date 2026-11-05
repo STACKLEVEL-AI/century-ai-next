@@ -49,11 +49,19 @@ The chosen licences permit free commercial website use and modification without 
 | `hero-poster-640.webp` | 640 × 360 WebP | 44,076 |
 | `hero-poster-mobile.webp` | 540 × 960 WebP | 72,752 |
 
-Both films use H.264/yuv420p, 24 fps, faststart and no audio. Mobile framing is adjusted by subject for each scene; it is not a single centre crop of the completed desktop film. Eight 960 × 540 frame extracts live in `public/media/stock/` and provide homepage card images. The posters are the first actual frame of the opening scene. The social image is regenerated from the new poster using the existing wordmark and copy.
+Both films use H.264/yuv420p, 24 fps, faststart and no audio. Mobile framing is adjusted by subject for each scene; it is not a single centre crop of the completed desktop film. Eight 960 × 540 frame extracts remain in `public/media/stock/`; the 6 November photography update replaced their homepage uses with independent photographs. The posters are the first actual frame of the opening scene. The social image is regenerated from the new poster using the existing wordmark and copy.
 
 `HeroFilm` chooses one media file at mount: mobile at widths up to 640 px, desktop above that. A resize does not download a second film. Reduced motion and Save-Data use the poster, as does a page without JavaScript. A media error restores the poster. The selected film autoplays in a muted inline loop. All files are served from the static export; no visitor request goes to a stock-media provider.
 
-The use-case rail supports touch scrolling, keyboard-accessible links and previous/next controls. The industry tabs retain arrow/Home/End navigation, a single focusable active tab, correct panel labels and seven no-JavaScript fallback links. The restored section uses its original local editorial photographs. It stacks below 900 px, with two columns of choices on tablets and a vertical list below 640 px.
+The use-case rail supports touch scrolling, keyboard-accessible links and previous/next controls. The industry tabs retain arrow/Home/End navigation, a single focusable active tab, correct panel labels and seven no-JavaScript fallback links. The restored section uses a distinct local photograph for each industry. It stacks below 900 px, with two columns of choices on tablets and a vertical list below 640 px.
+
+## Homepage photography update — 6 November
+
+The homepage now uses 18 distinct photographs across its logical image slots, including all seven industry tabs and the Company menu press card. Responsive variants of the hero poster and the desktop/mobile renderings of the same navigation card count as one slot each. Four groups of repeated images were removed, and the five use-case cards no longer reuse frames from the opening video.
+
+Existing editorial photographs supply the replacement images. Employee assistance adds one generated environmental workplace scene guided by the user's appearance references and the site's existing photographic style: a close lookalike with small facial differences, candid activity, motion blur and muted warm/teal tones. The generated scene is illustrative; it does not identify a Century employee or customer. The source reference attachments and the two discarded portrait-style candidates are not included in the repository.
+
+The selected new WebP is 1600 × 900 and 64,132 bytes. The complete slot mapping, dimensions, SHA-256 hashes, generation method and final prompt are recorded in [the photography manifest](homepage-photography-2026-11-06.json). The current hero films, founder photographs, application captures, page layout and deploy-only workflow are preserved.
 
 ## Maintenance
 

@@ -5,11 +5,11 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import styles from "./Scenarios.module.css";
 
 const scenarios = [
-  { name: "Customer experience", image: "airport-woman", position: "68% center", title: "Every conversation.\nA useful next step.", href: "/agents/" },
-  { name: "Employee assistance", image: "keyboard", position: "62% center", title: "Company knowledge.\nReady when you need it.", href: "/agents/" },
-  { name: "Business operations", image: "truck", position: "51% center", title: "Keep your work\nmoving forward.", href: "/systems/" },
-  { name: "A connected platform", image: "control", position: "66% center", title: "One foundation.\nMore possibilities.", href: "/ai-os/" },
-  { name: "Hands-on deployment", image: "office", position: "52% center", title: "From AI ambition\nto everyday progress.", href: "/deployment/" },
+  { name: "Customer experience", src: "/media/industries/banking/workflows.webp", width: 1440, height: 804, position: "50% center", title: "Every conversation.\nA useful next step.", href: "/agents/" },
+  { name: "Employee assistance", src: "/media/employee-assistance-woman.webp", width: 1600, height: 900, position: "50% center", title: "Company knowledge.\nReady when you need it.", href: "/agents/" },
+  { name: "Business operations", src: "/media/workflows.webp", width: 1200, height: 675, position: "55% center", title: "Keep your work\nmoving forward.", href: "/systems/" },
+  { name: "A connected platform", src: "/media/knowledge.webp", width: 1200, height: 675, position: "54% center", title: "One foundation.\nMore possibilities.", href: "/ai-os/" },
+  { name: "Hands-on deployment", src: "/media/platform/deployment/engineering.webp", width: 1456, height: 816, position: "20% center", title: "From AI ambition\nto everyday progress.", href: "/deployment/" },
 ];
 
 export default function Scenarios() {
@@ -59,9 +59,9 @@ export default function Scenarios() {
       </div>
     </div>
     <ul className={styles.track} id="scenario-track" ref={track} aria-label="AI use cases">
-      {scenarios.map(({ name, image, position, title, href }) => <li className={styles.item} key={name}>
+      {scenarios.map(({ name, src, width, height, position, title, href }) => <li className={styles.item} key={name}>
         <a className={styles.card} href={href}>
-          <img src={`/media/stock/scene-${image}.webp`} style={{ objectPosition: position }} alt="" width={960} height={540} loading="lazy" decoding="async" />
+          <img src={src} style={{ objectPosition: position }} alt="" width={width} height={height} loading="lazy" decoding="async" />
           <h3>{title.split("\n").map((line, index) => <span key={line}>{index > 0 && <br />}{line}</span>)}</h3>
           <ArrowUpRight className={styles.arrow} size={23} strokeWidth={1.5} aria-hidden="true" />
           <span className={styles.label}>{name}</span>

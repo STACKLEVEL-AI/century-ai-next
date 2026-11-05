@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "9dfa29faea019e83e3f18fa7b70e4f71b0e2ca8e",
+  "scope": "Homepage photography including all seven industry tabs and the Company navigation card. Responsive variants of one photograph are a single logical slot.",
+  "changes": "Replace four groups of repeated photographs and remove video frame extracts from use-case cards and the Team background. Reuse distinct existing assets and add one new illustrative workplace scene.",
+  "photos": [
+    {
+      "slot": "Hero poster",
+      "src": "/media/hero-poster.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 166158,
+      "sha256": "1dd547d4065d2cffe6e0166d058a5f9d5181d6246d181e7f766033342004b14d"
+    },
+    {
+      "slot": "Customer experience",
+      "src": "/media/industries/banking/workflows.webp",
+      "width": 1440,
+      "height": 804,
+      "bytes": 96896,
+      "sha256": "0f162cae1af945ad52be4f74232d99f51c84010fcc7492c9ad5756b54e37c42d"
+    },
+    {
+      "slot": "Employee assistance",
+      "src": "/media/employee-assistance-woman.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 64132,
+      "sha256": "5beb88652bd72f215200548e7300dcc5d1494467a730987f239081ae148b8243"
+    },
+    {
+      "slot": "Business operations",
+      "src": "/media/workflows.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 161016,
+      "sha256": "722d47109dd2fe5a7abcb4554d47368db034ee2aa59332108ced8f3e25122595"
+    },
+    {
+      "slot": "A connected platform",
+      "src": "/media/knowledge.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 97092,
+      "sha256": "70ec55de684d6fccf354b526401649dab5b675c892317593fd839af7cb29500b"
+    },
+    {
+      "slot": "Hands-on deployment",
+      "src": "/media/platform/deployment/engineering.webp",
+      "width": 1456,
+      "height": 816,
+      "bytes": 249220,
+      "sha256": "cb6d032605b6665b12f0e1e8a3e66a13c55a376dc4cab4cc756aebacfb520528"
+    },
+    {
+      "slot": "AI OS backdrop",
+      "src": "/media/platform.webp",
+      "width": 1800,
+      "height": 1009,
+      "bytes": 58070,
+      "sha256": "cff8390edc1c4b1093fd37685b4dc6b985cc9615f7e3595671da3fc4dda1e6d2"
+    },
+    {
+      "slot": "Deployment",
+      "src": "/media/deployment.webp",
+      "width": 1200,
+      "height": 670,
+      "bytes": 41880,
+      "sha256": "784a60e46f122a583dd33987ab687bb417fd0d45355f6b29310f34d20527d66d"
+    },
+    {
+      "slot": "AI strategy",
+      "src": "/media/strategy.webp",
+      "width": 1054,
+      "height": 1451,
+      "bytes": 99836,
+      "sha256": "10fc9d9fac2b52717728914179cd26a7762d22a1240782c4eed3bab33b108f0a"
+    },
+    {
+      "slot": "Banking",
+      "src": "/media/industry.webp",
+      "width": 1200,
+      "height": 670,
+      "bytes": 96690,
+      "sha256": "136183b1a779cef9f88d205fa13c24952180777a3800a7a7a28bc0fdf83830b8"
+    },
+    {
+      "slot": "Telecommunications",
+      "src": "/media/industries/telecommunication/hero-1280.webp",
+      "width": 1280,
+      "height": 714,
+      "bytes": 83364,
+      "sha256": "e5ec67c7489f9c76d401cb34874544033cb1930b9f1096aee7841af9f414d756"
+    },
+    {
+      "slot": "Healthcare",
+      "src": "/media/industries/healthcare/hero-1280.webp",
+      "width": 1280,
+      "height": 714,
+      "bytes": 61464,
+      "sha256": "2d923d31597393b19c9940e0a9f45ea089ab5d3ca1e937698607c26b888f91e0"
+    },
+    {
+      "slot": "Utilities",
+      "src": "/media/industries/utilities/hero-1280.webp",
+      "width": 1280,
+      "height": 714,
+      "bytes": 289902,
+      "sha256": "9bd1608df848fbb7be8ceae9e47036a510d5c322b48e6a877a150964dd060177"
+    },
+    {
+      "slot": "Insurance",
+      "src": "/media/insurance/hero-1600.webp",
+      "width": 1600,
+      "height": 893,
+      "bytes": 134488,
+      "sha256": "5927acb061431696b1fc9d96b170d33da788b947cd257a6c7256ccba850c5585"
+    },
+    {
+      "slot": "Retail",
+      "src": "/media/industries/retail/hero-1280.webp",
+      "width": 1280,
+      "height": 714,
+      "bytes": 105200,
+      "sha256": "a1cf56efa97a9106c0c193472045a95dc9fdaf36aff76a3292586fb8eca6a8f7"
+    },
+    {
+      "slot": "Airlines",
+      "src": "/media/support.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 60472,
+      "sha256": "92e3f1ce8aef0994a9125e139ed8ac879471f6218c31c8f2651eb4c8444ec214"
+    },
+    {
+      "slot": "Team backdrop",
+      "src": "/media/platform/systems/working-team-1280.webp",
+      "width": 1280,
+      "height": 714,
+      "bytes": 27602,
+      "sha256": "e8e24b6c992b8cc1cc98dcb4aab03ebb2ee47d5087937563fb9a58a81458b428"
+    },
+    {
+      "slot": "Company menu press card",
+      "src": "/media/platform/deployment/strategy.webp",
+      "width": 765,
+      "height": 542,
+      "bytes": 33718,
+      "sha256": "6c8f73b71f78344d6eab4912f9a62b5e9936954481a44feb1f1ce56a9f49cf31"
+    }
+  ],
+  "generated_asset": {
+    "path": "public/media/employee-assistance-woman.webp",
+    "tool": "built-in image_gen.imagegen",
+    "purpose": "Illustrative Employee assistance scene, not an employee or customer portrait.",
+    "references": [
+      "Two user-supplied appearance references, not published with the website.",
+      "public/media/deployment.webp — existing photographic art direction.",
+      "public/media/industries/banking/workflows.webp — existing photographic art direction."
+    ],
+    "brief": "A very close lookalike with modest facial differences, integrated into a candid workplace scene matching the existing motion blur, muted warm/teal grading and environmental framing.",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: landscape editorial workplace photograph for the Employee assistance card on the Century enterprise website. Output a wide 16:9 photograph that also works cropped to a square.\nInputs: Images 1 and 2 show the woman's appearance; use them for very close visual resemblance with slight natural differences, not as compositions to copy. Images 3 and 4 are the WEBSITE PHOTOGRAPHIC STYLE REFERENCES and must govern this new image's art direction: candid people at work, a stationary subject with people moving around them, cinematic motion blur, restrained warm highlights and deep teal/olive shadows, documentary 35mm photography and fine film grain.\nCreate a new scene: in a busy office, viewed through a glass partition from several metres away, a woman with very similar facial features to the supplied woman is standing beside a shared worktable, reading a tablet and thoughtfully discussing work with someone just outside the frame. She wears a simple off-white open-collar shirt with sleeves casually rolled. Her light-brown, naturally voluminous curly hair is loosely pulled back with some curls around her face. Show her upper body and surrounding working environment, not a headshot. Her face is in a gentle three-quarter angle, clearly visible but she is not looking into the camera, with a quiet, natural engaged expression. Closely echo the reference woman's soft oval face, eye shape, delicate nose and subtle smile, with modest variations in cheek contour and brow shape so she is a very close lookalike rather than an exact duplicate.\nComposition is environmental and cinematic: the woman's head is about 15 percent of the image height, her face is near x=55%, y=45%, her body and desk provide context. Keep her sharp enough to recognize. Place heavily motion-blurred passing colleagues at the FAR left and right edges and soft reflections on the glass; keep her face and the central square crop unobstructed. Quiet darker office architecture and glazing in the top quarter provide space for a white card heading. A laptop, a few papers and normal office furniture are natural contextual details, all unbranded with no readable content.\nMatch the existing website photos' subdued amber, warm ivory, olive and dark blue-green color palette and filmic contrast. Late-afternoon window light, imperfect real textures, slight underexposure, subtle grain, physically plausible long-exposure motion blur. The image should feel like an observational frame from a sophisticated enterprise documentary, with authentic activity and depth.\nAvoid: posed corporate portrait, direct gaze, smile-to-camera, glamour makeup, blazer portrait, centered headshot, bright generic stock-photo office, commercial beauty lighting, pristine AI-smooth skin, exaggerated bokeh, oversaturated colors, logos, readable text, watermarks, typography, graphic overlays, extra sharp faces. No UI and no circular crop.",
+    "export": "Generated PNG converted to 1600 × 900 WebP with Sharp, quality 86; no generative edits or additional retouching during export.",
+    "discarded_variants": "The two earlier portrait-style candidates were not published or committed."
+  },
+  "preserved": [
+    "Current hero video and its matching posters",
+    "Palantir-like industry layout and all interactions",
+    "Three original founder photographs",
+    "Real application screenshots",
+    "Deployment-only GitHub Actions workflow"
+  ],
+  "audit": {
+    "logical_photo_slots": 18,
+    "unique_paths": 18,
+    "unique_sha256": 18,
+    "static_video_extracts": 0
+  }
+}
