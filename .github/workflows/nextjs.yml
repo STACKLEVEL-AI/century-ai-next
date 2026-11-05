@@ -3,6 +3,14 @@ name: Deploy Century to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'tests/**'
+      - 'README.md'
+      - 'LICENSE'
+      - '.idea/**'
+      - 'playwright.config.ts'
+      - 'scripts/verify-export.mjs'
   workflow_dispatch:
 
 permissions:
@@ -16,6 +24,10 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DEPLOY_ONLY: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
     permissions:
       contents: read
       pages: write
@@ -32,7 +44,7 @@ jobs:
           node-version: '20'
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
       - name: Build static site
         run: npm run build
       - name: Upload Pages artifact

@@ -53,9 +53,11 @@ The result is `out/`. The existing postbuild step adds `CNAME` and `.nojekyll`. 
 
 In **Settings → Pages → Build and deployment**, select **GitHub Actions**. Keep the custom domain `century-ai.eu` in Pages settings.
 
-The workflow is [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml), named **Deploy Century to GitHub Pages**. It runs on pushes to `main`, or manually with `main` selected. Its only job checks out the repository, installs dependencies, builds the static site, uploads `out/` and deploys the Pages artifact.
+The workflow is [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml), named **Deploy Century to GitHub Pages**. It runs on pushes to `main`, or manually with `main` selected. Pushes changing only `docs/`, `tests/`, `README.md`, `LICENSE`, `.idea/`, `playwright.config.ts` or `scripts/verify-export.mjs` do not start a deployment. Its only job checks out the repository, installs dependencies, builds the static site, uploads `out/` and deploys the Pages artifact.
 
-**CI contains no test jobs or test steps.** It does not run Playwright, `typecheck` or `check:export`, and it does not run a pull-request verification workflow. Compilation and export remain necessary to produce the deployment artifact. The workflow does not publish a separate `gh-pages` branch or commit generated output.
+**CI contains no test jobs or validation steps.** It does not run Playwright, `typecheck` or `check:export`, and it does not run a pull-request verification workflow. The workflow sets `DEPLOY_ONLY=true`, which also skips Next.js's built-in TypeScript validation and linting. The postbuild script only packages `CNAME` and `.nojekyll`. Compilation and static export remain necessary to produce the deployment artifact; compilation or rendering failures still stop deployment. Ordinary local builds keep Next.js validation unless the same flag is explicitly set.
+
+Dependency installation uses `npm ci --no-audit --no-fund`, reuses the npm download cache, and does not install browser binaries. Next.js telemetry is disabled, and the job is limited to 10 minutes. A single `pages` concurrency group serializes deployments without interrupting a publication already in progress. The workflow does not publish a separate `gh-pages` branch or commit generated output.
 
 A successful Actions deployment and the live Pages URL establish publication status; the presence of source files or these instructions does not establish that a release has deployed.
 
