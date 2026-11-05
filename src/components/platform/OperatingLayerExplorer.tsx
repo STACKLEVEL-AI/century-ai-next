@@ -6,13 +6,13 @@ import AppScreenshot from "@/components/AppScreenshot";
 import styles from "./OperatingLayer.module.css";
 
 const layers = [
-  { id: "observability", title: "Observability", icon: Activity, description: "Keep the evidence close to the work. Inspect response details, review exceptions and give the people operating a workflow a shared picture of what happened.", capture: "response" as const },
-  { id: "workflows", title: "Workflows", icon: GitBranch, description: "Connect a business request to the information, actions and people it needs. Make the handover to a human part of the workflow from the beginning." },
-  { id: "building", title: "Building tools", icon: Braces, description: "Shape a focused application around a real process. Reuse the instructions, interfaces and review patterns that help your team get useful work done." },
-  { id: "context", title: "Context", icon: Database, description: "Bring approved documents and structured information into the task. Establish authoritative sources and access boundaries before extending the scope.", capture: "files" as const },
-  { id: "models", title: "Models", icon: Boxes, description: "Choose models around the work: the information involved, the quality required and the response time that is useful. See the actual model controls in Century.", capture: "models" as const },
-  { id: "integrations", title: "Integrations", icon: Network, description: "Connect the systems involved in the agreed use case. Review their interfaces, permissions and operating owners so the next step is clear." },
-  { id: "governance", title: "Security & governance", icon: ShieldCheck, description: "Define who can use which information, what the workflow can prepare and when it must ask a person. Carry those decisions through the implementation." },
+  { id: "observability", title: "Observability", icon: Activity, description: "Keep the evidence close to the work. Inspect response details, review exceptions and give the people operating a workflow a shared picture of what happened", capture: "response" as const },
+  { id: "workflows", title: "Workflows", icon: GitBranch, description: "Connect a business request to the information, actions and people it needs. Make the handover to a human part of the workflow from the beginning" },
+  { id: "building", title: "Building tools", icon: Braces, description: "Shape a focused application around a real process. Reuse the instructions, interfaces and review patterns that help your team get useful work done" },
+  { id: "context", title: "Context", icon: Database, description: "Bring approved documents and structured information into the task. Establish authoritative sources and access boundaries before extending the scope", capture: "files" as const },
+  { id: "models", title: "Models", icon: Boxes, description: "Choose models around the work: the information involved, the quality required and the response time that is useful. See the actual model controls in Century", capture: "models" as const },
+  { id: "integrations", title: "Integrations", icon: Network, description: "Connect the systems involved in the agreed use case. Review their interfaces, permissions and operating owners so the next step is clear" },
+  { id: "governance", title: "Security & governance", icon: ShieldCheck, description: "Define who can use which information, what the workflow can prepare and when it must ask a person. Carry those decisions through the implementation" },
 ];
 
 export default function OperatingLayerExplorer() {
@@ -46,7 +46,7 @@ export default function OperatingLayerExplorer() {
       </div>
     </div>
     <div className={styles.explorerCopy}>
-      <h2>One foundation for<br />enterprise AI.</h2>
+      <h2>One foundation for<br />enterprise AI</h2>
       <div className={styles.layerDescriptions}>{layers.map((layer, index) => <div key={layer.id}
         role="tabpanel" id={"os-panel-" + layer.id} aria-labelledby={"os-tab-" + layer.id}
         hidden={selected !== index} tabIndex={0} className={styles.layerDescription}>

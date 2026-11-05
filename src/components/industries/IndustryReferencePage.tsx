@@ -15,9 +15,9 @@ function IndustryFooter({ operationLabel }: { operationLabel: string }) {
     <div className={styles.footerInner}>
       <div className={styles.footerLead}>
         <a href="/" aria-label="Century home"><img src="/brand/century-logo-white.svg" alt="Century" width={221} height={58} /></a>
-        <p>A new chapter for your {operationLabel} operations.</p>
+        <p>A new chapter for your {operationLabel} operations</p>
         <TelegramLink className={styles.lightButton}>Get in touch</TelegramLink>
-        <small>© {new Date().getFullYear()} Century.</small>
+        <small>© {new Date().getFullYear()} Century</small>
       </div>
       <nav className={styles.footerNav} aria-label="Footer navigation">
         <div><h2>Platform</h2>{platformLinks.map(link => <a href={link.href} key={link.href}>{link.title}</a>)}</div>

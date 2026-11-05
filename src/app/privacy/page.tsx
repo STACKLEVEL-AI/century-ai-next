@@ -19,11 +19,11 @@ export default function PrivacyPage() {
   return (
     <PageFrame showContact={false}>
       <div className="co-page co-privacy">
-        <CompanyMasthead eyebrow="Website information" title={<>Privacy starts<br />with clarity.</>} description="A straightforward explanation of how this public website handles visits, interface choices and contact links." />
+        <CompanyMasthead eyebrow="Website information" title={<>Privacy starts<br />with clarity</>} description="A straightforward explanation of how this public website handles visits, interface choices and contact links" />
         <div className="shell co-document-layout">
           <nav className="co-document-nav" aria-label="Privacy information sections"><p className="co-eyebrow">On this page</p>{sections.map((section, i) => <a href={`#${section.id}`} key={section.id}><span className="co-index" aria-hidden="true">0{i + 1}</span>{section.title}</a>)}</nav>
           <div className="co-document-content">
-            <aside className="co-privacy-summary"><p className="co-eyebrow">At a glance</p><h2>A simple website.<br />A choice to connect.</h2><ul><li>No contact forms or embedded chat.</li><li>No analytics added by Century.</li><li>No application cookies or saved browser preferences.</li><li>External contact links open only when you choose.</li></ul></aside>
+            <aside className="co-privacy-summary"><p className="co-eyebrow">At a glance</p><h2>A simple website<br />A choice to connect</h2><ul><li>No contact forms or embedded chat.</li><li>No analytics added by Century.</li><li>No application cookies or saved browser preferences.</li><li>External contact links open only when you choose.</li></ul></aside>
             {sections.map((section, i) => <section className="co-document-section" id={section.id} key={section.id}><div className="co-document-section-heading"><span className="co-index" aria-hidden="true">0{i + 1}</span><h2>{section.title}</h2></div>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>)}
             <div className="co-document-contact"><p className="co-eyebrow">A question about this website?</p><TelegramLink>Ask Vitali a privacy question</TelegramLink><a className="co-text-link" href="/security/">Explore deployment security<ArrowUpRight size={16} aria-hidden="true" /></a></div>
           </div>

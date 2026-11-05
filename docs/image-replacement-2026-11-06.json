@@ -19,7 +19,7 @@
     "new_original_svg_diagrams": 6,
     "removed_public_asset_bytes": 10389387,
     "new_webp_bytes": 1541968,
-    "new_svg_bytes": 13398
+    "new_svg_bytes": 13393
   },
   "classification_note": "A directly borrowed photograph may have been converted to WebP or resized. This is an image-source/visual-equivalence audit, not a claim that every derivative has the same encoded bytes as Wonderful.",
   "reference_photographs": {
@@ -2324,26 +2324,26 @@
   "new_native_diagrams": [
     {
       "path": "public/media/century/diagrams/industry-deployment.svg",
-      "bytes": 2519,
-      "sha256": "152b8e95d438b2ddf4d13ff5f1f99d2805dcab24ae18008becdf37a815086e92",
+      "bytes": 2517,
+      "sha256": "01c8a3b73d00e30bc923d60ea429ca63eb869c0cd246a9ded27fd2e4094a270b",
       "origin": "Original Century vector source authored for this replacement; no embedded raster or external assets."
     },
     {
       "path": "public/media/century/diagrams/industry-frontier.svg",
-      "bytes": 2901,
-      "sha256": "bf24c9796fef3c14ba059c777d7ab933db20a348ae5a54770adc5aa460de3cfa",
+      "bytes": 2900,
+      "sha256": "e44ebe5393297db1c9e54c63a557ac9f421c57a58b219b3dfa7bb2a43a8d4a68",
       "origin": "Original Century vector source authored for this replacement; no embedded raster or external assets."
     },
     {
       "path": "public/media/century/diagrams/industry-governance.svg",
-      "bytes": 2114,
-      "sha256": "bd7559afb528e9449fec16b41eee0610e1eb1d091cc01a06085868355d3e03e0",
+      "bytes": 2113,
+      "sha256": "5f8601100c4e8ac600e9117a4a27e0ef7207f6dd03e4702b2aa961644f134c53",
       "origin": "Original Century vector source authored for this replacement; no embedded raster or external assets."
     },
     {
       "path": "public/media/century/diagrams/industry-platform.svg",
-      "bytes": 2307,
-      "sha256": "2fa514fec1a572fa96727050d79dbc3d0e5f4f8d8d4e81a5ec4ea17517a66888",
+      "bytes": 2306,
+      "sha256": "01c10b7c86a46aa4b75683b3987da5a6f645310260c3c91b40336548796c0145",
       "origin": "Original Century vector source authored for this replacement; no embedded raster or external assets."
     },
     {
@@ -2716,5 +2716,30 @@
     "report": "photo-uniqueness-2026-11-06.json",
     "scope": "Each photographic family appears in at most one logical slot per page, including shared menu, photographic backgrounds and interactive alternatives.",
     "mapping_note": "The retired-asset mappings describe the initial replacement publication. The follow-up inventory records later slot assignments."
+  },
+  "display_copy_revision": {
+    "change": "Removed terminal full stops from visible diagram slogans and joined paired short phrases with a comma, matching the site-wide display copy style. Geometry and accessibility descriptions are unchanged.",
+    "assets": [
+      {
+        "path": "public/media/century/diagrams/industry-deployment.svg",
+        "previous_sha256": "152b8e95d438b2ddf4d13ff5f1f99d2805dcab24ae18008becdf37a815086e92",
+        "current_sha256": "01c8a3b73d00e30bc923d60ea429ca63eb869c0cd246a9ded27fd2e4094a270b"
+      },
+      {
+        "path": "public/media/century/diagrams/industry-frontier.svg",
+        "previous_sha256": "bf24c9796fef3c14ba059c777d7ab933db20a348ae5a54770adc5aa460de3cfa",
+        "current_sha256": "e44ebe5393297db1c9e54c63a557ac9f421c57a58b219b3dfa7bb2a43a8d4a68"
+      },
+      {
+        "path": "public/media/century/diagrams/industry-governance.svg",
+        "previous_sha256": "bd7559afb528e9449fec16b41eee0610e1eb1d091cc01a06085868355d3e03e0",
+        "current_sha256": "5f8601100c4e8ac600e9117a4a27e0ef7207f6dd03e4702b2aa961644f134c53"
+      },
+      {
+        "path": "public/media/century/diagrams/industry-platform.svg",
+        "previous_sha256": "2fa514fec1a572fa96727050d79dbc3d0e5f4f8d8d4e81a5ec4ea17517a66888",
+        "current_sha256": "01c10b7c86a46aa4b75683b3987da5a6f645310260c3c91b40336548796c0145"
+      }
+    ]
   }
 }

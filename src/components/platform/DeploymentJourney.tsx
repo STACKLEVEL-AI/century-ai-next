@@ -5,23 +5,23 @@ import styles from "./DeploymentPage.module.css";
 
 const phases = [
   {
-    title: "Find the first workflow worth building.",
+    title: "Find the first workflow worth building",
     owner: "Century-led",
-    description: "Start with a focused business need. Understand the current process, connect the necessary sources and put a first workflow in front of the people who will use it.",
+    description: "Start with a focused business need. Understand the current process, connect the necessary sources and put a first workflow in front of the people who will use it",
     tags: ["Discovery", "Working sessions", "First deployment"],
     fill: "75%",
   },
   {
-    title: "Build capability alongside the workflow.",
+    title: "Build capability alongside the workflow",
     owner: "Shared delivery",
-    description: "Work through real examples together. Refine the integrations and human handovers, document the decisions and help your team understand how the workflow operates.",
+    description: "Work through real examples together. Refine the integrations and human handovers, document the decisions and help your team understand how the workflow operates",
     tags: ["Team enablement", "Reusable foundations", "Process rollout"],
     fill: "50%",
   },
   {
-    title: "Put the operating knowledge in your hands.",
+    title: "Put the operating knowledge in your hands",
     owner: "Team-led",
-    description: "Agree who owns the process, how exceptions are handled and where support fits. Use the evidence from everyday work to decide what to improve and which workflow to take on next.",
+    description: "Agree who owns the process, how exceptions are handled and where support fits. Use the evidence from everyday work to decide what to improve and which workflow to take on next",
     tags: ["Operating playbooks", "Clear ownership", "Ongoing improvement"],
     fill: "20%",
   },
@@ -70,7 +70,7 @@ export default function DeploymentJourney() {
       <p className={styles.phaseDescription}>{phase.description}</p>
       <ul className={styles.phaseTags}>{phase.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     </div>)}
-    <p className={styles.journeyNote}>The delivery path and operating responsibilities are agreed around your team and use case.</p>
+    <p className={styles.journeyNote}>The delivery path and operating responsibilities are agreed around your team and use case</p>
     <noscript><div className={styles.phaseFallback}>
       {phases.slice(1).map((phase, index) => <section key={phase.owner}><p>Phase 0{index + 2} · {phase.owner}</p><h3>{phase.title}</h3><p>{phase.description}</p><ul className={styles.phaseTags}>{phase.tags.map(tag => <li key={tag}>{tag}</li>)}</ul></section>)}
     </div></noscript>

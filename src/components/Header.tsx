@@ -15,7 +15,7 @@ function PressCard() {
           <img src="/media/stock/scene-control.webp" alt="" width={960} height={540} loading="lazy" />
           <img className={styles.pressWordmark} src="/brand/century-logo-white.svg" alt="" width={221} height={58} />
         </div>
-        <span className={styles.pressTitle}>A clear introduction to Century.</span>
+        <span className={styles.pressTitle}>A clear introduction to Century</span>
         <span className={styles.pressRead}>Explore company resources</span>
       </a>
     </aside>
@@ -156,7 +156,7 @@ export default function Header({ variant = "overlay", showAnnouncement = true }:
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     {showAnnouncement && <div ref={announcement} className={styles.announcement}>
-      <span>From AI ambition to everyday impact.</span>
+      <span>From AI ambition to everyday impact</span>
       <a href="/deployment/">Discover our approach<ArrowRight size={14} aria-hidden="true" /></a>
     </div>}
     <header

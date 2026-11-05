@@ -12,23 +12,23 @@ export const metadata = pageMetadata(
 const principles = [
   {
     title: "Choose the problem and the sequence",
-    description: "Begin with a business process you can describe, an owner who can make decisions and an outcome you can evaluate. Give the first workflow a clear boundary. Use what it teaches you to decide which capability to build next.",
+    description: "Begin with a business process you can describe, an owner who can make decisions and an outcome you can evaluate. Give the first workflow a clear boundary. Use what it teaches you to decide which capability to build next",
   },
   {
     title: "Work across the whole process",
-    description: "Follow the work between people, documents and systems. Consider how an answer becomes an action, where review is needed and what happens when something falls outside the expected path. A useful result needs a useful place to go.",
+    description: "Follow the work between people, documents and systems. Consider how an answer becomes an action, where review is needed and what happens when something falls outside the expected path. A useful result needs a useful place to go",
   },
   {
     title: "Build capability within your team",
-    description: "Bring process owners, users and technical teams into the implementation. Share the reasoning behind the choices and document the knowledge needed to operate the workflow. The organization should understand what it is adopting.",
+    description: "Bring process owners, users and technical teams into the implementation. Share the reasoning behind the choices and document the knowledge needed to operate the workflow. The organization should understand what it is adopting",
   },
   {
     title: "Keep your options and your control",
-    description: "Make access, data boundaries and external dependencies explicit. Choose models and deployment arrangements around the work they need to support. Keep the design understandable so that the team can revisit those choices as its requirements change.",
+    description: "Make access, data boundaries and external dependencies explicit. Choose models and deployment arrangements around the work they need to support. Keep the design understandable so that the team can revisit those choices as its requirements change",
   },
   {
     title: "Measure the work that gets done",
-    description: "Compare the workflow with a practical baseline: the time it takes, the usefulness of its results, the corrections it needs and the effort of review. Let that evidence guide the decision to improve, expand or stop.",
+    description: "Compare the workflow with a practical baseline: the time it takes, the usefulness of its results, the corrections it needs and the effort of review. Let that evidence guide the decision to improve, expand or stop",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function TransformationPage() {
   return (
     <PlatformFrame
       headerVariant="overlay"
-      contactTitle={<>Build the next chapter<br />of your organization.</>}
+      contactTitle={<>Build the next chapter<br />of your organization</>}
       contactImage={{
         src: "/media/closing.webp",
         width: 1200,
@@ -57,13 +57,13 @@ export default function TransformationPage() {
           </picture>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={styles.heroContent}>
-            <h1 id="transformation-title">AI changes your technology.<br /> And the way your organization works.</h1>
+            <h1 id="transformation-title">AI changes your technology<br /> and the way your organization works</h1>
           </div>
         </section>
 
         <section className={styles.editorialSection} aria-labelledby="transformation-approach-title">
           <div className={`${styles.shell} ${styles.editorialGrid}`}>
-            <h2 id="transformation-approach-title">An organization ready<br />for what comes next.</h2>
+            <h2 id="transformation-approach-title">An organization ready<br />for what comes next</h2>
             <div className={styles.editorialCopy}>
               <p>AI can help people find knowledge, prepare decisions and move work between systems. Making that assistance useful means understanding the organization around it.</p>
               <p>Start with the work itself. Look at the information people need, the steps they repeat and the handovers that slow a process down. Decide where assistance belongs and where a person needs to remain responsible.</p>
@@ -75,7 +75,7 @@ export default function TransformationPage() {
 
         <section className={styles.principlesSection} id="transformation-principles" aria-labelledby="transformation-principles-title">
           <div className={`${styles.shell} ${styles.principlesGrid}`}>
-            <h2 id="transformation-principles-title">Five principles for<br />lasting change.</h2>
+            <h2 id="transformation-principles-title">Five principles for<br />lasting change</h2>
             <div className={styles.principles}>
               {principles.map((principle, index) => (
                 <details key={principle.title} name="century-transformation-principles" open={index === 0} className={styles.principle}>
@@ -93,7 +93,7 @@ export default function TransformationPage() {
 
         <section className={styles.relatedSection} aria-labelledby="transformation-related-title">
           <div className={styles.shell}>
-            <h2 id="transformation-related-title">Connect the strategy<br />to the work.</h2>
+            <h2 id="transformation-related-title">Connect the strategy<br />to the work</h2>
             <div className={styles.relatedCards}>
               <a className={styles.relatedCard} href="/ai-os/">
                 <picture className={styles.cardImage}>
@@ -104,7 +104,7 @@ export default function TransformationPage() {
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <h3>AI OS</h3>
-                  <p>Bring knowledge, workflows and oversight together in the foundation for everyday AI.</p>
+                  <p>Bring knowledge, workflows and oversight together in the foundation for everyday AI</p>
                 </div>
               </a>
               <a className={styles.relatedCard} href="/deployment/">
@@ -116,7 +116,7 @@ export default function TransformationPage() {
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <h3>Deployment</h3>
-                  <p>Move from a focused use case to a working implementation and ownership within your team.</p>
+                  <p>Move from a focused use case to a working implementation and ownership within your team</p>
                 </div>
               </a>
             </div>

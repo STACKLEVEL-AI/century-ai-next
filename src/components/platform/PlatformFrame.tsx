@@ -16,7 +16,7 @@ type PlatformFrameProps = {
 export default function PlatformFrame({
   children,
   headerVariant = "overlay",
-  contactTitle = <>Build the next chapter<br />with Century.</>,
+  contactTitle = <>Build the next chapter<br />with Century</>,
   showContact = true,
   contactImage,
 }: PlatformFrameProps) {

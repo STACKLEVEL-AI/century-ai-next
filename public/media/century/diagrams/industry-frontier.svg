@@ -8,7 +8,7 @@
   <g fill="none" stroke="#27312e" stroke-width="1"><path d="M88 208h1104M88 736h1104"/></g>
   <g font-family="Arial, Helvetica, sans-serif">
     <text x="88" y="92" fill="#d49c79" font-size="19" letter-spacing="3">EVALUATE BEFORE EXPANDING</text>
-    <text x="88" y="151" fill="#f2f1e9" font-size="38">AI with a review path.</text>
+    <text x="88" y="151" fill="#f2f1e9" font-size="38">AI with a review path</text>
     <g fill="none" stroke="#d49c79" stroke-width="2" marker-end="url(#arrow)"><path d="M388 390h95"/><path d="M790 390h95"/></g>
     <rect x="88" y="280" width="300" height="220" rx="24" fill="#1b2421" stroke="#43514b"/>
     <rect x="490" y="280" width="300" height="220" rx="24" fill="#eeeee6"/>

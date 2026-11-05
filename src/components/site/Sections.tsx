@@ -13,6 +13,6 @@ export function FeatureGrid({ items, columns = 3 }: { items: Feature[]; columns?
 export function CapabilityAccordion({ items, label = "Explore capabilities" }: { items: { title: string; description: string }[]; label?: string }) {
   return <div className="capability-accordion" aria-label={label}>{items.map((item, i) => <details key={item.title} open={i === 0}><summary><span className="accordion-number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><span>{item.title}</span><span className="accordion-toggle" aria-hidden="true">+</span></summary><p>{item.description}</p></details>)}</div>;
 }
-export function RelatedPages({ links, title = "Keep exploring Century." }: { links: RelatedLink[]; title?: string }) {
+export function RelatedPages({ links, title = "Keep exploring Century" }: { links: RelatedLink[]; title?: string }) {
   return <section className="section related-section"><div className="shell"><SectionHeading eyebrow="Connected by design" title={title} /><div className="related-grid">{links.map(link => <a className="related-card" href={link.href} key={link.href}>{link.eyebrow && <p className="eyebrow">{link.eyebrow}</p>}<div><h3>{link.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></div>{link.description && <p>{link.description}</p>}</a>)}</div></div></section>;
 }

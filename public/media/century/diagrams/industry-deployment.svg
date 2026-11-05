@@ -4,7 +4,7 @@
   <rect width="1280" height="808" fill="#111515"/>
   <g font-family="Arial, Helvetica, sans-serif">
     <text x="88" y="92" fill="#d49c79" font-size="19" letter-spacing="3">DELIVERY WITH OWNERSHIP</text>
-    <text x="88" y="151" fill="#f2f1e9" font-size="38">A useful workflow, built together.</text>
+    <text x="88" y="151" fill="#f2f1e9" font-size="38">A useful workflow, built together</text>
     <g fill="none" stroke="#53655a" stroke-width="2"><path d="M208 252h864M208 270v60m288-60v60m288-60v60m288-60v60"/></g>
     <g fill="#eeeee6"><circle cx="208" cy="252" r="24"/><circle cx="496" cy="252" r="24"/><circle cx="784" cy="252" r="24"/><circle cx="1072" cy="252" r="24"/></g>
     <g fill="#18231d" font-size="20" text-anchor="middle"><text x="208" y="259">01</text><text x="496" y="259">02</text><text x="784" y="259">03</text><text x="1072" y="259">04</text></g>
@@ -18,6 +18,6 @@
     <g fill="#f2f1e9" font-size="30"><text x="116" y="449">Scope</text><text x="404" y="449">Build</text><text x="692" y="449">Validate</text><text x="980" y="449">Handover</text></g>
     <g fill="#b1bbb5" font-size="18"><text x="116" y="495">Define the work</text><text x="116" y="525">Agree the boundaries</text><text x="404" y="495">Connect the pieces</text><text x="404" y="525">Build the workflow</text><text x="692" y="495">Review the result</text><text x="692" y="525">Refine with the team</text><text x="980" y="495">Make ownership clear</text><text x="980" y="525">Support daily use</text></g>
     <path d="M88 642h1104" fill="none" stroke="#27312e"/>
-    <text x="88" y="699" fill="#b1bbb5" font-size="24">Learn from each step. Improve the next.</text>
+    <text x="88" y="699" fill="#b1bbb5" font-size="24">Learn from each step, improve the next</text>
   </g>
 </svg>

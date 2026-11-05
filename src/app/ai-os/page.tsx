@@ -9,18 +9,18 @@ import styles from "@/components/platform/OperatingLayer.module.css";
 export const metadata = pageMetadata("Century AI OS", "One connected foundation for company knowledge, AI agents, business applications and human oversight.", "/ai-os");
 
 const advantages = [
-  { title: "Freedom to choose models", text: "Make model decisions around the task, the information involved and the outcomes your team needs.", icon: Boxes },
-  { title: "A foundation to build on", text: "Reuse useful integrations, instructions and review patterns as the next business workflow takes shape.", icon: Layers3 },
-  { title: "Knowledge in context", text: "Connect work to approved information, with clear sources and a deliberate approach to access.", icon: Database },
-  { title: "Shared operating rules", text: "Bring ownership, data boundaries and human review into the same design as the application.", icon: ShieldCheck },
-  { title: "Learning across workflows", text: "Use the feedback from everyday work to refine the next implementation and decide where to expand.", icon: Network },
+  { title: "Freedom to choose models", text: "Make model decisions around the task, the information involved and the outcomes your team needs", icon: Boxes },
+  { title: "A foundation to build on", text: "Reuse useful integrations, instructions and review patterns as the next business workflow takes shape", icon: Layers3 },
+  { title: "Knowledge in context", text: "Connect work to approved information, with clear sources and a deliberate approach to access", icon: Database },
+  { title: "Shared operating rules", text: "Bring ownership, data boundaries and human review into the same design as the application", icon: ShieldCheck },
+  { title: "Learning across workflows", text: "Use the feedback from everyday work to refine the next implementation and decide where to expand", icon: Network },
 ];
 
 const enterprise = [
-  { title: "Deployment that fits", description: "Choose the environment with your infrastructure team. Agree where the application runs, who operates it and how it connects to existing systems.", href: "/deployment/", link: "Explore deployment", visual: "deployment" },
-  { title: "Security by design", description: "Define access, operating responsibilities and escalation paths before extending a workflow into a new part of the business.", href: "/security/", link: "Our approach to security", visual: "security" },
-  { title: "Clear data boundaries", description: "Review the information each process uses, its permitted destinations and the retention requirements that apply to your organization.", href: "/privacy/", link: "Privacy and data handling", visual: "data" },
-  { title: "Requirements made explicit", description: "Document the controls and evidence your organization needs. Review the scope with the people responsible for compliance and procurement.", href: "/security/", link: "Discuss your requirements", visual: "requirements" },
+  { title: "Deployment that fits", description: "Choose the environment with your infrastructure team. Agree where the application runs, who operates it and how it connects to existing systems", href: "/deployment/", link: "Explore deployment", visual: "deployment" },
+  { title: "Security by design", description: "Define access, operating responsibilities and escalation paths before extending a workflow into a new part of the business", href: "/security/", link: "Our approach to security", visual: "security" },
+  { title: "Clear data boundaries", description: "Review the information each process uses, its permitted destinations and the retention requirements that apply to your organization", href: "/privacy/", link: "Privacy and data handling", visual: "data" },
+  { title: "Requirements made explicit", description: "Document the controls and evidence your organization needs. Review the scope with the people responsible for compliance and procurement", href: "/security/", link: "Discuss your requirements", visual: "requirements" },
 ];
 
 function Lattice() {
@@ -59,14 +59,14 @@ function EnterpriseVisual({ kind }: { kind: string }) {
   </div>;
   return <div className={styles.requirementsDiagram} aria-hidden="true">
     <div><span>Requirements</span><span>Controls</span><span>Evidence</span></div>
-    <CircleCheck size={64} strokeWidth={.7} /><span>Document. Review. Agree.</span>
+    <CircleCheck size={64} strokeWidth={.7} /><span>Document, review, agree</span>
   </div>;
 }
 
 export default function AiOsPage() {
   return <PlatformFrame headerVariant="overlay"
     contactImage={{ src: "/media/closing.webp", width: 1200, height: 495 }}
-    contactTitle={<>Build a connected<br />way of working.</>}>
+    contactTitle={<>Build a connected<br />way of working</>}>
     <div className={styles.page}>
       <section className={styles.hero} aria-labelledby="os-title">
         <picture className={styles.heroBackdrop}>
@@ -75,7 +75,7 @@ export default function AiOsPage() {
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>
           <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI OS</span></p>
-          <h1 id="os-title">One connected operating layer for people, agents and applications.</h1>
+          <h1 id="os-title">One connected operating layer for people, agents and applications</h1>
         </div>
         <Lattice />
         <a className={styles.heroExplore} href="#operating-layer"><span>Explore the operating layer</span><ArrowDown size={17} aria-hidden="true" /></a>
@@ -84,7 +84,7 @@ export default function AiOsPage() {
       <OperatingLayerRelated current="ai-os" />
       <section className={styles.advantages} aria-labelledby="os-advantages">
         <div className={styles.container}>
-          <div className={styles.sectionIntro}><h2 id="os-advantages">More connected work.<br />Less starting over.</h2><p>Consider knowledge, models, integrations and oversight together. Give the next workflow a useful foundation instead of another isolated tool.</p></div>
+          <div className={styles.sectionIntro}><h2 id="os-advantages">More connected work<br />Less starting over</h2><p>Consider knowledge, models, integrations and oversight together. Give the next workflow a useful foundation instead of another isolated tool</p></div>
           <div className={styles.advantageGrid}>{advantages.map(({ title, text, icon: Icon }) => <article key={title}>
             <Icon size={29} strokeWidth={1.1} aria-hidden="true" /><h3>{title}</h3><p>{text}</p>
           </article>)}</div>
@@ -92,7 +92,7 @@ export default function AiOsPage() {
       </section>
       <section className={styles.enterprise} aria-labelledby="os-enterprise">
         <div className={styles.container}>
-          <h2 id="os-enterprise"><span>Built around enterprise requirements.</span><br />Your environment, your data and your responsibilities shape the implementation.</h2>
+          <h2 id="os-enterprise"><span>Built around enterprise requirements</span><br />Your environment, your data and your responsibilities shape the implementation</h2>
           <div className={styles.enterpriseRows}>{enterprise.map(item => <details key={item.title} className={styles.enterpriseRow} name="century-enterprise-requirements">
             <summary><h3>{item.title}</h3><p>{item.description}</p><span className={styles.disclosureIcon} aria-hidden="true" /></summary>
             <div className={styles.enterpriseDetail}><div className={styles.enterpriseArt}><EnterpriseVisual kind={item.visual} /></div><a href={item.href}>{item.link}<ArrowUpRight size={18} aria-hidden="true" /></a></div>

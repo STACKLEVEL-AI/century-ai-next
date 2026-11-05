@@ -7,9 +7,9 @@ import type { AppCaptureId } from "@/lib/app-captures";
 import styles from "./Gateway.module.css";
 
 const views: { id: string; title: string; description: string; capture: AppCaptureId; icon: typeof Boxes }[] = [
-  { id: "models", title: "Models & controls", description: "Inspect the model controls available in the Century workspace.", capture: "models", icon: Boxes },
-  { id: "files", title: "Files & context", description: "See how files and structured information appear alongside the work.", capture: "files", icon: Files },
-  { id: "response", title: "Response details", description: "Look beyond the answer to the timing and token information attached to it.", capture: "response", icon: Activity },
+  { id: "models", title: "Models & controls", description: "Inspect the model controls available in the Century workspace", capture: "models", icon: Boxes },
+  { id: "files", title: "Files & context", description: "See how files and structured information appear alongside the work", capture: "files", icon: Files },
+  { id: "response", title: "Response details", description: "Look beyond the answer to the timing and token information attached to it", capture: "response", icon: Activity },
 ];
 
 export default function GatewayWorkspace() {

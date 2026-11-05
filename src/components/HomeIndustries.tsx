@@ -6,13 +6,13 @@ import { industryLinks } from "@/lib/navigation";
 import styles from "./HomeIndustries.module.css";
 
 const sectors = [
-  { slug: "banking", title: "Banking", headline: "Clarity for complex banking workflows.", description: "Bring policies, documents and service context together for the people making decisions.", icon: Landmark },
-  { slug: "telecommunication", title: "Telecommunications", headline: "Keep the customer context connected.", description: "Help service teams work with verified information, consistent answers and complete handovers.", icon: Radio },
-  { slug: "healthcare", title: "Healthcare", headline: "Support the work around better care.", description: "Make administrative knowledge and document preparation easier for authorised teams to review.", icon: HeartPulse },
-  { slug: "utilities", title: "Utilities", headline: "Connect requests with operational knowledge.", description: "Prepare service cases, document checklists and field handovers from approved information.", icon: PlugZap },
-  { slug: "insurance", title: "Insurance", headline: "Move paperwork forward. Keep judgment human.", description: "Organise submissions, policy knowledge and claims documentation for accountable review.", icon: ShieldCheck },
-  { slug: "retail", title: "Retail", headline: "Help everyday retail work together.", description: "Support customers, stores and supplier operations with knowledge that teams can check.", icon: ShoppingBag },
-  { slug: "airlines", title: "Airlines", headline: "Keep teams informed when plans change.", description: "Prepare consistent service responses and complete handovers from verified travel information.", icon: Plane },
+  { slug: "banking", title: "Banking", headline: "Clarity for complex banking workflows", description: "Bring policies, documents and service context together for the people making decisions", icon: Landmark },
+  { slug: "telecommunication", title: "Telecommunications", headline: "Keep the customer context connected", description: "Help service teams work with verified information, consistent answers and complete handovers", icon: Radio },
+  { slug: "healthcare", title: "Healthcare", headline: "Support the work around better care", description: "Make administrative knowledge and document preparation easier for authorised teams to review", icon: HeartPulse },
+  { slug: "utilities", title: "Utilities", headline: "Connect requests with operational knowledge", description: "Prepare service cases, document checklists and field handovers from approved information", icon: PlugZap },
+  { slug: "insurance", title: "Insurance", headline: "Move paperwork forward, keep judgment human", description: "Organise submissions, policy knowledge and claims documentation for accountable review", icon: ShieldCheck },
+  { slug: "retail", title: "Retail", headline: "Help everyday retail work together", description: "Support customers, stores and supplier operations with knowledge that teams can check", icon: ShoppingBag },
+  { slug: "airlines", title: "Airlines", headline: "Keep teams informed when plans change", description: "Prepare consistent service responses and complete handovers from verified travel information", icon: Plane },
 ];
 
 const photos = [
@@ -62,9 +62,9 @@ export default function HomeIndustries() {
         <header className={styles.heading}>
           <div>
             <p className={styles.eyebrow}>Across your industry</p>
-            <h2 id="industries-title">Built around<br />your industry.</h2>
+            <h2 id="industries-title">Built around<br />your industry</h2>
           </div>
-          <p className={styles.intro}>Explore starting points for your sector. Data, integrations and review responsibilities are agreed around each workflow.</p>
+          <p className={styles.intro}>Explore starting points for your sector. Data, integrations and review responsibilities are agreed around each workflow</p>
         </header>
 
         <div className={styles.layout}>

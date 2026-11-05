@@ -17,14 +17,14 @@ const team: TeamMember[] = [
   {
     name: "Vitali Bakhmat",
     role: "Co-founder · CEO",
-    description: "Business development and customer partnerships.",
+    description: "Business development and customer partnerships",
     image: "/founders/vitali-bakhmat.webp",
     height: 400,
   },
   {
     name: "Vadim Vladymtsev",
     role: "Co-founder · CTO",
-    description: "Enterprise AI architecture and engineering.",
+    description: "Enterprise AI architecture and engineering",
     image: "/founders/vadim-vladymtsev.webp",
     height: 213,
     profileUrl: VADIM_PROFILE_URL,
@@ -33,7 +33,7 @@ const team: TeamMember[] = [
   {
     name: "Egor Krychev",
     role: "Co-founder · CAIO",
-    description: "AI automation, agents and business processes.",
+    description: "AI automation, agents and business processes",
     image: "/founders/egor-krychev.webp",
     height: 320,
     profileUrl: EGOR_PROFILE_URL,
@@ -50,7 +50,7 @@ export default function Founders() {
     >
       <div className="shell">
         <div className="founders-heading">
-          <div><p className="eyebrow">The people behind the work</p><h2 id="founders-title">Building the next<br />chapter of Century.</h2></div>
+          <div><p className="eyebrow">The people behind the work</p><h2 id="founders-title">Building the next<br />chapter of Century</h2></div>
           <a className="home-section-link" href="/about-us/">Get to know the team <ArrowUpRight size={17} aria-hidden="true" /></a>
         </div>
         <div className="founders-grid">

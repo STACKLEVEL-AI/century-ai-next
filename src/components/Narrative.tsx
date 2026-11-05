@@ -3,15 +3,15 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     title: "Choose one workflow",
-    text: "Identify the process owner, inputs, current effort and the outcome worth improving.",
+    text: "Identify the process owner, inputs, current effort and the outcome worth improving",
   },
   {
     title: "Build and evaluate",
-    text: "Agree the scope, connect the required sources and assess results against a baseline.",
+    text: "Agree the scope, connect the required sources and assess results against a baseline",
   },
   {
     title: "Decide what comes next",
-    text: "Use the evidence to refine the workflow, expand it or stop before a larger rollout.",
+    text: "Use the evidence to refine the workflow, expand it or stop before a larger rollout",
   },
 ];
 
@@ -31,22 +31,22 @@ export default function Narrative() {
             How we start
           </p>
           <h2 id="process-title">
-            Start small.
-            <br /> Measure before you scale.
+            Start small
+            <br /> Measure before you scale
           </h2>
           <p>
             Build the first workflow around a real business need and agreed
-            evaluation criteria.
+            evaluation criteria
           </p>
         </div>
         <div className="process-intro-grid">
           <article className="process-intro-card process-intro-deployment">
             <p className="panel-label">Deployment</p>
-            <h3>AI that fits your environment.</h3>
+            <h3>AI that fits your environment</h3>
             <p>
               Discuss on-premises or private infrastructure, permitted sources
               and review responsibilities before introducing AI into a business
-              process.
+              process
             </p>
             <a className="text-link" href="/security/">
               Explore deployment choices
@@ -55,11 +55,11 @@ export default function Narrative() {
           </article>
           <article className="process-intro-card process-intro-strategy">
             <p className="panel-label">Strategy</p>
-            <h3>A business need. A measurable next step.</h3>
+            <h3>A business need, a measurable next step</h3>
             <p>
               Choose a focused workflow with a clear owner. Agree what a useful
               outcome looks like, then evaluate the results before a wider
-              rollout.
+              rollout
             </p>
             <a className="text-link" href="/#use-cases">
               Find your starting point
@@ -80,7 +80,7 @@ export default function Narrative() {
         </ol>
         <p className="process-note">
           Scope, timeline and commercial terms are agreed after the initial
-          discussion.
+          discussion
         </p>
       </div>
     </section>

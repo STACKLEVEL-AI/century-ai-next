@@ -14,7 +14,7 @@ const ogImage = {
   url: `${SITE_URL}/og/century-ai-eu.png`,
   width: 1200,
   height: 630,
-  alt: "Century — Accelerate AI transformation across your business.",
+  alt: "Century — Accelerate AI transformation across your business",
 };
 
 export const metadata: Metadata = {

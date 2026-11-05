@@ -6,37 +6,37 @@ import { Activity, Blocks, Database, GitBranch, Network, ShieldCheck, Sparkles }
 const layers = [
   {
     title: "Security & governance", icon: ShieldCheck, short: "Clear boundaries",
-    description: "Start with the people, sources and actions a workflow is allowed to use. Define review points before connecting AI to a business process.",
+    description: "Start with the people, sources and actions a workflow is allowed to use. Define review points before connecting AI to a business process",
     points: ["Resource access", "Review responsibilities", "Permitted actions"],
   },
   {
     title: "Observability", icon: Activity, short: "A visible operating picture",
-    description: "Agree what to record and how to review outputs, usage and exceptions. Give each workflow an owner who can investigate and improve it.",
+    description: "Agree what to record and how to review outputs, usage and exceptions. Give each workflow an owner who can investigate and improve it",
     points: ["Activity records", "Usage review", "Evaluation criteria"],
   },
   {
     title: "Workflows", icon: GitBranch, short: "A useful next step",
-    description: "Connect an incoming request to the information, checks and decisions it needs. Keep the route to a human clear when an exception appears.",
+    description: "Connect an incoming request to the information, checks and decisions it needs. Keep the route to a human clear when an exception appears",
     points: ["Process steps", "Human handover", "Defined outcomes"],
   },
   {
     title: "Building blocks", icon: Blocks, short: "A foundation to build on",
-    description: "Break a use case into focused assistants, reusable instructions and business actions. Scope each part before combining it into a larger workflow.",
+    description: "Break a use case into focused assistants, reusable instructions and business actions. Scope each part before combining it into a larger workflow",
     points: ["Focused assistants", "Reusable instructions", "Business actions"],
   },
   {
     title: "Knowledge & context", icon: Database, short: "Your knowledge, in context",
-    description: "Identify authoritative documents and data, establish who may use them, and make source references part of the answer wherever the workflow requires them.",
+    description: "Identify authoritative documents and data, establish who may use them, and make source references part of the answer wherever the workflow requires them",
     points: ["Approved sources", "Source references", "Access boundaries"],
   },
   {
     title: "Models", icon: Sparkles, short: "Fit the model to the task",
-    description: "Evaluate model choices against the work: answer quality, response time, data requirements and cost. Make those trade-offs explicit before implementation.",
+    description: "Evaluate model choices against the work: answer quality, response time, data requirements and cost. Make those trade-offs explicit before implementation",
     points: ["Task suitability", "Data requirements", "Cost and quality"],
   },
   {
     title: "Integrations", icon: Network, short: "Work with your existing systems",
-    description: "Review available interfaces and access rules with your team. Connect only the systems needed for the agreed workflow, with a clear owner for each integration.",
+    description: "Review available interfaces and access rules with your team. Connect only the systems needed for the agreed workflow, with a clear owner for each integration",
     points: ["Available interfaces", "Scoped access", "Integration ownership"],
   },
 ];

@@ -19,8 +19,8 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "choose-first-ai-workflow",
-    title: "Start with one workflow. Make it worth repeating.",
-    description: "A practical way to choose a first AI project: start with a recurring task, a clear owner and an outcome you can inspect.",
+    title: "Start with one workflow, make it worth repeating",
+    description: "A practical way to choose a first AI project: start with a recurring task, a clear owner and an outcome you can inspect",
     category: "Getting started",
     readingTime: "4 min read",
     sections: [
@@ -73,8 +73,8 @@ export const articles: Article[] = [
   },
   {
     slug: "answers-need-sources",
-    title: "An answer is more useful when you can inspect its sources.",
-    description: "How to organise business knowledge so an AI answer can be checked, challenged and kept up to date.",
+    title: "An answer is more useful when you can inspect its sources",
+    description: "How to organise business knowledge so an AI answer can be checked, challenged and kept up to date",
     category: "Knowledge",
     readingTime: "4 min read",
     sections: [
@@ -127,8 +127,8 @@ export const articles: Article[] = [
   },
   {
     slug: "human-review",
-    title: "Put human review where the decision matters.",
-    description: "Design approval steps that give people the evidence, authority and time to make a meaningful decision.",
+    title: "Put human review where the decision matters",
+    description: "Design approval steps that give people the evidence, authority and time to make a meaningful decision",
     category: "Workflows",
     readingTime: "4 min read",
     sections: [
@@ -181,8 +181,8 @@ export const articles: Article[] = [
   },
   {
     slug: "plan-ai-deployment",
-    title: "Before deployment, agree how the system will operate.",
-    description: "A deployment brief for data, access, integrations, review and ownership—before an AI workflow becomes part of daily work.",
+    title: "Before deployment, agree how the system will operate",
+    description: "A deployment brief for data, access, integrations, review and ownership—before an AI workflow becomes part of daily work",
     category: "Deployment",
     readingTime: "4 min read",
     sections: [

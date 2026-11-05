@@ -3,22 +3,22 @@ import { Check, Eye, LockKeyhole, Server, UserRoundCheck } from "lucide-react";
 const controls = [
   {
     title: "Deployment choices",
-    text: "Discuss on-premises or private infrastructure to match the requirements of your environment.",
+    text: "Discuss on-premises or private infrastructure to match the requirements of your environment",
     icon: Server,
   },
   {
     title: "Access boundaries",
-    text: "Define which sources a user or workflow is allowed to use.",
+    text: "Define which sources a user or workflow is allowed to use",
     icon: LockKeyhole,
   },
   {
     title: "Human oversight",
-    text: "Set review points for exceptions and actions that require approval.",
+    text: "Set review points for exceptions and actions that require approval",
     icon: UserRoundCheck,
   },
   {
     title: "Operational visibility",
-    text: "Review activity, outputs and usage to support ongoing evaluation.",
+    text: "Review activity, outputs and usage to support ongoing evaluation",
     icon: Eye,
   },
 ];
@@ -57,13 +57,13 @@ export default function Trust() {
               Security &amp; control
             </p>
             <h2 id="security-title">
-              Your environment.
-              <br /> Your boundaries.
+              Your environment
+              <br /> Your boundaries
             </h2>
             <p>
               Decide where AI runs and how it is controlled. Agree the deployment
               model, permitted sources and review responsibilities before
-              introducing AI into a business process.
+              introducing AI into a business process
             </p>
           </div>
           <div className="security-content">
@@ -82,7 +82,7 @@ export default function Trust() {
               <Check size={17} aria-hidden="true" />
               <span>
                 Data location, retention, support access and external services are
-                agreed for each deployment.
+                agreed for each deployment
               </span>
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function Trust() {
         <div className="security-faq">
           <div className="faq-heading">
             <p className="eyebrow">A few practical questions</p>
-            <h3>Before we start.</h3>
+            <h3>Before we start</h3>
           </div>
           <div className="faq-list">
             {faqs.map(({ question, answer }) => (

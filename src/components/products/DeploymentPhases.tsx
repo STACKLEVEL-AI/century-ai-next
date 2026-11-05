@@ -6,21 +6,21 @@ import { ArrowRight, Check } from "lucide-react";
 const phases = [
   {
     title: "Define the starting point", label: "Discover", owner: "A shared brief",
-    description: "Choose one workflow with a clear owner. Map the inputs, existing effort and decisions involved, then agree what a useful result would look like.",
+    description: "Choose one workflow with a clear owner. Map the inputs, existing effort and decisions involved, then agree what a useful result would look like",
     steps: ["Map the current process", "Review data and access", "Agree scope and evaluation"],
-    outcome: "A bounded use case with an accountable owner and agreed success criteria.",
+    outcome: "A bounded use case with an accountable owner and agreed success criteria",
   },
   {
     title: "Build with your team", label: "Implement", owner: "A working pilot",
-    description: "Connect the required sources, introduce the review steps and evaluate realistic examples. Use feedback from the people doing the work to refine the workflow.",
+    description: "Connect the required sources, introduce the review steps and evaluate realistic examples. Use feedback from the people doing the work to refine the workflow",
     steps: ["Connect approved sources", "Evaluate real scenarios", "Refine handovers and exceptions"],
-    outcome: "Evidence about where the workflow is useful, where it needs review and what should change.",
+    outcome: "Evidence about where the workflow is useful, where it needs review and what should change",
   },
   {
     title: "Make the next decision", label: "Operate", owner: "Clear operating ownership",
-    description: "Review the evidence together. Agree the operating responsibilities, documentation and support arrangements before deciding whether to expand, refine or stop.",
+    description: "Review the evidence together. Agree the operating responsibilities, documentation and support arrangements before deciding whether to expand, refine or stop",
     steps: ["Review results against the baseline", "Agree ongoing responsibilities", "Prioritize the next workflow"],
-    outcome: "An informed next step, with ownership and support defined for the agreed deployment.",
+    outcome: "An informed next step, with ownership and support defined for the agreed deployment",
   },
 ];
 

@@ -4,7 +4,7 @@
   <rect width="1280" height="808" fill="#111515"/>
   <g font-family="Arial, Helvetica, sans-serif">
     <text x="88" y="92" fill="#d49c79" font-size="19" letter-spacing="3">CONNECTED WORK</text>
-    <text x="88" y="151" fill="#f2f1e9" font-size="38">One place to bring work together.</text>
+    <text x="88" y="151" fill="#f2f1e9" font-size="38">One place to bring work together</text>
     <g fill="none" stroke="#53655a" stroke-width="2" stroke-linejoin="round"><path d="M356 285h54v136h60m-114 40h114m-114 176h54V501h60M810 421h60V285h54m-114 176h114m-114 40h60v136h54"/></g>
     <g fill="#1b2421" stroke="#43514b"><rect x="88" y="234" width="268" height="102" rx="18"/><rect x="88" y="410" width="268" height="102" rx="18"/><rect x="88" y="586" width="268" height="102" rx="18"/><rect x="924" y="234" width="268" height="102" rx="18"/><rect x="924" y="410" width="268" height="102" rx="18"/><rect x="924" y="586" width="268" height="102" rx="18"/></g>
     <g fill="#d49c79"><circle cx="117" cy="285" r="4"/><circle cx="117" cy="461" r="4"/><circle cx="117" cy="637" r="4"/><circle cx="953" cy="285" r="4"/><circle cx="953" cy="461" r="4"/><circle cx="953" cy="637" r="4"/></g>
