@@ -45,7 +45,7 @@ export function IndustryContact({ id, children }: { id: string; children: ReactN
   </section>;
 }
 
-/** Shared reference layout with photography, content and crop settings for each industry. */
+/** Shared industry layout with photography, content and crop settings for each industry. */
 export default function IndustryReferencePage({ slug, data }: { slug: IndustrySlug; data: IndustryReference }) {
   const { images } = data;
   const heroSourceSet = images.heroSmall === images.hero

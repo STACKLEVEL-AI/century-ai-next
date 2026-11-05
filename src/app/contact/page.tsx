@@ -19,7 +19,7 @@ export default function ContactPage() {
     <PageFrame showContact={false} headerVariant="overlay">
       <div className="co-page co-contact">
         <header className="co-immersive-hero co-contact-hero">
-          <Image src="/media/industry.webp" alt="Illustrative business scene with people moving through a shared space" fill sizes="100vw" priority />
+          <Image src="/media/industry.webp" alt="People moving through a shared business space" fill sizes="100vw" priority />
           <div className="shell co-immersive-content"><p className="co-eyebrow">Let’s talk</p><h1>What would you<br />like AI to help with?</h1><div className="co-immersive-bottom"><p>Bring a process, a question or an idea. We will explore the starting point together</p><a className="co-text-link" href="#start-conversation">Start a conversation<ArrowDown size={18} aria-hidden="true" /></a></div></div>
         </header>
         <section className="co-section" id="start-conversation">

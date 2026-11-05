@@ -19,7 +19,7 @@ export default function CareersPage() {
     <PageFrame showContact={false} headerVariant="overlay">
       <div className="co-page co-careers">
         <header className="co-immersive-hero">
-          <Image src="/media/deployment.webp" alt="Illustrative scene of people collaborating in a business workshop" fill sizes="100vw" priority />
+          <Image src="/media/deployment.webp" alt="People collaborating in a business workshop" fill sizes="100vw" priority />
           <div className="shell co-immersive-content"><p className="co-eyebrow">Careers at Century</p><h1>Build things<br />people can use</h1><div className="co-immersive-bottom"><p>We are interested in the people who connect thoughtful engineering with an understanding of how businesses work</p><a className="co-text-link" href="#the-work">Explore the work<ArrowDown size={18} aria-hidden="true" /></a></div></div>
         </header>
         <section className="co-section" id="the-work">

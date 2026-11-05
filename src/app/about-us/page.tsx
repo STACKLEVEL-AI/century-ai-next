@@ -17,7 +17,7 @@ export default function AboutPage() {
     <PageFrame showContact={false}>
       <div className="co-page co-about">
         <CompanyMasthead eyebrow="About Century" title={<>Good technology<br />A human purpose</>} description="We believe AI should help people do useful work—with the knowledge, context and control their business needs" link={{ href: "#founders", label: "Meet the founders" }} />
-        <div className="shell"><CompanyPhoto src="/images/enterprise-atrium.webp" alt="Illustrative sunlit business courtyard with people walking between buildings" caption="Connection, clarity, room to build" priority className="co-about-photo" /></div>
+        <div className="shell"><CompanyPhoto src="/images/enterprise-atrium.webp" alt="Sunlit business courtyard with people walking between buildings" caption="Connection, clarity, room to build" priority className="co-about-photo" /></div>
         <section className="co-section">
           <div className="shell co-editorial-split">
             <CompanyHeading eyebrow="Our perspective" title={<>Bring intelligence<br />closer to the work</>} />
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </section>
         <section className="co-section co-join">
           <div className="shell co-join-grid">
-            <CompanyPhoto src="/media/deployment.webp" alt="Illustrative scene of a business workshop around a whiteboard" />
+            <CompanyPhoto src="/media/deployment.webp" alt="A business workshop around a whiteboard" />
             <div className="co-join-copy"><CompanyHeading eyebrow="Building together" title={<>From a first conversation<br />to work people use</>} /><p>A useful AI project brings business knowledge and engineering into the same conversation. That is how we approach the work, and how we think about the team behind it.</p><a className="co-text-link" href="/careers/">Explore working with Century<ArrowUpRight size={18} aria-hidden="true" /></a></div>
           </div>
         </section>

@@ -8,7 +8,7 @@ const root = path.resolve(process.argv[2] || "out");
 const site = "https://century-ai.eu";
 const telegram = "https://t.me/vitalibakhmat";
 
-// The public route contract for the complete adaptation. Keep this list and
+// The public route contract for the site. Keep this list and
 // src/lib/routes.ts aligned when deliberately adding or removing a page.
 const publicRoutes = [
   "/",

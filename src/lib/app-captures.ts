@@ -1,5 +1,4 @@
-/** Direct crops from the supplied Century recordings. Provenance is in
- * docs/application-screenshots-2026-11-04.md. No text is redrawn or translated. */
+/** Century application screenshots with dimensions, accessible labels and captions. */
 export const appCaptures = {
   models: {
     src: "/media/app/models.webp", width: 910, height: 342, tone: "light",

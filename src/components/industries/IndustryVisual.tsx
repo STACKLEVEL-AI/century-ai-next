@@ -12,8 +12,7 @@ type IndustryVisual = {
   focus: string;
 };
 
-// Existing editorial settings, not customer premises. Application imagery uses
-// only the unchanged genuine captures recorded in the asset provenance.
+// Industry photography, crop positions and related application captures.
 export const industryVisuals: Record<IndustrySlug, IndustryVisual> = {
   banking: {
     src: "/media/industry.webp", width: 1200, height: 670,

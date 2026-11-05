@@ -127,7 +127,7 @@
 .inner-page .sector-workflow-body dt svg { margin-top: 1px; color: #9e9e92; }
 .inner-page .sector-workflow-body dd { color: #bcbcb3; font-size: 14px; line-height: 1.65; margin: 0; }
 
-/* Real application evidence is separated from the illustrative sector imagery. */
+/* Application screenshots and sector photography use separate layouts. */
 .inner-page .sector-evidence { background: #efefe9; }
 .inner-page .sector-evidence-layout { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 70px; }
 .inner-page .sector-evidence-copy > p:not(.sector-eyebrow) { max-width: 370px; margin-top: 27px; color: #62625a; font-size: 17px; line-height: 1.65; }

@@ -31,10 +31,10 @@ const operatingPrinciples = [
 ];
 
 const scenarios = [
-  { name: "Customer support", title: "Give every request a useful next step", image: "/media/support.webp", href: "/industries/telecommunication/", label: "Service conversations" },
-  { name: "Document operations", title: "Turn scattered information into usable context", image: "/media/workflows.webp", href: "/systems/", label: "Documents & workflows" },
-  { name: "Company knowledge", title: "Bring the right knowledge closer to your people", image: "/media/knowledge.webp", href: "/ai-os/", label: "Employee assistance" },
-  { name: "Business processes", title: "Build around the work your team knows best", image: "/media/deployment.webp", href: "/deployment/", label: "From scope to operation" },
+  { name: "Customer support", title: "Give every request a useful next step", image: "/media/support.webp", width: 1200, height: 675, href: "/industries/telecommunication/", label: "Service conversations" },
+  { name: "Document operations", title: "Turn scattered information into usable context", image: "/media/workflows.webp", width: 1200, height: 675, href: "/systems/", label: "Documents & workflows" },
+  { name: "Company knowledge", title: "Bring the right knowledge closer to your people", image: "/media/employee-assistance-woman.webp?v=51966346", width: 1600, height: 900, href: "/ai-os/", label: "Employee assistance" },
+  { name: "Business processes", title: "Build around the work your team knows best", image: "/media/deployment.webp", width: 1200, height: 670, href: "/deployment/", label: "From scope to operation" },
 ];
 
 function AgentSymbol({ small = false }: { small?: boolean }) {
@@ -125,7 +125,7 @@ export default function AgentsExperience() {
     <section className={`${styles.section} ${styles.scenariosSection}`} id="agent-scenarios" aria-labelledby="agents-scenarios-title">
       <div className={styles.shell}><div className={styles.headingRow}><h2 id="agents-scenarios-title">Start with work<br />that makes a difference</h2><p>Practical places to begin<br />Define the outcome with the team doing the work</p></div></div>
       <div className={styles.scenarioTrack} role="region" aria-label="Explore agent use cases">
-        {scenarios.map(scenario => <a className={styles.scenario} href={scenario.href} key={scenario.name}><div className={styles.scenarioPhoto}><img src={scenario.image} alt="" loading="lazy" width="1200" height="675" /><span>{scenario.name}</span></div><div className={styles.scenarioContent}><span>{scenario.label}</span><h3>{scenario.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></div></a>)}
+        {scenarios.map(scenario => <a className={styles.scenario} href={scenario.href} key={scenario.name}><div className={styles.scenarioPhoto}><img src={scenario.image} alt="" loading="lazy" width={scenario.width} height={scenario.height} /><span>{scenario.name}</span></div><div className={styles.scenarioContent}><span>{scenario.label}</span><h3>{scenario.title}</h3><ArrowUpRight size={24} aria-hidden="true" /></div></a>)}
       </div>
       <div className={styles.shell}><p className={styles.scenarioNote}>Example areas for discovery. Scope and integrations are agreed for each deployment</p></div>
     </section>
