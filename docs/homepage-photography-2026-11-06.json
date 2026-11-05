@@ -175,5 +175,24 @@
     "unique_paths": 18,
     "unique_sha256": 18,
     "static_video_extracts": 0
+  },
+  "verification": {
+    "implementation_commit": "96a8b44733d527e74822531b5eacd963ff874ac0",
+    "deployment_url": "https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42115401520",
+    "deployment_result": "success",
+    "local_checks": [
+      "TypeScript passed",
+      "Production build and static export passed",
+      "Export inspection passed: 26 routes, 2605 local links/assets"
+    ],
+    "live_url": "https://century-ai.eu/#use-cases",
+    "browser_checks": [
+      "All five use-case photos decoded at expected dimensions",
+      "All seven industry tabs selected and their distinct photos decoded",
+      "New workplace scene visually checked within the real Employee assistance card",
+      "Document width equals viewport content width: 1348 px"
+    ],
+    "screenshot": "docs/previews/homepage-photography-1793915201473.jpg",
+    "mobile_ui": "Not device-emulated in this browser session; existing responsive layout was unchanged"
   }
 }

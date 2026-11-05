@@ -90,3 +90,9 @@ Both live MP4 responses returned HTTP 200 and matched the committed SHA-256 hash
 The first live check revealed a returning browser could reuse the former 13-second film at an unchanged URL. The shared versioned URLs in `hero-media.ts` corrected this; the final browser read confirmed `/media/enterprise-film.mp4?v=7be70f19` and its matching poster.
 
 ![Published Century homepage with the licensed campus footage](previews/stock-video-home-2026-11-05.jpg)
+
+## Photography publication verification — 6 November
+
+Published in [commit 96a8b44](https://github.com/STACKLEVEL-AI/century-ai-next/commit/96a8b44733d527e74822531b5eacd963ff874ac0); [deployment 42115401520](https://github.com/STACKLEVEL-AI/century-ai-next/actions/runs/42115401520) succeeded. Local type validation, the production build and the optional export inspection passed (26 routes, 2,605 local links/assets). The browser loaded all five use-case photographs and all seven distinct industry-tab photographs at the expected dimensions. The new scene was inspected inside the real card, with the face clear of the headline. No page-level horizontal overflow was present at the inspected desktop viewport.
+
+![Published homepage use-case cards with distinct photography](previews/homepage-photography-1793915201473.jpg)
