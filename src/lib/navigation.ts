@@ -1,6 +1,6 @@
 export type NavigationLink = { href: string; title: string; description?: string };
 export const platformLinks: NavigationLink[] = [
-  { href: "/ai-os/", title: "AI OS overview", description: "Specification, development and governance" },
+  { href: "/ai-os/", title: "AI Platform", description: "Specification, development and governance" },
   { href: "/agents/", title: "Century Agents", description: "Answers grounded in approved knowledge" },
   { href: "/systems/", title: "Century Systems", description: "Agents, integrations and workflow orchestration" },
   { href: "/ai-gateway/", title: "AI Gateway", description: "Model choice, data rules and usage visibility" },

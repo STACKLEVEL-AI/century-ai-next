@@ -119,7 +119,7 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
 
   await page.goto("/ai-os/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-  await expect(page).toHaveTitle("Century AI OS | Century");
+  await expect(page).toHaveTitle("Century AI Platform | Century");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/ai-os/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/ai-os/");
 
@@ -301,7 +301,7 @@ test("Menus, screenshot links and security FAQs support keyboard navigation", as
 
 test("Product explorers keep keyboard focus and displayed panels in sync", async ({ page }) => {
   await page.goto("/ai-os/");
-  const layers = page.getByRole("tablist", { name: "Explore AI OS infrastructure" });
+  const layers = page.getByRole("tablist", { name: "Explore AI Platform infrastructure" });
   await layers.getByRole("tab", { name: "Security & governance", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
   await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();

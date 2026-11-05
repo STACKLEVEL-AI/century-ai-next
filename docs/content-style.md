@@ -14,6 +14,6 @@ Update display text at its source, including labels inside SVG diagrams.
 
 ## Names and links
 
-Use the product names Century AI OS, Century Agents, Century Systems and Century AI Gateway consistently. Keep contact and profile links aligned with [src/lib/site.ts](../src/lib/site.ts).
+Use the product names Century AI Platform, Century Agents, Century Systems and Century AI Gateway consistently. Keep contact and profile links aligned with [src/lib/site.ts](../src/lib/site.ts).
 
 Navigation labels should identify their destinations. Alternative text should describe useful visual content without repeating the surrounding caption; decorative images use empty alternative text.

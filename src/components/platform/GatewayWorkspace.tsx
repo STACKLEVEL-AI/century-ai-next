@@ -51,7 +51,7 @@ export default function GatewayWorkspace() {
             <Icon size={16} strokeWidth={1.5} aria-hidden="true" /><span>{title}</span>
           </button>)}
         </div>
-        <a className={styles.workspaceLink} href="/ai-os/">Explore the AI OS<ArrowUpRight size={14} aria-hidden="true" /></a>
+        <a className={styles.workspaceLink} href="/ai-os/">Explore the AI Platform<ArrowUpRight size={14} aria-hidden="true" /></a>
       </aside>
       <div className={styles.workspaceContent}>
         {views.map(({ id, title, description, capture }, index) => <div key={id} role="tabpanel"

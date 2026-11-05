@@ -103,7 +103,7 @@ export default function TransformationPage() {
                 <div className={styles.cardShade} aria-hidden="true" />
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
-                  <h3>AI OS</h3>
+                  <h3>AI Platform</h3>
                   <p>Models, knowledge, agents and controls in one environment for building and running AI workflows</p>
                 </div>
               </a>

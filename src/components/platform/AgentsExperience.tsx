@@ -144,7 +144,7 @@ export default function AgentsExperience() {
     <section className={`${styles.section} ${styles.connected}`} aria-labelledby="agents-connected-title"><div className={styles.shell}>
       <div className={styles.headingRow}><h2 id="agents-connected-title">Part of a connected platform</h2><a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className={styles.textLink}>Talk through your use case <ArrowUpRight size={18} /></a></div>
       <div className={styles.relatedGrid}>
-        <a href="/ai-os/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI OS</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
+        <a href="/ai-os/"><Layers3 size={28} strokeWidth={1.2} /><h3>Century AI Platform</h3><p>Specification, development and governance in one environment</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/systems/"><Workflow size={28} strokeWidth={1.2} /><h3>Century Systems</h3><p>Connect knowledge and agents to business processes</p><span>Explore<ArrowRight size={18} /></span></a>
         <a href="/ai-gateway/"><Network size={28} strokeWidth={1.2} /><h3>Century AI Gateway</h3><p>Choose models and control which data they can use</p><span>Explore<ArrowRight size={18} /></span></a>
       </div>

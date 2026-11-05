@@ -24,7 +24,15 @@ export default function PressPage() {
               <a className="co-brand-asset" href="/brand/century-logo.svg" download="century-logo.svg"><div className="co-brand-specimen"><Image src="/brand/century-logo.svg" alt="Century black wordmark" width={442} height={116} /></div><div className="co-brand-download"><span>Black SVG<small>For light backgrounds</small></span><ArrowDown size={20} aria-hidden="true" /></div></a>
               <a className="co-brand-asset" href="/brand/century-logo-white.svg" download="century-logo-white.svg"><div className="co-brand-specimen co-brand-specimen-dark"><Image src="/brand/century-logo-white.svg" alt="Century white wordmark" width={442} height={116} /></div><div className="co-brand-download"><span>White SVG<small>For dark backgrounds</small></span><ArrowDown size={20} aria-hidden="true" /></div></a>
             </div>
-            <div className="co-brand-guidance"><p>Keep the original proportions, colour and spelling. Allow clear space around the mark and use a simple background with enough contrast.</p><span>SVG · transparent background · vector format</span></div>
+            <div className="co-brand-guidance"><p>Use the supplied artwork unchanged. Leave clear space on every side at least equal to the height of the letter “C”. Keep the wordmark at least 80 px wide on screen or 20 mm in print.</p><span>Original Lato SemiBold (600) lettering<br />SVG · transparent background · vector format</span></div>
+            <div className="co-brand-palette" role="group" aria-labelledby="brand-palette-title">
+              <div><h3 className="co-brand-palette-title" id="brand-palette-title">Brand colours</h3><p>Use blue sparingly for key actions and accents. Keep the wordmark black on light backgrounds or white on dark backgrounds, with clear contrast.</p></div>
+              <ul className="co-brand-swatches">
+                <li><span className="co-brand-swatch co-brand-swatch-white" aria-hidden="true" /><span>White<code>#FFFFFF</code></span></li>
+                <li><span className="co-brand-swatch co-brand-swatch-blue" aria-hidden="true" /><span>Accent blue<code>#240CFF</code></span></li>
+                <li><span className="co-brand-swatch co-brand-swatch-black" aria-hidden="true" /><span>Black<code>#000000</code></span></li>
+              </ul>
+            </div>
           </div>
         </section>
         <section className="co-section" id="founders">

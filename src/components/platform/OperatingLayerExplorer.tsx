@@ -32,7 +32,7 @@ export default function OperatingLayerExplorer() {
       <img className={styles.architectureBackdrop} src="/media/strategy.webp" alt="" width={1054} height={1451} loading="lazy" />
       <div className={styles.architecturePanel}>
         <span className={styles.architectureCaption}>CENTURY / OPERATING LAYER</span>
-        <div className={styles.layerTabs} role="tablist" aria-label="Explore AI OS infrastructure">
+        <div className={styles.layerTabs} role="tablist" aria-label="Explore AI Platform infrastructure">
           {layers.map(({ id, title, icon: Icon }, index) => <button type="button" role="tab"
             key={id} id={"os-tab-" + id} aria-selected={selected === index}
             aria-controls={"os-panel-" + id} tabIndex={selected === index ? 0 : -1}

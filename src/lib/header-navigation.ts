@@ -12,7 +12,7 @@ export const headerNavigation: HeaderNavigationGroup[] = [
     id: "platform",
     label: "Platform",
     links: [
-      { href: "/ai-os/", title: "AI OS Overview", description: "Specification, development and governance in one platform" },
+      { href: "/ai-os/", title: "AI Platform", description: "Specification, development and governance in one platform" },
       { href: "/agents/", title: "Century Agents", description: "Answers grounded in approved knowledge" },
       { href: "/systems/", title: "Century Systems", description: "Agents, integrations and workflow orchestration" },
       { href: "/ai-gateway/", title: "Century AI Gateway", description: "Model choice, data rules and usage visibility" },

@@ -6,7 +6,7 @@ import OperatingLayerRelated from "@/components/platform/OperatingLayerRelated";
 import { pageMetadata } from "@/lib/metadata";
 import styles from "@/components/platform/OperatingLayer.module.css";
 
-export const metadata = pageMetadata("Century AI OS", "Bring specification, development and governance into one operating environment for enterprise AI, with company knowledge, agents, access rules and quality controls", "/ai-os");
+export const metadata = pageMetadata("Century AI Platform", "Bring specification, development and governance into one operating environment for enterprise AI, with company knowledge, agents, access rules and quality controls", "/ai-os");
 
 const advantages = [
   { title: "Model independence", text: "Choose models for each task and data policy, then compare quality on your own documents and questions", icon: Boxes },
@@ -74,7 +74,7 @@ export default function AiOsPage() {
         </picture>
         <div className={styles.heroShade} />
         <div className={styles.heroTitle}>
-          <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI OS</span></p>
+          <p className={styles.heroLockup}><img src="/brand/century-logo-white.svg" alt="Century" width={155} height={41} /><span>AI Platform</span></p>
           <h1 id="os-title">One operating environment from specification to governed AI</h1>
         </div>
         <Lattice />
