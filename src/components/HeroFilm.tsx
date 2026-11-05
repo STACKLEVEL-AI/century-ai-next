@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
+import { heroMedia } from "@/lib/hero-media";
 
 const films = {
-  desktop: { src: "/media/enterprise-film.mp4", poster: "/media/hero-poster.webp" },
-  mobile: { src: "/media/enterprise-film-mobile.mp4", poster: "/media/hero-poster-mobile.webp" },
+  desktop: { src: heroMedia.desktopFilm, poster: heroMedia.poster },
+  mobile: { src: heroMedia.mobileFilm, poster: heroMedia.posterMobile },
 } as const;
 
 type Film = (typeof films)[keyof typeof films];

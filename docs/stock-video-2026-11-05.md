@@ -54,7 +54,7 @@ The use-case rail supports touch scrolling, keyboard-accessible links and previo
 
 ## Maintenance
 
-`npm run assets:film` is an optional maintenance command, never a build/deployment step. It requires FFmpeg and ffprobe, reads the committed source manifest, downloads missing source files into a cache, verifies SHA-256, stages the edited films/posters/frame extracts and checks them before replacing production assets. The manifest includes source URLs, authors, trim points, mobile crop centres and published-file hashes. `npm run assets:og` refreshes the local social preview after poster changes.
+`npm run assets:film` is an optional maintenance command, never a build/deployment step. It requires FFmpeg and ffprobe, reads the committed source manifest, downloads missing source files into a cache, verifies SHA-256, stages the edited films/posters/frame extracts and checks them before replacing production assets. The manifest includes source URLs, authors, trim points, mobile crop centres and published-file hashes. After regenerating any hero asset, update the version in `src/lib/hero-media.ts` to invalidate returning visitors' cached media. `npm run assets:og` refreshes the local social preview after poster changes.
 
 ## Verification before publication
 
