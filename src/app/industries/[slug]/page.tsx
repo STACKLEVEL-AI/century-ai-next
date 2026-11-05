@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, FileCheck2, Plus, Shield
 import { notFound } from "next/navigation";
 import AppScreenshot from "@/components/AppScreenshot";
 import IndustryPhoto, { industryVisuals } from "@/components/industries/IndustryVisual";
+import InsurancePage from "@/components/industries/InsurancePage";
 import PageFrame from "@/components/site/PageFrame";
 import { getIndustry, industries } from "@/lib/industries";
 import { pageMetadata } from "@/lib/metadata";
@@ -25,6 +26,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) notFound();
+
+  if (industry.slug === "insurance") return <InsurancePage />;
 
   const visual = industryVisuals[industry.slug];
   const controlIcons = [ShieldCheck, UserRoundCheck, BookOpen];
