@@ -4,15 +4,18 @@ The homepage now follows the current Wonderful section sequence with Century con
 
 ## Homepage composition
 
+The composition below includes the requested 6 November adjustment: restore the earlier industry layout, align the hero to the current header, and remove the separate manifesto statement.
+
 1. Full-width video hero, centred headline and two actions.
 2. A capabilities strip occupying the reference's proof-strip position.
 3. A horizontal rail of five square use-case cards, with scroll controls and native links.
-4. One large statement explaining the platform, deployment and strategy approach.
-5. One Century AI OS section with the existing real application captures.
-6. Paired Deployment and AI Strategy image cards.
-7. A centred industry introduction, seven horizontal pill tabs and one wide photographic panel.
-8. A photographic team section with About Century and Careers cards, plus the three original founder portraits.
-9. The shared footer and the existing Telegram contact action.
+4. One Century AI OS section with the existing real application captures.
+5. Paired Deployment and AI Strategy image cards.
+6. The earlier two-column industry section: a vertical list of seven sectors beside a compact dark photographic panel, restored from `ba158e3` with scoped responsive styles.
+7. A photographic team section with About Century and Careers cards, plus the three original founder portraits.
+8. The shared footer and the existing Telegram contact action.
+
+The hero now fills the available first viewport after the 48 px announcement strip. Its navigation remains an overlay; content padding accounts for the 60 px desktop or 68 px mobile header. Automatic height lets the section grow when a short viewport or larger text requires more room. The current video, posters and native muted autoplay remain unchanged.
 
 The separate home product-family, additional screenshot gallery, large founders grid, guide grid and repeated contact panel have been removed from the homepage composition. Their relevant product, company and editorial pages remain available through navigation. The complete founder profiles remain on `/about-us/`. The homepage keeps `#use-cases`, `#platform`, `#how-we-start` and `#contact`, and now includes `#industries` and `#team`.
 
@@ -50,7 +53,7 @@ Both films use H.264/yuv420p, 24 fps, faststart and no audio. Mobile framing is 
 
 `HeroFilm` chooses one media file at mount: mobile at widths up to 640 px, desktop above that. A resize does not download a second film. Reduced motion and Save-Data use the poster, as does a page without JavaScript. A media error restores the poster. The selected film autoplays in a muted inline loop. All files are served from the static export; no visitor request goes to a stock-media provider.
 
-The use-case rail supports touch scrolling, keyboard-accessible links and previous/next controls. The industry tabs retain arrow/Home/End navigation, a single focusable active tab, correct panel labels and seven no-JavaScript fallback links. Each industry uses its corresponding existing photograph, including the separate Insurance asset directory.
+The use-case rail supports touch scrolling, keyboard-accessible links and previous/next controls. The industry tabs retain arrow/Home/End navigation, a single focusable active tab, correct panel labels and seven no-JavaScript fallback links. The restored section uses its original local editorial photographs. It stacks below 900 px, with two columns of choices on tablets and a vertical list below 640 px.
 
 ## Maintenance
 

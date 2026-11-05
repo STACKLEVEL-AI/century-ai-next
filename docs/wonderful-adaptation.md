@@ -18,7 +18,7 @@ All 26 content routes use trailing slashes in the static export. The source regi
 
 | Route | Implemented content |
 | --- | --- |
-| `/` | Responsive stock-film hero; capabilities strip; horizontal use-case cards; manifesto; one AI OS section with real captures; deployment and strategy; horizontal industry tabs with one wide image; About/Careers closer; footer contact. |
+| `/` | Responsive stock-film hero aligned to the current header; capabilities strip; horizontal use-case cards; one AI OS section with real captures; deployment and strategy; restored vertical industry list beside a compact photographic panel; About/Careers closer; footer contact. |
 | `/ai-os/` | Platform foundation, infrastructure layer explorer, reusable knowledge and workflow concepts, deployment boundaries and product links. |
 | `/agents/` | Knowledge, document and support workflows; agent scope; native capability disclosures; real model and response-detail captures; operating ownership. |
 | `/systems/` | Requirements-led application design, real file-library and document-input views, business functions, implementation and ownership. |

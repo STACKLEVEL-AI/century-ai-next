@@ -1,14 +1,10 @@
 /* Homepage composition. Inner pages retain their independently scoped layouts. */
-.century-home .hero { min-height: 660px; height: min(790px, calc(100svh - 142px)); max-height: none; }
-.century-home .hero-layout { padding-block: 110px 70px; }
+.century-home .hero { --home-header-height: 60px; height: auto; min-height: calc(100svh - 48px); max-height: none; }
+.century-home .hero-layout { height: auto; min-height: inherit; padding-block: calc(var(--home-header-height) + clamp(24px, 4svh, 56px)) clamp(24px, 4svh, 56px); }
 .century-home .hero-shade { background: linear-gradient(180deg, #07141759, #07141785 50%, #07141770); }
 .century-home .principles-strip { padding-block: 58px 48px; }
 .century-home .principles-inner { gap: 32px; }
 .century-home .principles-inner > p { font-size: 19px; }
-.century-home .home-manifesto { padding: 50px 0 116px; }
-.century-home .home-manifesto > .shell { display: block; }
-.century-home .home-manifesto p { max-width: 1100px; margin-inline: auto; font-size: clamp(38px, 4.8vw, 68px); line-height: 1.13; font-weight: 300; letter-spacing: -.055em; text-align: center; }
-.century-home .home-manifesto p span { color: #868681; }
 .century-home .platform-section { padding-top: 105px; }
 .century-home .platform-heading { max-width: 780px; margin-inline: auto; text-align: center; }
 .century-home .platform-heading > .eyebrow { justify-content: center; }
@@ -20,19 +16,17 @@
   .century-home .hero h1 { font-size: 90px; }
 }
 @media (max-width: 900px) {
-  .century-home .hero { min-height: 650px; }
   .century-home .process-intro-card { min-height: 530px; }
 }
+@media (max-width: 879px) {
+  .century-home .hero { --home-header-height: 68px; }
+}
 @media (max-width: 640px) {
-  .century-home .hero { min-height: 640px; height: calc(100svh - 36px); max-height: 800px; }
-  .century-home .hero-layout { padding: 112px 0 76px; }
   .century-home .hero h1 { font-size: clamp(37px, 9.3vw, 56px); }
   .century-home .hero-lead { font-size: 15px; }
   .century-home .principles-strip { padding: 42px 0 30px; }
   .century-home .principles-inner { gap: 26px; }
   .century-home .principles-inner li { font-size: 20px; }
-  .century-home .home-manifesto { padding: 28px 0 76px; }
-  .century-home .home-manifesto p { font-size: clamp(34px, 8.8vw, 44px); line-height: 1.17; text-align: left; }
   .century-home .platform-section { padding-top: 72px; }
   .century-home .platform-heading h2 { font-size: 39px; }
   .century-home .app-platform-captures { padding-bottom: 54px; }
