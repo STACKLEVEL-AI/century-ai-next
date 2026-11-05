@@ -1,4 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
+import { SITE_ROUTES } from "../src/lib/routes";
 
 const ORIGIN = "http://127.0.0.1:4173";
 
@@ -140,7 +141,7 @@ test("German industry tabs respond to keyboard navigation and link to German pag
   await expect(airlines).toBeFocused();
   await expect(airlines).toHaveAttribute("aria-selected", "true");
   await expect(panel.getByRole("heading")).toHaveText("Teams informieren, wenn sich Pläne ändern");
-  await expect(panel.getByRole("link")).toHaveText("Entdecken Sie Fluggesellschaften");
+  await expect(panel.getByRole("link")).toHaveText("Mehr erfahren: Fluggesellschaften");
   await expect(panel.getByRole("link")).toHaveAttribute("href", "/de/industries/airlines/");
 
   await page.keyboard.press("Home");
@@ -181,10 +182,13 @@ test("German content and language links are present in the export without JavaSc
 });
 
 for (const width of [320, 390]) {
-  test(`German layouts fit a ${width}px viewport without hydration errors`, async ({ page }) => {
+  test(`German layouts fit a ${width}px viewport without hydration errors`, async ({ page }, testInfo) => {
+    test.setTimeout(90_000);
     const errors = collectRuntimeErrors(page);
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ["/de/", "/de/platform/", "/de/industries/healthcare/", "/de/blog/choose-first-ai-workflow/", "/de/privacy/"]) {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    const previews = ["/de/", "/de/platform/", "/de/industries/healthcare/", "/de/blog/choose-first-ai-workflow/", "/de/privacy/"];
+    for (const route of SITE_ROUTES.map(route => `/de${route}`)) {
       await page.goto(route);
       await page.evaluate(async () => { await document.fonts.ready; });
       await expect(page.locator("html")).toHaveAttribute("lang", "de");
@@ -192,8 +196,18 @@ for (const width of [320, 390]) {
         content: document.documentElement.scrollWidth,
         viewport: document.documentElement.clientWidth,
       }));
-      expect(dimensions.content, `Horizontal overflow on ${route} at ${width}px`).toBeLessThanOrEqual(dimensions.viewport + 1);
+      if (dimensions.content > dimensions.viewport + 1) {
+        const overflow = await page.evaluate(() => Array.from(document.querySelectorAll("body *"))
+          .map(element => ({ element: element.tagName + "." + element.className, box: element.getBoundingClientRect().toJSON() }))
+          .filter(item => item.box.width > 0 && item.box.right > document.documentElement.clientWidth + 1)
+          .slice(0, 25));
+        console.log(`Overflow details for ${route} at ${width}px: ${JSON.stringify(overflow)}`);
+      }
+      expect.soft(dimensions.content, `Horizontal overflow on ${route} at ${width}px`).toBeLessThanOrEqual(dimensions.viewport + 1);
       await expect(languageMenu(page, "de").locator(":scope > summary")).toBeInViewport();
+      if (width === 390 && previews.includes(route)) {
+        await page.screenshot({ path: testInfo.outputPath(route.replace(/\//g, "-") + ".png"), fullPage: true });
+      }
     }
     expect(errors).toEqual([]);
   });

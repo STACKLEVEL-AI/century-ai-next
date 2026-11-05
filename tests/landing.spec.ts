@@ -248,7 +248,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
-    await expect(page.getByRole("heading", { name: "Build capability alongside the workflow.", exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Build and evaluate with your developers", exact: true })).toBeVisible();
     await page.goto("/ai-gateway/");
     await expectLocalAppScreenshots(page);
   } finally {
@@ -305,19 +305,19 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
   const layers = page.getByRole("tablist", { name: "Explore AI Platform infrastructure" });
   await layers.getByRole("tab", { name: "Security & governance", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
-  await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: "Observability", exact: true })).toBeVisible();
+  await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "Quality & activity", exact: true })).toBeVisible();
   await page.keyboard.press("End");
   await expect(layers.getByRole("tab", { name: "Security & governance", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
-  await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
+  await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toBeFocused();
 
   await page.goto("/deployment/");
   const phases = page.getByRole("tablist", { name: "Delivery ownership phases" });
   await phases.getByRole("tab", { name: "Phase 01", exact: true }).focus();
   await page.keyboard.press("ArrowRight");
   await expect(phases.getByRole("tab", { name: "Phase 02", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: "Phase 02", exact: true }).getByRole("heading", { name: "Build capability alongside the workflow." })).toBeVisible();
+  await expect(page.getByRole("tabpanel", { name: "Phase 02", exact: true }).getByRole("heading", { name: "Build and evaluate with your developers" })).toBeVisible();
   await page.keyboard.press("End");
   await expect(phases.getByRole("tab", { name: "Phase 03", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
