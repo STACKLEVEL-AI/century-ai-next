@@ -1,17 +1,17 @@
 # Insurance reference layout
 
-The insurance route now has a dedicated component and CSS module based on the visual reference supplied for this change:
+The insurance route uses the shared industry reference component and CSS module. Its original content, photography, spacing, crop and mobile card order are preserved:
 
 - Destination: https://century-ai.eu/industries/insurance/
 - Reference inspected on 2026-11-05: https://www.wonderful.ai/industries/insurance
-- Component: `src/components/industries/InsurancePage.tsx`
-- Styles: `src/components/industries/InsurancePage.module.css`
+- Component: `src/components/industries/IndustryReferencePage.tsx`
+- Styles: `src/components/industries/IndustryReferencePage.module.css`
 
 ## Scope
 
 The full-bleed photographic hero, light display typography, dark benefits and workflow sections, white feature rows with hover illustrations, gradient contact section and dark footer follow the reference's geometry. The major layout breakpoints are 1400px and 880px. Tablet feature images become full-width; large-screen illustrations are revealed on hover or keyboard focus. Touch devices show the illustrations without requiring hover.
 
-The announcement and enterprise/customer-logo sections are omitted. Century's existing SVG logos, local navigation, metadata and Telegram contact destination are retained. The shared Header gains an optional `showAnnouncement` prop that defaults to its previous behavior. All other industry routes still render the existing template.
+The announcement and enterprise/customer-logo sections are omitted. Century's existing SVG logos, local navigation, metadata and Telegram contact destination are retained. The shared Header gains an optional `showAnnouncement` prop that defaults to its previous behavior. The remaining industry pages now use the same renderer with their own content and visual assets; see `industries-reference-2026-11-05.md`.
 
 The copy describes Century's existing scope and review process; it does not transfer another company's certifications, customer relationships or deployment claims. The platform illustration is a local SVG with Century and generic system labels. The footer uses Century's available destinations and retains the compact brand treatment already used by this repository.
 

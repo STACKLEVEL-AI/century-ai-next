@@ -1,0 +1,375 @@
+{
+  "inspectedOn": "2026-11-05",
+  "referencePages": {
+    "banking": "https://www.wonderful.ai/industries/banking",
+    "telecommunication": "https://www.wonderful.ai/industries/telecommunication",
+    "healthcare": "https://www.wonderful.ai/industries/healthcare",
+    "utilities": "https://www.wonderful.ai/industries/utilities",
+    "retail": "https://www.wonderful.ai/industries/retail",
+    "airlines": "https://www.wonderful.ai/industries/airlines"
+  },
+  "processing": "Photographs: WebP, quality83 desktop/workflow, quality82 mobile, no enlargement. Unbranded diagram PNGs preserve original bytes. Existing insurance gradient, font and identical deployment diagrams are reused.",
+  "excluded": "Wonderful logos, promotional banners, partner/customer strips, Utilities customer case/video/metrics, branded healthcare/utilities platform diagrams and incorrect banking labels in the Airlines platform illustration.",
+  "assets": [
+    {
+      "path": "public/media/industries/banking/hero.webp",
+      "source": "https://framerusercontent.com/images/Z6ITE2va5GBIFUhQaiHnfePJmaY.jpg?width=1926&height=1075",
+      "width": 1926,
+      "height": 1075,
+      "bytes": 327440,
+      "sha256": "e246653494fb52686f3f34b82c5424590ed40f2b75a20f5ebcf8a6de8822e8d9"
+    },
+    {
+      "path": "public/media/industries/banking/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/Z6ITE2va5GBIFUhQaiHnfePJmaY.jpg?width=1926&height=1075",
+      "width": 1280,
+      "height": 714,
+      "bytes": 146972,
+      "sha256": "b0c4906d56e63fe2029a4f4c4e2af7105fac3306baf7651dbe1fda13e4bd481b"
+    },
+    {
+      "path": "public/media/industries/banking/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/FLpv1vS6vzSLga9GoFIxMwC3aM.jpg?width=645&height=1075",
+      "width": 645,
+      "height": 1075,
+      "bytes": 123350,
+      "sha256": "2c8fdc157500a8f7cc99fc5c32940353772fa2d2e6b8acb62297eab01ad9ad98"
+    },
+    {
+      "path": "public/media/industries/banking/workflows.webp",
+      "source": "https://framerusercontent.com/images/ICGcXxMAO0bCJdN799vVuEuWak.jpg?width=4096&height=2286",
+      "width": 1440,
+      "height": 804,
+      "bytes": 96896,
+      "sha256": "0f162cae1af945ad52be4f74232d99f51c84010fcc7492c9ad5756b54e37c42d"
+    },
+    {
+      "path": "public/media/industries/banking/frontier.png",
+      "source": "https://framerusercontent.com/images/LpcEBgeFpMHw8YYPp0klsruZQJg.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 72620,
+      "sha256": "1255788a918a755237f3ba4dc4f47de76325fea8813b0741a29ae953050faab4"
+    },
+    {
+      "path": "public/media/industries/banking/platform.png",
+      "source": "https://framerusercontent.com/images/QuUJgsE41U6u0fdKGkYV8xpsE0.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 46501,
+      "sha256": "015d8f44959256c1021f477267efe88388aae587a2b21e64d09af985ae00119a"
+    },
+    {
+      "path": "public/media/industries/banking/governance.png",
+      "source": "https://framerusercontent.com/images/Fqyfy1KGX5GIFWUoDNyhUuXtc.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 10311,
+      "sha256": "ed896fd6a18de927f03050672f5b755a1f9f8da1d5d80d903a236d7b9f896251"
+    },
+    {
+      "path": "public/media/industries/banking/deployment.png",
+      "source": "https://framerusercontent.com/images/c5Cf8WKnVCPL4nHDkBw73jq4QPw.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 6132,
+      "sha256": "1d49ea739344d40edeb2be6962f57c667e50dc91a1f9a428592772c1f9eec8a5"
+    },
+    {
+      "path": "public/media/industries/telecommunication/hero.webp",
+      "source": "https://framerusercontent.com/images/FFdLCmKHmSQ4OZaBx3pFj3de65A.jpg?width=1651&height=921",
+      "width": 1651,
+      "height": 921,
+      "bytes": 153462,
+      "sha256": "96b0db1d123ada3b15a0d623ac4b2afb8c8b30b5a3cb8bb0f928d56644f6a888"
+    },
+    {
+      "path": "public/media/industries/telecommunication/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/FFdLCmKHmSQ4OZaBx3pFj3de65A.jpg?width=1651&height=921",
+      "width": 1280,
+      "height": 714,
+      "bytes": 83364,
+      "sha256": "e5ec67c7489f9c76d401cb34874544033cb1930b9f1096aee7841af9f414d756"
+    },
+    {
+      "path": "public/media/industries/telecommunication/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/bTxluY6jmVX61OKU0lUQEkZnmXA.jpg?width=552&height=921",
+      "width": 552,
+      "height": 921,
+      "bytes": 69340,
+      "sha256": "a9538a62e240f95cd15caa13d6c47521826f79f33fa7a98d7c33ecf598a49f13"
+    },
+    {
+      "path": "public/media/industries/telecommunication/workflows.webp",
+      "source": "https://framerusercontent.com/images/AgxwM0ifx3HhLr5uTOZWctv8Kug.jpg?width=1651&height=921",
+      "width": 1440,
+      "height": 803,
+      "bytes": 136028,
+      "sha256": "cf19ac77824fb382ac7d34e35138e3d6f44b3a897c1ef0860d8bfef2eca5e6f7"
+    },
+    {
+      "path": "public/media/industries/telecommunication/frontier.png",
+      "source": "https://framerusercontent.com/images/WKzY50mzdH2H9yfEij4HGA7vn6o.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 79008,
+      "sha256": "bd3ea963700fc4d84fc2f74dcda778538146df82988e5498e21989f09dcac3b1"
+    },
+    {
+      "path": "public/media/industries/telecommunication/platform.png",
+      "source": "https://framerusercontent.com/images/umyWyysOakU3E9ksJqkM4zXsjs.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 49233,
+      "sha256": "73e6a0a18f61831c4939b37884e9703fdcb0d028290efc119b8ccb3e44b6cdbb"
+    },
+    {
+      "path": "public/media/industries/telecommunication/governance.png",
+      "source": "https://framerusercontent.com/images/WlTFvBZuY0LkD9tLwtllbW6Taw.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 10630,
+      "sha256": "d8a97bd2b5dd7e2efab0bf4f359531e60326c0dda9d42df3b75f4d29ea071296"
+    },
+    {
+      "path": "public/media/industries/telecommunication/deployment.png",
+      "source": "https://framerusercontent.com/images/WagolGhBsQeUSYmUYnquKQPri0.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 6164,
+      "sha256": "afb54db6bfece22db7543eef23bdfe9481a91729ee811ba8034df451d37e20d9"
+    },
+    {
+      "path": "public/media/industries/healthcare/hero.webp",
+      "source": "https://framerusercontent.com/images/cvajetGWTDvJ06wQgNqFbZ79w60.jpg?width=1926&height=1075",
+      "width": 1926,
+      "height": 1075,
+      "bytes": 145870,
+      "sha256": "af2735130d82d6ed74feb840fef10fe8f4a06a0b2b7e93457f95d5fbde361d9e"
+    },
+    {
+      "path": "public/media/industries/healthcare/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/cvajetGWTDvJ06wQgNqFbZ79w60.jpg?width=1926&height=1075",
+      "width": 1280,
+      "height": 714,
+      "bytes": 61464,
+      "sha256": "2d923d31597393b19c9940e0a9f45ea089ab5d3ca1e937698607c26b888f91e0"
+    },
+    {
+      "path": "public/media/industries/healthcare/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/gC4BFnf54rq6LQu9gQM1iOiHA.jpg?width=645&height=1075",
+      "width": 645,
+      "height": 1075,
+      "bytes": 58416,
+      "sha256": "a823086e1daf2ebc46d12aebf20065e8f56c91cbb7f0e640556bb563e9f593dc"
+    },
+    {
+      "path": "public/media/industries/healthcare/workflows.webp",
+      "source": "https://framerusercontent.com/images/QDg1GSWpcMbNcgSECeWUDGjBnTg.png?width=1456&height=816",
+      "width": 1440,
+      "height": 807,
+      "bytes": 100908,
+      "sha256": "c3f0ae384c4823b94aaf42b9921ef5798d8b7d6630f619833bc5efab594ae657"
+    },
+    {
+      "path": "public/media/industries/healthcare/frontier.png",
+      "source": "https://framerusercontent.com/images/8a9JqrWGD4ygd5p4r5xWnaMl3k.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 81013,
+      "sha256": "935d08617d186560a7179476196881a8f4c1b98418be023862a9703f380c938d"
+    },
+    {
+      "path": "public/media/industries/healthcare/governance.png",
+      "source": "https://framerusercontent.com/images/RrdPy0KxRxBGAtCKAuACi3YQ8.png?width=1280&height=808",
+      "width": 1280,
+      "height": 808,
+      "bytes": 10424,
+      "sha256": "d2b7c8dc1eb9c9d2a0743ca824e5669807239ada90809e265c555fb73be6e52b"
+    },
+    {
+      "path": "public/media/industries/utilities/hero.webp",
+      "source": "https://framerusercontent.com/images/gauGNjiMjJQ5nem2UNlcqeILxVc.jpg",
+      "width": 2048,
+      "height": 1143,
+      "bytes": 680664,
+      "sha256": "92107928080572fc552f2fd4efd59f4359b05b1bdb16d47a31c1d67b06c6383d"
+    },
+    {
+      "path": "public/media/industries/utilities/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/gauGNjiMjJQ5nem2UNlcqeILxVc.jpg",
+      "width": 1280,
+      "height": 714,
+      "bytes": 289902,
+      "sha256": "9bd1608df848fbb7be8ceae9e47036a510d5c322b48e6a877a150964dd060177"
+    },
+    {
+      "path": "public/media/industries/utilities/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/41YZONJN2qjJl1rVHxd7vUCVQ4E.jpg",
+      "width": 768,
+      "height": 1281,
+      "bytes": 263682,
+      "sha256": "16a31f3a523e2300d122d6582cf085fbc52938ae7392bd6176db23d6bdb6f89a"
+    },
+    {
+      "path": "public/media/industries/utilities/workflows.webp",
+      "source": "https://framerusercontent.com/images/EBzKGLastJPLjy40SC1Tj77Cwdk.jpg",
+      "width": 1440,
+      "height": 804,
+      "bytes": 59142,
+      "sha256": "c9c79993b03cda13820eda830c437f44f1a15d15bfe17ff5a9cf5b765ed93a25"
+    },
+    {
+      "path": "public/media/industries/utilities/frontier-ai.png",
+      "source": "https://framerusercontent.com/images/oCVw62BSgtZeFPRxlgDBRT1a2Y.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 80813,
+      "sha256": "f881d5e7ddab8aab8a84a56a24e1b1cd3f54ff661c214a6544b8b2cb0bfb0ce8"
+    },
+    {
+      "path": "public/media/industries/utilities/audit-ready.png",
+      "source": "https://framerusercontent.com/images/K13ifeKNlWthTTVgdZGHufwgVnI.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 10614,
+      "sha256": "64fdc605363c4bab1797e0fae5466c4ebcfe61d75c39fbfb0c40dc465630688b"
+    },
+    {
+      "path": "public/media/industries/retail/hero.webp",
+      "source": "https://framerusercontent.com/images/ciChxsmc9Ulla7nbNs1CRdWq7ew.jpg",
+      "width": 1651,
+      "height": 921,
+      "bytes": 174786,
+      "sha256": "9729af20e90b04ff9b62de37a3a3c3a41aa2045ace075581169b555ed29e8f84"
+    },
+    {
+      "path": "public/media/industries/retail/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/ciChxsmc9Ulla7nbNs1CRdWq7ew.jpg",
+      "width": 1280,
+      "height": 714,
+      "bytes": 105200,
+      "sha256": "a1cf56efa97a9106c0c193472045a95dc9fdaf36aff76a3292586fb8eca6a8f7"
+    },
+    {
+      "path": "public/media/industries/retail/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/sPnzvGjZydrU7mwB96Gp33XTV0.jpg",
+      "width": 552,
+      "height": 921,
+      "bytes": 64216,
+      "sha256": "5674ecfa8e1e663bfd430d4f7c5f2bb57695c73fe2df7397811c767f5482fb7a"
+    },
+    {
+      "path": "public/media/industries/retail/workflows.webp",
+      "source": "https://framerusercontent.com/images/BnN44oZT7XNvajmBJ9HP7bMoEc.png",
+      "width": 1440,
+      "height": 587,
+      "bytes": 69808,
+      "sha256": "0e01a3755f350a3615f030b6cc2b90b57e54a7cf34dbd01d891cbd294fe5d124"
+    },
+    {
+      "path": "public/media/industries/retail/frontier-ai.png",
+      "source": "https://framerusercontent.com/images/nomH0Vbm8DKL2v9z8IMDntMmnGQ.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 79687,
+      "sha256": "7a01972283192bcf5b4454ef492596ee2b3af9c38cc4a1e81647e0a07cb32733"
+    },
+    {
+      "path": "public/media/industries/retail/audit-ready.png",
+      "source": "https://framerusercontent.com/images/WrwBdkoqE4uiBiGkmAa31kYx9r4.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 11116,
+      "sha256": "6805996c90979fe0fc962f7d3db1826d39717610bfe93e2c4089ebf8f76b5f62"
+    },
+    {
+      "path": "public/media/industries/retail/platform.png",
+      "source": "https://framerusercontent.com/images/9plSmUB0BpO1m9Z5JN9z0QoJjc8.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 42259,
+      "sha256": "efb963e702802123de1d72ffaab7fac9b83ff9f4b6ce5f8eaf73731720b56ffb"
+    },
+    {
+      "path": "public/media/industries/airlines/hero.webp",
+      "source": "https://framerusercontent.com/images/aqVMSZQBodIwmH6xYMyI9Tk27zk.jpg",
+      "width": 2048,
+      "height": 1143,
+      "bytes": 138186,
+      "sha256": "9ad1b26404ab0f0c8a0667ccee2498710edb33aaaafef3fc6adcb78c90948fe0"
+    },
+    {
+      "path": "public/media/industries/airlines/hero-1280.webp",
+      "source": "https://framerusercontent.com/images/aqVMSZQBodIwmH6xYMyI9Tk27zk.jpg",
+      "width": 1280,
+      "height": 714,
+      "bytes": 56120,
+      "sha256": "71a7953bdb9e53d8bbec5575d8cfca7ea00ab02508344041832025b83e64833a"
+    },
+    {
+      "path": "public/media/industries/airlines/hero-mobile.webp",
+      "source": "https://framerusercontent.com/images/05UHaQqWCsGkjPEkefl5iTT64c.jpg",
+      "width": 768,
+      "height": 1280,
+      "bytes": 59170,
+      "sha256": "cba5e6f5633e3015b425da62682a3706982998f7476929b16f5b90221c79fd68"
+    },
+    {
+      "path": "public/media/industries/airlines/workflows.webp",
+      "source": "https://framerusercontent.com/images/QCNO1brKYyTcjNGO8mnNRRWhztI.jpg",
+      "width": 1440,
+      "height": 804,
+      "bytes": 62272,
+      "sha256": "839a03b0c4fc39984006477974df3b1f79519e1558db6e0e38f9f9481f68f958"
+    },
+    {
+      "path": "public/media/industries/airlines/frontier-ai.png",
+      "source": "https://framerusercontent.com/images/LpcEBgeFpMHw8YYPp0klsruZQJg.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 72620,
+      "sha256": "1255788a918a755237f3ba4dc4f47de76325fea8813b0741a29ae953050faab4"
+    },
+    {
+      "path": "public/media/industries/airlines/audit-ready.png",
+      "source": "https://framerusercontent.com/images/Fqyfy1KGX5GIFWUoDNyhUuXtc.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 10311,
+      "sha256": "ed896fd6a18de927f03050672f5b755a1f9f8da1d5d80d903a236d7b9f896251"
+    },
+    {
+      "path": "public/media/industries/airlines/deployment-partner.png",
+      "source": "https://framerusercontent.com/images/c5Cf8WKnVCPL4nHDkBw73jq4QPw.png",
+      "width": 1280,
+      "height": 808,
+      "bytes": 6132,
+      "sha256": "1d49ea739344d40edeb2be6962f57c667e50dc91a1f9a428592772c1f9eec8a5"
+    },
+    {
+      "path": "public/media/industries/healthcare/platform.svg",
+      "source": "Century native SVG adapted from the existing insurance platform illustration with industry-specific generic labels",
+      "width": 1280,
+      "height": 808,
+      "bytes": 2576,
+      "sha256": "aca7fb5b84aa42176b5db12883a0187a3e6128245ad7a9c218c7cc00c044a8c1"
+    },
+    {
+      "path": "public/media/industries/utilities/platform.svg",
+      "source": "Century native SVG adapted from the existing insurance platform illustration with industry-specific generic labels",
+      "width": 1280,
+      "height": 808,
+      "bytes": 2565,
+      "sha256": "631eb23e60f43f3b0bd9ae445b73dbbcd8e4bd372c6194779164ec289cf1b807"
+    },
+    {
+      "path": "public/media/industries/airlines/platform.svg",
+      "source": "Century native SVG adapted from the existing insurance platform illustration with industry-specific generic labels",
+      "width": 1280,
+      "height": 808,
+      "bytes": 2576,
+      "sha256": "f462f8533ff6811e3804baa4d439213729748969a4100555175791669360dec7"
+    }
+  ]
+}
