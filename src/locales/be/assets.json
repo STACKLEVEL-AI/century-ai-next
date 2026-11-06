@@ -1,0 +1,110 @@
+{
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "A useful workflow, built together": "Карысны працэс, створаны разам",
+    "Agree the boundaries": "Узгадніце межы",
+    "Build": "Распрацоўка",
+    "Build the workflow": "Стварыце працэс",
+    "Connect the pieces": "Злучыце часткі",
+    "Define the work": "Вызначце працу",
+    "Delivery with ownership": "Рэалізацыя з адказнасцю",
+    "DELIVERY WITH OWNERSHIP": "РЭАЛІЗАЦЫЯ З АДКАЗНАСЦЮ",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Чатыры звязаныя этапы вядуць ад вызначэння карыснага працэсу праз распрацоўку і праверку да перадачы камандзе.",
+    "Handover": "Перадача",
+    "Learn from each step, improve the next": "Вучыцеся на кожным кроку, паляпшайце наступны",
+    "Make ownership clear": "Выразна вызначце адказнасць",
+    "Refine with the team": "Удасканальвайце з камандай",
+    "Review the result": "Праверце вынік",
+    "Scope": "Вызначэнне межаў",
+    "Support daily use": "Падтрымлівайце штодзённае выкарыстанне",
+    "Validate": "Праверка"
+  },
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "A clear scope": "Выразныя межы",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "Вызначаная задача праходзіць праз адказ ШІ да праверкі чалавекам. Якасць крыніц, дакладнасць і межы задачы даюць тры пункты праверкі.",
+    "Accuracy": "Дакладнасць",
+    "AI": "ШІ",
+    "AI response": "Адказ ШІ",
+    "AI with a review path": "ШІ з этапам праверкі",
+    "Approved knowledge": "Зацверджаныя веды",
+    "Check the result": "Праверце вынік",
+    "Decide the next step": "Вызначце наступны крок",
+    "Defined task": "Вызначаная задача",
+    "EVALUATE BEFORE EXPANDING": "АЦЭНЬВАЙЦЕ ПЕРАД ПАШЫРЭННЕМ",
+    "Evidence included": "З пацвярджэннямі",
+    "Human review": "Праверка чалавекам",
+    "Limitations visible": "Бачныя абмежаванні",
+    "Scope": "Межы",
+    "Source quality": "Якасць крыніц"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Access permissions": "Дазволы доступу",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Дазволы доступу, зацверджаныя крыніцы і адабрэнне чалавека злучаюцца ў кантраляваны працэс з прызначаным адказным.",
+    "Approved sources": "Зацверджаныя крыніцы",
+    "Clear boundaries, accountable decisions": "Выразныя межы, адказныя рашэнні",
+    "Control by design": "Кантроль у аснове",
+    "CONTROL BY DESIGN": "КАНТРОЛЬ У АСНОВЕ",
+    "Controlled workflow": "Кантраляваны працэс",
+    "Human approval": "Адабрэнне чалавека",
+    "Traceable work, with a named owner": "Адсочвальная праца з прызначаным адказным"
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "Approved sources": "Зацверджаныя крыніцы",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century звязвае зацверджаныя крыніцы, працэсы і наяўныя сістэмы з людзьмі, кантраляванымі дзеяннямі і карыснымі вынікамі.",
+    "CONNECTED WORK": "ЗВЯЗАНАЯ ПРАЦА",
+    "Controlled actions": "Кантраляваныя дзеянні",
+    "Existing systems": "Наяўныя сістэмы",
+    "Knowledge · Workflows · People": "Веды · Працэсы · Людзі",
+    "One connected workspace": "Адзіная звязаная прастора",
+    "One place to bring work together": "Адно месца для сумеснай працы",
+    "People & review": "Людзі і праверка",
+    "Useful outcomes": "Карысныя вынікі",
+    "Your workflows": "Вашы працэсы"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Вызначаныя шляхі даных",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Тры крыніцы інфармацыі праходзяць праз узровень апрацоўкі з вызначанымі межамі, перш чым трапіць да зацверджаных атрымальнікаў."
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Межы доступу і праверка",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Людзі і сістэмы ўваходзяць у вызначаную зону праз правераныя пункты доступу, паказаныя цэнтральным шчытом і журналам аўдыту."
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Case management": "Апрацоўка зваротаў",
+    "Century Airlines platform": "Платформа Century для авіякампаній",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century звязвае пасажыраў, каманды абслугоўвання і прэтэнзіі з данымі пра падарожжы, правіламі абслугоўвання і апрацоўкай зваротаў.",
+    "Claims": "Прэтэнзіі",
+    "Journey records": "Даныя пра падарожжы",
+    "Passengers": "Пасажыры",
+    "Service policies": "Правілы абслугоўвання",
+    "Service teams": "Каманды абслугоўвання"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Administration": "Адміністрацыя",
+    "Care teams": "Медыцынскія каманды",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century звязвае медыцынскія каманды, адміністрацыю і ўнутраныя службы з медыцынскімі запісамі, планаваннем і фінансамі.",
+    "Century Healthcare platform": "Платформа Century для аховы здароўя",
+    "Clinical records": "Медыцынскія запісы",
+    "Finance": "Фінансы",
+    "Internal services": "Унутраныя службы",
+    "Scheduling": "Планаванне"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Billing": "Выстаўленне рахункаў",
+    "Billing records": "Разліковыя даныя",
+    "Case management": "Апрацоўка зваротаў",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century звязвае абслугоўванне, выязныя брыгады і выстаўленне рахункаў з апрацоўкай зваротаў, базай ведаў і разліковымі данымі.",
+    "Century Utilities platform": "Платформа Century для камунальных паслуг",
+    "Field teams": "Выязныя брыгады",
+    "Knowledge base": "База ведаў",
+    "Service": "Абслугоўванне"
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Платформа Century для страхавання",
+    "Core systems": "Асноўныя сістэмы",
+    "Health": "Здароўе",
+    "Life": "Жыццё",
+    "P&C": "Маёмасць і адказнасць",
+    "Policy systems": "Сістэмы полісаў",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Працэсы страхавання маёмасці, жыцця і здароўя, звязаныя з Century, сістэмамі полісаў, CRM і асноўнымі сістэмамі."
+  }
+}

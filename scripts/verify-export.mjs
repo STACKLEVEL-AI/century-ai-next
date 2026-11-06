@@ -12,8 +12,9 @@ const telegram = "https://t.me/vitalibakhmat";
 const { defaultLocale, locales: localeSettings } = JSON.parse(await readFile(new URL("../src/locales/config.json", import.meta.url), "utf8"));
 const locales = Object.keys(localeSettings);
 const translatedLocales = locales.filter(locale => locale !== defaultLocale);
+const cyrillicLocales = new Set(["uk", "be"]);
 assert.equal(defaultLocale, "en", "The existing English route contract must remain the default");
-assert.deepEqual([...locales].sort(), ["de", "en", "fr", "pl", "uk"], "All five supported languages must remain in the registry");
+assert.deepEqual([...locales].sort(), ["be", "de", "en", "fr", "pl", "uk"], "All six supported languages must remain in the registry");
 const localePrefix = locale => locale === defaultLocale ? "" : `/${locale}`;
 const screenshotLabels = {
   en: /^Open .+ screenshot$/,
@@ -21,6 +22,7 @@ const screenshotLabels = {
   pl: /^Otwórz zrzut ekranu „.+”$/u,
   uk: /^Відкрити знімок екрана «.+»$/u,
   fr: /^Voir la capture .+ en taille réelle$/u,
+  be: /^Адкрыць здымак экрана: .+$/u,
 };
 
 // The public route contract for the site. Keep this list and
@@ -340,7 +342,7 @@ async function verifyTranslatedSvg(value, fromRoute) {
     const translatedText = decodeEntities(translated.match(expression)?.[1] || "").trim();
     assert(translatedText, `Missing localized SVG ${tag}: ${url.pathname}`);
     assert.notEqual(translatedText, sourceText, `Untranslated SVG ${tag}: ${url.pathname}`);
-    if (locale === "uk") assert(/[\u0400-\u04ff]/.test(translatedText), `Missing Ukrainian SVG ${tag}: ${url.pathname}`);
+    if (cyrillicLocales.has(locale)) assert(/[\u0400-\u04ff]/.test(translatedText), `Missing ${locale} Cyrillic SVG ${tag}: ${url.pathname}`);
   }
   const labels = svg => [...svg.matchAll(/<(text|tspan|title|desc)\b[^>]*>([^<]*)<\/\1>/g)]
     .map(match => ({ tag: match[1], text: normalizeText(match[2]) })).filter(item => item.text);
@@ -420,7 +422,7 @@ try {
     assert.equal(hasClass(main?.attrs || {}, "inner-page"), englishRoute !== "/", `Internal design scope must exclude all homepages: ${route}`);
     assert(title.includes("Century"), `Missing Century page title: ${route}`);
     assert(description?.trim(), `Missing description: ${route}`);
-    if (locale === "uk") assert(/[\u0400-\u04ff]/.test(description), `Missing Ukrainian description: ${route}`);
+    if (cyrillicLocales.has(locale)) assert(/[\u0400-\u04ff]/.test(description), `Missing ${locale} Cyrillic description: ${route}`);
     const titleKey = `${locale}:${title}`;
     assert(!titles.has(titleKey), `Duplicate title on ${route} and ${titles.get(titleKey)}`);
     assert(!descriptions.has(description), `Duplicate description on ${route} and ${descriptions.get(description)}`);
@@ -483,10 +485,10 @@ try {
       assert(Number(image.width) > 0 && Number(image.height) > 0, `Screenshot needs intrinsic dimensions: ${route}`);
       // Metadata is checked here; screenshot pixels require separate visual review.
       assert(image.alt?.trim(), `Screenshot needs alternative text for ${locale}: ${route}`);
-      assert.equal(/[\u0400-\u04ff]/.test(image.alt), locale === "uk", `Screenshot alternative text has the wrong language: ${route}`);
+      assert.equal(/[\u0400-\u04ff]/.test(image.alt), cyrillicLocales.has(locale), `Screenshot alternative text has the wrong language: ${route}`);
       const caption = normalizeText((contents.match(/<figcaption\b[^>]*>([^]*?)<\/figcaption>/i)?.[1] || "").replace(/<[^>]+>/g, " "));
       assert(caption, `Screenshot needs a caption: ${route}`);
-      assert.equal(/[\u0400-\u04ff]/.test(caption), locale === "uk", `Screenshot caption has the wrong language: ${route}`);
+      assert.equal(/[\u0400-\u04ff]/.test(caption), cyrillicLocales.has(locale), `Screenshot caption has the wrong language: ${route}`);
       const openLinks = [...contents.matchAll(/<a\b[^>]*>/gi)].map((match) => attributes(match[0]))
         .filter((attrs) => hasClass(attrs, "app-capture-open"));
       assert.equal(openLinks.length, 1, `Screenshot needs one full-size image link: ${route}`);

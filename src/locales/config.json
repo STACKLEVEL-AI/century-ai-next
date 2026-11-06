@@ -203,6 +203,49 @@
         "subtitleY": 480,
         "subtitleSize": 22
       }
+    },
+    "be": {
+      "label": "Беларуская",
+      "accessibleLabel": "Мова: беларуская",
+      "openGraphLocale": "be_BY",
+      "socialImage": "/og/century-ai-be.png",
+      "imageAlt": "Century — Ад ідэі да штодзённай працы. Спецыфікацыя, распрацоўка і кіраванне.",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — платформа ШІ для арганізацый",
+        "Century Agents": "Century Agents — агенты ШІ для арганізацый",
+        "Century Systems": "Century Systems — сістэмы ШІ і аўтаматызацыя працэсаў",
+        "Century AI Gateway": "Century AI Gateway — доступ да мадэляў ШІ"
+      },
+      "guideCount": {
+        "one": "дапаможнік",
+        "few": "дапаможнікі",
+        "many": "дапаможнікаў",
+        "other": "дапаможніка",
+        "category": " з катэгорыі «{category}»",
+        "explore": " для азнаямлення",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Гэтая старонка перанесена:",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Старонка не знойдзена",
+        "description": "Магчыма, гэтая старонка змяніла адрас. Даведайцеся пра платформу, галіновыя рашэнні і каманду Century.",
+        "homeLabel": "На галоўную старонку па-беларуску"
+      },
+      "socialPreview": {
+        "lines": [
+          "Ад ідэі",
+          "да штодзённай працы"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Спецыфікацыя · Распрацоўка · Кіраванне",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
     }
   }
 }

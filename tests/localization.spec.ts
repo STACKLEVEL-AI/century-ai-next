@@ -13,6 +13,7 @@ const LOCALE_SETTINGS = {
   pl: { ...localeRegistry.locales.pl, navigation: ["Nawigacja główna", "Nawigacja w stopce"], screenshot: /^Otwórz zrzut ekranu „.+”$/u },
   uk: { ...localeRegistry.locales.uk, navigation: ["Головна навігація", "Навігація в нижній частині сторінки"], screenshot: /^Відкрити знімок екрана «.+»$/u },
   fr: { ...localeRegistry.locales.fr, navigation: ["Navigation principale", "Navigation du pied de page"], screenshot: /^Voir la capture .+ en taille réelle$/u },
+  be: { ...localeRegistry.locales.be, navigation: ["Асноўная навігацыя", "Навігацыя ўнізе старонкі"], screenshot: /^Адкрыць здымак экрана: .+$/u },
 };
 const INTERACTIONS = {
   fr: {
@@ -32,6 +33,12 @@ const INTERACTIONS = {
     filter: "Фільтрувати посібники за категорією", categories: ["Перші кроки", "Знання", "Робочі процеси", "Розгортання"],
     allGuides: "Усі посібники", allCount: "4 посібники для ознайомлення", categoryCount: (category: string) => `1 посібник у категорії «${category}»`,
     installation: "Що узгоджуємо перед установленням", identity: "Ідентифікація користувачів і дані", securityQuestion: /Чи /,
+  },
+  be: {
+    name: "Belarusian", contents: "Змест дапаможніка", mobileNavigation: "Мабільная навігацыя", home: "Галоўная старонка Century",
+    filter: "Фільтраваць дапаможнікі паводле катэгорый", categories: ["Першыя крокі", "Веды", "Працоўныя працэсы", "Разгортванне"],
+    allGuides: "Усе дапаможнікі", allCount: "4 дапаможнікі для азнаямлення", categoryCount: (category: string) => `1 дапаможнік з катэгорыі «${category}»`,
+    installation: "Што мы ўзгадняем перад усталяваннем", identity: "Ідэнтыфікацыя і даныя", securityQuestion: /Ці /,
   },
 };
 
@@ -68,6 +75,8 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
   const cases = [
     { input: "/", route: "/" },
     { input: "/uk/", route: "/" },
+    { input: "/be/", route: "/" },
+    { input: "/be/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/de", route: "/" },
     { input: "/fr/platform/?source=test#operating-layer", route: "/platform/?source=test#operating-layer" },
     { input: "/pl/industries/telecommunication/", route: "/industries/telecommunication/" },
@@ -86,6 +95,7 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
     en: `${SITE}/blog/human-review/`, de: `${SITE}/de/blog/human-review/`,
     pl: `${SITE}/pl/blog/human-review/`, uk: `${SITE}/uk/blog/human-review/`,
     fr: `${SITE}/fr/blog/human-review/`,
+    be: `${SITE}/be/blog/human-review/`,
     "x-default": `${SITE}/blog/human-review/`,
   });
   for (const [count, ukrainian, polish] of [
@@ -143,10 +153,10 @@ async function readStaticDocuments(page: Page, markup: string[]) {
   }), markup);
 }
 
-test("All 130 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
+test("All 156 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
   test.setTimeout(90_000);
   expect(CONTENT_PATHS).toHaveLength(26);
-  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr"]);
+  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr", "be"]);
   const pathsByLanguage = Object.fromEntries(LANGUAGES.map(language => [
     language, new Set(CONTENT_PATHS.map(path => languagePath(path, language))),
   ]));
@@ -169,7 +179,7 @@ test("All 130 pages ship localized HTML, reciprocal metadata and language-preser
       expect(snapshot.title, route).toBeTruthy();
       expect(snapshot.description, route).toBeTruthy();
       if (language !== "en") expect(snapshot.description, route).not.toBe(documents[0].description);
-      if (language === "uk") expect(snapshot.description, route).toMatch(/[\u0400-\u04ff]/);
+      if (language === "uk" || language === "be") expect(snapshot.description, route).toMatch(/[\u0400-\u04ff]/);
       expect(snapshot.canonical, route).toBe(`${SITE}${route}`);
       expect(snapshot.alternateCount, route).toBe(LANGUAGES.length + 1);
       expect(snapshot.alternates, route).toEqual(alternates);
@@ -218,7 +228,7 @@ test("All 130 pages ship localized HTML, reciprocal metadata and language-preser
   }
 });
 
-for (const language of ["pl", "uk", "fr"] as const) {
+for (const language of ["pl", "uk", "fr", "be"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} deep-page language switching and mobile navigation work without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ baseURL: ORIGIN, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
@@ -258,7 +268,7 @@ for (const language of ["pl", "uk", "fr"] as const) {
   });
 }
 
-test("Switching between all five languages keeps the current industry, query and section", async ({ page }) => {
+test("Switching between all six languages keeps the current industry, query and section", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   page.on("console", message => {
@@ -266,7 +276,7 @@ test("Switching between all five languages keeps the current industry, query and
   });
   const suffix = "/industries/insurance/?source=language-test#main-content";
   await page.goto(`/pl${suffix}`);
-  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl"] as const) {
+  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl", "uk", "be", "en", "be", "de", "uk", "pl", "be"] as const) {
     await page.waitForLoadState("networkidle");
     await switchLanguage(page, language);
     await expect(page).toHaveURL(`${ORIGIN}${languagePath(suffix, language)}`);
@@ -351,7 +361,7 @@ for (const width of [320, 1440]) {
   });
 }
 
-for (const language of ["de", "pl", "uk", "fr"] as const) {
+for (const language of ["de", "pl", "uk", "fr", "be"] as const) {
   test(`${language.toUpperCase()} diagrams load localized labels without clipping text outside the viewBox`, async ({ page }) => {
     // Browser text metrics catch long translations that static markup cannot.
     for (const original of [
@@ -386,7 +396,7 @@ for (const language of ["de", "pl", "uk", "fr"] as const) {
       expect(metrics.title, asset).toBeTruthy();
       expect(metrics.description, asset).toBeTruthy();
       expect(metrics.labels.length, asset).toBeGreaterThan(0);
-      if (language === "uk") {
+      if (language === "uk" || language === "be") {
         expect(metrics.title, asset).toMatch(/[\u0400-\u04ff]/);
         expect(metrics.description, asset).toMatch(/[\u0400-\u04ff]/);
       }
@@ -395,7 +405,7 @@ for (const language of ["de", "pl", "uk", "fr"] as const) {
   });
 }
 
-for (const language of ["pl", "uk", "fr"] as const) {
+for (const language of ["pl", "uk", "fr", "be"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} guide categories filter real articles and announce localized counts`, async ({ page }) => {
     await page.goto(languagePath("/blog/", language));
@@ -435,7 +445,7 @@ for (const language of ["pl", "uk", "fr"] as const) {
       const tabs = tablist.getByRole("tab");
       await expect(tabs).toHaveCount(explorer.count);
       for (const label of await tabs.allTextContents()) expect(explorer.englishLabels).not.toContain(label.trim());
-      if (language === "uk") for (const label of await tabs.allTextContents()) expect(label).toMatch(/[\u0400-\u04ff]/);
+      if (language === "uk" || language === "be") for (const label of await tabs.allTextContents()) expect(label).toMatch(/[\u0400-\u04ff]/);
       await expect(tabs.first()).toHaveAttribute("aria-selected", "true");
       const firstPanelText = await page.getByRole("tabpanel").innerText();
       await tabs.first().focus();
@@ -450,7 +460,7 @@ for (const language of ["pl", "uk", "fr"] as const) {
       await expect(panel).not.toHaveText(firstPanelText);
       for (const capture of await panel.locator("figure.app-capture").all()) {
         await expect(capture.locator(".app-capture-open")).toHaveAttribute("aria-label", LOCALE_SETTINGS[language].screenshot);
-        if (language === "uk") await expect(capture.locator("img")).toHaveAttribute("alt", /[\u0400-\u04ff]/);
+        if (language === "uk" || language === "be") await expect(capture.locator("img")).toHaveAttribute("alt", /[\u0400-\u04ff]/);
       }
       await page.keyboard.press("End");
       await expect(tabs.last()).toBeFocused();
@@ -494,7 +504,7 @@ async function withinViewport(page: Page, locator: Locator) {
   return box!;
 }
 
-for (const language of ["pl", "uk", "fr"] as const) {
+for (const language of ["pl", "uk", "fr", "be"] as const) {
   const copy = INTERACTIONS[language];
   for (const width of [320, 390, 768]) {
     test(`${copy.name} navigation and longer headings fit at ${width}px`, async ({ page }) => {
