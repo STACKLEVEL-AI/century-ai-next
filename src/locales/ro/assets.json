@@ -1,0 +1,110 @@
+{
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "A useful workflow, built together": "Un flux de lucru util, creat împreună",
+    "Agree the boundaries": "Stabiliți limitele",
+    "Build": "Dezvoltare",
+    "Build the workflow": "Creați fluxul de lucru",
+    "Connect the pieces": "Conectați componentele",
+    "Define the work": "Definiți activitatea",
+    "Delivery with ownership": "Implementare cu responsabilități clare",
+    "DELIVERY WITH OWNERSHIP": "IMPLEMENTARE CU RESPONSABILITĂȚI CLARE",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Patru etape conectate acoperă definirea unui flux de lucru util, dezvoltarea, validarea și predarea acestuia către echipă.",
+    "Handover": "Predare",
+    "Learn from each step, improve the next": "Învățați din fiecare etapă, îmbunătățiți-o pe următoarea",
+    "Make ownership clear": "Clarificați responsabilitățile",
+    "Refine with the team": "Îmbunătățiți împreună cu echipa",
+    "Review the result": "Verificați rezultatul",
+    "Scope": "Definire",
+    "Support daily use": "Susțineți utilizarea zilnică",
+    "Validate": "Validare"
+  },
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "A clear scope": "Un domeniu bine delimitat",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "O sarcină definită trece printr-un răspuns IA și o verificare umană. Calitatea surselor, acuratețea și domeniul de aplicare constituie trei criterii de verificare.",
+    "Accuracy": "Acuratețe",
+    "AI": "IA",
+    "AI response": "Răspuns IA",
+    "AI with a review path": "IA cu un proces de verificare",
+    "Approved knowledge": "Cunoștințe aprobate",
+    "Check the result": "Verificați rezultatul",
+    "Decide the next step": "Decideți pasul următor",
+    "Defined task": "Sarcină definită",
+    "EVALUATE BEFORE EXPANDING": "EVALUAȚI ÎNAINTE DE EXTINDERE",
+    "Evidence included": "Dovezi incluse",
+    "Human review": "Verificare umană",
+    "Limitations visible": "Limitări vizibile",
+    "Scope": "Domeniu de aplicare",
+    "Source quality": "Calitatea surselor"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Access permissions": "Permisiuni de acces",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Permisiunile de acces, sursele aprobate și aprobarea umană se integrează într-un flux de lucru controlat, cu un responsabil desemnat.",
+    "Approved sources": "Surse aprobate",
+    "Clear boundaries, accountable decisions": "Limite clare, decizii asumate",
+    "Control by design": "Control integrat din proiectare",
+    "CONTROL BY DESIGN": "CONTROL DIN PROIECTARE",
+    "Controlled workflow": "Flux de lucru controlat",
+    "Human approval": "Aprobare umană",
+    "Traceable work, with a named owner": "Activitate trasabilă, cu un responsabil desemnat"
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "Approved sources": "Surse aprobate",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century conectează sursele aprobate, fluxurile de lucru și sistemele existente cu oamenii, acțiunile controlate și rezultatele utile.",
+    "CONNECTED WORK": "ACTIVITATE CONECTATĂ",
+    "Controlled actions": "Acțiuni controlate",
+    "Existing systems": "Sisteme existente",
+    "Knowledge · Workflows · People": "Cunoștințe · Fluxuri de lucru · Oameni",
+    "One connected workspace": "Un spațiu de lucru conectat",
+    "One place to bring work together": "Un singur loc pentru întreaga activitate",
+    "People & review": "Oameni și verificare",
+    "Useful outcomes": "Rezultate utile",
+    "Your workflows": "Fluxurile dumneavoastră"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Trasee de date definite",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Trei surse de informații trec printr-un nivel de procesare delimitat înainte de a ajunge la destinațiile aprobate."
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Limite de acces și verificare",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Oamenii și sistemele intră într-un perimetru definit prin puncte de acces verificate, reprezentate printr-un scut central și o pistă de audit."
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Case management": "Gestionarea cazurilor",
+    "Century Airlines platform": "Platforma Century pentru companii aeriene",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century conectează pasagerii, echipele de asistență și cererile de despăgubire cu evidențele călătoriilor, politicile privind serviciile și gestionarea cazurilor.",
+    "Claims": "Cereri de despăgubire",
+    "Journey records": "Evidențe ale călătoriilor",
+    "Passengers": "Pasageri",
+    "Service policies": "Politici privind serviciile",
+    "Service teams": "Echipe de asistență"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Administration": "Administrație",
+    "Care teams": "Echipe medicale",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century conectează echipele medicale, administrația și serviciile interne cu dosarele medicale, programările și finanțele.",
+    "Century Healthcare platform": "Platforma Century pentru sănătate",
+    "Clinical records": "Dosare medicale",
+    "Finance": "Finanțe",
+    "Internal services": "Servicii interne",
+    "Scheduling": "Programări"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Billing": "Facturare",
+    "Billing records": "Evidențe de facturare",
+    "Case management": "Gestionarea cazurilor",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century conectează asistența pentru clienți, echipele de teren și facturarea cu gestionarea cazurilor, baza de cunoștințe și evidențele de facturare.",
+    "Century Utilities platform": "Platforma Century pentru utilități",
+    "Field teams": "Echipe de teren",
+    "Knowledge base": "Bază de cunoștințe",
+    "Service": "Asistență pentru clienți"
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Platforma Century pentru asigurări",
+    "Core systems": "Sisteme centrale",
+    "Health": "Sănătate",
+    "Life": "Viață",
+    "P&C": "Bunuri și răspundere",
+    "Policy systems": "Sisteme de administrare a polițelor",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Fluxuri de lucru pentru asigurări de bunuri, viață și sănătate, conectate la Century, sisteme de administrare a polițelor, CRM și sisteme centrale."
+  }
+}

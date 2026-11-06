@@ -51,7 +51,7 @@
 .contact > svg { display: none; }
 .language { position: relative; }
 .language > summary { display: grid; place-items: center; width: 66px; min-height: 36px; border: 1px solid currentColor; border-radius: 100px; font-size: 12px; line-height: 16px; letter-spacing: 0; }
-.languagePanel { position: absolute; top: calc(100% + 12px); right: 0; min-width: 138px; padding: 8px; color: #1f1f1f; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; box-shadow: 0 8px 24px #0000000d; }
+.languagePanel { position: absolute; top: calc(100% + 12px); right: 0; min-width: 138px; max-height: calc(var(--panel-space) - 16px); overflow-y: auto; overscroll-behavior: contain; padding: 8px; color: #1f1f1f; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; box-shadow: 0 8px 24px #0000000d; }
 .languagePanel > a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 8px; font-size: 14px; }
 
 .panel { position: absolute; top: 100%; left: 0; right: 0; min-height: min(350px, var(--panel-space)); max-height: var(--panel-space); overflow-y: auto; overscroll-behavior: contain; background: #fff; color: #1f1f1f; padding: 48px 24px 24px; }

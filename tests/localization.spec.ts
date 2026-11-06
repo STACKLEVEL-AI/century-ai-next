@@ -18,8 +18,15 @@ const LOCALE_SETTINGS = {
   it: { ...localeRegistry.locales.it, navigation: ["Navigazione principale", "Navigazione nel piè di pagina"], screenshot: /^Apri la schermata .+$/u },
   sr: { ...localeRegistry.locales.sr, navigation: ["Glavna navigacija", "Navigacija u podnožju"], screenshot: /^Otvorite snimak ekrana: .+$/u },
   nl: { ...localeRegistry.locales.nl, navigation: ["Hoofdnavigatie", "Voettekstnavigatie"], screenshot: /^Screenshot van .+ openen$/u },
+  ro: { ...localeRegistry.locales.ro, navigation: ["Navigare principală", "Navigare în subsol"], screenshot: /^Deschideți captura de ecran .+$/u },
 };
 const INTERACTIONS = {
+  ro: {
+    name: "Romanian", contents: "Cuprinsul ghidului", mobileNavigation: "Navigare mobilă", home: "Pagina principală Century",
+    filter: "Filtrați ghidurile după categorie", categories: ["Primii pași", "Cunoștințe", "Fluxuri de lucru", "Implementare"],
+    allGuides: "Toate ghidurile", allCount: "4 ghiduri de explorat", categoryCount: (category: string) => `1 ghid din categoria „${category}”`,
+    installation: "Ce stabilim înainte de instalare", identity: "Identitate și date", securityQuestion: /Se poate conecta Century/,
+  },
   es: {
     name: "Spanish", contents: "Contenido de la guía", mobileNavigation: "Navegación móvil", home: "Inicio de Century",
     filter: "Filtrar guías por categoría", categories: ["Primeros pasos", "Conocimiento", "Flujos de trabajo", "Despliegue"],
@@ -108,6 +115,8 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
     { input: "/sr/", route: "/" },
     { input: "/sr/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/nl/", route: "/" },
+    { input: "/ro/", route: "/" },
+    { input: "/ro/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/nl", route: "/" },
     { input: "/nl/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/es/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
@@ -138,6 +147,7 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
     es: `${SITE}/es/blog/human-review/`,
     sr: `${SITE}/sr/blog/human-review/`,
     nl: `${SITE}/nl/blog/human-review/`,
+    ro: `${SITE}/ro/blog/human-review/`,
     "x-default": `${SITE}/blog/human-review/`,
   });
   for (const [count, ukrainian, polish] of [
@@ -176,6 +186,11 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
   expect(guideCountLabel(2, undefined, "nl")).toBe("2 gidsen om te ontdekken");
   expect(guideCountLabel(4, undefined, "nl")).toBe("4 gidsen om te ontdekken");
   expect(guideCountLabel(1, "Kennis", "nl")).toBe("1 gids in de categorie ‘Kennis’");
+  expect(guideCountLabel(0, undefined, "ro")).toBe("0 ghiduri de explorat");
+  expect(guideCountLabel(1, undefined, "ro")).toBe("1 ghid de explorat");
+  expect(guideCountLabel(4, undefined, "ro")).toBe("4 ghiduri de explorat");
+  expect(guideCountLabel(20, undefined, "ro")).toBe("20 de ghiduri de explorat");
+  expect(guideCountLabel(1, "Cunoștințe", "ro")).toBe("1 ghid din categoria „Cunoștințe”");
 });
 
 // Parse the HTTP response in an inert document. This never hydrates the page,
@@ -212,10 +227,10 @@ async function readStaticDocuments(page: Page, markup: string[]) {
   }), markup);
 }
 
-test("All 260 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
+test("All 286 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
   test.setTimeout(90_000);
   expect(CONTENT_PATHS).toHaveLength(26);
-  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl"]);
+  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"]);
   const pathsByLanguage = Object.fromEntries(LANGUAGES.map(language => [
     language, new Set(CONTENT_PATHS.map(path => languagePath(path, language))),
   ]));
@@ -287,7 +302,7 @@ test("All 260 pages ship localized HTML, reciprocal metadata and language-preser
   }
 });
 
-for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} deep-page language switching and mobile navigation work without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ baseURL: ORIGIN, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
@@ -327,7 +342,7 @@ for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const
   });
 }
 
-test("Switching between all ten languages keeps the current industry, query and section", async ({ page }) => {
+test("Switching between all eleven languages keeps the current industry, query and section", async ({ page }) => {
   test.setTimeout(60_000);
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
@@ -336,7 +351,7 @@ test("Switching between all ten languages keeps the current industry, query and 
   });
   const suffix = "/industries/insurance/?source=language-test#main-content";
   await page.goto(`/pl${suffix}`);
-  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl", "uk", "be", "en", "be", "de", "uk", "pl", "be", "uk", "it", "en", "it", "de", "uk", "pl", "it", "es", "en", "es", "fr", "es", "sr", "en", "sr", "de", "uk", "pl", "sr", "be", "fr", "it", "es", "sr", "nl", "sr", "nl", "en", "nl", "de", "nl", "fr", "nl"] as const) {
+  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl", "uk", "be", "en", "be", "de", "uk", "pl", "be", "uk", "it", "en", "it", "de", "uk", "pl", "it", "es", "en", "es", "fr", "es", "sr", "en", "sr", "de", "uk", "pl", "sr", "be", "fr", "it", "es", "sr", "nl", "sr", "nl", "en", "nl", "de", "nl", "fr", "nl", "ro", "en", "ro"] as const) {
     await page.waitForLoadState("networkidle");
     await switchLanguage(page, language);
     await expect(page).toHaveURL(`${ORIGIN}${languagePath(suffix, language)}`);
@@ -421,7 +436,7 @@ for (const width of [320, 1440]) {
   });
 }
 
-for (const language of ["de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const) {
+for (const language of ["de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"] as const) {
   test(`${language.toUpperCase()} diagrams load localized labels without clipping text outside the viewBox`, async ({ page }) => {
     // Browser text metrics catch long translations that static markup cannot.
     for (const original of [
@@ -465,7 +480,7 @@ for (const language of ["de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as
   });
 }
 
-for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} guide categories filter real articles and announce localized counts`, async ({ page }) => {
     await page.goto(languagePath("/blog/", language));
@@ -564,7 +579,7 @@ async function withinViewport(page: Page, locator: Locator) {
   return box!;
 }
 
-for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"] as const) {
   const copy = INTERACTIONS[language];
   for (const width of [320, 390, 768]) {
     test(`${copy.name} navigation and longer headings fit at ${width}px`, async ({ page }) => {
@@ -607,3 +622,22 @@ for (const language of ["pl", "uk", "fr", "be", "it", "es", "sr", "nl"] as const
     });
   }
 }
+
+
+test("Romanian remains reachable in the language menu on short screens", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 360 });
+  await page.goto("/platform/?source=short-menu#operating-layer");
+  const menu = languageMenu(page, "en");
+  await menu.locator(":scope > summary").click();
+  const romanian = menu.getByRole("link", { name: "Română", exact: true });
+  await romanian.scrollIntoViewIfNeeded();
+  await expect(romanian).toBeInViewport();
+  await withinViewport(page, romanian);
+  const panel = menu.locator(":scope > div");
+  const bounds = await panel.boundingBox();
+  expect(bounds!.y).toBeGreaterThanOrEqual(0);
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(361);
+  await romanian.click();
+  await expect(page).toHaveURL(`${ORIGIN}/ro/platform/?source=short-menu#operating-layer`);
+  await expect(page.locator("html")).toHaveAttribute("lang", "ro");
+});
