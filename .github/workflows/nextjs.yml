@@ -10,6 +10,8 @@ on:
       - 'LICENSE'
       - '.idea/**'
       - 'playwright.config.ts'
+      - 'scripts/**/*.test.mjs'
+      - 'scripts/test-localization-runtime.mjs'
       - 'scripts/verify-export.mjs'
   workflow_dispatch:
 
