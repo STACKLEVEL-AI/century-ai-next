@@ -104,7 +104,7 @@ test("SVG coverage includes title, description and nested tspans with named and 
 
 test("all locales use the existing SVG slot fitting", () => {
   const source = '<svg xmlns="http://www.w3.org/2000/svg"><text x="640" y="419" font-size="28">Human review</text></svg>';
-  for (const locale of ["de", "pl", "uk", "fr", "be", "it"]) {
+  for (const locale of ["de", "pl", "uk", "fr", "be", "it", "es"]) {
     const result = compileSvg({ source, messages: svgMessages(source), filename: "public/media/insurance/platform.svg", locale, resolve: () => "A deliberately very long translated diagram label that must stay inside the original slot" });
     assert.match(result, /textLength="478"/);
     assert.match(result, /lengthAdjust="spacingAndGlyphs"/);

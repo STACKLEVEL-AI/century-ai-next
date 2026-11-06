@@ -290,6 +290,49 @@
         "subtitleY": 480,
         "subtitleSize": 22
       }
+    },
+    "es": {
+      "label": "Español",
+      "accessibleLabel": "Idioma: español",
+      "openGraphLocale": "es_ES",
+      "socialImage": "/og/century-ai-es.png",
+      "imageAlt": "Century — De la idea al trabajo diario. Especificación, desarrollo y gobernanza.",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — plataforma de IA para empresas",
+        "Century Agents": "Century Agents — agentes de IA para empresas",
+        "Century Systems": "Century Systems — sistemas de IA y automatización de procesos",
+        "Century AI Gateway": "Century AI Gateway — acceso a modelos de IA"
+      },
+      "guideCount": {
+        "one": "guía",
+        "few": "guías",
+        "many": "guías",
+        "other": "guías",
+        "category": " en la categoría «{category}»",
+        "explore": " para descubrir",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Esta página se ha trasladado a",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Página no encontrada",
+        "description": "Es posible que esta página haya cambiado de dirección. Descubre la plataforma, nuestras soluciones sectoriales y el equipo de Century.",
+        "homeLabel": "Ir a la página de inicio en español"
+      },
+      "socialPreview": {
+        "lines": [
+          "De la idea",
+          "al trabajo diario"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Especificación · Desarrollo · Gobernanza",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
     }
   }
 }
