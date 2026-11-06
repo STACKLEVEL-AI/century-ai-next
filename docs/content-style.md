@@ -20,6 +20,12 @@ Use the product names Century AI Platform, Century Agents, Century Systems and C
 
 Navigation labels should identify their destinations. Alternative text should describe useful visual content without repeating the surrounding caption; decorative images use empty alternative text.
 
+## Ukrainian terminology
+
+Use **Впровадження** for the Deployment page, its navigation links and the full delivery process. Reserve **розгортання** for technical installation and infrastructure, including the deployment-planning guide category. Keep the governance stage of the platform cycle consistent as **управління й контроль**; the short **Безпека й управління** section label may stay concise.
+
+Translate answer citations as **посилання на джерела**, not **цитати**, unless the text specifically describes quoted passages. Keeping people in control means that control remains with people. In insurance, distinguish claims for payment from requirements, and insurance policies from internal rules. Check industry names in their complete rendered sentence; use field overrides when audience and sector labels need different wording.
+
 ## Deployment and AI Transformation
 
 Keep the two pages complementary. AI Transformation explains the shared register, readiness assessment, choice of approach, business case, internal capability and feedback from operation. Deployment starts with an agreed workflow and covers practical delivery, integrations, environment and workflow acceptance, infrastructure and transfer to maintainers. Link between the pages rather than repeating the full method on both.

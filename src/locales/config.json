@@ -127,7 +127,7 @@
       "accessibleLabel": "Мова: українська",
       "openGraphLocale": "uk_UA",
       "socialImage": "/og/century-ai-uk.png",
-      "imageAlt": "Century — Прискорюйте впровадження ШІ у своїй організації",
+      "imageAlt": "Century — Від ідеї до щоденної роботи. Специфікація, розробка, управління й контроль",
       "productTitles": {},
       "guideCount": {
         "one": "посібник",
@@ -155,7 +155,7 @@
         "firstLine": 277,
         "lineGap": 91,
         "tracking": -2,
-        "subtitle": "Специфікація · Розробка · Управління",
+        "subtitle": "Специфікація · Розробка · Управління й контроль",
         "subtitleY": 470,
         "subtitleSize": 24
       }
