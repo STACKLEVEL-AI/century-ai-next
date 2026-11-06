@@ -14,6 +14,7 @@ const LOCALE_SETTINGS = {
   uk: { ...localeRegistry.locales.uk, navigation: ["Головна навігація", "Навігація в нижній частині сторінки"], screenshot: /^Відкрити знімок екрана «.+»$/u },
   fr: { ...localeRegistry.locales.fr, navigation: ["Navigation principale", "Navigation du pied de page"], screenshot: /^Voir la capture .+ en taille réelle$/u },
   be: { ...localeRegistry.locales.be, navigation: ["Асноўная навігацыя", "Навігацыя ўнізе старонкі"], screenshot: /^Адкрыць здымак экрана: .+$/u },
+  it: { ...localeRegistry.locales.it, navigation: ["Navigazione principale", "Navigazione nel piè di pagina"], screenshot: /^Apri la schermata .+$/u },
 };
 const INTERACTIONS = {
   fr: {
@@ -39,6 +40,12 @@ const INTERACTIONS = {
     filter: "Фільтраваць дапаможнікі паводле катэгорый", categories: ["Першыя крокі", "Веды", "Працоўныя працэсы", "Разгортванне"],
     allGuides: "Усе дапаможнікі", allCount: "4 дапаможнікі для азнаямлення", categoryCount: (category: string) => `1 дапаможнік з катэгорыі «${category}»`,
     installation: "Што мы ўзгадняем перад усталяваннем", identity: "Ідэнтыфікацыя і даныя", securityQuestion: /Ці /,
+  },
+  it: {
+    name: "Italian", contents: "Indice della guida", mobileNavigation: "Navigazione mobile", home: "Pagina iniziale di Century",
+    filter: "Filtra le guide per categoria", categories: ["Per iniziare", "Conoscenza", "Flussi di lavoro", "Implementazione"],
+    allGuides: "Tutte le guide", allCount: "4 guide da scoprire", categoryCount: (category: string) => `1 guida nella categoria «${category}»`,
+    installation: "Cosa concordiamo prima dell’installazione", identity: "Identità e dati", securityQuestion: /Century può/,
   },
 };
 
@@ -79,6 +86,7 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
     { input: "/be/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/de", route: "/" },
     { input: "/fr/platform/?source=test#operating-layer", route: "/platform/?source=test#operating-layer" },
+    { input: "/it/platform/?source=menu#operating-layer", route: "/platform/?source=menu#operating-layer" },
     { input: "/pl/industries/telecommunication/", route: "/industries/telecommunication/" },
     { input: "/uk/blog/human-review?source=test#main-content", route: "/blog/human-review/?source=test#main-content" },
     { input: "/ukraine/", route: "/ukraine/" },
@@ -96,6 +104,7 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
     pl: `${SITE}/pl/blog/human-review/`, uk: `${SITE}/uk/blog/human-review/`,
     fr: `${SITE}/fr/blog/human-review/`,
     be: `${SITE}/be/blog/human-review/`,
+    it: `${SITE}/it/blog/human-review/`,
     "x-default": `${SITE}/blog/human-review/`,
   });
   for (const [count, ukrainian, polish] of [
@@ -117,6 +126,9 @@ test("Language paths preserve suffixes and assets, and guide counts use each lan
   expect(guideCountLabel(1, undefined, "fr")).toBe("1 guide à découvrir");
   expect(guideCountLabel(4, undefined, "fr")).toBe("4 guides à découvrir");
   expect(guideCountLabel(1, "Connaissances", "fr")).toBe("1 guide dans la catégorie « Connaissances »");
+  expect(guideCountLabel(1, undefined, "it")).toBe("1 guida da scoprire");
+  expect(guideCountLabel(2, undefined, "it")).toBe("2 guide da scoprire");
+  expect(guideCountLabel(1, "Conoscenza", "it")).toBe("1 guida nella categoria «Conoscenza»");
 });
 
 // Parse the HTTP response in an inert document. This never hydrates the page,
@@ -153,10 +165,10 @@ async function readStaticDocuments(page: Page, markup: string[]) {
   }), markup);
 }
 
-test("All 156 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
+test("All 182 pages ship localized HTML, reciprocal metadata and language-preserving navigation", async ({ page, request }) => {
   test.setTimeout(90_000);
   expect(CONTENT_PATHS).toHaveLength(26);
-  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr", "be"]);
+  expect(LANGUAGES).toEqual(["en", "de", "pl", "uk", "fr", "be", "it"]);
   const pathsByLanguage = Object.fromEntries(LANGUAGES.map(language => [
     language, new Set(CONTENT_PATHS.map(path => languagePath(path, language))),
   ]));
@@ -228,7 +240,7 @@ test("All 156 pages ship localized HTML, reciprocal metadata and language-preser
   }
 });
 
-for (const language of ["pl", "uk", "fr", "be"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} deep-page language switching and mobile navigation work without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ baseURL: ORIGIN, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
@@ -268,7 +280,7 @@ for (const language of ["pl", "uk", "fr", "be"] as const) {
   });
 }
 
-test("Switching between all six languages keeps the current industry, query and section", async ({ page }) => {
+test("Switching between all seven languages keeps the current industry, query and section", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   page.on("console", message => {
@@ -276,7 +288,7 @@ test("Switching between all six languages keeps the current industry, query and 
   });
   const suffix = "/industries/insurance/?source=language-test#main-content";
   await page.goto(`/pl${suffix}`);
-  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl", "uk", "be", "en", "be", "de", "uk", "pl", "be"] as const) {
+  for (const language of ["uk", "fr", "en", "fr", "de", "fr", "uk", "pl", "uk", "be", "en", "be", "de", "uk", "pl", "be", "uk", "it", "en", "it", "de", "uk", "pl", "it"] as const) {
     await page.waitForLoadState("networkidle");
     await switchLanguage(page, language);
     await expect(page).toHaveURL(`${ORIGIN}${languagePath(suffix, language)}`);
@@ -361,7 +373,7 @@ for (const width of [320, 1440]) {
   });
 }
 
-for (const language of ["de", "pl", "uk", "fr", "be"] as const) {
+for (const language of ["de", "pl", "uk", "fr", "be", "it"] as const) {
   test(`${language.toUpperCase()} diagrams load localized labels without clipping text outside the viewBox`, async ({ page }) => {
     // Browser text metrics catch long translations that static markup cannot.
     for (const original of [
@@ -405,7 +417,7 @@ for (const language of ["de", "pl", "uk", "fr", "be"] as const) {
   });
 }
 
-for (const language of ["pl", "uk", "fr", "be"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it"] as const) {
   const copy = INTERACTIONS[language];
   test(`${copy.name} guide categories filter real articles and announce localized counts`, async ({ page }) => {
     await page.goto(languagePath("/blog/", language));
@@ -504,7 +516,7 @@ async function withinViewport(page: Page, locator: Locator) {
   return box!;
 }
 
-for (const language of ["pl", "uk", "fr", "be"] as const) {
+for (const language of ["pl", "uk", "fr", "be", "it"] as const) {
   const copy = INTERACTIONS[language];
   for (const width of [320, 390, 768]) {
     test(`${copy.name} navigation and longer headings fit at ${width}px`, async ({ page }) => {

@@ -70,6 +70,7 @@ test("alternates are reciprocal from every localized entry point", () => {
     pl: "https://century-ai.eu/pl/platform/", uk: "https://century-ai.eu/uk/platform/",
     fr: "https://century-ai.eu/fr/platform/",
     be: "https://century-ai.eu/be/platform/",
+    it: "https://century-ai.eu/it/platform/",
     "x-default": "https://century-ai.eu/platform/",
   };
   for (const locale of locales) {
@@ -77,7 +78,7 @@ test("alternates are reciprocal from every localized entry point", () => {
   }
 });
 
-test("guide counts use each language's plural rules, including French and Belarusian", () => {
+test("guide counts use each language's plural rules, including French, Belarusian and Italian", () => {
   const cases = [
     ["en", 1, "1 guide to explore"], ["en", 2, "2 guides to explore"],
     ["de", 1, "1 Leitfaden zum Entdecken"], ["de", 21, "21 Leitfäden zum Entdecken"],
@@ -97,6 +98,8 @@ test("guide counts use each language's plural rules, including French and Belaru
     ["be", 21, "21 дапаможнік для азнаямлення"], ["be", 22, "22 дапаможнікі для азнаямлення"],
     ["be", 25, "25 дапаможнікаў для азнаямлення"], ["be", 101, "101 дапаможнік для азнаямлення"],
     ["be", 112, "112 дапаможнікаў для азнаямлення"], ["be", 1.5, "1.5 дапаможніка для азнаямлення"],
+    ["it", 0, "0 guide da scoprire"], ["it", 1, "1 guida da scoprire"],
+    ["it", 2, "2 guide da scoprire"], ["it", 21, "21 guide da scoprire"],
   ];
   for (const [locale, count, expected] of cases) assert.equal(guideCountLabel(count, undefined, locale), expected);
   assert.equal(guideCountLabel(2, "Getting Started", "en"), "2 guides in getting started");
@@ -107,6 +110,7 @@ test("guide counts use each language's plural rules, including French and Belaru
   assert.equal(guideCountLabel(2, "Connaissances", "fr"), "2 guides dans la catégorie « Connaissances »");
   assert.equal(guideCountLabel(1, "Першыя крокі", "be"), "1 дапаможнік з катэгорыі «Першыя крокі»");
   assert.equal(guideCountLabel(2, "Першыя крокі", "be"), "2 дапаможнікі з катэгорыі «Першыя крокі»");
+  assert.equal(guideCountLabel(1, "Conoscenza", "it"), "1 guida nella categoria «Conoscenza»");
 });
 
 test("metadata binds canonical, social preview and alternates to the requested locale", () => {
@@ -129,7 +133,7 @@ test("metadata binds canonical, social preview and alternates to the requested l
 });
 
 test("every registered language has unique social assets and native recovery copy", () => {
-  assert.deepEqual(locales, ["en", "de", "pl", "uk", "fr", "be"]);
+  assert.deepEqual(locales, ["en", "de", "pl", "uk", "fr", "be", "it"]);
   assert.equal(new Set(locales.map(locale => configuration.locales[locale].socialImage)).size, locales.length);
   for (const locale of locales) {
     const settings = configuration.locales[locale];

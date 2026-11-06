@@ -1,6 +1,6 @@
 # Website localization
 
-Century has **26 content routes in each of six languages: 156 pages**. English retains the original URLs. German, Polish, Ukrainian, French and Belarusian use `/de/`, `/pl/`, `/uk/`, `/fr/` and `/be/`, with identical page structure and stable article and industry slugs. All six versions are exported as static HTML.
+Century has **26 content routes in each of seven languages: 182 pages**. English retains the original URLs. German, Polish, Ukrainian, French, Belarusian and Italian use `/de/`, `/pl/`, `/uk/`, `/fr/`, `/be/` and `/it/`, with identical page structure and stable article and industry slugs. All seven versions are exported as static HTML.
 
 The URL selects the language. The native language menu links to the same page in every locale and works without JavaScript. With JavaScript enabled, switching also preserves the query and fragment. No language preference is stored in cookies or browser storage.
 
@@ -17,6 +17,7 @@ Maintain English pages in `src/app/(en)/`, shared components in `src/components/
 | Ukrainian | `src/locales/uk/` | `src/generated/uk/` | `src/app/(uk)/uk/` | `public/media/uk/` |
 | French | `src/locales/fr/` | `src/generated/fr/` | `src/app/(fr)/fr/` | `public/media/fr/` |
 | Belarusian | `src/locales/be/` | `src/generated/be/` | `src/app/(be)/be/` | `public/media/be/` |
+| Italian | `src/locales/it/` | `src/generated/it/` | `src/app/(it)/it/` | `public/media/it/` |
 
 Generated files are ignored by Git and replaced during generation. Edit maintained sources and catalogs instead. Source discovery excludes every generated locale directory, so translated SVG output can never become the input for another translation. Shared CSS and photographs are reused; locale-specific typography adjustments live in the shared stylesheet.
 
@@ -44,9 +45,13 @@ An `@field:English message` entry overrides the ordinary translation only when t
 
 Product lockups retain official names. The shared `FooterBrand` component is excluded from translation and always reads **WE LEAVE IN THE AI CENTURY**, with the prefix before the logo. Preserve `LEAVE` exactly and keep `translate="no"`, `notranslate`, `lang="en"` and `dir="ltr"`. Localize its home destination, never its wording.
 
+### Italian terminology
+
+Use natural professional Italian with consistent direct address. Use **IA** for generic artificial intelligence and **flusso di lavoro** for workflow; retain official Century product names. Use **Implementazione**, **Trasformazione con l’IA** and **Guide** for the corresponding navigation labels. Translate complete sentences and check fragments together across explicit heading line breaks. Retain the original scope of permissions, human review and deployment claims. Italian guide counts use **1 guida** and **0/2+ guide**.
+
 ### Updating content
 
-1. Edit the English source and update the corresponding messages in all five locale catalogs.
+1. Edit the English source and update the corresponding messages in all six locale catalogs.
 2. For grammar-dependent text, use a complete template or a field override. Add deliberate invariants to the relevant source's keep list.
 3. Run `npm run locales:check`. Resolve missing or stale entries and placeholder errors.
 4. Run `npm run test:i18n`, then build and inspect the export.
@@ -64,7 +69,7 @@ node scripts/i18n/generate.mjs --report
 
 ## Metadata, fonts and recovery
 
-Each language has its own root layout, emitting the correct HTML `lang` before hydration. Small generated metadata wrappers bind the shared helper to their locale. Canonicals, Open Graph and Twitter images, and reciprocal `en`, `de`, `pl`, `uk`, `fr`, `be` and `x-default` alternates therefore follow one implementation. The sitemap contains all 156 routes with matching language links. Homepage structured data uses the shared WebSite identity and a locale-specific WebPage.
+Each language has its own root layout, emitting the correct HTML `lang` before hydration. Small generated metadata wrappers bind the shared helper to their locale. Canonicals, Open Graph and Twitter images, and reciprocal `en`, `de`, `pl`, `uk`, `fr`, `be`, `it` and `x-default` alternates therefore follow one implementation. The sitemap contains all 182 routes with matching language links. Homepage structured data uses the shared WebSite identity and a locale-specific WebPage.
 
 | Language | Social preview |
 | --- | --- |
@@ -74,12 +79,13 @@ Each language has its own root layout, emitting the correct HTML `lang` before h
 | Ukrainian | `/og/century-ai-uk.png` |
 | French | `/og/century-ai-fr.png` |
 | Belarusian | `/og/century-ai-be.png` |
+| Italian | `/og/century-ai-it.png` |
 
 Inter includes Latin, Latin Extended, Cyrillic and Cyrillic Extended subsets. The supplied Favorit font does not contain Cyrillic glyphs; Ukrainian and Belarusian platform and industry headings explicitly use Inter at the existing light weight. All translated versions share natural wrapping rules. Keep the established page composition, neutral actions, compact footer and original Century photographs.
 
 Application screenshots remain unmodified and are checked against `docs/app-capture-provenance.json`. Their captions, full-size-link labels and alternative text are localized; screenshot pixels are not redrawn or translated.
 
-Legacy `/ai-os/` routes redirect to `/platform/` in all six languages, preserving query parameters and fragments. Each redirect also has a native destination link. GitHub Pages serves one global `404.html`; it contains separately marked English, German, Polish, Ukrainian, French and Belarusian sections with native homepage links and no JavaScript dependency. The document has one primary heading and `lang="en"`. Local route-level not-found boundaries are also generated.
+Legacy `/ai-os/` routes redirect to `/platform/` in all seven languages, preserving query parameters and fragments. Each redirect also has a native destination link. GitHub Pages serves one global `404.html`; it contains separately marked English, German, Polish, Ukrainian, French, Belarusian and Italian sections with native homepage links and no JavaScript dependency. The document has one primary heading and `lang="en"`. Local route-level not-found boundaries are also generated.
 
 ## Local verification
 
@@ -92,7 +98,7 @@ npm run check:export
 npm run test:e2e
 ```
 
-The focused Node tests cover compiler regressions, preservation of code tokens, template handling, catalog preflight, URL switching across every locale pair, query and fragment preservation, asset exclusions, metadata, Polish, Ukrainian and Belarusian plural forms, and the French singular for zero and one. The export inspector checks every content page, unique metadata within each locale, reciprocal alternates, native language links, local links and fragments, images, screenshot integrity, fixed brand wording, localized diagrams, the sitemap, all six legacy redirects and the global 404.
+The focused Node tests cover compiler regressions, preservation of code tokens, template handling, catalog preflight, URL switching across every locale pair, query and fragment preservation, asset exclusions, metadata, Polish, Ukrainian and Belarusian plural forms, the French singular for zero and one, and Italian singular/plural forms. The export inspector checks every content page, unique metadata within each locale, reciprocal alternates, native language links, local links and fragments, images, screenshot integrity, fixed brand wording, localized diagrams, the sitemap, all seven legacy redirects and the global 404.
 
 Browser suites in `tests/landing.spec.ts`, `tests/german-localization.spec.ts` and `tests/localization.spec.ts` cover navigation, guide filters, keyboard-controlled tabs, language switching, pages without JavaScript and narrow layouts. Run these only in a permitted local browser environment.
 
