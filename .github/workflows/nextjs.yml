@@ -3,16 +3,6 @@ name: Deploy Century to GitHub Pages
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'docs/**'
-      - 'tests/**'
-      - 'README.md'
-      - 'LICENSE'
-      - '.idea/**'
-      - 'playwright.config.ts'
-      - 'scripts/**/*.test.mjs'
-      - 'scripts/test-localization-runtime.mjs'
-      - 'scripts/verify-export.mjs'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +10,7 @@ permissions:
 
 concurrency:
   group: pages
+  queue: max
   cancel-in-progress: false
 
 jobs:

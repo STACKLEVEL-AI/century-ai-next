@@ -508,7 +508,7 @@
     "Platform architecture and process automation": "Архітектура платформи та автоматизація процесів",
     "Platform interface and AI agent logic": "Інтерфейс платформи та логіка ШІ-агентів",
     "Sales, market development and customer partnerships": "Продажі, розвиток ринку та партнерство із замовниками",
-    "Vadim Vladymtsev": "Вадим Владимцев",
+    "Vadim Vladymtsev": "Вадим Владымцев",
     "Vitali Bakhmat": "Віталій Бахмат",
     "with a conversation": "з розмови"
   },
@@ -549,7 +549,7 @@
     "Enterprise AI architecture and engineering": "Архітектура та розробка корпоративного ШІ",
     "Get to know the team": "Познайомтеся з командою",
     "The people behind the work": "Люди, які стоять за нашою роботою",
-    "Vadim Vladymtsev": "Вадим Владимцев",
+    "Vadim Vladymtsev": "Вадим Владымцев",
     "Vitali Bakhmat": "Віталій Бахмат"
   },
   "src/components/Header.tsx": {
@@ -655,7 +655,7 @@
     "Meet the people": "Познайомтеся з людьми,",
     "moving us forward": "які рухають нас уперед",
     "The people behind Century": "Люди, які створюють Century",
-    "Vadim Vladymtsev": "Вадим Владимцев",
+    "Vadim Vladymtsev": "Вадим Владымцев",
     "Vitali Bakhmat": "Віталій Бахмат",
     "what comes next": "те, що буде далі"
   },
