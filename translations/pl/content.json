@@ -578,7 +578,14 @@
     "Airline service teams": "Zespoły obsługi linii lotniczych",
     "Journey context": "Kontekst podróży",
     "Service policy": "Zasady obsługi",
-    "Agent review": "Weryfikacja przez konsultanta"
+    "Agent review": "Weryfikacja przez konsultanta",
+    "AI for Banking": "AI dla bankowości",
+    "AI for Telecommunications": "AI dla telekomunikacji",
+    "AI for Healthcare": "AI dla ochrony zdrowia",
+    "AI for Utilities": "AI dla energetyki i usług komunalnych",
+    "AI for Insurance": "AI dla ubezpieczeń",
+    "AI for Retail": "AI dla handlu detalicznego",
+    "AI for Airlines": "AI dla linii lotniczych"
   },
   "src/lib/industry-reference-pages.ts": {
     "banking": "bankowości",

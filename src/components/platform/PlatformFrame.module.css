@@ -73,8 +73,6 @@
 .contactButton > svg { display: none; }
 .contactButton:hover { background: #e9e9e4; }
 .page :global(.site-footer) { background: #080808; }
-.page :global(.footer-brand img) { width: 154px; }
-.page :global(.footer-brand-block > p) { font-family: var(--platform-heading); font-size: 30px; font-weight: 300; }
 .page :global(.footer-main-multipage) { padding-top: 64px; padding-bottom: 52px; }
 
 @media (max-width: 900px) {

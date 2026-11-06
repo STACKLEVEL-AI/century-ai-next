@@ -4,7 +4,8 @@ import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type 
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { headerNavigation, type HeaderNavigationGroup } from "@/lib/header-navigation";
 import TelegramLink from "./TelegramLink";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { LOCALE } from "@/lib/locale";
 import styles from "./Header.module.css";
 
 function PressCard() {
@@ -191,7 +192,7 @@ export default function Header({ variant = "overlay", showAnnouncement = true }:
           }}>Blog</a>
         </nav>
         <div className={styles.actions}>
-          <LanguageSwitcher />
+          <LanguageSwitcher locale={LOCALE} />
           <TelegramLink className={styles.contact}>Get in touch</TelegramLink>
           <details className={styles.mobile} name="desktop-navigation" data-header-disclosure data-mobile-navigation>
             <summary aria-label="Navigation menu">

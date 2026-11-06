@@ -11,10 +11,12 @@
     "test:e2e": "playwright test",
     "assets:og": "node scripts/create-og.mjs",
     "assets:film": "node scripts/create-enterprise-film.mjs",
-    "localize": "node scripts/localize.mjs",
+    "localize": "node scripts/generate-locales.mjs && node scripts/localize.mjs",
     "predev": "npm run localize",
     "prebuild": "npm run localize",
-    "pretypecheck": "npm run localize"
+    "pretypecheck": "npm run localize",
+    "locales:generate": "npm run localize",
+    "locales:check": "node scripts/generate-locales.mjs --check && node scripts/localize.mjs --check"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",

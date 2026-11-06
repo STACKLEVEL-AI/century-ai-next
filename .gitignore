@@ -39,3 +39,9 @@ src/app/(pl)/pl/
 public/media/pl/
 public/og/century-ai-pl.png
 .localizations/
+
+# Static German output is generated from the maintained English sources.
+src/generated/
+src/app/(de)/
+public/media/de/
+public/og/century-ai-eu-de.png

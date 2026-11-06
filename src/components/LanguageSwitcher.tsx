@@ -1,20 +1,26 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { Check } from "lucide-react";
-import { localeForPath, localizedPath, type SiteLocale } from "@/lib/i18n";
+import { usePathname } from "next/navigation";
+import { locales, localeForPath, localizedPath, type Locale } from "@/lib/i18n";
 import styles from "./Header.module.css";
 
-export default function LanguageSwitcher() {
-  const pathname = usePathname() || "/";
-  const locale = localeForPath(pathname);
+const languageLabels: Record<Locale, { name: string; summary: string }> = {
+  en: { name: "English", summary: "Language: English" },
+  de: { name: "Deutsch", summary: "Sprache: Deutsch" },
+  pl: { name: "Polski", summary: "Język: polski" },
+};
+
+/** Native links also work before hydration; the language is stored in the URL. */
+export default function LanguageSwitcher({ locale: providedLocale }: { locale?: Locale } = {}) {
+  const pathname = usePathname() || localizedPath("/", providedLocale ?? "en");
+  const locale = providedLocale ?? localeForPath(pathname);
+
   return (
     <details className={styles.language} name="desktop-navigation" data-header-disclosure>
-      <summary aria-label={locale === "pl" ? "Język: polski" : "Language: English"}>
-        {locale.toUpperCase()}
-      </summary>
+      <summary aria-label={languageLabels[locale].summary}>{locale.toUpperCase()}</summary>
       <div className={styles.languagePanel}>
-        {(["en", "pl"] as SiteLocale[]).map(language => (
+        {locales.map(language => (
           <a
             key={language}
             href={localizedPath(pathname, language)}
@@ -26,7 +32,7 @@ export default function LanguageSwitcher() {
               event.currentTarget.href = localizedPath(pathname, language) + window.location.search + window.location.hash;
             }}
           >
-            {language === "pl" ? "Polski" : "English"}
+            {languageLabels[language].name}
             {language === locale && <Check size={14} aria-hidden="true" />}
           </a>
         ))}

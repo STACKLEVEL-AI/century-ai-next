@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import SiteDocument from "@/components/site/SiteDocument";
+import Document from "@/components/Document";
 import { SITE_URL } from "@/lib/site";
+import { LOCALE } from "@/lib/locale";
 
 export const metadata: Metadata = { metadataBase: new URL(SITE_URL) };
 
-export default function EnglishLayout({ children }: { children: React.ReactNode }) {
-  return <SiteDocument locale="en">{children}</SiteDocument>;
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <Document locale={LOCALE}>{children}</Document>;
 }

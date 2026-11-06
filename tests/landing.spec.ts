@@ -98,7 +98,7 @@ async function expectNoHorizontalOverflow(page: Page) {
 
 // Optional local regression checks after a production export. Deployment CI does
 // not invoke Playwright. Keep these focused on navigation and public behavior.
-test("English pages have reciprocal SEO and a non-indexable bilingual 404", async ({ page }) => {
+test("English pages have reciprocal SEO and a non-indexable trilingual 404", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
@@ -106,16 +106,16 @@ test("English pages have reciprocal SEO and a non-indexable bilingual 404", asyn
   await expect(page).toHaveTitle("Century | Innovation Management for Enterprise AI");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/");
-  await expect(page.locator("link[hreflang]")).toHaveCount(3);
-  await expect(page.locator('link[hreflang="en"]')).toHaveAttribute("href", "https://century-ai.eu/");
-  await expect(page.locator('link[hreflang="pl"]')).toHaveAttribute("href", "https://century-ai.eu/pl/");
-  await expect(page.locator('link[hreflang="x-default"]')).toHaveAttribute("href", "https://century-ai.eu/");
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
+  for (const [language, prefix] of [["en", ""], ["de", "/de"], ["pl", "/pl"], ["x-default", ""]]) {
+    await expect(page.locator(`link[rel="alternate"][hreflang="${language}"]`)).toHaveAttribute("href", `https://century-ai.eu${prefix}/`);
+  }
   const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())["@graph"];
   expect(graph.map((node: { "@type": string }) => node["@type"])).toEqual(["WebSite", "WebPage"]);
   for (const node of graph) {
     expect(node.url).toBe("https://century-ai.eu/");
     expect(node["@id"]).toMatch(/^https:\/\/century-ai\.eu\/#/);
-    expect(node.inLanguage).toBe("en");
+    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? ["en", "de", "pl"] : "en");
   }
   // This checks rendered text, not text embedded in screenshot pixels.
   expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
@@ -127,9 +127,17 @@ test("English pages have reciprocal SEO and a non-indexable bilingual 404", asyn
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/platform/");
 
   await page.goto("/404.html");
-  await expect(page.locator("html")).toHaveAttribute("lang", "pl");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Nie znaleziono strony");
-  await expect(page.locator('section[lang="en"]').getByRole("heading", { level: 2 })).toHaveText("Page not found");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page not found");
+  for (const [language, heading, home] of [
+    ["en", "Page not found", "/"],
+    ["de", "Seite nicht gefunden", "/de/"],
+    ["pl", "Nie znaleziono strony", "/pl/"],
+  ]) {
+    const section = page.locator(`section[lang="${language}"]`);
+    await expect(section.getByRole("heading", { name: heading, exact: true })).toBeVisible();
+    await expect(section.locator(`a[hreflang="${language}"]`)).toHaveAttribute("href", home);
+  }
   const robots = await page.locator('meta[name="robots"]').evaluateAll((nodes) =>
     nodes.map((node) => node.getAttribute("content")).join(","),
   );
@@ -252,7 +260,9 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
-    await expect(page.getByRole("heading", { name: "Build capability alongside the workflow.", exact: true })).toBeVisible();
+    for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
+      await expect(page.getByRole("list", { name: "Deployment work and outcomes" }).getByRole("heading", { name, exact: true })).toBeVisible();
+    }
     await page.goto("/ai-gateway/");
     await expectLocalAppScreenshots(page);
   } finally {
@@ -309,12 +319,12 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
   const layers = page.getByRole("tablist", { name: "Explore AI Platform infrastructure" });
   await layers.getByRole("tab", { name: "Security & governance", exact: true }).focus();
   await page.keyboard.press("ArrowDown");
-  await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
-  await expect(page.getByRole("tabpanel", { name: "Observability", exact: true })).toBeVisible();
+  await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "Quality & activity", exact: true })).toBeVisible();
   await page.keyboard.press("End");
   await expect(layers.getByRole("tab", { name: "Security & governance", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
-  await expect(layers.getByRole("tab", { name: "Observability", exact: true })).toBeFocused();
+  await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toBeFocused();
 
 });
 

@@ -3,15 +3,15 @@ import { copyFile, mkdir, writeFile } from "node:fs/promises";
 await copyFile("CNAME", "out/CNAME");
 await writeFile("out/.nojekyll", "");
 
-// GitHub Pages needs exported compatibility documents for the previous URL.
-// Both versions preserve incoming query parameters and section anchors.
-for (const locale of ["en", "pl"]) {
-  const polish = locale === "pl";
-  const source = polish ? "pl/ai-os" : "ai-os";
-  const target = polish ? "/pl/platform/" : "/platform/";
-  const title = polish ? "Century AI Platform — platforma AI dla firm | Century" : "Century AI Platform | Century";
-  await mkdir(`out/${source}`, { recursive: true });
-  await writeFile(`out/${source}/index.html`, `<!doctype html>
+// Static compatibility documents preserve old platform URLs in every language,
+// including their query parameters and section anchors.
+for (const locale of ["en", "de", "pl"]) {
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const target = `${prefix}/platform/`;
+  const title = locale === "pl" ? "Century AI Platform — platforma AI dla firm | Century" : "Century AI Platform | Century";
+  const message = { en: "This page has moved to", de: "Diese Seite wurde verschoben:", pl: "Ta strona została przeniesiona do" }[locale];
+  await mkdir(`out${prefix}/ai-os`, { recursive: true });
+  await writeFile(`out${prefix}/ai-os/index.html`, `<!doctype html>
 <html lang="${locale}">
 <head>
   <meta charset="utf-8">
@@ -25,10 +25,10 @@ for (const locale of ["en", "pl"]) {
 <body>
   <main>
     <h1>Century AI Platform</h1>
-    <p>${polish ? "Ta strona została przeniesiona do" : "This page has moved to"} <a href="${target}">${polish ? "platformy AI" : "AI Platform"}</a>.</p>
+    <p>${message} <a href="${target}">${locale === "pl" ? "platformy AI" : "AI Platform"}</a>.</p>
   </main>
 </body>
 </html>
 `);
 }
-console.log("Independent EU export packaged in out/");
+console.log("Independent EU export packaged in out/ with English, German and Polish compatibility redirects");

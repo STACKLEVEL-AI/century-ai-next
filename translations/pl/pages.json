@@ -112,7 +112,8 @@
     "Connect the strategy": "Połącz strategię z działaniem",
     "Models, knowledge, agents and controls in one environment for building and running AI workflows": "Modele, wiedza, agenci i mechanizmy kontroli w jednym środowisku do tworzenia i uruchamiania przepływów pracy AI",
     "Deployment": "Wdrożenie",
-    "Test the first workflow, select infrastructure and transfer the operating knowledge to your team": "Przetestuj pierwszy przepływ pracy, wybierz infrastrukturę i przekaż swojemu zespołowi wiedzę potrzebną do obsługi"
+    "Test the first workflow, select infrastructure and transfer the operating knowledge to your team": "Przetestuj pierwszy przepływ pracy, wybierz infrastrukturę i przekaż swojemu zespołowi wiedzę potrzebną do obsługi",
+    "for your work": "do realizacji zadań"
   },
   "src/app/blog/[slug]/page.tsx": {
     "All Century guides": "Wszystkie poradniki Century",
@@ -347,8 +348,8 @@
   "src/app/not-found.tsx": {
     "404 / A different direction": "404 / Inny kierunek",
     "Page not found": "Nie znaleziono strony",
-    "This page may have moved. There’s still plenty to explore — from the platform to the people behind it": "Ta strona mogła zmienić adres. Nadal możesz poznać wiele innych rzeczy — od platformy po zespół, który ją tworzy",
-    "Back to Century": "Powrót do Century",
+    "This page may have moved. There’s still plenty to explore — from the platform to the people behind it": "Ta strona mogła zostać przeniesiona. Poznaj platformę i ludzi, którzy ją tworzą",
+    "Back to Century": "Wróć do Century",
     "Explore the platform": "Poznaj platformę"
   },
   "src/app/page.tsx": {

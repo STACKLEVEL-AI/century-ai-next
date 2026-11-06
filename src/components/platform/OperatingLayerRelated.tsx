@@ -16,7 +16,7 @@ export default function OperatingLayerRelated({ current }: { current: "platform"
       <h2 className={styles.relatedHeading} id={headingId}>One platform<br />Connected capabilities</h2>
       <div className={styles.relatedGrid}>
         {products.filter(product => product.slug !== current).map(product => <a className={styles.productCard}
-          href={"/" + product.slug + "/"} key={product.slug}>
+          href={`/${product.slug}/`} key={product.slug}>
           <img className={styles.productImage} src={product.image} alt="" style={{ objectPosition: product.position }}
             width={product.width} height={product.height} loading="lazy" />
           <div className={styles.productCardContent}>

@@ -8,29 +8,34 @@ import HomeApproach from "@/components/HomeApproach";
 import HomeIndustries from "@/components/HomeIndustries";
 import HomeTeam from "@/components/HomeTeam";
 import Footer from "@/components/Footer";
-import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL, SITE_LANGUAGE } from "@/lib/site";
+import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { LOCALE } from "@/lib/locale";
+import { locales, localizedPath } from "@/lib/i18n";
 import "@/app/home.css";
 
 export const metadata: Metadata = homeMetadata(PAGE_TITLE, PAGE_DESCRIPTION);
 
+const websiteUrl = SITE_URL + "/";
+const websiteId = `${websiteUrl}#website`;
+const pageUrl = `${SITE_URL}${localizedPath("/", LOCALE)}`;
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
+      "@id": websiteId,
+      url: websiteUrl,
       name: SITE_NAME,
-      inLanguage: SITE_LANGUAGE,
+      inLanguage: locales,
     },
     {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/#webpage`,
-      url: `${SITE_URL}/`,
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
       name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
-      inLanguage: SITE_LANGUAGE,
-      isPartOf: { "@id": `${SITE_URL}/#website` },
+      inLanguage: LOCALE,
+      isPartOf: { "@id": websiteId },
     },
   ],
 };
@@ -55,4 +60,3 @@ export default function Home() {
     </div>
   );
 }
-

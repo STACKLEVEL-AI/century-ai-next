@@ -1,7 +1,15 @@
+/* German compounds and longer labels must fit the shared responsive layouts. */
+html[lang="de"] :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+html[lang="de"] :is(.co-text-link, .btn, .co-guide-meta) { flex-wrap: wrap; }
 /* Polish copy shares the design; allow natural wrapping on narrow screens. */
 html[lang="pl"] :is(h1, h2, h3) { overflow-wrap: break-word; }
 html[lang="pl"] .co-filters { flex-wrap: wrap; }
-.bilingual-error { padding: 70px 0; min-height: 100svh; }
-.bilingual-error section { max-width: 760px; margin-top: 48px; }
+.bilingual-error { max-width: 960px; min-height: 100svh; margin-inline: auto; padding: clamp(96px, 18vh, 180px) 24px; }
+.bilingual-error .error-brand { display: inline-flex; margin-bottom: 48px; }
+.bilingual-error section { margin-bottom: 48px; }
 .bilingual-error section + section { padding-top: 32px; border-top: 1px solid #d8ddd5; }
-.bilingual-error section p { margin: 20px 0; }
+.bilingual-error h1, .bilingual-error h2 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 18px; }
+.bilingual-error p { max-width: 60ch; line-height: 1.6; margin-bottom: 24px; }

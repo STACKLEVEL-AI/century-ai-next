@@ -15,7 +15,8 @@ process.chdir(root);
 const generatedSource = "src/localized/pl";
 const generatedRoutes = "src/app/(pl)/pl";
 const catalogDirectory = "translations/pl";
-const sharedModules = new Set(["src/lib/i18n", "src/lib/routes", "src/components/LanguageSwitcher", "src/components/site/SiteDocument"]);
+const checkOnly = process.argv.includes("--check");
+const sharedModules = new Set(["src/lib/i18n", "src/lib/routes", "src/components/LanguageSwitcher", "src/components/Document", "src/components/FooterBrand"]);
 const specialLibraries = new Set(["src/lib/metadata.ts", "src/lib/i18n.ts", "src/lib/routes.ts"]);
 const routeRoots = new Set(["platform", "agents", "systems", "ai-gateway", "deployment", "ai-transformation", "security", "industries", "about-us", "careers", "press", "contact", "blog", "privacy"]);
 
@@ -106,6 +107,7 @@ function displayCandidate(node, value) {
   return /[a-z][ ,:;!?][a-zA-Z]/.test(value) && !/^(use client|use server)$/.test(value) && !/[{}<>]|https?:|@\/|^\.|^\/|px|vw|calc\(/.test(value);
 }
 function transform(source, text) {
+  if (source === "src/lib/locale.ts") return 'import type { Locale } from "@/lib/i18n";\nexport const LOCALE: Locale = "pl";\n';
   const dictionary = catalogs[source] || {};
   const ast = ts.createSourceFile(source, text, ts.ScriptTarget.Latest, true, source.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
   const edits = [];
@@ -155,8 +157,10 @@ function transform(source, text) {
 }
 
 // These directories contain generated files only. Clear stale routes on regeneration.
-await fs.rm(generatedSource, { recursive: true, force: true });
-await fs.rm(generatedRoutes, { recursive: true, force: true });
+if (!checkOnly) {
+  await fs.rm(generatedSource, { recursive: true, force: true });
+  await fs.rm(generatedRoutes, { recursive: true, force: true });
+}
 const sources = [...await filesIn("src/components"), ...await filesIn("src/lib"), ...await filesIn("src/app/(en)")].filter(name => /\.tsx?$/.test(name));
 let generated = 0;
 for (const filename of sources) {
@@ -164,12 +168,16 @@ for (const filename of sources) {
   const source = filename.replace("src/app/(en)/", "src/app/");
   const output = filename.startsWith("src/app/(en)/") ? filename.replace("src/app/(en)", generatedRoutes) : filename.replace(/^src/, generatedSource);
   const content = transform(source, await fs.readFile(filename, "utf8"));
-  await fs.mkdir(path.dirname(output), { recursive: true });
-  await fs.writeFile(output, content);
+  if (!checkOnly) {
+    await fs.mkdir(path.dirname(output), { recursive: true });
+    await fs.writeFile(output, content);
+  }
   generated++;
 }
-await fs.mkdir(`${generatedSource}/lib`, { recursive: true });
-await fs.writeFile(`${generatedSource}/lib/metadata.ts`, `// Generated locale-bound metadata helpers.\nimport { pageMetadata as page, homeMetadata as home } from "@/lib/metadata";\nexport const pageMetadata = (title: string, description: string, path: string) => page(title, description, path, "pl");\nexport const homeMetadata = (title: string, description: string) => home(title, description, "pl");\n`);
+if (!checkOnly) {
+  await fs.mkdir(`${generatedSource}/lib`, { recursive: true });
+  await fs.writeFile(`${generatedSource}/lib/metadata.ts`, `// Generated locale-bound metadata helpers.\nimport { pageMetadata as page, homeMetadata as home } from "@/lib/metadata";\nexport const pageMetadata = (title: string, description: string, path: string) => page(title, description, path, "pl");\nexport const homeMetadata = (title: string, description: string) => home(title, description, "pl");\n`);
+}
 for (const filename of assetPaths) {
   const dictionary = catalogs[filename];
   const source = await fs.readFile(filename, "utf8");
@@ -178,14 +186,16 @@ for (const filename of assetPaths) {
     return Object.hasOwn(dictionary, key) ? `>${value.match(/^\s*/)[0]}${xmlEscape(dictionary[key])}${value.match(/\s*$/)[0]}<` : match;
   });
   const output = `public${assetMap[filename.slice("public".length)]}`;
-  await fs.mkdir(path.dirname(output), { recursive: true });
-  await fs.writeFile(output, localized);
+  if (!checkOnly) {
+    await fs.mkdir(path.dirname(output), { recursive: true });
+    await fs.writeFile(output, localized);
+  }
 }
 await fs.mkdir(".localizations", { recursive: true });
 await fs.writeFile(".localizations/untranslated.json", JSON.stringify(untranslated, null, 2) + "\n");
 if (Object.keys(untranslated).length) {
   throw new Error("Polish translations are missing. Review .localizations/untranslated.json, then update the catalog or the explicit keep list.");
 }
-console.log(`Generated ${generated} Polish source files and ${assetPaths.length} diagrams; translated ${translatedCount} text nodes.`);
+console.log(`${checkOnly ? "Checked" : "Generated"} ${generated} Polish source files and ${assetPaths.length} diagrams; translated ${translatedCount} text nodes.`);
 
-await createOpenGraph("pl");
+if (!checkOnly) await createOpenGraph("pl");

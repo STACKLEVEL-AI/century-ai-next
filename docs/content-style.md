@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English on English routes and natural Polish on `/pl/` routes. Preserve the official Century product names in both languages. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface.
+Use clear English on the original routes, fluent formal German on `/de/` routes and natural Polish on `/pl/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Address Polish readers directly and keep forms such as **Twój** consistent with the existing copy. Preserve official Century product names in every language. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
 
 ## Display copy
 
@@ -11,6 +11,8 @@ Use a comma or a line break between paired short phrases when a separator helps 
 Article prose, editorial paragraphs, legal explanations and FAQ answers retain ordinary sentence punctuation. Preserve sentence boundaries inside descriptions with more than one sentence. Do not change punctuation in URLs, email addresses, numbers or technical identifiers.
 
 Update display text at its source, including labels inside SVG diagrams.
+
+English copy and structure are maintained in the source components. German copy is maintained in `src/locales/de/` and Polish copy in `translations/pl/`. The build generates both translated route and component trees, diagrams and social images. Keep German nouns capitalized in dynamic labels. Use the required Polish grammatical case for industry names and the shared plural-rules helper for guide counts. Translate complete messages where possible; check the surrounding sentence when a template contains fragments. Run `npm run locales:check` after a content edit and update both catalogs; do not add untranslated fallback text to pass the check. See [Localization](localization.md) for contextual overrides and generated paths.
 
 ## Names and links
 
@@ -26,4 +28,8 @@ Use the brand blue `#240CFF` sparingly for focus rings and small functional indi
 
 Closing contact sections are compact rows, with a concise heading and useful context beside a single action. Stack the content naturally on small screens. Do not use a full-height promotional banner, a decorative photograph or a gradient before the footer.
 
-The shared footer slogan is `WE LEAVE IN THE AI CENTURY`, with a line break before `AI CENTURY`. Preserve this supplied wording exactly.
+The shared footer brand signature reads `WE LEAVE IN THE AI CENTURY`. Use the `FooterBrand` component: the literal text `WE LEAVE IN THE AI` precedes the CENTURY logo, which supplies the final word. Keep them together as one compact block, with the prefix above the logo on every screen. Do not repeat CENTURY as separate slogan text.
+
+This signature is fixed English brand wording in every locale. Preserve `LEAVE` exactly; do not translate, rephrase or substitute localized content. Keep `translate="no"`, the `notranslate` class, `lang="en"` and `dir="ltr"` on the complete signature. Its accessible name must read the full phrase once, in the same order.
+
+Keep `FooterBrand.tsx` in the locale generator's shared component set, outside translation catalogs. Each footer supplies its localized home URL through the `href` prop; language generation may change this URL but must not change the signature itself.
