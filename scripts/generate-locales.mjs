@@ -16,7 +16,8 @@ const germanRoot = path.join(sourceRoot, "app/(de)/de");
 const generatedRoot = path.join(sourceRoot, "generated/de");
 const checkOnly = process.argv.includes("--check");
 const reportOnly = process.argv.includes("--report");
-const shared = new Set(["components/Document.tsx", "components/LanguageSwitcher.tsx", "lib/i18n.ts", "lib/routes.ts"]);
+// FooterBrand contains fixed English brand wording; its callers supply the localized home URL.
+const shared = new Set(["components/Document.tsx", "components/LanguageSwitcher.tsx", "components/FooterBrand.tsx", "lib/i18n.ts", "lib/routes.ts"]);
 
 async function filesIn(directory) {
   const entries = await readdir(directory, { withFileTypes: true });

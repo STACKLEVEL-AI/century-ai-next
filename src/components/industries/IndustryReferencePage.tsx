@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { CalendarCheck, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, Clock, Coins, Expand, Gauge, Headset, HeartPulse, Network, Settings2, ShieldHalf, Timer, UsersRound, Workflow } from "lucide-react";
 import Header from "@/components/Header";
+import FooterBrand from "@/components/FooterBrand";
 import TelegramLink from "@/components/TelegramLink";
 import type { IndustrySlug } from "@/lib/industries";
 import type { IndustryReference } from "@/lib/industry-reference-types";
@@ -14,8 +15,7 @@ function IndustryFooter() {
   return <footer className={styles.footer}>
     <div className={styles.footerInner}>
       <div className={styles.footerLead}>
-        <a href="/" aria-label="Century home"><img src="/brand/century-logo-white.svg" alt="Century" width={221} height={58} /></a>
-        <p lang="en">WE LEAVE IN THE<br />AI CENTURY</p>
+        <FooterBrand href="/" />
         <TelegramLink className={styles.lightButton}>Get in touch</TelegramLink>
         <small>© {new Date().getFullYear()} Century</small>
       </div>

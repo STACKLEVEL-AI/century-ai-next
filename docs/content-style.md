@@ -28,4 +28,8 @@ Use the brand blue `#240CFF` sparingly for focus rings and small functional indi
 
 Closing contact sections are compact rows, with a concise heading and useful context beside a single action. Stack the content naturally on small screens. Do not use a full-height promotional banner, a decorative photograph or a gradient before the footer.
 
-The shared footer slogan is `WE LEAVE IN THE AI CENTURY`, with a line break before `AI CENTURY`. Preserve this supplied wording exactly.
+The shared footer brand signature reads `WE LEAVE IN THE AI CENTURY`. Use the `FooterBrand` component: the literal text `WE LEAVE IN THE AI` precedes the CENTURY logo, which supplies the final word. Keep them together as one compact block, with the prefix above the logo on every screen. Do not repeat CENTURY as separate slogan text.
+
+This signature is fixed English brand wording in every locale. Preserve `LEAVE` exactly; do not translate, rephrase or substitute localized content. Keep `translate="no"`, the `notranslate` class, `lang="en"` and `dir="ltr"` on the complete signature. Its accessible name must read the full phrase once, in the same order.
+
+Keep `FooterBrand.tsx` in the locale generator's shared component set, outside translation catalogs. Each footer supplies its localized home URL through the `href` prop; language generation may change this URL but must not change the signature itself.
