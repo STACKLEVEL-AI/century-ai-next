@@ -21,7 +21,7 @@ The publishable website is written to `out/`. The postbuild script adds `CNAME`,
 
 ## Deployment
 
-The [GitHub Pages workflow](.github/workflows/nextjs.yml) deploys `main` after application changes or a manual run. It installs dependencies, builds the static website and publishes `out/`. The separate validation workflow checks both languages and browser behavior before release. Changes limited to documentation do not start a deployment.
+The [GitHub Pages workflow](.github/workflows/nextjs.yml) deploys `main` after application changes or a manual run. GitHub CI only installs dependencies, builds the static website and publishes `out/`. Do not add tests, Playwright, lint, type checking, export checks or validation jobs to GitHub CI; these are local-only commands. The deployment build uses `DEPLOY_ONLY=true` to skip Next.js lint and type checks. Changes limited to documentation do not start a deployment.
 
 In the repository's Pages settings, select **GitHub Actions** and keep the custom domain `century-ai.eu`.
 
