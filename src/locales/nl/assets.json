@@ -1,0 +1,110 @@
+{
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "A useful workflow, built together": "Een nuttig werkproces, samen ontwikkeld",
+    "Agree the boundaries": "De grenzen afspreken",
+    "Build": "Ontwikkelen",
+    "Build the workflow": "Het werkproces ontwikkelen",
+    "Connect the pieces": "De onderdelen verbinden",
+    "Define the work": "Het werk definiëren",
+    "Delivery with ownership": "Implementatie met duidelijke verantwoordelijkheid",
+    "DELIVERY WITH OWNERSHIP": "IMPLEMENTATIE MET VERANTWOORDELIJKHEID",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Vier samenhangende fasen leiden van het afbakenen van een nuttig werkproces via ontwikkeling en validatie naar de overdracht aan het team.",
+    "Handover": "Overdracht",
+    "Learn from each step, improve the next": "Leer van elke stap en verbeter de volgende",
+    "Make ownership clear": "Verantwoordelijkheden verduidelijken",
+    "Refine with the team": "Samen met het team verfijnen",
+    "Review the result": "Het resultaat beoordelen",
+    "Scope": "Afbakenen",
+    "Support daily use": "Dagelijks gebruik ondersteunen",
+    "Validate": "Valideren"
+  },
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "A clear scope": "Een duidelijke afbakening",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "Een afgebakende taak leidt via een AI-antwoord naar menselijke beoordeling. Bronkwaliteit, nauwkeurigheid en reikwijdte vormen drie controlepunten.",
+    "Accuracy": "Nauwkeurigheid",
+    "AI": "AI",
+    "AI response": "AI-antwoord",
+    "AI with a review path": "AI met een beoordelingsproces",
+    "Approved knowledge": "Goedgekeurde kennis",
+    "Check the result": "Het resultaat controleren",
+    "Decide the next step": "De volgende stap bepalen",
+    "Defined task": "Afgebakende taak",
+    "EVALUATE BEFORE EXPANDING": "EVALUEREN VÓÓR UITBREIDING",
+    "Evidence included": "Inclusief onderbouwing",
+    "Human review": "Menselijke beoordeling",
+    "Limitations visible": "Zichtbare beperkingen",
+    "Scope": "Reikwijdte",
+    "Source quality": "Bronkwaliteit"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Access permissions": "Toegangsrechten",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Toegangsrechten, goedgekeurde bronnen en menselijke goedkeuring komen samen in een gecontroleerd werkproces met een aangewezen verantwoordelijke.",
+    "Approved sources": "Goedgekeurde bronnen",
+    "Clear boundaries, accountable decisions": "Duidelijke grenzen, verantwoording over besluiten",
+    "Control by design": "Controle vanaf het ontwerp",
+    "CONTROL BY DESIGN": "CONTROLE VANAF HET ONTWERP",
+    "Controlled workflow": "Gecontroleerd werkproces",
+    "Human approval": "Menselijke goedkeuring",
+    "Traceable work, with a named owner": "Traceerbaar werk met een aangewezen verantwoordelijke"
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "Approved sources": "Goedgekeurde bronnen",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century verbindt goedgekeurde bronnen, werkprocessen en bestaande systemen met mensen, gecontroleerde acties en bruikbare resultaten.",
+    "CONNECTED WORK": "VERBONDEN WERK",
+    "Controlled actions": "Gecontroleerde acties",
+    "Existing systems": "Bestaande systemen",
+    "Knowledge · Workflows · People": "Kennis · Werkprocessen · Mensen",
+    "One connected workspace": "Eén verbonden werkomgeving",
+    "One place to bring work together": "Eén plek waar het werk samenkomt",
+    "People & review": "Mensen & beoordeling",
+    "Useful outcomes": "Bruikbare resultaten",
+    "Your workflows": "Uw werkprocessen"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Vastgelegde gegevensstromen",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Informatie uit drie bronnen gaat door een afgebakende verwerkingslaag en bereikt vervolgens goedgekeurde bestemmingen."
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Toegangsgrenzen en beoordeling",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Mensen en systemen komen een afgebakende omgeving binnen via beoordeelde toegangspunten, weergegeven door een centraal schild en een auditspoor."
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Case management": "Dossierbeheer",
+    "Century Airlines platform": "Century-platform voor luchtvaartmaatschappijen",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century verbindt passagiers, serviceteams en compensatieclaims met reisgegevens, servicerichtlijnen en dossierbeheer.",
+    "Claims": "Compensatieclaims",
+    "Journey records": "Reisgegevens",
+    "Passengers": "Passagiers",
+    "Service policies": "Servicerichtlijnen",
+    "Service teams": "Serviceteams"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Administration": "Administratie",
+    "Care teams": "Zorgteams",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century verbindt zorgteams, administratie en interne diensten met medische dossiers, planning en financiën.",
+    "Century Healthcare platform": "Century-platform voor de zorg",
+    "Clinical records": "Medische dossiers",
+    "Finance": "Financiën",
+    "Internal services": "Interne diensten",
+    "Scheduling": "Planning"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Billing": "Facturering",
+    "Billing records": "Factuurgegevens",
+    "Case management": "Dossierbeheer",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century verbindt klantenservice, buitendienstteams en facturering met dossierbeheer, de kennisbank en factuurgegevens.",
+    "Century Utilities platform": "Century-platform voor nutsbedrijven",
+    "Field teams": "Buitendienstteams",
+    "Knowledge base": "Kennisbank",
+    "Service": "Klantenservice"
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Century-platform voor verzekeringen",
+    "Core systems": "Kernsystemen",
+    "Health": "Zorg",
+    "Life": "Leven",
+    "P&C": "Schadeverzekeringen",
+    "Policy systems": "Polissystemen",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Werkprocessen voor schade-, levens- en zorgverzekeringen zijn verbonden met Century, polissystemen, CRM en kernsystemen."
+  }
+}

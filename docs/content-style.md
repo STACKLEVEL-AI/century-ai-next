@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English on the original routes, fluent formal German on `/de/` routes, natural Polish on `/pl/` routes, idiomatic Ukrainian on `/uk/` routes, fluent formal French on `/fr/` routes, standard Belarusian on `/be/` routes, natural Italian on `/it/` routes, natural European Spanish on `/es/` routes and professional Serbian in Latin script and ekavica on `/sr/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Address Polish readers directly and keep forms such as **Twój** consistent with the existing copy. Use **ШІ** for generic artificial intelligence in Ukrainian and Belarusian, with consistent direct address. Address French readers as **vous**, use **IA** for generic artificial intelligence and **processus** for workflows, and retain French accents and typographic apostrophes. Translate complete phrases to handle articles and prepositions naturally. Belarusian uses standard orthography, plural imperatives and lowercase **вы/ваш**; prefer **даныя**, **працоўны працэс**, **разгортванне**, **кіраванне** and **дапаможнік**. For Belarusian, keep full personal names in their official source spelling. In Italian, use **IA** for generic artificial intelligence, **flusso di lavoro** for workflow and consistent direct address. Address Spanish readers consistently as **tú/tu**, use **IA** in ordinary prose, **flujos de trabajo** for workflows, **gobernanza** for governance and **responsabilidad** for ownership. Use **Implantación** for the delivery page and **despliegue** for technical installation and the deployment guide category. Keep Spanish accents and opening question marks; retain official product and personal names. Preserve official Century product names in every language. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
+Use clear English on the original routes, fluent formal German on `/de/` routes, natural Polish on `/pl/` routes, idiomatic Ukrainian on `/uk/` routes, fluent formal French on `/fr/` routes, standard Belarusian on `/be/` routes, natural Italian on `/it/` routes, natural European Spanish on `/es/` routes, professional Serbian in Latin script and ekavica on `/sr/` routes and natural professional Dutch on `/nl/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Address Polish readers directly and keep forms such as **Twój** consistent with the existing copy. Use **ШІ** for generic artificial intelligence in Ukrainian and Belarusian, with consistent direct address. Address French readers as **vous**, use **IA** for generic artificial intelligence and **processus** for workflows, and retain French accents and typographic apostrophes. Translate complete phrases to handle articles and prepositions naturally. Belarusian uses standard orthography, plural imperatives and lowercase **вы/ваш**; prefer **даныя**, **працоўны працэс**, **разгортванне**, **кіраванне** and **дапаможнік**. For Belarusian, keep full personal names in their official source spelling. In Italian, use **IA** for generic artificial intelligence, **flusso di lavoro** for workflow and consistent direct address. Address Spanish readers consistently as **tú/tu**, use **IA** in ordinary prose, **flujos de trabajo** for workflows, **gobernanza** for governance and **responsabilidad** for ownership. Use **Implantación** for the delivery page and **despliegue** for technical installation and the deployment guide category. Keep Spanish accents and opening question marks; retain official product and personal names. Address Dutch readers consistently as lowercase **u/uw** and use **AI**, with the terminology below. Preserve official Century product names in every language. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
 
 ## Display copy
 
@@ -12,7 +12,7 @@ Article prose, editorial paragraphs, legal explanations and FAQ answers retain o
 
 Update display text at its source, including labels inside SVG diagrams.
 
-English copy and structure are maintained in the source components. German, Polish, Ukrainian, French, Belarusian, Italian, Spanish and Serbian use the same `messages.json`, `assets.json` and `keep.json` format under `src/locales/{de,pl,uk,fr,be,it,es,sr}/`. The shared compiler generates translated routes, components and SVG diagrams. Keep German nouns capitalized and use the required Polish, Ukrainian, Belarusian and Serbian grammatical cases for industry names. Translate full dynamic sentences with numbered placeholders rather than joining translated fragments; use field overrides where a name needs different forms. The shared guide-count helper uses each language's plural rules. Run `npm run locales:check` after content edits and update all eight catalogs. Do not add untranslated fallback copy or broad keep lists to bypass validation. See [Localization](localization.md) for exact formats and generated paths.
+English copy and structure are maintained in the source components. German, Polish, Ukrainian, French, Belarusian, Italian, Spanish, Serbian and Dutch use the same `messages.json`, `assets.json` and `keep.json` format under `src/locales/{de,pl,uk,fr,be,it,es,sr,nl}/`. The shared compiler generates translated routes, components and SVG diagrams. Keep German nouns capitalized and use the required Polish, Ukrainian, Belarusian and Serbian grammatical cases for industry names. Translate full dynamic sentences with numbered placeholders rather than joining translated fragments; use field overrides where a name needs different forms. The shared guide-count helper uses each language's plural rules. Run `npm run locales:check` after content edits and update all nine catalogs. Do not add untranslated fallback copy or broad keep lists to bypass validation. See [Localization](localization.md) for exact formats and generated paths.
 
 ## Names and links
 
@@ -31,6 +31,26 @@ Translate answer citations as **посилання на джерела**, not **
 Use natural professional Serbian in Latin script and ekavica, with consistent plural imperatives and lowercase **vi/vaš**. Preserve Serbian diacritics. Use **AI** for generic artificial intelligence, **radni tok** for workflow, **upravljanje i nadzor** for governance, **odgovornost** for process ownership and **vodič** for guide. Keep official Century product names and personal names unchanged; restructure phrases where needed to avoid an unnatural grammatical case.
 
 Use **Uvođenje** for the Deployment delivery page and **Postavljanje** for technical installation and the deployment guide category. Distinguish internal **pravila** from insurance **polise**, insurance **odštetni zahtevi** from airline **zahtevi za naknadu**, and staff review from AI-agent activity. Keep professional responsibility and the original limits of permissions and human review explicit. Industry names must fit the complete rendered sentence, using field overrides where needed.
+
+## Dutch terminology
+
+Use professional Dutch with consistent lowercase **u/uw** address. Translate complete phrases and read split headings as one sentence. Keep official Century product names, personal names and technical abbreviations intact.
+
+| Concept | Dutch wording |
+| --- | --- |
+| Artificial intelligence | **AI** |
+| Workflow / workflows | **werkproces / werkprocessen** |
+| Governance | **governance** |
+| Ownership or accountability | **verantwoordelijkheid** |
+| Deployment page and navigation | **Implementatie** |
+| Technical deployment and deployment guide category | **uitrol / Uitrol** |
+| AI Transformation | **AI-transformatie** |
+| Guides | **Gidsen** |
+| Answer citations | **bronverwijzingen** |
+| Permissions | **toegangsrechten** |
+| Business case | **businesscase** |
+
+Guide categories are **Eerste stappen**, **Kennis**, **Werkprocessen** and **Uitrol**. Use **1 gids** and **0/2+ gidsen**, preserving the category label and curly single quotes in phrases such as **1 gids in de categorie ‘Kennis’**. Check articles and number in full industry sentences, using contextual field overrides for sector and audience labels. Distinguish insurance **polis** from internal **beleid** and preserve every limit on human decisions, access and deployment.
 
 ## Deployment and AI Transformation
 

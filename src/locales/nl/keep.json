@@ -1,0 +1,118 @@
+{
+  "public/media/century/diagrams/industry-platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/airlines/platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/healthcare/platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/utilities/platform.svg": [
+    "Century"
+  ],
+  "public/media/insurance/platform.svg": [
+    "CRM",
+    "Century"
+  ],
+  "src/app/(en)/agents/page.tsx": [
+    "Century Agents"
+  ],
+  "src/app/(en)/ai-gateway/page.tsx": [
+    "AI Gateway",
+    "Century",
+    "Century AI Gateway"
+  ],
+  "src/app/(en)/ai-transformation/page.tsx": [
+    "AI Platform",
+    "RPA"
+  ],
+  "src/app/(en)/contact/page.tsx": [
+    "Vitali Bakhmat"
+  ],
+  "src/app/(en)/platform/page.tsx": [
+    "AI Platform",
+    "Century",
+    "Century AI Platform"
+  ],
+  "src/app/(en)/systems/page.tsx": [
+    "Century Systems"
+  ],
+  "src/components/Footer.tsx": [
+    "Century"
+  ],
+  "src/components/Founders.tsx": [
+    "Egor Krychev",
+    "LinkedIn",
+    "Telegram",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat",
+    "vadimohka.com"
+  ],
+  "src/components/Header.tsx": [
+    "Century"
+  ],
+  "src/components/HomeProductFamily.tsx": [
+    "AI Gateway",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/components/HomeTeam.tsx": [
+    "Egor Krychev",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat"
+  ],
+  "src/components/Platform.tsx": [
+    "Century AI Platform"
+  ],
+  "src/components/company/CompanyElements.tsx": [
+    "Egor Krychev",
+    "LinkedIn",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat",
+    "vadimohka.com"
+  ],
+  "src/components/industries/IndustryReferencePage.tsx": [
+    "Century",
+    "Telegram"
+  ],
+  "src/components/platform/AgentsExperience.tsx": [
+    "Century AI Gateway",
+    "Century AI Platform",
+    "Century Agents",
+    "Century Systems",
+    "MCP"
+  ],
+  "src/components/platform/GatewayIllustrations.tsx": [
+    "AI Gateway"
+  ],
+  "src/components/platform/GatewayWorkspace.tsx": [
+    "Century"
+  ],
+  "src/components/platform/OperatingLayerRelated.tsx": [
+    "Century"
+  ],
+  "src/components/platform/SystemsExperience.tsx": [
+    "Century",
+    "Century AI Gateway",
+    "Century AI Platform",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/lib/header-navigation.ts": [
+    "AI Platform",
+    "Century AI Gateway",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/lib/navigation.ts": [
+    "AI Gateway",
+    "AI Platform",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/lib/site.ts": [
+    "Century",
+    "Vitali Bakhmat"
+  ]
+}

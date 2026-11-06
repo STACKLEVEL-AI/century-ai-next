@@ -1,9 +1,9 @@
 /* Every translation uses the same layout and natural language-aware wrapping. */
-html:is([lang="de"], [lang="pl"], [lang="uk"], [lang="fr"], [lang="be"], [lang="it"], [lang="es"], [lang="sr"]) :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
+html:is([lang="de"], [lang="pl"], [lang="uk"], [lang="fr"], [lang="be"], [lang="it"], [lang="es"], [lang="sr"], [lang="nl"]) :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
   overflow-wrap: break-word;
   hyphens: auto;
 }
-html:is([lang="de"], [lang="pl"], [lang="uk"], [lang="fr"], [lang="be"], [lang="it"], [lang="es"], [lang="sr"]) :is(.co-text-link, .btn, .co-guide-meta, .co-filters) { flex-wrap: wrap; }
+html:is([lang="de"], [lang="pl"], [lang="uk"], [lang="fr"], [lang="be"], [lang="it"], [lang="es"], [lang="sr"], [lang="nl"]) :is(.co-text-link, .btn, .co-guide-meta, .co-filters) { flex-wrap: wrap; }
 /* Favorit's supplied file is Latin-only; keep one consistent Cyrillic face. */
 html:is([lang="uk"], [lang="be"]) { --font-localized-heading: var(--font-inter); }
 .bilingual-error { max-width: 960px; min-height: 100svh; margin-inline: auto; padding: clamp(96px, 18vh, 180px) 24px; }

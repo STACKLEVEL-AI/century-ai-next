@@ -376,6 +376,49 @@
         "subtitleY": 470,
         "subtitleSize": 24
       }
+    },
+    "nl": {
+      "label": "Nederlands",
+      "accessibleLabel": "Taal: Nederlands",
+      "openGraphLocale": "nl_NL",
+      "socialImage": "/og/century-ai-nl.png",
+      "imageAlt": "Century — Van idee naar de dagelijkse praktijk. Specificatie, ontwikkeling en governance.",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — AI-platform voor bedrijven",
+        "Century Agents": "Century Agents — AI-agenten voor bedrijven",
+        "Century Systems": "Century Systems — AI-systemen en procesautomatisering",
+        "Century AI Gateway": "Century AI Gateway — toegang tot AI-modellen"
+      },
+      "guideCount": {
+        "one": "gids",
+        "few": "gidsen",
+        "many": "gidsen",
+        "other": "gidsen",
+        "category": " in de categorie ‘{category}’",
+        "explore": " om te ontdekken",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Deze pagina is verplaatst naar",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Pagina niet gevonden",
+        "description": "Deze pagina is mogelijk verplaatst. Ontdek het platform, onze sectoroplossingen en de mensen achter Century.",
+        "homeLabel": "Naar de Nederlandstalige startpagina"
+      },
+      "socialPreview": {
+        "lines": [
+          "Van idee",
+          "naar de dagelijkse praktijk"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Specificatie · Ontwikkeling · Governance",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
     }
   }
 }
