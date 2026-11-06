@@ -159,6 +159,50 @@
         "subtitleY": 470,
         "subtitleSize": 24
       }
+    },
+    "fr": {
+      "label": "Français",
+      "accessibleLabel": "Langue : français",
+      "openGraphLocale": "fr_FR",
+      "socialImage": "/og/century-ai-fr.png",
+      "imageAlt": "Century — Accélérez la transformation de votre entreprise par l’IA",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — plateforme d’IA pour les entreprises",
+        "Century Agents": "Century Agents — agents IA pour les entreprises",
+        "Century Systems": "Century Systems — systèmes d’IA et automatisation des processus",
+        "Century AI Gateway": "Century AI Gateway — accès aux modèles d’IA"
+      },
+      "guideCount": {
+        "one": "guide",
+        "few": "guides",
+        "many": "guides",
+        "other": "guides",
+        "category": " dans la catégorie « {category} »",
+        "explore": " à découvrir",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Cette page a été déplacée vers",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Page introuvable",
+        "description": "Cette page a peut-être changé d’adresse. Découvrez la plateforme, nos solutions sectorielles et l’équipe de Century.",
+        "homeLabel": "Accéder à l’accueil en français"
+      },
+      "socialPreview": {
+        "lines": [
+          "Accélérez",
+          "votre transformation",
+          "par l’IA"
+        ],
+        "firstLine": 245,
+        "lineGap": 83,
+        "tracking": -3,
+        "subtitle": "Vos connaissances. Vos systèmes. Votre prochain chapitre.",
+        "subtitleY": 480,
+        "subtitleSize": 22
+      }
     }
   }
 }

@@ -13,13 +13,14 @@ const { defaultLocale, locales: localeSettings } = JSON.parse(await readFile(new
 const locales = Object.keys(localeSettings);
 const translatedLocales = locales.filter(locale => locale !== defaultLocale);
 assert.equal(defaultLocale, "en", "The existing English route contract must remain the default");
-assert.deepEqual([...locales].sort(), ["de", "en", "pl", "uk"], "All four supported languages must remain in the registry");
+assert.deepEqual([...locales].sort(), ["de", "en", "fr", "pl", "uk"], "All five supported languages must remain in the registry");
 const localePrefix = locale => locale === defaultLocale ? "" : `/${locale}`;
 const screenshotLabels = {
   en: /^Open .+ screenshot$/,
   de: /^Screenshot .+ öffnen$/u,
   pl: /^Otwórz zrzut ekranu „.+”$/u,
   uk: /^Відкрити знімок екрана «.+»$/u,
+  fr: /^Voir la capture .+ en taille réelle$/u,
 };
 
 // The public route contract for the site. Keep this list and
