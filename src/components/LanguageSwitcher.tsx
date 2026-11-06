@@ -2,8 +2,11 @@
 
 import { Check } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { defaultLocale, locales, localeSettings, localeForPath, localizedPath, type Locale } from "@/lib/i18n";
+import { defaultLocale, localeSettings, localeForPath, localizedPath, type Locale } from "@/lib/i18n";
 import styles from "./Header.module.css";
+
+// Menu priority is independent of the shared locale registry order.
+const menuLocales: readonly Locale[] = ["en", "de", "fr", "be", "es", "it", "nl", "pl", "cs", "ro", "sr", "uk"];
 
 /** Native links also work before hydration; the language is stored in the URL. */
 export default function LanguageSwitcher({ locale: providedLocale }: { locale?: Locale } = {}) {
@@ -14,7 +17,7 @@ export default function LanguageSwitcher({ locale: providedLocale }: { locale?: 
     <details className={styles.language} name="desktop-navigation" data-header-disclosure>
       <summary aria-label={localeSettings[locale].accessibleLabel}>{locale.toUpperCase()}</summary>
       <div className={styles.languagePanel}>
-        {locales.map(language => (
+        {menuLocales.map(language => (
           <a
             key={language}
             href={localizedPath(pathname, language)}
