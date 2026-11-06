@@ -14,7 +14,7 @@ const locales = Object.keys(localeSettings);
 const translatedLocales = locales.filter(locale => locale !== defaultLocale);
 const cyrillicLocales = new Set(["uk", "be"]);
 assert.equal(defaultLocale, "en", "The existing English route contract must remain the default");
-assert.deepEqual([...locales].sort(), ["be", "de", "en", "es", "fr", "it", "nl", "pl", "ro", "sr", "uk"], "All eleven supported languages must remain in the registry");
+assert.deepEqual([...locales].sort(), ["be", "cs", "de", "en", "es", "fr", "it", "nl", "pl", "ro", "sr", "uk"], "All twelve supported languages must remain in the registry");
 const localePrefix = locale => locale === defaultLocale ? "" : `/${locale}`;
 const screenshotLabels = {
   en: /^Open .+ screenshot$/,
@@ -28,6 +28,7 @@ const screenshotLabels = {
   sr: /^Otvorite snimak ekrana: .+$/u,
   nl: /^Screenshot van .+ openen$/u,
   ro: /^Deschideți captura de ecran .+$/u,
+  cs: /^Otevřít snímek obrazovky: .+$/u,
 };
 
 // The public route contract for the site. Keep this list and

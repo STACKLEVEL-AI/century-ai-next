@@ -45,6 +45,7 @@ src/app/(es)/
 src/app/(sr)/
 src/app/(nl)/
 src/app/(ro)/
+src/app/(cs)/
 public/media/de/
 public/media/pl/
 public/media/uk/
@@ -55,6 +56,7 @@ public/media/es/
 public/media/sr/
 public/media/nl/
 public/media/ro/
+public/media/cs/
 public/og/century-ai-eu-de.png
 public/og/century-ai-pl.png
 public/og/century-ai-uk.png
@@ -65,6 +67,7 @@ public/og/century-ai-es.png
 public/og/century-ai-sr.png
 public/og/century-ai-nl.png
 public/og/century-ai-ro.png
+public/og/century-ai-cs.png
 .localizations/
 
 # Legacy generated paths are removed by the unified compiler.

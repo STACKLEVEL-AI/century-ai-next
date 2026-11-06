@@ -104,7 +104,7 @@ test("SVG coverage includes title, description and nested tspans with named and 
 
 test("all locales use the existing SVG slot fitting", () => {
   const source = '<svg xmlns="http://www.w3.org/2000/svg"><text x="640" y="419" font-size="28">Human review</text></svg>';
-  for (const locale of ["de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"]) {
+  for (const locale of ["de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro", "cs"]) {
     const result = compileSvg({ source, messages: svgMessages(source), filename: "public/media/insurance/platform.svg", locale, resolve: () => "A deliberately very long translated diagram label that must stay inside the original slot" });
     assert.match(result, /textLength="478"/);
     assert.match(result, /lengthAdjust="spacingAndGlyphs"/);
@@ -120,17 +120,19 @@ async function fixture() {
     await mkdir(path.dirname(path.join(root, name)), { recursive: true });
     await writeFile(path.join(root, name), typeof content === "string" ? content : JSON.stringify(content));
   };
-  await put("src/locales/config.json", { defaultLocale: "en", locales: { en: {}, de: {}, pl: {}, sr: {} } });
+  await put("src/locales/config.json", { defaultLocale: "en", locales: { en: {}, de: {}, pl: {}, sr: {}, cs: {} } });
   await put("src/app/(en)/page.tsx", 'export default function Page() { return <h1>Welcome</h1>; }');
   await put("src/components/Example.tsx", 'export const View = () => <p>Ready</p>;');
   await put("src/lib/locale.ts", 'export const LOCALE = "en";');
   await put("public/media/original.svg", '<svg><text>Review</text></svg>');
   await put("public/media/pl/stale.svg", '<svg><text>Obsolete Polish text</text></svg>');
   await put("public/media/sr/stale.svg", '<svg><text>Obsolete Serbian text</text></svg>');
+  await put("public/media/cs/stale.svg", '<svg><text>Obsolete Czech text</text></svg>');
   const phrases = {
     de: { welcome: "Willkommen", ready: "Bereit", review: "Prüfung" },
     pl: { welcome: "Witamy", ready: "Gotowe", review: "Weryfikacja" },
     sr: { welcome: "Dobro došli", ready: "Spremno", review: "Provera" },
+    cs: { welcome: "Vítejte", ready: "Připraveno", review: "Kontrola" },
   };
   for (const [locale, copy] of Object.entries(phrases)) {
     await put(`src/locales/${locale}/messages.json`, { "src/app/(en)/page.tsx": { Welcome: copy.welcome }, "src/components/Example.tsx": { Ready: copy.ready } });
@@ -155,22 +157,26 @@ async function snapshot(directory, prefix = "") {
 test("check is read-only and SVG discovery excludes every generated locale subtree", async () => {
   const { root } = await fixture();
   try {
-    assert.deepEqual([...await assetSources(root, ["en", "de", "pl", "sr"])].map(([file]) => file), ["public/media/original.svg"]);
+    assert.deepEqual([...await assetSources(root, ["en", "de", "pl", "sr", "cs"])].map(([file]) => file), ["public/media/original.svg"]);
     const before = await snapshot(root);
     const result = await generateLocales({ root, check: true, socialImages: false });
-    assert.equal(result.summaries.length, 3);
+    assert.equal(result.summaries.length, 4);
     assert.deepEqual(await snapshot(root), before);
     assert.ok(result.outputs.has("src/generated/pl/components/Example.tsx"));
     assert.ok(result.outputs.has("src/generated/sr/components/Example.tsx"));
+    assert.ok(result.outputs.has("src/generated/cs/components/Example.tsx"));
     assert.ok(![...result.outputs.keys()].some(file => file.includes("media/de/pl/")));
     assert.ok(![...result.outputs.keys()].some(file => file.includes("media/de/sr/")));
+    assert.ok(![...result.outputs.keys()].some(file => file.includes("media/de/cs/")));
     await generateLocales({ root, socialImages: false });
     const generated = await snapshot(root);
     assert.ok(!Object.hasOwn(generated, "public/media/pl/stale.svg"));
     assert.ok(!Object.hasOwn(generated, "public/media/sr/stale.svg"));
+    assert.ok(!Object.hasOwn(generated, "public/media/cs/stale.svg"));
     assert.ok(!Object.hasOwn(generated, "src/generated/de/sentinel.txt"));
     assert.ok(Object.hasOwn(generated, "public/media/pl/original.svg"));
     assert.ok(Object.hasOwn(generated, "public/media/sr/original.svg"));
+    assert.ok(Object.hasOwn(generated, "public/media/cs/original.svg"));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 

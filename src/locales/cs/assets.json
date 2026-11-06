@@ -1,0 +1,109 @@
+{
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "A useful workflow, built together": "Užitečný pracovní postup vytvořený společně",
+    "Agree the boundaries": "Dohodněte si hranice",
+    "Build": "Vývoj",
+    "Build the workflow": "Vytvořte pracovní postup",
+    "Connect the pieces": "Propojte jednotlivé části",
+    "Define the work": "Vymezte práci",
+    "Delivery with ownership": "Realizace s jasnou odpovědností",
+    "DELIVERY WITH OWNERSHIP": "REALIZACE S JASNOU ODPOVĚDNOSTÍ",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Čtyři navazující fáze vedou od vymezení užitečného pracovního postupu přes vývoj a ověření až po předání týmu.",
+    "Handover": "Předání",
+    "Learn from each step, improve the next": "Poučte se z každého kroku a zlepšete ten další",
+    "Make ownership clear": "Jasně určete odpovědnosti",
+    "Refine with the team": "Zdokonalujte společně s týmem",
+    "Review the result": "Zkontrolujte výsledek",
+    "Scope": "Vymezení",
+    "Support daily use": "Podpořte každodenní používání",
+    "Validate": "Ověření"
+  },
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "A clear scope": "Jasný rozsah",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "Vymezený úkol vede přes odpověď AI ke kontrole člověkem. Tři kontrolní hlediska tvoří kvalita zdrojů, přesnost a rozsah.",
+    "Accuracy": "Přesnost",
+    "AI response": "Odpověď AI",
+    "AI with a review path": "AI s postupem kontroly",
+    "Approved knowledge": "Schválené znalosti",
+    "Check the result": "Zkontrolujte výsledek",
+    "Decide the next step": "Rozhodněte o dalším kroku",
+    "Defined task": "Vymezený úkol",
+    "EVALUATE BEFORE EXPANDING": "PŘED ROZŠÍŘENÍM VYHODNOŤTE",
+    "Evidence included": "Včetně podkladů",
+    "Human review": "Kontrola člověkem",
+    "Limitations visible": "Viditelná omezení",
+    "Scope": "Rozsah",
+    "Source quality": "Kvalita zdrojů"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Access permissions": "Přístupová oprávnění",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Přístupová oprávnění, schválené zdroje a schválení člověkem se propojují do řízeného pracovního postupu s určenou odpovědnou osobou.",
+    "Approved sources": "Schválené zdroje",
+    "Clear boundaries, accountable decisions": "Jasné hranice a odpovědnost za rozhodnutí",
+    "Control by design": "Kontrola už od návrhu",
+    "CONTROL BY DESIGN": "KONTROLA UŽ OD NÁVRHU",
+    "Controlled workflow": "Řízený pracovní postup",
+    "Human approval": "Schválení člověkem",
+    "Traceable work, with a named owner": "Dohledatelná práce s určenou odpovědnou osobou"
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "Approved sources": "Schválené zdroje",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century propojuje schválené zdroje, pracovní postupy a stávající systémy s lidmi, řízenými úkony a užitečnými výsledky.",
+    "CONNECTED WORK": "PROPOJENÁ PRÁCE",
+    "Controlled actions": "Řízené úkony",
+    "Existing systems": "Stávající systémy",
+    "Knowledge · Workflows · People": "Znalosti · Pracovní postupy · Lidé",
+    "One connected workspace": "Jeden propojený pracovní prostor",
+    "One place to bring work together": "Jedno místo pro propojení práce",
+    "People & review": "Lidé a kontrola",
+    "Useful outcomes": "Užitečné výsledky",
+    "Your workflows": "Vaše pracovní postupy"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Vymezené datové toky",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Tři informační zdroje procházejí vymezenou vrstvou zpracování, než se dostanou do schválených cílových systémů."
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Hranice přístupu a kontrola",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Lidé a systémy vstupují do vymezeného prostředí přes prověřené přístupové body, znázorněné centrálním štítem a auditní stopou."
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Case management": "Správa případů",
+    "Century Airlines platform": "Platforma Century pro leteckou dopravu",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century propojuje cestující, týmy zákaznických služeb a nároky na náhradu s cestovními záznamy, pravidly poskytování služeb a správou případů.",
+    "Claims": "Nároky na náhradu",
+    "Journey records": "Cestovní záznamy",
+    "Passengers": "Cestující",
+    "Service policies": "Pravidla služeb",
+    "Service teams": "Týmy zákaznických služeb"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Administration": "Administrativa",
+    "Care teams": "Zdravotnické týmy",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century propojuje zdravotnické týmy, administrativu a interní služby se zdravotnickou dokumentací, plánováním a financemi.",
+    "Century Healthcare platform": "Platforma Century pro zdravotnictví",
+    "Clinical records": "Zdravotnická dokumentace",
+    "Finance": "Finance",
+    "Internal services": "Interní služby",
+    "Scheduling": "Plánování"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Billing": "Vyúčtování",
+    "Billing records": "Záznamy o vyúčtování",
+    "Case management": "Správa případů",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century propojuje zákaznické služby, terénní týmy a vyúčtování se správou případů, znalostní bází a záznamy o vyúčtování.",
+    "Century Utilities platform": "Platforma Century pro energetiku a veřejné služby",
+    "Field teams": "Terénní týmy",
+    "Knowledge base": "Znalostní báze",
+    "Service": "Zákaznické služby"
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Platforma Century pro pojišťovnictví",
+    "Core systems": "Základní systémy",
+    "Health": "Zdravotní pojištění",
+    "Life": "Životní pojištění",
+    "P&C": "Majetek a odpovědnost",
+    "Policy systems": "Systémy pojistných smluv",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Pracovní postupy pro majetkové, životní a zdravotní pojištění propojené s Century, systémy pojistných smluv, CRM a základními systémy."
+  }
+}

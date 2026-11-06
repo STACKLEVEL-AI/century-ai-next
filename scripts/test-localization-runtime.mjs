@@ -48,7 +48,7 @@ test("URL locale detection does not mistake a similar route or query for a langu
       assert.equal(localeForPath(`/${locale}${ending}`), locale);
     }
   }
-  for (const path of ["/", "/deployment/", "/ukraine/", "/belarus/", "/platform/?lang=pl", "/platform/?lang=be", "/platform/?lang=sr", "/deutsch/", "/espanol/", "/srpski/", "/romanian/", "/platform/?lang=ro", "/nederland/"]) {
+  for (const path of ["/", "/deployment/", "/ukraine/", "/belarus/", "/platform/?lang=pl", "/platform/?lang=be", "/platform/?lang=sr", "/deutsch/", "/espanol/", "/srpski/", "/romanian/", "/platform/?lang=ro", "/nederland/", "/csharp/", "/platform/?lang=cs"]) {
     assert.equal(localeForPath(path), "en");
   }
 });
@@ -64,6 +64,7 @@ test("external links, fragments and shared assets never acquire a locale prefix"
     "/sr/media/diagram.svg", "/og/century-ai-sr.png",
     "/nl/media/diagram.svg", "/og/century-ai-nl.png",
     "/ro/media/diagram.svg", "/og/century-ai-ro.png",
+    "/cs/media/diagram.svg", "/og/century-ai-cs.png",
   ];
   for (const target of locales) for (const input of inputs) assert.equal(localizedPath(input, target), input);
 });
@@ -79,6 +80,7 @@ test("alternates are reciprocal from every localized entry point", () => {
     sr: "https://century-ai.eu/sr/platform/",
     nl: "https://century-ai.eu/nl/platform/",
     ro: "https://century-ai.eu/ro/platform/",
+    cs: "https://century-ai.eu/cs/platform/",
     "x-default": "https://century-ai.eu/platform/",
   };
   for (const locale of locales) {
@@ -86,7 +88,7 @@ test("alternates are reciprocal from every localized entry point", () => {
   }
 });
 
-test("guide counts use each language's plural rules, including Dutch and Serbian integer and fractional boundaries", () => {
+test("guide counts use each language's plural rules, including Dutch, Romanian, Czech and Serbian integer and fractional boundaries", () => {
   const cases = [
     ["en", 1, "1 guide to explore"], ["en", 2, "2 guides to explore"],
     ["de", 1, "1 Leitfaden zum Entdecken"], ["de", 21, "21 Leitfäden zum Entdecken"],
@@ -126,6 +128,13 @@ test("guide counts use each language's plural rules, including Dutch and Serbian
     ["ro", 20, "20 de ghiduri de explorat"], ["ro", 21, "21 de ghiduri de explorat"],
     ["ro", 100, "100 de ghiduri de explorat"], ["ro", 101, "101 ghiduri de explorat"],
     ["ro", 119, "119 ghiduri de explorat"], ["ro", 120, "120 de ghiduri de explorat"],
+    ["cs", 0, "0 průvodců k prozkoumání"], ["cs", 1, "1 průvodce k prozkoumání"],
+    ["cs", 2, "2 průvodci k prozkoumání"], ["cs", 3, "3 průvodci k prozkoumání"],
+    ["cs", 4, "4 průvodci k prozkoumání"], ["cs", 5, "5 průvodců k prozkoumání"],
+    ["cs", 11, "11 průvodců k prozkoumání"], ["cs", 12, "12 průvodců k prozkoumání"],
+    ["cs", 21, "21 průvodců k prozkoumání"], ["cs", 22, "22 průvodců k prozkoumání"],
+    ["cs", 101, "101 průvodců k prozkoumání"], ["cs", 0.5, "0.5 průvodce k prozkoumání"],
+    ["cs", 1.5, "1.5 průvodce k prozkoumání"], ["cs", 2.5, "2.5 průvodce k prozkoumání"],
   ];
   for (const [locale, count, expected] of cases) assert.equal(guideCountLabel(count, undefined, locale), expected);
   assert.equal(guideCountLabel(2, "Getting Started", "en"), "2 guides in getting started");
@@ -145,6 +154,9 @@ test("guide counts use each language's plural rules, including Dutch and Serbian
   assert.equal(guideCountLabel(2, "Eerste stappen", "nl"), "2 gidsen in de categorie ‘Eerste stappen’");
   assert.equal(guideCountLabel(1, "Primii pași", "ro"), "1 ghid din categoria „Primii pași”");
   assert.equal(guideCountLabel(20, "Cunoștințe", "ro"), "20 de ghiduri din categoria „Cunoștințe”");
+  assert.equal(guideCountLabel(1, "Začínáme", "cs"), "1 průvodce v kategorii „Začínáme“");
+  assert.equal(guideCountLabel(2, "Znalosti", "cs"), "2 průvodci v kategorii „Znalosti“");
+  assert.equal(guideCountLabel(5, "Implementace", "cs"), "5 průvodců v kategorii „Implementace“");
 });
 
 test("metadata binds canonical, social preview and alternates to the requested locale", () => {
@@ -167,7 +179,7 @@ test("metadata binds canonical, social preview and alternates to the requested l
 });
 
 test("every registered language has unique social assets and native recovery copy", () => {
-  assert.deepEqual(locales, ["en", "de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro"]);
+  assert.deepEqual(locales, ["en", "de", "pl", "uk", "fr", "be", "it", "es", "sr", "nl", "ro", "cs"]);
   assert.equal(new Set(locales.map(locale => configuration.locales[locale].socialImage)).size, locales.length);
   for (const locale of locales) {
     const settings = configuration.locales[locale];

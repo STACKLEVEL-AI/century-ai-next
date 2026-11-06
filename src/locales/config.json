@@ -463,6 +463,49 @@
         "subtitleY": 480,
         "subtitleSize": 24
       }
+    },
+    "cs": {
+      "label": "Čeština",
+      "accessibleLabel": "Jazyk: čeština",
+      "openGraphLocale": "cs_CZ",
+      "socialImage": "/og/century-ai-cs.png",
+      "imageAlt": "Century — Od nápadu ke každodenní práci. Specifikace, vývoj, řízení a dohled.",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — AI platforma pro firmy",
+        "Century Agents": "Century Agents — AI agenti pro firmy",
+        "Century Systems": "Century Systems — AI systémy a automatizace procesů",
+        "Century AI Gateway": "Century AI Gateway — přístup k AI modelům"
+      },
+      "guideCount": {
+        "one": "průvodce",
+        "few": "průvodci",
+        "many": "průvodce",
+        "other": "průvodců",
+        "category": " v kategorii „{category}“",
+        "explore": " k prozkoumání",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Tato stránka byla přesunuta na",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Stránka nenalezena",
+        "description": "Tato stránka mohla změnit adresu. Prozkoumejte platformu, naše řešení pro jednotlivá odvětví a tým Century.",
+        "homeLabel": "Přejít na českou úvodní stránku"
+      },
+      "socialPreview": {
+        "lines": [
+          "Od nápadu",
+          "ke každodenní práci"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Specifikace · Vývoj · Řízení a dohled",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
     }
   }
 }

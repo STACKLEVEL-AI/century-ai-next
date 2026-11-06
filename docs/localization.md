@@ -1,6 +1,6 @@
 # Website localization
 
-Century has **26 content routes in each of eleven languages: 286 pages**. English retains the original URLs. German, Polish, Ukrainian, French, Belarusian, Italian, Spanish, Serbian, Dutch and Romanian use `/de/`, `/pl/`, `/uk/`, `/fr/`, `/be/`, `/it/`, `/es/`, `/sr/`, `/nl/` and `/ro/`, with identical page structure and stable article and industry slugs. All eleven versions are exported as static HTML.
+Century has **26 content routes in each of twelve languages: 312 pages**. English retains the original URLs. German, Polish, Ukrainian, French, Belarusian, Italian, Spanish, Serbian, Dutch, Romanian and Czech use `/de/`, `/pl/`, `/uk/`, `/fr/`, `/be/`, `/it/`, `/es/`, `/sr/`, `/nl/`, `/ro/` and `/cs/`, with identical page structure and stable article and industry slugs. All twelve versions are exported as static HTML.
 
 The URL selects the language. The native language menu links to the same page in every locale and works without JavaScript. With JavaScript enabled, switching also preserves the query and fragment. No language preference is stored in cookies or browser storage.
 
@@ -22,6 +22,7 @@ Maintain English pages in `src/app/(en)/`, shared components in `src/components/
 | Serbian | `src/locales/sr/` | `src/generated/sr/` | `src/app/(sr)/sr/` | `public/media/sr/` |
 | Dutch | `src/locales/nl/` | `src/generated/nl/` | `src/app/(nl)/nl/` | `public/media/nl/` |
 | Romanian | `src/locales/ro/` | `src/generated/ro/` | `src/app/(ro)/ro/` | `public/media/ro/` |
+| Czech | `src/locales/cs/` | `src/generated/cs/` | `src/app/(cs)/cs/` | `public/media/cs/` |
 
 Generated files are ignored by Git and replaced during generation. Edit maintained sources and catalogs instead. Source discovery excludes every generated locale directory, so translated SVG output can never become the input for another translation. Shared CSS and photographs are reused; locale-specific typography adjustments live in the shared stylesheet.
 
@@ -75,9 +76,15 @@ Use natural professional Romanian under `/ro/`, with the native label **Română
 
 The general suffix is **de explorat**; category counts use **din categoria „{category}”** without lowercasing the category.
 
+### Czech terminology
+
+Use natural professional Czech under `/cs/`, with the native label **Čeština**. Use plural imperatives and lowercase **vy/váš**, and preserve Czech diacritics. Use **AI**, **pracovní postup**, **řízení a dohled**, **odpovědnost** and **kontrola člověkem** for ordinary prose. Keep official product and personal names unchanged. Use **Implementace** for the delivery page and guide category, and **nasazení** for technical installation in an environment. Use **Transformace s AI** and **Odvětví** for navigation.
+
+Guide counts use `Intl.PluralRules("cs")`: **1 průvodce**, **2–4 průvodci**, **0/5/11/21/101 průvodců** and **0.5/1.5/2.5 průvodce**. The general suffix is **k prozkoumání**; category counts use **v kategorii „{category}“**, preserving the category's capitalization. Categories are **Začínáme**, **Znalosti**, **Pracovní postupy** and **Implementace**. Translate complete phrases and use contextual field overrides for industry names and audiences so their grammatical case matches the surrounding sentence. Distinguish insurance claims and policies from customer requests and internal rules.
+
 ### Updating content
 
-1. Edit the English source and update the corresponding messages in all ten locale catalogs.
+1. Edit the English source and update the corresponding messages in all eleven locale catalogs.
 2. For grammar-dependent text, use a complete template or a field override. Add deliberate invariants to the relevant source's keep list.
 3. Run `npm run locales:check`. Resolve missing or stale entries and placeholder errors.
 4. Run `npm run test:i18n`, then build and inspect the export.
@@ -95,7 +102,7 @@ node scripts/i18n/generate.mjs --report
 
 ## Metadata, fonts and recovery
 
-Each language has its own root layout, emitting the correct HTML `lang` before hydration. Small generated metadata wrappers bind the shared helper to their locale. Canonicals, Open Graph and Twitter images, and reciprocal `en`, `de`, `pl`, `uk`, `fr`, `be`, `it`, `es`, `sr`, `nl`, `ro` and `x-default` alternates therefore follow one implementation. The sitemap contains all 286 routes with matching language links. Homepage structured data uses the shared WebSite identity and a locale-specific WebPage.
+Each language has its own root layout, emitting the correct HTML `lang` before hydration. Small generated metadata wrappers bind the shared helper to their locale. Canonicals, Open Graph and Twitter images, and reciprocal `en`, `de`, `pl`, `uk`, `fr`, `be`, `it`, `es`, `sr`, `nl`, `ro`, `cs` and `x-default` alternates therefore follow one implementation. The sitemap contains all 312 routes with matching language links. Homepage structured data uses the shared WebSite identity and a locale-specific WebPage.
 
 | Language | Social preview |
 | --- | --- |
@@ -110,12 +117,13 @@ Each language has its own root layout, emitting the correct HTML `lang` before h
 | Serbian | `/og/century-ai-sr.png` |
 | Dutch | `/og/century-ai-nl.png` |
 | Romanian | `/og/century-ai-ro.png` |
+| Czech | `/og/century-ai-cs.png` |
 
 Inter includes Latin, Latin Extended, Cyrillic and Cyrillic Extended subsets. The supplied Favorit font does not contain Cyrillic glyphs; Ukrainian and Belarusian platform and industry headings explicitly use Inter at the existing light weight. All translated versions share natural wrapping rules. Keep the established page composition, neutral actions, compact footer and original Century photographs.
 
 Application screenshots remain unmodified and are checked against `docs/app-capture-provenance.json`. Their captions, full-size-link labels and alternative text are localized; screenshot pixels are not redrawn or translated.
 
-Legacy `/ai-os/` routes redirect to `/platform/` in all eleven languages, preserving query parameters and fragments. Each redirect also has a native destination link. GitHub Pages serves one global `404.html`; it contains separately marked English, German, Polish, Ukrainian, French, Belarusian, Italian, Spanish, Serbian, Dutch and Romanian sections with native homepage links and no JavaScript dependency. The document has one primary heading and `lang="en"`. Local route-level not-found boundaries are also generated.
+Legacy `/ai-os/` routes redirect to `/platform/` in all twelve languages, preserving query parameters and fragments. Each redirect also has a native destination link. GitHub Pages serves one global `404.html`; it contains separately marked English, German, Polish, Ukrainian, French, Belarusian, Italian, Spanish, Serbian, Dutch, Romanian and Czech sections with native homepage links and no JavaScript dependency. The document has one primary heading and `lang="en"`. Local route-level not-found boundaries are also generated.
 
 ## Local verification
 
@@ -128,7 +136,7 @@ npm run check:export
 npm run test:e2e
 ```
 
-The focused Node tests cover compiler regressions, preservation of code tokens, template handling, catalog preflight, URL switching across every locale pair, query and fragment preservation, asset exclusions, metadata, Polish, Ukrainian and Belarusian plural forms, the French singular for zero and one, Italian, Spanish and Dutch singular/plural forms, Serbian integer and fractional plural boundaries, and Romanian singular, few and **de** plural forms. The export inspector checks every content page, unique metadata within each locale, reciprocal alternates, native language links, local links and fragments, images, screenshot integrity, fixed brand wording, localized diagrams, the sitemap, all eleven legacy redirects and the global 404.
+The focused Node tests cover compiler regressions, preservation of code tokens, template handling, catalog preflight, URL switching across every locale pair, query and fragment preservation, asset exclusions, metadata, Polish, Ukrainian and Belarusian plural forms, the French singular for zero and one, Italian, Spanish and Dutch singular/plural forms, Czech and Serbian integer and fractional plural boundaries, and Romanian singular, few and **de** plural forms. The export inspector checks every content page, unique metadata within each locale, reciprocal alternates, native language links, local links and fragments, images, screenshot integrity, fixed brand wording, localized diagrams, the sitemap, all twelve legacy redirects and the global 404.
 
 Browser suites in `tests/landing.spec.ts`, `tests/german-localization.spec.ts` and `tests/localization.spec.ts` cover navigation, guide filters, keyboard-controlled tabs, language switching, pages without JavaScript and narrow layouts. Run these only in a permitted local browser environment.
 
