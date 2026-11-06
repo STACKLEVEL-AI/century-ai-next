@@ -31,7 +31,7 @@
   letter-spacing: -.06em;
   text-wrap: balance;
 }
-.page .heroContent p { max-width: 620px; margin: 28px auto 0; color: #fff; font-size: 19px; line-height: 1.45; letter-spacing: -.015em; text-wrap: pretty; }
+.page .heroContent p { max-width: 440px; margin: 28px auto 0; color: #fff; font-size: 19px; line-height: 1.45; letter-spacing: -.015em; text-wrap: pretty; }
 .shell { width: min(100%, 1280px); margin-inline: auto; }
 .narrowShell { width: min(100%, 1030px); margin-inline: auto; }
 .page .teamSection, .page .ownershipSection, .page .environmentsSection { padding: 96px 60px; scroll-margin-top: 80px; }
