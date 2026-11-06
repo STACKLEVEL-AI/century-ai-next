@@ -39,18 +39,18 @@
     "Access permissions": "Uprawnienia dostępu",
     "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Uprawnienia dostępu, zatwierdzone źródła i zatwierdzanie przez człowieka łączą się w kontrolowany przepływ pracy z wyznaczoną osobą odpowiedzialną.",
     "Approved sources": "Zatwierdzone źródła",
-    "Clear boundaries, accountable decisions": "Jasne granice, odpowiedzialne decyzje",
+    "Clear boundaries, accountable decisions": "Jasne granice, odpowiedzialność za decyzje",
     "Control by design": "Kontrola od etapu projektu",
     "CONTROL BY DESIGN": "KONTROLA OD ETAPU PROJEKTU",
     "Controlled workflow": "Przepływ pod kontrolą",
     "Human approval": "Zatwierdza człowiek",
-    "Traceable work, with a named owner": "Rejestr działań, wskazana osoba"
+    "Traceable work, with a named owner": "Ślad działań i wskazana osoba odpowiedzialna"
   },
   "public/media/century/diagrams/industry-platform.svg": {
     "Approved sources": "Zatwierdzone źródła",
     "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century łączy zatwierdzone źródła, przepływy pracy i istniejące systemy z ludźmi, kontrolowanymi działaniami i przydatnymi wynikami.",
     "CONNECTED WORK": "ZINTEGROWANA PRACA",
-    "Controlled actions": "Kontrola działań",
+    "Controlled actions": "Kontrolowane działania",
     "Existing systems": "Obecne systemy",
     "Knowledge · Workflows · People": "Wiedza · Przepływy pracy · Ludzie",
     "One connected workspace": "Jedno zintegrowane środowisko pracy",
