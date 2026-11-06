@@ -260,7 +260,7 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
-    for (const name of ["Agree the environment and the work", "Connect, test and accept the workflow", "Equip the team that will keep it working"]) {
+    for (const name of ["Define what the workflow must do", "Measure the result on real work", "Train the people who will keep it working"]) {
       await expect(page.getByRole("heading", { name, exact: true })).toBeVisible();
     }
     await page.goto("/ai-gateway/");
