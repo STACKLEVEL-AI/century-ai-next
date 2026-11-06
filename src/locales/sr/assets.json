@@ -1,0 +1,109 @@
+{
+  "public/media/century/diagrams/industry-deployment.svg": {
+    "A useful workflow, built together": "Koristan radni tok, izgrađen zajedno",
+    "Agree the boundaries": "Dogovorite granice",
+    "Build": "Razvoj",
+    "Build the workflow": "Izgradite radni tok",
+    "Connect the pieces": "Povežite delove",
+    "Define the work": "Definišite posao",
+    "Delivery with ownership": "Realizacija uz jasnu odgovornost",
+    "DELIVERY WITH OWNERSHIP": "REALIZACIJA UZ JASNU ODGOVORNOST",
+    "Four connected stages move from scoping a useful workflow through building, validation and handover to the team.": "Četiri povezane faze vode od definisanja obima korisnog radnog toka, preko razvoja i provere, do predaje timu.",
+    "Handover": "Predaja timu",
+    "Learn from each step, improve the next": "Učite iz svakog koraka, unapredite sledeći",
+    "Make ownership clear": "Jasno odredite odgovornosti",
+    "Refine with the team": "Unapređujte sa timom",
+    "Review the result": "Proverite rezultat",
+    "Scope": "Obim",
+    "Support daily use": "Podržite svakodnevnu upotrebu",
+    "Validate": "Provera"
+  },
+  "public/media/century/diagrams/industry-frontier.svg": {
+    "A clear scope": "Jasan obim",
+    "A defined task flows through an AI response to human review. Source quality, accuracy and scope provide three checks.": "Definisani zadatak prolazi kroz AI odgovor do ljudske provere. Kvalitet izvora, tačnost i obim predstavljaju tri tačke provere.",
+    "Accuracy": "Tačnost",
+    "AI response": "AI odgovor",
+    "AI with a review path": "AI sa postupkom provere",
+    "Approved knowledge": "Odobreno znanje",
+    "Check the result": "Proverite rezultat",
+    "Decide the next step": "Odlučite o sledećem koraku",
+    "Defined task": "Definisan zadatak",
+    "EVALUATE BEFORE EXPANDING": "PROCENITE PRE PROŠIRENJA",
+    "Evidence included": "Priloženi dokazi",
+    "Human review": "Ljudska provera",
+    "Limitations visible": "Vidljiva ograničenja",
+    "Scope": "Obim",
+    "Source quality": "Kvalitet izvora"
+  },
+  "public/media/century/diagrams/industry-governance.svg": {
+    "Access permissions": "Dozvole za pristup",
+    "Access permissions, approved sources and human approval connect to a controlled workflow with a named owner.": "Dozvole za pristup, odobreni izvori i ljudsko odobrenje povezani su sa kontrolisanim radnim tokom i imenovanom odgovornom osobom.",
+    "Approved sources": "Odobreni izvori",
+    "Clear boundaries, accountable decisions": "Jasne granice, odgovorne odluke",
+    "Control by design": "Kontrola od samog početka",
+    "CONTROL BY DESIGN": "KONTROLA OD SAMOG POČETKA",
+    "Controlled workflow": "Kontrolisan radni tok",
+    "Human approval": "Ljudsko odobrenje",
+    "Traceable work, with a named owner": "Sledljiv rad sa imenovanom odgovornom osobom"
+  },
+  "public/media/century/diagrams/industry-platform.svg": {
+    "Approved sources": "Odobreni izvori",
+    "Century connects approved sources, workflows and existing systems with people, controlled actions and useful outcomes.": "Century povezuje odobrene izvore, radne tokove i postojeće sisteme sa ljudima, kontrolisanim radnjama i korisnim rezultatima.",
+    "CONNECTED WORK": "POVEZAN RAD",
+    "Controlled actions": "Kontrolisane radnje",
+    "Existing systems": "Postojeći sistemi",
+    "Knowledge · Workflows · People": "Znanje · Radni tokovi · Ljudi",
+    "One connected workspace": "Jedan povezan radni prostor",
+    "One place to bring work together": "Jedno mesto za objedinjavanje rada",
+    "People & review": "Ljudi i provera",
+    "Useful outcomes": "Korisni rezultati",
+    "Your workflows": "Vaši radni tokovi"
+  },
+  "public/media/century/diagrams/platform-data.svg": {
+    "Defined data paths": "Definisane putanje podataka",
+    "Three information sources pass through a bounded processing layer before reaching approved destinations.": "Tri izvora informacija prolaze kroz ograničeni sloj obrade pre nego što stignu do odobrenih odredišta."
+  },
+  "public/media/century/diagrams/platform-security.svg": {
+    "Access boundaries and review": "Granice pristupa i provera",
+    "People and systems enter a defined boundary through reviewed access points, represented by a central shield and an audit trail.": "Ljudi i sistemi ulaze u definisano okruženje kroz proverene pristupne tačke, prikazane centralnim štitom i revizionim tragom."
+  },
+  "public/media/industries/airlines/platform.svg": {
+    "Case management": "Upravljanje predmetima",
+    "Century Airlines platform": "Century platforma za avio-kompanije",
+    "Century connects Passengers, Service teams, Claims with Journey records, Service policies, Case management.": "Century povezuje putnike, timove korisničke službe i zahteve za naknadu sa evidencijom putovanja, pravilima usluge i upravljanjem predmetima.",
+    "Claims": "Zahtevi za naknadu",
+    "Journey records": "Evidencija putovanja",
+    "Passengers": "Putnici",
+    "Service policies": "Pravila usluge",
+    "Service teams": "Timovi korisničke službe"
+  },
+  "public/media/industries/healthcare/platform.svg": {
+    "Administration": "Administracija",
+    "Care teams": "Zdravstveni timovi",
+    "Century connects Care teams, Administration, Internal services with Clinical records, Scheduling, Finance.": "Century povezuje zdravstvene timove, administraciju i interne službe sa medicinskom dokumentacijom, zakazivanjem i finansijama.",
+    "Century Healthcare platform": "Century platforma za zdravstvo",
+    "Clinical records": "Medicinska dokumentacija",
+    "Finance": "Finansije",
+    "Internal services": "Interne službe",
+    "Scheduling": "Zakazivanje"
+  },
+  "public/media/industries/utilities/platform.svg": {
+    "Billing": "Obračun",
+    "Billing records": "Evidencija obračuna",
+    "Case management": "Upravljanje predmetima",
+    "Century connects Service, Field teams, Billing with Case management, Knowledge base, Billing records.": "Century povezuje korisničku službu, terenske timove i obračun sa upravljanjem predmetima, bazom znanja i evidencijom obračuna.",
+    "Century Utilities platform": "Century platforma za komunalne delatnosti",
+    "Field teams": "Terenski timovi",
+    "Knowledge base": "Baza znanja",
+    "Service": "Korisnička služba"
+  },
+  "public/media/insurance/platform.svg": {
+    "Century insurance platform": "Century platforma za osiguranje",
+    "Core systems": "Osnovni sistemi",
+    "Health": "Zdravstveno osiguranje",
+    "Life": "Životno osiguranje",
+    "P&C": "Imovina i odgovornost",
+    "Policy systems": "Sistemi za polise",
+    "Property, life and health workflows connected to Century, policy systems, CRM and core systems.": "Radni tokovi za imovinsko, životno i zdravstveno osiguranje povezani sa platformom Century, sistemima za polise, CRM-om i osnovnim sistemima."
+  }
+}

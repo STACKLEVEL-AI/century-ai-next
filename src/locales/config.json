@@ -333,6 +333,49 @@
         "subtitleY": 470,
         "subtitleSize": 24
       }
+    },
+    "sr": {
+      "label": "Srpski",
+      "accessibleLabel": "Jezik: srpski",
+      "openGraphLocale": "sr_RS",
+      "socialImage": "/og/century-ai-sr.png",
+      "imageAlt": "Century — Od ideje do svakodnevnog rada. Specifikacija, razvoj te upravljanje i nadzor.",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — AI platforma za preduzeća",
+        "Century Agents": "Century Agents — AI agenti za preduzeća",
+        "Century Systems": "Century Systems — AI sistemi i automatizacija procesa",
+        "Century AI Gateway": "Century AI Gateway — pristup AI modelima"
+      },
+      "guideCount": {
+        "one": "vodič",
+        "few": "vodiča",
+        "many": "vodiča",
+        "other": "vodiča",
+        "category": " u kategoriji „{category}”",
+        "explore": " za istraživanje",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Ova stranica je premeštena na",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Stranica nije pronađena",
+        "description": "Ova stranica je možda premeštena. Istražite platformu, naša rešenja za različite delatnosti i tim kompanije Century.",
+        "homeLabel": "Idite na početnu stranicu na srpskom"
+      },
+      "socialPreview": {
+        "lines": [
+          "Od ideje",
+          "do svakodnevnog rada"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Specifikacija · Razvoj · Upravljanje i nadzor",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
     }
   }
 }
