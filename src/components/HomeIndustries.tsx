@@ -104,7 +104,7 @@ export default function HomeIndustries() {
             <h3>{active.headline}</h3>
             <p className={styles.description}>{active.description}</p>
             <a className={styles.cta} href={industryLinks[selected].href}>
-              Explore {active.title.toLowerCase()}<ArrowUpRight size={18} aria-hidden="true" />
+              {`Explore ${active.title.toLowerCase()}`}<ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </div>
         </div>

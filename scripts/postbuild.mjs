@@ -1,22 +1,22 @@
-import { copyFile, mkdir, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 
+const configuration = JSON.parse(await readFile(new URL("../src/locales/config.json", import.meta.url), "utf8"));
+const escape = value => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 await copyFile("CNAME", "out/CNAME");
 await writeFile("out/.nojekyll", "");
 
-// Static compatibility documents preserve old platform URLs in every language,
-// including their query parameters and section anchors.
-for (const locale of ["en", "de", "pl"]) {
-  const prefix = locale === "en" ? "" : `/${locale}`;
+// Native fallback links and script redirects preserve old platform URLs.
+for (const [locale, settings] of Object.entries(configuration.locales)) {
+  const prefix = locale === configuration.defaultLocale ? "" : `/${locale}`;
   const target = `${prefix}/platform/`;
-  const title = locale === "pl" ? "Century AI Platform — platforma AI dla firm | Century" : "Century AI Platform | Century";
-  const message = { en: "This page has moved to", de: "Diese Seite wurde verschoben:", pl: "Ta strona została przeniesiona do" }[locale];
+  const title = `${settings.productTitles["Century AI Platform"] ?? "Century AI Platform"} | Century`;
   await mkdir(`out${prefix}/ai-os`, { recursive: true });
   await writeFile(`out${prefix}/ai-os/index.html`, `<!doctype html>
 <html lang="${locale}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${title}</title>
+  <title>${escape(title)}</title>
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://century-ai.eu${target}">
   <script>window.location.replace(${JSON.stringify(target)} + window.location.search + window.location.hash);</script>
@@ -25,10 +25,10 @@ for (const locale of ["en", "de", "pl"]) {
 <body>
   <main>
     <h1>Century AI Platform</h1>
-    <p>${message} <a href="${target}">${locale === "pl" ? "platformy AI" : "AI Platform"}</a>.</p>
+    <p>${escape(settings.redirect.message)} <a href="${target}">${escape(settings.redirect.linkLabel)}</a>.</p>
   </main>
 </body>
 </html>
 `);
 }
-console.log("Independent EU export packaged in out/ with English, German and Polish compatibility redirects");
+console.log(`Independent EU export packaged in out/ with ${Object.keys(configuration.locales).join(", ")} compatibility redirects`);

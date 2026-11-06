@@ -1,7 +1,0 @@
-{
-  "components/Header.tsx": { "Get in touch": "Kontakt" },
-  "components/platform/DeploymentJourney.tsx": { "Scope": "Umfang festlegen" },
-  "components/platform/OperatingLayerRelated.tsx": { "Agents": "Agents" },
-  "components/HomeIndustries.tsx": { "Explore": "Mehr erfahren:" },
-  "components/industries/IndustryDirectory.tsx": { "Explore": "Mehr erfahren:" }
-}

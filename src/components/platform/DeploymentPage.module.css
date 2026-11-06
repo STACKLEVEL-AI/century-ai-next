@@ -1,7 +1,7 @@
 .page {
   color: #171719;
   background: #fff;
-  font-family: "Century Platform", var(--font-heading), sans-serif;
+  font-family: var(--font-localized-heading, "Century Platform"), var(--font-heading), sans-serif;
   font-weight: 300;
 }
 

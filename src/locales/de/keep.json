@@ -1,0 +1,156 @@
+{
+  "public/media/century/diagrams/industry-platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/airlines/platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/healthcare/platform.svg": [
+    "Century"
+  ],
+  "public/media/industries/utilities/platform.svg": [
+    "Century",
+    "Service"
+  ],
+  "public/media/insurance/platform.svg": [
+    "CRM",
+    "Century"
+  ],
+  "src/app/(en)/about-us/page.tsx": [
+    "Governance",
+    "Innovation"
+  ],
+  "src/app/(en)/agents/page.tsx": [
+    "Century Agents"
+  ],
+  "src/app/(en)/ai-gateway/page.tsx": [
+    "AI Gateway",
+    "Century",
+    "Century AI Gateway"
+  ],
+  "src/app/(en)/ai-transformation/page.tsx": [
+    "AI Platform",
+    "Chat",
+    "RPA"
+  ],
+  "src/app/(en)/contact/page.tsx": [
+    "Vitali Bakhmat"
+  ],
+  "src/app/(en)/platform/page.tsx": [
+    "AI Platform",
+    "Century",
+    "Century AI Platform",
+    "Workflows"
+  ],
+  "src/app/(en)/security/page.tsx": [
+    "Workflows"
+  ],
+  "src/app/(en)/systems/page.tsx": [
+    "Century Systems"
+  ],
+  "src/components/company/CompanyElements.tsx": [
+    "Egor Krychev",
+    "LinkedIn",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat",
+    "vadimohka.com"
+  ],
+  "src/components/company/GuideLibrary.tsx": [
+    "Workflows"
+  ],
+  "src/components/Footer.tsx": [
+    "Blog",
+    "Century"
+  ],
+  "src/components/Founders.tsx": [
+    "Egor Krychev",
+    "LinkedIn",
+    "Telegram",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat",
+    "vadimohka.com"
+  ],
+  "src/components/Header.tsx": [
+    "Blog",
+    "Century"
+  ],
+  "src/components/Hero.tsx": [
+    "Governance"
+  ],
+  "src/components/HomeProductFamily.tsx": [
+    "AI Gateway",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/components/HomeTeam.tsx": [
+    "CAIO",
+    "CEO",
+    "CTO",
+    "Egor Krychev",
+    "Vadim Vladymtsev",
+    "Vitali Bakhmat"
+  ],
+  "src/components/industries/IndustryReferencePage.tsx": [
+    "Blog",
+    "Century",
+    "Telegram"
+  ],
+  "src/components/Platform.tsx": [
+    "Century AI Platform"
+  ],
+  "src/components/platform/AgentsExperience.tsx": [
+    "APIs",
+    "Audio",
+    "Century AI Gateway",
+    "Century AI Platform",
+    "Century Agents",
+    "Century Systems",
+    "Chat",
+    "MCP",
+    "Workflow"
+  ],
+  "src/components/platform/GatewayIllustrations.tsx": [
+    "AI Gateway",
+    "Tokens",
+    "Workflow"
+  ],
+  "src/components/platform/GatewayWorkspace.tsx": [
+    "Century"
+  ],
+  "src/components/platform/OperatingLayerRelated.tsx": [
+    "Century"
+  ],
+  "src/components/platform/SystemsExperience.tsx": [
+    "Century",
+    "Century AI Gateway",
+    "Century AI Platform",
+    "Century Agents",
+    "Century Systems",
+    "Governance"
+  ],
+  "src/components/products/DeploymentPhases.tsx": [
+    "Phase 0"
+  ],
+  "src/components/products/InfrastructureExplorer.tsx": [
+    "Workflows"
+  ],
+  "src/lib/articles.ts": [
+    "Workflows"
+  ],
+  "src/lib/header-navigation.ts": [
+    "AI Platform",
+    "Century AI Gateway",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/lib/navigation.ts": [
+    "AI Gateway",
+    "AI Platform",
+    "Century Agents",
+    "Century Systems"
+  ],
+  "src/lib/site.ts": [
+    "Century",
+    "Vitali Bakhmat"
+  ]
+}

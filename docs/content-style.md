@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English on the original routes, fluent formal German on `/de/` routes and natural Polish on `/pl/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Address Polish readers directly and keep forms such as **Twój** consistent with the existing copy. Preserve official Century product names in every language. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
+Use clear English on the original routes, fluent formal German on `/de/` routes, natural Polish on `/pl/` routes and idiomatic Ukrainian on `/uk/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Address Polish readers directly and keep forms such as **Twój** consistent with the existing copy. Use **ШІ** for generic artificial intelligence in Ukrainian, with consistent direct address. Preserve official Century product names in every language. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
 
 ## Display copy
 
@@ -12,7 +12,7 @@ Article prose, editorial paragraphs, legal explanations and FAQ answers retain o
 
 Update display text at its source, including labels inside SVG diagrams.
 
-English copy and structure are maintained in the source components. German copy is maintained in `src/locales/de/` and Polish copy in `translations/pl/`. The build generates both translated route and component trees, diagrams and social images. Keep German nouns capitalized in dynamic labels. Use the required Polish grammatical case for industry names and the shared plural-rules helper for guide counts. Translate complete messages where possible; check the surrounding sentence when a template contains fragments. Run `npm run locales:check` after a content edit and update both catalogs; do not add untranslated fallback text to pass the check. See [Localization](localization.md) for contextual overrides and generated paths.
+English copy and structure are maintained in the source components. German, Polish and Ukrainian use the same `messages.json`, `assets.json` and `keep.json` format under `src/locales/{de,pl,uk}/`. The shared compiler generates translated routes, components and SVG diagrams. Keep German nouns capitalized and use the required Polish and Ukrainian grammatical cases for industry names. Translate full dynamic sentences with numbered placeholders rather than joining translated fragments; use field overrides where a name needs different forms. The shared guide-count helper uses each language's plural rules. Run `npm run locales:check` after content edits and update all three catalogs. Do not add untranslated fallback copy or broad keep lists to bypass validation. See [Localization](localization.md) for exact formats and generated paths.
 
 ## Names and links
 

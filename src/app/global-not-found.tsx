@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
 import Document from "@/components/Document";
+import { defaultLocale, locales, localeSettings, localizedPath } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Page not found / Seite nicht gefunden / Nie znaleziono strony | Century",
+  title: `${locales.map(locale => localeSettings[locale].notFound.title).join(" / ")} | Century`,
   robots: { index: false, follow: true },
 };
 
-// GitHub Pages serves one 404 document for unknown paths in every language.
+// GitHub Pages serves one 404 document; every language works without JavaScript.
 export default function GlobalNotFound() {
-  return <Document locale="en">
+  return <Document locale={defaultLocale}>
     <main className="bilingual-error" id="main-content">
       <a className="error-brand" href="/" aria-label="Century home"><img src="/brand/century-logo.svg" width="221" height="58" alt="Century" /></a>
-      <section lang="en" aria-labelledby="error-en">
-        <p className="eyebrow">404</p>
-        <h1 id="error-en">Page not found</h1>
-        <p>This page may have moved. Explore the platform, our industry solutions and the people behind Century.</p>
-        <a className="btn btn-primary" href="/" hrefLang="en" lang="en">Go to the English homepage</a>
-      </section>
-      <section lang="de" aria-labelledby="error-de">
-        <h2 id="error-de">Seite nicht gefunden</h2>
-        <p>Diese Seite wurde möglicherweise verschoben. Entdecken Sie die Plattform, unsere Branchenlösungen und das Team hinter Century.</p>
-        <a className="btn btn-outline" href="/de/" hrefLang="de" lang="de">Zur deutschen Startseite</a>
-      </section>
-      <section lang="pl" aria-labelledby="error-pl">
-        <h2 id="error-pl">Nie znaleziono strony</h2>
-        <p>Strona mogła zmienić adres. Poznaj platformę, rozwiązania dla branż i zespół Century.</p>
-        <a className="btn btn-outline" href="/pl/" hrefLang="pl" lang="pl">Wróć do polskiej strony głównej</a>
-      </section>
+      {locales.map(locale => {
+        const copy = localeSettings[locale].notFound;
+        const isDefault = locale === defaultLocale;
+        return <section key={locale} lang={locale} aria-labelledby={`error-${locale}`}>
+          {isDefault && <p className="eyebrow">404</p>}
+          {isDefault ? <h1 id={`error-${locale}`}>{copy.title}</h1> : <h2 id={`error-${locale}`}>{copy.title}</h2>}
+          <p>{copy.description}</p>
+          <a className={isDefault ? "btn btn-primary" : "btn btn-outline"} href={localizedPath("/", locale)} hrefLang={locale} lang={locale}>{copy.homeLabel}</a>
+        </section>;
+      })}
     </main>
   </Document>;
 }

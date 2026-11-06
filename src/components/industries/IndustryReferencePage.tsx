@@ -66,7 +66,7 @@ export default function IndustryReferencePage({ slug, data }: { slug: IndustrySl
     <section className={styles.benefits} aria-labelledby={`${slug}-benefits-title`}>
       <div className={styles.benefitBackground} aria-hidden="true" />
       <div className={styles.container}>
-        <h2 id={`${slug}-benefits-title`}>Transform your {data.operationLabel} operations with AI</h2>
+        <h2 id={`${slug}-benefits-title`}>{`Transform your ${data.operationLabel} operations with AI`}</h2>
         <div className={styles.benefitGrid}>
           {data.benefits.map(({ title, description, icon }, index) => {
             const Icon = icon ? benefitIcons[icon] : defaultBenefitIcons[index % defaultBenefitIcons.length];
@@ -93,7 +93,7 @@ export default function IndustryReferencePage({ slug, data }: { slug: IndustrySl
 
     <section className={styles.why} aria-labelledby={`${slug}-why-title`}>
       <div className={styles.whyHeading}>
-        <h2 id={`${slug}-why-title`}>Why {data.audience} choose Century</h2>
+        <h2 id={`${slug}-why-title`}>{`Why ${data.audience} choose Century`}</h2>
         <p>{data.whyIntro}</p>
       </div>
       <div className={styles.reasonList}>
@@ -107,6 +107,6 @@ export default function IndustryReferencePage({ slug, data }: { slug: IndustrySl
       </div>
     </section>
 
-    <IndustryContact id={`${slug}-contact-title`}>Build your next chapter in {data.ctaLabel ?? data.operationLabel} with Century</IndustryContact>
+    <IndustryContact id={`${slug}-contact-title`}>{`Build your next chapter in ${data.ctaLabel ?? data.operationLabel} with Century`}</IndustryContact>
   </IndustryPageFrame>;
 }

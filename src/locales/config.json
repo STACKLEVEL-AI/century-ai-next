@@ -1,0 +1,164 @@
+{
+  "defaultLocale": "en",
+  "locales": {
+    "en": {
+      "label": "English",
+      "accessibleLabel": "Language: English",
+      "openGraphLocale": "en_GB",
+      "socialImage": "/og/century-ai-eu.png",
+      "imageAlt": "Century — Accelerate AI transformation across your business.",
+      "productTitles": {},
+      "guideCount": {
+        "one": "guide",
+        "few": "guides",
+        "many": "guides",
+        "other": "guides",
+        "category": " in {category}",
+        "explore": " to explore",
+        "lowercaseCategory": true
+      },
+      "redirect": {
+        "message": "This page has moved to",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Page not found",
+        "description": "This page may have moved. Explore the platform, our industry solutions and the people behind Century.",
+        "homeLabel": "Go to the English homepage"
+      },
+      "socialPreview": {
+        "lines": [
+          "Accelerate",
+          "AI transformation",
+          "across your business."
+        ],
+        "firstLine": 245,
+        "lineGap": 83,
+        "tracking": -3,
+        "subtitle": "Your knowledge. Your systems. Your next chapter.",
+        "subtitleY": 480,
+        "subtitleSize": 22
+      }
+    },
+    "de": {
+      "label": "Deutsch",
+      "accessibleLabel": "Sprache: Deutsch",
+      "openGraphLocale": "de_DE",
+      "socialImage": "/og/century-ai-eu-de.png",
+      "imageAlt": "Century – Beschleunigen Sie die KI-Transformation in Ihrem Unternehmen.",
+      "productTitles": {},
+      "guideCount": {
+        "one": "Leitfaden",
+        "few": "Leitfäden",
+        "many": "Leitfäden",
+        "other": "Leitfäden",
+        "category": " in der Kategorie {category}",
+        "explore": " zum Entdecken",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Diese Seite wurde verschoben:",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Seite nicht gefunden",
+        "description": "Diese Seite wurde möglicherweise verschoben. Entdecken Sie die Plattform, unsere Branchenlösungen und das Team hinter Century.",
+        "homeLabel": "Zur deutschen Startseite"
+      },
+      "socialPreview": {
+        "lines": [
+          "Von der Idee",
+          "in den Arbeitsalltag"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Spezifikation · Entwicklung · Governance",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
+    },
+    "pl": {
+      "label": "Polski",
+      "accessibleLabel": "Język: polski",
+      "openGraphLocale": "pl_PL",
+      "socialImage": "/og/century-ai-pl.png",
+      "imageAlt": "Century — Przyspiesz transformację AI w swojej firmie",
+      "productTitles": {
+        "Century AI Platform": "Century AI Platform — platforma AI dla firm",
+        "Century Agents": "Century Agents — agenci AI dla firm",
+        "Century Systems": "Century Systems — systemy AI i automatyzacja procesów",
+        "Century AI Gateway": "Century AI Gateway — dostęp do modeli AI"
+      },
+      "guideCount": {
+        "one": "poradnik",
+        "few": "poradniki",
+        "many": "poradników",
+        "other": "poradnika",
+        "category": " w kategorii „{category}”",
+        "explore": " do odkrycia",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Ta strona została przeniesiona do",
+        "linkLabel": "platformy AI"
+      },
+      "notFound": {
+        "title": "Nie znaleziono strony",
+        "description": "Strona mogła zmienić adres. Poznaj platformę, rozwiązania dla branż i zespół Century.",
+        "homeLabel": "Wróć do polskiej strony głównej"
+      },
+      "socialPreview": {
+        "lines": [
+          "Przyspiesz",
+          "transformację AI",
+          "w swojej firmie"
+        ],
+        "firstLine": 245,
+        "lineGap": 83,
+        "tracking": -3,
+        "subtitle": "Twoja wiedza. Twoje systemy. Twój nowy rozdział.",
+        "subtitleY": 480,
+        "subtitleSize": 22
+      }
+    },
+    "uk": {
+      "label": "Українська",
+      "accessibleLabel": "Мова: українська",
+      "openGraphLocale": "uk_UA",
+      "socialImage": "/og/century-ai-uk.png",
+      "imageAlt": "Century — Прискорюйте впровадження ШІ у своїй організації",
+      "productTitles": {},
+      "guideCount": {
+        "one": "посібник",
+        "few": "посібники",
+        "many": "посібників",
+        "other": "посібника",
+        "category": " у категорії «{category}»",
+        "explore": " для ознайомлення",
+        "lowercaseCategory": false
+      },
+      "redirect": {
+        "message": "Цю сторінку переміщено:",
+        "linkLabel": "AI Platform"
+      },
+      "notFound": {
+        "title": "Сторінку не знайдено",
+        "description": "Можливо, ця сторінка змінила адресу. Дізнайтеся про платформу, галузеві рішення та команду Century.",
+        "homeLabel": "На головну сторінку українською"
+      },
+      "socialPreview": {
+        "lines": [
+          "Від ідеї",
+          "до щоденної роботи"
+        ],
+        "firstLine": 277,
+        "lineGap": 91,
+        "tracking": -2,
+        "subtitle": "Специфікація · Розробка · Управління",
+        "subtitleY": 470,
+        "subtitleSize": 24
+      }
+    }
+  }
+}

@@ -33,15 +33,19 @@ next-env.d.ts
 playwright-report/
 test-results/
 
-# Static Polish output is generated from source + translations before dev/build.
-src/localized/
-src/app/(pl)/pl/
-public/media/pl/
-public/og/century-ai-pl.png
-.localizations/
-
-# Static German output is generated from the maintained English sources.
+# All translations are generated from shared sources and reviewed catalogs.
 src/generated/
 src/app/(de)/
+src/app/(pl)/
+src/app/(uk)/
 public/media/de/
+public/media/pl/
+public/media/uk/
 public/og/century-ai-eu-de.png
+public/og/century-ai-pl.png
+public/og/century-ai-uk.png
+.localizations/
+
+# Legacy generated paths are removed by the unified compiler.
+src/localized/
+public/uk/

@@ -1,5 +1,6 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import { SITE_ROUTES } from "../src/lib/routes";
+import localeRegistry from "../src/locales/config.json";
 
 const ORIGIN = "http://127.0.0.1:4173";
 const TELEGRAM = "https://t.me/vitalibakhmat";
@@ -98,7 +99,7 @@ async function expectNoHorizontalOverflow(page: Page) {
 
 // Optional local regression checks after a production export. Deployment CI does
 // not invoke Playwright. Keep these focused on navigation and public behavior.
-test("English pages have reciprocal SEO and a non-indexable trilingual 404", async ({ page }) => {
+test("English pages have reciprocal SEO and a non-indexable multilingual 404", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
@@ -106,8 +107,9 @@ test("English pages have reciprocal SEO and a non-indexable trilingual 404", asy
   await expect(page).toHaveTitle("Century | Innovation Management for Enterprise AI");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/");
-  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
-  for (const [language, prefix] of [["en", ""], ["de", "/de"], ["pl", "/pl"], ["x-default", ""]]) {
+  const languages = Object.keys(localeRegistry.locales);
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(languages.length + 1);
+  for (const [language, prefix] of [...languages.map(language => [language, language === localeRegistry.defaultLocale ? "" : `/${language}`]), ["x-default", ""]]) {
     await expect(page.locator(`link[rel="alternate"][hreflang="${language}"]`)).toHaveAttribute("href", `https://century-ai.eu${prefix}/`);
   }
   const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())["@graph"];
@@ -115,7 +117,7 @@ test("English pages have reciprocal SEO and a non-indexable trilingual 404", asy
   for (const node of graph) {
     expect(node.url).toBe("https://century-ai.eu/");
     expect(node["@id"]).toMatch(/^https:\/\/century-ai\.eu\/#/);
-    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? ["en", "de", "pl"] : "en");
+    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? languages : "en");
   }
   // This checks rendered text, not text embedded in screenshot pixels.
   expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
@@ -129,13 +131,10 @@ test("English pages have reciprocal SEO and a non-indexable trilingual 404", asy
   await page.goto("/404.html");
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Page not found");
-  for (const [language, heading, home] of [
-    ["en", "Page not found", "/"],
-    ["de", "Seite nicht gefunden", "/de/"],
-    ["pl", "Nie znaleziono strony", "/pl/"],
-  ]) {
+  for (const [language, settings] of Object.entries(localeRegistry.locales)) {
+    const home = language === localeRegistry.defaultLocale ? "/" : `/${language}/`;
     const section = page.locator(`section[lang="${language}"]`);
-    await expect(section.getByRole("heading", { name: heading, exact: true })).toBeVisible();
+    await expect(section.getByRole("heading", { name: settings.notFound.title, exact: true })).toBeVisible();
     await expect(section.locator(`a[hreflang="${language}"]`)).toHaveAttribute("href", home);
   }
   const robots = await page.locator('meta[name="robots"]').evaluateAll((nodes) =>

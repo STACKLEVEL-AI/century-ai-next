@@ -1,10 +1,11 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import { SITE_ROUTES } from "../src/lib/routes";
+import localeRegistry from "../src/locales/config.json";
 
 const ORIGIN = "http://127.0.0.1:4173";
 
 function languageMenu(page: Page, locale: "en" | "de") {
-  const label = locale === "de" ? "Sprache: Deutsch" : "Language: English";
+  const label = localeRegistry.locales[locale].accessibleLabel;
   return page.locator("[data-site-header] details").filter({
     has: page.locator(`:scope > summary[aria-label="${label}"]`),
   });
@@ -170,11 +171,13 @@ test("German content and language links are present in the export without JavaSc
     await expect(page.locator(".co-reading-body")).toContainText("Ein sinnvolles erstes KI-Projekt beginnt mit einer konkreten Aufgabe.");
     await expect(page.getByRole("navigation", { name: "Inhalt des Leitfadens", exact: true })).toBeVisible();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://century-ai.eu/de${article}`);
-    await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
-    for (const [language, prefix] of [["en", ""], ["de", "/de"], ["pl", "/pl"], ["x-default", ""]]) {
+    const languages = Object.keys(localeRegistry.locales);
+    await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(languages.length + 1);
+    for (const [language, prefix] of [...languages.map(language => [language, language === localeRegistry.defaultLocale ? "" : `/${language}`]), ["x-default", ""]]) {
       await expect(page.locator(`link[rel="alternate"][hreflang="${language}"]`)).toHaveAttribute("href", `https://century-ai.eu${prefix}${article}`);
     }
     await expect(page.locator('[data-language-switch="pl"]')).toHaveAttribute("href", `/pl${article}`);
+    await expect(page.locator('[data-language-switch="uk"]')).toHaveAttribute("href", `/uk${article}`);
     const language = languageMenu(page, "de");
     await language.locator(":scope > summary").click();
     await language.getByRole("link", { name: "English", exact: true }).click();

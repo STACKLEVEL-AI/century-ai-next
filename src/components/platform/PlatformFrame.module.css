@@ -7,8 +7,8 @@
 }
 
 .page {
-  --font-heading: "Century Platform", Arial, sans-serif;
-  --platform-heading: "Century Platform", Arial, sans-serif;
+  --font-heading: var(--font-localized-heading, "Century Platform"), Arial, sans-serif;
+  --platform-heading: var(--font-localized-heading, "Century Platform"), Arial, sans-serif;
   --platform-ink: #171719;
   --platform-muted: #66686a;
   --platform-gutter: 60px;

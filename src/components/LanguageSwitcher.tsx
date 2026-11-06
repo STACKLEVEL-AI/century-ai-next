@@ -2,23 +2,17 @@
 
 import { Check } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { locales, localeForPath, localizedPath, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales, localeSettings, localeForPath, localizedPath, type Locale } from "@/lib/i18n";
 import styles from "./Header.module.css";
-
-const languageLabels: Record<Locale, { name: string; summary: string }> = {
-  en: { name: "English", summary: "Language: English" },
-  de: { name: "Deutsch", summary: "Sprache: Deutsch" },
-  pl: { name: "Polski", summary: "Język: polski" },
-};
 
 /** Native links also work before hydration; the language is stored in the URL. */
 export default function LanguageSwitcher({ locale: providedLocale }: { locale?: Locale } = {}) {
-  const pathname = usePathname() || localizedPath("/", providedLocale ?? "en");
+  const pathname = usePathname() || localizedPath("/", providedLocale ?? defaultLocale);
   const locale = providedLocale ?? localeForPath(pathname);
 
   return (
     <details className={styles.language} name="desktop-navigation" data-header-disclosure>
-      <summary aria-label={languageLabels[locale].summary}>{locale.toUpperCase()}</summary>
+      <summary aria-label={localeSettings[locale].accessibleLabel}>{locale.toUpperCase()}</summary>
       <div className={styles.languagePanel}>
         {locales.map(language => (
           <a
@@ -32,7 +26,7 @@ export default function LanguageSwitcher({ locale: providedLocale }: { locale?: 
               event.currentTarget.href = localizedPath(pathname, language) + window.location.search + window.location.hash;
             }}
           >
-            {languageLabels[language].name}
+            {localeSettings[language].label}
             {language === locale && <Check size={14} aria-hidden="true" />}
           </a>
         ))}

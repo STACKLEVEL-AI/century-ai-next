@@ -7,7 +7,7 @@
 }
 
 .page {
-  --industry-heading: "Century Industry Favorit", Arial, sans-serif;
+  --industry-heading: var(--font-localized-heading, "Century Industry Favorit"), Arial, sans-serif;
   --industry-gutter: 60px;
   --industry-line: rgba(255, 255, 255, .18);
   color: #171719;

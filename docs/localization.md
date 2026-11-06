@@ -1,68 +1,86 @@
-# English, German and Polish website
+# Website localization
 
-The public website has 26 English content pages at their existing URLs, 26 German counterparts under `/de/` and 26 Polish counterparts under `/pl/`: **78 content pages** in total. Article and industry slugs stay stable. The platform uses `/platform/`, `/de/platform/` and `/pl/platform/`; the corresponding legacy `/ai-os/` URLs redirect to these pages while preserving query parameters and fragments.
+Century has **26 content routes in each of four languages: 104 pages**. English retains the original URLs. German, Polish and Ukrainian use `/de/`, `/pl/` and `/uk/`, with identical page structure and stable article and industry slugs. All four versions are exported as static HTML.
 
-The language selector contains native links to the equivalent page in all three languages and identifies the current language. With JavaScript enabled, switching also preserves the current query and fragment. The links and translated content work without JavaScript. Language comes from the URL; the site does not store a preference in cookies or browser storage.
+The URL selects the language. The native language menu links to the same page in every locale and works without JavaScript. With JavaScript enabled, switching also preserves the query and fragment. No language preference is stored in cookies or browser storage.
 
-## Shared sources and generation
+## One source, one compiler, one catalog format
 
-English route sources live in `src/app/(en)/`. Shared components and content remain in `src/components/` and `src/lib/`. German and Polish have separate maintained translation catalogs over those same sources. Changes to structure or behavior therefore apply to all three versions.
+Maintain English pages in `src/app/(en)/`, shared components in `src/components/` and content in `src/lib/`. All non-default locales use `scripts/i18n/generate.mjs`. The compiler reads TypeScript syntax trees so user-visible messages are translated while routes, IDs, keyboard commands, CSS, object keys and other code remain stable.
 
-`npm run localize` runs the German generator, then the Polish generator. `npm run locales:generate` invokes the same task. Both generators translate text literals and JSX text using the TypeScript syntax tree, keep structural keys and IDs stable, and map internal links and SVG assets to their localized destinations. Both server and client components receive translated source before compilation; the static HTML already contains the requested language.
+`src/locales/config.json` is the shared registry. It defines native language labels, accessible menu labels, Open Graph locale codes, social-image paths and copy, product SEO titles where needed, guide-count noun forms, legacy-redirect messages and global error-page copy. Runtime helpers, metadata, social-image generation, packaging and export validation read this registry.
 
-| Language | Maintained catalogs | Generated modules | Generated routes |
-| --- | --- | --- | --- |
-| German | `src/locales/de/` | `src/generated/de/` | `src/app/(de)/de/` |
-| Polish | `translations/pl/` | `src/localized/pl/` | `src/app/(pl)/pl/` |
+| Language | Maintained catalogs | Generated modules | Generated routes | Generated diagrams |
+| --- | --- | --- | --- | --- |
+| German | `src/locales/de/` | `src/generated/de/` | `src/app/(de)/de/` | `public/media/de/` |
+| Polish | `src/locales/pl/` | `src/generated/pl/` | `src/app/(pl)/pl/` | `public/media/pl/` |
+| Ukrainian | `src/locales/uk/` | `src/generated/uk/` | `src/app/(uk)/uk/` | `public/media/uk/` |
 
-Generated directories, translated SVG output in `public/media/de/` and `public/media/pl/`, and localized social images are ignored by Git. Edit the source and catalogs, then regenerate. `npm run dev`, `npm run build` and `npm run typecheck` run generation automatically. If editing English copy while the development server is already running, run `npm run localize` again.
+Generated files are ignored by Git and replaced during generation. Edit maintained sources and catalogs instead. Source discovery excludes every generated locale directory, so translated SVG output can never become the input for another translation. Shared CSS and photographs are reused; locale-specific typography adjustments live in the shared stylesheet.
 
-### German catalogs
+### Messages
 
-The catalogs in `src/locales/de/` group complete English messages by subject:
+Each `messages.json` groups complete English messages by their real maintained source path, including `(en)` for page sources:
 
-| Catalog | Content |
-| --- | --- |
-| `site.json` | Shared interface and company-page copy |
-| `articles.json` | Guides, categories and article interface |
-| `industries.json` | Industry pages, labels and diagrams |
-| `platform.json` | Platform, product and deployment copy |
-| `contexts.json` | Translations that depend on the source file |
+```json
+{
+  "src/components/HomeIndustries.tsx": {
+    "Explore {0}": "Poznaj {0}"
+  }
+}
+```
 
-The generator chooses catalogs according to the source file and falls back across the other subject catalogs. `contexts.json` takes precedence for translations with a particular context; its file paths are relative to `src/`. Preserve intentional whitespace in template fragments and prefer complete messages where grammar permits. German uses formal **Sie**, **KI** for generic artificial intelligence, and capitalized nouns. Official Century product names remain unchanged.
+JSX whitespace is normalized for lookup while intentional spaces between inline elements are preserved in output. String literals retain meaningful whitespace. Dynamic messages use `{0}`, `{1}` and subsequent numbered placeholders for their original expressions. A translation may reorder placeholders but must preserve their complete multiset; missing, duplicated or invented placeholders fail validation. Translate the whole sentence rather than separately translating prefixes and suffixes.
 
-### Polish catalogs
+An `@field:English message` entry overrides the ordinary translation only when that message appears in the named object field or JSX attribute. Use it for grammatical context, such as the case of an industry name in a call to action. The compiler keeps technical slugs separate from display labels. German noun capitalization is preserved in dynamic industry labels.
 
-| Catalog | Content |
-| --- | --- |
-| `pages.json` | Page copy and shared interface components |
-| `content.json` | Articles, industries, navigation and media descriptions |
-| `components.json` | Product, platform and industry components |
-| `assets.json` | Visible and accessible text inside SVG diagrams |
-| `fields.json` | Translations that depend on the object field's grammatical context |
-| `keep.json` | Explicitly preserved product names, proper names, technical labels and structural tokens |
+### Diagrams and preserved names
 
-Polish catalog keys use the original logical source path, such as `src/app/about-us/page.tsx`, without the `(en)` route group. JavaScript string and template-fragment keys are exact, including meaningful spaces. JSX text keys have whitespace collapsed. SVG keys contain decoded XML text. Empty translations are allowed when Polish grammar removes an English sentence fragment. A key such as `@ctaLabel:utilities` overrides the translation only for that field; this handles grammatical cases without changing a technical key or another use of the same word.
+`assets.json` follows the same per-source structure, using paths such as `public/media/century/diagrams/industry-platform.svg`. Keys are decoded visible or accessible SVG text, including nested `tspan` content, titles and descriptions. The same translation validation and SVG fitting logic applies to every locale. Every generated diagram declares its language.
 
-The Polish generator reports missing display strings in `.localizations/untranslated.json`. Add a translation, or deliberately preserve the term in `keep.json`. Check context when translating short labels, article categories and template fragments. Industry operation and CTA labels use the Polish locative after `w`; audience labels use the nominative plural. Blog result counts use Polish plural rules in the shared `guideCountLabel` helper.
+`keep.json` contains explicit per-source arrays of terms deliberately preserved, such as Century product names and technical abbreviations. Do not use it to silence missing ordinary translations. A term cannot be both translated and marked as preserved. Unused catalog entries are rejected so removed or changed source copy cannot silently leave stale translations behind.
+
+Product lockups retain official names. The shared `FooterBrand` component is excluded from translation and always reads **WE LEAVE IN THE AI CENTURY**, with the prefix before the logo. Preserve `LEAVE` exactly and keep `translate="no"`, `notranslate`, `lang="en"` and `dir="ltr"`. Localize its home destination, never its wording.
 
 ### Updating content
 
-Edit the English source and update the affected German and Polish catalogs. Run `npm run locales:check` to validate both catalogs without generating files. Missing display translations stop generation; resolve the reported strings or intentional invariants before building. Avoid editing generated output, which is replaced on the next generation run. Follow [Content style](content-style.md) for display punctuation, claims, names and alternative text.
+1. Edit the English source and update the corresponding messages in all three locale catalogs.
+2. For grammar-dependent text, use a complete template or a field override. Add deliberate invariants to the relevant source's keep list.
+3. Run `npm run locales:check`. Resolve missing or stale entries and placeholder errors.
+4. Run `npm run test:i18n`, then build and inspect the export.
 
-## Metadata, design and error pages
-
-Independent root layouts emit the correct document language during the static build. Shared metadata helpers provide language-specific canonical URLs, reciprocal `en`, `de`, `pl` and `x-default` alternates, matching Open Graph locales and both other locales as alternatives. The sitemap includes all 78 routes with the same reciprocal language links. Homepage structured data uses one shared `WebSite` identity with all three languages and a localized `WebPage` for each homepage.
-
-Social previews use `og/century-ai-eu.png` for English, `og/century-ai-eu-de.png` for German and `og/century-ai-pl.png` for Polish. Local fonts support the required German and Polish characters. Existing product screenshots remain authentic; captions, full-size-link labels and alternative text are translated. SVG diagrams receive localized visible and accessible text. The supplied footer slogan `WE LEAVE IN THE AI CENTURY` is preserved exactly in all three languages and marked with `lang="en"`.
-
-GitHub Pages serves one `404.html` for unknown URLs. `src/app/global-not-found.tsx` provides English, German and Polish messages and homepage links without depending on JavaScript. The document has `lang="en"`, one English primary heading and separately marked German and Polish sections. Localized route-level not-found boundaries are also generated. The Next.js `globalNotFound` option supports the multiple root layouts.
-
-## Local checks
-
-Run these commands locally against a production static export:
+All selected locales are fully prepared and validated before generated paths are removed or written. `--check` and `--report` are read-only: they do not create routes, assets, social images or diagnostic files. Normal generation also removes obsolete output from the former Polish and Ukrainian generators.
 
 ```bash
+npm run localize
+npm run locales:check
+node scripts/i18n/generate.mjs --locale=uk --check
+node scripts/i18n/generate.mjs --report
+```
+
+`npm run locales:generate` aliases `localize`. Development, builds and type checks generate all locales automatically. After changing source text while the development server is already running, regenerate translations before inspecting them.
+
+## Metadata, fonts and recovery
+
+Each language has its own root layout, emitting the correct HTML `lang` before hydration. Small generated metadata wrappers bind the shared helper to their locale. Canonicals, Open Graph and Twitter images, and reciprocal `en`, `de`, `pl`, `uk` and `x-default` alternates therefore follow one implementation. The sitemap contains all 104 routes with matching language links. Homepage structured data uses the shared WebSite identity and a locale-specific WebPage.
+
+| Language | Social preview |
+| --- | --- |
+| English | `/og/century-ai-eu.png` |
+| German | `/og/century-ai-eu-de.png` |
+| Polish | `/og/century-ai-pl.png` |
+| Ukrainian | `/og/century-ai-uk.png` |
+
+Inter includes Latin, Latin Extended, Cyrillic and Cyrillic Extended subsets. The supplied Favorit font does not contain Cyrillic glyphs; Ukrainian platform and industry headings explicitly use Inter at the existing light weight. All translated versions share natural wrapping rules. Keep the established page composition, neutral actions, compact footer and original Century photographs.
+
+Application screenshots remain unmodified and are checked against `docs/app-capture-provenance.json`. Their captions, full-size-link labels and alternative text are localized; screenshot pixels are not redrawn or translated.
+
+Legacy `/ai-os/` routes redirect to `/platform/` in all four languages, preserving query parameters and fragments. Each redirect also has a native destination link. GitHub Pages serves one global `404.html`; it contains separately marked English, German, Polish and Ukrainian sections with native homepage links and no JavaScript dependency. The document has one primary heading and `lang="en"`. Local route-level not-found boundaries are also generated.
+
+## Local verification
+
+```bash
+npm run test:i18n
 npm run locales:check
 npm run typecheck
 npm run build
@@ -70,14 +88,8 @@ npm run check:export
 npm run test:e2e
 ```
 
-The export inspector checks every content route, unique metadata within each language, reciprocal alternates, social images, native language links, local links/assets and fragments, screenshot accessibility, translated SVG descriptions and image alternative text. It also checks the sitemap, all three legacy platform redirects and the trilingual global 404.
+The focused Node tests cover compiler regressions, preservation of code tokens, template handling, catalog preflight, URL switching across every locale pair, query and fragment preservation, asset exclusions, metadata and Polish/Ukrainian plural forms. The export inspector checks every content page, unique metadata within each locale, reciprocal alternates, native language links, local links and fragments, images, screenshot integrity, fixed brand wording, localized diagrams, the sitemap, all four legacy redirects and the global 404.
 
-The browser suites remain separate:
+Browser suites in `tests/landing.spec.ts`, `tests/german-localization.spec.ts` and `tests/localization.spec.ts` cover navigation, guide filters, keyboard-controlled tabs, language switching, pages without JavaScript and narrow layouts. Run these only in a permitted local browser environment.
 
-| Suite | Coverage |
-| --- | --- |
-| `tests/landing.spec.ts` | English navigation, content, interactions, responsive behavior and the global 404 |
-| `tests/german-localization.spec.ts` | German navigation and guide filters, keyboard interaction, language switching, content without JavaScript and all German routes at narrow widths |
-| `tests/localization.spec.ts` | Static HTML and metadata for all 78 pages; Polish navigation, filters, keyboard interactions and responsive pages at 320, 390 and 768 pixels; switching among all three languages |
-
-The browser suites run locally against the production static export. English regression tests continue to use the existing public URLs.
+**CI remains deployment-only.** Validation and browser tests are local tasks; do not add them as GitHub CI jobs or to the deployment build. The existing workflow installs dependencies, generates/builds the static site and publishes it in one deployment job.

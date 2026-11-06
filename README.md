@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-The publishable website is written to `out/`. The postbuild script adds `CNAME`, `.nojekyll` and compatibility redirects from `/ai-os/` to `/platform/`, `/de/ai-os/` to `/de/platform/`, and `/pl/ai-os/` to `/pl/platform/`. Each redirect preserves query parameters and fragments. Serve this directory with a static web server.
+The publishable website is written to `out/`. The postbuild script adds `CNAME`, `.nojekyll` and compatibility redirects from `/ai-os/` to `/platform/` in English and under `/de/`, `/pl/` and `/uk/`. Each redirect preserves query parameters and fragments. Serve this directory with a static web server.
 
 ## Deployment
 
@@ -36,27 +36,28 @@ In the repository's Pages settings, select **GitHub Actions** and keep the custo
 | Guides | `/blog/` and four articles |
 | Website information | `/privacy/` |
 
-Together with the homepage, these form 26 content routes per language. English keeps the original URLs; German mirrors them under `/de/` and Polish under `/pl/`, for **78 content pages** in total. The route registry is [src/lib/routes.ts](src/lib/routes.ts). The export also includes a global 404 page with English, German and Polish recovery links, a sitemap and a robots file.
+Together with the homepage, these form 26 content routes per language. English keeps the original URLs; German, Polish and Ukrainian mirror them under `/de/`, `/pl/` and `/uk/`, for **104 content pages** in total. The route registry is [src/lib/routes.ts](src/lib/routes.ts). The export also includes a global 404 page with English, German, Polish and Ukrainian recovery links, a sitemap and a robots file.
 
 ## Languages
 
-The EN / DE / PL menu links to the same page in each language. Native links work without JavaScript; browser navigation with JavaScript also retains the current query and fragment. Language is selected by the URL, with no preference stored in cookies or browser storage. All three versions are rendered to static HTML, including the correct document language, canonical URL, reciprocal `en`, `de`, `pl` and `x-default` alternates, metadata and social preview. Shared product screenshots remain authentic; their captions and alternative text are localized.
+The EN / DE / PL / UK menu links to the equivalent page in each language. Native links work without JavaScript; with JavaScript, switching also retains the current query and fragment. The URL selects the language, with no preference stored in cookies or browser storage. Every version is rendered to static HTML, including its document language, canonical URL, reciprocal `en`, `de`, `pl`, `uk` and `x-default` alternates, metadata and social preview. Product screenshots remain authentic; their captions and alternative text are localized.
 
-Maintain page structure and English content in `src/app/(en)/`, `src/components/` and `src/lib/`. German messages live in `src/locales/de/`; Polish messages live in `translations/pl/`. These are separate maintained catalogs over the same English sources. German catalogs group site, article, industry and platform text, with file-specific exceptions in `contexts.json`. Polish catalogs group page, component, content and SVG messages, with field-specific grammar overrides and an explicit keep list. Preserve technical IDs, slugs and official product names.
+Maintain structure and English content in `src/app/(en)/`, `src/components/` and `src/lib/`. All translations now use one compiler, `scripts/i18n/generate.mjs`, and the same catalog format in `src/locales/{de,pl,uk}/`. Each language has `messages.json`, `assets.json` and `keep.json`. Keys identify the real source path and the complete English message; contextual field overrides handle grammar. Do not edit generated source or translate IDs, slugs, keyboard commands and official product names.
 
-`npm run localize` generates German and Polish routes, components and assets in sequence. `npm run locales:generate` is an alias for the same task. Development, builds and type checks run generation automatically. Both generators use the TypeScript AST to distinguish display text from identifiers, share the existing CSS and map content links to their language. Generated modules, translated SVG diagrams and localized social images are ignored by Git. Edit the maintained sources and catalogs instead; missing display translations stop generation.
+`src/locales/config.json` is the shared language registry for native labels, social previews, metadata locale codes, guide-count grammar, legacy redirects and error-page copy. `npm run localize` validates every catalog before generating routes, components and SVG diagrams for all three translations. Development, builds and type checks invoke it automatically. Missing translations, stale entries and mismatched template placeholders stop generation. `npm run locales:check` performs the same preflight without writing files.
 
-Run the following checks locally:
+Run checks locally:
 
 ```bash
-npm run locales:check   # validate both catalogs without generating files
+npm run test:i18n       # compiler, URL, metadata and plural-rule regressions
+npm run locales:check  # read-only validation of all catalogs
 npm run typecheck
 npm run build
-npm run check:export   # inspect all 78 pages, metadata, links and assets
-npm run test:e2e       # full English, German and Polish browser suite
+npm run check:export   # inspect all 104 pages, metadata, links and assets
+npm run test:e2e       # optional local browser suite for all four languages
 ```
 
-The three language route groups have independent root layouts so `lang` is correct before JavaScript runs. GitHub Pages serves one global `404.html`; it contains recovery messages and homepage links for all three languages. The Next.js `globalNotFound` option supports this multiple-root setup. See [Localization](docs/localization.md) for catalog formats, generated paths and local checks.
+The four route groups have independent root layouts so `lang` is correct before JavaScript runs. GitHub Pages serves one global `404.html` with recovery copy and homepage links for all four languages. Inter includes Latin, Latin Extended and Cyrillic; Ukrainian headings use it consistently where the supplied Favorit font has no Cyrillic glyphs. The footer signature `WE LEAVE IN THE AI CENTURY` remains fixed English brand wording. See [Localization](docs/localization.md) for the catalog format and workflow.
 
 Contact and profile destinations are defined in [src/lib/site.ts](src/lib/site.ts). Navigation, industry content and article content live in `src/lib/`.
 
@@ -68,8 +69,8 @@ Contact and profile destinations are defined in [src/lib/site.ts](src/lib/site.t
 | `src/app/` | Language root layouts, global error page, metadata routes and shared styles |
 | `src/components/` | Navigation, page sections and interactive elements |
 | `src/lib/` | Content, site settings and media metadata |
-| `src/locales/de/` | Reviewed German translations and contextual exceptions |
-| `translations/pl/` | Reviewed Polish content, interface and SVG translations |
+| `src/locales/config.json` | Shared locale registry |
+| `src/locales/{de,pl,uk}/` | Reviewed messages, diagrams and explicit preserved terms |
 | `public/` | Local images, video, brand assets and fonts |
 | `scripts/` | Localization generation, export packaging and asset maintenance |
 
