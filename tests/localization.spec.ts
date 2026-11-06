@@ -225,6 +225,7 @@ test("Polish product tabs and deployment and security disclosures remain usable 
   const explorers = [
     { path: "/pl/platform/", count: 7, englishLabels: ["Quality & activity", "Workflows & agents", "Specification & development", "Knowledge", "Models", "Integrations", "Security & governance"] },
     { path: "/pl/ai-gateway/", count: 3, englishLabels: ["Models & controls", "Files & context", "Response details"] },
+    { path: "/pl/deployment/", count: 3, englishLabels: ["Prepare", "Build & validate", "Operate & improve"] },
   ];
   for (const explorer of explorers) {
     await page.goto(explorer.path);
@@ -253,20 +254,6 @@ test("Polish product tabs and deployment and security disclosures remain usable 
   }
 
   await page.goto("/pl/deployment/");
-  const journey = page.getByRole("list", { name: "Prace wdrożeniowe i ich rezultaty", exact: true });
-  await expect(journey.getByRole("listitem")).toHaveCount(4);
-  for (const name of ["Określ zakres", "Zweryfikuj", "Wdróż", "Szkol i doskonal"]) {
-    await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
-  }
-  for (const stage of await journey.getByRole("listitem").all()) {
-    await expect(stage.getByText("Zakres prac", { exact: true })).toBeVisible();
-    await expect(stage.getByText("Rezultaty etapu", { exact: true })).toBeVisible();
-    await expect(stage.getByText("Kolejna decyzja", { exact: true })).toBeVisible();
-    for (const paragraph of await stage.locator("p, dd").all()) {
-      await expect(paragraph).toBeVisible();
-      await expect(paragraph).not.toBeEmpty();
-    }
-  }
   const installation = page.locator("#deployment-options details");
   await expect(installation).not.toHaveAttribute("open");
   await expect(installation.locator("summary")).toHaveText("Co uzgadniamy przed instalacją");

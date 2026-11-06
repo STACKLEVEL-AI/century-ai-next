@@ -5,30 +5,69 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "AI Transformation",
-  "Build AI capability with Century through a shared task register, the right automation approach, measurable acceptance and skills transferred to your team",
+  "Build AI capability with Century: assess automation opportunities, choose the right approach, agree value and evidence, and connect your team's work from specification to governance",
   "/ai-transformation",
 );
 
+const approaches = [
+  {
+    title: "Agentic",
+    description: "Repeatable workflows with clear inputs and outcomes, with human confirmation where needed.",
+  },
+  {
+    title: "RPA",
+    description: "Defined transfers and reconciliation handled by reliable integrations or scripts.",
+  },
+  {
+    title: "Chat",
+    description: "Knowledge support for varied expert work, with the employee responsible for the decision.",
+  },
+  {
+    title: "Redesign",
+    description: "Improve the process, rules or data before introducing automation.",
+  },
+  {
+    title: "Human-only",
+    description: "Keep judgment, negotiation and personally accountable decisions with people.",
+  },
+];
+
 const principles = [
   {
-    title: "Agentic: repeatable workflows",
-    description: "Use agents and multistep workflows when the input, steps and expected result are clear. Add employee confirmation at decisions and actions that need review",
+    title: "Create one shared register",
+    description: [
+      "Bring requests into one register through AI interviews or questionnaires. Capture the process owner, current work, data, expected effect and open questions.",
+      "Century assesses requests across 27 blocks in seven categories. AI-assisted intake and analyst review clarify readiness and risks, helping prioritize work by value, complexity and data readiness.",
+      "Track requests as Draft, Clarification or Ready to implement.",
+    ],
   },
   {
-    title: "RPA: predictable operations",
-    description: "Use reliable integrations and scripts to transfer or reconcile data between systems. Deterministic tasks can follow defined rules without a language model",
+    title: "Choose the right approach",
+    description: [
+      "Assessment identifies the appropriate approach and any work needed before implementation can begin.",
+    ],
+    approaches,
   },
   {
-    title: "Chat: expert assistance",
-    description: "Support varied expert work with corporate chat and an approved knowledge base. AI helps prepare the answer while the employee remains responsible for the decision",
+    title: "Agree value and evidence",
+    description: [
+      "Before committing effort, agree the baseline, expected benefit and quality criteria with the process owner. Consider both implementation and operating costs, including the effort to review and maintain the result.",
+      "Use an agreed control set to compare the workflow with the current way of working. After launch, review actual quality, processing time and running costs before deciding what to expand.",
+    ],
   },
   {
-    title: "Redesign: prepare the process",
-    description: "Improve the process, rules or data before automating. Resolve unclear ownership and missing inputs so the next implementation has a usable foundation",
+    title: "Build capability inside your team",
+    description: [
+      "Develop a repeatable practice for specifying, building, testing and operating automation. Your team learns through practical work, co-building and mentoring.",
+      "Take forward requirements and design templates, control sets, acceptance practices and operating rules. These give your team a foundation for maintaining current workflows and developing the next ones.",
+    ],
   },
   {
-    title: "Human-only: accountable decisions",
-    description: "Keep decisions that depend on personal responsibility, judgment or negotiation with people. Define the human role explicitly when assessing each automation opportunity",
+    title: "Connect specification to governance",
+    description: [
+      "Keep specification, development and governance in one working cycle. Business owners and analysts define requirements; developers build and test; responsible teams review and approve releases, then oversee quality, access and changes.",
+      "Compare actual effect with the expected result. Bring findings from operation back into specifications, refine estimates and reprioritize the next tasks.",
+    ],
   },
 ];
 
@@ -37,12 +76,6 @@ export default function TransformationPage() {
     <PlatformFrame
       headerVariant="overlay"
       contactTitle={<>Build the next chapter<br />of your organization</>}
-      contactImage={{
-        src: "/media/closing.webp",
-        width: 1200,
-        height: 495,
-        position: "center",
-      }}
     >
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="transformation-title">
@@ -65,17 +98,16 @@ export default function TransformationPage() {
           <div className={`${styles.shell} ${styles.editorialGrid}`}>
             <h2 id="transformation-approach-title">A platform and a process<br />for lasting change</h2>
             <div className={styles.editorialCopy}>
-              <p>Century brings models, knowledge, agents and policies into one operating environment. Our implementation method takes a workflow from discovery through requirements, testing and production.</p>
-              <p>Build a shared automation register through AI interviews or questionnaires. Capture the process owner, volume and time spent, inputs, data readiness, risks and expected effect, then prioritize the work.</p>
-              <p>Agree success criteria with process and knowledge owners. Use control questions and approved data to compare quality, review effort and processing time with the current baseline.</p>
-              <p>Co-build with Century or involve your developers from the start. Training and documented practices for building, evaluating and operating workflows help your team take responsibility for what comes next.</p>
+              <p>Century connects a shared AI platform, a practical working method and a trained internal team. Together, they give your organization a consistent way to choose, build and operate automation.</p>
+              <p>Bring opportunities from across the business into one register. Agree who owns each process, what should improve and what needs to be ready before work begins.</p>
+              <p>Once a task is agreed, deployment takes it into the approved environment. The broader method keeps priorities, ownership and learning connected as more workflows follow.</p>
             </div>
           </div>
         </section>
 
         <section className={styles.principlesSection} id="transformation-principles" aria-labelledby="transformation-principles-title">
           <div className={`${styles.shell} ${styles.principlesGrid}`}>
-            <h2 id="transformation-principles-title">Five approaches<br />for your work</h2>
+            <h2 id="transformation-principles-title">Five decisions<br />that shape the work</h2>
             <div className={styles.principles}>
               {principles.map((principle, index) => (
                 <details key={principle.title} name="century-transformation-principles" open={index === 0} className={styles.principle}>
@@ -84,7 +116,16 @@ export default function TransformationPage() {
                     <span className={styles.principleTitle}>{principle.title}</span>
                     <span className={styles.principleToggle} aria-hidden="true" />
                   </summary>
-                  <p>{principle.description}</p>
+                  <div className={styles.principleBody}>
+                    {principle.description.map(description => <p key={description}>{description}</p>)}
+                    {principle.approaches && (
+                      <ul className={styles.approachList}>
+                        {principle.approaches.map(approach => (
+                          <li key={approach.title}><strong>{approach.title}</strong> {approach.description}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </details>
               ))}
             </div>
@@ -116,7 +157,7 @@ export default function TransformationPage() {
                 <ArrowUpRight className={styles.cardArrow} size={28} strokeWidth={1.4} aria-hidden="true" />
                 <div className={styles.cardContent}>
                   <h3>Deployment</h3>
-                  <p>Test the first workflow, select infrastructure and transfer the operating knowledge to your team</p>
+                  <p>Bring an agreed workflow into your environment, validate the result and equip your team to operate it</p>
                 </div>
               </a>
             </div>

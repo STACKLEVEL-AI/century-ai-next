@@ -260,8 +260,8 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
-    for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
-      await expect(page.getByRole("list", { name: "Deployment work and outcomes" }).getByRole("heading", { name, exact: true })).toBeVisible();
+    for (const name of ["Agree the environment and the work", "Connect, test and accept the workflow", "Equip the team that will keep it working"]) {
+      await expect(page.getByRole("heading", { name, exact: true })).toBeVisible();
     }
     await page.goto("/ai-gateway/");
     await expectLocalAppScreenshots(page);
@@ -328,12 +328,18 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
 
 });
 
-test("Deployment keeps the delivery path visible and installation details keyboard accessible", async ({ page }) => {
+test("Deployment phases and installation details support keyboard navigation", async ({ page }) => {
   await page.goto("/deployment/");
-  const journey = page.getByRole("list", { name: "Deployment work and outcomes" });
-  for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
-    await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
-  }
+  const phases = page.getByRole("tablist", { name: "Deployment phases" });
+  await phases.getByRole("tab", { name: "Prepare", exact: true }).focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(phases.getByRole("tab", { name: "Build & validate", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "Build & validate", exact: true })).toBeVisible();
+  await page.keyboard.press("End");
+  await expect(phases.getByRole("tab", { name: "Operate & improve", exact: true })).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("Home");
+  await expect(phases.getByRole("tab", { name: "Prepare", exact: true })).toBeFocused();
+  await expect(page.getByRole("tabpanel", { name: "Prepare", exact: true })).toBeVisible();
   const installation = page.locator("#deployment-options details");
   await installation.locator("summary").focus();
   await page.keyboard.press("Enter");

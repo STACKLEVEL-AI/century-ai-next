@@ -20,6 +20,14 @@ Use the product names Century AI Platform, Century Agents, Century Systems and C
 
 Navigation labels should identify their destinations. Alternative text should describe useful visual content without repeating the surrounding caption; decorative images use empty alternative text.
 
+## Deployment and AI Transformation
+
+Keep the two pages complementary. AI Transformation explains the shared register, readiness assessment, choice of approach, business case, internal capability and feedback from operation. Deployment starts with an agreed workflow and covers practical delivery, integrations, environment and workflow acceptance, infrastructure and transfer to maintainers. Link between the pages rather than repeating the full method on both.
+
+The five approaches are Agentic, RPA, Chat, Redesign and Human-only. The assessment uses 27 blocks in seven categories; do not invent category names, scoring formulas, readiness percentages or promised returns. Distinguish current capabilities from future plans, and exclude private proposal terms and fundraising material.
+
+Preserve the Wonderful reference composition: full-width photographic heroes, light typography, generous spacing, large photographic cards and numbered disclosure rows. Deployment uses a dark section with three delivery phases. Do not replace these with dashboard panels, dense matrices or a split editorial hero. Use Century's own assets and supported delivery descriptions, not the reference company's team claims, metrics or photographs.
+
 ## Brand accents
 
 Keep contact actions neutral: dark text on a white button over dark surfaces or photography, and white text on a dark button over light surfaces. Use outline or text links for secondary actions. Preserve the existing page surfaces, photography and typography.
