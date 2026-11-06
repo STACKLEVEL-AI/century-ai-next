@@ -20,7 +20,7 @@ export default function DeploymentPage() {
           </div>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={styles.heroContent}>
-            <h1 id="deployment-title">From a selected workflow<br />to working AI</h1>
+            <h1 id="deployment-title">From a selected workflow<br /> to working AI</h1>
             <p>Configure the platform, connect your systems and validate the result in your environment. Build with Century and the people who will operate it</p>
           </div>
         </section>
@@ -29,7 +29,7 @@ export default function DeploymentPage() {
           <div className={styles.shell}>
             <div className={styles.teamIntro}>
               <div>
-                <h2 id="team-title">Built with the people<br />who will run it</h2>
+                <h2 id="team-title">Built with the people<br /> who will run it</h2>
                 <p>Start with a selected workflow, its owner and agreed acceptance criteria. Century brings the platform and engineering support; your business, IT and security teams bring the process knowledge and operating requirements</p>
               </div>
               <div className={styles.teamStatement}>
