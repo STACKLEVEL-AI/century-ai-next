@@ -191,12 +191,11 @@ test("Polish guide categories filter real articles and announce Polish counts", 
   await expect(page.locator("html")).toHaveAttribute("lang", "pl");
 });
 
-test("Polish platform tabs and security accordions remain usable by keyboard", async ({ page }) => {
+test("Polish product tabs and deployment and security disclosures remain usable by keyboard", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   const explorers = [
     { path: "/pl/platform/", count: 7, englishLabels: ["Quality & activity", "Workflows & agents", "Specification & development", "Knowledge", "Models", "Integrations", "Security & governance"] },
-    { path: "/pl/deployment/", count: 3, englishLabels: ["Phase 01", "Phase 02", "Phase 03"] },
     { path: "/pl/ai-gateway/", count: 3, englishLabels: ["Models & controls", "Files & context", "Response details"] },
   ];
   for (const explorer of explorers) {
@@ -224,6 +223,31 @@ test("Polish platform tabs and security accordions remain usable by keyboard", a
     await expect(tabs.first()).toBeFocused();
     await expect(tabs.first()).toHaveAttribute("aria-selected", "true");
   }
+
+  await page.goto("/pl/deployment/");
+  const journey = page.getByRole("list", { name: "Prace wdrożeniowe i ich rezultaty", exact: true });
+  await expect(journey.getByRole("listitem")).toHaveCount(4);
+  for (const name of ["Określ zakres", "Zweryfikuj", "Wdróż", "Szkol i doskonal"]) {
+    await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
+  }
+  for (const stage of await journey.getByRole("listitem").all()) {
+    await expect(stage.getByText("Zakres prac", { exact: true })).toBeVisible();
+    await expect(stage.getByText("Rezultaty etapu", { exact: true })).toBeVisible();
+    await expect(stage.getByText("Kolejna decyzja", { exact: true })).toBeVisible();
+    for (const paragraph of await stage.locator("p, dd").all()) {
+      await expect(paragraph).toBeVisible();
+      await expect(paragraph).not.toBeEmpty();
+    }
+  }
+  const installation = page.locator("#deployment-options details");
+  await expect(installation).not.toHaveAttribute("open");
+  await expect(installation.locator("summary")).toHaveText("Co uzgadniamy przed instalacją");
+  await installation.locator("summary").focus();
+  await page.keyboard.press("Enter");
+  await expect(installation).toHaveAttribute("open", "");
+  await expect(installation.getByText("Tożsamość i dane", { exact: true })).toBeVisible();
+  await page.keyboard.press("Enter");
+  await expect(installation).not.toHaveAttribute("open");
 
   await page.goto("/pl/security/");
   const question = page.locator("#security details").first();
@@ -269,7 +293,16 @@ for (const width of [390, 768]) {
         expect(boxes[index - 1].x + boxes[index - 1].width, route).toBeLessThanOrEqual(boxes[index].x + 1);
       }
       await withinViewport(page, page.getByRole("heading", { level: 1 }));
-      expect(await page.evaluate(() => document.documentElement.scrollWidth), route).toBeLessThanOrEqual(width + 1);
+      const layout = await page.evaluate(() => {
+        const scrollWidth = document.documentElement.scrollWidth;
+        const overflow = scrollWidth <= window.innerWidth + 1 ? [] : Array.from(document.querySelectorAll("body *"))
+          .map(element => ({ element, box: element.getBoundingClientRect() }))
+          .filter(({ box }) => box.width > 0 && box.right > window.innerWidth + 1)
+          .slice(0, 20)
+          .map(({ element, box }) => ({ tag: element.tagName, className: element.getAttribute("class"), width: box.width, right: box.right }));
+        return { scrollWidth, overflow };
+      });
+      expect(layout.scrollWidth, `${route}: ${JSON.stringify(layout.overflow)}`).toBeLessThanOrEqual(width + 1);
       const menu = page.locator("[data-mobile-navigation]");
       await menu.locator(":scope > summary").click();
       await withinViewport(page, page.getByRole("navigation", { name: "Nawigacja mobilna", exact: true }));

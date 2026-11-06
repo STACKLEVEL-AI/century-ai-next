@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="hero-copy">
           <h1 id="hero-title">Enterprise AI<br />From idea<br /><span>to everyday work</span></h1>
           <p className="hero-lead">An innovation management system for regulated enterprises, connecting specification, development and governance in your own environment</p>
-          <div className="hero-actions"><TelegramLink className="btn btn-brand">Get in touch</TelegramLink><a className="btn btn-outline-light" href="/platform/">Explore the platform</a></div>
+          <div className="hero-actions"><TelegramLink className="btn btn-light">Get in touch</TelegramLink><a className="btn btn-outline-light" href="/platform/">Explore the platform</a></div>
         </div>
       </div>
     </section>

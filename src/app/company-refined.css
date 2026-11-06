@@ -250,13 +250,13 @@
 .inner-page .co-document-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 35px; border-top: 1px solid var(--co-line); }
 .inner-page .co-document-contact .co-text-link { font-size: 13px; }
 
-/* Shared closing invitation for this page family. */
-.inner-page .co-cta { padding-block: 96px; color: #fafafa; background: #000000; }
-.inner-page .co-cta-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(50px, 8vw, 115px); align-items: end; }
-.inner-page .co-cta .co-eyebrow { color: #c8c8c8; margin-bottom: 24px; }
-.inner-page .co-cta h2 { max-width: 760px; font-size: clamp(40px, 4.1vw, 59px); line-height: 1.08; }
-.inner-page .co-cta-copy > p { max-width: 450px; color: #cecece; font-size: 16px; line-height: 1.75; }
-.inner-page .co-cta-copy .btn { margin-top: 28px; }
+/* Shared compact contact row for this page family. */
+.inner-page .co-cta { padding-block: 32px; color: #fafafa; background: #000; border-bottom: 1px solid #ffffff24; }
+.inner-page .co-cta-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
+.inner-page .co-cta .co-eyebrow { color: #b8b8b8; margin-bottom: 8px; font-size: 10px; }
+.inner-page .co-cta h2 { max-width: 760px; margin: 0; font-size: clamp(28px, 2.5vw, 34px); line-height: 1.12; }
+.inner-page .co-cta-description { max-width: 760px; margin-top: 12px; color: #cecece; font-size: 14px; line-height: 1.5; }
+.inner-page .co-cta-grid > .btn { justify-self: start; white-space: nowrap; }
 .inner-page .co-cta a:focus-visible { outline-color: #fff; }
 
 @media (min-width: 1500px) {
@@ -316,7 +316,7 @@
   .inner-page .co-document-layout .co-document-nav { max-width: none; }
   .inner-page .co-article-header { padding-top: 30px; }
   .inner-page .co-article-masthead { margin-top: 28px; }
-  .inner-page .co-cta-grid { grid-template-columns: 1.2fr 1fr; gap: 40px; }
+  .inner-page .co-cta-grid { gap: 28px; }
 }
 @media (max-width: 700px) {
   .inner-page .co-page h1 { font-size: clamp(42px, 8.7vw, 60px); letter-spacing: -.05em; line-height: 1.08; }
@@ -439,11 +439,10 @@
   .inner-page .co-document-section h2 { font-size: 26px; }
   .inner-page .co-document-section > p { font-size: 15px; line-height: 1.85; }
   .inner-page .co-document-contact { padding-top: 28px; gap: 18px; }
-  .inner-page .co-cta { padding-block: 68px; }
-  .inner-page .co-cta-grid { grid-template-columns: 1fr; gap: 28px; }
-  .inner-page .co-cta h2 { font-size: 42px; }
-  .inner-page .co-cta-copy > p { font-size: 16px; }
-  .inner-page .co-cta-copy .btn { margin-top: 25px; }
+  .inner-page .co-cta { padding-block: 24px; }
+  .inner-page .co-cta-grid { grid-template-columns: 1fr; gap: 18px; }
+  .inner-page .co-cta h2 { font-size: 28px; }
+  .inner-page .co-cta-description { font-size: 14px; }
 }
 @media (max-width: 390px) {
   .inner-page .co-page h1 { font-size: 41px; }
@@ -451,13 +450,13 @@
   .inner-page .co-immersive-hero { min-height: 650px; }
   .inner-page .co-featured-copy { padding: 24px; }
   .inner-page .co-featured-copy h2 { font-size: 31px; }
-  .inner-page .co-contact-direct > .btn, .inner-page .co-document-contact > .btn, .inner-page .co-cta-copy > .btn { padding-inline: 18px; font-size: 13px; }
+  .inner-page .co-contact-direct > .btn, .inner-page .co-document-contact > .btn, .inner-page .co-cta-grid > .btn { padding-inline: 18px; font-size: 13px; }
   .inner-page .co-controls-grid { grid-template-columns: 1fr; gap: 28px; }
   .inner-page .co-controls-grid h3 { font-size: 25px; margin-top: 18px; }
   .inner-page .co-controls-grid p { font-size: 15px; }
   .inner-page .co-conversation-note, .inner-page .co-privacy-summary { padding: 24px; }
   .inner-page .co-article-masthead h1 { font-size: 37px; }
-  .inner-page .co-cta h2 { font-size: 38px; }
+  .inner-page .co-cta h2 { font-size: 26px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .inner-page .co-guide-cover img, .inner-page .co-person-photo img, .inner-page .co-text-link svg, .inner-page .co-brand-download > svg, .inner-page .co-accordion summary > svg, .inner-page .co-filters button { transition: none; }
