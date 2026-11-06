@@ -171,7 +171,7 @@ const escapeTemplate = value => value.replace(/\\/g, "\\\\").replace(/`/g, "\\`"
 
 function localizeSource(source, filename) {
   const file = path.relative(sourceRoot, filename);
-  if (file === "lib/locale.ts") return 'export const LOCALE: "en" | "de" = "de";\n';
+  if (file === "lib/locale.ts") return 'import type { Locale } from "@/lib/i18n";\nexport const LOCALE: Locale = "de";\n';
   const tree = ts.createSourceFile(filename, source, ts.ScriptTarget.Latest, true);
   const edits = [];
   const edit = (node, value) => edits.push({ start: node.getStart(tree), end: node.end, value });

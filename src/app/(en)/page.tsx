@@ -9,11 +9,11 @@ import HomeTeam from "@/components/HomeTeam";
 import Footer from "@/components/Footer";
 import { PAGE_DESCRIPTION, PAGE_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
 import { LOCALE } from "@/lib/locale";
-import { languageAlternates, localizedPath } from "@/lib/i18n";
+import { alternateOpenGraphLocales, languageAlternates, locales, localizedPath, openGraphLocale, socialImagePath } from "@/lib/i18n";
 import "@/app/home.css";
 
 const ogImage = {
-  url: `${SITE_URL}/og/century-ai-eu${LOCALE === "de" ? "-de" : ""}.png`,
+  url: `${SITE_URL}${socialImagePath(LOCALE)}`,
   width: 1200,
   height: 630,
   alt: "Century — Accelerate AI transformation across your business",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     url: `${SITE_URL}${localizedPath("/", LOCALE)}`,
-    locale: LOCALE === "de" ? "de_DE" : "en_GB",
-    alternateLocale: LOCALE === "de" ? "en_GB" : "de_DE",
+    locale: openGraphLocale(LOCALE),
+    alternateLocale: alternateOpenGraphLocales(LOCALE),
     images: [ogImage],
   },
   twitter: {
@@ -50,7 +50,7 @@ const structuredData = {
       "@id": `${SITE_URL}/#website`,
       url: `${SITE_URL}/`,
       name: SITE_NAME,
-      inLanguage: ["en", "de"],
+      inLanguage: locales,
     },
     {
       "@type": "WebPage",

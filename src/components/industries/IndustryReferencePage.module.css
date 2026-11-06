@@ -17,6 +17,10 @@
   letter-spacing: -.02em;
 }
 
+:global(html[lang="uk"]) .page {
+  --industry-heading: var(--font-inter), Arial, sans-serif;
+}
+
 .page .main { background: #000; color: #fafafa; line-height: 1.28; }
 .page .main :is(h1, h2, h3) {
   font-family: var(--industry-heading);

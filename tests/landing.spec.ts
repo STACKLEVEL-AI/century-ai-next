@@ -96,8 +96,8 @@ async function expectNoHorizontalOverflow(page: Page) {
   )).toBe(true);
 }
 
-// Optional local regression checks after a production export. Deployment CI does
-// not invoke Playwright. Keep these focused on navigation and public behavior.
+// Local checks against the production export exercise the same navigation and
+// public behavior that the static host serves. Keep these outside GitHub CI.
 test("English pages have independent SEO and a non-indexable 404", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
@@ -106,26 +106,60 @@ test("English pages have independent SEO and a non-indexable 404", async ({ page
   await expect(page).toHaveTitle("Century | Innovation Management for Enterprise AI");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/");
-  await expect(page.locator("link[hreflang]")).toHaveCount(3);
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
+  for (const [language, path] of [["en", "/"], ["de", "/de/"], ["uk", "/uk/"], ["x-default", "/"]]) {
+    await expect(page.locator(`link[rel="alternate"][hreflang="${language}"]`))
+      .toHaveAttribute("href", `https://century-ai.eu${path}`);
+  }
+  await expect(page.locator('meta[property="og:locale"]')).toHaveAttribute("content", "en_GB");
+  expect(await page.locator('meta[property="og:locale:alternate"]').evaluateAll(nodes =>
+    nodes.map(node => node.getAttribute("content")).sort(),
+  )).toEqual(["de_DE", "uk_UA"]);
   const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())["@graph"];
   expect(graph.map((node: { "@type": string }) => node["@type"])).toEqual(["WebSite", "WebPage"]);
   for (const node of graph) {
     expect(node.url).toBe("https://century-ai.eu/");
     expect(node["@id"]).toMatch(/^https:\/\/century-ai\.eu\/#/);
-    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? ["en", "de"] : "en");
+    expect(node.inLanguage).toEqual(node["@type"] === "WebSite" ? ["en", "de", "uk"] : "en");
   }
-  // This checks rendered text, not text embedded in screenshot pixels.
-  expect(await page.locator("body").innerText()).not.toMatch(/[\u0400-\u04ff]/);
+  const language = page.locator("[data-site-header] details").filter({
+    has: page.locator('summary[aria-label="Language: English"]'),
+  });
+  await language.locator(":scope > summary").click();
+  await expect(language.locator('span[data-language-current="en"]')).toHaveText("English");
+  await expect(language.getByRole("link", { name: "English", exact: true })).toHaveCount(0);
+  await expect(language.getByRole("link")).toHaveText(["Deutsch", "Українська"]);
+  await expect(language.locator('[data-language-switch="de"]')).toHaveAttribute("href", "/de/");
+  await expect(language.locator('[data-language-switch="uk"]')).toHaveAttribute("href", "/uk/");
+  // The Ukrainian autonym is intentional in the language menu. All other
+  // rendered English text, including navigation, remains English.
+  expect((await page.locator("body").innerText()).replaceAll("Українська", "")).not.toMatch(/[\u0400-\u04ff]/);
+  await language.locator(":scope > summary").click();
 
   await page.goto("/platform/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
   await expect(page).toHaveTitle("Century AI Platform | Century");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://century-ai.eu/platform/");
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://century-ai.eu/platform/");
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(4);
+  for (const [language, path] of [["en", "/platform/"], ["de", "/de/platform/"], ["uk", "/uk/platform/"], ["x-default", "/platform/"]]) {
+    await expect(page.locator(`link[rel="alternate"][hreflang="${language}"]`))
+      .toHaveAttribute("href", `https://century-ai.eu${path}`);
+  }
 
   await page.goto("/404.html");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Seite nicht gefunden");
-  await expect(page.getByRole("heading", { name: "Page not found" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  for (const [locale, title, path] of [
+    ["de", "Seite nicht gefunden", "/de/"],
+    ["en", "Page not found", "/"],
+    ["uk", "Сторінку не знайдено", "/uk/"],
+  ]) {
+    const section = page.locator(`main section[lang="${locale}"]`);
+    await expect(section.getByRole("heading", { name: title, exact: true })).toBeVisible();
+    await expect(section.getByRole("link")).toHaveCount(1);
+    await expect(section.getByRole("link")).toHaveAttribute("href", path);
+    await expect(section.getByRole("link")).toHaveAttribute("hreflang", locale);
+  }
   const robots = await page.locator('meta[name="robots"]').evaluateAll((nodes) =>
     nodes.map((node) => node.getAttribute("content")).join(","),
   );
@@ -248,9 +282,15 @@ test("Mobile navigation and essential content work without JavaScript", async ({
     await page.goto("/platform/");
     await expect(page.getByRole("heading", { name: "Integrations", exact: true })).toBeVisible();
     await page.goto("/deployment/");
+    await expect(page.locator("#team-title")).toHaveText(/Built with the people\s*who will run it/);
+    const journey = page.getByRole("list", { name: "Deployment work and outcomes", exact: true });
+    await expect(journey.getByRole("listitem")).toHaveCount(4);
     for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
-      await expect(page.getByRole("list", { name: "Deployment work and outcomes" }).getByRole("heading", { name, exact: true })).toBeVisible();
+      await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
     }
+    const installation = page.locator("#deployment-options details");
+    await installation.locator("summary").click();
+    await expect(installation.getByText("Identity & data", { exact: true })).toBeVisible();
     await page.goto("/ai-gateway/");
     await expectLocalAppScreenshots(page);
   } finally {
@@ -313,22 +353,34 @@ test("Product explorers keep keyboard focus and displayed panels in sync", async
   await expect(layers.getByRole("tab", { name: "Security & governance", exact: true })).toHaveAttribute("aria-selected", "true");
   await page.keyboard.press("Home");
   await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toBeFocused();
-
+  await expect(layers.getByRole("tab", { name: "Quality & activity", exact: true })).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByRole("tabpanel", { name: "Quality & activity", exact: true })).toBeVisible();
 });
 
 test("Deployment keeps the delivery path visible and installation details keyboard accessible", async ({ page }) => {
   await page.goto("/deployment/");
-  const journey = page.getByRole("list", { name: "Deployment work and outcomes" });
-  for (const name of ["Scope", "Validate", "Deploy", "Enable & improve"]) {
-    await expect(journey.getByRole("heading", { name, exact: true })).toBeVisible();
+  const journey = page.getByRole("list", { name: "Deployment work and outcomes", exact: true });
+  await expect(journey.getByRole("listitem")).toHaveCount(4);
+  await expect(journey.getByRole("heading", { level: 3 })).toHaveText(["Scope", "Validate", "Deploy", "Enable & improve"]);
+  for (const stage of await journey.getByRole("listitem").all()) {
+    await expect(stage.getByRole("heading", { level: 3 })).toBeVisible();
+    await expect(stage.getByText("The work", { exact: true })).toBeVisible();
+    await expect(stage.locator("dt")).toHaveText(["What you take forward", "The next decision"]);
+    await expect(stage.locator("dd")).toHaveCount(2);
+    for (const outcome of await stage.locator("dd").all()) await expect(outcome).toBeVisible();
   }
+  await expect(page.locator('main a[href="' + TELEGRAM + '"]')).toHaveText(["Discuss your process", "Discuss your process"]);
   const installation = page.locator("#deployment-options details");
-  await installation.locator("summary").focus();
+  const summary = installation.locator("summary");
+  await expect(summary).toHaveText("What we agree before installation");
+  await summary.focus();
   await page.keyboard.press("Enter");
   await expect(installation).toHaveAttribute("open", "");
   await expect(installation.getByText("Identity & data", { exact: true })).toBeVisible();
+  await expect(summary).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(installation).not.toHaveAttribute("open");
+  await expect(installation.getByText("Identity & data", { exact: true })).not.toBeVisible();
 });
 
 test("Product pages show real local screenshots instead of retired interface mocks", async ({ page }) => {
@@ -375,7 +427,7 @@ test("Mobile layouts and reduced motion remain usable", async ({ page }, testInf
     await page.screenshot({ path: testInfo.outputPath(`landing-${viewport.width}.png`), fullPage: true });
   }
   await page.setViewportSize({ width: 320, height: 740 });
-  for (const route of ["/platform/", "/ai-gateway/"]) {
+  for (const route of ["/platform/", "/ai-gateway/", "/deployment/"]) {
     await page.goto(route);
     await expectNoHorizontalOverflow(page);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();

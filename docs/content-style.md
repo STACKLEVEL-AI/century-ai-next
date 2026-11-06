@@ -1,6 +1,6 @@
 # Content style
 
-Use clear English on the original routes and fluent formal German on `/de/` routes. Address German readers as **Sie** and use **KI** for generic artificial intelligence. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
+Use clear English on the original routes, fluent formal German on `/de/` and natural Ukrainian on `/uk/`. Address German readers as **Sie** and use **KI** for generic artificial intelligence; use **ШІ** in Ukrainian. Keep headings concise, describe concrete capabilities and match captions to the visible image or interface. Preserve the meaning and limits of the original claims.
 
 ## Display copy
 
@@ -13,6 +13,21 @@ Article prose, editorial paragraphs, legal explanations and FAQ answers retain o
 Update display text at its source, including labels inside SVG diagrams.
 
 English copy and structure are maintained in the source components; German copy is maintained in `src/locales/de/`. The build generates the German modules, diagrams and social image. Keep German nouns capitalized in dynamic labels and use complete messages when sentence fragments would require different grammar. Run `npm run locales:check` after a content edit; do not add untranslated fallback text to pass the check.
+
+Ukrainian copy is maintained in `src/i18n/uk/`. The build generates Ukrainian modules, diagrams and a social preview. Use complete messages around interpolated values so Ukrainian word order can differ. Guide counts use `Intl.PluralRules("uk")`. Keep `uk` as the language code; `UA` is a country code.
+
+| English | Ukrainian |
+| --- | --- |
+| Specification | Специфікація |
+| Development | Розробка |
+| Governance | Управління й контроль |
+| Workflow | Робочий процес |
+| Human review | Перевірка людиною |
+| Deployment, delivery process | Впровадження |
+| Deployment, infrastructure | Розгортання |
+| Approved knowledge / sources | Затверджені знання / джерела |
+
+Retain product names and API/MCP/RAG identifiers. Original product captures remain faithful to the application; translate their captions and alternative text without relabelling the captured interface.
 
 ## Names and links
 

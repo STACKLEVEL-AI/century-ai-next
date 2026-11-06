@@ -38,3 +38,9 @@ src/generated/
 src/app/(de)/
 public/media/de/
 public/og/century-ai-eu-de.png
+
+# Ukrainian pages and audit output are generated from reviewed source catalogs
+src/app/(uk)/
+src/app/uk/
+public/uk/
+localization-audit/

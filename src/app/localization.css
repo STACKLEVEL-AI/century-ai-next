@@ -1,9 +1,9 @@
-/* German compounds and longer labels must fit the shared responsive layouts. */
-html[lang="de"] :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
+/* Longer translated labels must fit the shared responsive layouts. */
+html:is([lang="de"], [lang="uk"]) :is(h1, h2, h3, h4, p, figcaption, button, summary, dt, dd, li) {
   overflow-wrap: break-word;
   hyphens: auto;
 }
-html[lang="de"] :is(.co-text-link, .btn, .co-guide-meta) { flex-wrap: wrap; }
+html:is([lang="de"], [lang="uk"]) :is(.co-text-link, .btn, .co-guide-meta) { flex-wrap: wrap; }
 .bilingual-error { max-width: 960px; margin-inline: auto; padding: clamp(96px, 18vh, 180px) 24px; }
 .bilingual-error section { margin-bottom: 48px; }
 .bilingual-error h1, .bilingual-error h2 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 18px; }

@@ -3,12 +3,17 @@ import { copyFile, mkdir, writeFile } from "node:fs/promises";
 await copyFile("CNAME", "out/CNAME");
 await writeFile("out/.nojekyll", "");
 
-// Preserve old platform links in both languages on static GitHub Pages hosting.
-for (const locale of ["en", "de"]) {
-  const prefix = locale === "de" ? "/de" : "";
+// Preserve old platform links in every language on static GitHub Pages hosting.
+const messages = {
+  en: "This page has moved:",
+  de: "Diese Seite wurde verschoben:",
+  uk: "Цю сторінку переміщено:",
+};
+for (const locale of ["en", "de", "uk"]) {
+  const prefix = locale === "en" ? "" : `/${locale}`;
   const destination = `${prefix}/platform/`;
   const directory = `out${prefix}/ai-os`;
-  const message = locale === "de" ? "Diese Seite wurde verschoben:" : "This page has moved:";
+  const message = messages[locale];
   await mkdir(directory, { recursive: true });
   await writeFile(`${directory}/index.html`, `<!doctype html>
 <html lang="${locale}">
@@ -30,4 +35,4 @@ for (const locale of ["en", "de"]) {
 </html>
 `);
 }
-console.log("Independent EU export packaged in out/ with English and German compatibility redirects");
+console.log("Independent EU export packaged in out/ with English, German and Ukrainian compatibility redirects");

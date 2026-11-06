@@ -1,2 +1,4 @@
-// The German build generates the same module with the locale set to "de".
-export const LOCALE: "en" | "de" = "en";
+import type { Locale } from "./i18n";
+
+// Each localized build generates this module with its own locale value.
+export const LOCALE: Locale = "en";
